@@ -1,0 +1,50 @@
+#
+# $Id: makefile.rules,v 1.6 2006/08/08 13:31:42 fab Exp $
+#
+
+rev.h: .revinfo
+	../../rev DIRECTORY=../../
+
+copyright.h: rev.h
+
+ppcinline/about.h: fd/about_lib.fd clib/about_protos.h
+	$(ECHO) "CVINCLUDE $(notdir $<) -> $@"
+	$(OUT)$(MKDIR) ppcinline
+	$(OUT)$(CVINCLUDE) --quiet --fd=fd/about_lib.fd --clib=clib/about_protos.h --inlines=ppcinline/about.h --quiet
+
+proto/about.h: fd/about_lib.fd clib/about_protos.h
+	$(ECHO) "CVINCLUDE $(notdir $<) -> $@"
+	$(OUT)$(MKDIR) proto
+	$(OUT)$(CVINCLUDE) --quiet --fd=fd/about_lib.fd --clib=clib/about_protos.h --proto=proto/about.h --quiet
+
+#
+# Imagery stuff
+#
+%_logo.h : images/%.png
+	$(ECHO) "PNG2C $(notdir $<) -> $@"
+	$(OUT)$(SOURCE)../../png2c ../../images/$*.png $(TMPDIR)$*_logo.c $*_logo.h $(QUIET)
+	$(OUT)$(DELETE) $(TMPDIR)$*_logo.c
+
+%_logo.o : images/%.png
+	$(ECHO) "PNG2C $(notdir $<) -> $@"
+	$(OUT)$(SOURCE)../../png2c ../../images/$*.png $*_logo.c $(TMPDIR)$*_logo.h $(QUIET)
+	$(OUT)$(DELETE) $(TMPDIR)$*_logo.h
+	$(OUT)$(CC) $(CFLAGS) $*_logo.c
+
+
+%.o : %.c
+	$(ECHO)	"CC $(notdir $<).."
+	$(OUT)$(CC) $(CFLAGS) -DBASE_NAME=\"$(notdir $<)\" $<
+
+aboutcrypt.h: aboutcrypt.o
+aboutcrypt.o: default_aboutcrypt.c tcrypt aboutcrypt.txt
+	$(OUT)$(COPY) ../../default_aboutcrypt.c aboutcrypt.c
+	$(ECHO) "CRYPT $(notdir $<) -> $@"
+	$(OUT)./tcrypt ../../aboutcrypt.txt aboutcrypt.c aboutcrypt.h
+	$(OUT)$(CC) $(CFLAGS) -c $*.c
+
+#
+# tcrypt
+#
+tcrypt: $(SOURCE)../../tcrypt.c
+	$(OUT)$(HOSTCC) $(HOSTCFLAGS) $(SOURCE)../../tcrypt.c -o $@

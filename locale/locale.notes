@@ -1,0 +1,1225 @@
+$Id: locale.notes,v 1.54 2013/03/13 23:21:12 geit Exp $
+
+13.03.2013
+ - ambient.cd, *.ct
+   added strings:
+   MSG_SYSINFOWIN_SNDDRIVER_NONE_INFO, MSG_SYSINFOWIN_CACHESPECSDETAILS1_INFO,
+   MSG_SYSINFOWIN_CACHESPECSDETAILS2_INFO, MSG_SYSINFOWIN_BATTERYCHARGING_INFO,
+   MSG_SYSINFOWIN_BATTERY_INFO, MSG_SYSINFOWIN_MEMORY
+
+05.06.2012
+ - ambient.cd, *.ct
+   added strings: 
+   MSG_PREFSWIN_TOOLBAR_DEVICE_LIST, MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP, MSG_PREFSWIN_TOOLBAR_COPY 
+   MSG_PREFSWIN_TOOLBAR_COPY_HELP, MSG_PREFSWIN_TOOLBAR_COPY_AS, MSG_PREFSWIN_TOOLBAR_COPY_AS_HELP 
+   MSG_PREFSWIN_TOOLBAR_MOVE, MSG_PREFSWIN_TOOLBAR_MOVE_HELP, MSG_PREFSWIN_TOOLBAR_MOVE_AS 
+   MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP, MSG_PREFSWIN_TOOLBAR_DELETE, MSG_PREFSWIN_TOOLBAR_DELETE_HELP, 
+   MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD, MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP 
+   MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD, MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP 
+   MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD, MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP 
+   MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS, MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS_HELP 
+   MSG_PREFSWIN_TOOLBAR_SELECT, MSG_PREFSWIN_TOOLBAR_SELECT_HELP, MSG_PREFSWIN_TOOLBAR_ICONINFO 
+   MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP, MSG_PREFSWIN_TOOLBAR_FORMAT, MSG_PREFSWIN_TOOLBAR_FORMAT_HELP 
+   MSG_PREFSWIN_TOOLBAR_MAKEDIR, MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP, MSG_PREFSWIN_TOOLBAR_MAKELINK 
+   MSG_PREFSWIN_TOOLBAR_MAKELINK_HELP, MSG_PREFSWIN_TOOLBAR_RENAME, MSG_PREFSWIN_TOOLBAR_RENAME_HELP 
+   MSG_PREFSWIN_TOOLBAR_FORWARD, MSG_PREFSWIN_TOOLBAR_FORWARD_HELP, MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW 
+   MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP, MSG_PREFSWIN_TOOLBAR_BOOKMARKS, MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP 
+   MSG_PREFSWIN_TOOLBAR_SPACE, MSG_PREFSWIN_TOOLBAR_SPACE_HELP, MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE 
+   MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP, MSG_PREFSWIN_TOOLBAR_SEPARTOR, MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP 
+   removed strings: MSG_PREFSWIN_TOOLBAR_UP, MSG_PREFSWIN_TOOLBAR_UP_HELP
+
+02.12.2011
+ - ambient.cd, *.ct
+   added strings: MSG_PREFSWIN_LISTER_SELECTION_MODES, MSG_PREFSWIN_LISTER_SELECTION_MODES_HELP,
+   MSG_PREFSWIN_LISTER_SELECTION_DEFAULT, MSG_PREFSWIN_LISTER_SELECTION_ALWAYS,
+   MSG_PREFSWIN_TOOLBAR_VIEW_GROUP, MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW,
+   MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW_HELP, MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE,
+   MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE_HELP, MSG_PREFSWIN_TOOLBAR_VIEW_ICON,
+   MSG_PREFSWIN_TOOLBAR_VIEW_LIST, MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW,
+   MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW_HELP, MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE,
+   MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE_HELP (geit)
+ - ambient.magyar.ct
+   Fixed missing dots (geit)
+
+13.11.2011
+ - ambient.cd, *.ct
+   fixed Dos -> DOS spelling errors, try to have a somewhat unified look for all error messages 
+   in all languages and which matches ambient.cd too (chainq)
+
+11.11.2011
+ - ambient.magyar.ct, ambient.suomi.ct, ambient.svenska.ct
+   Updated/fixed language files to build with latest FlexCat, also some text in 
+   finnish/swedish translation was obsolete, changed to up to date english 
+   version (chainq)
+
+22.07.2010
+ - ambient.cd, *.ct
+   added strings: MSG_SYSINFOWIN_CPU_TITLE, MSG_SYSINFOWIN_CPUCOUNT, MSG_SYSINFOWIN_CPUCOUNT_HELP (geit)
+
+24.08.2009
+ - ambient.cd, *.ct
+   synced with latest changes by Andrea Beretta (geit)
+
+04.04.2009
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+
+31.03.2009
+ - ambient.suomi.ct
+   Fixed MSG_INFOWIN_DISK_STATUS_HELP (piru)
+
+27.03.2009
+ - ambient.cd, *.ct
+   changed MSG_PREFSWIN_LISTER_FILES and MSG_PREFSWIN_LISTER_DEVICES (geit)
+   rebuild comments (geit)
+
+07.11.2008
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+
+29.10.2008
+ - ambient.suomi.ct
+   Translated MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE#? (piru)
+   Translated MSG_DELETEFILE_#? and MSG_DELETEDIR_#? (piru)
+   Fixed MSG_DELETE_CONFIRM#? (piru)
+
+19.10.2008
+ - ambient.cd, *.ct
+   rebuild comments (geit)
+   added strings MSG_DELETEFILE_#? (geit)
+   added strings MSG_DELETEDIR_#? (geit)
+   fixed several typos and dot issues. (geit)
+ - ambient.czech.ct
+   translated new strings and some minor changes (luky-amiga)
+
+18.10.2008
+ - ambient.suomi.ct
+   Translated MSG_SELECTWINCLASS_#? (piru)
+
+17.10.2008
+ - ambient.cd, *.ct
+   Added strings MSG_SELECTWINCLASS_#? (geit)
+
+13.08.2008
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+12.08.2008
+ - ambient.dansk.ct
+   synced with latest changes by Benny Damsgaard (geit)
+
+22.06.2008
+ - ambient.suomi.ct
+   kaksoisnapautus -> kaksoisnapsautus. (piru)
+
+15.06.2008
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+
+14.06.2008
+ - ambient.cd, *.ct
+   Added strings MSG_LISTVIEWLISTCLASS_LINK and
+   MSG_LISTVIEWLISTCLASS_ASSIGN (geit)
+ - ambient.suomi.ct
+   translated new strings. (piru)
+
+10.06.2008
+ - ambient.español.ct
+   synced with latest changes by Hugo Espiñeira (geit)
+
+09.06.2008
+ - ambient.suomi.ct
+   translated new strings. (piru)
+
+08.06.2008
+ - ambient.czech.ct
+   updated czech translation (luky-amiga)
+
+07.06.2008
+ - ambient.cd, *.ct
+   Added strings MSG_RENAME_FILECANTBERENAMED, MSG_RENAME_CANTBERENAMED,
+   MSG_RENAME_OK (geit)
+   rebuild comments (geit)
+
+03.06.2008
+ - ambient.cd, *.ct
+   rebuild comments and fixed MSG_FORMAT_SHOWRECYCLED_HELP (geit)
+
+30.05.2008
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+ - ambient_deutsch.ct
+   changed stupid cycle texts in panel config (geit)
+
+24.05.2008
+ - ambient.cd, *.ct
+   rebuild comments and removed ":" from checkbox strings for all
+   translations. (geit)
+ - ambient.cd, *.ct
+   added missing "..." and underscores to MSG_FORMAT_#? strings (geit)
+ - ambient.cd, *.ct
+   rebuild comments and removed ":" from checkbox strings for all
+   translations. (geit)
+
+23.05.2008
+ - ambient.czech.ct
+   some fixes (luky-amiga)
+ - ambient.español.ct
+   synced with latest changes by Hugo Espiñeira (geit)
+
+22.05.2008
+ - ambient.español.ct
+   synced with latest changes by Hugo Espiñeira (geit)
+ - ambient.cd, *.ct
+   rebuild comments and removed ":" from checkbox strings for all
+   translations. (geit)
+
+19.05.2008
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+ - ambient.italiano.ct
+   synced with latest changes by Andrea Beretta (geit)
+
+18.05.2008
+ - ambient.español.ct
+   synced with latest changes by Hugo Espiñeira (geit)
+ - ambient.cd
+   made help bubble more logic. (geit)
+ - ambient.cd, *.ct
+   rebuild comments (geit)
+   
+16.05.2008
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+
+15.05.2008
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+ - ambient.cd, ambient_deutsch.ct
+   removed useless "settings" from items in "settings menu" (geit)
+ - ambient.cd, *.ct
+   rebuild comments (geit)
+
+06.05.2008
+ - ambient.suomi.ct
+   translated new strings, some minor adjustments (piru)
+
+20.04.2008
+ - ambient.czech.ct
+   complete check and updated translation (luky-amiga)
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+   
+13.04.2008
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+ - ambient.cd *.ct
+   fixed typo (geit)
+
+10.04.2008
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+ - ambient.cd *.ct
+   MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS_HELP was dislocated and caused
+   wrong bubble to be shown. (geit)
+ - ambient.cd *.ct
+   added new strings: MSG_PREFSWIN_BOOKMARKS_SHOWONLY, MSG_PREFSWIN_BOOKMARKS_SHOWONLY_HELP,
+   MSG_PREFSWIN_BOOKMARKS_SHOWONLY_NAMESANDLOCATIONS, MSG_PREFSWIN_BOOKMARKS_SHOWONLY_NAMES
+   and MSG_PREFSWIN_BOOKMARKS_SHOWONLY_LOCATIONS, MSG_PREFSWIN_BOOKMARKS_DISPLAY_GROUP (geit)
+
+09.04.2008
+ - ambient.cd *.ct
+   added missing help bubble: MSG_PROGRESS_FILESDONE_HELP, MSG_CMENU_LVTITLES_DOSTYPE,
+   MSG_LISTVIEWLISTCLASS_EMPTY (geit)
+
+08.04.2008
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+
+06.04.2008
+ - ambient.cd *.ct
+   MSG_METADATA_DATESIZE was totally wrong as it shows the used size and not the
+   total disk size. (geit)
+
+18.03.2008
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+07.03.2008
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+
+05.03.2008
+ - ambient.cd *.ct
+   Added new strings: MSG_PREFSWIN_LISTER_FONT, MSG_PREFSWIN_LISTER_FONT_HELP,
+   MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES_HELP,
+   MSG_PREFSWIN_LISTER_ALTERNATED_ROWS, MSG_PREFSWIN_LISTER_ALTERNATED_ROWS_HELP,
+   MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN, MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN_HELP (geit)
+
+28.02.2008
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+
+26.02.2008
+ - ambient.suomi.ct
+   translated new MSG_PROGRESS_#? strings. (piru)
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+25.02.2008
+ - ambient.czech.ct
+   synced with latest changes by geit (luky-amiga)
+
+24.02.2008
+ - ambient.cd *.ct
+   Added new strings: MSG_PROGRESS_HOURS, MSG_PROGRESS_DAYS, MSG_PROGRESS_MINUTES,
+   MSG_PROGRESS_SECONDS, MSG_PROGRESS_HOUR, MSG_PROGRESS_DAY, MSG_PROGRESS_MINUTE,
+   MSG_PROGRESS_SECOND (geit)
+
+20.01.2008
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+12.01.2008
+ - ambient.czech.ct
+   Updated czech translation (luky-amiga)
+
+10.01.2008
+ - ambient.cd *.ct
+   added new string MSG_PREFSWIN_BACKGROUND_MODE_ZOOMED (geit)
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+
+28.12.2007
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+
+21.12.2007
+ - ambient.czech.ct
+   Updated czech translation (luky-amiga)
+
+18.12.2007
+ - ambient.czech.ct
+   Updated czech translation (luky-amiga)
+
+17.12.2007
+ - ambient.suomi.ct
+   updated translation (piru)
+ - ambient.cd *.ct
+   Added the following strings:
+   MSG_FINDRESULTLISTCLASS_CONTAINER, MSG_FINDRESULTLISTCLASS_NAME,
+   MSG_PANELSLIDERSIZECLASS_16PIXEL, MSG_PANELSLIDERSIZECLASS_24PIXEL,
+   MSG_PANELSLIDERSIZECLASS_32PIXEL, MSG_PANELSLIDERSIZECLASS_48PIXEL,
+   MSG_PANELSLIDERSIZECLASS_64PIXEL (geit)
+ - ambient.czech.ct
+   Updated czech translation (luky-amiga)
+
+10.12.2007
+ - ambient.cd
+   Fixed several underscore keys (geit)
+ - *.ct
+   updated comment lines (geit)
+
+06.12.2007
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+02.12.2007
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+ - ambient.cd *.ct
+   fixed some typos. (geit)
+
+30.11.2007
+ - ambient.cd *.ct
+   Fixed some trailing dots. (geit)
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+29.11.2007
+ - ambient.cd *.ct
+   Added the following strings:
+   MSG_PREFSWIN_TOOLBAR_BUTTONFRAME, MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_HELP, MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_WINTITLE,
+   MSG_PREFSWIN_TOOLBAR_STATUSBAR, MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT, MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_HELP,
+   MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_0, MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_1, MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_2,
+   MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_3, MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_4, MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_5,
+   MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_6, MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP, MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT,
+   MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER, MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER, MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER,
+   MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT,MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS,
+   MSG_PREFSWIN_MISCELLANEOUS, MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS, MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS,,
+   MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE, MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL, MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL,
+   MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES, MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER
+   (geit)
+ - ambient.deutsch.ct
+   Used a spell checker to fix tons of typos, made style guide and bubble changes and fixed several dupe underscore chars. (geit)
+
+14.11.2007
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+21.10.2007
+ - ambient.deutsch.ct
+   some style guide related changes (geit)
+
+15.10.2007
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+11.10.2007
+ - ambient.russian.ct
+   synced with latest changes by Andrei Shestakov (geit)
+
+10.10.2007
+ - ambient.cd *.ct
+   changed MSG_FILEACTION_PROTECTBUTTONS and MSG_FILEACTION_REPLACEBUTTONS (geit)
+
+04.10.2007
+ - ambient.czech.ct
+   Removed several obsolete/malformed strings. (geit)
+ - ambient.russian.ct
+   Added new language made by Andrei Shestakov (geit)
+ - ambient.cd *.ct
+   made a few cleanups to compiled without warnings again. (geit)
+
+29.09.2007
+ - ambient.cd *.ct
+   Changed MSG_SYSINFOWIN_ALTIVEC_HELP. (geit)
+
+23.09.2007
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+18.09.2007
+ - ambient.cd *.ct
+   added new view window title (MSG_LISTVIEWCLASS_WINTITLE)
+   rebuild data base (geit)
+ - ambient.czech.ct
+   updated translation (luky-amiga)
+
+08.09.2007
+ - ambient.cd *.ct
+   fixed exchange toggle state hotkey, defaults to 'A' now. (piru)
+
+07.09.2007
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+06.09.2007
+ - ambient.cd, *.ct
+   added MSG_BGREFRESHSLIDERCLASS_HOURS and MSG_BGREFRESHSLIDERCLASS_DAYS
+   rebuild data base (geit)
+
+21.08.2007
+ - ambient.czech.ct
+   updated translation (luky-amiga)
+
+20.08.2007
+ - ambient­cd, *.ct
+   fixed strings (luky-amiga)
+ - ambient.czech.ct
+   updated translation (luky-amiga)
+
+12.07.2007
+ - ambient.cd, *.ct
+   rebuild data base
+   synced with latest changes by Andrea Beretta (geit)
+
+06.06.2007
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+03.06.2007
+ - added some strings for bookmarks panel item (kiero)
+
+31.05.2007
+ - added labels for new panel items. (kiero)
+
+15.05.2007
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+13.05.2007
+ - ambient.cd, *.ct
+   renamed MSG_PREFSWIN_ICONOPTIONS_TAB to BOOKMARKS_TAB.
+   added MSG_BOOKMARK_UNNAMED.(kiero)
+ - ambient.cd, *.ct
+   Added new strings and help bubbles for bootmark support. (geit)
+
+12.05.2007
+ - ambient.cd
+   added bookmarks strings.(kiero)
+ - ambient.cd, *.ct
+   added new strings to translation files and rebuild comments. (geit)
+ - ambient.deutsch.ct
+   translated new strings. (geit)
+
+09.05.2007
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (geit)
+
+05.05.2007
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (tokai)
+ - ambient.italiano.ct
+   synced with latest changes by Andrea Beretta (tokai)
+
+02.05.2007
+ - ambient.czech.ct
+   translated new strings and converted to ISO Latin 2 (luky-amiga)
+
+29.04.2007
+ - ambient.polski.ct
+   synced with latest changes by Marcin Kornas (tokai)
+
+26.04.2007
+ - ambient.cd, *.ct
+   merged proofreaded and fixed polski translation by Grzegorz Juraszek (geit)
+
+20.04.2007
+ - ambient.deutsch.ct
+   Reworked some parts. Follow the german translation style in Menus, do
+   not use Knopf as translation for Gadget, but Symbol. etc.
+   (tokai)
+ - ambient.polski.ct
+   synced latest changes by Marcin Kornas (tokai)
+
+19.04.2007
+ - ambient.suomi.ct
+   updated translation (piru)
+
+17.04.2007
+ - ambient.cd, *.ct
+   updated polski translation by Marcin Kornas
+   updated italiano translation by Andrea Beretta
+   rebuild entire database.
+   added missing MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE_HELP string.
+   Fixed several german strings.
+   (geit)
+
+16.04.2007
+ - ambient.polski.ct
+   updated translation by Marcin Kornas (tokai)
+
+06.04.2007
+ - ambient.suomi.ct
+   updated translation (itix)
+
+01.04.2007
+ - ambient.magyar.ct
+   updated translation, fixes, lot more strings now translated (chainq)
+
+21.03.2007
+ - ambient.cd, *.ct
+   added new strings:
+   MSG_PRINT_COULDNOTFINDPRINTER, MSG_PRINT_REQUESTERTITLE,
+   MSG_PRINT_OK (geit)
+
+11.03.2007
+ - ambient.cd, *.ct
+   Translated new strings MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES
+   MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES_HELP and fixed damaged
+   .ct files. (geit)
+
+03.03.2007
+ - ambient.cd, *.ct
+   Added strings MSG_KEYSHORTCUT_LEAVEOUT, MSG_KEYSHORTCUT_PUTAWAY (geit)
+ - ambient.czech.ct
+   translated new strings (luky-amiga)
+
+27.02.2007
+ - ambient.cd, *.ct
+   MSG_KEYSHORTCUT_PARENT, MSG_KEYSHORTCUT_CLIPBOARDPASTEAS (luky-amiga)
+ - ambient.czech.ct
+   translated new strings (luky-amiga)
+ - ambient.cd, *.ct
+   Rebuild catalog base files to update comments. (geit)
+ - ambient.czech.ct
+   removed trailing spaces (geit)
+ - ambient.deutsch.ct
+   translated new strings (geit)
+
+15.02.2007
+ - ambient.cd, *.ct
+   added new strings:
+   MSG_MINEADJUSTGROUPCLASS_TITLE_REQ, MSG_MINEADJUSTGROUPCLASS_OK_REQ,
+   MSG_MINEADJUSTGROUPCLASS_COULDNTSAVEFILETYPEDESC,
+   MSG_MINEADJUSTGROUPCLASS_COULDNTSAVEDEFAULTICON (geit)
+
+14.02.2007
+ - ambient.cd, *.ct
+   added new strings:
+   MSG_ACTIONEDITORCLASS_SORTBYPARENT,MSG_ACTIONEDITORCLASS_SORTBYPARENT_HELP,
+   MSG_ACTIONEDITORCLASS_PARENTNAME, MSG_ACTIONEDITORCLASS_PARENTNAME_HELP (geit)
+ - ambient.dansk.ct
+   Fixed (again) many missing dots in help bubbles. (geit)
+
+12.02.2007
+ - ambient.czech.ct
+   translated new strings. (luky-amiga)
+
+11.02.2007
+ - ambient.dansk.ct
+   added dansk translation by Benny Damsgaard (tokai)
+ - ambient.cd, *.ct
+   Removed tons of CRLF and added serveal missing dots. (geit)
+
+10.02.2007
+ - ambient.cd, *.ct
+   Added new strings: MSG_PATTERNRENAMEWINCLASS_WINDOWTITLE,
+   MSG_PATTERNRENAMEWINCLASS_OLDNAME, MSG_PATTERNRENAMEWINCLASS_OLDNAME_HELP,
+   MSG_PATTERNRENAMEWINCLASS_NEWNAME, MSG_PATTERNRENAMEWINCLASS_NEWNAME_HELP,
+   MSG_PATTERNRENAMEWINCLASS_RENAME, MSG_PATTERNRENAMEWINCLASS_RENAME_HELP,
+   MSG_PATTERNRENAMEWINCLASS_SKIP, MSG_PATTERNRENAMEWINCLASS_SKIP_HELP,
+   MSG_PATTERNRENAMEWINCLASS_CANCEL, MSG_PATTERNRENAMEWINCLASS_CANCEL_HELP (geit)
+
+07.02.2007
+ - ambient.czech.ct
+   translated new strings. (luky-amiga)
+
+04.02.2007
+ - ambient.czech.ct
+   translated new strings. (luky-amiga)
+
+30.01.2007
+ - ambient.cd, *.ct
+   Added new strings: MSG_MIMEGROUPCLASS_SEARCH,
+   MSG_MIMEGROUPCLASS_SEARCH_HELP, MSG_SEARCHBARCLASS_SEARCH,
+   MSG_SEARCHBARCLASS_SEARCH_HELP, MSG_SEARCHBARCLASS_CASESENSITIVE,
+   MSG_SEARCHBARCLASS_CASESENSITIVE_HELP, MSG_SEARCHBARCLASS_TEXTNOTFOUND,
+   MSG_SEARCHBARCLASS_PREV, MSG_SEARCHBARCLASS_NEXT (geit)
+
+29.01.2007
+
+ - ambient.cd, *.ct
+   added new string (MSG_PROGRESS_TIMEREMAINING) (geit)
+
+27.01.2007
+ - ambient.cd, *.ct
+   Fixed file format. Do not use "," as separator its ";". (geit)
+   Updated german translation for new strings MSG_CMENU_PASTEAS and
+   MSG_CMENU_PASTEASINTO (geit)
+   Added new strings MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES,
+   MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES_HELP,
+   MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS,
+   and MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS_HELP (geit)
+
+02.01.2007
+ - ambient.czech.ct
+   translated new strings. (luky-amiga)
+   
+31.12.2006
+ - ambient.cd, *.ct
+   - new strings: MSG_BGREFRESHSLIDERCLASS_NEVER, MSG_BGREFRESHSLIDERCLASS_MINUTES,
+     MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY, MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP
+   - fixed trailing dots at the end of some strings.
+   - Updated entire database. (geit)
+ - ambient.suomi.ct
+   translated new strings. (piru)
+
+24.11.2006
+ - ambient.magyar.ct
+   some strings updated (chainq)
+ - ambient.cd, *.ct
+   - fixed trailing spaces at the end of some strings.
+   - Updated entire database. (geit)
+
+20.11.2006
+ - ambient.cd, *.ct
+   Updated entire database. (geit)
+   New Strings: MSG_CMENUTITLE_PANELVIEWWATCHER, MSG_PANELITEM_VIEWWATCHER
+   MSG_PANELITEM_VIEWWATCHERDESC (geit)
+
+18.11.2006
+ - ambient.deutsch.ct
+   Fixed several errors. Thanks to Otti. (geit)
+ - ambient.cd, *.ct
+   - new strings: MSG_MIMEADJUSTGROUPCLASS_ICON_HELP (geit)
+
+16.11.2006
+ - ambient.cd, *.ct
+   - some string sorting. (geit)
+   - new strings: MSG_MIMEADJUSTGROUPCLASS_ACTIONS_HELP, MSG_MIMEADJUSTGROUPCLASS_UP_HELP,
+     MSG_MIMEADJUSTGROUPCLASS_DOWN_HELP, MSG_ACTIONEDITORCLASS_UP_HELP,
+     MSG_ACTIONEDITORCLASS_DOWN_HELP, MSG_ACTIONEDITORCLASS_TYPE_HELP and all
+     MSG_SYSINFOWIN_#?_HELP as well as MSG_SYSINFOWIN_CPU and MSG_SYSTEMINFOWIN_ALTIVEC
+     (geit)
+
+15.11.2006
+ - ambient.cd, *.ct
+   - some string sorting. (geit)
+   - new strings: MSG_PANELITEMWINCLASS_NAME_HELP, MSG_PANELITEMWINCLASS_VERSION_HELP,
+     MSG_PANELITEMWINCLASS_AUTHOR_HELP and MSG_PANELITEMWINCLASS_DESCGROUPTITLE_HELP
+     MSG_FINDCLASS_NAME_HELP, MSG_FINDCLASS_TEXT_HELP, MSG_FINDCLASS_TYPE_HELP,
+     MSG_FINDCLASS_LOCATIONS_HELP, MSG_FINDCLASS_RESULTS_HELP, MSG_FINDCLASS_ADDSTRING_HELP,
+     MSG_FORMAT_LABEL_HELP, MSG_FORMAT_FILESYSTEM_HELP, MSG_FORMAT_STATUS_HELP,
+     MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT, MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_HELP,
+     MSG_PREFSWIN_TOOLBAR_COORDS_HELP, MSG_PREFSWIN_TOOLBAR_CURRENT_HELP,
+     MSG_PREFSWIN_TOOLBAR_AVAILABLE_HELP
+     (geit)
+
+13.11.2006
+ - ambient.cd, *.ct
+   Added several new bubble strings. Check out MSG_INFOWIN_#? strings to find
+   new strings. Please also note that most of the labels are now underscorable
+   ("_"). Use ambient.deutsch.ct as underscore reference. (geit)
+
+12.11.2006
+ - ambient.cd, *.ct
+   Added several new strings and sorted/renamed labels. Check out
+   MSG_INFOWIN_#? strings to find new strings. Please also note that
+   most of the labels are now underscorable ("_"). (geit)
+
+03.11.2006
+ - ambient.español.ct
+   Added ambient.español.ct provided by (GelidaG4) Oscar Raventos Piña (geit)
+
+24.10.2006
+ - ambient.francais.ct
+   updated french translation (falcon)
+ - ambient.cd, *.ct
+   fixed trailing space in frensh translation and rebuild
+   catalog base. (geit)
+
+14.10.2006
+ - ambient.italiano.ct
+   synced with latest changes by Andrea Beretta (tokai)
+ - ambient.cd, *.ct
+   locale locale database sync. (geit)
+
+10.10.2006
+ - ambient.cd, *.ct
+   added MSG_PREFSADVANCEDGROUPCLASS_VALUE and MSG_PREFSADVANCEDGROUPCLASS_RESETTODEFAULT
+   (geit)
+
+04.10.2006
+ - ambient.cd, *.ct
+   added MSG_PREFSADVANCEDLISTCLASS_STATUS (geit)
+
+03.10.2006
+ - ambient.deutsch.ct
+   translated new strings. (geit)
+ - ambient.cd, *.ct
+   Some clean up. (geit)
+
+02.10.2006
+ - ambient.cd
+   added new menu strings to comply better with globalmenu.doc, renamed
+   some old menu strings (itix)
+
+27.09.2006
+ - ambient.cd, *.ct
+   bumped catalog version to 7, too, so locale will accept again. (geit)
+
+26.09.2006
+ - ambient.cd
+   added new menu strings and bumped version number to 7. (itix)
+ - ambient.cd, *.ct
+   added new strings to catalog files. (geit)
+ - ambient.deutsch.ct
+   translated new strings. (geit)
+
+25.09.2006
+ - ambient.cd, *.ct
+   added MSG_PREFSADVANCEDLISTCLASS_DEFAULTVALUE (geit)
+ - ambient.suomi.ct
+   translated new strings. (piru)
+
+20.09.2006
+ - ambient.cd, *.ct
+   sane  names for 'Panel Spacer Object' -> 'Spacer' (tokai)
+ - ambient.cd
+   added strings for Panel Separator (tokai)
+ - ambient.cd, *.ct
+   - added MSG_CMENUTITLE_SEPARATOR, MSG_PANELITEM_SEPARATOR and
+     MSG_PANELITEM_SEPARATORDESC. (geit)
+   - Some clean up. (geit)
+ - ambient.suomi.ct
+   translated new strings. (piru)
+
+19.09.2006
+ - ambient.cd, *.ct
+   added mimelisttreeclass.c strings. (geit)
+ - ambient.cd, *.ct
+   - added MSG_CMENUTITLE_PANELSPACER, MSG_PANELITEM_SPACER and 
+     MSG_PANELITEM_SPACERDESC. (geit)
+   - Some clean up. (geit)
+
+15.09.2006
+ - ambient.cd, *.ct
+   added prefs_advanced_listclass.c strings. (geit)
+ - ambient.suomi.ct
+   translated prefs_advanced_listclass.c strings. (piru)
+
+13.09.2006
+ - ambient.cd, *.ct
+   added MSG_PREFSWIN_TAB_ADVANCED (geit)
+ - ambient.suomi.ct
+   translated MSG_PREFSWIN_TAB_ADVANCED. (piru)
+
+12.09.2006
+ - ambient.suomi.ct
+   - fixed several "Peru" to "Peruuta". (piru)
+   - translated new menu items, and applet related strings. (piru)
+ - ambient.cd, *.ct
+   after comma comes a space! (X,X free -> X, X free) (tokai)
+
+11.09.2006
+ - ambient.cd, *.ct
+   added new strings - applicatswinclass.h. (geit)
+ - ambient.czech.ct
+   translated new strings and some fixes (luky-amiga)
+
+10.09.2006
+ - ambient.cd
+   added new strings for contextmenus: "Icons" and "Manage applets" (tokai)
+ - ambient.cd, *.ct
+   translated new german strings and sorted the MSG_CMENU_ICONS stuff a little. (geit)
+
+05.09.2006
+ - ambient.cd, *.ct
+   Sorted several strings and made some cleanups. (geit)
+ - ambient.czech.ct
+   added missing dots to translation. (geit)
+
+02.09.2006
+ - ambient.czech.ct
+   translated new strings (luky-amiga)
+
+31.08.2006
+ - ambient.cd, *.ct
+   Sorted some advanced icons to their right position in file. (geit)
+   Added new MSG_PREFSWIN_ICONDISPLAY_SEPARATEFILES string. (geit)
+
+27.08.2006
+ - ambient.suomi.ct
+   translated MSG_MIMEADJUSTWINCLASS_TITLE (piru)
+
+26.08.2006
+ - ambient.suomi.ct
+   translated new strings, fixed a typo (piru)
+
+25.08.2006
+ - ambient.cd, *.ct
+   Added gadget, window and bubble help strings for the new mime and action
+   editors. Will need additional changes, so be warned. (geit)
+ - ambient.suomi.ct
+   translated most of the new strings (piru)
+
+23.08.2006
+ - ambient.cd, *.ct
+   Added drive information string, added PanelGroupClass.c, rename.c,
+   movedir.c, clipboard.c panelitemwinclass.c and panelitem.c requester strings (geit)
+   changed some german strings. (geit)
+
+17.08.2006
+ - ambient.cd, *.ct
+   Sorted several strings, cleaned comments and added a few new strings. (geit)
+
+16.08.2006
+ - ambient.cd, *.ct
+   removed useless trailing spaces from files. Also added several missing
+   dots. (geit)
+
+15.08.2006
+ - ambient.cd, *.ct
+   added new requester strings. (geit)
+ - fixed compile errors due to spaces and tab at the end of some lines -
+   applies to the cd and all .ct (falcon)
+ - added more french translations (falcon)
+ - ambient.suomi.ct
+   updated (itix)
+
+14.08.2006
+ - ambient.cd, *.ct
+   added capacity strings. (geit)
+ - ambient.francais.ct
+   updated french translation (falcon)
+ - ambient.suomi.ct
+   updated finnish translation (itix)
+
+29.07.2006
+ - ambient.cd, *.ct
+   added "Unnamed" directory string for new drawer window (geit)
+
+04.07.2006
+ - ambient.italiano.ct
+   synced with latest changes by Andrea Beretta (tokai)
+ - ambient.cd, *.ct
+   Simple comment clean up (geit)
+
+23.06.2006
+ - ambient.cd, *.ct
+   added gauge both option to catalogs. Added missing keyboard preferences
+   strings (geit)
+
+22.06.2006
+ - ambient.czech.ct
+   Updated translations (luky-amiga)
+
+20.06.2006
+ - ambient.cd, *.ct
+   Sorted, cleaned and rebuild entire catalog base to ensure all comments
+   and file structure are up to date. (geit)
+ - ambient.suomi.ct
+   Updated translations (itix)
+ - ambient.cd, *.ct
+   removed obsolete prefswin_windowclass.c left/top/width/height strings and their
+   help bubbles. Added new one string version. (geit)
+
+16.06.2006
+ - ambient.cd
+   New shortcut keys for context menus (itix)
+
+06.06.2006
+ - ambient.deutsch.ct
+   Updated translations (geit)
+
+05.06.2006
+ - ambient.czech.ct
+   Updated translations (luky-amiga)
+
+01.06.2006
+ - ambient.francais.ct
+   Removed obsolete strings from file. (geit)
+ - ambient.cd, *.ct
+   Rebuild entire catalog base to ensure all comments and file structure
+   are up to date. (geit)
+
+28.05.2006
+ - ambient.cd, *ct:
+   Removed unused advanced prefs entries, bumped version to 3.0 and added new
+   MSG_PREFSWIN_ICONDISPLAY_EXTRA_FEATURES entry. (itix)
+
+28.04.2006
+ - ambient.czech.ct
+   Updated translations, shortcuts fix (luky-amiga)
+ - ambient.español.ct
+   Added ambient.español.ct provided by (GelidaG4) Oscar Raventos Piña (geit)
+
+25.04.2006
+ - ambient.czech.ct
+   Updated translations. (luky-amiga)
+ - ambient.cd, *.ct
+   Updated comments and fixed some strings
+ - ambient.español.ct
+   Added ambient.español.ct provided by (GelidaG4) Oscar Raventos Piña (geit)
+
+24.04.2006
+ - ambient.cd, *.ct
+   added "Audio" to Ogg Vorbis strings as internal Ambient filetype
+   refers to the audio-only Ogg Vorbis file (audio/x-vorbis). (tokai)
+
+22.04.2006
+ - ambient.italiano.ct
+   synced with latest changes by Andrea Beretta (tokai)
+
+20.04.2006
+ - ambient.cd, *.ct
+   Fixed tons of trailing ellipsis issues. (geit)
+
+18.04.2006
+ - ambient.cd, *.ct
+   Bumped to version 2 to avoid problems with old catalogs. (piru)
+ - ambient.cd, *.ct
+   Added cpu load string. (geit)
+
+17.04.2006
+ - ambient.italiano.ct
+   synced with latest changes by Andrea Beretta (tokai)
+
+15.04.2006
+ - ambient.cd, *.ct
+   Fixed MSG_INFOWIN_BYTES and MSG_INFOWIN_MBYTES_BYTES to be 64bit.
+   catalog version bumped to 1. I hope "#version 1" in the ambient.cd
+   does the trick. if not, slap me. (piru)
+
+10.04.2006
+ - ambient.cd, *.ct
+   Added new strings for the window select feature. (geit)
+
+09.04.2006
+ - ambient.suomi.ct
+   Localized remaining items from panels (except help bubbles).
+   Translated lister strings. (itix)
+ - ambient.deutsch.ct
+   Translated the new strings. (geit)
+ - ambient.cd
+   removed some pointless spaces to get uniform look in preferences (tokai)
+ - ambient.cd, *.ct
+   - Translated the new strings.
+   - Added bubbles strings which where missing in lister prefs.
+   - Fixed " :" issues in all catalogs.
+   - sorted strings to match their new position in window and in locale files.
+   - added "_" for most of the strings in all catalogs. It's up to the translators
+     to check them for dupes.
+   (geit)
+
+08.04.2006
+ - ambient.czech.ct
+   Updated translations. (luky-amiga)
+ - ambient.italiano.ct
+   Added new translations by Andrea Beretta (tokai)
+
+06.04.2006
+ - ambient.cd, *.ct
+   Added missing underscores, added some dupes for proper underscoring,
+   renamed several labels and sorted the catalog strings a little. (geit)
+ - ambient.suomi.ct
+   Updated translations. (itix)
+
+05.04.2006
+ - ambient.deutsch.ct
+   Added latest modifications. (geit)
+ - ambient.cd, *.ct
+   - style fixes for mimetype name translations to match recognition.db
+     look (capital letters at start of words, language-independent)
+   - generic PPC/ELF vs. OS4 PPC/ELF cleanup
+   (tokai)
+
+29.03.2006
+ - ambient.cd, *.ct
+   Added eject context menu item (geit)
+
+28.03.2006
+ - ambient.deutsch.ct (geit)
+   Minor fix.
+
+25.03.2006
+ - ambient.czech.ct
+   Updated translations. (luky-amiga)
+
+23.03.2006
+ - ambient.czech.ct
+   Updated translations. (luky-amiga)
+ - ambient.cd, *.ct
+   Added new unsnapshot translation (geit)
+ - ambient.italiano.ct
+   Added new italian translation by Andrea "Raistlin77it" Beretta
+   (tokai)
+ - ambient.italiano.ct
+   Fixed italiano translation, which contained 0x0d,0x0a instead of
+   0x0a only. Added comments (geit)
+
+21.03.2006
+ - ambient.suomi.ct
+   Updated translations. (itix)
+ - ambient.cd, *.ct
+   Added real pixel size to icon size selection. (geit)
+
+20.03.2006
+ - ambient.cd, *.ct
+   Added localization more for context and context titles. (geit)
+
+18.03.2006
+ - ambient.deutsch.ct
+   Some minor german translation changes and fixed. (geit)
+
+17.03.2006
+ - ambient.deutsch.ct
+   Some panel config translation changes. (geit)
+
+16.03.2006
+ - ambient.suomi.ct
+   Updated translations. (itix)
+
+09.03.2006
+ - ambient.francais.ct
+   Fixed some broken \ sequences recently introduced within the frensh
+   translation. (geit)
+ - ambient.deutsch.ct
+   Minor german changes. (geit)
+
+03.03.2006
+ - ambient.cd, *.ct
+   Added full localization support for dragdropclass (luky-amiga)
+ - ambient.czech.ct
+   Updated czech strings (luky-amiga)
+
+26.02.2006
+ - ambient.cd, *.ct
+   Added icon bubble strings to all languages. (geit)
+ - ambient.cd, *.ct
+   Removed CMENU_ items related to view names. Added VIEW_ instead. (kiero)
+ - ambient.cd, *.ct
+   Added german translations for new VIEW_ stuff. (geit)
+ - ambient.cd, *.ct
+   Added ellipses to "Delete panel" (tokai)
+
+24.02.2006
+ - ambient.cd, *.ct
+   Some minor changes to the catalog base. (geit)
+ - ambient.cd
+   Added some '...' and controlchars here and there (tokai)
+ - ambient.cd, *.ct
+   Changed some 'Search' into 'Find'. The tool is 'Find' and
+   has a 'Search' button. No other place shall use 'Search'.
+
+23.02.2006
+ - ambient.cd, *.ct
+   Added more strings for requesters. (rename, exchange, makedir, procces
+   and execute)
+   Renamed some of the catalog labels as clean up. (geit)
+ - ambient.magyar.ct
+   Updated Hungarian strings. Still a few to do. (chainq)
+
+22.02.2006
+ - ambient.suomi.ct
+   Updated Finnish strings. (itix)
+ - ambient.cd, *.ct
+   Added underscore "_" to prefswin_clilaunchclass strings.
+   Added hundreds of bubble help texts and added underscore stuff, so happy
+   translating everyone. (geit)
+ - ambient.cd, *.ct
+   More translations, fixes and bubbles. Thanks to Otti for the suggestions and the
+   help with the german catalog. (geit)
+ - ambient.cd, *.ct
+   Once again tons of changes to the entire catalog base. (geit)
+ - ambient.cd, *.ct
+   A few of the new help bubbles were mixed. (geit)
+
+21.02.2006
+ - ambient.cd, *.ct
+   Converted all *.cd and .ct files into .cs and back by using SimpleCat.
+   In the result all files are more readable and all look equal again.
+   In addition to that the .ct files now contain the official
+   English translation as comment for easy translation, so easy
+   checking is possible. (geit)
+ - ambient.cd, *.ct
+   Removed several obsolete strings, so it's required to update the catalog
+   or you'll get misplaced strings. You should always install the latest catalogs
+   to ensure everything is correct. I will update the catalog and add all missing
+   strings, so this will happen very often! So be warned. (geit)
+
+19.02.2006
+ - ambient.cd, *.ct
+   Added locale support for internal filetype string (luky-amiga)
+ - ambient.czech.ct
+   Updated translations (luky-amiga)
+ - ambient.svenska.ct
+   Updated translations. (chaozer)
+
+18.02.2006
+ - ambient.deutsch.ct
+   Some minor translation changes. (geit)
+ - ambient.cs, *.ct
+   Added new context menu and mimetype entries. (geit)
+   Some minor translation changes. ".." to "..." fixing. (geit)
+
+17.02.2006
+ - ambient.deutsch.ct
+   Merged strings from Guido Mersmann (more translations, spelling fixes,
+   if something went wrong dont blame me!). (itix)
+ - ambient.suomi.ct
+   Updated translations. (itix)
+
+15.02.2006
+ - ambient.deutsch.ct
+   Added german catalogue from Carsten Siegner. (chaozer)
+
+14.02.2006
+ - ambient.czech.ct
+   Updated translations (luky-amiga)
+
+12.02.2006
+ - ambient.cd, *.ct
+   Updated locales at the bottom with new context menu entries. (chaozer)
+
+30.01.2006
+ - ambient.cd, *.ct
+   All *_ROOT* definitions changed to *_DESKTOP*. Also added a new
+   MSG_PERMSAVE definition. (chaozer)
+ - ambient.czech.ct 
+   Updated translations (luky-amiga)
+ - ambient.magyar.ct
+   Updated translations (chainq)
+
+29.01.2006
+ - ambient.cd, *.ct
+   Added MSG_PREFSWIN_TAB_WINDOW. (chaozer)
+
+28.01.2006
+ - ambient.cd *.ct
+   Added MSG_REVERT. (chaozer)
+
+21.01.2006
+ - ambient.cd *.ct
+   Added MSG_MENU_WB_DEVICELIST, MSG_ICON_MYMORPHOS, MSG_ICONVIEW_SCANNING_LOCATION
+
+13.01.2006
+ - ambient.suomi.ct
+   Updated translations (itix)
+
+08.01.2006
+ - ambient.cd *.ct
+   Added localization support for Find window
+   Updated czech locale (luky-amiga)
+
+25.12.2005
+ - ambient.cd *.ct
+   Added MSG_MENU_UTILITIES_FIND, MSG_ADD and MSG_REMOVE. (kiero)
+
+15.12.2005
+ - ambient.cd *.ct
+   Enabled MSG_PREFSWIN_TAB5. (fab1)
+
+28.11.2005
+ - ambient.suomi.ct
+   Added more translations. (itix)
+
+12.11.2005
+ - ambient.cd, *.ct
+   Added new localization needed when splitting up about window:
+   MSG_MENU_WB_ABOUTMOS and MSG_ABOUTWIN_AMBIENTTEAM. (chaozer)
+
+08.11.2005
+ - ambient.cd, *.ct
+   Added localization support for Lister Settings
+   Updated czech locale  (luky-amiga)
+
+23.10.2005
+ - ambient.czech.ct
+   updated czech locale (luky-amiga)
+
+22.10.2005
+ - ambient.polski.ct
+   Added MSG_PANELCFG_TRANSPARENT. (chaozer)
+
+21.10.2005
+ - ambient.polski.ct
+   New polish locale. (kiero)
+ - ambient.cd, *.ct
+   Added MSG_PANELCFG_TRANSPARENT. (chaozer)
+
+16.10.2005
+ - ambient.cd, *.ct
+   added "Select" string (kiero)
+
+15.10.2005
+ - ambient.czech.ct
+   translated new locale strings (luky-amiga)
+
+14.10.2005
+ - ambient.cd, *.ct
+   Small typo in new statusbarstring caused ambient to show totalfiles
+   when totaldirs should have been shown. (chaozer)
+
+12.10.2005
+ - ambient.cd, *.ct
+   Added new locale for statusbar and removed some old locale strings. (chaozer)
+
+07.10.2005
+ - ambient.czech.ct
+   updated czech locale (luky-amiga)
+
+03.10.2005
+ - ambient.cd, *.ct
+   Added strings for the deficons preferences and changed
+   MSG_PREFSWIN_WBSTARTUP_PATH slightly. (chaozer)
+   TODO: Adjust your language translations accordingly.
+
+28.09.2005
+ - ambient.cd *.ct
+   Added new locale strings and translated ambient.czech.ct  (luky-amiga)
+   TODO: Dont forget to translate the new strings for your language.
+   TODO: Localization support for Context menu and ViewAPI
+ - updated hungarian locale (chainq)

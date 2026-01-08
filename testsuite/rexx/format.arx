@@ -1,0 +1,10 @@
+/* foo */
+
+options results;
+
+address 'AMBIENT';
+
+'Format'
+
+echo RESULT;
+echo RC;

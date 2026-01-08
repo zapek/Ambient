@@ -1,0 +1,22 @@
+#ifndef AMBIENT_ABOUTMOD_LIBRARIES_H
+#define AMBIENT_ABOUTMOD_LIBRARIES_H
+/*
+ * $Id: about.h,v 1.5 2006/12/20 13:34:20 fab Exp $
+ */
+
+/* About_GetLogo() types */
+enum {
+	ABOUT_LOGO_AMBIENT,
+	ABOUT_LOGO_MUI,
+	ABOUT_LOGO_ALTIVEC,
+	ABOUT_LOGO_ZLIB,
+	ABOUT_LOGO_LIBPNG,
+	ABOUT_LOGO_MORPHOS
+};
+
+/* About_GetText() types */
+enum {
+	ABOUT_TEXT_QUOTES_CRYPT,
+};
+
+#endif /* AMBIENT_ABOUTMOD_LIBRARIES_H */

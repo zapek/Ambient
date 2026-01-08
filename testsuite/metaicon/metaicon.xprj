@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<FlowStudioProjectFile>
+    <FileVersion major="0" minor="1"/>
+    <Project>
+        <Option projectname="metaicon"/>
+        <Option autosave="1"/>
+        <Option buildcommand="gg:bin/make -f"/>
+        <Option makefile="Makefile"/>
+        <Option manualmakefile="0"/>
+        <Option quietoutput="0"/>
+        <Option defaulttarget="RELEASE"/>
+        <Option activetarget="RELEASE"/>
+        <Option crossbuild="0"/>
+        <Option crossserver=""/>
+        <Option crosslogin=""/>
+        <Option crossdir=""/>
+        <Target name="RELEASE">
+            <Option type="0"/>
+            <Option execfile="metaicon"/>
+            <Option execdir=""/>
+            <Option objectsdir=""/>
+            <Option arguments=""/>
+            <Option depsfile=""/>
+            <Option autodeps="1"/>
+            <Option customcompiler="0"/>
+            <Option customlinker="0"/>
+        </Target>
+        <Target name="DEBUG">
+            <Option type="0"/>
+            <Option execfile="metaicon_DEBUG"/>
+            <Option execdir=""/>
+            <Option objectsdir=""/>
+            <Option arguments=""/>
+            <Option depsfile=""/>
+            <Option autodeps="1"/>
+            <Option customcompiler="1"/>
+            <Option customlinker="1"/>
+            <CompilerSettings>
+                <Option cc_predefined="6"/>
+                <Option cc="ppc-morphos-gcc-5"/>
+                <Option cflags="-g -O0"/>
+                <Option cincludes=""/>
+                <Option cdefines=""/>
+                <Option cxx_predefined="4"/>
+                <Option cxx="ppc-morphos-g++-5"/>
+                <Option cppflags="-fconstant-string-class=OBConstantString -std=gnu99 -g -O0"/>
+                <Option cppincludes=""/>
+                <Option cppdefines=""/>
+                <Option objcc_predefined="6"/>
+                <Option objcc="ppc-morphos-gcc-5"/>
+                <Option objcflags=""/>
+                <Option objcincludes="-I/gg/Frameworks/include"/>
+                <Option objcdefines=""/>
+            </CompilerSettings>
+            <LinkerSettings>
+                <Option linkerpath="ppc-morphos-gcc-5"/>
+                <Option linkerflags="-g"/>
+                <Option linkerlibraries=""/>
+            </LinkerSettings>
+        </Target>
+        <LinkerSettings>
+            <Option linkerpath="ppc-morphos-gcc-5"/>
+            <Option linkerflags=""/>
+            <Option linkerlibraries="../../objects/750-final/sxmlc.o ../../objects/750-final/sxmlsearch.o -ldebug"/>
+        </LinkerSettings>
+        <CompilerSettings>
+            <Option cc_predefined="6"/>
+            <Option cc="ppc-morphos-gcc-5"/>
+            <Option cflags=""/>
+            <Option cincludes="-I../.."/>
+            <Option cdefines=""/>
+            <Option cxx_predefined="4"/>
+            <Option cxx="ppc-morphos-g++-5"/>
+            <Option cppflags=""/>
+            <Option cppincludes=""/>
+            <Option cppdefines=""/>
+            <Option objcc_predefined="6"/>
+            <Option objcc="ppc-morphos-gcc-5"/>
+            <Option objcflags="-fconstant-string-class=OBConstantString -std=gnu99"/>
+            <Option objcincludes="-I/gg/Frameworks/include"/>
+            <Option objcdefines=""/>
+        </CompilerSettings>
+        <FileUnit filepath="metaicon.c">
+            <Option inproject="1"/>
+            <Option filetype="1"/>
+        </FileUnit>
+    </Project>
+</FlowStudioProjectFile>

@@ -1,0 +1,145 @@
+;
+; Ambient installer script
+;
+; $VER: Install 1.3 (24.03.2006)
+;
+
+failat 21
+
+echo "Ambient installation"
+echo "--------------------"
+echo ""
+
+ask "This will install/upgrade Ambient on your system. Continue ? (y/n)"
+if warn
+
+; create directories
+echo "creating directories.." noline
+makedir >NIL: mossys:Ambient 
+makedir >NIL: mossys:Ambient/libs 
+makedir >NIL: mossys:Ambient/modules 
+makedir >NIL: mossys:Ambient/images
+makedir >NIL: mossys:Ambient/docs
+makedir >NIL: mossys:Ambient/scripts
+makedir >NIL: mossys:Ambient/catalogs
+makedir >NIL: mossys:Ambient/arexx
+makedir >NIL: sys:Prefs/Ambient
+makedir >NIL: sys:Prefs/Ambient/filetypes
+makedir >NIL: sys:Prefs/Ambient/filetypes/application
+makedir >NIL: sys:Prefs/Ambient/filetypes/audio
+makedir >NIL: sys:Prefs/Ambient/filetypes/image
+makedir >NIL: sys:Prefs/Ambient/filetypes/model
+makedir >NIL: sys:Prefs/Ambient/filetypes/text
+makedir >NIL: sys:Prefs/Ambient/filetypes/video
+makedir >NIL: sys:Prefs/Ambient/filetypes/message
+makedir >NIL: sys:Prefs/Ambient/filetypes/multipart
+makedir >NIL: sys:Prefs/Ambient/filetypes/internal
+echo " done"
+
+; copy stuff
+echo "copying main executable.." noline
+copy Ambient mossys:Ambient quiet
+protect mossys:Ambient/Ambient +RWED >NIL:
+echo " done"
+
+if exists syslibs
+    echo "copying system libraries.." noline
+    copy syslibs/#? mossys:libs quiet
+    echo " done"
+endif
+
+if exists libs
+    echo "copying private libraries.." noline
+    copy libs/#? mossys:Ambient/libs quiet
+    echo " done"
+endif
+
+echo "copying modules.." noline
+copy modules/#? mossys:Ambient/modules/ quiet
+echo " done"
+
+ask "Do you want to overwrite already existing UI images in MOSSYS:Ambient/images/? (y/n)"
+if warn
+	echo "copying images.." noline
+	copy images/#? mossys:Ambient/images/ quiet
+else
+	echo "copying new images.." noline
+	copy images/#? mossys:Ambient/images/ quiet dontovr
+endif
+echo " done"
+
+echo "copying scripts.." noline
+copy scripts/#? mossys:Ambient/scripts/ quiet
+echo " done"
+
+echo "copying arexx scripts.." noline
+copy arexx/#? mossys:Ambient/arexx/ quiet
+echo " done"
+
+echo "copying catalogs.." noline
+copy catalogs/#? mossys:Ambient/catalogs/ quiet all
+echo " done"
+
+echo "copying docs.." noline
+copy docs/#? mossys:Ambient/docs/ quiet
+echo " done"
+
+echo "copying recognition.db.." noline
+copy recognition.db mossys:Ambient/ quiet
+echo " done"
+
+ask "Do you want to install the LoadWB command (recommended) ? (y/n)"
+if warn
+    echo "copying LoadWB.." noline
+    copy c/LoadWB mossys:c quiet
+	protect mossys:c/loadwb +RWED >NIL:
+    echo " done"
+endif
+
+ask "Do you want to install the Open command? (y/n)"
+if warn
+	echo "copying Open.." noline
+	copy c/Open mossys:c quiet
+	protect mossys:c/Open +RWED >NIL:
+    echo " done"
+endif
+
+if not exists sys:prefs/Ambient/Advanced.conf
+    echo "copying advanced prefs.." noline
+	copy "prefs/Advanced.conf,default" sys:prefs/Ambient/Advanced.conf
+    echo " done"
+else
+    echo ""
+    echo "There is an example configuration in prefs/ which you can"
+    echo "install to SYS:Prefs/Ambient/Advanced.conf"
+endif
+
+ask "Do you want to update your own filetypes (Recommend. This only renames filetypes if required, no settings will go lost)? (y/n)"
+if warn
+	echo "updating filetypes.." noline
+	cd "SYS:Prefs/Ambient/Filetypes" 
+	; check for old superfluous descriptors and rename them (not very
+	; smart yet, but should work in most cases)
+	rename application/msexcel      application/vnd.ms-excel      >NIL:
+	rename application/x-powerpoint application/vnd.ms-powerpoint >NIL:
+	rename audio/x-mka              audio/x-matroska              >NIL:
+	rename video/x-mkv              video/x-matroska              >NIL: 
+	rename audio/flac               audio/x-flac                  >NIL:
+	rename audio/x-c64              audio/prs.sid                 >NIL:
+	rename text/x-javascript        application/javascript        >NIL:
+	rename text/x-blitzbasic        application/x-blitzbasic      >NIL:
+	rename text/x-manual            application/x-manual          >NIL:
+	rename text/x-ftxt              application/x-ftxt            >NIL:
+	echo " done"
+endif
+
+echo ""
+echo "Ambient successfully installed. Have a nice day."
+echo ""
+
+else
+
+echo "Why do you bother running the script then? Go away."
+
+endif
+

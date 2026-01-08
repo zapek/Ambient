@@ -1,0 +1,127 @@
+Ambient draft: views
+$Id: views.readme,v 1.2 2005/07/04 23:06:09 laire Exp $
+
+
+Introduction:
+-------------
+Views are a custom representation of an URI. It can be a directory content
+displayed as icons or as a list, it can be a picture, a mp3 file, etc.. They
+are a subclass of viewclass which is an internal Ambient class itself subclass
+of MUIC_Virtgroup.
+
+
+Basics:
+-------
+- Identification: view needs to report which mimetype and which protocols they
+support. This needs to be done early (before a view is actually used). It also
+needs to report which modes it supports with a default mode, for example
+iconview can display as icons, icons for all files and thumbnails
+
+example:
+
+iconview:
+- supported mimetypes: internal/rootview, internal/directory
+- supported URI protocols: file (it could support more protocols later on)
+
+fastlist: (should be renamed as listview :)
+- supported mimetypes: internal/directory
+- supported URI protocols: file (ditto)
+
+htmlview: (formerly known as V :)
+- supported mimetypes: text/html, text/plain, image/gif, image/jpeg,
+  image/png, image/xbm
+- supported URI protocols: http, ftp, mailto
+
+
+- I/O: views initiate their own I/O. There might be advanced I/O abstration
+later on for them to use
+
+
+Library calls:
+--------------
+All views are libraries and need to implement the following calls that Ambient
+will use to gather informations it needs.
+
+APTR AVIEW_GetClass(void):
+- get a pointer to the view class.
+
+struct TagItem * AVIEW_Query(void):
+- returns a static tagitem with requirements and
+  abilities of the class. Following tags are available:
+
+  - AVIEW_Query_Version (ULONG)
+        The version of the view.
+
+  - AVIEW_Query_Revision (ULONG)
+        The revision of the view.
+
+  - AVIEW_Query_Copyright (STRPTR)
+        A string containing some copyright informations.
+
+  - AVIEW_Query_Info (STRPTR)
+        A generic information string describing the view.
+
+  - AVIEW_Query_APIVersion (ULONG)
+        Specify which version of the API the view implements.
+        The current implementation is version 1. If this tag is not specified
+        it defaults to API version 1.
+
+  - AVIEW_Query_HasPrefs (ULONG)
+        Set this tag to TRUE if your plugin implements preferences support.
+        Preferences support is not implemented yet.
+
+  - AVIEW_Query_MimeType (STRPTR)
+  		Specifies a supported mimetype (eg. "text/plain"). This tag can be
+        specified multiple times if your view supports more than one mimetype.
+
+  - AVIEW_Query_MimeExtension (STRPTR)
+  		Specifies a supported file extension (eg. "txt"). This tag can be
+        specified multiple times if your view supports more than one filename
+        extension.
+
+  - AVIEW_Query_Viewmode_Name (STRPTR)
+  		Specifies a name for one of the view's display mode. This is not
+        necessary if you only have one display mode. This name will be
+        displayed in various places like a view's context menu. There can be
+        multiple tags, the first one being the default viewmode. You must also
+        supply a AVIEW_Query_ViewMode_RexxName or this tag is ignored.
+
+  - AVIEW_Query_ViewMode_RexxName (STRPTR)
+  		Specifies the ARexx name of the view display mode so it can be
+        referenced through ARexx or built in commands. This tag goes in pair
+        with AVIEW_Query_Viewmode_Name.
+
+  - XXX: implement some program scanning hook or language scanning system
+
+
+
+
+Methods:
+--------
+The following methods are sent to the view:
+
+MM_View_LoadURI,
+MM_View_Abort,
+MM_View_Mode,
+MM_View_Setup,
+MM_View_Cleanup,
+MM_View_Refresh,
+
+
+The following methods can be sent to the superclass by the view:
+
+MM_View_ReadArgs,
+MM_View_SetWindowPosition,
+MM_View_SetStatus,
+MM_View_ContextMenuMerge,
+
+
+The following attributes are gathered from the view by the superclass:
+
+
+The following attributes are available for the view:
+
+  - MA_View_ModeIndex [IS.] (ULONG)
+  		Specifies the selected mode from the ones supplied by
+        AVIEW_Query_Viewmode_Name/RexxName. 0 is the first.
+

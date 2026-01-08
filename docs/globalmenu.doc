@@ -1,0 +1,84 @@
+
+
+Ambient
+-----------------
+...                   
+
+
+
+Edit                     (standard edit functions, could be later enhanced with clipboardviewer/manager and such stuff)     
+-----------------
+Cut
+Copy 
+Paste
+Paste into
+-----------------
+Select all
+Invert
+-----------------
+
+
+
+
+View                     (only active on Listers, Iconviews and Root  -> View/Window context)
+-----------------
+New drawer...
+-----------------
+  Icons                  (radio)
+x List
+-----------------
+x Show all files         (bool)
+x Thumbnails             (bool)
+-----------------
+Sort by  > Name
+         > Size
+         ...
+-----------------
+Find...                  
+-----------------
+
+
+
+Icons                    (only active if one ore more icons are selected -> Icon/ Selection context)
+-----------------
+Information...
+-----------------
+Snapshot
+Unsnapshot
+-----------------
+Put away                 (only active on links)
+Eject                    (only for removable devices)
+-----------------
+Rename...
+Duplicate
+Delete...
+-----------------
+Format...                (only active on devices)
+-----------------
+
+
+
+Objects
+-----------------
+....
+
+
+Utilities
+-----------------
+Exchange...
+Sound...
+System Monitor...
+System Log...
+-----------------
+Format Disk...
+-----------------
+
+
+Settings
+-----------------
+...
+
+
+Debug
+-----------------
+...

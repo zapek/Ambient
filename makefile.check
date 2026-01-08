@@ -1,0 +1,52 @@
+#
+# Ambient
+# © 2001-2005 by David Gerber
+# © 2005-2006 Ambient Open Source Team
+#
+# All Rights Reserved
+#
+# $Id: makefile.check,v 1.12 2012/05/13 09:44:17 tcheko Exp $
+#
+
+all: png2c.check flexcat.check
+
+.PHONY: png2c.check
+png2c.check:
+	@echo -n "PNG2C..."
+ifeq ($(shell uname), MorphOS) 
+ifneq ($(shell ./png2c --build-info 2>/dev/null), ixemul)
+	@echo " FAILED"
+	@echo ""
+	@echo "Ambients build process needs an ixemul compiled png2c. You can download a ready" 
+	@echo "to use build from:" 
+	@echo "http://prdownloads.sourceforge.net/morphosambient/png2c-1.1-ixemul.tgz?download" 
+	@exit 20;
+endif		
+else
+ifneq ($(wildcard png2c), png2c)
+# ifeq ($(shell ls . /bin /usr/bin /usr/local/bin 2>/dev/null | grep -i "png2c" 2>/dev/null),)
+	@echo " FAILED"
+	@echo "Ambients build process needs png2c. You can download it from:"
+	@echo "http://prdownloads.sourceforge.net/morphosambient/png2c-1.1-source.tgz"
+	@exit 20;
+endif
+endif
+	@echo " OK"
+
+
+
+FLEXCATSEARCHPATH = $(PATH) $$FLEXCATPATH
+
+.PHONY: flexcat.check
+flexcat.check:
+	@echo -n "FLEXCAT..."
+ifeq ($(shell ls `echo $(FLEXCATSEARCHPATH) | sed s/:/\ /g` 2>/dev/null | grep -i "^flexcat$$" 2>/dev/null),)
+	@echo " FAILED"
+	@echo "Ambients build process needs flexcat. You can download it from:"
+	@echo "http://uk.aminet.net/pub/aminet/dev/misc/FlexCat-MorphOS.lha"
+	@echo ""
+	@echo "If you have installed FlexCat not to current dir, /bin, /usr/bin, /usr/local/bin" 
+	@echo "or /c then you can setenv FLEXCATPATH to required location."
+	@exit 20;
+endif
+	@echo " OK"

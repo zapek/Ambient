@@ -1,0 +1,44 @@
+##base _WorkbenchBase
+##bias 30
+*--- functions in V36 or higher (Release 2.0) ---
+UpdateWorkbench(name,lock,flag)(a0/a1/d0)
+QuoteWorkbench()()
+StartWorkbench(flags,ptr)(d0/d1)
+*
+Foobar1()()
+Foobar2()()
+*AddAppWindowA(id,userdata,window,msgport,taglist)(d0/d1/a0/a1/a2)
+*
+*RemoveAppWindow(appWindow)(a0)
+*
+AddAppIconA(id,userdata,text,msgport,lock,diskobj,taglist)(d0/d1/a0/a1/a2/a3/a4)
+*
+RemoveAppIcon(appIcon)(a0)
+*
+AddAppMenuItemA(id,userdata,text,msgport,taglist)(d0/d1/a0/a1/a2)
+*
+RemoveAppMenuItem(appMenuItem)(a0)
+*
+*--- functions in V39 or higher (Release 3) ---
+*
+WBConfig(type,wbp)(d0/d1)
+*
+WBInfo(lock,name,screen)(a0/a1/a2)
+*
+*--- functions in V44 or higher (Release 3.5) ---
+OpenWorkbenchObjectA(name,tags)(a0/a1)
+CloseWorkbenchObjectA(name,tags)(a0/a1)
+WorkbenchControlA(name,tags)(a0/a1)
+AddAppWindowDropZoneA(aw,id,userdata,tags)(a0,d0/d1/a1)
+RemoveAppWindowDropZone(aw,dropZone)(a0/a1)
+ChangeWorkbenchSelectionA(name,hook,tags)(a0/a1/a2)
+MakeWorkbenchObjectVisibleA(name,tags)(a0/a1)
+*
+*--- private functions ---
+AppWindowObtain(win)(sysv,base)
+AppWindowRelease()(sysv,base)
+*
+*--- functions in V51 or higher ---
+ManageDesktopObjectA(target,action,taglist)(sysv,base)
+CreateDrawerA(drawer,taglist)(sysv,base)
+##end

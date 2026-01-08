@@ -1,0 +1,5505 @@
+## version $VER: ambient.catalog 7.30 (13.01.2023)
+## language français
+## codeset 0
+;
+## chunk AUTH Jean-Marc MOSSU  Joel EHRET  Mickael PERNOT  Antoine DUBOURG Philippe Rimauro
+;
+;$Id: ambient.francais.ct,v 1.107 2023/01/14 03:30:13 moats Exp $
+;
+; *** Please do not use these strings anymore.
+;
+MSG_OK
+Ok
+; Ok
+;
+MSG_CANCEL
+Annuler
+; Cancel
+;
+MSG_NO
+Non
+; No
+;
+MSG_YES
+Oui
+; Yes
+;
+MSG_SAVE
+Sauver
+; Save
+;
+MSG_USE
+Utiliser
+; Use
+;
+MSG_TEST
+Essayer
+; Test
+;
+MSG_UNKNOWN
+Inconnu
+; Unknown
+;
+MSG_CLOSE
+Fermer
+; Close
+;
+MSG_OK_REQ
+*OK
+; *OK
+;
+MSG_YES_NO_REQ
+*Oui|Non
+; *Yes|No
+;
+MSG_YESNO
+_Oui|_Non
+; _Yes|_No
+;
+MSG_SELECT
+Sélectionner
+; Select
+;
+MSG_ADD
+Ajouter
+; Add
+;
+MSG_REMOVE
+Supprimer
+; Remove
+;
+MSG_REVERT
+Inverser
+; Revert
+;
+MSG_PERMSAVE
+Toujours sauver les préférences
+; Save settings permanently
+;
+; Menus.c (menus.c)
+;
+MSG_MENU_WB_DEVICELIST
+Mon MorphOS...
+; My MorphOS...
+;
+MSG_MENU_WB_EXECUTE
+Exécuter une commande...
+; Execute Command...
+;
+MSG_MENU_WB_NEWSHELL
+Nouveau shell...
+; New Shell...
+;
+MSG_MENU_WB_LASTMESSAGE
+Dernier message
+; Last Message
+;
+MSG_MENU_WB_ABOUT
+À propos...
+; About...
+;
+MSG_MENU_WB_ABOUTMOS
+À propos de MorphOS...
+; About MorphOS...
+;
+MSG_MENU_WB_QUIT
+Quitter
+; Quit
+;
+MSG_MENU_SHUTDOWN
+Arrêter...
+; Shut Down...
+;
+MSG_MENU_EDIT
+Édition
+; Edit
+;
+MSG_MENU_EDIT_CUT
+Couper
+; Cut
+;
+MSG_MENU_EDIT_COPY
+Copier
+; Copy
+;
+MSG_MENU_EDIT_PASTE
+Coller
+; Paste
+;
+MSG_MENU_EDIT_PASTEINTO
+Coller dans...
+; Paste Into...
+;
+MSG_MENU_EDIT_SELECTALL
+Sélectionner tout
+; Select All
+;
+MSG_MENU_EDIT_INVERT
+Inverser
+; Invert
+;
+MSG_MENU_VIEW
+Fenêtre
+; View
+;
+MSG_MENU_VIEW_NEWDRAWER
+Nouveau répertoire...
+; New Drawer...
+;
+MSG_MENU_VIEW_LIST
+Mode de la liste
+; List Mode
+;
+MSG_MENU_VIEW_SORT
+Trier
+; Sort By
+;
+MSG_MENU_VIEW_SORTBYNAME
+par nom
+; Name
+;
+MSG_MENU_VIEW_SORTBYTYPE
+par type
+; Type
+;
+MSG_MENU_VIEW_SORTBYSIZE
+par taille
+; Size
+;
+MSG_MENU_VIEW_SORTBYDATE
+par date
+; Date
+;
+MSG_MENU_ICONS
+Icônes
+; Icons
+;
+MSG_MENU_ICONS_INFORMATION
+Information...
+; Information...
+;
+MSG_MENU_ICONS_PUTAWAY
+Ranger
+; Put Away
+;
+MSG_MENU_ICONS_EJECT
+Éjecter
+; Eject
+;
+MSG_MENU_ICONS_RENAME
+Renommer...
+; Rename...
+;
+MSG_MENU_ICONS_DELETE
+Supprimer
+; Delete
+;
+MSG_MENU_ICONS_FORMAT
+Formater...
+; Format...
+;
+MSG_MENU_ICONS_TRASH
+Déplacer dans la corbeille
+; Move to Trashcan
+;
+MSG_MENU_ICONS_RESTORE
+Restaurer
+; Restore
+;
+MSG_MENU_ICONS_EMPTY
+Vider la corbeille
+; Empty Trashcan
+;
+MSG_MENU_VIEW_NETWORKSSETTINGS
+Réglages des partages réseaux...
+; Share Settings...
+;
+MSG_MENU_VIEW_NETWORKSCONNECT
+Connexion...
+; Connect...
+;
+MSG_MENU_UTILITIES
+Utilitaires
+; Utilities
+;
+MSG_MENU_UTILITIES_FORMAT
+Formater un disque...
+; Format Disk...
+;
+MSG_MENU_UTILITIES_FIND
+Rechercher...
+; Find...
+;
+MSG_MENU_UTILITIES_SOUND
+Son...
+; Sound...
+;
+MSG_MENU_UTILITIES_SYSTEMINFO
+Moniteur système...
+; System Monitor...
+;
+MSG_MENU_UTILITIES_SYSTEMLOG
+Journal système...
+; System Log...
+;
+MSG_MENU_UTILITIES_EXCHANGE
+Exchange...
+; Exchange...
+;
+MSG_MENU_SETTINGS
+Préférences
+; Settings
+;
+MSG_MENU_SETTINGS_DESKTOP
+Préférences d'Ambient...
+; Ambient...
+;
+MSG_MENU_SETTINGS_SYSTEM
+Préférences de MorphOS...
+; System...
+;
+MSG_MENU_SETTINGS_MUI
+Préférences MUI d'Ambient...
+; Ambient MUI...
+;
+MSG_MENU_SETTINGS_MUI_GLOBAL
+Préférences MUI globales...
+; MUI...
+;
+MSG_MENU_SETTINGS_SAVE
+Sauver les préférences
+; Save Settings
+;
+MSG_MENU_TOOLS
+Outils
+; Tools
+;
+MSG_MENU_DEBUG
+Déverminage
+; Debug
+;
+MSG_MENU_DEBUGACTION
+Actions de déverminage
+; Debug Actions
+;
+MSG_MENU_DEBUGACTION_MEMCHECK
+Vérification de la mémoire
+; Memory Check
+;
+MSG_MENU_DEBUGACTION_MEMSTATS
+Récupération des statistiques de la mémoire
+; Dump Memory Stats
+;
+MSG_MENU_DEBUGACTION_MEMSTATS_ALL
+Récupération des détails de la mémoire
+; Dump Memory Details
+;
+MSG_MENU_DEBUGACTION_STARTMEMRECORD
+Commencer l'enregistrement de la mémoire
+; Start Memory Recording
+;
+MSG_MENU_DEBUGACTION_STOPMEMRECORD
+Arrêter l'enregistrement de la mémoire
+; Stop Memory Recording
+;
+; PrefsWin_MainClass.c (prefswin_mainclass.c)
+;
+MSG_PREFSWIN_SAVE
+_Sauver
+; _Save
+;
+MSG_PREFSWIN_SAVE_HELP
+Toutes les modifications faites dans les préférences seront sauvées. Les préférences seront fermées.
+; All changes made in the preferences will be saved and the window will be closed.
+;
+MSG_PREFSWIN_USE
+_Utiliser
+; _Use
+;
+MSG_PREFSWIN_USE_HELP
+Toutes les modifications faites dans les préférences seront conservées jusqu'au prochain redémarrage. Les préférences seront fermées.
+; All changes made in the preferences will stay active until next reboot and the window will be closed.
+;
+MSG_PREFSWIN_TEST
+_Tester
+; _Test
+;
+MSG_PREFSWIN_TEST_HELP
+Toutes les modifications faites dans les préférences seront temporairement activées pour un essai. Les préférences restent ouvertes.
+; All changes made in the preferences will become temporary active and the window stays open.
+;
+MSG_PREFSWIN_CANCEL
+_Annuler
+; _Cancel
+;
+MSG_PREFSWIN_CANCEL_HELP
+Toutes les modifications seront perdues. Les préférences seront fermées.
+; All changes made in the preferences will reset to last saved state and the window will be closed.
+;
+; *** Preferences Window Tabs
+;
+MSG_PREFSWIN_TAB_BACKGROUNDS
+Arrière-plans
+; Backgrounds
+;
+MSG_PREFSWIN_TAB_ICONDISPLAY
+Icônes
+; Icon Display
+;
+MSG_PREFSWIN_TAB_BOOKMARKS
+Favoris
+; Bookmarks
+;
+MSG_PREFSWIN_TAB_MISCELLANEOUS
+Divers
+; Miscellaneous
+;
+MSG_PREFSWIN_TAB_CLILAUNCHING
+Console CLI
+; CLI Launching
+;
+MSG_PREFSWIN_TAB_DRAGANDDROP
+Glisser et déposer
+; Drag & Drop
+;
+MSG_PREFSWIN_TAB_PANELS
+Panneaux
+; Panels
+;
+MSG_PREFSWIN_TAB_LISTER
+Listeurs
+; Lister
+;
+MSG_PREFSWIN_TAB_MIME
+MIME
+; Mime
+;
+MSG_PREFSWIN_TAB_WINDOW
+Fenêtres
+; Window
+;
+MSG_PREFSWIN_TAB_KEYBOARD
+Clavier
+; Keyboard
+;
+MSG_PREFSWIN_TAB_ADVANCED
+Avancé
+; Advanced
+;
+;MSG_PREFSWIN_TAB_TOOLBAR /* needed ???    <- yes, someday. (tokai)*/
+;Toolbar
+;Liîta
+;Dienstprogramm-Leiste  
+;Barre de navigation
+;Barra degli strumenti
+;Eszközsor
+;Pasek narzêdzi
+;Työkalupalkki
+;Verktygsfält
+;Toolbar
+;
+; PrefsWin_IconDisplay.c (prefswin_icondisplayclass.c)
+;
+MSG_PREFSWIN_ICONDISPLAY_MOUSEHOVER
+Acti_vation sous la souris
+; Icon _glows under mouse
+;
+MSG_PREFSWIN_ICONDISPLAY_MOUSEHOVER_HELP
+Les icônes changent d'état lorsque la souris passe au-dessus d'elles.
+; The icon under the mouse pointer gets highlighted when moving over it.
+;
+MSG_PREFSWIN_ICONDISPLAY_SEPARATEFILES
+Ranger les fichiers et répertoires séparément
+; Separa_te files from drawers
+;
+;
+MSG_PREFSWIN_ICONDISPLAY_SEPARATEFILES_HELP
+En mode icônes, cette option crée une nouvelle rangée après le dernier répertoire rencontré.
+; Start a new row for files after last drawer icon in icon view.
+;
+MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP
+Apparition _progressive des icônes au démarrage
+; Fade icon on sta_rtup
+;
+MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP_HELP
+Au démarrage d'Ambient, cette option permet de faire apparaître les icônes avec un effet de fondu.
+; Enables icon fade when Ambient gets started.
+;
+MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT
+Icônes par défaut _transparentes
+; _Default icons transparent
+;
+MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT_HELP
+Cette option permet d'afficher les icônes par défaut en semi-transparence.
+; Default icons are displayed transparent when this option is enabled.
+;
+MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER
+Mar_que pour les appicons
+; A_ppicon identifier
+;
+MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER_HELP
+Ajoute une marque spéciale aux icônes des applications iconifiées, permettant de les identifier plus aisément.
+; Any application icon gets a little mark when this option is enabled.
+;
+MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER
+Flèche pour les raccourcis
+; S_hortcut identifier
+;
+MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER_HELP
+Ajoute une marque spéciale aux icônes de raccourcis, permettant de les identifier plus aisément.
+; Any icon left out as shortcut will get marked by this option.
+;
+MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT
+Figer automatiquement les icônes
+; _Automatic snapshot
+;
+MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT_HELP
+Si cette option est activée, la position des icônes est sauvegardée automatiquement lors d'un déplacement.
+; Icons will automatically be fixed at their current position.
+;
+MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS
+Icônes PNG deux états
+; T_wo state PNG icons
+;
+MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS_HELP
+Cette option permet d'activer la prise en charge des icônes PNG à deux états, à savoir une image pour l'état normal, et une autre pour l'état sélectionné.
+; This enables dual PNG icon support, which contain a separate image for unselected and selected state.
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION
+Information des _disques :
+; Drive _info:
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION_HELP
+Cette option détermine de quelle manière doit être affiché l'espace disque disponible des différents médias.
+; Specify the way device icons show available disk space.
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_NONE
+Aucune
+; None
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_TEXT
+Texte
+; Text
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_GAUGE
+Jauge
+; Gauge
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_TEXTGAUGE
+Texte + jauge
+; Text+Gauge
+;
+MSG_PREFSWIN_ICONDISPLAY_REGTITLE_DESKTOP
+Bureau
+; Desktop
+;
+MSG_PREFSWIN_ICONDISPLAY_REGTITLE_WINDOW
+Fenêtre
+; Window
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_SOLID
+Solide
+; Solid
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_CHECKERED
+Validé
+; Checkered
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_TRANSPARENT
+Transparent
+; Transparent
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAY
+Affichage
+; Display
+;
+MSG_PREFSWIN_DRAGDROP_DRAGGING_EFFECT
+Effet de _glissement :
+; _Dragging effect:
+;
+MSG_PREFSWIN_DRAGDROP_DROPPING_MARK
+Effet de _dépose :
+; Dropping _mark:
+;
+; *** Progress Window
+;
+MSG_PROGRESS_MOVINGFILE_TITLE
+Ambient · Déplacement du fichier...
+; Ambient · Moving file...
+;
+MSG_PROGRESS_MOVINGFILES_TITLE
+Ambient · Déplacement des fichiers...
+; Ambient · Moving files...
+;
+MSG_PROGRESS_COPYINGFILE_TITLE
+Ambient · Copie du fichier...
+; Ambient · Copying file...
+;
+MSG_PROGRESS_COPYINGFILES_TITLE
+Ambient · Copie des fichiers...
+; Ambient · Copying files...
+;
+MSG_PROGRESS_DELETINGFILE_TITLE
+Ambient · Effacement du fichier...
+; Ambient · Deleting file...
+;
+MSG_PROGRESS_DELETINGFILES_TITLE
+Ambient · Effacement des fichiers...
+; Ambient · Deleting files...
+;
+MSG_PROGRESS_BUFFERING
+Mise en cache...
+; Buffering...
+;
+MSG_PROGRESS_TIMEREMAINING
+Temps restant : %s. Vitesse : %s/s
+; Time remaining: %s.  Speed: %s/s
+;
+MSG_PROGRESS_DAY
+%ld jour
+; %ld day
+;
+MSG_PROGRESS_DAYS
+%ld jours
+; %ld days
+;
+MSG_PROGRESS_HOUR
+%ld heure
+; %ld hour
+;
+MSG_PROGRESS_HOURS
+%ld heures
+; %ld hours
+;
+MSG_PROGRESS_MINUTE
+%ld minute
+; %ld minute
+;
+MSG_PROGRESS_MINUTES
+%ld minutes
+; %ld minutes
+;
+MSG_PROGRESS_SECOND
+%ld seconde
+; %ld second
+;
+MSG_PROGRESS_SECONDS
+%ld secondes
+; %ld seconds
+;
+MSG_PROGRESS_FILESDONE
+Fichiers traités :
+; Files done:
+;
+MSG_PROGRESS_FILESDONE_HELP
+Renseigne sur l'état d'avancement de la copie.
+; Shows detailed progress information.
+;
+MSG_PROGRESS_STOP
+Arrêter
+; _Stop
+;
+MSG_PROGRESS_STOP_HELP
+Ce bouton interrompt l'action en cours.
+; Abort current action.
+;
+; *** Format Window
+;
+MSG_FORMAT_WINDOW_TITLE
+Formatage du volume %s
+; Format Volume %s
+;
+MSG_FORMAT_MENU_PROJECT
+Formatage
+; Format
+;
+MSG_FORMAT_MENU_QUIT
+Quitter
+; Quit
+;
+MSG_FORMAT_ERROR
+Erreur de formatage
+; Formatting error
+;
+MSG_FORMAT_FORMATING
+Formatage en cours...
+; Formatting...
+;
+MSG_FORMAT_ERROR_RESERVED
+Ce nom est réservé par le système. Merci d'en choisir un autre.
+; This label is reserved by the system. Please use another name.
+;
+MSG_FORMAT_ERROR_NOTHING
+Vous devez indiquer un nom valide\npour le périphérique à formater. Vous n'avez rien indiqué.
+; You must supply a valid label name for\nthe device to format. You supplied nothing.
+;
+MSG_FORMAT_ERROR_CANNOT
+Ce périphérique ne peut être formaté.
+; This device cannot be formatted.
+;
+MSG_FORMAT_REALLY
+Voulez-vous réellement formater\n%s ?
+; Do you really want to format\n%s ?
+;
+MSG_FORMAT_LABEL
+Nom :
+; _Label:
+;
+MSG_FORMAT_LABEL_HELP
+Ce nom sera utilisé pour le nom du volume.
+; This name will be used as name for the volume.
+;
+MSG_FORMAT_FILESYSTEM
+Système de fichiers :
+; Filesystem:
+;
+MSG_FORMAT_FILESYSTEM_HELP
+Ce système de fichiers sera utilisé.
+; This filesystem will used.
+;
+MSG_FORMAT_STATUS
+Statut :
+; Status:
+;
+MSG_FORMAT_STATUS_HELP
+Ceci est l'état actuel du volume.
+; This is the current status of the volume.
+;
+MSG_FORMAT_GENERAL_GROUP
+Général
+; General
+;
+MSG_FORMAT_CREATE_ICON
+Créer une icône
+; Create _icon
+;
+MSG_FORMAT_CREATE_ICON_HELP
+Une icône sera créée pour ce disque pendant le formatage.
+; An icon for the drive will be created during format process.
+;
+MSG_FORMAT_SPECIFIC_GROUP
+Spécifique
+; Specific
+;
+MSG_FORMAT_CASE_SENSITIVE
+Sensible à la casse
+; Case sensiti_ve
+;
+MSG_FORMAT_CASE_SENSITIVE_HELP
+En cochant cette case, le nom de fichier sera sensible à la casse. Le fichier « Majuscule », par exemple, sera différent du fichier « majuscule ».
+; Interpret filenames case sensitive (e.g. "Foobar" would be a different file / directory than "foobar").
+;
+MSG_FORMAT_RECYCLED
+_Corbeille
+; _Recycled
+;
+MSG_FORMAT_RECYCLED_HELP
+En cochant cette case, le disque formaté contiendra un répertoire nommé « .recycled ». Ce répertoire contiendra les derniers fichiers supprimés.
+; Create a ".recycled" directory. This directory contains all currently deleted files. Further configuration for each volume is possible in the MorphOS System Preferences.
+;
+MSG_FORMAT_SHOWRECYCLED
+Afficher la corbeille
+; Show rec_ycled
+;
+MSG_FORMAT_SHOWRECYCLED_HELP
+Normalement, le répertoire « .recycled » est invisible. En cochant cette case, le répertoire sera visible.
+; Makes the ".recycled" directory visible or invisible. If its invisible it can only be accessed from command line.
+;
+MSG_FORMAT_FORMATTED
+Formaté
+; Formatted
+;
+MSG_FORMAT_UNFORMATTED
+Non formaté
+; Unformatted
+;
+MSG_FORMAT_PREPARING
+Préparation...
+; Preparing...
+;
+MSG_FORMAT_QUICK
+Formatage rapide...
+; _Quick Format...
+;
+MSG_FORMAT_QUICK_HELP
+Un minimum de données seulement sera écrit sur le support. ATTENTION : des logiciels spécialisés sont capables de retrouver les données de média formatés de cette manière !
+; Only the minimum required data will be written to media. ATTENTION: Special tools are able to retrieve data from such formatted drives!
+;
+MSG_FORMAT
+Formater...
+; _Format...
+;
+MSG_FORMAT_HELP
+Le support sera entièrement écrasé. Nécessite un certain temps, mais détruit irrémédiablement toutes les données !
+; The entire media will overwritten! Takes a lot of time, but destroys all data on drive!
+;
+MSG_FORMAT_AND_VERIFY
+Formater et vérifier...
+; Format & _Verify...
+;
+MSG_FORMAT_AND_VERIFY_HELP
+Le support sera entièrement écrasé et les anciennes données seront supprimées ! Le support sera ensuite relu pour tester son intégrité.
+; The entire media will overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
+;
+MSG_FORMAT_CLOSE
+Fermer
+; _Close
+;
+MSG_FORMAT_CLOSE_HELP
+La fenêtre sera fermée sans aucune action.
+; Window gets closed without any action.
+;
+; *** Rename Window
+;
+MSG_RENAME_WINDOW_TITLE
+Renommer
+; Rename
+;
+MSG_RENAME_NEW_NAME
+\033c\033bNouveau nom :
+; \033c\033bNew name:
+;
+MSG_RENAME_NEW_NAME_HELP
+Saisissez ici le nouveau nom.
+; Enter the new name here.
+;
+MSG_RENAME_RENAME
+_Renommer
+; _Rename
+;
+MSG_RENAME_RENAME_HELP
+Le nom spécifié dans le champ texte de la fenêtre sera utilisé comme nouveau nom.
+; The name specified within the text field in this window will be used as new name.
+;
+MSG_RENAME_CANCEL
+A_nnuler
+; _Cancel
+;
+MSG_RENAME_CANCEL_HELP
+Arrête l'opération de changement de nom. La fenêtre sera fermée.
+; Aborts the rename operation. The window will be closed.
+;
+; *** Appclass
+;
+MSG_DELETE_TITLE
+Suppression...
+; Deleting...
+;
+MSG_DELETE_CONFIRM
+Voulez-vous réellement supprimer\n%s ?
+; Do you really want to delete\n%s ?
+;
+MSG_DELETE_CONFIRM_MULTIPLE
+Voulez-vous réellement supprimer\nles objets sélectionnés (%lu) ?
+; Do you really want to delete\nselected items (%lu) ?
+;
+MSG_TRASH_TITLE
+Déplacement vers la corbeille...
+; Moving to Trashcan...
+;
+MSG_TRASH_CONFIRM
+Voulez-vous réellement mettre\n%sà la corbeille ?
+; Do you really want to trash\n%s ?
+;
+MSG_TRASH_CONFIRM_MULTIPLE
+Voulez-vous réellement déplacer la sélection vers la corbeille (%lu) ?
+; Do you really want to trash\nselected items (%lu) ?
+;
+; *** Icon Information Window
+;
+MSG_INFOWIN_OLD_AMIGA_ICON
+\033Ancienne icône Amiga
+; \033cClassic Amiga icon
+;
+MSG_INFOWIN_NEWICON
+\033cNewIcon
+; \033cNewicon
+;
+MSG_INFOWIN_GLOWICON
+\033cGlowIcon
+; \033cGlowicon
+;
+MSG_INFOWIN_PNGICON
+\033cIcône PNG
+; \033cPNG icon
+;
+MSG_INFOWIN_DATATYPEICON
+\033cIcône Datatype
+; \033cDatatype icon
+;
+MSG_INFOWIN_SVGICON
+\033cIcône vectorielle
+; \033cSVG icon
+;
+MSG_INFOWIN_TYPE_TOOL_PROJECT
+_Type :
+; _Type:
+;
+MSG_INFOWIN_TYPE_TOOL_PROJECT_HELP
+Un outil est un programme. Un projet est un fichier créé par un programme dont le chemin est intégré dans l'icône et permet d'être ouvert par l'outil (programme).
+; A Tool is a program. A Project is a file created by a tool, whose path or name is embedded within the icon so it can be opened again.
+;
+MSG_INFOWIN_SCRIPT
+_Script
+; Scr_ipt
+;
+MSG_INFOWIN_SCRIPT_HELP
+Un script MorphOS est un fichier contenant des commandes brutes. Il est directement exécutable si le bit associé est positionné.
+; A MorphOS script is a file containing batch commands. It is directly executable if that bit is set.
+;
+MSG_INFOWIN_ARCHIVED
+_Archivé
+; _Archived
+;
+MSG_INFOWIN_ARCHIVED_HELP
+Le bit d'archivage est positionné par les programmes d'archivage et de sauvegarde pour indiquer que le fichier a été traité. Il est automatiquement réinitialisé si le fichier a été modifié, ce qui \
+permet de savoir rapidement quels fichiers ont été modifiés.
+; The archived bit is set by archiving and backup programs to tell the file has been processed. It is automatically cleared when the file is modified so one can quickly know which files changed.
+;
+MSG_INFOWIN_READABLE
+_Lisible
+; _Readable
+;
+MSG_INFOWIN_READABLE_HELP
+Le bit de lecture autorise la lecture du fichier. Il n'y a aucun intérêt à ne pas le positionner.
+; The readable bit allows a file to be read. It doesn't make much sense to not have it set.
+;
+MSG_INFOWIN_WRITABLE
+Mo_difiable
+; _Writable
+;
+MSG_INFOWIN_WRITABLE_HELP
+La présence du bit d'écriture autorise la modification du fichier. Absent, il peut être utilisé pour éviter un écrasement accidentel.
+; The writable bit allows a file to be written to. This can be used to prevent accidental writes to a file.
+;
+MSG_INFOWIN_EXECUTABLE
+E_xécutable
+; _Executable
+;
+MSG_INFOWIN_EXECUTABLE_HELP
+Le bit d'exécution autorise le chargement et l'exécution du fichier, dans le cas d'un programme. Il n'y a aucun intérêt à ne pas le cocher.
+; The executable bit allows a file to be loaded and run, provided it is a program. It doesn't make much sense to not have it set.
+;
+MSG_INFOWIN_DELETABLE
+E_ffaçable
+; Deleta_ble
+;
+MSG_INFOWIN_DELETABLE_HELP
+Le bit d'effacement autorise l'effacement du fichier. Il peut être enlevé pour éviter des effacements accidentels. Cependant, le fichier reste modifiable.
+; The deletable bit allows a file to be deleted. This can be used to prevent accidental deletions. It is still possible to write to the file, though.
+;
+MSG_INFOWIN_TOOL
+Outil
+; Tool
+;
+MSG_INFOWIN_PROJECT
+Projet
+; Project
+;
+MSG_INFOWIN_DISK_DISK
+Disque :
+; Disk:
+;
+MSG_INFOWIN_DISK_DISK_HELP
+Affiche le nom du disque.
+; Shows the disk name.
+;
+MSG_INFOWIN_DISK_SIZE
+Taille :
+; Size:
+;
+MSG_INFOWIN_DISK_SIZE_HELP
+Montre la capacité du média.
+; Shows the size of the media.
+;
+MSG_INFOWIN_DISK_USED
+Occupé :
+; Used:
+;
+MSG_INFOWIN_DISK_USED_HELP
+Montre la capacité actuellement utilisée.
+; Shows number of bytes currently in use.
+;
+MSG_INFOWIN_DISK_FREE
+Libre :
+; Free:
+;
+MSG_INFOWIN_DISK_FREE_HELP
+Montre l'espace restant.
+; Shows number of bytes currently available.
+;
+MSG_INFOWIN_DISK_FILESYSTEM
+Système de fichiers :
+; Filesystem:
+;
+MSG_INFOWIN_DISK_FILESYSTEM_HELP
+Ceci est le système de fichiers, s'il peut être détecté.
+; This is the filesystem type, if it can be detected.
+;
+MSG_INFOWIN_DISK_TYPE
+Type :
+; Type:
+;
+MSG_INFOWIN_DISK_TYPE_HELP
+Montre le type du média.
+; Shows the media type.
+;
+MSG_INFOWIN_DISK_BLOCKSIZE
+Taille des blocs :
+; Blocksize:
+;
+MSG_INFOWIN_DISK_BLOCKSIZE_HELP
+Taille d'un bloc du système de fichiers. Le bloc est l'espace disque minimal occupé par un fichier.
+; Granularity of the filesystem. A block is the minimum size taken by a file.
+;
+MSG_INFOWIN_DISK_STATUS
+Statut :
+; Status:
+;
+MSG_INFOWIN_DISK_STATUS_HELP
+Le statut d'un système de fichiers peut être:\n\n\033bprotégé en écriture\0033n\n\nle volume est protégé contre toute écriture.\n\n\033ben validation\0033n\n\nle volume est dévalidé et\nle système de fichiers tente\nde revenir à un état normal. Le volume\npeut être consulté mais pas modifié.\n\n\033bvalidé\033n\n\nle volume est valide et peut être totalement utilisé.
+; The filesystem status can be one of:\n\n\033bwrite protected\033n\nthe volume is physically protected\nagainst writes.\n\n\033bvalidating\033n\nthe volume is inconsistent and the\nfilesystem is \
+; currently trying to\nbring it to a safe state. The volume\ncan be read from but not written to.\n\n\033bvalidated\033n\nthe volume is valid and can be fully used.
+;
+MSG_INFOWIN_DISK_FEATURES
+Caractéristiques :
+; Features:
+;
+MSG_INFOWIN_DISK_FEATURES_HELP
+Liste des caractéristiques actuelles:\n\n\033bfichiers volumineux\033n\n\nle volume gère les fichiers de taille supérieure à 2 Go.\n\n\033bsensible à la casse\033n\n\nle volume\ndifférencie les \
+majuscules et les miniscules. Il n'est pas recommandé d'utiliser cette option.
+; This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
+; volumes.
+;
+MSG_INFOWIN_FILES
+Fichiers :
+; Files:
+;
+MSG_INFOWIN_FILES_HELP
+Montre le nombre de fichiers présents dans le répertoire.
+; Shows the number of files inside the directory.
+;
+MSG_INFOWIN_DIRS
+Répertoires :
+; Dirs:
+;
+MSG_INFOWIN_DIRS_HELP
+Montre le nombre de répertoires présents.
+; Shows the number of directories inside.
+;
+MSG_INFOWIN_HARDLINKS
+Liens physiques :
+; Hardlinks:
+;
+MSG_INFOWIN_HARDLINKS_HELP
+Montre le nombre de liens physiques dans le répertoire.
+; Shows the number of hardlinks inside the directory.
+;
+MSG_INFOWIN_SOFTLINKS
+Liens symboliques :
+; Softlinks:
+;
+MSG_INFOWIN_SOFTLINKS_HELP
+Montre le nombre de liens symboliques dans le répertoire.
+; Shows the number of softlinks inside the directory.
+;
+MSG_INFOWIN_LAST_CHANGED
+Dernière modification :
+; Modified:
+;
+MSG_INFOWIN_LAST_CHANGED_HELP
+Montre la dernière date de modification du fichier, répertoire ou volume.
+; Show when file, drawer or volume was changed the last time.
+;
+MSG_INFOWIN_COMMENT
+Commentaire :
+; Comment:
+;
+MSG_INFOWIN_COMMENT_HELP
+Ceci est le commentaire DOS du fichier.
+; This is the DOS file comment.
+;
+MSG_INFOWIN_BLOCKS
+Blocs :
+; Blocks:
+;
+MSG_INFOWIN_BLOCKS_HELP
+Nombre de blocs occupés par le fichier. Un bloc a généralement une taille de 512 octets.
+; Number of filesystem blocks taken by the file. A block is typically 512 bytes.
+;
+MSG_INFOWIN_SIZE
+Taille :
+; Size:
+;
+MSG_INFOWIN_SIZE_HELP
+Taille du fichier. Cette valeur peut ne pas être exacte puisque le système de fichiers utilise des tailles de blocs fixes.
+; Size of the file. This might not be the exact size taken from the storage as filesystems usually work using fixed block sizes.
+;
+MSG_INFOWIN_SIZEONDISK
+Taille sur le disque :
+; Size on disk:
+;
+MSG_INFOWIN_SIZEONDISK_HELP
+Espace réellement occupé sur le disque par le fichier, dépendant aussi de la taille des blocs.
+; Space really taken by the file on the disk, which depends on the blocksize.
+;
+MSG_INFOWIN_STACK
+Pile :
+; Stack:
+;
+MSG_INFOWIN_STACK_HELP
+Taille de la pile utilisée par l'exécutable. Une pile est la plage de mémoire utilisée par l'exécutable pour stocker ses données personnelles. Il est recommandé d'entrer la taille indiquée dans la documentation accompagnant les exécutables, sachant que la plupart des programmes fixent eux-même la taille de la pile.
+; Stack size of the executable in bytes. A stack is an area of memory used by the executable to store private data. Special requirements regarding its size should be listed in the executable's \
+; documentation although most executables set the stack size by themselves so you don't have to bother about this field.
+;
+MSG_INFOWIN_CREATED
+Créé le :
+; Created:
+;
+;
+MSG_INFOWIN_CREATED_HELP
+Date de création du volume.
+; Date the volume was created.
+;
+MSG_INFOWIN_TOOLTYPES
+Types d'outils :
+; Tooltypes:
+;
+MSG_INFOWIN_TOOLTYPES_HELP
+Ce sont les types d'outils de l'icône.
+; These are the icons tool types.
+;
+MSG_INFOWIN_STATUS_WRITE_PROTECTED
+protégé en écriture
+; write protected
+;
+MSG_INFOWIN_STATUS_VALIDATING
+validation en cours
+; validating
+;
+MSG_INFOWIN_STATUS_VALIDATED
+validé
+; validated
+;
+MSG_INFOWIN_FLAGS_LARGE_FILES
+fichiers volumineux
+; large files
+;
+MSG_INFOWIN_FLAGS_CASE_SENSITIVE
+sensible à la casse
+; case sensitive
+;
+MSG_INFOWIN_FLAGS_NONE
+aucune
+; none
+;
+MSG_INFOWIN_TYPE_NOMEDIA
+Aucun média
+; No media
+;
+MSG_INFOWIN_SIZE_UNKNOWN
+inconnu
+; unknown
+;
+MSG_INFOWIN_VERSION_SEARCHING
+Recherche en cours...
+; Searching...
+;
+MSG_INFOWIN_VERSION
+_Version :
+; _Version:
+;
+MSG_INFOWIN_VERSION_HELP
+Examine le fichier à la recherche de la chaîne de version donnant les informations sur la version, les révisions, la date de création du fichier et, si possible, les informations de droits d'auteurs.
+; Scans the file for a version string which gives informations about the version and revision numbers, when the file was built and possible copyright informations.
+;
+MSG_INFOWIN_MD5_COMPUTING
+Calcul en cours...
+; Computing...
+;
+MSG_INFOWIN_MD5SUM
+_MD5 :
+; _MD5:
+;
+MSG_INFOWIN_MD5_HELP
+Calcule l'empreinte MD5 du fichier. Peut être employé pour contrôler l'intégrité d'un fichier. Pour deux fichiers identiques, le MD5 l'est également.
+; Computes an MD5 hash of the file's content. Can be used to check the integrity of a file as the hash is always the same for exactly identical files.
+;
+MSG_INFOWIN_DEFAULT_TOOL
+Outil par défaut :
+; De_fault Tool:
+;
+MSG_INFOWIN_DEFAULT_TOOL_HELP
+Le fichier associé à cette icône sera passé en argument du programme spécifié.
+; This program will be started along with this file as argument when opening the file.
+;
+MSG_INFOWIN_DEFAULT_TOOL_SELECT
+Sélectionnez un outil par défaut
+; Select a default tool
+;
+MSG_INFOWIN_DEVICETYPE_DIRECT_ACCESS
+accès direct
+; direct access
+;
+MSG_INFOWIN_DEVICETYPE_SEQUENTIAL_ACCESS
+accès séquentiel
+; sequential access
+;
+MSG_INFOWIN_DEVICETYPE_PRINTER
+imprimante
+; printer
+;
+MSG_INFOWIN_DEVICETYPE_PROCESSOR
+processeur
+; processor
+;
+MSG_INFOWIN_DEVICETYPE_WORM
+support à écriture unique
+; worm
+;
+MSG_INFOWIN_DEVICETYPE_CDROM
+CD-ROM
+; CD-ROM
+;
+MSG_INFOWIN_DEVICETYPE_SCANNER
+numériseur
+; scanner
+;
+MSG_INFOWIN_DEVICETYPE_OPTICAL_DISK
+disque optique
+; optical disk
+;
+MSG_INFOWIN_DEVICETYPE_MEDIUM_CHANGER
+chargeur de médias
+; medium changer
+;
+MSG_INFOWIN_DEVICETYPE_NETWORK
+réseau
+; network
+;
+MSG_INFOWIN_DEVICETYPE_GRAPHICS
+carte graphique
+; graphics
+;
+MSG_INFOWIN_DEVICETYPE_UNKNOWN
+inconnu
+; unknown
+;
+MSG_INFOWIN_DEVICETYPE_NA
+N/D
+; N/A
+;
+MSG_INFOWIN_WINDOW_TITLE_VOLUME
+Info : %s (Volume)
+; Info: %s (Volume)
+;
+MSG_INFOWIN_WINDOW_TITLE_DRAWER
+Info : %s (Répertoire)
+; Info: %s (Drawer)
+;
+MSG_INFOWIN_WINDOW_TITLE_TOOL
+Info : %s (Outil)
+; Info: %s (Tool)
+;
+MSG_INFOWIN_WINDOW_TITLE_PROJECT
+Info : %s (Projet)
+; Info: %s (Project)
+;
+MSG_INFOWIN_BYTES
+%llu octets
+; %llu bytes
+;
+MSG_INFOWIN_MBYTES_BYTES
+%s (%llu octets)
+; %s (%llu bytes)
+;
+MSG_INFOWIN_NEW
+_Nouveau
+; _New
+;
+MSG_INFOWIN_NEW_HELP
+Ajoute un nouveau type d'outils à la liste.
+; Add new tool type to list.
+;
+MSG_INFOWIN_DEL
+_Effacer
+; _Delete
+;
+MSG_INFOWIN_DEL_HELP
+Retire le type d'outil sélectionné de la liste.
+; Remove active tool type from list.
+;
+MSG_INFOWIN_SCAN
+Taille totale :
+; Total Size:
+;
+MSG_INFOWIN_SCAN_HELP
+Effectue un examen récursif du répertoire pour compter le nombre, le type et la taille totale des fichiers qu'il contient.
+; Does a recursive scan of the directory to compute the number, type and total size of the files it contains.
+;
+MSG_INFOWIN_SAVE
+Sauver
+; _Save
+;
+MSG_INFOWIN_SAVE_HELP
+Enregistre les modifications dans le fichier de l'icône.
+; Store settings into icon file.
+;
+MSG_INFOWIN_CANCEL
+Annuler
+; Cance_l
+;
+MSG_INFOWIN_CANCEL_HELP
+Ignore les changements et ferme la fenêtre.
+; Discard icon setup and close window.
+;
+MSG_INFOWIN_CREATE_ICON_REQ
+Conserver les informations nécessite une icône;\nVoulez-vous créer l'icône maintenant ?
+; Saving meta data requires an icon file.\nReally create an icon now?
+;
+MSG_INFOWIN_CREATE_ICON_GAD
+_Créer une icône
+; Create ic_on
+;
+MSG_INFOWIN_CREATE_ICON_HELP
+Créer un fichier icône sur le disque.
+; Create an icon file on disk.
+;
+MSG_INFOWIN_USE_DEFAULT_ICON_GAD
+Icône par _défaut
+; _Get default
+;
+MSG_INFOWIN_USE_DEFAULT_ICON_HELP
+Utiliser l'icône par défaut.
+; Reset to default icon.
+;
+; *** Make Directory Window
+;
+MSG_MAKEDIR_WINDOWTITLE
+Créer un répertoire
+; create a new directory
+;
+MSG_MAKEDIR_ENTERDIRECTORYNAME
+\033c Nom du répertoire à créer :
+; \033c\033bDirectory Name:
+;
+MSG_MAKEDIR_ENTER_DIRECTORYNAME_HELP
+Entrez ici le nom du nouveau répertoire. Notez que les caractères « / » et « : » ne sont pas autorisés.
+; Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+;
+MSG_MAKEDIR_UNNAMED
+Sans_nom
+; Unnamed
+;
+MSG_MAKEDIR_WITHICON
+Avec _icône
+; _With Icon
+;
+MSG_MAKEDIR_WITHICON_HELP
+Un répertoire ainsi que son icône seront créés.
+; A drawer and icon combination will be created.
+;
+MSG_MAKEDIR_WITHOUTICON
+_Sans icône
+; With_out Icon
+;
+MSG_MAKEDIR_WITHOUTICON_HELP
+Un répertoire sans icône sera créé.
+; A drawer without icon will be created.
+;
+MSG_MAKEDIR_CANCEL
+A_nnuler
+; _Cancel
+;
+MSG_MAKEDIR_CANCEL_HELP
+La fenêtre sera fermée sans aucune action.
+; The window get's closed without any further action.
+;
+MSG_MAKEDIR_TITLE
+Ambient · Créer un répertoire
+; Ambient · Create directory
+;
+MSG_MAKEDIR_ERRORMSG
+Impossible de creér le dossier '%s'.\nErreur DOS : %S (#%N).
+; Couldn't create directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_MAKEDIR_RETRYCANCEL
+*_Réessayer|_Annuler
+; *_Retry|_Cancel
+;
+; *** Exchange Window
+;
+MSG_CX_MENU_PROJECT
+Exchange
+; Exchange
+;
+MSG_CX_MENU_QUIT
+Quitter
+; Quit
+;
+MSG_CX_SHOW_INTERFACE
+_Montrer l'interface
+; _Show Interface
+;
+MSG_CX_SHOW_INTERFACE_HELP
+Affiche l'interface de la commodité sélectionnée.
+; Opens the GUI of the selected Commodity.
+;
+;
+MSG_CX_HIDE_INTERFACE
+_Cacher l'interface
+; _Hide Interface
+;
+MSG_CX_HIDE_INTERFACE_HELP
+Ferme l'interface de la commodité sélectionnée.
+; Closes the GUI of the selected Commodity.
+;
+; MSG_CX_STATE is not displaced, so just use _x for hotkey support.
+MSG_CX_STATE
+_A
+; _A
+;
+MSG_CX_STATUS_HELP
+Active ou désactive la commodité sélectionnée.
+; Here you can activate or deactivate the selected Commodity.
+;
+MSG_CX_ACTIVE
+Actif
+; Active
+;
+MSG_CX_INACTIVE
+Inactif
+; Inactive
+;
+MSG_CX_REMOVE
+_Supprimer
+; _Remove
+;
+MSG_CX_REMOVE_HELP
+Supprime la commodité sélectionnée, si possible.
+; The selected commodity will be removed if possible.
+;
+; *** Execute window
+;
+MSG_EXEC_TITLE
+Ambient · Exécuter
+; Ambient · Execute
+;
+MSG_EXEC_INFO
+\033c\033bEntrez une commande et ses arguments :
+; \033c\033bCommand and its arguments:
+;
+MSG_EXEC_ASL_TITLE
+Sélectionner une commande
+; Find Command
+;
+MSG_EXEC_EXECUTE
+_Exécuter
+; _Execute
+;
+MSG_EXEC_EXECUTE_HELP
+La commande saisie dans la zone de texte sera exécutée.
+; The command typed into the text field will be executed.
+;
+MSG_EXEC_CANCEL
+A_nnuler
+; _Cancel
+;
+MSG_EXEC_CANCEL_HELP
+La fenêtre d'exécution de commandes sera fermée.
+; The execute window will be closed without any action.
+;
+MSG_EXEC_ERROR_TITLE
+Erreur d'exécution
+; Ambient Execute Error
+;
+MSG_EXEC_ERROR_OPENOUTPUTSTREAMFAILED
+Impossible d'ouvrir le flux de sortie.
+; Failed to open output stream.
+;
+MSG_EXEC_ERROR_OPENINPUTSTREAMFAILED
+Impossible d'ouvrir le flux d'entrée.
+; Failed to open input stream.
+;
+MSG_EXEC_CMENU_HISTORY_TITLE
+Historique des commandes
+; Command history
+;
+MSG_EXEC_CMENU_HISTORY_CLEARALL
+Effacer tout
+; Clear all
+;
+MSG_EXEC_CMENU_HISTORY_CLEARACTIVE
+Effacer courant
+; Clear active
+;
+MSG_EXEC_COMMAND_HELP
+Vous pouvez utiliser des commandes externes et internes (précédées d'un simple quote, par exemple 'Exchange) ou même ouvrir des liens "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", \
+; "news://", "mailto:", "ftp." ou "www.".
+; You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", \
+; "news://", "mailto:", "ftp." or "www.".
+;
+; PrefsWin_BackGroundClass.c (prefswin_backgroundclass.c)
+;
+MSG_PREFSWIN_BACKGROUND_DESKTOP
+Bureau
+; Desktop
+;
+MSG_PREFSWIN_BACKGROUND_MODE
+_Mode :
+; _Mode:
+;
+MSG_PREFSWIN_BACKGROUND_MODE_HELP
+Modifie la manière d'afficher l'arrière-plan.
+; Changes the way the background is displayed.
+;
+MSG_PREFSWIN_BACKGROUND_MODE_COLOR
+Couleur
+; Color
+;
+MSG_PREFSWIN_BACKGROUND_MODE_COLOR_SELECT
+Sélectionnez une couleur de fond d'écran
+; Select a background color
+;
+MSG_PREFSWIN_BACKGROUND_MODE_TILED
+Mosaïque
+; Tiled
+;
+MSG_PREFSWIN_BACKGROUND_MODE_CENTERED
+Centré
+; Centered
+;
+MSG_PREFSWIN_BACKGROUND_MODE_SCALED
+Étiré en préservant l'aspect
+; Scaled
+;
+MSG_PREFSWIN_BACKGROUND_MODE_STRETCHED
+Étiré
+; Stretched
+;
+MSG_PREFSWIN_BACKGROUND_MODE_ZOOMED
+Étiré et coupé
+; Zoomed
+;
+MSG_PREFSWIN_BACKGROUND_FILE
+Fichier :
+; _File:
+;
+MSG_PREFSWIN_BACKGROUND_FILE_HELP
+Chemin de l'image affichée en fond d'écran. Spécifiez un répertoire pour avoir un affichage aléatoire des images contenues dans ce répertoire.
+; Path to the picture to be displayed as background. Specify a directory and pick a picture of your choice from its content.
+;
+MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY
+C_hanger de fond d'écran après :
+; C_hange background after:
+;
+MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP
+Si le chemin spécifié pour le fond d'écran est un répertoire, alors des images seront aléatoirement choisies. Cette option permet de changer de fond d'écran après un certain laps de temps.
+; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS
+Fenêtres
+; Windows
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS_MODE
+M_ode :
+; M_ode:
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS_FILE
+Fichier :
+; F_ile:
+;
+MSG_PREFSWIN_BACKGROUND_REQUESTER
+Choix du fond d'écran...
+; Background selection...
+;
+; bgrefreshdelaysliderclass.c
+;
+MSG_BGREFRESHSLIDERCLASS_NEVER
+Jamais
+; Never
+;
+MSG_BGREFRESHSLIDERCLASS_MINUTES
+%ld minute(s)
+; %ld minute(s)
+;
+MSG_BGREFRESHSLIDERCLASS_HOURS
+%ld heure(s)
+; %ld hour(s)
+;
+MSG_BGREFRESHSLIDERCLASS_DAYS
+%ld jour(s)
+; %ld day(s)
+;
+; *** Prefswin Icondisplay
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION
+Sélection
+; Selection
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT
+Effet sur la sélection
+; Selection effect:
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT
+Teindre
+; Tint
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_REQ
+Sélectionnez une couleur pour l'effet de teinture.
+; Select a color for tint effect.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_BLUR
+Flou
+; Blur
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_BRIGHTEN
+Éclaircir
+; Brighten
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_DELTA
+Delta
+; Delta
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_DARKEN
+Assombrir
+; Darken
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_GREY
+Griser
+; Grey
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_NEGATIVE
+Négatif
+; Negative
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_NEGATIVE_FADE
+Négatif progressif
+; Negative Fade
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_FADE
+Teinte progressive
+; Tint Fade
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_FADE_REQ
+Sélectionnez une couleur pour l'effet de teinte progressive.
+; Select a color for tintfade effect.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTEFFECT_HELP
+Effet appliqué à une icône sélectionnée.
+; Effect to apply to mark selected icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT
+Couleur de l'icône sélectionnée :
+; S_elect color:
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT_HELP
+Détermine la couleur d'une icône sélectionnée.
+; Specifies the color of an selected icon.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT_TITLE
+Choisissez la couleur de l'icône sélectionnée
+; Select 'Icon select' Color
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO
+Couleur du lasso :
+; _Lasso color:
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO_HELP
+Couleur du lasso utilisé pour sélectionner plusieurs icônes avec la souris.
+; Color of the lasso used to select multiple icons with the mouse.
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO_TITLE
+Choisissez la couleur du lasso
+; Select Lasso Color
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK
+Couleur des icônes de destination :
+; Drop mar_k:
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK_HELP
+Détermine la couleur de l'icône active lorsqu'un objet y est déposé.
+; Specifies the color of active icon drop marks.
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK_TITLE
+Choisissez une couleur pour l'icône de destination
+; Select Drop Mark Color
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE
+Redimensionnement
+; Resizing
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MINSIZE
+Taille mi_nimale :
+; Mi_nimum size:
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MINSIZE_HELP
+Taille minimale d'une icône. L'icône sera étirée si nécesaire.
+; Minimum size of an icon. The icon will be stretched if needed.
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MAXSIZE
+Taille ma_ximale :
+; Ma_ximum size:
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MAXSIZE_HELP
+Taille maximale d'une icône. L'icône sera réduite si nécessaire.
+; Maximum size of an icon. The icon will be shrank if needed.
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MICRO
+Mini   (16x16)
+; Micro   (16x16)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_SMALL
+Petit   (24x24)
+; Small   (24x24)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MEDIUM
+Moyen   (32x32)
+; Medium   (32x32)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_LARGE
+Grand   (48x48)
+; Large   (48x48)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_HUGE
+Gigantesque   (64x64)
+; Huge   (64x64)
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT
+Rendu du texte
+; Text rendering
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE
+_Mode :
+; _Mode:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_HELP
+Modifie la manière dont le texte d'une icône est affiché.
+; Changes the way the icon text is displayed.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_NORMAL
+Normal
+; Normal
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_SHADOW
+Ombre
+; Shadow
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_ALPHASHADOW
+Ombre transparente
+; Alpha Shadow
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_OUTLINE
+Contour
+; Outline
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_BACKGROUND
+Fond
+; Background
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_MULTICOLOR
+Multicouleur
+; Multicolor
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_GRADIENT
+Dégradé
+; Gradient
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT
+_Police :
+; _Font:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT_HELP
+La police utilisée pour afficher le texte de taille normale.
+; Big icon display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT_REQ
+Police :
+; Font
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT
+Pe_tite police :
+; Small font_:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT_HELP
+La police utilisée pour afficher le texte de petite taille.
+; Small icon display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT_REQ
+Pe_tite police
+; Small font
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR
+C_ouleur :
+; C_olor:
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR_HELP
+Ici vous pouvez sélectionner la couleur du texte des icônes du bureau.
+; Here you can select the icon text color for desktop icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR_TITLE
+Sélection de la couleur du texte des icônes sur le bureau.
+; Select Desktop color.
+;
+; MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK is not visible, so just define a logic _x hotkey
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK
+_w
+; _b
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_HELP
+Ici vous pouvez sélectionner la couleur de fond des icônes du bureau.
+; Here you can select the icon back ground color for desktop icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_TITLE
+Couleur de fond du texte des icônes du bureau
+; Desktop background color
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT
+_Police :
+; _Font:
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_HELP
+Police utilisée pour les icônes des fenêtres.
+; Window display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_REQ
+Police
+; Font
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR
+Co_uleur :
+; C_olor:
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR_HELP
+Ici vous pouvez sélectionner la couleur du texte des icônes des fenêtres.
+; Here you can select the icon text color for window icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR_TITLE
+Sélection de la couleur du texte des icônes des fenêtres
+; Select Text Color for Windows
+;
+; MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK is not visible, to just define _x hotkey
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK
+_w
+; _b
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK_HELP
+Ici vous pouvez sélectionner la couleur de fond des icônes des fenêtres.
+; Here you can select the icon background color for window icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK_TITLE
+Sélection de la couleur du fond des icônes des fenêtres
+; Select Text Background for Windows
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_LABELSPACE
+E_spacement des noms :
+; _Label space:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_LABELSPACE_HELP
+Distance en pixels entre le bas de l'icône et le haut du texte associé.
+; Space in pixels between the bottom of the icon and the top of the text beneath.
+;
+MSG_PREFSWIN_ICONDISPLAY_EXTRA_FEATURES
+Options supplémentaires
+; Extra features
+;
+; PrefsWin_MiscellaneousClass.c (prefswin_miscellaneousclass.c)
+;
+MSG_PREFSWIN_WBSTARTUP
+Démarrage
+; Startup
+;
+MSG_PREFSWIN_WBSTARTUP_PATH
+Chemin du répertoire de _démarrage :
+; _Path to startup directory:
+;
+MSG_PREFSWIN_WBSTARTUP_PATH_HELP
+Chemin du répertoire de démarrage. Les fichiers dans ce répertoire seront exécutés au démarrage du système.
+; Path to the Startup directory. Files in that directory are automatically executed upon system boot.
+;
+MSG_PREFSWIN_WBSTARTUP_PATH_REQ
+Chemin du répertoire de démarrage
+; Path to startup directory
+;
+MSG_PREFSWIN_WBSTART_REMEMBER
+Mémoriser :
+; Remember:
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES
+les répertoires ouverts
+; Dra_wers
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES_HELP
+Se souvient des répertoires ouverts par Ambient. Au prochain lancement, ces répertoires seront réouverts automatiquement.
+; Remembers opened Ambient drawers. After restarting the system these drawers will be open again.
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS
+les documents ouverts
+; Docu_ments
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS_HELP
+Se souvient des documents (images, texte, ...) ouverts par Ambient. Au prochain lancement, ces documents seront réouverts automatiquement.
+; Remembers in Ambient opened documents. After restarting the system these documents will be open again.
+;
+MSG_PREFSWIN_DEFICONS
+Icônes par défaut
+; Default Icons
+;
+MSG_PREFSWIN_DEFICONS_PATH
+_Chemin des icônes par défaut :
+; Path _to default icons:
+;
+MSG_PREFSWIN_DEFICONS_PATH_HELP
+Chemin des icônes par défaut du système. Ces icônes sont utilisées pour les différents types de fichiers, répertoires et volumes.
+; Path to the default icons of the system. These icons are used as default for various filetypes, directories and devices.
+;
+MSG_PREFSWIN_DEFICONS_PATH_REQ
+_Chemin des icônes par défaut
+; Path to default icons
+;
+MSG_PREFSWIN_MISCELLANEOUS
+Divers
+; Miscellaneous
+;
+MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS
+Afficher l'icône « Volumes »
+; Display M_yMorphos icon
+;
+MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS_HELP
+Permet d'afficher ou non l'icône « Volumes » sur le bureau.
+; Enables and disables the MyMorphOS icon on desktop.
+;
+MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS
+Ouvrir la fenêtre « Volumes » d'un double-clic sur le bureau
+; _Double click on desktop opens MyMorphos window
+;
+MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS_HELP
+La fenêtre « Volumes » sera ouverte lors d'un double-clic sur le fond d'écran.
+; _Any double click on desktop opens MyMorphos window.
+;
+MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE
+Déplacer les fichiers lors d'un glisser-déposer
+; Drag&drop moves files instead of copy
+;
+MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE_HELP
+Si cette option est activée, au sein d'une même partition, les fichiers ou répertoires glissés-déposés seront déplacés au lieu d'être copiés.
+; Drag & drop moves files instead of copy.
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL
+Intercepter l'outil par défaut M_ore
+; _Override More default tool
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL_HELP
+Si l'outil par défaut d'une icône est 'More', cette option permet d'ignorer 'More' et d'utiliser le module de texte intégré à sa place.
+; If icons contain the default tool MORE, this option allows to override with Ambient internal text viewer instead.
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL
+Intercepter l'outil par défaut Multi_View
+; Override Multi_View default tool
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL_HELP
+Si l'outil par défaut d'une icône est 'Multiview', cette option permet d'ignorer 'Mutiview' et d'utiliser le module de texte intégré à sa place.
+; If icons contain the default tool MULTIVIEW, this option allows to override with Ambient internal viewer instead.
+;
+MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES
+Montrer les images des menus contextuels
+; S_how images in context menu
+;
+MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES_HELP
+Les images des menus contextuels peuvent être affichées avec cette option.
+; Images in context can be turned off by disabling this option.
+;
+MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER
+Créer automatiquement une icône pour les nouveaux répertoires
+; C_reate icon for new drawer by default
+;
+MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER_HELP
+À la création d'un nouveau répertoire, une icône sera automatiquement générée si cette option est activée.
+; New drawer will automatically get a default drawer icon if this option is enabled.
+;
+; *** Prefswin CLI launching
+;
+MSG_PREFSWIN_CLI_COMMANDLINE
+Paramètres de l'interface en ligne de commande
+; Command Line Settings
+;
+MSG_PREFSWIN_CLI_DEVICE
+Fenêtre de _sortie :
+; _Output window:
+;
+MSG_PREFSWIN_CLI_DEVICE_HELP
+Fenêtre utilisée pour afficher les messages DOS. Habituellement CON:
+; Device to use to output DOS messages. Usually a CON:
+;
+MSG_PREFSWIN_CLI_STACKSIZE
+Taille de la _pile :
+; Stacksi_ze:
+;
+MSG_PREFSWIN_CLI_STACKSIZE_HELP
+Taille de la pile, en octets, utilisée pour l'exécution de programmes CLI.
+; Stacksize in bytes to use when launching CLI programs.
+;
+MSG_PREFSWIN_CLI_NEWSHELL
+Arguments de _Newshell :
+; _Newshell arguments:
+;
+MSG_PREFSWIN_CLI_NEWSHELL_HELP
+Arguments à utiliser pour lancer un Shell depuis Ambient.
+; Arguments to use when launching a shell from Ambient.
+;
+; *** Preferences Window - Drag & Drop
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAY_HELP
+Effet appliqué à une icône devenant active lors d'une opération de glisser-déposer.
+; Effect to apply to icons becoming active for a drag & drop operation.
+;
+; *** Preferences Window - Main
+;
+MSG_PREFSWIN_MAIN_TITLE
+Préférences d'Ambient
+; Ambient Settings
+;
+MSG_PREFSWIN_MAIN_CLIPBOARD_FRAMEIMAGE
+Presse-papier pour les cadres et les images
+; Frame and Image Clipboard
+;
+MSG_PREFSWIN_MAIN_CLIPBOARD_FRAMEIMAGE_HELP
+Ce gadget peut être utilisé comme presse-papier pour stocker des images et des cadres. Utilise le glisser-déposer.
+; This gadget can be used as a clipboard to store the frame and image. Use drag & drop.
+;
+; *** Soundwin
+;
+MSG_SOUNDWIN_PLAY
+Jouer
+; Play
+;
+MSG_SOUNDWIN_STOP
+Arrêter
+; Stop
+;
+; *** Mimegroup
+;
+MSG_MIMEGROUP_ADD
+Ajouter...
+; Add...
+;
+MSG_MIMEGROUP_COPY
+Copier
+; Copy
+;
+MSG_MIMEGROUP_EDIT
+Éditer...
+; Edit...
+;
+MSG_MIMEGROUP_REMOVE
+Supprimer
+; Remove
+;
+; *** Preferences Window - Mimeadjustgroup
+;
+MSG_MIMEGROUPADJUST_ADD
+Ajouter...
+; Add...
+;
+MSG_MIMEGROUPADJUST_EDIT
+Éditer...
+; Edit...
+;
+MSG_MIMEGROUPADJUST_REMOVE
+Supprimer
+; Remove
+;
+; *** Preferences Window - Toolbar
+;
+MSG_PREFSWIN_TOOLBAR_ENABLE
+Mode _navigateur
+; _Browser mode
+;
+MSG_PREFSWIN_TOOLBAR_ENABLE_HELP
+Ceci permet d'activer ou non le mode navigateur.
+; This check mark enables the toolbar mode.
+;
+MSG_PREFSWIN_TOOLBAR_TOOLBUTTONS_GROUP
+Barre d'outils
+; Tool buttons
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE
+_Apparence :
+; _Appearance:
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_HELP
+L'aspect de la barre d'outils peut être configuré ici.
+; The appearance of the tool bar can be configured here.
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME
+Cadre des boutons :
+; Button _Frame:
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_HELP
+Permet de choisir le type de cadre pour les boutons de la barre d'outils.
+; Allows to specify the frame type and look for the tool buttons.
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_WINTITLE
+Choisissez le cadre des boutons
+; Select Button Frame
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_IMAGETEXT
+Images et texte
+; Image With Text
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_IMAGE
+Images seulement
+; Image Only
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_TEXT
+Texte seulement
+; Text Only
+;
+MSG_PREFSWIN_TOOLBAR_CURRENT_GROUP
+Barre d'outils actuelle
+; Current Toolbar
+;
+MSG_PREFSWIN_TOOLBAR_CURRENT_HELP
+Boutons actuellement utilisés dans la barre d'outils.
+; These are the current tool bar buttons.
+;
+MSG_PREFSWIN_TOOLBAR_AVAILABLE_GROUP
+Boutons disponibles
+; Available Buttons
+;
+MSG_PREFSWIN_TOOLBAR_AVAILABLE_HELP
+L'ensemble des boutons disponibles pour créer la barre d'outils.
+; These are the available buttons for the tool bar.
+;
+MSG_PREFSWIN_TOOLBAR_DEVICE_LIST
+Liste des périphériques
+; Device List
+;
+MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP
+Affiche la liste des périphériques
+; Display Device List
+;
+MSG_PREFSWIN_TOOLBAR_COPY
+Copier
+; Copy
+;
+MSG_PREFSWIN_TOOLBAR_COPY_HELP
+Copier un fichier ou un répertoire
+; Copy file or directory
+;
+MSG_PREFSWIN_TOOLBAR_COPY_AS
+Copier et renommer
+; Copy As
+;
+MSG_PREFSWIN_TOOLBAR_COPY_AS_HELP
+Copier et renommer un fichier ou un répertoire
+; Copy As File or Directory
+;
+MSG_PREFSWIN_TOOLBAR_MOVE
+Déplacer
+; Move
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_HELP
+Déplacer un fichier ou un répertoire
+; Move a file or a directory
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_AS
+Déplacer et renommer
+; Move As
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP
+Déplacer et renommer un fichier ou un répertoire
+; Move and rename file or directory
+;
+MSG_PREFSWIN_TOOLBAR_DELETE
+Supprimer
+; Delete
+;
+MSG_PREFSWIN_TOOLBAR_DELETE_HELP
+Supprimer un fichier ou un répertoire
+; Delete file or directory
+;
+MSG_PREFSWIN_TOOLBAR_TRASH
+Corbeille
+; Trash
+;
+MSG_PREFSWIN_TOOLBAR_TRASH_HELP
+Déplacer le fichier ou le dossier dans la corbeille
+; Move file or directory to Trashcan
+;
+MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD
+Copier vers le presse-papier
+; Copy To Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP
+Copier un fichier ou un répertoire vers le presse-papier
+; Copy file or directory to clipboard
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD
+Déplacer vers le presse-papier
+; Move To Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP
+Déplacer un fichier ou un répertoire vers le presse-papier
+; Move file or directory to clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD
+Coller depuis le presse-papier
+; Paste From Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP
+Coller le contenu du presse-papier
+; Paste content of clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS
+Coller et renommer depuis le presse-papier
+; Paste As From Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS_HELP
+Coller et renommer le contenu du presse-papier
+; Paste and rename content of clipboard
+;
+MSG_PREFSWIN_TOOLBAR_SELECT
+Sélectionner
+; Select
+;
+MSG_PREFSWIN_TOOLBAR_SELECT_HELP
+Sélectionner un fichier ou un répertoire
+; Select file or directory
+;
+MSG_PREFSWIN_TOOLBAR_ICONINFO
+Information sur l'icône
+; Icon Info
+;
+MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP
+Afficher les informations au sujet de l'icône
+; Display Icon Information window
+;
+MSG_PREFSWIN_TOOLBAR_FORMAT
+Formater
+; Format
+;
+MSG_PREFSWIN_TOOLBAR_FORMAT_HELP
+Formater un système de fichiers
+; Format a filesystem
+;
+MSG_PREFSWIN_TOOLBAR_MAKEDIR
+Créer un répertoire
+; Add directory
+;
+MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP
+Créer un répertoire
+; Create a directory
+;
+MSG_PREFSWIN_TOOLBAR_MAKELINK
+Faire un lien
+; Add link
+;
+MSG_PREFSWIN_TOOLBAR_MAKELINK_HELP
+Faire un lien.
+; Add a link.
+;
+MSG_PREFSWIN_TOOLBAR_RENAME
+Renommer
+; Rename
+;
+MSG_PREFSWIN_TOOLBAR_RENAME_HELP
+Renommer un fichier ou un répertoire
+; Rename file or directory
+;
+MSG_PREFSWIN_TOOLBAR_FIND
+Rechercher
+; Find
+;
+MSG_PREFSWIN_TOOLBAR_FIND_HELP
+Recherche des fichiers et des répertoires
+; Finds files and directories
+;
+MSG_PREFSWIN_TOOLBAR_PARENT
+Parent
+; Parent
+;
+MSG_PREFSWIN_TOOLBAR_PARENT_HELP
+Aller dans le répertoire parent
+; Parent directory
+;
+MSG_PREFSWIN_TOOLBAR_BACK
+Retour
+; Back
+;
+MSG_PREFSWIN_TOOLBAR_BACK_HELP
+Précédent dans l'historique des emplacements.
+; Previous in history.
+;
+MSG_PREFSWIN_TOOLBAR_FORWARD
+Suivant
+; Next
+;
+MSG_PREFSWIN_TOOLBAR_FORWARD_HELP
+Suivant dans l'historique des emplacements
+; Next
+;
+MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW
+Changer la vue
+; Switch view
+;
+MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP
+Changer le mode d'affichage de la vue
+; Change view display mode
+;
+MSG_PREFSWIN_TOOLBAR_BOOKMARKS
+Favoris
+; Bookmarks
+;
+MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP
+Conserver un fichier ou un répertoire en favoris
+; Bookmark file or directory
+;
+MSG_PREFSWIN_TOOLBAR_SPACE
+Espace
+; Space
+;
+MSG_PREFSWIN_TOOLBAR_SPACE_HELP
+Ajouter un espace dans la barre d'outils
+; Add a space to toolbar
+;
+MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE
+Espace flottant
+; Flexible space
+;
+MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP
+Ajouter un espace flottant à la barre d'outils
+; Add a flexible space to toolbar
+;
+MSG_PREFSWIN_TOOLBAR_SEPARTOR
+Séparateur
+; Separator
+;
+MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP
+Ajouter un séparateur à la barre d'outils
+; Separator between group of buttons
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULTDIMENSIONS_GROUP
+Dimensions par défaut
+; Default Dimensions and Position
+;
+MSG_PREFSWIN_TOOLBAR_PLACEUNDERMOUSE
+_Place la fenêtre sous le pointeur de la souris
+; _Place the window under mouse pointer
+;
+MSG_PREFSWIN_TOOLBAR_PLACEUNDERMOUSE_HELP
+Si l'option est activée, la fenêtre sera ouverte sous le pointeur de la souris.
+; If checkbox is on the window will be placed under mouse pointer.
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW
+_Obtenir depuis la fenêtre...
+; _Get From Window...
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_HELP
+Permet de sélectionner une fenêtre et d'utiliser ses coordonnées comme coordonnées par défaut.
+; Allows to select a window and use its coordinates as default.
+;
+MSG_PREFSWIN_TOOLBAR_COORDS
+Gauche : %ld  Haut : %ld  Largeur : %ld  Hauteur : %ld
+; Left: %ld  Top: %ld  Width: %ld  Height: %ld
+;
+MSG_PREFSWIN_TOOLBAR_COORDS_HELP
+Dimensions actuelles des fenêtres par défaut.
+; These are the current default window dimensions.
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_TITLE
+Ambient · Fenêtre de définition
+; Ambient · Define Window
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_TEXT
+Redimensionnez et placez la fenêtre où vous le souhaitez, puis fermez-là.
+; Resize and place window as desired, then close it.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR
+Barre d'état
+; Status Bar
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT
+Format :
+; F_ormat:
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_HELP
+Permet de configurer le contenu de la barre d'état.
+; Allows to set-up your own status bar.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_0
+%tf% - nombre de fichiers présents dans le répertoire courant.
+; %tf% - number of files in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_1
+%td% - nombre de répertoires présents dans le répertoire courant.
+; %td% - number of directories in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_2
+%i% - nombre d'icônes (.info) présentes dans le répertoire courant.
+; %i% - number of icon files (.info) in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_3
+%l% - nombre de liens physiques et logiques dans le répertoire courant.
+; %l% - number of soft/hard links in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_4
+%du% - espace utilisé par les fichiers et répertoires présents dans le répertoire courant.
+; %du% - disk space used by files in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_5
+%ns% - nombre de fichiers et répertoires sélectionnés dans le répertoire courant.
+; %ns% - number of selected files in current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_6
+%sdu% - espace utilisé par les fichiers et répertoires sélectionnés dans le répertoire courant.
+; %sdu% - space occupied by selected files and directories.
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_GROUP
+Comportement des vues
+; View Behaviour
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW
+Vue par défaut :
+; Default view:
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW_HELP
+Sélectionne quel mode de vue doit être utilisé par défaut.
+; Select which view should be used by default.
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE
+Mode de vue par défaut :
+; Default view mode:
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE_HELP
+Sélectionne le mode de vue à utiliser par défaut.
+; Select which view mode should be used by default.
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_ICON
+Icône
+; Icon
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_LIST
+Liste
+; List
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW
+Héritage des vues
+; Inherit view
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW_HELP
+Lors d'un parcours de répertoire, décide si le mode de vue courant ou le mode par défaut doit être appliqué.
+; When clicking a directory, decides if the current view or the default view should be applied.
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE
+Hériter du mode de vue
+; Inherit view mode
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE_HELP
+Lors d'un parcours de répertoire, décide si le mode de vue courant ou le mode par défaut doit être appliqué.
+; When clicking a directory, decides if the current view mode or the default view mode should be applied.
+;
+; *** System Information Window
+;
+MSG_SYSINFOWIN_TITLE
+Ambient · Moniteur système
+; Ambient · System Monitor
+;
+MSG_SYSINFOWIN_MENU_PROJECT
+Moniteur système
+; System Monitor
+;
+MSG_SYSINFOWIN_MENU_QUIT
+Quitter
+; Quit
+;
+MSG_SYSINFOWIN_INFO_REGTITLE
+Caractéristiques du système
+; System Details
+;
+MSG_SYSINFOWIN_MONITOR_REGTITLE
+Moniteur système
+; System Monitor
+;
+MSG_SYSINFOWIN_SYSTEM_GROUP
+Système
+; System
+;
+MSG_SYSINFOWIN_CPULOAD
+Utilisation du processeur
+; CPU load
+;
+MSG_SYSINFOWIN_MEMORY
+Mémoire : %ld%%%%
+; System memory: %ld%%%%
+;
+MSG_SYSINFOWIN_MACHINE
+Machine :
+; Machine:
+;
+MSG_SYSINFOWIN_MACHINE_HELP
+Informations sur le type de carte mère et son fabricant.
+; This is the main board type and its vendor.
+;
+MSG_SYSINFOWIN_CPUCOUNT
+Nombre de processeurs :
+; CPU count:
+;
+MSG_SYSINFOWIN_CPUCOUNT_HELP
+Ceci est le nombre de processeurs disponibles.
+; This is the number of CPUs available.
+;
+MSG_SYSINFOWIN_SYSTEMMEMORY
+Mémoire système (RAM) :
+; System memory:
+;
+MSG_SYSINFOWIN_SYSTEMMEMORY_HELP
+Ceci est la capacité totale de la mémoire du système (la RAM).
+; This is the systems total memory (RAM).
+;
+MSG_SYSINFOWIN_BCLOCK
+Fréquence d'horloge du bus :
+; Bus clock:
+;
+MSG_SYSINFOWIN_BCLOCK_HELP
+Fréquence d'horloge du bus.
+; This is the systems bus clock.
+;
+MSG_SYSINFOWIN_TTICKS
+Timer Ticks:
+; Timer ticks:
+;
+MSG_SYSINFOWIN_TTICKS_HELP
+Nombre de timer ticks.
+; This is the number of timer ticks.
+;
+MSG_SYSINFOWIN_COMPUTERON
+Ordinateur allumé :
+; Computer turned on:
+;
+MSG_SYSINFOWIN_COMPUTERON_HELP
+L'ordinateur est-il allumé ?
+; Is the system turned on?
+;
+MSG_SYSINFOWIN_CPU_GROUP
+Processeur
+; CPU
+;
+MSG_SYSINFOWIN_CPU_TITLE
+CPU %ld
+; CPU %ld
+;
+MSG_SYSINFOWIN_MODEL
+Modèle :
+; Model:
+;
+MSG_SYSINFOWIN_MODEL_HELP
+Type de processeur utilisé dans la machine.
+; This type of CPU is built into the system.
+;
+MSG_SYSINFOWIN_DATASTREAM
+Flux de données :
+; Datastream:
+;
+MSG_SYSINFOWIN_DATASTREAM_HELP
+Est ce que le processeur supporte les flux de données ?
+; Is the CPU supporting datastreams?
+;
+MSG_SYSINFOWIN_ALTIVEC
+Altivec :
+; AltiVec:
+;
+MSG_SYSINFOWIN_ALTIVEC_HELP
+Le processeur est-il doté d'une unité vectorielle ?
+; Does the CPU contain a vector processing unit?
+;
+MSG_SYSINFOWIN_PMON
+Moniteur d'activité :
+; Performance monitor:
+;
+MSG_SYSINFOWIN_PMON_HELP
+Le processeur est-il doté d'un moniteur d'activité ?
+; Is the CPU supporting a performance monitor?
+;
+MSG_SYSINFOWIN_CPUCACHE_GROUP
+Mémoire cache
+; CPU Cache
+;
+MSG_SYSINFOWIN_CACHESIZE
+Taille du cache %s :
+; %s cache size:
+;
+MSG_SYSINFOWIN_CACHESIZE_HELP
+Taille du cache du processeur.
+; This shows the CPU cache size.
+;
+MSG_SYSINFOWIN_CACHESPECS
+Options du cache %s :
+; %s cache specs:
+;
+MSG_SYSINFOWIN_CACHESPECS_HELP
+Ceci montre les propriétés du cache du processeur.
+; This shows the CPU cache specifications.
+;
+MSG_SYSINFOWIN_AMBIENT_GROUP
+Ambient
+; Ambient
+;
+MSG_SYSINFOWIN_SNDDRIVER
+Pilote audio :
+; Sound driver:
+;
+MSG_SYSINFOWIN_SNDDRIVER_HELP
+Pilote audio utilisé par le système.
+; This is the audio driver system used.
+;
+MSG_SYSINFOWIN_SNDDRIVER_NONE_INFO
+Aucun
+; None
+;
+MSG_SYSINFOWIN_CACHESPECSDETAILS1_INFO
+%lU kB (instruction) / %lU kB (data)
+; %lU kB (instruction) / %lU kB (data)
+;
+MSG_SYSINFOWIN_CACHESPECSDETAILS2_INFO
+%lU kB
+; %lU kB
+;
+MSG_SYSINFOWIN_BATTERYCHARGING_INFO
+Batterie : %ld mAh (en charge)
+; Battery: %ld mAh (charging)
+;
+MSG_SYSINFOWIN_BATTERY_INFO
+Batterie : %ld mAh
+; Battery: %ld mAh
+;
+MSG_SYSINFOWIN_BATTERY_MISSING
+Aucune batterie détectée
+; No battery found
+;
+; *** MakeLinkWinClass (makelinkwinclass.c)
+;
+MSG_MAKELINKWINCLASS_TITLE
+Ambient · Raccourci
+; Ambient · Shortcut
+;
+MSG_MAKELINKWINCLASS_ENTERSHORTCUT
+\033cEntrer le raccourci:
+; \033cShortcut:
+;
+MSG_MAKELINKWINCLASS_OK
+Ok
+; Ok
+;
+MSG_MAKELINKWINCLASS_CANCEL
+Annuler
+; Cancel
+; *** AboutWinClass.c (aboutwinclass.c)
+;
+MSG_ABOUTWIN_WEBSUPPORT
+Site internet :
+; Web Support:
+;
+MSG_ABOUTWIN_MUI
+Sans \033bMUI\033n, Ambient n'existerait pas.
+; Without \033bMUI\033n, Ambient wouldn't exist.
+;
+MSG_ABOUTWIN_MD5
+Contient du code dérivé de RSA Data Sécurité Inc.\n\033bMD5\033n Algorithme Message-Digest.
+; Contains software derived from the RSA Data Security, Inc.\n\033bMD5\033n Message-Digest Algorithm.
+;
+MSG_ABOUTWIN_ALTIVEC
+Fait appel aux fonctions \033bAltiVec\033n si possible.
+; Uses \033bAltiVec\033n instructions when available.
+;
+MSG_ABOUTWIN_MOSDESKTOP
+Le Bureau de MorphOS
+; The MorphOS Desktop
+;
+MSG_ABOUTWIN_VERSION
+Version
+; version
+;
+MSG_ABOUTWIN_ALLRIGHTS
+Tous droits réservés
+; All Rights Reserved
+;
+MSG_ABOUTWIN_GPL
+License Publique Généralisée (GPL)
+; General Public License
+;
+MSG_ABOUTWIN_AMBIENTTEAM
+L'équipe de développement d'Ambient
+; The Ambient Team
+;
+MSG_ABOUTWIN_SCROLLINFO
+Peut être ne saviez-vous pas que vous pouviez faire défiler le texte en utilisant la molette de la souris. Vous pouvez arrêter le défilement avec le bouton gauche de la souris.
+; Perhaps you didn't know it but you can scroll that text up and down using the mouse wheel and stop the autoscroll with the left mouse button.
+;
+MSG_ABOUTWIN_SCROLLRESTART
+Reprendre le défilement
+; scroll restart
+;
+MSG_ABOUTWIN_AMBIENTTITLE
+Ambient · À propos
+; Ambient · About
+;
+; *** AboutMosWinClass.c (aboutmoswinclass.c)
+;
+MSG_ABOUTWIN_DEVSUPPORT
+Support aux développeurs :
+; Developer Support:
+;
+MSG_ABOUTWIN_MAILSUPPORT
+Support par courrier électronique :
+; Mail Support:
+;
+MSG_ABOUTWIN_MOSRELEASE
+Version de MorphOS : %lu.%lu
+; MorphOS release: %lu.%lu
+;
+MSG_ABOUTWIN_PROGRAMMERS
+Programmeurs
+; Programmers
+;
+MSG_ABOUTWIN_GRAPHICS
+Artistes graphiques
+; Graphic Artists
+;
+MSG_ABOUTWIN_DOCS
+Documentation
+; Documentation
+;
+MSG_ABOUTWIN_MISC
+Choses diverses dont tout le monde se moque
+; Miscellaneous stuff no one cares about
+;
+; *** Ambient main
+;
+MSG_SHUTDOWN_SELECT
+Que voulez-vous faire ?
+; What do you want to do?
+;
+MSG_SHUTDOWN_REBOOT_CANCEL
+_Redémarrer|_Annuler
+; _Reboot|_Cancel
+;
+MSG_SHUTDOWN_SHUTDOWN_REBOOT_CANCEL
+É_teindre|_Redémarrer|_Annuler
+; _Shutdown|_Reboot|_Cancel
+;
+MSG_MAIN_SCREENMODE
+Il faut un mode d'écran en hautes (15/16bits) ou vraies (24/32bits) couleurs pour Ambient.\nMerci de sélectionner un autre mode.
+; You need a hi/true-color screen to use Ambient.\nPlease select another screenmode.
+;
+MSG_MAIN_SCREENMODE_ACTION
+Lancer Mode d'écran|Lancer Shell|Annuler
+; Run ScreenMode|Run Shell|Cancel
+;
+MSG_MAIN_PREFERENCES_START_ERROR
+Impossible d'exécuter les préférences système.\nJ'ai essayé de lancer mossys:prefs/Preferences (le fichier est ici).\nEssayez de les lancer depuis un Shell.
+; Couldn't start the system preferences.\nI tried to start mossys:prefs/Preferences (the file is here).\nTrying to run a shell then.
+;
+MSG_MAIN_PREFERENCES_FIND_ERROR
+Impossible de trouver les préférences système.\nJ'ai essayé de lancer mossys:prefs/Preferences\net le fichier sys:prefs/Preferences.\nEssayez de le lancer depuis un Shell.
+; Couldn't find the system preferences.\nI tried the file mossys:prefs/Preferences\nand the file sys:prefs/Preferences.\nTrying to run a shell then.
+;
+MSG_MAIN_RUN_SHELL
+Ouvrir un Shell
+; Run Shell
+;
+; *** StatusBarClass.c (statusbarclass.c)
+;
+MSG_STATUSBAR_PATTERN_NORMAL
+%du% dans %td% répertoire(s) et %tf% fichier(s). (%sdu% dans %ns% sélectionné(s)).
+; %du% in %td% directories and %tf% files. (%sdu% in %ns% selected).
+;
+MSG_STATUSBAR_PATTERN_SELECTED
+(%lu sélectionné(s) )
+; (%lu selected)
+;
+; PanelSliderSizeClass.c (panelslidersizeclass.c)
+;
+MSG_PANELSLIDERSIZECLASS_16PIXEL
+16 pixels
+; 16 pixels
+;
+MSG_PANELSLIDERSIZECLASS_24PIXEL
+24 pixels
+; 24 pixels
+;
+MSG_PANELSLIDERSIZECLASS_32PIXEL
+32 pixels
+; 32 pixels
+;
+MSG_PANELSLIDERSIZECLASS_48PIXEL
+48 pixels
+; 48 pixels
+;
+MSG_PANELSLIDERSIZECLASS_64PIXEL
+64 pixels
+; 64 pixels
+;
+; *** ListViewClass.c (listviewclass.c)
+;
+MSG_LISTVIEWCLASS_WINTITLE
+%s - %s libre, %s/%s utilisé, %ld%% plein
+; %s - %s free, %s/%s used, %ld%% full
+;
+; *** DeviceListClass.c (devicelistclass.c)
+;
+;MSG_MISC_HIDDEN_DRIVES
+;Hidden drives
+;Skrytá zaêízení
+;Versteckte Laufwerke
+;Disques cachés
+;Periferiche nascoste
+;Rejtett meghajtók
+;Ukryj napêdy
+;Piilotetut asemat
+;Hidden drives
+;Impulsiones ocultadas
+;
+MSG_DEVICELISTCLASS_HIDDENDRIVESCOLUMN
+Nom du disque
+; Drive name
+;
+; *** PrefsWin_ListerClass.c (prefswin_listerclass.c)
+;
+MSG_PREFSWIN_LISTER_FILES
+Fichiers
+; File Properties
+;
+MSG_PREFSWIN_LISTER_DEVICES
+Périphériques
+; Device Properties
+;
+MSG_PREFSWIN_LISTER_ICONSIZEFILES
+Tai_lle des icônes :
+; _Icons size:
+;
+MSG_PREFSWIN_LISTER_ICONSIZEFILES_HELP
+Taille des icônes dans les listes.
+; Icon size in file list.
+;
+MSG_PREFSWIN_LISTER_ICONSIZEDEVICES
+_Taille des icônes :
+; Icons si_ze:
+;
+MSG_PREFSWIN_LISTER_ICONSIZEDEVICES_HELP
+Taille des icônes dans les listes.
+; Icons size in file list.
+;
+MSG_PREFSWIN_LISTER_ICON_SMALL
+Petites   (20x20)
+; Small   (20x20)
+;
+MSG_PREFSWIN_LISTER_ICON_MEDIUM
+Moyennes  (32x32)
+; Medium  (32x32)
+;
+MSG_PREFSWIN_LISTER_ICON_LARGE
+Grandes   (48x48)
+; Large   (48x48)
+;
+MSG_PREFSWIN_LISTER_ICON_HUGE
+Gigantesque  (64x64)
+; Huge    (64x64)
+;
+MSG_PREFSWIN_LISTER_MODES
+_Mode :
+; _Mode:
+;
+MSG_PREFSWIN_LISTER_MODES_HELP
+Mode par défaut utilisé.
+; This mode gets active when list mode is selected.
+;
+MSG_PREFSWIN_LISTER_COMPACT_SIZE
+Affichage _compact des tailles
+; Compact size displa_y
+;
+MSG_PREFSWIN_LISTER_COMPACT_SIZE_HELP
+Les tailles des volumes et répertoires seront affichées de manière compacte si cette coche est activée.
+; Size is shown in compact form if this switch is enabled.
+;
+MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS
+Afficher les _assignations
+; Display _assigns
+;
+MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS_HELP
+Les assignations seront affichées dans la liste des périphériques, si cette coche est activée.
+; In device list assigns will be shown, if this gadget is activated.
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE
+Édition en ligne :
+; Inline edi_ting:
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE_HELP
+Cette option permet d'éditer des attributs comme les noms de fichiers ou commentaires directement depuis la liste.
+; Using the given action allows to edit names without an additional context.
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_DISABLED
+Désactivée
+; Disabled
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MIDDLEBUTTON
+Bouton du milieu
+; Middle Button
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_LONG_LEFTBUTTON
+Bouton gauche (long)
+; Left Button (long)
+;
+MSG_PREFSWIN_LISTER_COLORS
+Couleurs
+; Colors
+;
+MSG_PREFSWIN_LISTER_FILE
+Fichiers :
+; _File:
+;
+MSG_PREFSWIN_LISTER_FILE_HELP
+Cette couleur est utilisée pour afficher les fichiers dans les listeurs.
+; This color is used to display files within the lister.
+;
+MSG_PREFSWIN_LISTER_FILE_COLOR
+Couleur des fichiers
+; File color
+;
+MSG_PREFSWIN_LISTER_DIRECTORY
+Répertoires :
+; _Directory:
+;
+MSG_PREFSWIN_LISTER_DIRECTORY_HELP
+Cette couleur est utilisée pour afficher les répertoires dans les listeurs.
+; This color is used to display drawers within the lister.
+;
+MSG_PREFSWIN_LISTER_DIRECTORY_COLOR
+Couleur des répertoires
+; Directory color
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE
+Fichiers sélectionnés :
+; Se_lected file:
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE_HELP
+Cette couleur est utilisée pour afficher les fichiers sélectionnés dans les listeurs.
+; This color is used to display selected files within the lister.
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE_COLOR
+Couleur des fichiers sélectionnés
+; Selected file color
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY
+Répertoires sélectionnés :
+; Sel_ected directory:
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY_HELP
+Cette couleur est utilisée pour afficher les répertoires sélectionnés dans les listeurs.
+; This color is used to display selected drawers within the lister.
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY_COLOR
+Couleur des répertoires sélectionnés
+; Selected directory color
+;
+MSG_PREFSWIN_LISTER_SOFTLINK
+Liens symboliques :
+; Softlin_k:
+;
+MSG_PREFSWIN_LISTER_SOFTLINK_HELP
+Cette couleur est utilisée pour afficher les liens symboliques dans les listeurs.
+; This color is used to display softlinks within the lister.
+;
+MSG_PREFSWIN_LISTER_SOFTLINK_COLOR
+Couleur des liens symboliques
+; Softlink color
+;
+MSG_PREFSWIN_LISTER_HARDLINK
+Liens p_hysiques :
+; _Hardlink:
+;
+MSG_PREFSWIN_LISTER_HARDLINK_HELP
+Cette couleur est utilisée pour afficher les liens physiques dans les listeurs.
+; This color is used to display hardlinks within the lister.
+;
+MSG_PREFSWIN_LISTER_HARDLINK_COLOR
+Couleur des liens physiques
+; Hardlink color
+;
+MSG_PREFSWIN_LISTER_VOLUME
+_Volumes :
+; _Volume:
+;
+MSG_PREFSWIN_LISTER_VOLUME_HELP
+Cette couleur est utilisée pour afficher les volumes dans les listeurs.
+; This color is used to display volumes within the lister.
+;
+MSG_PREFSWIN_LISTER_VOLUME_COLOR
+Couleur des volumes
+; Volume color
+;
+MSG_PREFSWIN_LISTER_ASSIGN
+Assi_gnations :
+; Assi_gn:
+;
+MSG_PREFSWIN_LISTER_ASSIGN_HELP
+Cette couleur est utilisée pour afficher les assignations dans les listeurs.
+; This color is used to display assigns within the lister.
+;
+MSG_PREFSWIN_LISTER_ASSIGN_COLOR
+Couleur des assignations
+; Assign color
+;
+MSG_PREFSWIN_LISTER_COLUMN
+Colonnes :
+; Colum_n:
+;
+MSG_PREFSWIN_LISTER_COLUMN_HELP
+Cette couleur est utilisée pour afficher les colonnes dans les listeurs.
+; This color is used to display columns within the lister.
+;
+MSG_PREFSWIN_LISTER_COLUMN_COLOR
+Couleur des colonnes :
+; Column color
+;
+MSG_PREFSWIN_LISTER_USEWINDOWBACKGROUND
+Utiliser l'arrière-_plan des fenêtres
+; Use _window background
+;
+MSG_PREFSWIN_LISTER_USEWINDOWBACKGROUND_HELP
+Si cette option est activée, l'arrière-plan habituel des fenêtres sera aussi utilisé en mode listeur.
+; When activated the normal window background is displayed in list mode.
+;
+MSG_PREFSWIN_LISTER_SHOWICONS
+Afficher les _icônes
+; Show _icons
+;
+MSG_PREFSWIN_LISTER_SHOWICONS_HELP
+Spécifie si les icônes doivent être affichées.
+; Specifies if icons should be displayed.
+;
+MSG_PREFSWIN_LISTER_FONT
+Police :
+; Font:
+;
+MSG_PREFSWIN_LISTER_FONT_HELP
+Permet de choisir la police utilisée dans les listeurs.
+; Specifies the font to be used in list view.
+;
+MSG_PREFSWIN_LISTER_FONT_REQ
+Police
+; Font
+;
+MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES
+Répertoires en gras
+; Bold directories
+;
+MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES_HELP
+Permet d'afficher les répertoires en gras.
+; When activated, directories are shown in bold style.
+;
+MSG_PREFSWIN_LISTER_ALTERNATED_ROWS
+Lignes alternées
+; Alternated rows
+;
+MSG_PREFSWIN_LISTER_ALTERNATED_ROWS_HELP
+Permet d'afficher une ligne sur deux 10% plus claire, pour une meilleure lisibilité.
+; When activated, every other line is 10% brighter.
+;
+MSG_PREFSWIN_LISTER_SELECTION_MODES
+Mode de sélection :
+; Selection mode:
+;
+MSG_PREFSWIN_LISTER_SELECTION_MODES_HELP
+Ce mode vous permet de choisir entre le mode de sélection par défaut et le mode de sélection collant (genre DirectoryOpus)
+; This mode allows to choose between the default selection mode and the sticky selection mode (DirectoryOpus-like)
+;
+MSG_PREFSWIN_LISTER_SELECTION_DEFAULT
+Défaut
+; Default
+;
+MSG_PREFSWIN_LISTER_SELECTION_ALWAYS
+Toujours
+; Always
+;
+MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN
+Colonne de tri mise en valeur
+; Highlighted sorting column
+;
+MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN_HELP
+Donne une couleur plus claire à la colonne utilisée pour trier.
+; When activated, the currently sorting column is brighter than other ones.
+;
+; *** PrefsWin_KeyboardClass.c (prefswin_keyboardclass.c)
+;
+MSG_PREFSWIN_KEYBOARDCLASS_BUILTINGROUP
+Raccourcis clavier standards
+; Builtin commands hotkeys
+;
+MSG_PREFSWIN_KEYBOARDCLASS_CUSTOMGROUP
+Raccourcis clavier personnalisés
+; Custom commands hotkeys
+;
+MSG_PREFSWIN_KEYBOARDCLASS_ADDAHOTKEY
+Ajouter un raccourci clavier
+; Add a Hotkey
+;
+MSG_PREFSWIN_KEYBOARDCLASS_NEWSHORTCUT
+Nouveau raccourci clavier
+; new shortcut
+;
+; *** KeyShortCutClass.c (keyshortcutclass.c)
+;
+MSG_KEYSHORTCUTCLASS_ACTION
+Éditer la commande
+; Edit Command
+;
+MSG_KEYSHORTCUTCLASS_REMOVE
+Supprimer
+; Remove
+;
+MSG_KEYSHORTCUTCLASS_LABEL_FORMAT
+%s :
+; %s:
+;
+; *** KeyShortCuts.c (keyshortcuts.c)
+;
+MSG_KEYSHORTCUT_DELETE
+Supprimer
+; Delete
+;
+MSG_KEYSHORTCUT_RENAME
+Renommer
+; Rename
+;
+MSG_KEYSHORTCUT_INFORMATION
+Information
+; Information
+;
+MSG_KEYSHORTCUT_PARENT
+Parent
+; Parent
+;
+MSG_KEYSHORTCUT_LEAVEOUT
+Sortir
+; Leave out
+;
+MSG_KEYSHORTCUT_PUTAWAY
+Ranger
+; Put away
+;
+MSG_KEYSHORTCUT_SELECTALL
+Sélectionner tout
+; Select all
+;
+MSG_KEYSHORTCUT_SELECTNONE
+Désélectionner tout
+; Deselect all
+;
+MSG_KEYSHORTCUT_SELECTINVERT
+Inverser la sélection
+; Invert selection
+;
+MSG_KEYSHORTCUT_SELECTPATTERN
+Sélectionner avec un motif
+; Select with pattern
+;
+MSG_KEYSHORTCUT_CLIPBOARDCOPY
+Copier dans le presse-papier
+; Copy to clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDCUT
+Couper dans le presse-papier
+; Cut to clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDPASTE
+Coller depuis le presse-papier
+; Paste from clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDPASTEAS
+Coller et renommer depuis le presse-papier
+; Paste from clipboard as
+;
+MSG_KEYSHORTCUT_CYCLEMODE
+Changer de vue
+; Cycle Mode
+;
+MSG_KEYSHORTCUT_CYCLESUBMODE
+Changer de mode
+; Cycle Submode
+;
+MSG_KEYSHORTCUT_FINDFILES
+Rechercher des fichiers
+; Find files
+;
+; *** Find Window
+;
+MSG_FINDCLASS_TITLE
+Rechercher
+; Find
+;
+MSG_FINDCLASS_MENU_PROJECT
+Rechercher
+; Find
+;
+MSG_FINDCLASS_MENU_QUIT
+Quitter
+; Quit
+;
+MSG_FINDCLASS_NAME
+Nom :
+; Name:
+;
+MSG_FINDCLASS_NAME_HELP
+Nom du ou des fichier(s) à rechercher.
+; Name of the file(s) to search.
+;
+MSG_FINDCLASS_TEXT
+Texte :
+; Text:
+;
+MSG_FINDCLASS_TEXT_HELP
+Texte à rechercher dans les fichiers.
+; Text to search within files.
+;
+MSG_FINDCLASS_TYPE
+Type :
+; Type:
+;
+MSG_FINDCLASS_TYPE_HELP
+Type de fichier à rechercher.
+; Filetype of the files to search.
+;
+MSG_FINDCLASS_COMMENT
+Commentaire :
+; Comment:
+;
+MSG_FINDCLASS_COMMENT_HELP
+Commentaire du fichier à rechercher.
+; Filecomment of the files to search.
+;
+MSG_FINDCLASS_ADDSTRING_HELP
+Les emplacements à examiner sont saisis ici.
+; New locations can be entered here.
+;
+MSG_FINDCLASS_ADD
+_Ajouter
+; _Add
+;
+MSG_FINDCLASS_ADD_HELP
+Ce gadget ajoute l'emplacement spécifié à la liste des emplacements.
+; This gadget adds the specified location to the location list.
+;
+MSG_FINDCLASS_REMOVE
+_Supprimer
+; _Remove
+;
+MSG_FINDCLASS_REMOVE_HELP
+Ce bouton supprime l'emplacement spécifié de la liste des emplacements.
+; This button removes the selected item from location list.
+;
+MSG_FINDCLASS_LOCATIONS
+Emplacements
+; Locations
+;
+MSG_FINDCLASS_LOCATIONS_HELP
+Ces emplacements seront examinés.
+; These locations will be searched.
+;
+MSG_FINDCLASS_RESULTS
+Résultats
+; Results
+;
+MSG_FINDCLASS_RESULTS_HELP
+Les résultats de la recherche sont affichés ici.
+; Here the search results will be displayed.
+;
+MSG_FINDCLASS_SEARCH
+Rechercher
+; _Search
+;
+MSG_FINDCLASS_SEARCH_HELP
+Effectue une nouvelle recherche à l'aide des paramètres spécifiés.
+; Start search with the given parameters.
+;
+MSG_FINDCLASS_STOP
+Arrêter
+; S_top
+;
+MSG_FINDCLASS_STOP_HELP
+Interrompt la recherche.
+; Stop search right now.
+;
+MSG_FINDCLASS_FINISHED
+Terminé
+; Finished
+;
+; FindResultList.c (findresultlist.c)
+;
+MSG_FINDRESULTLISTCLASS_NAME
+Nom
+; Name
+;
+MSG_FINDRESULTLISTCLASS_CONTAINER
+Propriétaire
+; Container
+;
+MSG_FINDRESULTLISTCLASS_COMMENT
+Commentaire
+; Comment
+;
+;
+; *** Icons
+;
+MSG_ICON_MYMORPHOS
+Volumes
+; My MorphOS
+;
+; *** Icon view window (lister and normal)
+;
+MSG_ICONVIEW_SCANNING_LOCATION
+ - Examine l'emplacement...
+; - Scanning location...
+;
+; *** contextmenu.c (ContextMenu.c)
+;
+MSG_CMENUTITLE_PROPERTIES
+Propriétés
+; Properties
+;
+MSG_CMENUTITLE_ICON
+Icône
+; Icon
+;
+MSG_CMENUTITLE_ICONS
+Icônes
+; Icons
+;
+MSG_CMENUTITLE_APPICON
+AppIcon
+; AppIcon
+;
+MSG_CMENUTITLE_FILE
+Fichier
+; File
+;
+MSG_CMENUTITLE_FILES
+Fichiers
+; Files
+;
+MSG_CMENUTITLE_PANELGROUP
+Panneau
+; Panel
+;
+MSG_CMENUTITLE_PANELBUTTON
+Bouton
+; Panel Button
+;
+MSG_CMENUTITLE_PANELSPACER
+Espace
+; Panel Spacer
+;
+MSG_CMENUTITLE_PANELSEPARATOR
+Séparateur
+; Panel Separator
+;
+MSG_CMENUTITLE_PANELPOPUP
+Popup
+; Popup
+;
+MSG_CMENUTITLE_PANELPOPUPAPPICONS
+AppIcons
+; Appicons
+;
+MSG_CMENUTITLE_PANELPOPUPBOOKMARKS
+Favoris
+; Bookmarks
+;
+MSG_CMENUTITLE_PANELPOPUPVIEWS
+Vues
+; Views
+;
+MSG_CMENUTITLE_PANELGROUPSUB
+Objet
+; Panel Item
+;
+MSG_CMENUTITLE_VIEW
+Vue
+; View
+;
+MSG_CMENU_ABOUT
+À propos...
+; About...
+;
+MSG_CMENU_ADDTOPANEL
+Ajouter au panneau...
+; Add to Panel...
+;
+MSG_CMENU_CUT
+Couper
+; Cut
+;
+MSG_CMENU_CUT_SHORTCUT
+X
+; X
+;
+MSG_CMENU_COPY
+Copier
+; Copy
+;
+MSG_CMENU_COPY_SHORTCUT
+C
+; C
+;
+MSG_CMENU_PASTE
+Coller
+; Paste
+;
+MSG_CMENU_PASTE_SHORTCUT
+V
+; V
+;
+MSG_CMENU_PASTEINTO
+Coller dans
+; Paste Into
+;
+MSG_CMENU_PASTEAS
+Coller et renommer...
+; Paste As...
+;
+MSG_CMENU_PASTEASINTO
+Coller et renommer dans...
+; Paste as Into...
+;
+MSG_CMENU_DELETE
+Supprimer
+; Delete
+;
+MSG_CMENU_DELBUTTON
+Supprimer le bouton
+; Delete Button
+;
+MSG_CMENU_STAYOPEN
+Rester ouvert
+; Stay Open
+;
+MSG_CMENU_PANELDELFROM
+Supprimer du panneau...
+; Remove Item...
+;
+MSG_CMENU_PANELDEL
+Supprimer le panneau...
+; Delete...
+;
+MSG_CMENU_PANELCREATE
+Créer un panneau
+; Create New
+;
+MSG_CMENU_PANELSAVE
+Enregistrer le panneau
+; Save
+;
+MSG_CMENU_PANELPREFS
+Ouvrir les préférences du panneau...
+; Configure...
+;
+MSG_CMENU_FORMAT
+Formater...
+; Format...
+;
+MSG_CMENU_EJECT
+Éjecter
+; Eject
+;
+MSG_CMENU_EJECT_SHORTCUT
+J
+; J
+;
+MSG_CMENU_HELP
+Aide...
+; Help...
+;
+MSG_CMENU_INFO
+Information...
+; Information...
+;
+MSG_CMENU_INFO_SHORTCUT
+I
+; I
+;
+MSG_CMENU_INVERT
+Inverser
+; Invert
+;
+MSG_CMENU_INVERT_SHORTCUT
+\000
+; \000
+;
+MSG_CMENU_LOCKED
+Bloquer
+; Locked
+;
+MSG_CMENU_MOVE
+Déplacer
+; Move Item
+;
+MSG_CMENU_MOVE_SHORTCUT
+\000
+; \000
+;
+MSG_CMENU_MANAGEAPPLETS
+Gérer les applets...
+; Manage Applets...
+;
+MSG_CMENU_NEWDRAWER
+Nouveau répertoire...
+; New Drawer...
+;
+MSG_CMENU_PANEL
+Panneau
+; Panel
+;
+MSG_CMENU_SNAPSHOT
+Figer
+; Snapshot
+;
+MSG_CMENU_PROPERTIES
+Propriétés...
+; Properties...
+;
+MSG_CMENU_PUTAWAY
+Ranger
+; Put Away
+;
+MSG_CMENU_RENAME
+Renommer...
+; Rename...
+;
+MSG_CMENU_RENAME_SHORTCUT
+R
+; R
+;
+MSG_CMENU_SELECTALL
+Sélectionner tout
+; Select All
+;
+MSG_CMENU_SELECTALL_SHORTCUT
+A
+; A
+;
+MSG_CMENU_SHOW
+Afficher
+; Show
+;
+MSG_CMENU_SNAPSHOTWIN
+Figer la fenêtre
+; Snapshot Window
+;
+MSG_CMENU_UNSNAPSHOTWIN
+Libérer la fenêtre
+; UnSnapshot Window
+;
+MSG_CMENU_SORT
+Trier
+; Sort By
+;
+MSG_CMENU_SORT_BYDATE
+Par date
+; Date
+;
+MSG_CMENU_SORT_BYNAME
+Par nom
+; Name
+;
+MSG_CMENU_SORT_BYSIZE
+Par taille
+; Size
+;
+MSG_CMENU_SORT_BYTYPE
+Par type
+; Type
+;
+MSG_CMENU_UNSNAPSHOT
+Libérer
+; UnSnapshot
+;
+MSG_CMENU_VIEW
+Vue
+; View
+;
+MSG_CMENU_WINDOW
+Fenêtre
+; Window
+;
+MSG_CMENU_ALL
+Tout
+; All
+;
+MSG_CMENU_ICONS
+Icônes
+; Icons
+;
+MSG_CMENU_LISTTITLE_GETDIRECTORYSIZES
+Afficher la taille des répertoires
+; Get Directory Sizes
+;
+MSG_CMENU_LISTTITLE_RESETTODEFAULTFORMAT
+Revenir au format par défaut
+; Reset to Default Format
+;
+; *** CMENU Items (mimetype.c)
+;
+MSG_CMENU_MIME_OPEN
+Ouvrir
+; Open
+;
+MSG_CMENU_MIME_OPENINNEWWINDOW
+Ouvrir dans une nouvelle fenêtre...
+; Open in New Window...
+;
+MSG_CMENU_MIME_OPENANDCLOSEOLD
+Ouvrir et fermer ancien
+; Open and Close Old
+;
+MSG_CMENU_MIME_OPENINDESTINATION
+Ouvrir dans destination
+; Open in Destination
+;
+MSG_CMENU_MIME_OPENSHELL
+Ouvrir Shell...
+; Open Shell...
+;
+MSG_CMENU_MIME_FIND
+Rechercher...
+; Find...
+;
+MSG_CMENU_MIME_COPYTO
+Copier vers...
+; Copy To...
+;
+MSG_CMENU_MIME_MOVETO
+Déplacer vers...
+; Move To...
+;
+; *** Listview Title (listviewlistclass.c)
+;
+MSG_CMENU_LVTITLES_NAME
+Nom
+; Name
+;
+MSG_CMENU_LVTITLES_SIZE
+Taille
+; Size
+;
+MSG_CMENU_LVTITLES_DATE
+Date
+; Date
+;
+MSG_CMENU_LVTITLES_ATTRS
+Attrs
+; Attrs
+;
+MSG_CMENU_LVTITLES_COMMENT
+Commentaire
+; Comment
+;
+MSG_CMENU_LVTITLES_FILETYPE
+Type
+; Filetype
+;
+MSG_CMENU_LVTITLES_VERSION
+Version
+; Version
+;
+MSG_CMENU_LVTITLES_FULLDATE
+Date & Heure
+; Date & Time
+;
+MSG_CMENU_LVTITLES_UID
+Utilisateur
+; User
+;
+MSG_CMENU_LVTITLES_GID
+Groupe
+; Group
+;
+MSG_CMENU_LVTITLES_MD5
+MD5
+; MD5
+;
+MSG_CMENU_LVTITLES_VOLUMENAME
+Nom de Volume
+; Volume Name
+;
+MSG_CMENU_LVTITLES_FREE
+Dispo
+; Free
+;
+MSG_CMENU_LVTITLES_TOTAL
+Total
+; Total
+;
+MSG_CMENU_LVTITLES_DOSTYPE
+Type DOS
+; DOS Type
+;
+MSG_CMENU_TRASH
+Déplacer vers la corbeille...
+; Move to Trashcan...
+;
+MSG_CMENU_RESTORE
+Restaurer
+; Restore
+;
+MSG_CMENU_EMPTY
+Vider la corbeille
+; Empty Trashcan
+;
+;
+MSG_CMENU_NETWORKSSETTINGS
+Réglages des partages réseaux...
+; Share Settings...
+;
+MSG_CMENU_NETWORKSCONNECT
+Connexion...
+; Connect...
+;
+MSG_LISTVIEWLISTCLASS_EMPTY
+<Vide>
+; <Empty>
+;
+MSG_LISTVIEWLISTCLASS_DIRECTORY
+<Répertoire>
+; <Directory>
+;
+MSG_LISTVIEWLISTCLASS_LINK
+<Lien>
+; <Link>
+;
+MSG_LISTVIEWLISTCLASS_ASSIGN
+<Assignation>
+; <Assign>
+;
+; *** Column type descriptors (columnslistclass.c)
+;
+MSG_COLUMNSLIST_ICON
+Icône
+; Icon
+;
+MSG_COLUMNSLIST_SORTBY
+Trier par
+; Sort By
+;
+MSG_COLUMNSLIST_NAME
+Nom
+; Name
+;
+MSG_COLUMNSLIST_HIDDEN
+Caché
+; Hidden
+;
+; *** Mime Type Descriptors (mimetype.c)
+;
+MSG_MIMETYPE_MORPHOSEXECUTABLE
+Exécutable MorphOS
+; MorphOS Executable
+;
+MSG_MIMETYPE_AMIGAOS68KEXECUTABLE
+Exécutable AmigaOS 68k
+; AmigaOS 68k Executable
+;
+MSG_MIMETYPE_AMIGAOS4PPCEXECUTABLE
+Exécutable OS4
+; OS4 Executable
+;
+MSG_MIMETYPE_SCRIPT
+Script
+; Script
+;
+MSG_MIMETYPE_OGGVORBIS
+Ogg Vorbis
+; Ogg Vorbis Audio
+;
+MSG_MIMETYPE_MPEGLAYER3
+MPEG Layer-3 Audio
+; MPEG Layer-3 Audio
+;
+MSG_MIMETYPE_MULTIMEDIAOBJECT
+Objet Multimédia
+; Multimedia Object
+;
+MSG_MIMETYPE_DEVICE
+Périphérique
+; Device
+;
+MSG_MIMETYPE_DIRECTORY
+Répertoire
+; Directory
+;
+MSG_MIMETYPE_DATATYPE
+Datatype
+; Datatype
+;
+MSG_MIMETYPE_PROJECT
+Projet
+; Project
+;
+; *** Internal filetype (actionlistclass.c)
+;
+MSG_FILETYPE_INTERNAL
+Ce type de fichier est défini en interne dans Ambient,\nil n'est donc pas éditable. Vous pouvez cependant\nen définir un qui remplacera celui-ci.
+; This filetype is an internal definition in Ambient and\nis therefore not editable. You can however override this\nfiletype by defining one that overrides it.
+;
+; ** mouse over icon bubble strings (metadata.c)
+;
+MSG_METADATA_UNKNOWN
+Inconnu
+; Unknown
+;
+MSG_METADATA_TYPE
+Type : %s
+; Type: %s
+;
+MSG_METADATA_DATESIZE
+\nDate : %s, %s\nTaille : %s
+; \nDate: %s, %s\nUsed: %s
+;
+; ** View names (viewapi.c)
+;
+MSG_VIEW_ICON
+Icône
+; Icon
+;
+MSG_VIEW_ICONS
+Icônes
+; Icons
+;
+MSG_VIEW_ALLFILES
+Tous les fichiers
+; All Files
+;
+MSG_VIEW_THUMB
+Miniatures
+; Thumbnails
+;
+MSG_VIEW_LIST
+Liste
+; List
+;
+MSG_VIEW_SCALED
+Redimensionné
+; Scaled
+;
+MSG_VIEW_NORMAL
+Normal
+; Normal
+;
+; ** File size capacity (capacity.c)
+;
+MSG_CAPACITY_FORMAT_BYTES
+%u octets
+; %u bytes
+;
+MSG_CAPACITY_FORMAT_KBYTES
+%u.%u Ko
+; %u.%u KB
+;
+MSG_CAPACITY_FORMAT_MBYTES
+%u.%u Mo
+; %u.%u MB
+;
+MSG_CAPACITY_FORMAT_GBYTES
+%u.%u Go
+; %u.%u GB
+;
+MSG_CAPACITY_FORMAT_TBYTES
+%u.%u To
+; %u.%u TB
+;
+MSG_CAPACITY_FORMAT_COMPACT_BYTES
+%u octets
+; %u bytes
+;
+MSG_CAPACITY_FORMAT_COMPACT_KBYTES
+%uKo
+; %uKB
+;
+MSG_CAPACITY_FORMAT_COMPACT_MBYTES
+%uMo
+; %uMB
+;
+MSG_CAPACITY_FORMAT_COMPACT_GBYTES
+%uGo
+; %uGB
+;
+MSG_CAPACITY_FORMAT_COMPACT_TBYTES
+%uTo
+; %uTB
+;
+; ** SmartReq (smartreq.c)
+;
+MSG_SMARTREQUEST_AMBIENTREQUEST
+Requête d'Ambient
+; Ambient Request
+;
+MSG_SMARTREQUEST_AMBIENTDOSERROR
+Erreur DOS d'Ambient
+; Ambient DOS Error
+;
+MSG_SMARTREQUEST_AMBIENTIOERROR
+Erreur d'accès entrée/sortie d'Ambient
+; Ambient I/O Error
+;
+MSG_SMARTREQUEST_SOURCE
+Source
+; Source
+;
+MSG_SMARTREQUEST_TARGET
+Destination
+; Target
+;
+MSG_SMARTREQUEST_VERSION
+\033bVersion\033
+; Version
+;
+MSG_SMARTREQUEST_MD5
+\033bMD5\033
+; MD5
+;
+MSG_SMARTREQUEST_CHECKING
+Vérification...
+; Checking...
+;
+MSG_SMARTREQUEST_UNKNOWN
+inconnu
+; unknown
+;
+; ** FileAction  (fileaction.c )
+;
+MSG_FILEACTION_DELETETITLE
+Ambient · Suppression
+; Ambient · Delete
+;
+MSG_FILEACTION_DELETEMSG
+Impossible de supprimer '%s'.\n\nErreur DOS : %S\n(#%N).
+; Couldn't delete '%s'.\n\nDOS error: %S\n(#%N).
+;
+MSG_FILEACTION_OVERWRITETITLE
+Ambient · Écrasement
+; Ambient · Overwrite
+;
+MSG_FILEACTION_OVERWRITEMSG
+Le fichier '%s'\nest protégé contre l'écrasement.
+; File '%s'\nis protected from overwrite.
+;
+MSG_FILEACTION_PROTECTBUTTONS
+* _Déprotéger | Déprotéger _tout | _Passer | P_asser tout | An_nuler
+; *_Unprotect|Unprotect All|_Skip|Skip All|_Cancel
+;
+MSG_FILEACTION_PROTECTIONERROR
+Impossible de positionner les bits de protection de '%s'.\n\nErreur DOS : %S\n(#%N).
+; Couldn't set the protection mode of '%s'.\n\nDOS error: %S\n(#%N).
+;
+MSG_FILEACTION_COPYTITLE
+Ambient · Copie
+; Ambient · Copy
+;
+MSG_FILEACTION_MOVETITLE
+Ambient · Déplacement
+; Ambient · Move
+;
+MSG_FILEACTION_REPLACEMSG
+Le fichier '%s'\nexiste déjà et sera remplacé.
+; File '%s'\nalready exists and will be replaced.
+;
+MSG_FILEACTION_REPLACEBUTTONS
+* _Remplacer | Remplacer _tout | _Passer | P_asser tout | An_nuler
+; *_Replace|Replace All|_Skip|Skip All|_Cancel
+;
+; ** FindVer (findver.c)
+;
+MSG_FINDVER_RETRIEVINGVERSION
+Recherche de la chaîne de version...
+; retrieving version string...
+;
+MSG_FINDVER_VERSIONNOTFOUND
+Impossible de trouver une chaîne de version
+; Couldn't find version string
+;
+; ** MD5Sum.c (md5sumc.c)
+;
+MSG_MD5SUM_COMPUTINGMD5SUM
+Calcul de la somme MD5 en cours...
+; computing MD5 sum...
+;
+; ** Devices.c  (devices.c)
+;
+MSG_DEVICES_FREE
+%s, %s libre
+; %s, %s free
+;
+; PanelGroupClass.c (panelgroupclass.c)
+;
+MSG_PANELGROUPCLASS_TITLE
+Panneau
+; Ambient Panel
+;
+MSG_PANELGROUPCLASS_DELETEMSG
+Voulez-vous réellement supprimer le panneau ?
+; Do you really want to delete the panel?
+;
+MSG_PANELGROUPCLASS_DELETECANCEL
+Supprimer|Annuler
+; Delete|Cancel
+;
+; Rename.c (rename.c)
+;
+MSG_RENAME_TITLE
+Ambient · Renommer
+; Ambient · Rename
+;
+MSG_RENAME_FILEISADIRECTORY
+Le fichier '%s' est un répertoire
+; File '%s' is a directory
+;
+MSG_RENAME_FILECANTBERENAMED
+Le fichier '%s' ne peut pas être renommé.\nErreur DOS : %S (#%N).
+; File '%s' can't be renamed.\nDOS error: %S (#%N).
+;
+MSG_RENAME_CANTBERENAMED
+'%s' ne peut pas être renommé.\nErreur DOS : %S (#%N).
+; '%s' can't be renamed.\nDOS error: %S (#%N).
+;
+MSG_RENAME_SKIPCANCEL
+*_Passer|Annuler
+; *_Skip|Cancel
+;
+MSG_RENAME_OK
+*_Ok
+; *_OK
+;
+; MoveDir.c (movedir.c)
+;
+MSG_MOVEDIR_TITLE
+Ambient · Copie
+; Ambient · Copy
+;
+MSG_MOVEDIR_ERRORWHILEMOVING
+Erreur lors de la copie de '%s'
+; Error while copying '%s'
+;
+MSG_MOVEDIR_ERRORISAFILE
+'%s' est un fichier
+; '%s' is a file
+;
+MSG_MOVEDIR_RETRYSKIPCANCEL
+*_Réessayer|Passer|Annuler
+; *_Retry|Skip|Cancel
+;
+MSG_MOVEDIR_REPLACECANCEL
+*_Remplacer|Annuler
+; *_Replace|Cancel
+;
+; Clipboard.c (clipboard.c)
+;
+MSG_CLIPBOARD_TITLE
+Ambient · Presse-papier
+; Ambient · Clipboard
+;
+MSG_CLIPBOARD_COPYCANCEL
+*_Copier|Annuler
+; *_Copy|Cancel
+;
+MSG_CLIPBOARD_COPIED
+copiés
+; copied
+;
+MSG_CLIPBOARD_CUT
+déplacés
+; cut
+;
+MSG_CLIPBOARD_FILESWILLBE
+\033b%d\033n fichiers sont présents dans le presse-papier et\nvont être \033b%s\033n dans « \033b%s\033n » :\n\n
+; The following \033b%d\033n files are in the clipboard and\nwill be \033b%s\033n to "\033b%s\033n" :\n\n
+;
+; PanelSpacerClass.c (panelspacerclass.c)
+;
+MSG_PANELITEM_SPACER
+Espace
+; Spacer
+;
+MSG_PANELITEM_SPACERDESC
+Insère une zone vide entre deux objets.
+; Inserts empty area between items.
+;
+; PanelSeparatorClass.c (panelseparatorclass.c)
+;
+MSG_PANELITEM_SEPARATOR
+Séparateur
+; Separator
+;
+MSG_PANELITEM_SEPARATORDESC
+Permet de séparer visuellement plusieurs groupes d'objets, par exemple des boutons.
+; Allows to optically group other panel objects, like e.g. buttons.
+;
+; PanelViewWatcherClass.c (panelviewwatcherclass.c)
+;
+MSG_PANELITEM_VIEWWATCHER
+Scruteur de vues
+; View Watcher
+;
+MSG_PANELITEM_VIEWWATCHERDESC
+Montre la liste des vues ouvertes et permet de naviguer de l'une à l'autre.
+; Shows a list of the opened views and allows to switch between them.
+;
+MSG_PANELITEM_VIEWWATCHER_SHORTHELP
+Scruteur de vues
+; Viewwatcher
+;
+; PanelBookmarksClass.c (panelbookmarksclass.c)
+;
+MSG_PANELITEM_BOOKMARKS
+Favoris
+; Bookmarks
+;
+MSG_PANELITEM_BOOKMARKSDESC
+Montre la liste des emplacements favoris.
+; Shows a list of bookmarked locations.
+;
+MSG_PANELITEM_BOOKMARKS_SHORTHELP
+Favoris
+; Bookmarks
+;
+; PanelDirPanelClass.c (paneldirpanelclass.c)
+;
+MSG_PANELITEM_DIRPANEL
+Répertoire
+; Directory
+;
+MSG_PANELITEM_DIRPANELDESC
+Montre toutes les icônes d'un répertoire dans un sous-panneau.
+; Shows all icons within a directory in a sub panel.
+;
+; PanelSubPanelClass.c (panelsubpanelclass.c)
+;
+MSG_PANELITEM_SUBPANEL
+Sous-panneau
+; Sub Panel
+;
+MSG_PANELITEM_SUBPANELDESC
+Permet de grouper des icônes dans un sous-panneau.
+; Allows to group icons in sub panels.
+;
+MSG_PANELITEM_SUBPANEL_SHORTHELP
+Sous-panneau
+; Subpanel
+;
+; PanelItemWinClass.c
+;
+MSG_PANELITEMWINCLASS_DESCGROUPTITLE
+Description
+; Description
+;
+MSG_PANELITEMWINCLASS_NONE
+Aucun
+; None
+;
+MSG_PANELITEMWINCLASS_UNKNOWN
+Inconnu
+; Unknown
+;
+; ActionEditorWinClass.c (actioneditorwinclass.c)
+;
+MSG_ACTIONEDITORWINCLASS_TITLE
+Ambient · Éditeur d'action
+; Ambient · Action Editor
+;
+; ActionEditorClass.c (actioneditorclass.c)
+;
+MSG_ACTIONEDITORCLASS_TYPE
+Type
+; Type
+;
+MSG_ACTIONEDITORCLASS_TYPE_HELP
+Type d'action pour l'entrée sélectionnée.
+; This is the type of action for the current entry.
+;
+MSG_ACTIONEDITORCLASS_COMMANDSTRING
+Ligne de commande
+; Command String
+;
+MSG_ACTIONEDITORCLASS_INTERNAL
+Interne
+; Internal
+;
+MSG_ACTIONEDITORCLASS_AMIGADOS
+AmigaDOS
+; AmigaDOS
+;
+MSG_ACTIONEDITORCLASS_WORKBENCH
+Workbench
+; Workbench
+;
+MSG_ACTIONEDITORCLASS_SCRIPT
+Script
+; Script
+;
+MSG_ACTIONEDITORCLASS_AREXX
+Arexx
+; Arexx
+;
+MSG_ACTIONEDITORCLASS_UNKNOWN
+Inconnu
+; Unknown
+;
+MSG_ACTIONEDITORCLASS_COMMANDGROUP
+Commande
+; Command
+;
+MSG_ACTIONEDITORCLASS_NAME
+_Nom :
+; _Name :
+;
+MSG_ACTIONEDITORCLASS_NAME_HELP
+Nom de l'action.
+; Name of the action.
+;
+MSG_ACTIONEDITORCLASS_ADD
+_Ajouter
+; _Add
+;
+MSG_ACTIONEDITORCLASS_ADD_HELP
+Ajoute une nouvelle action à la liste.
+; Add a new action to the list.
+;
+MSG_ACTIONEDITORCLASS_REMOVE
+_Supprimer
+; _Remove
+;
+MSG_ACTIONEDITORCLASS_REMOVE_HELP
+Supprime l'action actuellement sélectionnée.
+; Removes the current active action.
+;
+MSG_ACTIONEDITORCLASS_ACTIONLIST_HELP
+Cette liste contient l'ensemble des actions définies.
+; This list contains all actions.
+;
+MSG_ACTIONEDITORCLASS_UP_HELP
+Fait monter d'un niveau l'entrée sélectionnée dans la liste des actions.
+; Moves the selected entry up the action list.
+;
+MSG_ACTIONEDITORCLASS_DOWN_HELP
+Fait descendre d'un niveau l'entrée sélectionnée dans la liste des actions.
+; Moves the selected entry down the action list.
+;
+MSG_ACTIONEDITORCLASS_COMMAND_HELP
+Commande qui sera exécutée :\n\nUtiliser:\n%sp pour le chemin du fichier.\n%sf pour le nom du fichier sélectionné.\n%S pour le chemin de la vue source.\n%Si pour l'identifiant de la vue\n%D pour le \
+chemin de la vue de destination.\n%Di pour l'identifiant de la vue de destination.
+; Command to be executed.\n\nUse:\n%sp for entry full path.\n%sf for entry file part.\n%S for source view path.\n%Si for source view identifier.\n%D for destination view path.\n%Di for destination view \
+; identifier.
+;
+MSG_ACTIONEDITORCLASS_EVENTTYPE
+Type d'événe_ment :
+; _Event type:
+;
+MSG_ACTIONEDITORCLASS_EVENTTYPE_HELP
+Spécifie le type d'événement déclenchant cette action.
+; Allows to specify the type of event causing this action.
+;
+MSG_ACTIONEDITORCLASS_EVENTDOUBLE
+Double clic
+; DoubleClick
+;
+MSG_ACTIONEDITORCLASS_EVENTMENU
+Menu
+; Menu
+;
+MSG_ACTIONEDITORCLASS_EVENTDRAGNDROP
+Glisser et déposer
+; Drag'n'Drop
+;
+MSG_ACTIONEDITORCLASS_QUALIFIER
+_Qualifieur :
+; _Qualifier :
+;
+MSG_ACTIONEDITORCLASS_QUALNONE
+Aucun
+; None
+;
+MSG_ACTIONEDITORCLASS_QUALSHIFT
+Shift
+; Shift
+;
+MSG_ACTIONEDITORCLASS_QUALALT
+Alt
+; Alt
+;
+MSG_ACTIONEDITORCLASS_QUALCONTROL
+Control
+; Control
+;
+MSG_ACTIONEDITORCLASS_SORTBYPARENT
+Ranger l'action
+; Sort by parent
+;
+MSG_ACTIONEDITORCLASS_SORTBYPARENT_HELP
+Il est possible de définir des sous-menus pour les actions. Cette option permet de définir le nom du menu parent contenant le menu associé à cette action.
+; The name of the parent element will be used to sort menu items.
+;
+MSG_ACTIONEDITORCLASS_PARENTNAME
+Dans le menu :
+; Parent Menu Name
+;
+MSG_ACTIONEDITORCLASS_PARENTNAME_HELP
+Nom du ménu parent qui contient le menu associé à cette action.
+; Specify the name of the parent menu.
+;
+MSG_ACTIONEDITORCLASS_CDTOSOURCE
+CD _source
+; Change working directory to _source
+;
+MSG_ACTIONEDITORCLASS_CDTOSOURCE_HELP
+Juste avant que l'action ne soit exécutée, le chemin de la vue source sera utilisé pour le répertoire courant.
+; Before the action take place the current dir will be changed to source drawer.
+;
+MSG_ACTIONEDITORCLASS_CDTODESTINATION
+CD _destination
+; Change working directory to _destination
+;
+MSG_ACTIONEDITORCLASS_CDTODESTINATION_HELP
+Juste avant que l'action ne soit exécutée, le chemin de la vue destination sera utilisé pour le répertoire courant.
+; Before the action take place the current dir will be changed to destination drawer.
+;
+MSG_ACTIONEDITORCLASS_DONTQUOTEARGS
+Ne pas ajouter de _guillemets
+; Don't _quote arguments
+;
+MSG_ACTIONEDITORCLASS_DONTQUOTEARGS_HELP
+Permet de ne pas ajouter de guillemets aux chemins passés en paramètre.
+; Don't surround arguments by a quotation mark if this switch is enabled.
+;
+MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES
+_Fusionner la sélection
+; _Merge selection
+;
+MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES_HELP
+Permet de concaténer l'ensemble des fichiers sélectionnés en une seule chaîne.
+; Merge selected files in a single string.
+;
+MSG_ACTIONEDITORCLASS_OK
+_Ok
+; _Ok
+;
+MSG_ACTIONEDITORCLASS_OK_HELP
+Valide la configuration actuelle.
+; The current setup will be used.
+;
+MSG_ACTIONEDITORCLASS_CANCEL
+_Annuler
+; _Cancel
+;
+MSG_ACTIONEDITORCLASS_CANCEL_HELP
+Abandonne la configuration actuelle.
+; The current setup will be rejected.
+;
+MSG_ACTIONEDITORCLASS_SPECIFYCOMMANDHERE
+Entrez une commande ici.
+; Specify command here.
+;
+; *** MimeAdjustListClass.c (mimeadjustlistclass.c)
+;
+MSG_MIMEADJUSTLISTCLASS_NAME
+Nom
+; Name
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTTYPE
+Type d'évènement
+; Event Type
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTDOUBLE
+Double clic
+; DoubleClick
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTMENU
+Menu
+; Menu
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTDRAGNDROP
+Glisser-déposer
+; Drag'n'Drop
+;
+MSG_MIMEADJUSTLISTCLASS_QUALSHIFT
+[Shift]
+; [Shift]
+;
+MSG_MIMEADJUSTLISTCLASS_QUALALT
+[Alt]
+; [Alt]
+;
+MSG_MIMEADJUSTLISTCLASS_QUALCONTROL
+[Control]
+; [Control]
+;
+MSG_MIMEADJUSTLISTCLASS_INHERITEDACTION
+[Action héritée]\033i
+; [inherited action]\033i
+;
+; *** MimeGroupClass.c (mimegroupclass.c)
+;
+MSG_MIMEGROUPCLASS_ADD
+_Ajouter
+; _Add
+;
+MSG_MIMEGROUPCLASS_ADD_HELP
+Ajoute une action à la liste des actions.
+; Adds an action to action list.
+;
+MSG_MIMEGROUPCLASS_COPY
+Cop_ier
+; Cop_y
+;
+MSG_MIMEGROUPCLASS_COPY_HELP
+Copie l'entrée sélectionnée.
+; Copies the current entry.
+;
+MSG_MIMEGROUPCLASS_EDIT
+Édit_er
+; _Edit
+;
+MSG_MIMEGROUPCLASS_EDIT_HELP
+Édite l'entrée sélectionnée.
+; Edit the current active entry.
+;
+MSG_MIMEGROUPCLASS_REMOVE
+_Supprimer
+; _Remove
+;
+MSG_MIMEGROUPCLASS_REMOVE_HELP
+Supprime l'entrée sélectionnée.
+; Remove the current entry.
+;
+MSG_MIMEGROUPCLASS_SEARCH
+Chercher
+; Search
+;
+MSG_MIMEGROUPCLASS_SEARCH_HELP
+Permet de rechercher des types MIME.
+; Opens the mime search context.
+;
+; *** MimeAdjustWinClass.c (mimeadjustwinclass.c)
+;
+MSG_MIMEADJUSTWINCLASS_TITLE
+Ambient · Éditeur MIME
+; Ambient · MIME Editor
+;
+; *** MimeAdjustGroupClass.c (mimeadjustgroupclass.c)
+;
+MSG_MIMEADJUSTGROUPCLASS_ICON_HELP
+Il suffit de déposer une icône sur cette zone pour remplacer l'icône par défaut associée à ce type MIME.
+; Simply drag and drop an icon onto this image to replace the default mime type icon.
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMETYPE
+Type _Mime :
+; _Mimetype:
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMETYPE_HELP
+Type utilisé pour identifier un fichier.
+; Type used to identify a file.
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMESUBTYPE_HELP
+Sous-type utilisé pour identifier un fichier.
+; Subtype used to identify a file.
+;
+MSG_MIMEADJUSTGROUPCLASS_PRIORITY
+_Priorité :
+; _Priority:
+;
+MSG_MIMEADJUSTGROUPCLASS_PRIORITY_HELP
+Définit la priorité d'une entrée dans la liste des types MIME.
+; Specifies the priority in the mime type list.
+;
+MSG_MIMEADJUSTGROUPCLASS_DESCRIPTION
+_Description :
+; _Description:
+;
+MSG_MIMEADJUSTGROUPCLASS_DESCRIPTION_HELP
+Description du type MIME sélectionné.
+; Description of the current mime type.
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONS_GROUP
+Actions
+; Actions
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONS_HELP
+Cette liste contient les actions définies pour ce type MIME.
+; These actions are currently defined for the current mime type.
+;
+MSG_MIMEADJUSTGROUPCLASS_ADD
+_Ajouter...
+; _Add...
+;
+MSG_MIMEADJUSTGROUPCLASS_ADD_HELP
+Ajoute une action.
+; Adds an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_EDIT
+Édit_er...
+; _Edit...
+;
+MSG_MIMEADJUSTGROUPCLASS_EDIT_HELP
+Permer d'éditer une action.
+; Allows to edit an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_REMOVE
+_Supprimer
+; _Remove
+;
+MSG_MIMEADJUSTGROUPCLASS_REMOVE_HELP
+Supprime une action.
+; Removes an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_UP_HELP
+Fait monter l'entrée sélectionnée d'un niveau dans la liste.
+; Moves the selected entry up the list.
+;
+MSG_MIMEADJUSTGROUPCLASS_DOWN_HELP
+Fait descendre l'entrée sélectionnée d'un niveau dans la liste.
+; Moves the selected entry down the list.
+;
+MSG_MIMEADJUSTGROUPCLASS_OK
+_Ok
+; _Ok
+;
+MSG_MIMEADJUSTGROUPCLASS_OK_HELP
+Valide les changements apportés.
+; All selections made in this window will be used.
+;
+MSG_MIMEADJUSTGROUPCLASS_CANCEL
+_Annuler
+; _Cancel
+;
+MSG_MIMEADJUSTGROUPCLASS_CANCEL_HELP
+Abandonne les modifications apportées.
+; All selections made in this window will be rejected.
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONSTOPERFORM_HELP
+Actions à exécuter. Ce peut être une action de type principal (double clic) ou secondaire (menu, glisser-déposer).
+; Actions to perform. It can be a primary action (doubleclick) or secondary action (eg. menu, drag'n'drop).
+;
+MSG_MIMEADJUSTGROUPCLASS_DISABLED_HELP
+Les actions sont désactivées parce que le type MIME saisi n'est pas valide.
+; Actions are disabled because there's no valid mimetype in the mimetype string above.
+;
+MSG_MIMEADJUSTGROUPCLASS_TITLE_REQ
+Ambient · Types MIME
+; Ambient · MIME Types
+;
+MSG_MIMEADJUSTGROUPCLASS_OK_REQ
+*Ok
+; *OK
+;
+MSG_MIMEADJUSTGROUPCLASS_COULDNTSAVEFILETYPEDESC
+Impossible d'enregistrer le descripteur de type « %s ».
+; Couldn't save "%s" filetype descriptor.
+;
+MSG_MIMEADJUSTGROUPCLASS_COULDNTSAVEDEFAULTICON
+Impossible d'enregistrer l'icône par défaut « %s ».
+; Couldn't save "%s" default icon.
+;
+; *** AppletsWinClass.c (appletswinclass.c)
+;
+MSG_APPLETSWINCLASS_TITLE
+Gérer les applets
+; Manage applets
+;
+MSG_APPLETSWINCLASS_GROUP_WHITELIST
+Liste des applets autorisées
+; White list
+;
+MSG_APPLETSWINCLASS_GROUP_BLACKLIST
+Liste des applets interdites
+; Black list
+;
+MSG_APPLETSWINCLASS_CANCEL
+_Annuler
+; _Cancel
+;
+MSG_APPLETSWINCLASS_USE
+_Utiliser
+; _Use
+;
+; *** Prefs_Advanced_ListClass.c (prefs_advanced_listclass.c)
+;
+MSG_PREFSADVANCEDLISTCLASS_VARIABLE
+Variable
+; Variable
+;
+MSG_PREFSADVANCEDLISTCLASS_STATUS
+Statut
+; Status
+;
+MSG_PREFSADVANCEDLISTCLASS_INIT
+Init
+; Init
+;
+MSG_PREFSADVANCEDLISTCLASS_TYPE
+Type
+; Type
+;
+MSG_PREFSADVANCEDLISTCLASS_VALUE
+Valeur
+; Value
+;
+MSG_PREFSADVANCEDLISTCLASS_DEFAULTVALUE
+Valeur par défaut
+; Default Value
+;
+; *** Prefs_Advanced_GroupClass.c (prefs_advanced_groupclass.c)
+;
+MSG_PREFSADVANCEDGROUPCLASS_VALUE
+Valeur
+; Value
+;
+MSG_PREFSADVANCEDGROUPCLASS_RESETTODEFAULT
+_Réinitialiser par défaut
+; _Reset to Default
+;
+MSG_PREFSADVANCEDGROUPCLASS_RESETTODEFAULT_HELP
+La valeur de l'option choisie sera réinitialisée à sa valeur par défaut.
+; The value of the selected item will be reset to its default.
+;
+MSG_PREFSADVANCEDGROUPCLASS_ON
+Oui
+; On
+;
+MSG_PREFSADVANCEDGROUPCLASS_OFF
+Non
+; Off
+;
+; *** MimeListTreeClass.c (mimelisttreeclass.c)
+;
+MSG_MIMELISTTREECLASS_TYPE
+Type
+; Type
+;
+MSG_MIMELISTTREECLASS_NAME
+Nom
+; Name
+;
+; *** SearchBarClass.c (searchbarclass.c)
+;
+MSG_SEARCHBARCLASS_SEARCH
+_Chercher
+; S_earch
+;
+MSG_SEARCHBARCLASS_SEARCH_HELP
+Entrez la chaine recherchée.
+; Enter the string to search for.
+;
+MSG_SEARCHBARCLASS_CASESENSITIVE
+_Sensible à la casse :
+; Case se_nsitive:
+;
+MSG_SEARCHBARCLASS_CASESENSITIVE_HELP
+Si cette option est activée, la recherche tient compte de la casse (le fichier « Majuscule », par exemple, sera différent du fichier « majuscule »).
+; If activated "foo" is different to "FOO".
+;
+MSG_SEARCHBARCLASS_PREV
+Précédent
+; Prev
+;
+MSG_SEARCHBARCLASS_NEXT
+Suivant
+; Next
+;
+MSG_SEARCHBARCLASS_TEXTNOTFOUND
+Texte non trouvé.
+; Text not found.
+;
+; *** PatternRenameWinClass.c (patternrenamewinclass.c)
+;
+MSG_PATTERNRENAMEWINCLASS_WINDOWTITLE
+Renommer
+; Rename
+;
+MSG_PATTERNRENAMEWINCLASS_OLDNAME
+\033c\033bNom ou motif _source :
+; \033c\033bSource name or pattern:
+;
+MSG_PATTERNRENAMEWINCLASS_OLDNAME_HELP
+Nom ou motif original.
+; Name or pattern for original name.
+;
+MSG_PATTERNRENAMEWINCLASS_NEWNAME
+\033c\033bNom ou motif _cible :
+; \033c\033bDesti_nation name or pattern:
+;
+MSG_PATTERNRENAMEWINCLASS_NEWNAME_HELP
+Nom ou motif désiré. Par exemple : nouveau_nom ou a*.info.
+; Name or pattern for new name.
+;
+MSG_PATTERNRENAMEWINCLASS_RENAME
+_Renommer
+; _Rename
+;
+MSG_PATTERNRENAMEWINCLASS_RENAME_HELP
+Nom utilisé pour renommer le fichier ou répertoire.
+; The name specified within the text field in this window will be used as new name.
+;
+MSG_PATTERNRENAMEWINCLASS_SKIP
+_Passer
+; _Skip
+;
+MSG_PATTERNRENAMEWINCLASS_SKIP_HELP
+Ignore le fichier actuellement traité et passe au suivant.
+; Skip the current file and continue with the next file.
+;
+MSG_PATTERNRENAMEWINCLASS_CANCEL
+_Annuler
+; _Cancel
+;
+MSG_PATTERNRENAMEWINCLASS_CANCEL_HELP
+Annule l'opération et ferme la fenêtre.
+; Aborts the rename operation. The window will be closed.
+;
+; *** Print.c (print.c)
+;
+MSG_PRINT_REQUESTERTITLE
+Imprimer
+; Print
+;
+MSG_PRINT_OK
+_Ok
+; _OK
+;
+MSG_PRINT_COULDNOTFINDPRINTER
+Aucune imprimante n'a été trouvée.
+; Could not find printer.
+;
+; BookMarkListClass.c (bootmarklistclass.c)
+;
+MSG_BOOKMARK_NAME_LISTTITLE
+Nom
+; Name
+;
+MSG_BOOKMARK_LOCATION_LISTTITLE
+Emplacement
+; Location
+;
+MSG_BOOKMARK_UNNAMED
+Sans nom
+; Unnamed
+;
+; PrefsWin_BookmarksClass.c (prefswin_bookmarksclass.c)
+;
+MSG_PREFSWIN_BOOKMARKS_GROUP
+Favoris
+; Bookmarks
+;
+MSG_PREFSWIN_BOOKMARKS_HELP
+Liste des favoris définis.
+; List of the currently defined bookmarks.
+;
+MSG_PREFSWIN_BOOKMARKS_ADD
+_Ajouter
+; _Add
+;
+MSG_PREFSWIN_BOOKMARKS_ADD_HELP
+Ajoute un nouveau favori à la liste.
+; Adds a new bookmark to the list.
+;
+MSG_PREFSWIN_BOOKMARKS_REMOVE
+Supprimer
+; _Remove
+;
+MSG_PREFSWIN_BOOKMARKS_REMOVE_HELP
+Supprime le favori sélectionné de la liste.
+; The active bootmark will be removed from list.
+;
+MSG_PREFSWIN_BOOKMARKS_LOCATION
+_Emplacement
+; _Location
+;
+MSG_PREFSWIN_BOOKMARKS_LOCATION_HELP
+Ce chemin définit l'emplacement auquel ce favori fait référence.
+; This path specifies the location the bookmark is leading to.
+;
+MSG_PREFSWIN_BOOKMARKS_NAME
+_Nom
+; _Name
+;
+MSG_PREFSWIN_BOOKMARKS_NAME_HELP
+Le nom saisi tel qu'il apparaîtra dans les menus contextuels de favoris.
+; The name entered here is used in context menus to identify the bootmark.
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAY_GROUP
+Options d'affichage
+; Display Options
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS
+A_fficher :
+; _Display as:
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_HELP
+Affiche les attributs définis dans la liste des favoris.
+; Only the specified information will be shown in bookmark lists.
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_NAMESANDLOCATIONS
+Nom et emplacement
+; Name & Location
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_NAMES
+Nom
+; Name
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_LOCATIONS
+Emplacement
+; Location
+;
+; Bookmarks.c (bookmarks.c)
+;
+MSG_BOOKMARKS_MENUTITLE
+Favoris
+; Bookmark
+;
+MSG_BOOKMARKS_ADD
+Ajouter un favori...
+; Add Bookmark...
+;
+MSG_BOOKMARKS_ADD_TEMPORARY
+Ajouter un favori temporaire...
+; Add Temporary Bookmark...
+;
+; AddBookmarkWinClass.c (addbookmarkwinclass.c)
+;
+MSG_ADDBOOKMARKWINCLASS_WINDOWTITLE
+Favoris
+; Bookmark
+;
+MSG_ADDBOOKMARKWINCLASS_ENTERBOOKMARKNAME
+\033c\033bSaisissez le nom du favori
+; \033c\033bEnter bookmark name
+;
+MSG_ADDBOOKMARKWINCLASS_OK
+_Ok
+; _Ok
+;
+MSG_ADDBOOKMARKWINCLASS_OK_HELP
+Ajoute le favori à la liste des favoris.
+; Bookmark will be added to bookmark list.
+;
+MSG_ADDBOOKMARKWINCLASS_CANCEL
+_Annuler
+; _Cancel
+;
+MSG_ADDBOOKMARKWINCLASS_CANCEL_HELP
+Annule la création du favori.
+; The bookmark creation will be aborted.
+;
+; SelectWinClass.c (selectwinclass.c)
+;
+MSG_SELECTWINCLASS_WINDOWTITLE
+Motif de sélection
+; Pattern Selection
+;
+MSG_SELECTWINCLASS_ENTERSELECTIONPATTERN
+\033cSaisissez le motif de sélection des fichiers :
+; \033cEnter file selection pattern:
+;
+MSG_SELECTWINCLASS_OK
+_Ok
+; _Ok
+;
+MSG_SELECTWINCLASS_OK_HELP
+Les fichiers correspondant au motif seront sélectionnés.
+; Files matching the pattern will be selected.
+;
+MSG_SELECTWINCLASS_CANCEL
+_Annuler
+; _Cancel
+;
+MSG_SELECTWINCLASS_CANCEL_HELP
+Interrompre la sélection sans aucune action.
+; Abort the selection without any action.
+;
+; DeleteDir.c (deletedir.c)
+;
+MSG_DELETEDIR_TITLE
+Ambient · Supprimer un répertoire
+; Ambient · Delete directory
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGFILE
+Impossible de supprimer le fichier '%s'.\nErreur DOS : %S (#%N).
+; Couldn't delete file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGDIRECTORY
+Impossible de supprimer le répertoire '%s'.\nErreur DOS : %S (#%N).
+; Couldn't delete directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGDIRECTORYICON
+Impossible de supprimer l'icône du répertoire '%s'.\nErreur DOS : %S (#%N).
+; Couldn't delete icon of directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORUNABLETOSETPROTECTON
+Impossible de positionner le mode de protection pour '%s'.\nErreur DOS : %S (#%N).
+; Couldn't set the protection mode of '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_SKIPSKIPALWAYSRETRYABORT
+_Passer|Passer _tout|*_Réessayer|_Interrompre
+; _Skip|Skip Always|*_Retry|_Abort
+;
+MSG_DELETEDIR_RETRYCANCEL
+*_Réessayer|_Annuler
+; *_Retry|_Cancel
+;
+MSG_DELETEDIR_RETRYSKIPICONCANCEL
+*_Réessayer|_Passer|_Annuler
+; *_Retry|_Skip Icon|_Cancel
+;
+; DeleteFile.c (deletefile.c)
+;
+MSG_DELETEFILE_TITLE
+Ambient · Supprimer un fichier
+; Ambient · Delete file
+;
+MSG_DELETEFILE_ERRORWHILEDELETINGFILE
+Impossible de supprimer le fichier '%s'.\nErreur DOS : %S (#%N).
+; Couldn't delete file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEFILE_ERRORWHILEDELETINGFILEICON
+Impossible de supprimer l'icône du fichier '%s'.\nErreur DOS : %S (#%N).
+; Couldn't delete icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEFILE_RETRYCANCEL
+*_Réessayer|_Annuler
+; *_Retry|_Cancel
+;
+MSG_DELETEFILE_RETRYSKIPICONCANCEL
+*_Réessayer|_Passer|_Annuler
+; *_Retry|_Skip Icon|_Cancel
+;
+; trashcan.c
+;
+MSG_TRASHFILE_TITLE
+Ambient · Mettre à la corbeille
+; Ambient · Trash file
+;
+MSG_TRASHFILE_ERRORWHILEDELETINGFILE
+Impossible de mettre le fichier '%s' à la corbeille.\nErreur DOS : %S (#%N).
+; Couldn't trash file '%s'.\nDOS error: %S (#%N).
+;
+MSG_TRASHFILE_ERRORWHILEDELETINGFILEICON
+Impossible de mettre l'icône '%s' à la corbeille.\nErreur DOS : %S (#%N).
+; Couldn't trash icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_TRASHFILE_RETRYCANCEL
+*_Ressayer|_Annuler
+; *_Retry|_Cancel
+;
+MSG_TRASHFILE_RETRYSKIPICONCANCEL
+*_Ressayer|_Sauter cet icône|_Annuler
+; *_Retry|_Skip Icon|_Cancel
+;
+MSG_RESTOREFILE_TITLE
+Ambient · Restaurer un fichier
+; Ambient · Restore file
+;
+MSG_RESTOREFILE_ERRORWHILEDELETINGFILE
+Impossible de restaurer le fichier '%s' depuis la corbeille.\nErreur DOS : %S (#%N).
+; Couldn't restore trashed file '%s'.\nDOS error: %S (#%N).
+;
+MSG_RESTOREFILE_ERRORWHILEDELETINGFILEICON
+Impossible de restaurer l'icône '%s' depuis la corbeille.\nErreur DOS : %S (#%N).
+; Couldn't restore trashed icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_RESTOREFILE_RETRYCANCEL
+*_Ressayer|_Annuler
+; *_Retry|_Cancel
+;
+MSG_RESTOREFILE_RETRYSKIPICONCANCEL
+*_Ressayer|_Sauter cet icône|_Annuler
+; *_Retry|_Skip Icon|_Cancel
+;
+;
+; *** PanelWinClass.c (panelwinclass.c)
+;
+MSG_PANELWIN_NAME_LOOK
+Nommage et apparence
+; Name & Look
+;
+MSG_PANELWIN_BEHAVIOUR
+Comportement
+; Behaviour
+;
+MSG_PANELWIN_NAME
+Nom :
+; Name:
+;
+MSG_PANELWIN_NAME_HELP
+Nom des panneaux dans la fenêtre de préférence et sur le disque.
+; Name for panel in prefswin and on disk.
+;
+MSG_PANELWIN_BACKGROUND
+Fond :
+; Background:
+;
+MSG_PANELWIN_BACKGROUND_HELP
+Fond pour les fenêtres des panneaux.
+; Background for panelwindow.
+;
+MSG_PANELWIN_BACKMODE_COLOR
+Couleur
+; Color
+;
+MSG_PANELWIN_BACKMODE_IMAGE
+Image
+; Image
+;
+MSG_PANELWIN_ALPHA
+Opacité :
+; Alpha:
+;
+MSG_PANELWIN_ALPHA_HELP
+Opacité/transparence des fenêtres des panneaux.
+; Global alpha for panel.
+;
+MSG_PANELWIN_DEPTHS_NORMAL
+Ordinaire
+; Normal
+;
+MSG_PANELWIN_DEPTHS_BACK
+Toujours derrière
+; Always to Back
+;
+MSG_PANELWIN_DEPTHS_FRONT
+Toujours devant
+; Always to Front
+;
+MSG_PANELWIN_PLACEMENTH_NONE
+Aucune
+; None
+;
+MSG_PANELWIN_PLACEMENTH_BEGINNING
+Début
+; Beginning
+;
+MSG_PANELWIN_PLACEMENTH_END
+Fin
+; End
+;
+MSG_PANELWIN_PLACEMENTH_BOTH
+Les deux
+; Both
+;
+MSG_PANELWIN_ORIENTATION
+_Orientation :
+; _Orientation:
+;
+MSG_PANELWIN_ORIENTATION_HELP
+Modifie l'orientation du panneau.
+; Changes the orientation of the panel.
+;
+MSG_PANELWIN_TITLES_VERTICAL
+Verticale
+; Vertical
+;
+MSG_PANELWIN_TITLES_HORIZONTAL
+Horizontale
+; Horizontal
+;
+MSG_PANELWIN_POSITIONING
+_Positionnement :
+; _Positioning:
+;
+MSG_PANELWIN_POSITIONING_HELP
+Rend les bords de l'écran magnétique.
+; Makes the screen borders act as a kind of magnet.
+;
+MSG_PANELWIN_MODES_FLOATING
+Flottant
+; Floating
+;
+MSG_PANELWIN_MODES_ATTACHED
+Attaché aux bords
+; Attached to Borders
+;
+MSG_PANELWIN_MODES_FIXED
+Position fixe
+; Fixed to position
+;
+MSG_PANELWIN_SIZE
+Ta_ille :
+; S_ize:
+;
+MSG_PANELWIN_SIZE_HELP
+Modifie la taille du panneau.
+; Changes the size of the panel.
+;
+MSG_PANELWIN_DEPTH_ARRANGEMENT
+Arrangement de profondeur :
+; _Depth arrangement:
+;
+MSG_PANELWIN_DEPTH_ARRANGEMENT_HELP
+Indique comment le panneau doit se comporter en fonction de l'arrangement des fenêtres.
+; Tells how a panel should behave regarding depth arrangement with other windows.
+;
+MSG_PANELWIN_DRAG_GADGET
+Barre de déplacement :
+; Drag _gadget:
+;
+MSG_PANELWIN_DRAG_GADGET_HELP
+Modifie l'emplacement et le nombre de barre de déplacement.
+; Changes the place and number of dragging gadgets, which allow to drag the panel around.
+;
+MSG_PANELWIN_ALLOW_ZIPPING
+Autoriser la réduction
+; Allow _zipping
+;
+MSG_PANELWIN_ALLOW_ZIPPING_HELP
+Permet la réduction du panneau à sa taille minimale en cliquant sur la barre de déplacement.
+; Allows to reduce the panel to its minimal size by clicking on a drag gadget.
+;
+MSG_PANELWIN_AUTO_ZIPPING
+Réduction _automatique
+; _Autozipping
+;
+MSG_PANELWIN_AUTO_ZIPPING_HELP
+Plier/déplier le panneau quand le pointeur de la souris entre ou sort du panneau.
+; Zip panel when mouse enters and leaves panel.
+;
+MSG_PANELWIN_HIDE_DRAGBAR
+Cacher la barre de déplacement
+; Hide Dragbar
+;
+MSG_PANELWIN_HIDE_DRAGBAR_HELP
+Montrer la barre de déplacement uniquement quand la souris est au dessus.
+; Only show dragbar(s) when under mousepointer.
+;
+; *** PanelBaseButtonClass.c (panelbasebuttonclass.c)
+;
+MSG_PANELBASEBUTTON_ICON
+Icône :
+; Icon:
+;
+MSG_PANELBASEBUTTON_ICON_HELP
+Icône affichée dans le panneau parent.
+; Icon displayed in parent panel.
+;
+MSG_PANELBASEBUTTON_ICON_DEFAULT
+Défaut
+; Default
+;
+MSG_PANELBASEBUTTON_ICON_CUSTOM
+Personnalisé
+; Custom
+;
+; (unused???)
+MSG_PANELBASEBUTTON_ICON_FILE
+Fichier
+; File
+;
+; *** PanelSubWinClass.c (panelsubwinclass.c)
+;
+MSG_PANELSUBWIN_BUTTON_FRAME
+Bouton
+; Button
+;
+MSG_PANELSUBWIN_PANEL_FRAME
+Panneau
+; Panel
+;
+MSG_PANELSUBWIN_BACKGROUND
+Fond :
+; Background:
+;
+MSG_PANELSUBWIN_BACKGROUND_HELP
+Fond de la fenêtre du panneau.
+; Background for panel.
+;
+MSG_PANELSUBWIN_ALPHA
+Transparence
+; Alpha
+;
+MSG_PANELSUBWIN_ALPHA_HELP
+Canal alpha général pour les sous panneaux.
+; Global alpha for sub panel.
+;
+MSG_PANELSUBWIN_BACKMODE_COLOR
+Couleur
+; Color
+;
+MSG_PANELSUBWIN_BACKMODE_IMAGE
+Image
+; Image
+;
+MSG_PANELSUBWIN_BACKMODE_CLONE
+Dupliquer le parent
+; Clone Parent
+;
+; *** PanelDirPanelButtonClass.c (panelsubwinclass.c)
+;
+MSG_PANELDIRPANELBUTTON_DIRECTORY
+Répertoire :
+; Directory:
+;
+MSG_PANELDIRPANELBUTTON_DIRECTORY_HELP
+Répertoire à afficher dans un sous-panneau.
+; Directory to be shown in a sub panel.
+;
+MSG_PANELDIRPANELBUTTON_SHORTHELP
+Répertoire
+; Directory
+;
+; *** PrefsWinPanelClass.c (prefswin_panelclass.c)
+;
+MSG_PREFSWIN_PANEL_PANELS
+Panneaux
+; Panels
+;
+MSG_PREFSWIN_PANEL_GLOBAL
+Généralités
+; Global
+;
+MSG_PREFSWIN_PANEL_NEW
+Nouveau panneau
+; New Panel
+;
+MSG_PREFSWIN_PANEL_NEW_HELP
+Crée un nouveau panneau.
+; Creates new panel.
+;
+MSG_PREFSWIN_PANEL_DELETE
+Supprimer
+; Delete
+;
+MSG_PREFSWIN_PANEL_DELETE_HELP
+Supprime un panneau ou une entrée de panneau.
+; Delete panel or panelitem.
+;
+MSG_PREFSWIN_PANEL_LIST_HELP
+Glisse un élément dans l'arbre pour l'ajouter.
+; Drag object into listtree.
+;
+MSG_PREFSWIN_PANEL_RESCAN
+Rafraîchir
+; Rescan
+;
+MSG_PREFSWIN_PANEL_RESCAN_HELP
+Rafraîchit la liste des modules de panneau disponibles.
+; Rescan for added classes and update the class list.
+;
+MSG_PREFSWIN_PANEL_ZIPSPEED
+Vitesse de repliement :
+; Zipping speed:
+;
+MSG_PREFSWIN_PANEL_ZIPSPEED_HELP
+Détermine la vitesse d'animation de l'effet de repliement ou dépliement du panneau.
+; Sets the animation speed of the panels' zipping effect.
+;
+MSG_PREFSWIN_PANEL_LAYOUT
+Disposition
+; Layout
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE
+Enregistrement automatique
+; Autosave
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DROP
+Icône lâchée sur la fenêtre
+; Icon dropped into window
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DROP_HELP
+Enregistre le panneau quand une icône est ajoutée par lâché sur le panneau.
+; Save the panel when icon is added by dropping it onto panel.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DELETE
+Icône supprimée
+; Icon deleted
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DELETE_HELP
+Enregistre le panneau quand une icône est supprimée du menu contextuel.
+; Save the panel when icon is deleted from contextmenu.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_MOVE
+Icône déplacée dans la fenêtre
+; Icon moved inside window
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_MOVE_HELP
+Enregistre le panneau quand une icône est déplacée.
+; Save the panel when icon is moved.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_WINDOWPOS
+Panneau déplacé sur l'écran
+; Panel moved on screen
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_WINDOWPOS_HELP
+Enregistre le panneau quand celui-ci est déplacé vers une nouvelle position.
+; Save the panel when panel is dragged to a new position.
+;
+MSG_PREFSWIN_PANEL_EFFECTS
+Effets sur les icônes
+; Icon effects
+;
+MSG_PREFSWIN_PANEL_HIGHLIGHT
+Mise en surbrillance :
+; Highlight:
+;
+MSG_PREFSWIN_PANEL_HIGHLIGHT_HELP
+Effet sur l'icône quand le pointeur de la souris passe par dessus.
+; Effect on icon when mouse is hovering over it.
+;
+MSG_PREFSWIN_PANEL_DRAGDROP_EFFECT
+Glisser-déposer :
+; Drag&Drop:
+;
+MSG_PREFSWIN_PANEL_DRAGDROP_EFFECT_HELP
+Effet sur l'icône quand un objet est déplacé par dessus.
+; Effect on icon when object is dragged over it.
+;
+MSG_PREFSWIN_PANEL_SELECTED_EFFECT
+Sélection :
+; Selected:
+;
+MSG_PREFSWIN_PANEL_SELECTED_EFFECT_HELP
+Effet sur l'icône quand l'objet est sélectionné.
+; Effect on icon when object is selected.
+;
+MSG_PREFSWIN_PANEL_EFFECT_NONE
+Aucun
+; None
+;
+MSG_PREFSWIN_PANEL_EFFECT_CLONE_ICONVIEW
+Dupliquer depuis la vue Icône
+; Clone from iconview
+;
+MSG_PREFSWIN_PANEL_EFFECT_LASSO
+Lasso
+; Lasso
+;
+MSG_PREFSWIN_PANEL_EFFECT_BRIGHTEN
+Éclaircir
+; Brighten
+;
+MSG_PREFSWIN_PANEL_EFFECT_DARKEN
+Assombrir
+; Darken
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT
+Teindre
+; Tint
+;
+MSG_PREFSWIN_PANEL_EFFECT_BLUR
+Flou
+; Blur
+;
+MSG_PREFSWIN_PANEL_EFFECT_GREY
+Griser
+; Grey
+;
+MSG_PREFSWIN_PANEL_EFFECT_NEGATIVE
+Négatif
+; Negative
+;
+MSG_PREFSWIN_PANEL_EFFECT_NEGATIVE_FADE
+Négatif progressif
+; Negative Fade
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_FADE
+Teinte progressive
+; Tint Fade
+;
+MSG_PREFSWIN_PANEL_EFFECT_DELTA
+Delta
+; Delta
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_REQ
+Sélectionnez une couleur pour l'effet de teinture.
+; Select a color for tint effect.
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_FADE_REQ
+Sélectionnez une couleur pour l'effet de teinte progressive.
+; Select a color for tintfade effect.
+;
+MSG_PREFSWIN_PANEL_FORCE_GRID
+Forcer les icônes sur une grille carrée.
+; Force icons into square grid.
+;
+MSG_PREFSWIN_PANEL_FORCE_GRID_HELP
+Les objets du panneau utiliseront toujours une hauteur et une largeur égales à celles des dimensions du panneau au lieu de respecter le rapport d'aspect de l'icône.
+; Icon based panel objects will always use space where width and height are the panelsize instead of adapting one to the icon's aspect ratio.
+;
+MSG_PREFSWIN_PANEL_CLASS_NAME
+\033bNom :
+; \033bName:
+;
+MSG_PREFSWIN_PANEL_CLASS_NAME_HELP
+Nom du panneau sélectionné.
+; Name of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_VERSION
+\033bVersion :
+; \033bVersion:
+;
+MSG_PREFSWIN_PANEL_CLASS_VERSION_HELP
+Version du panneau sélectionné.
+; Version of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_AUTHOR
+\033bAuteur :
+; \033bAuthor:
+;
+MSG_PREFSWIN_PANEL_CLASS_AUTHOR_HELP
+Auteur du panneau sélectionné.
+; Author of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE
+Description
+; Description
+;
+MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE_HELP
+Description du panneau sélectionné.
+; Description of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_NOPREFSAVAILABLE
+Aucune préférence disponible.
+; No preferences available.
+;
+; PanelSliderSpeedClass.c (Panelsliderspeedclass.c)
+;
+MSG_PREFSWIN_PANEL_SPEED_SLOW
+Lente
+; Slow
+;
+MSG_PREFSWIN_PANEL_SPEED_MEDIUM
+Moyenne
+; Medium
+;
+MSG_PREFSWIN_PANEL_SPEED_FAST
+Rapide
+; Fast
+;
+MSG_PREFSWIN_PANEL_SPEED_INSTANT
+Instantanée
+; Instant
+;
+; Information requesters
+;
+MSG_PROGRAM_NOT_STARTED_REQ
+Le programme %s n'a pu être démarré.
+; Couldn't start program\n%s.
+;
+MSG_PROJECT_NOT_STARTED_REQ
+Le projet %s n'a pu être démarré avec l'outil %s.
+; Couldn't start project %s.\nTool: %s.
+;
+MSG_WBSTARTUP_PATH_ERROR_REQ
+Le chemin de WBStartup n'est pas défini.\nVeuillez le configurer depuis le menu Préférences / Préférences d'Ambient... / Divers.
+; WBStartup path not set, please configure it\nfrom the menu Settings/Ambient settings.../Miscellaneous.
+;
+MSG_REQUESTER_OK_GAD
+*OK
+; *OK
+;
+MSG_AMBIENT_REQ
+Ambient
+; Ambient
+;
+MSG_WBSTARTUP_REQ
+Ambient WBStartup
+; Ambient WBStartup
+;
+MSG_TOOLBAR_CLASS_VIEWMODE_ICONS_HELP
+Passer en vue par icônes
+; Switch to Icons viewmode
+;
+MSG_TOOLBAR_CLASS_VIEWMODE_LIST_HELP
+Passer en vue par liste d'icônes. Utilisez la molette de la souris pour zoomer !
+; Switch to List viewmode. Use the mouse wheel to zoom!
+;
+MSG_IMAGEVIEW_CLASS_HOTKEYS_HELP
+\033u\033b\033cRaccourcis disponibles:\033n\033l\n\n\033bPTRSCREEN\033n: Imprimer\n\033bCurseur Gauche/Droit/Haut/Bas\033n: Se déplacer dans l'image. Combinable avec les touches ctrl/shift/alt pour\n\
+des déplacements à différentes échelles\n\033bHome/End\033n: Aller en haut de l'image / en bas de l'image\n\033bMolette haut / bas\033n: Se déplacer vers le haut, vers le bas\n\033bPage haut / \
+bas\033n: Afficher l'image précédente / suivante\n\033bl/r\033n: Pivoter l'image sur la gauche/droite\n\nVous pouvez glisser une image avec le bouton gauche ou le bouton du milieu de la souris \
+(uniquement en mode "normal")
+; \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPRTSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
+; \033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
+; image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR
+Couleu_r
+; Colo_r:
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR_HELP
+Cette couleur est utilisée pour afficher le texte de la barre d'état.
+; This color is used to display the status bar text.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR_WINTITLE
+Couleur du texte de la barre d'état
+; Status bar text color
+;
+; MoveList.c (movelist.c)
+;
+MSG_MOVELIST_TITLE
+Ambient · Copie
+; Ambient · Copy
+;
+MSG_MOVELIST_ERRORWHILEMOVING
+Erreur lors de la copie de '%s'
+; Error while copying '%s'
+;
+MSG_MOVELIST_BUTS_RETRYSKIPSKIPALLCANCEL
+*_Ressayer|Sauter|Tout sauter|Annuler
+; *_Retry|Skip|Skip all|Cancel
+;
+; FastCopy.c (fastcopy.c)
+;
+MSG_FASTCOPY_BUTS_OK
+*_Ok
+; *_Ok
+;
+MSG_FASTCOPY_BUTS_DELETEKEEP
+*_Supprimer|Conserver
+; *_Delete|Keep
+;
+MSG_FASTCOPY_DESTISDIR
+La destination '%s' est une répertoire.
+; Destination '%s' is a directory.
+;
+MSG_FASTCOPY_FILECANTBEDELETEDDOSERROR
+Le fichier '%s' ne peut être supprimé.\nErreur DOS : %S (#%N).
+; File '%s' can't be deleted.\nDOS error: %S (#%N).
+;
+MSG_FASTCOPY_FILEINCOMPLETE
+Le fichier '%s' est incomplet.
+; File '%s' is not complete.
+;
+MSG_FASTCOPY_FILEINCOMPLETEDOSERROR
+Le fichier '%s' est incomplet.\nErreur DOS : %S (#%N).
+; File '%s' is not complete.\nDOS error: %S (#%N).
+;
+; MakeLink.c (makelink.c)
+;
+MSG_MAKELINK_TITLE
+Ambient · Lien
+; Ambient · Makelink
+;
+MSG_MAKELINK_BUTS_RETRYCANCEL
+*_Ressayer|Annuler
+; *_Retry|Cancel
+;
+MSG_MAKELINK_COULDNTCREATELINKDOSERROR
+Impossible de créer le lien '%s'.\nErreur DOS : %S (#%N).
+; Couldn't create link '%s'.\nDOS error: %S (#%N).
+;
+MSG_CMENU_PANELOPENPARENT
+Ouvrir le parent
+; Open Parent
+;
+MSG_PREFSWIN_BACKGROUND_TRANSITION
+Activer les effets
+; Enable effects
+;
+MSG_PREFSWIN_BACKGROUND_TRANSITION_HELP
+Activer les effets de transition
+; Enable transition effects
+;

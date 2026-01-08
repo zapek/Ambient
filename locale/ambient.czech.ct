@@ -1,0 +1,5469 @@
+## version $VER: ambient.catalog 7.0 (29.09.2007)
+## codeset 0
+## language czech
+;
+;$Id: ambient.czech.ct,v 1.61 2019/05/26 14:44:57 bitrocky Exp $
+;
+; *** Please do not use these strings anymore.
+;
+MSG_OK
+Ok
+; Ok
+;
+MSG_CANCEL
+Zru¹it
+; Cancel
+;
+MSG_NO
+Ne
+; No
+;
+MSG_YES
+Ano
+; Yes
+;
+MSG_SAVE
+Ulo¾it
+; Save
+;
+MSG_USE
+Pou¾ít
+; Use
+;
+MSG_TEST
+Test
+; Test
+;
+MSG_UNKNOWN
+Neznámý
+; Unknown
+;
+MSG_CLOSE
+Zavøít
+; Close
+;
+MSG_OK_REQ
+*OK
+; *OK
+;
+MSG_YES_NO_REQ
+*Yes|No
+; *Yes|No
+;
+MSG_YESNO
+_Ano|_Ne
+; _Yes|_No
+;
+MSG_SELECT
+Vybrat
+; Select
+;
+MSG_ADD
+Pøidat
+; Add
+;
+MSG_REMOVE
+Odebrat
+; Remove
+;
+MSG_REVERT
+Pùvodní stav
+; Revert
+;
+MSG_PERMSAVE
+Ulo¾it nastavení natrvalo
+; Save settings permanently
+;
+; Menus.c (menus.c)
+;
+MSG_MENU_WB_DEVICELIST
+Mùj MorphOS...
+; My MorphOS...
+;
+MSG_MENU_WB_EXECUTE
+Spustit pøíkaz...
+; Execute Command...
+;
+MSG_MENU_WB_NEWSHELL
+Nový shell...
+; New Shell...
+;
+MSG_MENU_WB_LASTMESSAGE
+Poslední hlá¹ení
+; Last Message
+;
+MSG_MENU_WB_ABOUT
+O Ambientu...
+; About...
+;
+MSG_MENU_WB_ABOUTMOS
+O MorphOS...
+; About MorphOS...
+;
+MSG_MENU_WB_QUIT
+Konec
+; Quit
+;
+MSG_MENU_SHUTDOWN
+Vypnout...
+; Shut Down...
+;
+MSG_MENU_EDIT
+Úpravy
+; Edit
+;
+MSG_MENU_EDIT_CUT
+Vyjmout
+; Cut
+;
+MSG_MENU_EDIT_COPY
+Kopírovat
+; Copy
+;
+MSG_MENU_EDIT_PASTE
+Vlo¾it
+; Paste
+;
+MSG_MENU_EDIT_PASTEINTO
+Vlo¾it do...
+; Paste Into...
+;
+MSG_MENU_EDIT_SELECTALL
+Vybrat v¹e
+; Select All
+;
+MSG_MENU_EDIT_INVERT
+Invertovat
+; Invert
+;
+MSG_MENU_VIEW
+Okno
+; View
+;
+MSG_MENU_VIEW_NEWDRAWER
+Nový adresáø...
+; New Drawer...
+;
+MSG_MENU_VIEW_LIST
+Seznam
+; List Mode
+;
+MSG_MENU_VIEW_SORT
+Setøídit
+; Sort By
+;
+MSG_MENU_VIEW_SORTBYNAME
+Podle jména
+; Name
+;
+MSG_MENU_VIEW_SORTBYTYPE
+Podle typu
+; Type
+;
+MSG_MENU_VIEW_SORTBYSIZE
+Podle velikosti
+; Size
+;
+MSG_MENU_VIEW_SORTBYDATE
+Podle data
+; Date
+;
+MSG_MENU_ICONS
+Ikony
+; Icons
+;
+MSG_MENU_ICONS_INFORMATION
+Informace...
+; Information...
+;
+MSG_MENU_ICONS_PUTAWAY
+Odstranit z plochy
+; Put Away
+;
+MSG_MENU_ICONS_EJECT
+Vysunout
+; Eject
+;
+MSG_MENU_ICONS_RENAME
+Pøejmenovat...
+; Rename...
+;
+MSG_MENU_ICONS_DELETE
+Smazat
+; Delete
+;
+MSG_MENU_ICONS_FORMAT
+Formátovat...
+; Format...
+;
+MSG_MENU_ICONS_TRASH
+Move to Trashcan
+; Move to Trashcan
+;
+MSG_MENU_ICONS_RESTORE
+Restore
+; Restore
+;
+MSG_MENU_ICONS_EMPTY
+Empty Trashcan
+; Empty Trashcan
+;
+MSG_MENU_UTILITIES
+Utility
+; Utilities
+;
+MSG_MENU_UTILITIES_FORMAT
+Formátovat disk...
+; Format Disk...
+;
+MSG_MENU_UTILITIES_FIND
+Hledání souborù...
+; Find...
+;
+MSG_MENU_UTILITIES_SOUND
+Ovládání zvuku...
+; Sound...
+;
+MSG_MENU_UTILITIES_SYSTEMINFO
+Systémový monitor...
+; System Monitor...
+;
+MSG_MENU_UTILITIES_SYSTEMLOG
+Systémový záznam...
+; System Log...
+;
+MSG_MENU_UTILITIES_EXCHANGE
+Exchange...
+; Exchange...
+;
+MSG_MENU_SETTINGS
+Nastavení
+; Settings
+;
+MSG_MENU_SETTINGS_DESKTOP
+Ambient...
+; Ambient...
+;
+MSG_MENU_SETTINGS_SYSTEM
+Systém...
+; System...
+;
+MSG_MENU_SETTINGS_MUI
+Ambient MUI...
+; Ambient MUI...
+;
+MSG_MENU_SETTINGS_MUI_GLOBAL
+MUI...
+; MUI...
+;
+MSG_MENU_SETTINGS_SAVE
+Ulo¾it nastavení
+; Save Settings
+;
+MSG_MENU_TOOLS
+Nástroje
+; Tools
+;
+MSG_MENU_DEBUG
+Ladìní
+; Debug
+;
+MSG_MENU_DEBUGACTION
+Ladící akce
+; Debug Actions
+;
+MSG_MENU_DEBUGACTION_MEMCHECK
+Kontrola pamìti
+; Memory Check
+;
+MSG_MENU_DEBUGACTION_MEMSTATS
+Statistika pamìti
+; Dump Memory Stats
+;
+MSG_MENU_DEBUGACTION_MEMSTATS_ALL
+Detaily o pamìti
+; Dump Memory Details
+;
+MSG_MENU_DEBUGACTION_STARTMEMRECORD
+Zapnout zaznamenávání pamìti
+; Start Memory Recording
+;
+MSG_MENU_DEBUGACTION_STOPMEMRECORD
+Vypnout zaznamenávání pamìti
+; Stop Memory Recording
+;
+; PrefsWin_MainClass.c (prefswin_mainclass.c)
+;
+MSG_PREFSWIN_SAVE
+_Ulo¾it
+; _Save
+;
+MSG_PREFSWIN_SAVE_HELP
+V¹echny zmìny v nastavení se ulo¾í. Nastavení se zavøe.
+; All changes made in the preferences will be saved and the window will be closed.
+;
+MSG_PREFSWIN_USE
+_Pou¾ít
+; _Use
+;
+MSG_PREFSWIN_USE_HELP
+V¹echny zmìny v nastavení zùstanou aktivní do restartu. Nastavení se zavøe.
+; All changes made in the preferences will stay active until next reboot and the window will be closed.
+;
+MSG_PREFSWIN_TEST
+_Test
+; _Test
+;
+MSG_PREFSWIN_TEST_HELP
+V¹echny zmìny v nastavení se stanou aktivní pro vyzkou¹ení. Nastavení zùstane otevøené.
+; All changes made in the preferences will become temporary active and the window stays open.
+;
+MSG_PREFSWIN_CANCEL
+_Zru¹it
+; _Cancel
+;
+MSG_PREFSWIN_CANCEL_HELP
+V¹echny zmìny v nastavení se zru¹í. Nastavení se zavøe.
+; All changes made in the preferences will reset to last saved state and the window will be closed.
+;
+; *** Preferences Window Tabs
+;
+MSG_PREFSWIN_TAB_BACKGROUNDS
+Pozadí
+; Backgrounds
+;
+MSG_PREFSWIN_TAB_ICONDISPLAY
+Ikony
+; Icon Display
+;
+MSG_PREFSWIN_TAB_BOOKMARKS
+Zálo¾ky
+; Bookmarks
+;
+MSG_PREFSWIN_TAB_MISCELLANEOUS
+Ostatní
+; Miscellaneous
+;
+MSG_PREFSWIN_TAB_CLILAUNCHING
+Nastavení CLI
+; CLI Launching
+;
+MSG_PREFSWIN_TAB_DRAGANDDROP
+Drag & Drop
+; Drag & Drop
+;
+MSG_PREFSWIN_TAB_PANELS
+Panely
+; Panels
+;
+MSG_PREFSWIN_TAB_LISTER
+Seznam
+; Lister
+;
+MSG_PREFSWIN_TAB_MIME
+Mime
+; Mime
+;
+MSG_PREFSWIN_TAB_WINDOW
+Okno
+; Window
+;
+MSG_PREFSWIN_TAB_KEYBOARD
+Klávesnice
+; Keyboard
+;
+MSG_PREFSWIN_TAB_ADVANCED
+Pokroèilé
+; Advanced
+;
+;MSG_PREFSWIN_TAB_TOOLBAR /* needed ???    <- yes, someday. (tokai)*/
+;Toolbar
+;Liîta
+;Dienstprogramm-Leiste  
+;Barre de navigation
+;Barra degli strumenti
+;Eszközsor
+;Pasek narzêdzi
+;Työkalupalkki
+;Verktygsfält
+;Toolbar
+;
+; PrefsWin_IconDisplay.c (prefswin_icondisplayclass.c)
+;
+MSG_PREFSWIN_ICONDISPLAY_MOUSEHOVER
+Ze_svìtlit ikonu pod kurzorem
+; Icon _glows under mouse
+;
+MSG_PREFSWIN_ICONDISPLAY_MOUSEHOVER_HELP
+Ikona pod kurzorem my¹i je zesvìtlena, kdy¾ na ní najedete kurzorem.
+; The icon under the mouse pointer gets highlighted when moving over it.
+;
+MSG_PREFSWIN_ICONDISPLAY_SEPARATEFILES
+Oddìlit soubory od adresáøù
+; Separa_te files from drawers
+;
+;
+MSG_PREFSWIN_ICONDISPLAY_SEPARATEFILES_HELP
+Po posledním adresáøi odøádkuje a první ikona souboru bude v¾dy umístìna vlevo na nové øádce ikon.
+; Start a new row for files after last drawer icon in icon view.
+;
+MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP
+Pozvolnì zobrazit ikony pøi sta_rtu
+; Fade icon on sta_rtup
+;
+MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP_HELP
+Zapne pozvolné zobrazení ikon na plo¹e pøi spu¹tìní Ambientu.
+; Enables icon fade when Ambient gets started.
+;
+MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT
+Základní ikony prùhledné
+; _Default icons transparent
+;
+MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT_HELP
+Zapne prùhledné zobrazování základních ikon.
+; Default icons are displayed transparent when this option is enabled.
+;
+MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER
+Oznaèit ikony aplikací
+; A_ppicon identifier
+;
+MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER_HELP
+Zapne oznaèení ikon bì¾ících aplikací na plo¹e malou znaèkou.
+; Any application icon gets a little mark when this option is enabled.
+;
+MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER
+Oznaèit ikony zkratek
+; S_hortcut identifier
+;
+MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER_HELP
+Zapne oznaèení ikon zkratek malou znaèkou.
+; Any icon left out as shortcut will get marked by this option.
+;
+MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT
+_Automaticky ukládát pozice
+; _Automatic snapshot
+;
+MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT_HELP
+Ikonám budou automaticky zachovávány jejich aktuální pozice.
+; Icons will automatically be fixed at their current position.
+;
+MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS
+Dvoustavové PNG ikony
+; T_wo state PNG icons
+;
+MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS_HELP
+Zapne podporu DualPNG ikon, které obsahují obrázky pro nevybranou a vybranou ikonu.
+; This enables dual PNG icon support, which contain a separate image for unselected and selected state.
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION
+Informace o zaplnìní _disku na plo¹e:
+; Drive _info:
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION_HELP
+Tímto pøepínaèem mù¾ete zmìnit zpùsob, jakým je zobrazováno volné místo na médiích.
+; Specify the way device icons show available disk space.
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_NONE
+®ádný
+; None
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_TEXT
+Text
+; Text
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_GAUGE
+Graf
+; Gauge
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_TEXTGAUGE
+Graf i text
+; Text+Gauge
+;
+MSG_PREFSWIN_ICONDISPLAY_REGTITLE_DESKTOP
+Plocha
+; Desktop
+;
+MSG_PREFSWIN_ICONDISPLAY_REGTITLE_WINDOW
+Okno
+; Window
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_SOLID
+Plný
+; Solid
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_CHECKERED
+Kostkovaný
+; Checkered
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_TRANSPARENT
+Prùhledný
+; Transparent
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAY
+Zobrazení
+; Display
+;
+MSG_PREFSWIN_DRAGDROP_DRAGGING_EFFECT
+Efekt pøi _drag&drop:
+; _Dragging effect:
+;
+MSG_PREFSWIN_DRAGDROP_DROPPING_MARK
+Oznaèení _cílové ikony:
+; Dropping _mark:
+;
+; *** Progress Window
+;
+MSG_PROGRESS_MOVINGFILE_TITLE
+Ambient ÿ Pøesouvání souboru...
+; Ambient · Moving file...
+;
+MSG_PROGRESS_MOVINGFILES_TITLE
+Ambient ÿ Pøesouvání souborù...
+; Ambient · Moving files...
+;
+MSG_PROGRESS_COPYINGFILE_TITLE
+Ambient ÿ Kopírování souboru...
+; Ambient · Copying file...
+;
+MSG_PROGRESS_COPYINGFILES_TITLE
+Ambient ÿ Kopírování souborù...
+; Ambient · Copying files...
+;
+MSG_PROGRESS_DELETINGFILE_TITLE
+Ambient ÿ Mazání souboru...
+; Ambient · Deleting file...
+;
+MSG_PROGRESS_DELETINGFILES_TITLE
+Ambient ÿ Mazání souborù...
+; Ambient · Deleting files...
+;
+MSG_PROGRESS_BUFFERING
+Naèítání...
+; Buffering...
+;
+MSG_PROGRESS_TIMEREMAINING
+Zbývající èas: %s. Rychlost: %s/s
+; Time remaining: %s.  Speed: %s/s
+;
+MSG_PROGRESS_DAY
+%ld den
+; %ld day
+;
+MSG_PROGRESS_DAYS
+%ld dny(ù)
+; %ld days
+;
+MSG_PROGRESS_HOUR
+%ld hodina
+; %ld hour
+;
+MSG_PROGRESS_HOURS
+%ld hodin(y)
+; %ld hours
+;
+MSG_PROGRESS_MINUTE
+%ld minuta
+; %ld minute
+;
+MSG_PROGRESS_MINUTES
+%ld minut(y)
+; %ld minutes
+;
+MSG_PROGRESS_SECOND
+%ld sekunda
+; %ld second
+;
+MSG_PROGRESS_SECONDS
+%ld sekund(y)
+; %ld seconds
+;
+MSG_PROGRESS_FILESDONE
+Souborù hotovo:
+; Files done:
+;
+MSG_PROGRESS_FILESDONE_HELP
+Zobrazí podrobné informace o prùbìhu.
+; Shows detailed progress information.
+;
+MSG_PROGRESS_STOP
+_Stop
+; _Stop
+;
+MSG_PROGRESS_STOP_HELP
+Toto tlaèítko zru¹í akci.
+; Abort current action.
+;
+; *** Format Window
+;
+MSG_FORMAT_WINDOW_TITLE
+Formátovat zaøízení %s
+; Format Volume %s
+;
+MSG_FORMAT_MENU_PROJECT
+Projekt
+; Format
+;
+MSG_FORMAT_MENU_QUIT
+Konec
+; Quit
+;
+MSG_FORMAT_ERROR
+Chyba pøi formátování
+; Formating error
+;
+MSG_FORMAT_FORMATING
+Formátování...
+; Formating...
+;
+MSG_FORMAT_ERROR_RESERVED
+Jméno je rezervováno systémem. Prosím pou¾ijte jiné jméno.
+; This label is reserved by the system. Please use another name.
+;
+MSG_FORMAT_ERROR_NOTHING
+Musíte pou¾ít platné jméno zaøízení,\nkteré chcete formátovat.
+; You must supply a valid label name for\nthe device to format. You supplied nothing.
+;
+MSG_FORMAT_ERROR_CANNOT
+Zaøízení nelze formátovat.
+; This device cannot be formatted.
+;
+MSG_FORMAT_REALLY
+Opravdu chcete zformátovat\n%s ?
+; Do you really want to format\n%s ?
+;
+MSG_FORMAT_LABEL
+Jméno disku:
+; _Label:
+;
+MSG_FORMAT_LABEL_HELP
+Toto jméno se pou¾ije jako název zaøízení.
+; This name will be used as name for the volume.
+;
+MSG_FORMAT_FILESYSTEM
+Systém souborù:
+; Filesystem:
+;
+MSG_FORMAT_FILESYSTEM_HELP
+Pou¾ije se tento systém souborù.
+; This filesystem will used.
+;
+MSG_FORMAT_STATUS
+Stav:
+; Status:
+;
+MSG_FORMAT_STATUS_HELP
+Toto je aktuální stav zaøízení.
+; This is the current status of the volume.
+;
+MSG_FORMAT_GENERAL_GROUP
+Obecné nastavení
+; General
+;
+MSG_FORMAT_CREATE_ICON
+Vytvoøit ikonu
+; Create _icon
+;
+MSG_FORMAT_CREATE_ICON_HELP
+Bìhem formátování se vytvoøí ikona pro zaøízení.
+; An icon for the drive will be created during format process.
+;
+MSG_FORMAT_SPECIFIC_GROUP
+Specifické nastavení
+; Specific
+;
+MSG_FORMAT_CASE_SENSITIVE
+Rozli¹ovat velikost písmen
+; Case sensiti_ve
+;
+MSG_FORMAT_CASE_SENSITIVE_HELP
+Nastavením tohoto pøepínaèe zapnete rozli¹ování VELKÝCH/malých písmen. Napøíklad soubor "Data" bude jiný ne¾ soubor "data".
+; Interpret filenames case sensitive (e.g. "Foobar" would be a different file / directory than "foobar").
+;
+MSG_FORMAT_RECYCLED
+Ko¹ (adresáø Recycled)
+; _Recycled
+;
+MSG_FORMAT_RECYCLED_HELP
+Nastavením tohoto pøepínaèe zapnete adresáø ".recycled", který obsahuje naposledy smazané soubory. Dal¹í nastavení je pøístupné pomocí nastavení MorphOS.
+; Create a ".recycled" directory. This directory contains all currently deleted files. Further configuration for each volume is possible in the MorphOS System Preferences.
+;
+MSG_FORMAT_SHOWRECYCLED
+Zobrazovat ko¹
+; Show rec_ycled
+;
+MSG_FORMAT_SHOWRECYCLED_HELP
+Adresáø ".recycled" je základnì skrytý. Nastavením tohoto pøepínaèe se stane viditelným.
+; Makes the ".recycled" directory visible or invisible. If its invisible it can only be accessed from command line.
+;
+MSG_FORMAT_FORMATTED
+Zformátovaný
+; Formatted
+;
+MSG_FORMAT_UNFORMATTED
+Nezformátovaný
+; Unformatted
+;
+MSG_FORMAT_PREPARING
+Pøipravování...
+; Preparing...
+;
+MSG_FORMAT_QUICK
+Rychý formát...
+; _Quick Format...
+;
+MSG_FORMAT_QUICK_HELP
+Pouze minimum potøebných dat bude na zaøízení zapsáno. VAROVÁNÍ: Speciální nástroje jsou schopné obnovit data z takto naformátovaných zaøízení!
+; Only the minimum required data will be written to media. ATTENTION: Special tools are able to retrieve data from such formatted drives!
+;
+MSG_FORMAT
+Formátovat...
+; _Format...
+;
+MSG_FORMAT_HELP
+V¹echna data budou pøepsána! Zabere spoustu èasu, ale znièí v¹echna data na zaøízení!
+; The entire media will overwritten! Takes a lot of time, but destroys all data on drive!
+;
+MSG_FORMAT_AND_VERIFY
+Formátovat & Kontrola...
+; Format & _Verify...
+;
+MSG_FORMAT_AND_VERIFY_HELP
+V¹echna data budou pøepsána, pùvodní data budou znièena! Navíc se data vyzkou¹í zpìt naèíst pro kontrolu integrity média.
+; The entire media will overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
+;
+MSG_FORMAT_CLOSE
+Zavøít
+; _Close
+;
+MSG_FORMAT_CLOSE_HELP
+Nic se neprovede, okno se zavøe.
+; Window gets closed without any action.
+;
+; *** Rename Window
+;
+MSG_RENAME_WINDOW_TITLE
+Pøejmenování
+; Rename
+;
+MSG_RENAME_NEW_NAME
+\033c\033bZadejte nové jméno:
+; \033c\033bNew name:
+;
+MSG_RENAME_NEW_NAME_HELP
+Prosím zadejte sem nové jméno.
+; Enter the new name here.
+;
+MSG_RENAME_RENAME
+_Pøejmenovat
+; _Rename
+;
+MSG_RENAME_RENAME_HELP
+Jméno zadané v textovém poli tohoto okna se pou¾ije jako nové jméno.
+; The name specified within the text field in this window will be used as new name.
+;
+MSG_RENAME_CANCEL
+_Zru¹it
+; _Cancel
+;
+MSG_RENAME_CANCEL_HELP
+Zru¹í pøejmenování. Okno se zavøe.
+; Aborts the rename operation. The window will be closed.
+;
+; *** Appclass
+;
+MSG_DELETE_TITLE
+Mazání...
+; Deleting...
+;
+MSG_DELETE_CONFIRM
+Opravdu chcete smazat\n%s ?
+; Do you really want to delete\n%s ?
+;
+MSG_DELETE_CONFIRM_MULTIPLE
+Opravdu chcete smazat\nvybrané objekty (%lu) ?
+; Do you really want to delete\nselected items (%lu) ?
+;
+MSG_TRASH_TITLE
+Moving to Trashcan...
+; Moving to Trashcan...
+;
+MSG_TRASH_CONFIRM
+Do you really want to trash\n%s ?
+; Do you really want to trash\n%s ?
+;
+MSG_TRASH_CONFIRM_MULTIPLE
+Do you really want to trash\nselected items (%lu) ?
+; Do you really want to trash\nselected items (%lu) ?
+;
+; *** Icon Information Window
+;
+MSG_INFOWIN_OLD_AMIGA_ICON
+\033cstará Amiga ikona
+; \033cClassic Amiga icon
+;
+MSG_INFOWIN_NEWICON
+\033cikona Newicon
+; \033cNewicon
+;
+MSG_INFOWIN_GLOWICON
+\033cikona Glowicon
+; \033cGlowicon
+;
+MSG_INFOWIN_PNGICON
+\033cPNG ikona
+; \033cPNG icon
+;
+MSG_INFOWIN_DATATYPEICON
+\033cDatatypová ikona
+; \033cDatatype icon
+;
+MSG_INFOWIN_SVGICON
+\033cSVG icon
+; \033cSVG icon
+;
+MSG_INFOWIN_TYPE_TOOL_PROJECT
+_Typ:
+; _Type:
+;
+MSG_INFOWIN_TYPE_TOOL_PROJECT_HELP
+Program je pøímo spustitelný. Projekt je soubor, který lze otevøít pomocí ní¾e nastaveného programu.
+; A Tool is a program. A Project is a file created by a tool, whose path or name is embedded within the icon so it can be opened again.
+;
+MSG_INFOWIN_SCRIPT
+_Skript
+; Scr_ipt
+;
+MSG_INFOWIN_SCRIPT_HELP
+Skript je textový soubor obsahující pøíkazy. Pokud je tento bit nastavený, lze skript pøímo spustit.
+; A MorphOS script is a file containing batch commands. It is directly executable if that bit is set.
+;
+MSG_INFOWIN_ARCHIVED
+_Archivovaný
+; _Archived
+;
+MSG_INFOWIN_ARCHIVED_HELP
+Archivaèní bit nastavují zálohovací programy, pokud ji¾ daný soubor zpracovaly. Je automatický systémem vymazán, pokud je soubor zmìnìn, tak¾e lze jednodu¹e rozpoznat soubory, které se zmìnily od \
+poslední archivace.
+; The archived bit is set by archiving and backup programs to tell the file has been processed. It is automatically cleared when the file is modified so one can quickly know which files changed.
+;
+MSG_INFOWIN_READABLE
+È_tení
+; _Readable
+;
+MSG_INFOWIN_READABLE_HELP
+Bit umo¾òující ètení. Nemá smysl tento bit vypínat.
+; The readable bit allows a file to be read. It doesn't make much sense to not have it set.
+;
+MSG_INFOWIN_WRITABLE
+_Zápis
+; _Writable
+;
+MSG_INFOWIN_WRITABLE_HELP
+Bit umo¾òující zapisování. Pou¾ívá se pro prevenci nechtìného zapsání do souboru.
+; The writable bit allows a file to be written to. This can be used to prevent accidental writes to a file.
+;
+MSG_INFOWIN_EXECUTABLE
+Spustit_elný
+; _Executable
+;
+MSG_INFOWIN_EXECUTABLE_HELP
+Bit umo¾òující soubor spustit. Nemá smysl tento bit vypínat.
+; The executable bit allows a file to be loaded and run, provided it is a program. It doesn't make much sense to not have it set.
+;
+MSG_INFOWIN_DELETABLE
+S_mazání
+; Deleta_ble
+;
+MSG_INFOWIN_DELETABLE_HELP
+Bit umo¾òující smazání souboru. Pou¾ívá se pro prevenci nechtìného smazání souboru. Stále lze do souboru zapisovat.
+; The deletable bit allows a file to be deleted. This can be used to prevent accidental deletions. It is still possible to write to the file, though.
+;
+MSG_INFOWIN_TOOL
+Program
+; Tool
+;
+MSG_INFOWIN_PROJECT
+Projekt
+; Project
+;
+MSG_INFOWIN_DISK_DISK
+Disk:
+; Disk:
+;
+MSG_INFOWIN_DISK_DISK_HELP
+Shows the disk name.
+; Shows the disk name.
+;
+MSG_INFOWIN_DISK_SIZE
+Kapacita:
+; Size:
+;
+MSG_INFOWIN_DISK_SIZE_HELP
+Zobrazí velikost zaøízení.
+; Shows the size of the media.
+;
+MSG_INFOWIN_DISK_USED
+Obsazených:
+; Used:
+;
+MSG_INFOWIN_DISK_USED_HELP
+Zobrazí obsazené místo.
+; Shows number of bytes currently in use.
+;
+MSG_INFOWIN_DISK_FREE
+Volných:
+; Free:
+;
+MSG_INFOWIN_DISK_FREE_HELP
+Zobrazí volné místo.
+; Shows number of bytes currently available.
+;
+MSG_INFOWIN_DISK_FILESYSTEM
+Systém souborù:
+; Filesystem:
+;
+MSG_INFOWIN_DISK_FILESYSTEM_HELP
+Typ systému souborù, pokud je rozpoznán.
+; This is the filesystem type, if it can be detected.
+;
+MSG_INFOWIN_DISK_TYPE
+Typ:
+; Type:
+;
+MSG_INFOWIN_DISK_TYPE_HELP
+Zobrazí typ média.
+; Shows the media type.
+;
+MSG_INFOWIN_DISK_BLOCKSIZE
+Velikost bloku:
+; Blocksize:
+;
+MSG_INFOWIN_DISK_BLOCKSIZE_HELP
+Granularita systému souborù. Blok je nejmen¹í velikost, kterou zabírá soubor.
+; Granularity of the filesystem. A block is the minimum size taken by a file.
+;
+MSG_INFOWIN_DISK_STATUS
+Stav:
+; Status:
+;
+MSG_INFOWIN_DISK_STATUS_HELP
+Stav souboru systému mù¾e být:\n\n\033bnelze zapisovat\033n\nzaøízení je chránìno proti zapisu.\n\n\033bvalidující se\033n\nzaøízení je nekonzistentní a systém souborù se ho momentálnì sna¾í opravit.\n\
+Ze zaøízení lze èíst, ale nelze na nìj zapisovat.\n\n\033bvalidovaný\033n\nzaøízení je v konzistentním stavu a mù¾e být plnì vyu¾íváno.
+; The filesystem status can be one of:\n\n\033bwrite protected\033n\nthe volume is physically protected\nagainst writes.\n\n\033bvalidating\033n\nthe volume is inconsistent and the\nfilesystem is currently trying to\nbring it to a safe state. The volume\ncan be read from but not written to.\n\n\033bvalidated\033n\nthe volume is valid and can be fully used.
+;
+MSG_INFOWIN_DISK_FEATURES
+Spec. nastavení:
+; Features:
+;
+MSG_INFOWIN_DISK_FEATURES_HELP
+Mezi speciální nastavené patøí:\n\n\033bvelké soubory\033n\nzaøízení podporuje soubory vìt¹í ne¾ 2GB.\n\n\033brozli¹ování velikosti písmen\033n\nzaøízení rozli¹uje velká a malá písmena.\nNedoporuèuje \
+se taková zaøízení pou¾ívat.
+; This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such volumes.
+;
+MSG_INFOWIN_FILES
+Souborù:
+; Files:
+;
+MSG_INFOWIN_FILES_HELP
+Zobrazí poèet souborù v adresáøi.
+; Shows the number of files inside the directory.
+;
+MSG_INFOWIN_DIRS
+Adresáøù:
+; Dirs:
+;
+MSG_INFOWIN_DIRS_HELP
+Zobrazí poèet adresáøù.
+; Shows the number of directories inside.
+;
+MSG_INFOWIN_HARDLINKS
+Hardlinkù:
+; Hardlinks:
+;
+MSG_INFOWIN_HARDLINKS_HELP
+Zobrazí poèet hardlinkù v adresáøi.
+; Shows the number of hardlinks inside the directory.
+;
+MSG_INFOWIN_SOFTLINKS
+Softlinkù:
+; Softlinks:
+;
+MSG_INFOWIN_SOFTLINKS_HELP
+Zobrazí poèet softlinkù v adresáøi.
+; Shows the number of softlinks inside the directory.
+;
+MSG_INFOWIN_LAST_CHANGED
+Naposledy zmìnìno:
+; Modified:
+;
+MSG_INFOWIN_LAST_CHANGED_HELP
+Zobrazí, kdy byly provedeny poslední zmìny souboru, adresáøe nebo zaøízení.
+; Show when file, drawer or volume was changed the last time.
+;
+MSG_INFOWIN_COMMENT
+Komentáø:
+; Comment:
+;
+MSG_INFOWIN_COMMENT_HELP
+Komentáø k souboru.
+; This is the DOS file comment.
+;
+MSG_INFOWIN_BLOCKS
+Blokù:
+; Blocks:
+;
+MSG_INFOWIN_BLOCKS_HELP
+Poèet blokù, které soubor zabírá. Blok má velikost typicky 512 bytù.
+; Number of filesystem blocks taken by the file. A block is typically 512 bytes.
+;
+MSG_INFOWIN_SIZE
+Velikost:
+; Size:
+;
+MSG_INFOWIN_SIZE_HELP
+Velikost souboru. Neukazuje fyzicky obsazené místo na disku, proto¾e systémy souboru vìt¹inou pracují s pevnou velikostí bloku.
+; Size of the file. This might not be the exact size taken from the storage as filesystems usually work using fixed block sizes.
+;
+MSG_INFOWIN_SIZEONDISK
+Velikost na disku:
+; Size on disk:
+;
+MSG_INFOWIN_SIZEONDISK_HELP
+Místo, které soubor fyzicky zabírá na disku, závisí na velikosti bloku.
+; Space really taken by the file on the disk, which depends on the blocksize.
+;
+MSG_INFOWIN_STACK
+Zásobník:
+; Stack:
+;
+MSG_INFOWIN_STACK_HELP
+Velikost zásobníku v bytech. Zásobník je místo v pamìti, kam programy ukládají svá privátní data. Speciální po¾adavky na zmìnu velikosti zásobníku by mìly být obsa¾eny v dokumentaci k programu. \
+Vìt¹ina programù si velikost zásobníkù nastavuje automaticky, tak¾e se tímto nastavením nemusíte zabývat.
+; Stack size of the executable in bytes. A stack is an area of memory used by the executable to store private data. Special requirements regarding its size should be listed in the executable's documentation although most executables set the stack size by themselves so you don't have to bother about this field.
+;
+MSG_INFOWIN_CREATED
+Vytvoøeno:
+; Created:
+;
+;
+MSG_INFOWIN_CREATED_HELP
+Datum vytvoøení zaøízení.
+; Date the volume was created.
+;
+MSG_INFOWIN_TOOLTYPES
+Argumenty:
+; Tooltypes:
+;
+MSG_INFOWIN_TOOLTYPES_HELP
+Toto jsou argumenty ikony.
+; These are the icons tool types.
+;
+MSG_INFOWIN_STATUS_WRITE_PROTECTED
+nelze zapisovat
+; write protected
+;
+MSG_INFOWIN_STATUS_VALIDATING
+validující se
+; validating
+;
+MSG_INFOWIN_STATUS_VALIDATED
+validovaný
+; validated
+;
+MSG_INFOWIN_FLAGS_LARGE_FILES
+velké soubory
+; large files
+;
+MSG_INFOWIN_FLAGS_CASE_SENSITIVE
+rozli¹ování velikosti písmen
+; case sensitive
+;
+MSG_INFOWIN_FLAGS_NONE
+¾ádné
+; none
+;
+MSG_INFOWIN_TYPE_NOMEDIA
+®ádné médium
+; No media
+;
+MSG_INFOWIN_SIZE_UNKNOWN
+neznámý
+; unknown
+;
+MSG_INFOWIN_VERSION_SEARCHING
+Hledání...
+; Searching...
+;
+MSG_INFOWIN_VERSION
+_Verze:
+; _Version:
+;
+MSG_INFOWIN_VERSION_HELP
+Vyhledá øetìzec informující o verzi programu, datumu vzniku a pøípadnì i licenci.
+; Scans the file for a version string which gives informations about the version and revision numbers, when the file was built and possible copyright informations.
+;
+MSG_INFOWIN_MD5_COMPUTING
+Poèítání...
+; Computing...
+;
+MSG_INFOWIN_MD5SUM
+_MD5:
+; _MD5:
+;
+MSG_INFOWIN_MD5_HELP
+Spoèítá MD5 èíslo z obsahu souboru. Lze pou¾ít na kontrolu integrity souborù, proto¾e MD5 èíslo je v¾dycky stejné pro pøesnì tentý¾ soubor.
+; Computes an MD5 hash of the file's content. Can be used to check the integrity of a file as the hash is always the same for exactly identical files.
+;
+MSG_INFOWIN_DEFAULT_TOOL
+Spustit programem:
+; De_fault Tool:
+;
+MSG_INFOWIN_DEFAULT_TOOL_HELP
+Program, který se spustí pro otevøení souboru.
+; This program will be started along with this file as argument when opening the file.
+;
+MSG_INFOWIN_DEFAULT_TOOL_SELECT
+Vyberte program
+; Select a default tool
+;
+MSG_INFOWIN_DEVICETYPE_DIRECT_ACCESS
+pøímý pøístup
+; direct access
+;
+MSG_INFOWIN_DEVICETYPE_SEQUENTIAL_ACCESS
+sekvenèní pøístup
+; sequential access
+;
+MSG_INFOWIN_DEVICETYPE_PRINTER
+tiskárna
+; printer
+;
+MSG_INFOWIN_DEVICETYPE_PROCESSOR
+procesor
+; processor
+;
+MSG_INFOWIN_DEVICETYPE_WORM
+èerv
+; worm
+;
+MSG_INFOWIN_DEVICETYPE_CDROM
+CD-ROM
+; CD-ROM
+;
+MSG_INFOWIN_DEVICETYPE_SCANNER
+skener
+; scanner
+;
+MSG_INFOWIN_DEVICETYPE_OPTICAL_DISK
+optický disk
+; optical disk
+;
+MSG_INFOWIN_DEVICETYPE_MEDIUM_CHANGER
+mìniè medií
+; medium changer
+;
+MSG_INFOWIN_DEVICETYPE_NETWORK
+sí»
+; network
+;
+MSG_INFOWIN_DEVICETYPE_GRAPHICS
+grafika
+; graphics
+;
+MSG_INFOWIN_DEVICETYPE_UNKNOWN
+neznámý
+; unknown
+;
+MSG_INFOWIN_DEVICETYPE_NA
+N/A
+; N/A
+;
+MSG_INFOWIN_WINDOW_TITLE_VOLUME
+Informace o zaøízení: %s
+; Info: %s (Volume)
+;
+MSG_INFOWIN_WINDOW_TITLE_DRAWER
+Informace o adresáøi: %s
+; Info: %s (Drawer)
+;
+MSG_INFOWIN_WINDOW_TITLE_TOOL
+Informace o programu: %s
+; Info: %s (Tool)
+;
+MSG_INFOWIN_WINDOW_TITLE_PROJECT
+Informace o projektu: %s
+; Info: %s (Project)
+;
+MSG_INFOWIN_BYTES
+%llu bytù
+; %llu bytes
+;
+MSG_INFOWIN_MBYTES_BYTES
+%s (%llu bytù)
+; %s (%llu bytes)
+;
+MSG_INFOWIN_NEW
+Nový
+; _New
+;
+MSG_INFOWIN_NEW_HELP
+Pøidá nový tooltype do seznamu.
+; Add new tool type to list.
+;
+MSG_INFOWIN_DEL
+Smazat
+; _Delete
+;
+MSG_INFOWIN_DEL_HELP
+Odstraní tooltype ze seznamu.
+; Remove active tool type from list.
+;
+MSG_INFOWIN_SCAN
+Celková velikost:
+; Total Size:
+;
+MSG_INFOWIN_SCAN_HELP
+Provede rekurzivní prùchod celým adresáøem a vypí¹e poèet, typ a celkovou velikost souborù, které adresáø obsahuje.
+; Does a recursive scan of the directory to compute the number, type and total size of the files it contains.
+;
+MSG_INFOWIN_SAVE
+Ulo¾it
+; _Save
+;
+MSG_INFOWIN_SAVE_HELP
+Ulo¾í nastavení do ikony.
+; Store settings into icon file.
+;
+MSG_INFOWIN_CANCEL
+Zru¹it
+; Cance_l
+;
+MSG_INFOWIN_CANCEL_HELP
+Zru¹í nastavení ikony a zavøe okno.
+; Discard icon setup and close window.
+;
+MSG_INFOWIN_CREATE_ICON_REQ
+Saving meta data requires an icon file.\nReally create an icon now?
+; Saving meta data requires an icon file.\nReally create an icon now?
+;
+MSG_INFOWIN_CREATE_ICON_GAD
+_Create icon
+; Create ic_on
+;
+MSG_INFOWIN_CREATE_ICON_HELP
+Create an icon file on disk.
+; Create an icon file on disk.
+;
+MSG_INFOWIN_USE_DEFAULT_ICON_GAD
+Get _default
+; _Get default
+;
+MSG_INFOWIN_USE_DEFAULT_ICON_HELP
+Reset to default icon.
+; Reset to default icon.
+;
+; *** Make Directory Window
+;
+MSG_MAKEDIR_WINDOWTITLE
+Vytvoøení adresáøe
+; create a new directory
+;
+MSG_MAKEDIR_ENTERDIRECTORYNAME
+\033c\033bZadejte jméno nového adresáøe:
+; \033c\033bDirectory Name:
+;
+MSG_MAKEDIR_ENTER_DIRECTORYNAME_HELP
+Zadejte sem jméno nového adresáøe. Znaky jako "/" a ":" nejsou povoleny.
+; Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+;
+MSG_MAKEDIR_UNNAMED
+Nepojmenovany
+; Unnamed
+;
+MSG_MAKEDIR_WITHICON
+_S ikonou
+; _With Icon
+;
+MSG_MAKEDIR_WITHICON_HELP
+Vytvoøí se adresáø s ikonou.
+; A drawer and icon combination will be created.
+;
+MSG_MAKEDIR_WITHOUTICON
+_Bez ikony
+; With_out Icon
+;
+MSG_MAKEDIR_WITHOUTICON_HELP
+Vytvoøí se adresáø bez ikony.
+; A drawer without icon will be created.
+;
+MSG_MAKEDIR_CANCEL
+_Zru¹it
+; _Cancel
+;
+MSG_MAKEDIR_CANCEL_HELP
+Adresáø se nevytvoøí. Okno se zavøe.
+; The window get's closed without any further action.
+;
+MSG_MAKEDIR_TITLE
+Ambient · Create directory
+; Ambient · Create directory
+;
+MSG_MAKEDIR_ERRORMSG
+Couldn't create directory '%s'.\nDOS error: %S (#%N).
+; Couldn't create directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_MAKEDIR_RETRYCANCEL
+*_Retry|_Cancel
+; *_Retry|_Cancel
+;
+; *** Exchange Window
+;
+MSG_CX_MENU_PROJECT
+Projekt
+; Exchange
+;
+MSG_CX_MENU_QUIT
+Konec
+; Quit
+;
+MSG_CX_SHOW_INTERFACE
+_Zobrazit rozhraní
+; _Show Interface
+;
+MSG_CX_SHOW_INTERFACE_HELP
+Otevøe GUI vybrané komodity.
+; Opens the GUI of the selected Commodity.
+;
+;
+MSG_CX_HIDE_INTERFACE
+_Skrýt rozhraní
+; _Hide Interface
+;
+MSG_CX_HIDE_INTERFACE_HELP
+Zavøe GUI vybrané komodity.
+; Closes the GUI of the selected Commodity.
+;
+; MSG_CX_STATE is not displaced, so just use _x for hotkey support.
+MSG_CX_STATE
+_A
+; _A
+;
+MSG_CX_STATUS_HELP
+Tímto tlaèítkem mù¾ete aktivovat a deaktivovat vybranou komoditu.
+; Here you can activate or deactivate the selected Commodity.
+;
+MSG_CX_ACTIVE
+Aktivní
+; Active
+;
+MSG_CX_INACTIVE
+Neaktivní
+; Inactive
+;
+MSG_CX_REMOVE
+_Odstranit
+; _Remove
+;
+MSG_CX_REMOVE_HELP
+Vybraná komodita bude odstranìna, pokud to lze provést.
+; The selected commodity will be removed if possible.
+;
+; *** Execute window
+;
+MSG_EXEC_TITLE
+Ambient ÿ Spustit pøíkaz
+; Ambient · Execute
+;
+MSG_EXEC_INFO
+\033c\033bZadejte pøíkaz a jeho argumenty:
+; \033c\033bCommand and its arguments:
+;
+MSG_EXEC_ASL_TITLE
+Vyberte pøíkaz
+; Find Command
+;
+MSG_EXEC_EXECUTE
+_Spustit
+; _Execute
+;
+MSG_EXEC_EXECUTE_HELP
+Pøíkaz zadaný v textovém poli se spustí.
+; The command typed into the text field will be executed.
+;
+MSG_EXEC_CANCEL
+_Zru¹it
+; _Cancel
+;
+MSG_EXEC_CANCEL_HELP
+Okno se zavøe bez jakékoliv akce.
+; The execute window will be closed without any action.
+;
+MSG_EXEC_ERROR_TITLE
+Chyba pøi spu¹tìní
+; Ambient Execute Error
+;
+MSG_EXEC_ERROR_OPENOUTPUTSTREAMFAILED
+Chyba pøi otevírání výstupu.
+; Failed to open output stream.
+;
+MSG_EXEC_ERROR_OPENINPUTSTREAMFAILED
+Chyba pøi otevírání vstupu.
+; Failed to open input stream.
+;
+MSG_EXEC_CMENU_HISTORY_TITLE
+Command history
+; Command history
+;
+MSG_EXEC_CMENU_HISTORY_CLEARALL
+Clear all
+; Clear all
+;
+MSG_EXEC_CMENU_HISTORY_CLEARACTIVE
+Clear active
+; Clear active
+;
+MSG_EXEC_COMMAND_HELP
+You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", \
+"news://", "mailto:", "ftp." or "www.".
+; You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", "news://", "mailto:", "ftp." or "www.".
+;
+; PrefsWin_BackGroundClass.c (prefswin_backgroundclass.c)
+;
+MSG_PREFSWIN_BACKGROUND_DESKTOP
+Plocha
+; Desktop
+;
+MSG_PREFSWIN_BACKGROUND_MODE
+Z_obrazení:
+; _Mode:
+;
+MSG_PREFSWIN_BACKGROUND_MODE_HELP
+Zmìní zpùsob zobrazování tapety.
+; Changes the way the background is displayed.
+;
+MSG_PREFSWIN_BACKGROUND_MODE_COLOR
+Barva
+; Color
+;
+MSG_PREFSWIN_BACKGROUND_MODE_COLOR_SELECT
+Vyberte barvu pozadí
+; Select a background color
+;
+MSG_PREFSWIN_BACKGROUND_MODE_TILED
+Dla¾dice
+; Tiled
+;
+MSG_PREFSWIN_BACKGROUND_MODE_CENTERED
+Na støed
+; Centered
+;
+MSG_PREFSWIN_BACKGROUND_MODE_SCALED
+Pøizpùsobit velikost
+; Scaled
+;
+MSG_PREFSWIN_BACKGROUND_MODE_STRETCHED
+Roztáhnout
+; Stretched
+;
+MSG_PREFSWIN_BACKGROUND_MODE_ZOOMED
+Pøiblí¾it
+; Zoomed
+;
+MSG_PREFSWIN_BACKGROUND_FILE
+_Soubor:
+; _File:
+;
+MSG_PREFSWIN_BACKGROUND_FILE_HELP
+Cesta k obrázku tapety. Zadáním adresáøe bude výbìr obrázku náhodný.
+; Path to the picture to be displayed as background. Specify a directory and pick a picture of your choice from its content.
+;
+MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY
+Zmìnit pozadí po:
+; C_hange background after:
+;
+MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP
+®ádná bublinková nápovìda není k dispozici.
+; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS
+Okna
+; Windows
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS_MODE
+Zo_brazení:
+; M_ode:
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS_FILE
+Soubor:
+; F_ile:
+;
+MSG_PREFSWIN_BACKGROUND_REQUESTER
+Vyberte tapetu...
+; Background selection...
+;
+; bgrefreshdelaysliderclass.c
+;
+MSG_BGREFRESHSLIDERCLASS_NEVER
+Nikdy
+; Never
+;
+MSG_BGREFRESHSLIDERCLASS_MINUTES
+%ld min
+; %ld minute(s)
+;
+MSG_BGREFRESHSLIDERCLASS_HOURS
+%ld hod
+; %ld hour(s)
+;
+MSG_BGREFRESHSLIDERCLASS_DAYS
+%ld dnech
+; %ld day(s)
+;
+; *** Prefswin Icondisplay
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION
+Výbìr
+; Selection
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT
+E_fekt pøi výbìru:
+; Selection effect:
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT
+Zabarvení
+; Tint
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_REQ
+Vyberte barvu pro efekt zabarvení.
+; Select a color for tint effect.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_BLUR
+Rozmazání
+; Blur
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_BRIGHTEN
+Zjasnìní
+; Brighten
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_DELTA
+Intenzita
+; Delta
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_DARKEN
+Ztmavení
+; Darken
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_GREY
+Ze¹edivìní
+; Grey
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_NEGATIVE
+Negativ
+; Negative
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_NEGATIVE_FADE
+Pøechod z negativu
+; Negative Fade
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_FADE
+Barevný pøechod
+; Tint Fade
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_FADE_REQ
+Vyberte barvu pro barevný pøechod.
+; Select a color for tintfade effect.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTEFFECT_HELP
+Efekt pro oznaèení vybraných ikon.
+; Effect to apply to mark selected icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT
+Barva výbìru:
+; S_elect color:
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT_HELP
+Barva vybrané ikony.
+; Specifies the color of an selected icon.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT_TITLE
+Vyberte barvu vybrané ikony
+; Select 'Icon select' Color
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO
+Barva _lasa:
+; _Lasso color:
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO_HELP
+Barva lasa, které se pou¾ívá pøi výbìru více ikon my¹í.
+; Color of the lasso used to select multiple icons with the mouse.
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO_TITLE
+Vyberte barvu lasa
+; Select Lasso Color
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK
+Drag & drop:
+; Drop mar_k:
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK_HELP
+Zbarvení aktivní ikony pøi drag & drop.
+; Specifies the color of active icon drop marks.
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK_TITLE
+Vyberte barvu pro drag & drop
+; Select Drop Mark Color
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE
+Velikost
+; Resizing
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MINSIZE
+Nej_men¹í velikost:
+; Mi_nimum size:
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MINSIZE_HELP
+Minimální velikost ikony. V pøípadì potøeby bude ikona roztáhnuta.
+; Minimum size of an icon. The icon will be stretched if needed.
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MAXSIZE
+Nej_vìt¹í velikost:
+; Ma_ximum size:
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MAXSIZE_HELP
+Maximální velikost ikony. V pøípadì potøeby bude ikony zmen¹ena.
+; Maximum size of an icon. The icon will be shrank if needed.
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MICRO
+Mikro (16x16)
+; Micro   (16x16)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_SMALL
+Malá (24x24)
+; Small   (24x24)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MEDIUM
+Støední (32x32)
+; Medium   (32x32)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_LARGE
+Velká (48x48)
+; Large   (48x48)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_HUGE
+Obrovská (64x64)
+; Huge   (64x64)
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT
+Zobrazení textu
+; Text rendering
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE
+_Efekt:
+; _Mode:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_HELP
+Zmìní zpùsob zobrazování textu u ikony.
+; Changes the way the icon text is displayed.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_NORMAL
+Normální
+; Normal
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_SHADOW
+Se stínem
+; Shadow
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_ALPHASHADOW
+Alfa stín
+; Alpha Shadow
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_OUTLINE
+Olemování
+; Outline
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_BACKGROUND
+S pozadím
+; Background
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_MULTICOLOR
+Více barev
+; Multicolor
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_GRADIENT
+Barevný pøechod
+; Gradient
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT
+Písmo:
+; _Font:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT_HELP
+Písmo pro velké ikony.
+; Big icon display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT_REQ
+Font
+; Font
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT
+Malé písmo:
+; Small font_:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT_HELP
+Písmo pro malé ikony.
+; Small icon display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT_REQ
+Small font
+; Small font
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR
+Barva:
+; C_olor:
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR_HELP
+Zde si mù¾ete vybrat barvu textu pro ikony na plo¹e.
+; Here you can select the icon text color for desktop icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR_TITLE
+Vyberte barvu pro text na plo¹e.
+; Select Desktop color.
+;
+; MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK is not visible, so just define a logic _x hotkey
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK
+_w
+; _b
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_HELP
+Zde si mù¾ete vybrat barvu pozadí textu pro ikony na plo¹e.
+; Here you can select the icon back ground color for desktop icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_TITLE
+Vyberte barvu pro pozadí textu na plo¹e
+; Desktop background color
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT
+Písmo:
+; _Font:
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_HELP
+Písmo pro okno.
+; Window display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_REQ
+Font
+; Font
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR
+Barva textu v oknì
+; C_olor:
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR_HELP
+Zde si mù¾ete vybrat barvu textu v oknì.
+; Here you can select the icon text color for window icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR_TITLE
+Vyberte barvu pro text v oknì
+; Select Text Color for Windows
+;
+; MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK is not visible, to just define _x hotkey
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK
+_W
+; _b
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK_HELP
+Zde si mù¾ete vybrat barvu pro pozadí textu v oknì.
+; Here you can select the icon background color for window icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK_TITLE
+Vyberte barvu pro pozadí textu v oknì
+; Select Text Background for Windows
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_LABELSPACE
+_Odsazení písma:
+; _Label space:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_LABELSPACE_HELP
+Místo v pixelech mezi dolní èástí ikony a textem ikony.
+; Space in pixels between the bottom of the icon and the top of the text beneath.
+;
+MSG_PREFSWIN_ICONDISPLAY_EXTRA_FEATURES
+Extra nastavení
+; Extra features
+;
+; PrefsWin_MiscellaneousClass.c (prefswin_miscellaneousclass.c)
+;
+MSG_PREFSWIN_WBSTARTUP
+Start systému
+; Startup
+;
+MSG_PREFSWIN_WBSTARTUP_PATH
+Cesta ke startovnímu adresáøi:
+; _Path to startup directory:
+;
+MSG_PREFSWIN_WBSTARTUP_PATH_HELP
+Cesta startovního adresáøe. Soubory v tomto adresáøi jsou automaticky spu¹tìny po nastartování systému.
+; Path to the Startup directory. Files in that directory are automatically executed upon system boot.
+;
+MSG_PREFSWIN_WBSTARTUP_PATH_REQ
+Path to startup directory
+; Path to startup directory
+;
+MSG_PREFSWIN_WBSTART_REMEMBER
+Zapamatovat:
+; Remember:
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES
+Adresáøe
+; Dra_wers
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES_HELP
+Zapamatují se otevøené adresáøe v Ambientu. Po restartu budou tyto adresáøe znovu otevøeny.
+; Remembers opened Ambient drawers. After restarting the system these drawers will be open again.
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS
+Dokumenty
+; Docu_ments
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS_HELP
+Zapamatují se otevøené dokumenty v Ambientu. Po restartu budou tyto dokumenty znovu otevøeny.
+; Remembers in Ambient opened documents. After restarting the system these documents will be open again.
+;
+MSG_PREFSWIN_DEFICONS
+Základní ikony
+; Default Icons
+;
+MSG_PREFSWIN_DEFICONS_PATH
+Cesta k základním ikonám:
+; Path _to default icons:
+;
+MSG_PREFSWIN_DEFICONS_PATH_HELP
+Cesta k základním ikonám systému. Tyto ikony jsou pou¾ívány jako základní pro rùzné typy souborù, adresáøù a zaøízení.
+; Path to the default icons of the system. These icons are used as default for various filetypes, directories and devices.
+;
+MSG_PREFSWIN_DEFICONS_PATH_REQ
+Path _to default icons
+; Path to default icons
+;
+MSG_PREFSWIN_MISCELLANEOUS
+Rùzné
+; Miscellaneous
+;
+MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS
+Zobrazit ikonu Mùj MorphOS
+; Display M_yMorphos icon
+;
+MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS_HELP
+Zapne nebo vypne ikonu Mùj MorphOS na plo¹e.
+; Enables and disables the MyMorphOS icon on desktop.
+;
+MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS
+_Dvojklik na plo¹e otevøe okno Mùj MorphOS
+; _Double click on desktop opens MyMorphos window
+;
+MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS_HELP
+Jakýkoliv dvojklik na plo¹e otevøe okno Mùj MorphOS.
+; _Any double click on desktop opens MyMorphos window.
+;
+MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE
+Pøesouvání souborù pomocí Drag&drop místo kopírování
+; Drag&drop moves files instead of copy
+;
+MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE_HELP
+Pøesouvání souborù pomocí Drag & drop místo kopírování.
+; Drag & drop moves files instead of copy.
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL
+Nahradit základní program M_ore
+; _Override More default tool
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL_HELP
+Tímto pøepínaèem lze nahradit program MORE interním prohlí¾eèem Ambientu, pokud ikona obsahuje základní program MORE.
+; If icons contain the default tool MORE, this option allows to override with Ambient internal text viewer instead.
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL
+Nahradit základní program Multi_View
+; Override Multi_View default tool
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL_HELP
+Tímto pøepínaèem lze nahradit program MULTIVIEW interním prohlí¾eèem Ambientu, pokud ikona obsahuje základní program MULTIVIEW.
+; If icons contain the default tool MULTIVIEW, this option allows to override with Ambient internal viewer instead.
+;
+MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES
+Zobrazit obrázky v kontextovém menu
+; S_how images in context menu
+;
+MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES_HELP
+Zapne zobrazování obrázkù v kontextovém menu.
+; Images in context can be turned off by disabling this option.
+;
+MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER
+Základnì vytvoøit ikonu pro nový adresáø
+; C_reate icon for new drawer by default
+;
+MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER_HELP
+Zapne automatické vytvoøení základní ikony pøi vytváøení adresáøe.
+; New drawer will automatically get a default drawer icon if this option is enabled.
+;
+; *** Prefswin CLI launching
+;
+MSG_PREFSWIN_CLI_COMMANDLINE
+Nastavení pøíkazové øádky
+; Command Line Settings
+;
+MSG_PREFSWIN_CLI_DEVICE
+_Okno pro výstup:
+; _Output window:
+;
+MSG_PREFSWIN_CLI_DEVICE_HELP
+Zaøízení pro výstup zpráv DOSu. Vìt¹inou CON:
+; Device to use to output DOS messages. Usually a CON:
+;
+MSG_PREFSWIN_CLI_STACKSIZE
+_Velikost zásobníku:
+; Stacksi_ze:
+;
+MSG_PREFSWIN_CLI_STACKSIZE_HELP
+Velikost zásobníkù v bytech pøi spou¹tìní CLI programù.
+; Stacksize in bytes to use when launching CLI programs.
+;
+MSG_PREFSWIN_CLI_NEWSHELL
+_Argumenty pro spu¹»ìní:
+; _Newshell arguments:
+;
+MSG_PREFSWIN_CLI_NEWSHELL_HELP
+Argumenty, které se pou¾ijí pøi spu¹tìní shellu z Ambientu.
+; Arguments to use when launching a shell from Ambient.
+;
+; *** Preferences Window - Drag & Drop
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAY_HELP
+Barva oznaèující cílovou ikonu pøi operaci drag & drop.
+; Effect to apply to icons becoming active for a drag & drop operation.
+;
+; *** Preferences Window - Main
+;
+MSG_PREFSWIN_MAIN_TITLE
+Nastavení Ambientu
+; Ambient Settings
+;
+MSG_PREFSWIN_MAIN_CLIPBOARD_FRAMEIMAGE
+Schránka pro obrázky a orámování
+; Frame and Image Clipboard
+;
+MSG_PREFSWIN_MAIN_CLIPBOARD_FRAMEIMAGE_HELP
+Toto tlaèítko lze pou¾ít jako schránku pro odkládání obrázkù a rámù. Pou¾ijte drag & drop.
+; This gadget can be used as a clipboard to store the frame and image. Use drag & drop.
+;
+; *** Soundwin
+;
+MSG_SOUNDWIN_PLAY
+Hrát
+; Play
+;
+MSG_SOUNDWIN_STOP
+Stop
+; Stop
+;
+; *** Mimegroup
+;
+MSG_MIMEGROUP_ADD
+Pøidat...
+; Add...
+;
+MSG_MIMEGROUP_COPY
+Kopírovat
+; Copy
+;
+MSG_MIMEGROUP_EDIT
+Zmìnit...
+; Edit...
+;
+MSG_MIMEGROUP_REMOVE
+Odstranit
+; Remove
+;
+; *** Preferences Window - Mimeadjustgroup
+;
+MSG_MIMEGROUPADJUST_ADD
+Pøidat...
+; Add...
+;
+MSG_MIMEGROUPADJUST_EDIT
+Editovat...
+; Edit...
+;
+MSG_MIMEGROUPADJUST_REMOVE
+Odstranit
+; Remove
+;
+; *** Preferences Window - Toolbar
+;
+MSG_PREFSWIN_TOOLBAR_ENABLE
+Pou¾ít _nástrojovou li¹tu
+; _Browser mode
+;
+MSG_PREFSWIN_TOOLBAR_ENABLE_HELP
+Tento pøepínaè zapne mód nástrojové li¹ty.
+; This check mark enables the toolbar mode.
+;
+MSG_PREFSWIN_TOOLBAR_TOOLBUTTONS_GROUP
+Nastavení tlaèítek
+; Tool buttons
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE
+_Zobrazení:
+; _Appearance:
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_HELP
+Zde lze nastavit vzhled nástrojové li¹ty.
+; The appearance of the tool bar can be configured here.
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME
+Ohranièení tlaèítka:
+; Button _Frame:
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_HELP
+Nastavení typu ohranièení a vzhledu pro tlaèítka v nástrojové li¹tì.
+; Allows to specify the frame type and look for the tool buttons.
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_WINTITLE
+Vyberte ohranièení tlaèítka
+; Select Button Frame
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_IMAGETEXT
+Obrázky s textem
+; Image With Text
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_IMAGE
+Pouze obrázky
+; Image Only
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_TEXT
+Pouze text
+; Text Only
+;
+MSG_PREFSWIN_TOOLBAR_CURRENT_GROUP
+Aktuální nástrojová li¹ta
+; Current Toolbar
+;
+MSG_PREFSWIN_TOOLBAR_CURRENT_HELP
+Toto jsou aktuální tlaèítka nástrojové li¹ty.
+; These are the current tool bar buttons.
+;
+MSG_PREFSWIN_TOOLBAR_AVAILABLE_GROUP
+Dostupná tlaèítka
+; Available Buttons
+;
+MSG_PREFSWIN_TOOLBAR_AVAILABLE_HELP
+Toto jsou v¹echna dostupná tlaèítka pro nástrojovou li¹tu.
+; These are the available buttons for the tool bar.
+;
+MSG_PREFSWIN_TOOLBAR_DEVICE_LIST
+Device List
+; Device List
+;
+MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP
+Display Device List
+; Display Device List
+;
+MSG_PREFSWIN_TOOLBAR_COPY
+Copy
+; Copy
+;
+MSG_PREFSWIN_TOOLBAR_COPY_HELP
+Copy file or directory
+; Copy file or directory
+;
+MSG_PREFSWIN_TOOLBAR_COPY_AS
+Copy As
+; Copy As
+;
+MSG_PREFSWIN_TOOLBAR_COPY_AS_HELP
+Copy As File or Directory
+; Copy As File or Directory
+;
+MSG_PREFSWIN_TOOLBAR_MOVE
+Move
+; Move
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_HELP
+Move a file or a directory
+; Move a file or a directory
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_AS
+Move As
+; Move As
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP
+Move and rename file or directory
+; Move and rename file or directory
+;
+MSG_PREFSWIN_TOOLBAR_DELETE
+Delete
+; Delete
+;
+MSG_PREFSWIN_TOOLBAR_DELETE_HELP
+Delete file or directory
+; Delete file or directory
+;
+MSG_PREFSWIN_TOOLBAR_TRASH
+Trash
+; Trash
+;
+MSG_PREFSWIN_TOOLBAR_TRASH_HELP
+Move file or directory to Trashcan
+; Move file or directory to Trashcan
+;
+MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD
+Copy To Clipboard
+; Copy To Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP
+Copy file or directory to clipboard
+; Copy file or directory to clipboard
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD
+Move To Clipboard
+; Move To Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP
+Move file or directory to clipboard
+; Move file or directory to clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD
+Paste From Clipboard
+; Paste From Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP
+Paste content of clipboard
+; Paste content of clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS
+Paste As From Clipboard
+; Paste As From Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS_HELP
+Paste and rename content of clipboard
+; Paste and rename content of clipboard
+;
+MSG_PREFSWIN_TOOLBAR_SELECT
+Select
+; Select
+;
+MSG_PREFSWIN_TOOLBAR_SELECT_HELP
+Select file or directory
+; Select file or directory
+;
+MSG_PREFSWIN_TOOLBAR_ICONINFO
+Icon Info
+; Icon Info
+;
+MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP
+Display Icon Information window
+; Display Icon Information window
+;
+MSG_PREFSWIN_TOOLBAR_FORMAT
+Format
+; Format
+;
+MSG_PREFSWIN_TOOLBAR_FORMAT_HELP
+Format a filesystem
+; Format a filesystem
+;
+MSG_PREFSWIN_TOOLBAR_MAKEDIR
+Makedir
+; Add directory
+;
+MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP
+Create a directory
+; Create a directory
+;
+MSG_PREFSWIN_TOOLBAR_MAKELINK
+Makelink
+; Add link
+;
+MSG_PREFSWIN_TOOLBAR_MAKELINK_HELP
+Create a link.
+; Add a link.
+;
+MSG_PREFSWIN_TOOLBAR_RENAME
+Rename
+; Rename
+;
+MSG_PREFSWIN_TOOLBAR_RENAME_HELP
+Rename file or directory
+; Rename file or directory
+;
+MSG_PREFSWIN_TOOLBAR_FIND
+Hledat
+; Find
+;
+MSG_PREFSWIN_TOOLBAR_FIND_HELP
+Hledání souborù a adresáøù
+; Finds files and directories
+;
+MSG_PREFSWIN_TOOLBAR_PARENT
+Parent
+; Parent
+;
+MSG_PREFSWIN_TOOLBAR_PARENT_HELP
+Parent directory
+; Parent directory
+;
+MSG_PREFSWIN_TOOLBAR_BACK
+Zpìt
+; Back
+;
+MSG_PREFSWIN_TOOLBAR_BACK_HELP
+Zpìt v adresáøové historii.
+; Previous in history.
+;
+MSG_PREFSWIN_TOOLBAR_FORWARD
+Next
+; Next
+;
+MSG_PREFSWIN_TOOLBAR_FORWARD_HELP
+Next
+; Next
+;
+MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW
+Swith view
+; Switch view
+;
+MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP
+Change view display mode
+; Change view display mode
+;
+MSG_PREFSWIN_TOOLBAR_BOOKMARKS
+Bookmarks
+; Bookmarks
+;
+MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP
+Bookmark file or directory
+; Bookmark file or directory
+;
+MSG_PREFSWIN_TOOLBAR_SPACE
+Space
+; Space
+;
+MSG_PREFSWIN_TOOLBAR_SPACE_HELP
+Add a space to toolbar
+; Add a space to toolbar
+;
+MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE
+Flexible space
+; Flexible space
+;
+MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP
+Add a flexible space to toolbar
+; Add a flexible space to toolbar
+;
+MSG_PREFSWIN_TOOLBAR_SEPARTOR
+Separator
+; Separator
+;
+MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP
+Separator between group of buttons
+; Separator between group of buttons
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULTDIMENSIONS_GROUP
+Základní rozmìry a umístìní
+; Default Dimensions and Position
+;
+MSG_PREFSWIN_TOOLBAR_PLACEUNDERMOUSE
+Umístit okno pod kurzorem _my¹i
+; _Place the window under mouse pointer
+;
+MSG_PREFSWIN_TOOLBAR_PLACEUNDERMOUSE_HELP
+Tento pøepínaè zapne základní umístìní okna pod kurzorem my¹i.
+; If checkbox is on the window will be placed under mouse pointer.
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW
+Získat z _okna...
+; _Get From Window...
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_HELP
+Umo¾ní vybrat okno a pou¾ít jeho souøadnice jako základní.
+; Allows to select a window and use its coordinates as default.
+;
+MSG_PREFSWIN_TOOLBAR_COORDS
+Zleva: %ld  Shora: %ld  ©íøka: %ld  Vý¹ka: %ld
+; Left: %ld  Top: %ld  Width: %ld  Height: %ld
+;
+MSG_PREFSWIN_TOOLBAR_COORDS_HELP
+Toto jsou aktuální základní rozmìry okna.
+; These are the current default window dimensions.
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_TITLE
+Ambient ÿ Okno pro nastavení velikosti a umístìní
+; Ambient · Define Window
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_TEXT
+Podle potøeby zmìòte a umístìte okno, pak ho zavøete.
+; Resize and place window as desired, then close it.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR
+Stavový øádek
+; Status Bar
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT
+F_ormát:
+; F_ormat:
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_HELP
+Umo¾ní vytvoøení vlastního stavového øádku.
+; Allows to set-up your own status bar.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_0
+%tf% - poèet souborù v aktuálním adresáøi.
+; %tf% - number of files in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_1
+%td% - poèet adresáøù v aktuálním adresárí.
+; %td% - number of directories in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_2
+%i% - poèet ikon (souborù .info) v aktuálním adresáøi.
+; %i% - number of icon files (.info) in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_3
+%l% - poèet soft/hard linkù v aktuálním adresáøi.
+; %l% - number of soft/hard links in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_4
+%du% - místo na disku, které zabírájí soubory v aktuálním adresáøi.
+; %du% - disk space used by files in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_5
+%ns% - poèet vybraných souborù v aktuálním adresáøi.
+; %ns% - number of selected files in current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_6
+%sdu% - místo na disku, které zabírají vybrané soubory a adresáøe.
+; %sdu% - space occupied by selected files and directories.
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_GROUP
+View Behaviour
+; View Behaviour
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW
+Default view:
+; Default view:
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW_HELP
+Select which view should be used by default.
+; Select which view should be used by default.
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE
+Default view mode:
+; Default view mode:
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE_HELP
+Select which view mode should be used by default.
+; Select which view mode should be used by default.
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_ICON
+Icon
+; Icon
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_LIST
+List
+; List
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW
+Inherit view
+; Inherit view
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW_HELP
+When clicking a directory, decides if the current view or the default view should be applied.
+; When clicking a directory, decides if the current view or the default view should be applied.
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE
+Inherit view mode
+; Inherit view mode
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE_HELP
+When clicking a directory, decides if the current view mode or the default view mode should be applied.
+; When clicking a directory, decides if the current view mode or the default view mode should be applied.
+;
+; *** System Information Window
+;
+MSG_SYSINFOWIN_TITLE
+Ambient ÿ Systémový monitor
+; Ambient · System Monitor
+;
+MSG_SYSINFOWIN_MENU_PROJECT
+Projekt
+; System Monitor
+;
+MSG_SYSINFOWIN_MENU_QUIT
+Konec
+; Quit
+;
+MSG_SYSINFOWIN_INFO_REGTITLE
+Systémové detaily
+; System Details
+;
+MSG_SYSINFOWIN_MONITOR_REGTITLE
+Systémový monitor
+; System Monitor
+;
+MSG_SYSINFOWIN_SYSTEM_GROUP
+Systém
+; System
+;
+MSG_SYSINFOWIN_CPULOAD
+Vytí¾ení CPU
+; CPU load
+;
+MSG_SYSINFOWIN_MEMORY
+System memory: %ld%%%%
+; System memory: %ld%%%%
+;
+MSG_SYSINFOWIN_MACHINE
+Poèítaè:
+; Machine:
+;
+MSG_SYSINFOWIN_MACHINE_HELP
+Toto je typ základní desky a její výrobce.
+; This is the main board type and its vendor.
+;
+MSG_SYSINFOWIN_CPUCOUNT
+Cpu count:
+; CPU count:
+;
+MSG_SYSINFOWIN_CPUCOUNT_HELP
+This is the number of cpus available.
+; This is the number of CPUs available.
+;
+MSG_SYSINFOWIN_BCLOCK
+Frekvence sbìrnice:
+; Bus clock:
+;
+MSG_SYSINFOWIN_BCLOCK_HELP
+Toto je frekvence systémové sbìrnice.
+; This is the systems bus clock.
+;
+MSG_SYSINFOWIN_TTICKS
+Timer ticks:
+; Timer ticks:
+;
+MSG_SYSINFOWIN_TTICKS_HELP
+Poèet timer ticks.
+; This is the number of timer ticks.
+;
+MSG_SYSINFOWIN_COMPUTERON
+Zapnutý poèítaè:
+; Computer turned on:
+;
+MSG_SYSINFOWIN_COMPUTERON_HELP
+Je systém zapnutý?
+; Is the system turned on?
+;
+MSG_SYSINFOWIN_CPU_GROUP
+CPU
+; CPU
+;
+MSG_SYSINFOWIN_CPU_TITLE
+CPU %ld
+; CPU %ld
+;
+MSG_SYSINFOWIN_MODEL
+Model:
+; Model:
+;
+MSG_SYSINFOWIN_MODEL_HELP
+Toto je typ CPU.
+; This type of CPU is built into the system.
+;
+MSG_SYSINFOWIN_DATASTREAM
+Datastream:
+; Datastream:
+;
+MSG_SYSINFOWIN_DATASTREAM_HELP
+Podporuje CPU datastream?
+; Is the CPU supporting datastreams?
+;
+MSG_SYSINFOWIN_ALTIVEC
+AltiVec:
+; AltiVec:
+;
+MSG_SYSINFOWIN_ALTIVEC_HELP
+Obsahuje CPU vektorovou výpoèetní jednotku?
+; Does the CPU contain a vector processing unit?
+;
+MSG_SYSINFOWIN_PMON
+Performance monitor:
+; Performance monitor:
+;
+MSG_SYSINFOWIN_PMON_HELP
+Podporuje CPU performance monitor?
+; Is the CPU supporting a performance monitor?
+;
+MSG_SYSINFOWIN_CPUCACHE_GROUP
+CPU Cache
+; CPU Cache
+;
+MSG_SYSINFOWIN_CACHESIZE
+Velikost %s cache:
+; %s cache size:
+;
+MSG_SYSINFOWIN_CACHESIZE_HELP
+Toto zobrazuje velikost CPU cache.
+; This shows the CPU cache size.
+;
+MSG_SYSINFOWIN_CACHESPECS
+Specifikace %s cache:
+; %s cache specs:
+;
+MSG_SYSINFOWIN_CACHESPECS_HELP
+Toto zobrazuje CPU chache specifikace.
+; This shows the CPU cache specifications.
+;
+MSG_SYSINFOWIN_SNDDRIVER
+Ovladaè zvuku:
+; Sound driver:
+;
+MSG_SYSINFOWIN_SNDDRIVER_HELP
+Toto je pou¾itý zvukový ovladaè.
+; This is the audio driver system used.
+;
+MSG_SYSINFOWIN_SNDDRIVER_NONE_INFO
+None
+; None
+;
+MSG_SYSINFOWIN_CACHESPECSDETAILS1_INFO
+%lU kB (instruction) / %lU kB (data)
+; %lU kB (instruction) / %lU kB (data)
+;
+MSG_SYSINFOWIN_CACHESPECSDETAILS2_INFO
+%lU kB
+; %lU kB
+;
+MSG_SYSINFOWIN_BATTERYCHARGING_INFO
+Battery: %ld mAh (charging)
+; Battery: %ld mAh (charging)
+;
+MSG_SYSINFOWIN_BATTERY_INFO
+Battery: %ld mAh
+; Battery: %ld mAh
+;
+MSG_SYSINFOWIN_BATTERY_MISSING
+No battery found
+; No battery found
+;
+; *** MakeLinkWinClass (makelinkwinclass.c)
+;
+MSG_MAKELINKWINCLASS_TITLE
+Ambient ÿ Zástupce
+; Ambient · Shortcut
+;
+MSG_MAKELINKWINCLASS_ENTERSHORTCUT
+\033cZadejte zástupce:
+; \033cShortcut:
+;
+MSG_MAKELINKWINCLASS_OK
+Ok
+; Ok
+;
+MSG_MAKELINKWINCLASS_CANCEL
+Zru¹it
+; Cancel
+; *** AboutWinClass.c (aboutwinclass.c)
+;
+MSG_ABOUTWIN_WEBSUPPORT
+Podpora na WEBu:
+; Web Support:
+;
+MSG_ABOUTWIN_MUI
+Bez \033bMUI\033n by Ambient nikdy nevznikl.
+; Without \033bMUI\033n, Ambient wouldn't exist.
+;
+MSG_ABOUTWIN_MD5
+Obsahuje software odvozený od RSA Data Security, Inc.\n\033bMD5\033n Message-Digest algoritmus.
+; Contains software derived from the RSA Data Security, Inc.\n\033bMD5\033n Message-Digest Algorithm.
+;
+MSG_ABOUTWIN_ALTIVEC
+Pou¾ívá \033bAltiVec\033n instrukce, jsou-li dostupné.
+; Uses \033bAltiVec\033n instructions when available.
+;
+MSG_ABOUTWIN_MOSDESKTOP
+Grafické prostøedí pro MorphOS
+; The MorphOS Desktop
+;
+MSG_ABOUTWIN_VERSION
+verze
+; version
+;
+MSG_ABOUTWIN_ALLRIGHTS
+V¹echna práva vyhrazena
+; All Rights Reserved
+;
+MSG_ABOUTWIN_GPL
+GPL licence
+; General Public License
+;
+MSG_ABOUTWIN_AMBIENTTEAM
+Ambient Tým
+; The Ambient Team
+;
+MSG_ABOUTWIN_SCROLLINFO
+Mo¾ná jste nevìdìli, ¾e mù¾ete s textem posouvat nahoru a dolu za pomoci koleèka my¹i, pøípadnì zastavit automatické posouvání levým tlaèítkem my¹i.
+; Perhaps you didn't know it but you can scroll that text up and down using the mouse wheel and stop the autoscroll with the left mouse button.
+;
+MSG_ABOUTWIN_SCROLLRESTART
+a znovu od zaèátku
+; scroll restart
+;
+MSG_ABOUTWIN_AMBIENTTITLE
+Ambient ÿ O Ambientu
+; Ambient · About
+;
+; *** AboutMosWinClass.c (aboutmoswinclass.c)
+;
+MSG_ABOUTWIN_DEVSUPPORT
+Podpora vývojáøù:
+; Developer Support:
+;
+MSG_ABOUTWIN_MAILSUPPORT
+Podpora pøes email:
+; Mail Support:
+;
+MSG_ABOUTWIN_MOSRELEASE
+MorphOS verze: %lu.%lu
+; MorphOS release: %lu.%lu
+;
+MSG_ABOUTWIN_PROGRAMMERS
+Programátoøi
+; Programmers
+;
+MSG_ABOUTWIN_GRAPHICS
+Grafika
+; Graphic Artists
+;
+MSG_ABOUTWIN_DOCS
+Dokumentace
+; Documentation
+;
+MSG_ABOUTWIN_MISC
+Dal¹í
+; Miscellaneous stuff no one cares about
+;
+; *** Ambient main
+;
+MSG_SHUTDOWN_SELECT
+Vyberte po¾adovanou akci:
+; What do you want to do?
+;
+MSG_SHUTDOWN_REBOOT_CANCEL
+_Restartovat|_Zru¹it
+; _Reboot|_Cancel
+;
+MSG_SHUTDOWN_SHUTDOWN_REBOOT_CANCEL
+_Vypnout|_Restartovat|_Zru¹it
+; _Shutdown|_Reboot|_Cancel
+;
+MSG_MAIN_SCREENMODE
+Ambient vy¾aduje hi/true-color obrazovku.\nProsím vyberte jiné rozli¹ení.
+; You need a hi/true-color screen to use Ambient.\nPlease select another screenmode.
+;
+MSG_MAIN_SCREENMODE_ACTION
+Výbìr rozli¹ení|Spustit Shell|Zru¹it
+; Run ScreenMode|Run Shell|Cancel
+;
+MSG_MAIN_PREFERENCES_START_ERROR
+Chyba pøi spou¹tìní systémového nastavení (mossys:prefs/Preferences).\nVyzkou¹ejte spustit Shell.
+; Couldn't start the system preferences.\nI tried to start mossys:prefs/Preferences (the file is here).\nTrying to run a shell then.
+;
+MSG_MAIN_PREFERENCES_FIND_ERROR
+Chyba pøi hledání systémového nastavení (mossys:prefs/Preferences nebo sys:prefs/Preferences).\nVyzkou¹ejte spustit Shell.
+; Couldn't find the system preferences.\nI tried the file mossys:prefs/Preferences\nand the file sys:prefs/Preferences.\nTrying to run a shell then.
+;
+MSG_MAIN_RUN_SHELL
+Spustit Shell
+; Run Shell
+;
+; *** StatusBarClass.c (statusbarclass.c)
+;
+MSG_STATUSBAR_PATTERN_NORMAL
+%du% v %td% adresáøù a %tf% souborech. (%sdu% v %ns% vybráno).
+; %du% in %td% directories and %tf% files. (%sdu% in %ns% selected).
+;
+MSG_STATUSBAR_PATTERN_SELECTED
+(%lu vybráno)
+; (%lu selected)
+;
+; PanelSliderSizeClass.c (panelslidersizeclass.c)
+;
+MSG_PANELSLIDERSIZECLASS_16PIXEL
+16 pixelù
+; 16 pixels
+;
+MSG_PANELSLIDERSIZECLASS_24PIXEL
+24 pixely
+; 24 pixels
+;
+MSG_PANELSLIDERSIZECLASS_32PIXEL
+32 pixely
+; 32 pixels
+;
+MSG_PANELSLIDERSIZECLASS_48PIXEL
+48 pixelù
+; 48 pixels
+;
+MSG_PANELSLIDERSIZECLASS_64PIXEL
+64 pixely
+; 64 pixels
+;
+; *** ListViewClass.c (listviewclass.c)
+;
+MSG_LISTVIEWCLASS_WINTITLE
+%s - %s volných, %s/%s obsazených, %ld%% zaplnìno
+; %s - %s free, %s/%s used, %ld%% full
+;
+; *** DeviceListClass.c (devicelistclass.c)
+;
+;MSG_MISC_HIDDEN_DRIVES
+;Hidden drives
+;Skrytá zaêízení
+;Versteckte Laufwerke
+;Disques cachés
+;Periferiche nascoste
+;Rejtett meghajtók
+;Ukryj napêdy
+;Piilotetut asemat
+;Hidden drives
+;Impulsiones ocultadas
+;
+MSG_DEVICELISTCLASS_HIDDENDRIVESCOLUMN
+Název zaøízení
+; Drive name
+;
+; *** PrefsWin_ListerClass.c (prefswin_listerclass.c)
+;
+MSG_PREFSWIN_LISTER_FILES
+Soubory
+; File Properties
+;
+MSG_PREFSWIN_LISTER_DEVICES
+Zaøízení
+; Device Properties
+;
+MSG_PREFSWIN_LISTER_ICONSIZEFILES
+Velikost _ikon:
+; _Icons size:
+;
+MSG_PREFSWIN_LISTER_ICONSIZEFILES_HELP
+Velikost ikon v seznamu souborù.
+; Icon size in file list.
+;
+MSG_PREFSWIN_LISTER_ICONSIZEDEVICES
+_Velikost ikon:
+; Icons si_ze:
+;
+MSG_PREFSWIN_LISTER_ICONSIZEDEVICES_HELP
+Velikost ikon v seznamu zaøízení.
+; Icons size in file list.
+;
+MSG_PREFSWIN_LISTER_ICON_SMALL
+Malá (20x20)
+; Small   (20x20)
+;
+MSG_PREFSWIN_LISTER_ICON_MEDIUM
+Medium  (32x32)
+; Medium  (32x32)
+;
+MSG_PREFSWIN_LISTER_ICON_LARGE
+Velká (48x48)
+; Large   (48x48)
+;
+MSG_PREFSWIN_LISTER_ICON_HUGE
+Obrovská (64x64)
+; Huge    (64x64)
+;
+MSG_PREFSWIN_LISTER_MODES
+_Mód:
+; _Mode:
+;
+MSG_PREFSWIN_LISTER_MODES_HELP
+Základní mód pro seznamy souborù.
+; This mode gets active when list mode is selected.
+;
+MSG_PREFSWIN_LISTER_COMPACT_SIZE
+_Kompaktní zobrazení velikostí
+; Compact size displa_y
+;
+MSG_PREFSWIN_LISTER_COMPACT_SIZE_HELP
+Zapne zobrazení velikostí v kompaktní formì.
+; Size is shown in compact form if this switch is enabled.
+;
+MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS
+Zobrazovat _assigny
+; Display _assigns
+;
+MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS_HELP
+Zapne zobrazení assignù v seznamu zaøízení.
+; In device list assigns will be shown, if this gadget is activated.
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE
+Editace v øádku
+; Inline edi_ting:
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE_HELP
+Zmìna názvù pøímo v øádku bez otevøení nového okna.
+; Using the given action allows to edit names without an additional context.
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_DISABLED
+Zakázáno
+; Disabled
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MIDDLEBUTTON
+Prostøední tlaèítko
+; Middle Button
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_LONG_LEFTBUTTON
+Levé tlaèítko (dlouze)
+; Left Button (long)
+;
+MSG_PREFSWIN_LISTER_COLORS
+Nastavení barev
+; Colors
+;
+MSG_PREFSWIN_LISTER_FILE
+_Soubor:
+; _File:
+;
+MSG_PREFSWIN_LISTER_FILE_HELP
+Barva, která se pou¾ívá pro zobrazení souborù v seznamu.
+; This color is used to display files within the lister.
+;
+MSG_PREFSWIN_LISTER_FILE_COLOR
+Barva souboru
+; File color
+;
+MSG_PREFSWIN_LISTER_DIRECTORY
+A_dresáø:
+; _Directory:
+;
+MSG_PREFSWIN_LISTER_DIRECTORY_HELP
+Barva, která se pou¾ívá pro zobrazení adresáøù v seznamu.
+; This color is used to display drawers within the lister.
+;
+MSG_PREFSWIN_LISTER_DIRECTORY_COLOR
+Barva adresáøe
+; Directory color
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE
+Vybraný soubor:
+; Se_lected file:
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE_HELP
+Barva, která se pou¾ívá pro vybrané soubory v seznamu.
+; This color is used to display selected files within the lister.
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE_COLOR
+Barva vybraného souboru
+; Selected file color
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY
+Vybraný adresáø:
+; Sel_ected directory:
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY_HELP
+Barva, která se pou¾ívá pro vybrané adresáøe v seznamu.
+; This color is used to display selected drawers within the lister.
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY_COLOR
+Barva vybraného adresáøe
+; Selected directory color
+;
+MSG_PREFSWIN_LISTER_SOFTLINK
+Soft_link:
+; Softlin_k:
+;
+MSG_PREFSWIN_LISTER_SOFTLINK_HELP
+Barva, která se pou¾ívá pro zobrazení softlinkù v seznamu.
+; This color is used to display softlinks within the lister.
+;
+MSG_PREFSWIN_LISTER_SOFTLINK_COLOR
+Barva softlinku
+; Softlink color
+;
+MSG_PREFSWIN_LISTER_HARDLINK
+_Hardlink:
+; _Hardlink:
+;
+MSG_PREFSWIN_LISTER_HARDLINK_HELP
+Barva, která se pou¾ívá pro zobrazení hardlinkù v seznamu.
+; This color is used to display hardlinks within the lister.
+;
+MSG_PREFSWIN_LISTER_HARDLINK_COLOR
+Barva hardlinku
+; Hardlink color
+;
+MSG_PREFSWIN_LISTER_VOLUME
+Zaøízení:
+; _Volume:
+;
+MSG_PREFSWIN_LISTER_VOLUME_HELP
+Barva, která se pou¾ívá pro zobrazení zaøízení v seznamu.
+; This color is used to display volumes within the lister.
+;
+MSG_PREFSWIN_LISTER_VOLUME_COLOR
+Barva zaøízení
+; Volume color
+;
+MSG_PREFSWIN_LISTER_ASSIGN
+Assi_gn:
+; Assi_gn:
+;
+MSG_PREFSWIN_LISTER_ASSIGN_HELP
+Barva, která se pou¾ívá pro zobrazení assignù v seznamu.
+; This color is used to display assigns within the lister.
+;
+MSG_PREFSWIN_LISTER_ASSIGN_COLOR
+Barva assignu
+; Assign color
+;
+MSG_PREFSWIN_LISTER_COLUMN
+Nadpis sloupce:
+; Colum_n:
+;
+MSG_PREFSWIN_LISTER_COLUMN_HELP
+Barva, která se pou¾ívá pro nadpisy sloupcù v seznamu.
+; This color is used to display columns within the lister.
+;
+MSG_PREFSWIN_LISTER_COLUMN_COLOR
+Barva sloupce
+; Column color
+;
+MSG_PREFSWIN_LISTER_USEWINDOWBACKGROUND
+Pou¾ít s_tandardní pozadí okna
+; Use _window background
+;
+MSG_PREFSWIN_LISTER_USEWINDOWBACKGROUND_HELP
+Tento pøepínaè zapne pou¾ívání standardního pozadí okna v seznamech souborù.
+; When activated the normal window background is displayed in list mode.
+;
+MSG_PREFSWIN_LISTER_SHOWICONS
+Zobrazit _ikony
+; Show _icons
+;
+MSG_PREFSWIN_LISTER_SHOWICONS_HELP
+Nápovìda není dostupná.
+; Specifies if icons should be displayed.
+;
+MSG_PREFSWIN_LISTER_FONT
+Písmo:
+; Font:
+;
+MSG_PREFSWIN_LISTER_FONT_HELP
+Písmo pro seznamy souborù.
+; Specifies the font to be used in list view.
+;
+MSG_PREFSWIN_LISTER_FONT_REQ
+Font
+; Font
+;
+MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES
+Adresáøe tuènì
+; Bold directories
+;
+MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES_HELP
+Tento pøepínaè zapne zobrazení adresáøù tuèným písmem.
+; When activated, directories are shown in bold style.
+;
+MSG_PREFSWIN_LISTER_ALTERNATED_ROWS
+Støídání øádkù
+; Alternated rows
+;
+MSG_PREFSWIN_LISTER_ALTERNATED_ROWS_HELP
+Tento pøepínaè zapne zesvìtlení ka¾dé druhé øádky o 10% .
+; When activated, every other line is 10% brighter.
+;
+MSG_PREFSWIN_LISTER_SELECTION_MODES
+Selection mode:
+; Selection mode:
+;
+MSG_PREFSWIN_LISTER_SELECTION_MODES_HELP
+This mode allows to choose between the default selection mode and the sticky selection mode (DirectoryOpus-like)
+; This mode allows to choose between the default selection mode and the sticky selection mode (DirectoryOpus-like)
+;
+MSG_PREFSWIN_LISTER_SELECTION_DEFAULT
+Default
+; Default
+;
+MSG_PREFSWIN_LISTER_SELECTION_ALWAYS
+Always
+; Always
+;
+MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN
+Zesvìtlit øadící sloupec
+; Hilighted sorting column
+;
+MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN_HELP
+Tento pøepínaè zapne zesvìtlení aktuálního øadícího sloupce oproti ostatním.
+; When activated, the currently sorting column is brighter than other ones.
+;
+; *** PrefsWin_KeyboardClass.c (prefswin_keyboardclass.c)
+;
+MSG_PREFSWIN_KEYBOARDCLASS_BUILTINGROUP
+Horké klávesy pro vestavìné pøíkazy
+; Builtin commands hotkeys
+;
+MSG_PREFSWIN_KEYBOARDCLASS_CUSTOMGROUP
+U¾ivatelské horké klávesy
+; Custom commands hotkeys
+;
+MSG_PREFSWIN_KEYBOARDCLASS_ADDAHOTKEY
+Pøidat horkou klávesu
+; Add a Hotkey
+;
+MSG_PREFSWIN_KEYBOARDCLASS_NEWSHORTCUT
+nová horká klávesa
+; new shortcut
+;
+; *** KeyShortCutClass.c (keyshortcutclass.c)
+;
+MSG_KEYSHORTCUTCLASS_ACTION
+Zmìnit pøíkaz
+; Edit Command
+;
+MSG_KEYSHORTCUTCLASS_REMOVE
+Odstranit
+; Remove
+;
+MSG_KEYSHORTCUTCLASS_LABEL_FORMAT
+%s:
+; %s:
+;
+; *** KeyShortCuts.c (keyshortcuts.c)
+;
+MSG_KEYSHORTCUT_DELETE
+Smazat
+; Delete
+;
+MSG_KEYSHORTCUT_RENAME
+Pøejmenovat
+; Rename
+;
+MSG_KEYSHORTCUT_INFORMATION
+Informace
+; Information
+;
+MSG_KEYSHORTCUT_PARENT
+Nadøazený adresáø
+; Parent
+;
+MSG_KEYSHORTCUT_LEAVEOUT
+Umístit na plochu
+; Leave out
+;
+MSG_KEYSHORTCUT_PUTAWAY
+Odstranit z plochy
+; Put away
+;
+MSG_KEYSHORTCUT_SELECTALL
+Vybrat v¹e
+; Select all
+;
+MSG_KEYSHORTCUT_SELECTNONE
+Zru¹it výbìr
+; Deselect all
+;
+MSG_KEYSHORTCUT_SELECTINVERT
+Invertovat výbìr
+; Invert selection
+;
+MSG_KEYSHORTCUT_SELECTPATTERN
+Vybrat podle masky
+; Select with pattern
+;
+MSG_KEYSHORTCUT_CLIPBOARDCOPY
+Kopírovat do schránky
+; Copy to clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDCUT
+Vyjmout do schánky
+; Cut to clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDPASTE
+Vlo¾it ze schránky
+; Paste from clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDPASTEAS
+Vlo¾it ze schránky jako
+; Paste from clipboard as
+;
+MSG_KEYSHORTCUT_CYCLEMODE
+Zmìna zobrazení
+; Cycle Mode
+;
+MSG_KEYSHORTCUT_CYCLESUBMODE
+Zmìna podzobrazení
+; Cycle Submode
+;
+MSG_KEYSHORTCUT_FINDFILES
+Hledání souborù
+; Find files
+;
+; *** Find Window
+;
+MSG_FINDCLASS_TITLE
+Hledání souborù
+; Find
+;
+MSG_FINDCLASS_MENU_PROJECT
+Projekt
+; Find
+;
+MSG_FINDCLASS_MENU_QUIT
+Konec
+; Quit
+;
+MSG_FINDCLASS_NAME
+Název:
+; Name:
+;
+MSG_FINDCLASS_NAME_HELP
+Jméno hledaných souborù.
+; Name of the file(s) to search.
+;
+MSG_FINDCLASS_TEXT
+Text:
+; Text:
+;
+MSG_FINDCLASS_TEXT_HELP
+Hledání textu uvnitø souborù.
+; Text to search within files.
+;
+MSG_FINDCLASS_TYPE
+Typ:
+; Type:
+;
+MSG_FINDCLASS_TYPE_HELP
+Typ hledaných souborù.
+; Filetype of the files to search.
+;
+MSG_FINDCLASS_COMMENT
+Comment:
+; Comment:
+;
+MSG_FINDCLASS_COMMENT_HELP
+Filecomment of the files to search.
+; Filecomment of the files to search.
+;
+MSG_FINDCLASS_ADDSTRING_HELP
+Zde mù¾ete zadat nová umístìní.
+; New locations can be entered here.
+;
+MSG_FINDCLASS_ADD
+_Pøidat
+; _Add
+;
+MSG_FINDCLASS_ADD_HELP
+Toto tlaèítko pøidá danou cestu do seznamu pro hledání.
+; This gadget adds the specified location to the location list.
+;
+MSG_FINDCLASS_REMOVE
+_Odebrat
+; _Remove
+;
+MSG_FINDCLASS_REMOVE_HELP
+Toto tlaèítko odstraní vybranou cestu ze seznamu pro hledání.
+; This button removes the selected item from location list.
+;
+MSG_FINDCLASS_LOCATIONS
+Kde hledat
+; Locations
+;
+MSG_FINDCLASS_LOCATIONS_HELP
+Seznam umístìní, která budou prohledána.
+; These locations will be searched.
+;
+MSG_FINDCLASS_RESULTS
+Nalezené soubory
+; Results
+;
+MSG_FINDCLASS_RESULTS_HELP
+Zde se zobrazují výsledky hledání.
+; Here the search results will be displayed.
+;
+MSG_FINDCLASS_SEARCH
+_Hledat
+; _Search
+;
+MSG_FINDCLASS_SEARCH_HELP
+Spustí hledání souborù s danými parametry.
+; Start search with the given parameters.
+;
+MSG_FINDCLASS_STOP
+_Stop
+; S_top
+;
+MSG_FINDCLASS_STOP_HELP
+Ihned zastaví hledání.
+; Stop search right now.
+;
+MSG_FINDCLASS_FINISHED
+Dokonèeno
+; Finished
+;
+; FindResultList.c (findresultlist.c)
+;
+MSG_FINDRESULTLISTCLASS_NAME
+Název
+; Name
+;
+MSG_FINDRESULTLISTCLASS_CONTAINER
+Umístìní
+; Container
+;
+MSG_FINDRESULTLISTCLASS_COMMENT
+Comment
+; Comment
+;
+;
+; *** Icons
+;
+MSG_ICON_MYMORPHOS
+Mùj MorphOS
+; My MorphOS
+;
+; *** Icon view window (lister and normal)
+;
+MSG_ICONVIEW_SCANNING_LOCATION
+ - Naèítám adresáø...
+; - Scanning location...
+;
+; *** contextmenu.c (ContextMenu.c)
+;
+MSG_CMENUTITLE_PROPERTIES
+Nastavení
+; Properties
+;
+MSG_CMENUTITLE_ICON
+Ikona
+; Icon
+;
+MSG_CMENUTITLE_ICONS
+Ikony
+; Icons
+;
+MSG_CMENUTITLE_APPICON
+AppIcon
+; AppIcon
+;
+MSG_CMENUTITLE_FILE
+Soubor
+; File
+;
+MSG_CMENUTITLE_FILES
+Soubory
+; Files
+;
+MSG_CMENUTITLE_PANELGROUP
+Panel
+; Panel
+;
+MSG_CMENUTITLE_PANELBUTTON
+Tlaèítko panelu
+; Panel Button
+;
+MSG_CMENUTITLE_PANELSPACER
+Mezera v panelu
+; Panel Spacer
+;
+MSG_CMENUTITLE_PANELSEPARATOR
+Oddìlovaè
+; Panel Separator
+;
+MSG_CMENUTITLE_PANELPOPUP
+Popup
+; Popup
+;
+MSG_CMENUTITLE_PANELPOPUPAPPICONS
+Appikony
+; Appicons
+;
+MSG_CMENUTITLE_PANELPOPUPBOOKMARKS
+Zálo¾ky
+; Bookmarks
+;
+MSG_CMENUTITLE_PANELPOPUPVIEWS
+Pohledy
+; Views
+;
+MSG_CMENUTITLE_PANELGROUPSUB
+Polo¾ka panelu
+; Panel Item
+;
+MSG_CMENUTITLE_VIEW
+Obrázek
+; View
+;
+MSG_CMENU_ABOUT
+O...
+; About...
+;
+MSG_CMENU_ADDTOPANEL
+Pøidat do panelu...
+; Add to Panel...
+;
+MSG_CMENU_CUT
+Vyjmout
+; Cut
+;
+MSG_CMENU_CUT_SHORTCUT
+X
+; X
+;
+MSG_CMENU_COPY
+Kopírovat
+; Copy
+;
+MSG_CMENU_COPY_SHORTCUT
+C
+; C
+;
+MSG_CMENU_PASTE
+Vlo¾it
+; Paste
+;
+MSG_CMENU_PASTE_SHORTCUT
+V
+; V
+;
+MSG_CMENU_PASTEINTO
+Vlo¾it do
+; Paste Into
+;
+MSG_CMENU_PASTEAS
+Vlo¾it jako...
+; Paste As...
+;
+MSG_CMENU_PASTEASINTO
+Vlo¾it jako do...
+; Paste as Into...
+;
+MSG_CMENU_DELETE
+Smazat
+; Delete
+;
+MSG_CMENU_DELBUTTON
+Smazat tlaèítko
+; Delete Button
+;
+MSG_CMENU_STAYOPEN
+Stay Open
+; Stay Open
+;
+MSG_CMENU_PANELDELFROM
+Delete From Panel...
+; Remove Item...
+;
+MSG_CMENU_PANELDEL
+Delete Panel...
+; Delete...
+;
+MSG_CMENU_PANELCREATE
+Create Panel
+; Create New
+;
+MSG_CMENU_PANELSAVE
+Save Panel
+; Save
+;
+MSG_CMENU_PANELPREFS
+Open Panelprefs...
+; Configure...
+;
+MSG_CMENU_FORMAT
+Formátovat...
+; Format...
+;
+MSG_CMENU_EJECT
+Vysunout
+; Eject
+;
+MSG_CMENU_EJECT_SHORTCUT
+J
+; J
+;
+MSG_CMENU_HELP
+Nápovìda...
+; Help...
+;
+MSG_CMENU_INFO
+Informace...
+; Information...
+;
+MSG_CMENU_INFO_SHORTCUT
+I
+; I
+;
+MSG_CMENU_INVERT
+Invertovat
+; Invert
+;
+MSG_CMENU_INVERT_SHORTCUT
+\000
+; \000
+;
+MSG_CMENU_LOCKED
+Zamknout
+; Locked
+;
+MSG_CMENU_MOVE
+Pøesunout
+; Move Item
+;
+MSG_CMENU_MOVE_SHORTCUT
+\000
+; \000
+;
+MSG_CMENU_MANAGEAPPLETS
+Správa apletù...
+; Manage Applets...
+;
+MSG_CMENU_NEWDRAWER
+Nový adresáø...
+; New Drawer...
+;
+MSG_CMENU_PANEL
+Panel
+; Panel
+;
+MSG_CMENU_SNAPSHOT
+Ulo¾it pozici
+; Snapshot
+;
+MSG_CMENU_PROPERTIES
+Nastavení...
+; Properties...
+;
+MSG_CMENU_PUTAWAY
+Odstranit z plochy
+; Put Away
+;
+MSG_CMENU_RENAME
+Pøejmenovat...
+; Rename...
+;
+MSG_CMENU_RENAME_SHORTCUT
+R
+; R
+;
+MSG_CMENU_SELECTALL
+Vybrat v¹e
+; Select All
+;
+MSG_CMENU_SELECTALL_SHORTCUT
+A
+; A
+;
+MSG_CMENU_SHOW
+Zobrazení
+; Show
+;
+MSG_CMENU_SNAPSHOTWIN
+Ulo¾it pozici okna
+; Snapshot Window
+;
+MSG_CMENU_UNSNAPSHOTWIN
+Smazat pozici okna
+; UnSnapshot Window
+;
+MSG_CMENU_SORT
+Seøadit
+; Sort By
+;
+MSG_CMENU_SORT_BYDATE
+Podle data
+; Date
+;
+MSG_CMENU_SORT_BYNAME
+Podle názvu
+; Name
+;
+MSG_CMENU_SORT_BYSIZE
+Podle velikosti
+; Size
+;
+MSG_CMENU_SORT_BYTYPE
+Podle typu
+; Type
+;
+MSG_CMENU_UNSNAPSHOT
+Smazat pozici
+; UnSnapshot
+;
+MSG_CMENU_VIEW
+Zobrazení
+; View
+;
+MSG_CMENU_WINDOW
+Okno
+; Window
+;
+MSG_CMENU_ALL
+V¹e
+; All
+;
+MSG_CMENU_ICONS
+Ikony
+; Icons
+;
+MSG_CMENU_LISTTITLE_GETDIRECTORYSIZES
+Velikosti adresáøù
+; Get Directory Sizes
+;
+MSG_CMENU_LISTTITLE_RESETTODEFAULTFORMAT
+Základní nastavení
+; Reset to Default Format
+;
+; *** CMENU Items (mimetype.c)
+;
+MSG_CMENU_MIME_OPEN
+Otevøít
+; Open
+;
+MSG_CMENU_MIME_OPENINNEWWINDOW
+Otevøít v novém oknì...
+; Open in New Window...
+;
+MSG_CMENU_MIME_OPENANDCLOSEOLD
+Otevøít a zavøít pùvodní
+; Open and Close Old
+;
+MSG_CMENU_MIME_OPENINDESTINATION
+Otevøít v destinaci
+; Open in Destination
+;
+MSG_CMENU_MIME_OPENSHELL
+Otevøít v Shellu...
+; Open Shell...
+;
+MSG_CMENU_MIME_FIND
+Hledání souborù...
+; Find...
+;
+MSG_CMENU_MIME_COPYTO
+Kopírovat do...
+; Copy To...
+;
+MSG_CMENU_MIME_MOVETO
+Pøesunout do...
+; Move To...
+;
+; *** Listview Title (listviewlistclass.c)
+;
+MSG_CMENU_LVTITLES_NAME
+Jméno
+; Name
+;
+MSG_CMENU_LVTITLES_SIZE
+Velikost
+; Size
+;
+MSG_CMENU_LVTITLES_DATE
+Datum
+; Date
+;
+MSG_CMENU_LVTITLES_ATTRS
+Atributy
+; Attrs
+;
+MSG_CMENU_LVTITLES_COMMENT
+Komentáø
+; Comment
+;
+MSG_CMENU_LVTITLES_FILETYPE
+Typ souboru
+; Filetype
+;
+MSG_CMENU_LVTITLES_VERSION
+Verze
+; Version
+;
+MSG_CMENU_LVTITLES_FULLDATE
+Datum & Èas
+; Date & Time
+;
+MSG_CMENU_LVTITLES_UID
+U¾ivatel
+; User
+;
+MSG_CMENU_LVTITLES_GID
+Skupina
+; Group
+;
+MSG_CMENU_LVTITLES_MD5
+MD5
+; MD5
+;
+MSG_CMENU_LVTITLES_VOLUMENAME
+Název zaøízení
+; Volume Name
+;
+MSG_CMENU_LVTITLES_FREE
+Volné místo
+; Free
+;
+MSG_CMENU_LVTITLES_TOTAL
+Celkem
+; Total
+;
+MSG_CMENU_LVTITLES_DOSTYPE
+DOS Typ
+; DOS Type
+;
+MSG_CMENU_TRASH
+Move to Trashcan...
+; Move to Trashcan...
+;
+MSG_CMENU_RESTORE
+Restore
+; Restore
+;
+MSG_CMENU_EMPTY
+Empty Trashcan
+; Empty Trashcan
+;
+;
+MSG_LISTVIEWLISTCLASS_EMPTY
+<Prázdný>
+; <Empty>
+;
+MSG_LISTVIEWLISTCLASS_DIRECTORY
+<Adresáø>
+; <Directory>
+;
+MSG_LISTVIEWLISTCLASS_LINK
+<Link>
+; <Link>
+;
+MSG_LISTVIEWLISTCLASS_ASSIGN
+<Assign>
+; <Assign>
+;
+; *** Column type descriptors (columnslistclass.c)
+;
+MSG_COLUMNSLIST_ICON
+Ikona
+; Icon
+;
+MSG_COLUMNSLIST_SORTBY
+Seøadit podle
+; Sort By
+;
+MSG_COLUMNSLIST_NAME
+Název
+; Name
+;
+MSG_COLUMNSLIST_HIDDEN
+Skrytý
+; Hidden
+;
+; *** Mime Type Descriptors (mimetype.c)
+;
+MSG_MIMETYPE_MORPHOSEXECUTABLE
+MorphOS Program
+; MorphOS Executable
+;
+MSG_MIMETYPE_AMIGAOS68KEXECUTABLE
+AmigaOS 68k Program
+; AmigaOS 68k Executable
+;
+MSG_MIMETYPE_AMIGAOS4PPCEXECUTABLE
+OS4 Program
+; OS4 Executable
+;
+MSG_MIMETYPE_SCRIPT
+Skript
+; Script
+;
+MSG_MIMETYPE_OGGVORBIS
+Ogg Vorbis Audio
+; Ogg Vorbis Audio
+;
+MSG_MIMETYPE_MPEGLAYER3
+MPEG Layer-3 Audio
+; MPEG Layer-3 Audio
+;
+MSG_MIMETYPE_MULTIMEDIAOBJECT
+Multimediální Objekt
+; Multimedia Object
+;
+MSG_MIMETYPE_DEVICE
+Zaøízení
+; Device
+;
+MSG_MIMETYPE_DIRECTORY
+Adresáø
+; Directory
+;
+MSG_MIMETYPE_DATATYPE
+Datatyp
+; Datatype
+;
+MSG_MIMETYPE_PROJECT
+Projekt
+; Project
+;
+; *** Internal filetype (actionlistclass.c)
+;
+MSG_FILETYPE_INTERNAL
+Tento typ souboru je internì nastaven Ambientem\na proto nelze zmìnit. Pøesto lze nadefinovat nový typ\nsouboru, který tento interní pøedefinuje.
+; This filetype is an internal definition in Ambient and\nis therefore not editable. You can however override this\nfiletype by defining one that overrides it.
+;
+; ** mouse over icon bubble strings (metadata.c)
+;
+MSG_METADATA_UNKNOWN
+Neznámý
+; Unknown
+;
+MSG_METADATA_TYPE
+Typ: %s
+; Type: %s
+;
+MSG_METADATA_DATESIZE
+\nDatum: %s, %s\nPou¾ito: %s
+; \nDate: %s, %s\nUsed: %s
+;
+; ** View names (viewapi.c)
+;
+MSG_VIEW_ICON
+Ikony
+; Icon
+;
+MSG_VIEW_ICONS
+Jen s ikonou
+; Icons
+;
+MSG_VIEW_ALLFILES
+V¹echny soubory
+; All Files
+;
+MSG_VIEW_THUMB
+Náhledy
+; Thumbnails
+;
+MSG_VIEW_LIST
+Seznam
+; List
+;
+MSG_VIEW_SCALED
+Pøizpùsobit oknu
+; Scaled
+;
+MSG_VIEW_NORMAL
+Originál
+; Normal
+;
+; ** File size capacity (capacity.c)
+;
+MSG_CAPACITY_FORMAT_BYTES
+%u bytù
+; %u bytes
+;
+MSG_CAPACITY_FORMAT_KBYTES
+%u.%u KB
+; %u.%u KB
+;
+MSG_CAPACITY_FORMAT_MBYTES
+%u.%u MB
+; %u.%u MB
+;
+MSG_CAPACITY_FORMAT_GBYTES
+%u.%u GB
+; %u.%u GB
+;
+MSG_CAPACITY_FORMAT_TBYTES
+%u.%u TB
+; %u.%u TB
+;
+MSG_CAPACITY_FORMAT_COMPACT_BYTES
+%u bytù
+; %u bytes
+;
+MSG_CAPACITY_FORMAT_COMPACT_KBYTES
+%uKB
+; %uKB
+;
+MSG_CAPACITY_FORMAT_COMPACT_MBYTES
+%uMB
+; %uMB
+;
+MSG_CAPACITY_FORMAT_COMPACT_GBYTES
+%uGB
+; %uGB
+;
+MSG_CAPACITY_FORMAT_COMPACT_TBYTES
+%uTB
+; %uTB
+;
+; ** SmartReq (smartreq.c)
+;
+MSG_SMARTREQUEST_AMBIENTREQUEST
+®ádost Ambientu
+; Ambient Request
+;
+MSG_SMARTREQUEST_AMBIENTDOSERROR
+Chyba Ambient DOSu
+; Ambient DOS Error
+;
+MSG_SMARTREQUEST_AMBIENTIOERROR
+Chyba Ambient I/O
+; Ambient I/O Error
+;
+MSG_SMARTREQUEST_SOURCE
+Zdroj
+; Source
+;
+MSG_SMARTREQUEST_TARGET
+Cíl
+; Target
+;
+MSG_SMARTREQUEST_VERSION
+Verze
+; Version
+;
+MSG_SMARTREQUEST_MD5
+MD5
+; MD5
+;
+MSG_SMARTREQUEST_CHECKING
+Kontrola...
+; Checking...
+;
+MSG_SMARTREQUEST_UNKNOWN
+neznámý
+; unknown
+;
+; ** FileAction  (fileaction.c )
+;
+MSG_FILEACTION_DELETETITLE
+Ambient ÿ Mazání
+; Ambient · Delete
+;
+MSG_FILEACTION_DELETEMSG
+Nelze smazat '%s'.\n\nChyba DOSu: %S\n(#%N).
+; Couldn't delete '%s'.\n\nDOS error: %S\n(#%N).
+;
+MSG_FILEACTION_OVERWRITETITLE
+Ambient ÿ Pøepisování
+; Ambient · Overwrite
+;
+MSG_FILEACTION_OVERWRITEMSG
+Soubor '%s'\nje chránìný proti pøepsání.
+; File '%s'\nis protected from overwrite.
+;
+MSG_FILEACTION_PROTECTBUTTONS
+*_Odstranit protekci|Odstranit v¹em protekci|Pøe_skoèit|Pøeskoèit v¹e|_Zru¹it
+; *_Unprotect|Unprotect All|_Skip|Skip All|_Cancel
+;
+MSG_FILEACTION_PROTECTIONERROR
+Nelze nastavit protekèní mód '%s'.\n\nChyba DOSu: %S\n(#%N).
+; Couldn't set the protection mode of '%s'.\n\nDOS error: %S\n(#%N).
+;
+MSG_FILEACTION_COPYTITLE
+Ambient ÿ Kopírování
+; Ambient · Copy
+;
+MSG_FILEACTION_MOVETITLE
+Ambient ÿ Pøesouvání
+; Ambient · Move
+;
+MSG_FILEACTION_REPLACEMSG
+Soubor '%s'\nji¾ existuje a bude pøepsán.
+; File '%s'\nalready exists and will be replaced.
+;
+MSG_FILEACTION_REPLACEBUTTONS
+*_Pøepsat|Pøepsat v¹e|Pøe_skoèit|Pøeskoèit v¹e|_Zru¹it
+; *_Replace|Replace All|_Skip|Skip All|_Cancel
+;
+; ** FindVer (findver.c)
+;
+MSG_FINDVER_RETRIEVINGVERSION
+hledání øetìzce s verzí...
+; retrieving version string...
+;
+MSG_FINDVER_VERSIONNOTFOUND
+Nelze nalézt øetìzec s verzí
+; Couldn't find version string
+;
+; ** MD5Sum.c (md5sumc.c)
+;
+MSG_MD5SUM_COMPUTINGMD5SUM
+poèítaní kontrolního MD5 souètu...
+; computing MD5 sum...
+;
+; ** Devices.c  (devices.c)
+;
+MSG_DEVICES_FREE
+%s, %s volných
+; %s, %s free
+;
+; PanelGroupClass.c (panelgroupclass.c)
+;
+MSG_PANELGROUPCLASS_TITLE
+Ambient panel
+; Ambient Panel
+;
+MSG_PANELGROUPCLASS_DELETEMSG
+Opravdu chcete smazat tento panel?
+; Do you really want to delete the panel?
+;
+MSG_PANELGROUPCLASS_DELETECANCEL
+Smazat|Zru¹it
+; Delete|Cancel
+;
+; Rename.c (rename.c)
+;
+MSG_RENAME_TITLE
+Ambient ÿ Pøejmenování
+; Ambient · Rename
+;
+MSG_RENAME_FILEISADIRECTORY
+Soubor '%s' je adresáø
+; File '%s' is a directory
+;
+MSG_RENAME_FILECANTBERENAMED
+Soubor '%s' nelze pøejmenovat.\nChyba DOSu : %S (#%N).
+; File '%s' can't be renamed.\nDOS error: %S (#%N).
+;
+MSG_RENAME_CANTBERENAMED
+'%s' nelze pøejmenovat.\nChyba DOSu: %S (#%N).
+; '%s' can't be renamed.\nDOS error: %S (#%N).
+;
+MSG_RENAME_SKIPCANCEL
+*_Pøeskoèit|Zru¹it
+; *_Skip|Cancel
+;
+MSG_RENAME_OK
+*_OK
+; *_OK
+;
+; MoveDir.c (movedir.c)
+;
+MSG_MOVEDIR_TITLE
+Ambient ÿ Kopírování
+; Ambient · Copy
+;
+MSG_MOVEDIR_ERRORWHILEMOVING
+Chyba bìhem kopírování '%s'
+; Error while copying '%s'
+;
+MSG_MOVEDIR_ERRORISAFILE
+'%s' je soubor
+; '%s' is a file
+;
+MSG_MOVEDIR_RETRYSKIPCANCEL
+*_Opakovat|Pøeskoèit|Zru¹it
+; *_Retry|Skip|Cancel
+;
+MSG_MOVEDIR_REPLACECANCEL
+*_Pøepsat|Zru¹it
+; *_Replace|Cancel
+;
+; Clipboard.c (clipboard.c)
+;
+MSG_CLIPBOARD_TITLE
+Ambient ÿ Schránka
+; Ambient · Clipboard
+;
+MSG_CLIPBOARD_COPYCANCEL
+*_Kopírovat|Zru¹it
+; *_Copy|Cancel
+;
+MSG_CLIPBOARD_COPIED
+zkopírovány
+; copied
+;
+MSG_CLIPBOARD_CUT
+pøesunuty
+; cut
+;
+MSG_CLIPBOARD_FILESWILLBE
+Následující \033b%d\033n soubory jsou ve schránce a\nbudou \033b%s\033n do "\033b%s\033n" :\n\n
+; The following \033b%d\033n files are in the clipboard and\nwill be \033b%s\033n to "\033b%s\033n" :\n\n
+;
+; PanelSpacerClass.c (panelspacerclass.c)
+;
+MSG_PANELITEM_SPACER
+Spacer
+; Spacer
+;
+MSG_PANELITEM_SPACERDESC
+Vlo¾í prázdné místo.
+; Inserts empty area between items.
+;
+; PanelSeparatorClass.c (panelseparatorclass.c)
+;
+MSG_PANELITEM_SEPARATOR
+Separátor
+; Separator
+;
+MSG_PANELITEM_SEPARATORDESC
+Opticky seskupí jiné panelové objekty, napø. tlaèítka.
+; Allows to optically group other panel objects, like e.g. buttons.
+;
+; PanelViewWatcherClass.c (panelviewwatcherclass.c)
+;
+MSG_PANELITEM_VIEWWATCHER
+Seznam pohledù
+; View Watcher
+;
+MSG_PANELITEM_VIEWWATCHERDESC
+Zobrazí seznam pohledù a umo¾ní jejich pøepínání.
+; Shows a list of the opened views and allows to switch between them.
+;
+MSG_PANELITEM_VIEWWATCHER_SHORTHELP
+Viewwatcher
+; Viewwatcher
+;
+; PanelBookmarksClass.c (panelbookmarksclass.c)
+;
+MSG_PANELITEM_BOOKMARKS
+Zálo¾ky
+; Bookmarks
+;
+MSG_PANELITEM_BOOKMARKSDESC
+Seznam lokací v zálo¾kách.
+; Shows a list of bookmarked locations.
+;
+MSG_PANELITEM_BOOKMARKS_SHORTHELP
+Bookmarks
+; Bookmarks
+;
+; PanelDirPanelClass.c (paneldirpanelclass.c)
+;
+MSG_PANELITEM_DIRPANEL
+Directory
+; Directory
+;
+MSG_PANELITEM_DIRPANELDESC
+Shows all icons within a directory in a sub panel.
+; Shows all icons within a directory in a sub panel.
+;
+; PanelSubPanelClass.c (panelsubpanelclass.c)
+;
+MSG_PANELITEM_SUBPANEL
+Sub Panel
+; Sub Panel
+;
+MSG_PANELITEM_SUBPANELDESC
+Allows to group icons in sub panels.
+; Allows to group icons in sub panels.
+;
+MSG_PANELITEM_SUBPANEL_SHORTHELP
+Subpanel
+; Subpanel
+;
+; PanelItemWinClass.c
+;
+MSG_PANELITEMWINCLASS_DESCGROUPTITLE
+Popis
+; Description
+;
+MSG_PANELITEMWINCLASS_NONE
+®ádný
+; None
+;
+MSG_PANELITEMWINCLASS_UNKNOWN
+Neznámý
+; Unknown
+;
+; ActionEditorWinClass.c (actioneditorwinclass.c)
+;
+MSG_ACTIONEDITORWINCLASS_TITLE
+Ambient ÿ Editor akcí
+; Ambient · Action Editor
+;
+; ActionEditorClass.c (actioneditorclass.c)
+;
+MSG_ACTIONEDITORCLASS_TYPE
+Typ
+; Type
+;
+MSG_ACTIONEDITORCLASS_TYPE_HELP
+Toto je typ akce pro aktuální polo¾ku.
+; This is the type of action for the current entry.
+;
+MSG_ACTIONEDITORCLASS_COMMANDSTRING
+Pøíkaz
+; Command String
+;
+MSG_ACTIONEDITORCLASS_INTERNAL
+Interní
+; Internal
+;
+MSG_ACTIONEDITORCLASS_AMIGADOS
+AmigaDOS
+; AmigaDOS
+;
+MSG_ACTIONEDITORCLASS_WORKBENCH
+Workbench
+; Workbench
+;
+MSG_ACTIONEDITORCLASS_SCRIPT
+Skript
+; Script
+;
+MSG_ACTIONEDITORCLASS_AREXX
+Arexx
+; Arexx
+;
+MSG_ACTIONEDITORCLASS_UNKNOWN
+Neznámý
+; Unknown
+;
+MSG_ACTIONEDITORCLASS_COMMANDGROUP
+Pøíkaz
+; Command
+;
+MSG_ACTIONEDITORCLASS_NAME
+_Název :
+; _Name :
+;
+MSG_ACTIONEDITORCLASS_NAME_HELP
+Název akce.
+; Name of the action.
+;
+MSG_ACTIONEDITORCLASS_ADD
+_Pøidat
+; _Add
+;
+MSG_ACTIONEDITORCLASS_ADD_HELP
+Pøidá novou akci do seznamu.
+; Add a new action to the list.
+;
+MSG_ACTIONEDITORCLASS_REMOVE
+O_dstranit
+; _Remove
+;
+MSG_ACTIONEDITORCLASS_REMOVE_HELP
+Odstraní aktivní akci.
+; Removes the current active action.
+;
+MSG_ACTIONEDITORCLASS_ACTIONLIST_HELP
+Seznam, který obsahuje v¹echny akce.
+; This list contains all actions.
+;
+MSG_ACTIONEDITORCLASS_UP_HELP
+Posune vybranou polo¾ku v seznamu nahoru.
+; Moves the selected entry up the action list.
+;
+MSG_ACTIONEDITORCLASS_DOWN_HELP
+Posune vybranou polo¾ku v seznamu dolù.
+; Moves the selected entry down the action list.
+;
+MSG_ACTIONEDITORCLASS_COMMAND_HELP
+Pøíkaz, který chcete spustit.\n\nPou¾ití:\n%sp plná zdrojová cesta.\n%sf zdrojový soubor.\n%S cesta zdrojového pohledu.\n%Si identifikátor zdrojového pohledu.\n%D cesta cílového pohledu.\n\
+%Di identifikátor cílového pohledu.
+; Command to be executed.\n\nUse:\n%sp for entry full path.\n%sf for entry file part.\n%S for source view path.\n%Si for source view identifier.\n%D for destination view path.\n%Di for destination view identifier.
+;
+MSG_ACTIONEDITORCLASS_EVENTTYPE
+_Typ události:
+; _Event type:
+;
+MSG_ACTIONEDITORCLASS_EVENTTYPE_HELP
+Specifikuje typ události vyvolávající tuto akci.
+; Allows to specify the type of event causing this action.
+;
+MSG_ACTIONEDITORCLASS_EVENTDOUBLE
+Dvojklik
+; DoubleClick
+;
+MSG_ACTIONEDITORCLASS_EVENTMENU
+Menu
+; Menu
+;
+MSG_ACTIONEDITORCLASS_EVENTDRAGNDROP
+Drag'n'Drop
+; Drag'n'Drop
+;
+MSG_ACTIONEDITORCLASS_QUALIFIER
+_Kvalifikátor :
+; _Qualifier :
+;
+MSG_ACTIONEDITORCLASS_QUALNONE
+®ádný
+; None
+;
+MSG_ACTIONEDITORCLASS_QUALSHIFT
+Shift
+; Shift
+;
+MSG_ACTIONEDITORCLASS_QUALALT
+Alt
+; Alt
+;
+MSG_ACTIONEDITORCLASS_QUALCONTROL
+Control
+; Control
+;
+MSG_ACTIONEDITORCLASS_SORTBYPARENT
+Seøadit podle rodièe
+; Sort by parent
+;
+MSG_ACTIONEDITORCLASS_SORTBYPARENT_HELP
+Jméno nadøazeného elementu bude pou¾ito k setøídìní polo¾ek v menu.
+; The name of the parent element will be used to sort menu items.
+;
+MSG_ACTIONEDITORCLASS_PARENTNAME
+Jméno menu
+; Parent Menu Name
+;
+MSG_ACTIONEDITORCLASS_PARENTNAME_HELP
+Jméno menu, do kterého se umístí tato akce.
+; Specify the name of the parent menu.
+;
+MSG_ACTIONEDITORCLASS_CDTOSOURCE
+Zmìnit pracovní adresáø na zdro_jový
+; Change working directory to _source
+;
+MSG_ACTIONEDITORCLASS_CDTOSOURCE_HELP
+Pøed provedením akce se zmìní aktuální adresáø na zdrojový adresáø.
+; Before the action take place the current dir will be changed to source drawer.
+;
+MSG_ACTIONEDITORCLASS_CDTODESTINATION
+Zmìnit pracovní adresáø na _cílový
+; Change working directory to _destination
+;
+MSG_ACTIONEDITORCLASS_CDTODESTINATION_HELP
+Pøed provedením akce se zmìní aktuální adresáø na cílový adresáø.
+; Before the action take place the current dir will be changed to destination drawer.
+;
+MSG_ACTIONEDITORCLASS_DONTQUOTEARGS
+Neumis»ovat argumenty do _uvozovek
+; Don't _quote arguments
+;
+MSG_ACTIONEDITORCLASS_DONTQUOTEARGS_HELP
+Za¹krtnutím tohoto pøepínaèe vypnete vkládání argumentu do uvozovek.
+; Don't surround arguments by a quotation mark if this switch is enabled.
+;
+MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES
+Slouèit výbìr
+; _Merge selection
+;
+MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES_HELP
+Slouèí vybrané soubory v jeden øetìzec.
+; Merge selected files in a single string.
+;
+MSG_ACTIONEDITORCLASS_OK
+_Ok
+; _Ok
+;
+MSG_ACTIONEDITORCLASS_OK_HELP
+Pou¾ije se aktuální nastavení.
+; The current setup will be used.
+;
+MSG_ACTIONEDITORCLASS_CANCEL
+_Zru¹it
+; _Cancel
+;
+MSG_ACTIONEDITORCLASS_CANCEL_HELP
+Aktuální nastavení bude zru¹eno.
+; The current setup will be rejected.
+;
+MSG_ACTIONEDITORCLASS_SPECIFYCOMMANDHERE
+Sem zadejte pøíkaz.
+; Specify command here.
+;
+; *** MimeAdjustListClass.c (mimeadjustlistclass.c)
+;
+MSG_MIMEADJUSTLISTCLASS_NAME
+Název
+; Name
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTTYPE
+Typ události
+; Event Type
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTDOUBLE
+DvojKlik
+; DoubleClick
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTMENU
+Menu
+; Menu
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTDRAGNDROP
+Drag'n'Drop
+; Drag'n'Drop
+;
+MSG_MIMEADJUSTLISTCLASS_QUALSHIFT
+[Shift]
+; [Shift]
+;
+MSG_MIMEADJUSTLISTCLASS_QUALALT
+[Alt]
+; [Alt]
+;
+MSG_MIMEADJUSTLISTCLASS_QUALCONTROL
+[Control]
+; [Control]
+;
+MSG_MIMEADJUSTLISTCLASS_INHERITEDACTION
+[zdìdìná akce]\033i
+; [inherited action]\033i
+;
+; *** MimeGroupClass.c (mimegroupclass.c)
+;
+MSG_MIMEGROUPCLASS_ADD
+_Pøidat
+; _Add
+;
+MSG_MIMEGROUPCLASS_ADD_HELP
+Pøidá akci do seznamu akcí.
+; Adds an action to action list.
+;
+MSG_MIMEGROUPCLASS_COPY
+_Kopírovat
+; Cop_y
+;
+MSG_MIMEGROUPCLASS_COPY_HELP
+Není dostupná bublinková nápovìda.
+; Copies the current entry.
+;
+MSG_MIMEGROUPCLASS_EDIT
+_Zmìnit
+; _Edit
+;
+MSG_MIMEGROUPCLASS_EDIT_HELP
+Není dostupná bublinková nápovìda.
+; Edit the current active entry.
+;
+MSG_MIMEGROUPCLASS_REMOVE
+O_dstranit
+; _Remove
+;
+MSG_MIMEGROUPCLASS_REMOVE_HELP
+Není dostupná bublinková nápovìda.
+; Remove the current entry.
+;
+MSG_MIMEGROUPCLASS_SEARCH
+Hledat
+; Search
+;
+MSG_MIMEGROUPCLASS_SEARCH_HELP
+Otevøe panel pro hledání MIME.
+; Opens the mime search context.
+;
+; *** MimeAdjustWinClass.c (mimeadjustwinclass.c)
+;
+MSG_MIMEADJUSTWINCLASS_TITLE
+Ambient ÿ Editor MIME
+; Ambient · MIME Editor
+;
+; *** MimeAdjustGroupClass.c (mimeadjustgroupclass.c)
+;
+MSG_MIMEADJUSTGROUPCLASS_ICON_HELP
+Pro zmìnu ikony MIME typu jednodu¹e pøesuòte novou ikonu na tento obrázek.
+; Simply drag and drop an icon onto this image to replace the default mime type icon.
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMETYPE
+_Mimetyp:
+; _Mimetype:
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMETYPE_HELP
+Typ pou¾itý k identifikaci souboru.
+; Type used to identify a file.
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMESUBTYPE_HELP
+Podtyp pou¾itý k identifikaci souboru.
+; Subtype used to identify a file.
+;
+MSG_MIMEADJUSTGROUPCLASS_PRIORITY
+P_riorita:
+; _Priority:
+;
+MSG_MIMEADJUSTGROUPCLASS_PRIORITY_HELP
+Urèuje priority v seznamu MIME typù.
+; Specifies the priority in the mime type list.
+;
+MSG_MIMEADJUSTGROUPCLASS_DESCRIPTION
+_Popis:
+; _Description:
+;
+MSG_MIMEADJUSTGROUPCLASS_DESCRIPTION_HELP
+Popis aktuálního MIME typu.
+; Description of the current mime type.
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONS_GROUP
+Akce
+; Actions
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONS_HELP
+Tyto akce jsou nyní nastaveny pro aktuální MIME typ.
+; These actions are currently defined for the current mime type.
+;
+MSG_MIMEADJUSTGROUPCLASS_ADD
+_Pøidat...
+; _Add...
+;
+MSG_MIMEADJUSTGROUPCLASS_ADD_HELP
+Pøidá akci.
+; Adds an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_EDIT
+_Zmìnit...
+; _Edit...
+;
+MSG_MIMEADJUSTGROUPCLASS_EDIT_HELP
+Zmìní akci.
+; Allows to edit an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_REMOVE
+O_dstranit
+; _Remove
+;
+MSG_MIMEADJUSTGROUPCLASS_REMOVE_HELP
+Odstraní akci.
+; Removes an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_UP_HELP
+Posune vybranou akci v seznamu nahoru.
+; Moves the selected entry up the list.
+;
+MSG_MIMEADJUSTGROUPCLASS_DOWN_HELP
+Posune vybranou akci v seznamu dolù.
+; Moves the selected entry down the list.
+;
+MSG_MIMEADJUSTGROUPCLASS_OK
+_Ok
+; _Ok
+;
+MSG_MIMEADJUSTGROUPCLASS_OK_HELP
+Není dostupná bublinková nápovìda.
+; All selections made in this window will be used.
+;
+MSG_MIMEADJUSTGROUPCLASS_CANCEL
+_Zru¹it
+; _Cancel
+;
+MSG_MIMEADJUSTGROUPCLASS_CANCEL_HELP
+Není dostupná bublinková nápovìda.
+; All selections made in this window will be rejected.
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONSTOPERFORM_HELP
+Provádìná akce. Mù¾e to být primární akce (dvojklik) nebo sekundární akce (napø. menu, drag'n'drop).
+; Actions to perform. It can be a primary action (doubleclick) or secondary action (eg. menu, drag'n'drop).
+;
+MSG_MIMEADJUSTGROUPCLASS_DISABLED_HELP
+Akce jsou vypnuty, proto¾e zde není uveden ¾ádný platný MIME typ.
+; Actions are disabled because there's no valid mimetype in the mimetype string above.
+;
+MSG_MIMEADJUSTGROUPCLASS_TITLE_REQ
+Ambient ÿ Mimetypy
+; Ambient · MIME Types
+;
+MSG_MIMEADJUSTGROUPCLASS_OK_REQ
+*OK
+; *OK
+;
+MSG_MIMEADJUSTGROUPCLASS_COULDNTSAVEFILETYPEDESC
+Nelze ulo¾it "%s" filetype.
+; Couldn't save "%s" filetype descriptor.
+;
+MSG_MIMEADJUSTGROUPCLASS_COULDNTSAVEDEFAULTICON
+Nelze ulo¾it "%s" základní ikonu.
+; Couldn't save "%s" default icon.
+;
+; *** AppletsWinClass.c (appletswinclass.c)
+;
+MSG_APPLETSWINCLASS_TITLE
+Správa apletù
+; Manage applets
+;
+MSG_APPLETSWINCLASS_GROUP_WHITELIST
+Bílá listina
+; White list
+;
+MSG_APPLETSWINCLASS_GROUP_BLACKLIST
+Èerná listina
+; Black list
+;
+MSG_APPLETSWINCLASS_CANCEL
+_Zru¹it
+; _Cancel
+;
+MSG_APPLETSWINCLASS_USE
+_Pou¾ít
+; _Use
+;
+; *** Prefs_Advanced_ListClass.c (prefs_advanced_listclass.c)
+;
+MSG_PREFSADVANCEDLISTCLASS_VARIABLE
+Promìnná
+; Variable
+;
+MSG_PREFSADVANCEDLISTCLASS_STATUS
+Stav
+; Status
+;
+MSG_PREFSADVANCEDLISTCLASS_INIT
+Inicializace
+; Init
+;
+MSG_PREFSADVANCEDLISTCLASS_TYPE
+Typ
+; Type
+;
+MSG_PREFSADVANCEDLISTCLASS_VALUE
+Hodnota
+; Value
+;
+MSG_PREFSADVANCEDLISTCLASS_DEFAULTVALUE
+Základní hodnota
+; Default Value
+;
+; *** Prefs_Advanced_GroupClass.c (prefs_advanced_groupclass.c)
+;
+MSG_PREFSADVANCEDGROUPCLASS_VALUE
+Hodnota
+; Value
+;
+MSG_PREFSADVANCEDGROUPCLASS_RESETTODEFAULT
+_Nastavit výchozí
+; _Reset to Default
+;
+MSG_PREFSADVANCEDGROUPCLASS_RESETTODEFAULT_HELP
+Hodnota vybrané promìnné se nastaví na základní hodnotu.
+; The value of the selected item will be reset to its default.
+;
+MSG_PREFSADVANCEDGROUPCLASS_ON
+Zapnuto
+; On
+;
+MSG_PREFSADVANCEDGROUPCLASS_OFF
+Vypnuto
+; Off
+;
+; *** MimeListTreeClass.c (mimelisttreeclass.c)
+;
+MSG_MIMELISTTREECLASS_TYPE
+Typ
+; Type
+;
+MSG_MIMELISTTREECLASS_NAME
+Název
+; Name
+;
+; *** SearchBarClass.c (searchbarclass.c)
+;
+MSG_SEARCHBARCLASS_SEARCH
+Hl_edat
+; S_earch
+;
+MSG_SEARCHBARCLASS_SEARCH_HELP
+Zadejte øetìzec, který chcete najít.
+; Enter the string to search for.
+;
+MSG_SEARCHBARCLASS_CASESENSITIVE
+Rozli¹ovat velikost písme_n:
+; Case se_nsitive:
+;
+MSG_SEARCHBARCLASS_CASESENSITIVE_HELP
+Po aktivaci bude "foo" rozdílné od "FOO".
+; If activated "foo" is different to "FOO".
+;
+MSG_SEARCHBARCLASS_PREV
+Pøedchozí
+; Prev
+;
+MSG_SEARCHBARCLASS_NEXT
+Dal¹í
+; Next
+;
+MSG_SEARCHBARCLASS_TEXTNOTFOUND
+Text nenalezen.
+; Text not found.
+;
+; *** PatternRenameWinClass.c (patternrenamewinclass.c)
+;
+MSG_PATTERNRENAMEWINCLASS_WINDOWTITLE
+Pøejmenování
+; Rename
+;
+MSG_PATTERNRENAMEWINCLASS_OLDNAME
+\033cStaré jmén_o:
+; \033c\033bSource name or pattern:
+;
+MSG_PATTERNRENAMEWINCLASS_OLDNAME_HELP
+Jméno nebo maska pro pùvodní jméno.
+; Name or pattern for original name.
+;
+MSG_PATTERNRENAMEWINCLASS_NEWNAME
+\033c_Nové jméno:
+; \033c\033bDesti_nation name or pattern:
+;
+MSG_PATTERNRENAMEWINCLASS_NEWNAME_HELP
+Jméno nebo maska pro nové jméno.
+; Name or pattern for new name.
+;
+MSG_PATTERNRENAMEWINCLASS_RENAME
+_Pøejmenovat
+; _Rename
+;
+MSG_PATTERNRENAMEWINCLASS_RENAME_HELP
+Jméno zadané v textovém poli tohoto okna se pou¾ije jako nové jméno.
+; The name specified within the text field in this window will be used as new name.
+;
+MSG_PATTERNRENAMEWINCLASS_SKIP
+Pøe_skoèit
+; _Skip
+;
+MSG_PATTERNRENAMEWINCLASS_SKIP_HELP
+Pøeskoèí aktuální soubor a pokraèuje dal¹ím souborem.
+; Skip the current file and continue with the next file.
+;
+MSG_PATTERNRENAMEWINCLASS_CANCEL
+_Zru¹it
+; _Cancel
+;
+MSG_PATTERNRENAMEWINCLASS_CANCEL_HELP
+Zru¹í pøejmenování. Okno se zavøe.
+; Aborts the rename operation. The window will be closed.
+;
+; *** Print.c (print.c)
+;
+MSG_PRINT_REQUESTERTITLE
+Tisk
+; Print
+;
+MSG_PRINT_OK
+_Ok
+; _OK
+;
+MSG_PRINT_COULDNOTFINDPRINTER
+Nebyla nalezena ¾ádná tiskárna.
+; Could not find printer.
+;
+; BookMarkListClass.c (bootmarklistclass.c)
+;
+MSG_BOOKMARK_NAME_LISTTITLE
+Název
+; Name
+;
+MSG_BOOKMARK_LOCATION_LISTTITLE
+Umístìní
+; Location
+;
+MSG_BOOKMARK_UNNAMED
+Nepojmenovaná
+; Unnamed
+;
+; PrefsWin_BookmarksClass.c (prefswin_bookmarksclass.c)
+;
+MSG_PREFSWIN_BOOKMARKS_GROUP
+Zálo¾ky
+; Bookmarks
+;
+MSG_PREFSWIN_BOOKMARKS_HELP
+Seznam aktuálnì definovaných zálo¾ek.
+; List of the currently defined bookmarks.
+;
+MSG_PREFSWIN_BOOKMARKS_ADD
+_Pøidat
+; _Add
+;
+MSG_PREFSWIN_BOOKMARKS_ADD_HELP
+Pøidání nové zálo¾ky do seznamu.
+; Adds a new bookmark to the list.
+;
+MSG_PREFSWIN_BOOKMARKS_REMOVE
+_Odebrat
+; _Remove
+;
+MSG_PREFSWIN_BOOKMARKS_REMOVE_HELP
+Aktivní zálo¾ka bude odstranìna ze seznamu.
+; The active bootmark will be removed from list.
+;
+MSG_PREFSWIN_BOOKMARKS_LOCATION
+_Umístìní
+; _Location
+;
+MSG_PREFSWIN_BOOKMARKS_LOCATION_HELP
+Cesta, která urèuje umístìní, kam zálo¾ka smìøuje.
+; This path specifies the location the bookmark is leading to.
+;
+MSG_PREFSWIN_BOOKMARKS_NAME
+_Název
+; _Name
+;
+MSG_PREFSWIN_BOOKMARKS_NAME_HELP
+Jméno zde zadané je pou¾ito jako kontextové menu k identificikaci zálo¾ky.
+; The name entered here is used in context menus to identify the bootmark.
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAY_GROUP
+Nastavení zobrazení
+; Display Options
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS
+Zobrazit _jako:
+; _Display as:
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_HELP
+Pouze tato informace se zobrazí v seznamu zálo¾ek.
+; Only the specified information will be shown in bookmark lists.
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_NAMESANDLOCATIONS
+Název &	Umístìní
+; Name & Location
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_NAMES
+Název
+; Name
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_LOCATIONS
+Umístìní
+; Location
+;
+; Bookmarks.c (bookmarks.c)
+;
+MSG_BOOKMARKS_MENUTITLE
+Zálo¾ka
+; Bookmark
+;
+MSG_BOOKMARKS_ADD
+Pøidat zálo¾ku...
+; Add Bookmark...
+;
+MSG_BOOKMARKS_ADD_TEMPORARY
+Pøidat doèasnou zálo¾ku...
+; Add Temporary Bookmark...
+;
+; AddBookmarkWinClass.c (addbookmarkwinclass.c)
+;
+MSG_ADDBOOKMARKWINCLASS_WINDOWTITLE
+Zálo¾ka
+; Bookmark
+;
+MSG_ADDBOOKMARKWINCLASS_ENTERBOOKMARKNAME
+\033c\033bZadejte název zálo¾ky
+; \033c\033bEnter bookmark name
+;
+MSG_ADDBOOKMARKWINCLASS_OK
+_Ok
+; _Ok
+;
+MSG_ADDBOOKMARKWINCLASS_OK_HELP
+Zálo¾ka bude pøidána do seznamu zálo¾ek.
+; Bookmark will be added to bookmark list.
+;
+MSG_ADDBOOKMARKWINCLASS_CANCEL
+_Zru¹it
+; _Cancel
+;
+MSG_ADDBOOKMARKWINCLASS_CANCEL_HELP
+Vytvoøení zálo¾ky bylo pøeru¹eno.
+; The bookmark creation will be aborted.
+;
+; SelectWinClass.c (selectwinclass.c)
+;
+MSG_SELECTWINCLASS_WINDOWTITLE
+Oznaèit skupinu
+; Pattern Selection
+;
+MSG_SELECTWINCLASS_ENTERSELECTIONPATTERN
+\033cZadejte masku pro výbìr souborù:
+; \033cEnter file selection pattern:
+;
+MSG_SELECTWINCLASS_OK
+_Ok
+; _Ok
+;
+MSG_SELECTWINCLASS_OK_HELP
+Soubory a adresáøe, které vyhovují masce, budou oznaèeny.
+; Files matching the pattern will be selected.
+;
+MSG_SELECTWINCLASS_CANCEL
+_Zru¹it
+; _Cancel
+;
+MSG_SELECTWINCLASS_CANCEL_HELP
+Zru¹í vybìr souborù bez jakékoliv akce.
+; Abort the selection without any action.
+;
+; DeleteDir.c (deletedir.c)
+;
+MSG_DELETEDIR_TITLE
+Ambient ÿ Smazání adresáøe
+; Ambient · Delete directory
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGFILE
+Nelze smazat soubor '%s'.\nChyba DOSu: %S (#%N).
+; Couldn't delete file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGDIRECTORY
+Nelze smazat adresáø '%s'.\nChyba DOSu: %S (#%N).
+; Couldn't delete directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGDIRECTORYICON
+Nelze smazat ikonu adresáøe '%s'.\nChyba DOSu: %S (#%N).
+; Couldn't delete icon of directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORUNABLETOSETPROTECTON
+Nelze nastavit protekèní mód souboru '%s'.\nChyba DOSu: %S (#%N).
+; Couldn't set the protection mode of '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_SKIPSKIPALWAYSRETRYABORT
+_Pøeskoèit|Pøeskoèit v¾dy|*_Opakovat|_Zru¹it
+; _Skip|Skip Always|*_Retry|_Abort
+;
+MSG_DELETEDIR_RETRYCANCEL
+*_Opakovat|_Zru¹it
+; *_Retry|_Cancel
+;
+MSG_DELETEDIR_RETRYSKIPICONCANCEL
+*_Opakovat|_Pøeskoèit ikonu|_Zru¹it
+; *_Retry|_Skip Icon|_Cancel
+;
+; DeleteFile.c (deletefile.c)
+;
+MSG_DELETEFILE_TITLE
+Ambient ÿ Smazání souboru
+; Ambient · Delete file
+;
+MSG_DELETEFILE_ERRORWHILEDELETINGFILE
+Nelze smazat soubor '%s'.\nChyba DOSu: %S (#%N).
+; Couldn't delete file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEFILE_ERRORWHILEDELETINGFILEICON
+Nelze smazat ikonu souboru '%s'.\nChyba DOSu: %S (#%N).
+; Couldn't delete icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEFILE_RETRYCANCEL
+*_Opakovat|_Zru¹it
+; *_Retry|_Cancel
+;
+MSG_DELETEFILE_RETRYSKIPICONCANCEL
+*_Opakovat|_Pøeskoèit ikonu|_Zru¹it
+; *_Retry|_Skip Icon|_Cancel
+;
+; trashcan.c
+;
+MSG_TRASHFILE_TITLE
+Ambient · Trash file
+; Ambient · Trash file
+;
+MSG_TRASHFILE_ERRORWHILEDELETINGFILE
+Couldn't trash file '%s'.\nDOS error: %S (#%N).
+; Couldn't trash file '%s'.\nDOS error: %S (#%N).
+;
+MSG_TRASHFILE_ERRORWHILEDELETINGFILEICON
+Couldn't trash icon of file '%s'.\nDOS error: %S (#%N).
+; Couldn't trash icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_TRASHFILE_RETRYCANCEL
+*_Retry|_Cancel
+; *_Retry|_Cancel
+;
+MSG_TRASHFILE_RETRYSKIPICONCANCEL
+*_Retry|_Skip Icon|_Cancel
+; *_Retry|_Skip Icon|_Cancel
+;
+MSG_RESTOREFILE_TITLE
+Ambient · Restore file
+; Ambient · Restore file
+;
+MSG_RESTOREFILE_ERRORWHILEDELETINGFILE
+Couldn't restore trashed file '%s'.\nDOS error: %S (#%N).
+; Couldn't restore trashed file '%s'.\nDOS error: %S (#%N).
+;
+MSG_RESTOREFILE_ERRORWHILEDELETINGFILEICON
+Couldn't restore trashed icon of file '%s'.\nDOS error: %S (#%N).
+; Couldn't restore trashed icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_RESTOREFILE_RETRYCANCEL
+*_Retry|_Cancel
+; *_Retry|_Cancel
+;
+MSG_RESTOREFILE_RETRYSKIPICONCANCEL
+*_Retry|_Skip Icon|_Cancel
+; *_Retry|_Skip Icon|_Cancel
+;
+;
+; *** PanelWinClass.c (panelwinclass.c)
+;
+MSG_PANELWIN_NAME_LOOK
+Name & Look
+; Name & Look
+;
+MSG_PANELWIN_BEHAVIOUR
+Behaviour
+; Behaviour
+;
+MSG_PANELWIN_NAME
+Name:
+; Name:
+;
+MSG_PANELWIN_NAME_HELP
+Name for panel in prefswin and on disk.
+; Name for panel in prefswin and on disk.
+;
+MSG_PANELWIN_BACKGROUND
+Background:
+; Background:
+;
+MSG_PANELWIN_BACKGROUND_HELP
+Background for panelwindow.
+; Background for panelwindow.
+;
+MSG_PANELWIN_BACKMODE_COLOR
+Color
+; Color
+;
+MSG_PANELWIN_BACKMODE_IMAGE
+Image
+; Image
+;
+MSG_PANELWIN_ALPHA
+Alpha:
+; Alpha:
+;
+MSG_PANELWIN_ALPHA_HELP
+Global alpha for panel.
+; Global alpha for panel.
+;
+MSG_PANELWIN_DEPTHS_NORMAL
+Normal
+; Normal
+;
+MSG_PANELWIN_DEPTHS_BACK
+Always to Back
+; Always to Back
+;
+MSG_PANELWIN_DEPTHS_FRONT
+Always to Front
+; Always to Front
+;
+MSG_PANELWIN_PLACEMENTH_NONE
+None
+; None
+;
+MSG_PANELWIN_PLACEMENTH_BEGINNING
+Beginning
+; Beginning
+;
+MSG_PANELWIN_PLACEMENTH_END
+End
+; End
+;
+MSG_PANELWIN_PLACEMENTH_BOTH
+Both
+; Both
+;
+MSG_PANELWIN_ORIENTATION
+_Orientation:
+; _Orientation:
+;
+MSG_PANELWIN_ORIENTATION_HELP
+Changes the orientation of the panel.
+; Changes the orientation of the panel.
+;
+MSG_PANELWIN_TITLES_VERTICAL
+Vertical
+; Vertical
+;
+MSG_PANELWIN_TITLES_HORIZONTAL
+Horizontal
+; Horizontal
+;
+MSG_PANELWIN_POSITIONING
+_Positioning:
+; _Positioning:
+;
+MSG_PANELWIN_POSITIONING_HELP
+Makes the screen borders act as a kind of magnet.
+; Makes the screen borders act as a kind of magnet.
+;
+MSG_PANELWIN_MODES_FLOATING
+Floating
+; Floating
+;
+MSG_PANELWIN_MODES_ATTACHED
+Attached to Borders
+; Attached to Borders
+;
+MSG_PANELWIN_MODES_FIXED
+Fixed to position
+; Fixed to position
+;
+MSG_PANELWIN_SIZE
+S_ize:
+; S_ize:
+;
+MSG_PANELWIN_SIZE_HELP
+Changes the size of the panel.
+; Changes the size of the panel.
+;
+MSG_PANELWIN_DEPTH_ARRANGEMENT
+_Depth arrangement:
+; _Depth arrangement:
+;
+MSG_PANELWIN_DEPTH_ARRANGEMENT_HELP
+Tells how a panel should behave regarding depth arrangement with other windows.
+; Tells how a panel should behave regarding depth arrangement with other windows.
+;
+MSG_PANELWIN_DRAG_GADGET
+Drag _gadget:
+; Drag _gadget:
+;
+MSG_PANELWIN_DRAG_GADGET_HELP
+Changes the place and number of dragging gadgets, which allow to drag the panel around.
+; Changes the place and number of dragging gadgets, which allow to drag the panel around.
+;
+MSG_PANELWIN_ALLOW_ZIPPING
+Allow _zipping
+; Allow _zipping
+;
+MSG_PANELWIN_ALLOW_ZIPPING_HELP
+Allows to reduce the panel to its minimal size by clicking on a drag gadget.
+; Allows to reduce the panel to its minimal size by clicking on a drag gadget.
+;
+MSG_PANELWIN_AUTO_ZIPPING
+_Autozipping
+; _Autozipping
+;
+MSG_PANELWIN_AUTO_ZIPPING_HELP
+Zip panel when mouse enters and leaves panel.
+; Zip panel when mouse enters and leaves panel.
+;
+MSG_PANELWIN_HIDE_DRAGBAR
+Hide Dragbar
+; Hide Dragbar
+;
+MSG_PANELWIN_HIDE_DRAGBAR_HELP
+Only show dragbar(s) when under mousepointer.
+; Only show dragbar(s) when under mousepointer.
+;
+; *** PanelBaseButtonClass.c (panelbasebuttonclass.c)
+;
+MSG_PANELBASEBUTTON_ICON
+Icon:
+; Icon:
+;
+MSG_PANELBASEBUTTON_ICON_HELP
+Icon displayed in parent panel.
+; Icon displayed in parent panel.
+;
+MSG_PANELBASEBUTTON_ICON_DEFAULT
+Default
+; Default
+;
+MSG_PANELBASEBUTTON_ICON_CUSTOM
+Custom
+; Custom
+;
+; (unused???)
+MSG_PANELBASEBUTTON_ICON_FILE
+File
+; File
+;
+; *** PanelSubWinClass.c (panelsubwinclass.c)
+;
+MSG_PANELSUBWIN_BUTTON_FRAME
+Button
+; Button
+;
+MSG_PANELSUBWIN_PANEL_FRAME
+Panel
+; Panel
+;
+MSG_PANELSUBWIN_BACKGROUND
+Background:
+; Background:
+;
+MSG_PANELSUBWIN_BACKGROUND_HELP
+Background for panel.
+; Background for panel.
+;
+MSG_PANELSUBWIN_ALPHA
+Alpha
+; Alpha
+;
+MSG_PANELSUBWIN_ALPHA_HELP
+Global alpha for sub panel.
+; Global alpha for sub panel.
+;
+MSG_PANELSUBWIN_BACKMODE_COLOR
+Color
+; Color
+;
+MSG_PANELSUBWIN_BACKMODE_IMAGE
+Image
+; Image
+;
+MSG_PANELSUBWIN_BACKMODE_CLONE
+Clone Parent
+; Clone Parent
+;
+; *** PanelDirPanelButtonClass.c (panelsubwinclass.c)
+;
+MSG_PANELDIRPANELBUTTON_DIRECTORY
+Directory:
+; Directory:
+;
+MSG_PANELDIRPANELBUTTON_DIRECTORY_HELP
+Directory to be shown in a sub panel.
+; Directory to be shown in a sub panel.
+;
+MSG_PANELDIRPANELBUTTON_SHORTHELP
+Directory
+; Directory
+;
+; *** PrefsWinPanelClass.c (prefswin_panelclass.c)
+;
+MSG_PREFSWIN_PANEL_PANELS
+Panels
+; Panels
+;
+MSG_PREFSWIN_PANEL_GLOBAL
+Global
+; Global
+;
+MSG_PREFSWIN_PANEL_NEW
+New Panel
+; New Panel
+;
+MSG_PREFSWIN_PANEL_NEW_HELP
+Creates new panel.
+; Creates new panel.
+;
+MSG_PREFSWIN_PANEL_DELETE
+Delete
+; Delete
+;
+MSG_PREFSWIN_PANEL_DELETE_HELP
+Delete panel or panelitem.
+; Delete panel or panelitem.
+;
+MSG_PREFSWIN_PANEL_LIST_HELP
+Drag object into listtree.
+; Drag object into listtree.
+;
+MSG_PREFSWIN_PANEL_RESCAN
+Rescan
+; Rescan
+;
+MSG_PREFSWIN_PANEL_RESCAN_HELP
+Rescan for added classes and update the class list.
+; Rescan for added classes and update the class list.
+;
+MSG_PREFSWIN_PANEL_ZIPSPEED
+Zipping speed:
+; Zipping speed:
+;
+MSG_PREFSWIN_PANEL_ZIPSPEED_HELP
+Nastaví rychlost animace zipovacího efektu u panelù.
+; Sets the animation speed of the panels' zipping effect.
+;
+MSG_PREFSWIN_PANEL_LAYOUT
+Layout
+; Layout
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE
+Autosave
+; Autosave
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DROP
+Icon dropped into window
+; Icon dropped into window
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DROP_HELP
+Save the panel when icon is added by dropping it onto panel.
+; Save the panel when icon is added by dropping it onto panel.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DELETE
+Icon deleted
+; Icon deleted
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DELETE_HELP
+Save the panel when icon is deleted from contextmenu.
+; Save the panel when icon is deleted from contextmenu.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_MOVE
+Icon moved inside window
+; Icon moved inside window
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_MOVE_HELP
+Save the panel when icon is moved.
+; Save the panel when icon is moved.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_WINDOWPOS
+Panel moved on screen
+; Panel moved on screen
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_WINDOWPOS_HELP
+Save the panel when panel is dragged to a new position.
+; Save the panel when panel is dragged to a new position.
+;
+MSG_PREFSWIN_PANEL_EFFECTS
+Icon effects
+; Icon effects
+;
+MSG_PREFSWIN_PANEL_HIGHLIGHT
+Highlight:
+; Highlight:
+;
+MSG_PREFSWIN_PANEL_HIGHLIGHT_HELP
+Effect on icon when mouse is hovering over it.
+; Effect on icon when mouse is hovering over it.
+;
+MSG_PREFSWIN_PANEL_DRAGDROP_EFFECT
+Drag&Drop:
+; Drag&Drop:
+;
+MSG_PREFSWIN_PANEL_DRAGDROP_EFFECT_HELP
+Effect on icon when object is dragged over it.
+; Effect on icon when object is dragged over it.
+;
+MSG_PREFSWIN_PANEL_SELECTED_EFFECT
+Selected:
+; Selected:
+;
+MSG_PREFSWIN_PANEL_SELECTED_EFFECT_HELP
+Effect on icon when object is selected.
+; Effect on icon when object is selected.
+;
+MSG_PREFSWIN_PANEL_EFFECT_NONE
+®ádný
+; None
+;
+MSG_PREFSWIN_PANEL_EFFECT_CLONE_ICONVIEW
+Clone from iconview
+; Clone from iconview
+;
+MSG_PREFSWIN_PANEL_EFFECT_LASSO
+Lasso
+; Lasso
+;
+MSG_PREFSWIN_PANEL_EFFECT_BRIGHTEN
+Zjasnìní
+; Brighten
+;
+MSG_PREFSWIN_PANEL_EFFECT_DARKEN
+Ztmavení
+; Darken
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT
+Zabarvení
+; Tint
+;
+MSG_PREFSWIN_PANEL_EFFECT_BLUR
+Rozmazání
+; Blur
+;
+MSG_PREFSWIN_PANEL_EFFECT_GREY
+Ze¹edivìní
+; Grey
+;
+MSG_PREFSWIN_PANEL_EFFECT_NEGATIVE
+Negativ
+; Negative
+;
+MSG_PREFSWIN_PANEL_EFFECT_NEGATIVE_FADE
+Pøechod z negativu
+; Negative Fade
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_FADE
+Barevný pøechod
+; Tint Fade
+;
+MSG_PREFSWIN_PANEL_EFFECT_DELTA
+Intenzita
+; Delta
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_REQ
+Vyberte barvu pro efekt zabarvení.
+; Select a color for tint effect.
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_FADE_REQ
+Vyberte barvu pro barevný pøechod.
+; Select a color for tintfade effect.
+;
+MSG_PREFSWIN_PANEL_FORCE_GRID
+Force icons into square grid.
+; Force icons into square grid.
+;
+MSG_PREFSWIN_PANEL_FORCE_GRID_HELP
+Icon based panel objects will always use space where width and height are the panelsize instead of adapting one to the icon's aspect ratio.
+; Icon based panel objects will always use space where width and height are the panelsize instead of adapting one to the icon's aspect ratio.
+;
+MSG_PREFSWIN_PANEL_CLASS_NAME
+\033bName:
+; \033bName:
+;
+MSG_PREFSWIN_PANEL_CLASS_NAME_HELP
+Name of the selected panel item.
+; Name of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_VERSION
+\033bVersion:
+; \033bVersion:
+;
+MSG_PREFSWIN_PANEL_CLASS_VERSION_HELP
+Version of the selected panel item.
+; Version of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_AUTHOR
+\033bAuthor:
+; \033bAuthor:
+;
+MSG_PREFSWIN_PANEL_CLASS_AUTHOR_HELP
+Author of the selected panel item.
+; Author of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE
+Description
+; Description
+;
+MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE_HELP
+Description of the selected panel item.
+; Description of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_NOPREFSAVAILABLE
+No preferences available.
+; No preferences available.
+;
+; PanelSliderSpeedClass.c (Panelsliderspeedclass.c)
+;
+MSG_PREFSWIN_PANEL_SPEED_SLOW
+Slow
+; Slow
+;
+MSG_PREFSWIN_PANEL_SPEED_MEDIUM
+Medium
+; Medium
+;
+MSG_PREFSWIN_PANEL_SPEED_FAST
+Fast
+; Fast
+;
+MSG_PREFSWIN_PANEL_SPEED_INSTANT
+Instant
+; Instant
+;
+; Information requesters
+;
+MSG_PROGRAM_NOT_STARTED_REQ
+Couldn't start program\n%s.
+; Couldn't start program\n%s.
+;
+MSG_PROJECT_NOT_STARTED_REQ
+Couldn't start project %s.\nTool: %s.
+; Couldn't start project %s.\nTool: %s.
+;
+MSG_WBSTARTUP_PATH_ERROR_REQ
+WBStartup path not set, please configure it\nfrom the menu Settings/Ambient settings.../Miscellaneous.
+; WBStartup path not set, please configure it\nfrom the menu Settings/Ambient settings.../Miscellaneous.
+;
+MSG_REQUESTER_OK_GAD
+*OK
+; *OK
+;
+MSG_AMBIENT_REQ
+Ambient
+; Ambient
+;
+MSG_WBSTARTUP_REQ
+Ambient WBStartup
+; Ambient WBStartup
+;
+MSG_TOOLBAR_CLASS_VIEWMODE_ICONS_HELP
+Switch to Icons viewmode
+; Switch to Icons viewmode
+;
+MSG_TOOLBAR_CLASS_VIEWMODE_LIST_HELP
+Switch to List viewmode. Use the mouse wheel to zoom!
+; Switch to List viewmode. Use the mouse wheel to zoom!
+;
+MSG_IMAGEVIEW_CLASS_HOTKEYS_HELP
+\033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPTRSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
+\033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
+image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+; \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPTRSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR
+Colo_r:
+; Colo_r:
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR_HELP
+This color is used to display the status bar text.
+; This color is used to display the status bar text.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR_WINTITLE
+Status bar text color
+; Status bar text color
+;
+; MoveList.c (movelist.c)
+;
+MSG_MOVELIST_TITLE
+Ambient · Copy
+; Ambient · Copy
+;
+MSG_MOVELIST_ERRORWHILEMOVING
+Error while copying '%s'
+; Error while copying '%s'
+;
+MSG_MOVELIST_BUTS_RETRYSKIPSKIPALLCANCEL
+*_Retry|Skip|Skip all|Cancel
+; *_Retry|Skip|Skip all|Cancel
+;
+; FastCopy.c (fastcopy.c)
+;
+MSG_FASTCOPY_BUTS_OK
+*_Ok
+; *_Ok
+;
+MSG_FASTCOPY_BUTS_DELETEKEEP
+*_Delete|Keep
+; *_Delete|Keep
+;
+MSG_FASTCOPY_DESTISDIR
+Destination '%s' is a directory.
+; Destination '%s' is a directory.
+;
+MSG_FASTCOPY_FILECANTBEDELETEDDOSERROR
+File '%s' can't be deleted.\nDos error: %S (#%N).
+; File '%s' can't be deleted.\nDOS error: %S (#%N).
+;
+MSG_FASTCOPY_FILEINCOMPLETE
+File '%s' is not complete.
+; File '%s' is not complete.
+;
+MSG_FASTCOPY_FILEINCOMPLETEDOSERROR
+File '%s' is not complete.\nDos error: %S (#%N).
+; File '%s' is not complete.\nDOS error: %S (#%N).
+;
+; MakeLink.c (makelink.c)
+;
+MSG_MAKELINK_TITLE
+Ambient · Makelink
+; Ambient · Makelink
+;
+MSG_MAKELINK_BUTS_RETRYCANCEL
+*_Retry|Cancel
+; *_Retry|Cancel
+;
+MSG_MAKELINK_COULDNTCREATELINKDOSERROR
+Couldn't create link '%s'.\nDOS error: %S (#%N).
+; Couldn't create link '%s'.\nDOS error: %S (#%N).
+;
+MSG_CMENU_PANELOPENPARENT
+Open Parent
+; Open Parent
+;
+MSG_PREFSWIN_BACKGROUND_TRANSITION
+Enable effects
+; Enable effects
+;
+MSG_PREFSWIN_BACKGROUND_TRANSITION_HELP
+Enable transition effects
+; Enable transition effects
+;

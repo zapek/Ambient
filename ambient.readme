@@ -1,0 +1,965 @@
+                        Ambient - the MorphOS desktop
+                        =============================
+
+           Copyright 2001-2005 by David Gerber <zapek@morphos.net>
+                             All Rights Reserved
+
+     This program is free software; you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2 of the License, or
+                     (at your option) any later version.
+
+       This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+                 GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+         along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+
+
+Disclaimer:
+-----------
+No guarantees, if it breaks you get to keep both pieces.
+
+
+Introduction:
+-------------
+Ambient is the MorphOS native desktop. It handles program icons, directory
+navigation, program launching, file handling and everything you need for
+managing your system.
+
+
+Features:
+---------
+- MUI based
+- fully asynchronous, multi-threaded design
+- does not use icon.library
+- built-in old style icons support, automatic remapping
+- built-in newicon support
+- built-in "OS" 3.5 Glowicon support
+- new true-color versatile icon format (Ambient PNGicon)
+- file notification
+- direct true-color rendering (no pen allocations)
+- support for deficons (devices)
+- 64-bit arithmetic to handle big storage devices
+- localized
+- fast file I/O functions
+- ARexx port (optional)
+- built-in disk formatting
+- built-in commodities manager
+- support for appwindows/appicons
+- visual effects: transparency, blurring, color imposing, alpha channels, ..
+- built-in wbstart.library
+- panels
+- and more, I always forget to update the featurelist anyway
+
+
+Requirements:
+-------------
+- a recent version of MorphOS
+- recent versions of CGX (aka the latest)
+- recent versions of MUI (aka the latest)
+- a hi/true-color screenmode. No CLUT screens support.
+
+
+Description of the system libraries:
+------------------------------------
+workbench.elf (PowerUP) / workbench.library (Pegasos):
+- PPC native workbench.library. Is required by Ambient for running it in
+WBR mode, for AppIcons, MenuItems, AppWindow and some other workbench 
+related features. If you run Ambient after another workbench, this library
+is not required (yet). This library will prevent the original workbench
+from running but won't disturb DOpus nor Scalos.
+
+icon.elf (PowerUP) / icon.library (Pegasos):
+- PPC native icon.library. Ambient doesn't pay attention to this
+library. Can be used by DOpus, Scalos and the original Workbench. Is needed
+if you want normal applications to be PNGicon-aware.
+
+
+Installation:
+-------------
+The source release is configured to build on a vanilla MorphOS 1.4 release
+with the MorphOS SDK.
+
+First, check that you have the file gg:bin/awk, if not do the following:
+
+- cd gg:bin
+- ln -s gawk awk
+
+Then make sure you have a png2c binary in Ambient's 'src' directory.
+It can be downloaded from http://zapek.com/software/png2c/
+
+Then type 'make install'. Once the whole compilation process is done, you can
+reboot under a new Ambient. That's it!
+
+There are a few small limitations under 1.4. I didn't have time to make
+extensive tests but it seems to work ok. Multimedia support is disabled for
+now, MUI's lack of double buffering makes some gfx glitches appear in the
+about window's credit scrolling. Check the readme to know the new features,
+you can click on pictures, mp3s, vorbis, etc..
+
+Ambient still builds on 1.5 systems, check config.h for the magic define.
+
+
+Usage:
+------
+- normal mode: just run the executable from a shell
+- WBR mode: use the included workbench.elf as extmodule or library
+(see MorphOS startup utility docs) and boot in normal WB mode. If you use
+DOpus (by replacing LoadWB by LoadWB), press shift while booting (I think
+that this works with Scalos too).
+
+
+Bug reports:
+------------
+Turn on caps-lock before launching Ambient and it'll output debug informations
+using dprintf(). This debug info is very useful for me so please use it when
+you find a bug. If there's too much output, you can enable/disable selective
+debugging from the debug menu, they can be saved with the preferences as well.
+Debugging is only available in debug versions, check the About window to know.
+
+
+License:
+--------
+Ambient is GPL. There's an exception for the following libraries:
+- icon.library (disk based)
+- workbench.library (disk based)
+- wbstart.library (created at runtime)
+
+These libraries APIs predate the creation of Ambient and therefore the GPL
+linking clause cannot be enforced for apps using their *well known and
+defined* APIs, which was set by Commodore for icon.library and
+workbench.library, and Stefan Becker for wbstart.library.
+
+Extensions added up to AmigaOS 3.9 are more or less supported in icon.library
+as well.
+
+Simply put, proprietary apps may freely use those *well known and defined*
+APIs without having to become GPL.
+
+In no way can that exception be used to extend Ambient's functionality by
+proprietary code, though (for example adding some API to have hooks used by
+some commercial plugin). Basically all those APIs are fixed and there
+shouldn't be any need to extend them. If you need more clarification, feel
+free to contact me.
+
+
+Other licenses:
+---------------
+You may obtain Ambient under a different license than GPL. Feel free to
+contact me to come to an agreement. Only serious offers will be considered.
+
+
+History
+-------
+
+[previous history was moved]
+
+
+1.0
+----
+- added support for MUI/Windows/Control/Redraw 'with clear'. It's recommended
+  to use 'without clear' though
+- finally fixed the memtrashing bug happening with every window. That one took
+  months to track down. There are bugs like that..
+- png.alib tries to open z.alib harder
+
+[released: 22-10-2002/02:36:22]
+
+1.1
+----
+- icon loading doesn't refresh in 'redraw with clear' (aka FastUgly) mode
+- aborting recursive directory copy didn't always work, making Frodon look
+  like a fool during some public demos
+- added L2 cache reports in the about window
+- added built-in default icons for fallback purposes
+- double clicking on an icon without .info will open the iconview showing all
+  icons as well
+- removed PhantomIcon (tm) stuff, as a side effect, corrupted icons don't hang
+  Ambient anymore
+- saving icons would duplicate its tooltypes everytime
+- added a way to change between project/tool in the infowin
+
+[released: 27-10-2002/03:48:15]
+
+1.2
+----
+- bumped version of icon.library to 44 due to some popular demand after a
+  weird bug lurked around
+- 'icons/show all' would also add icons with .info files
+- fixed an unexpected recursive aborting which was recently introduced because
+  of the new error checking
+
+[released: 03-11-2002/01:43:50]
+
+1.3
+----
+- rewrote the icon layouter from scratch: several levels of magnitude faster,
+  uses *much* less memory, can align icons verticaly and horizontaly, can
+  avoid overlapping and provides configurable "best layout" zones
+- fixed prefs window crashing on opening
+- fixed the problem were icons with random names appeared in 'show all' mode
+
+[released: 05-11-2002/01:31:33]
+
+1.4
+----
+- oops, all the menus had no effect in the previous release
+- now left out icons are layouted on free space
+- icons on rootwindow are layouted in the same way as in virtgroups, which
+  means there shouldn't be any overlap for unsnapshoted icons
+
+[released: 06-11-2002/06:48:50]
+
+1.5
+----
+- now requires asyncio.library v40 to avoid bugged v39 releases
+- blacklisted Emm's devices :)
+- lowered version of icon.library to 41 again. Unfortunately some software
+  have conditional code depending on the version and would fail with that one
+- icon.library would corrupt the free memory list when freeing a built-in icon
+- icon.library now returns an error when trying to write a PNGicon instead of
+  writing a default built-in one
+- copying/moving multiple icons can be aborted
+- icons can't go outside of the rootwindow and no longer be selectable anymore
+
+[released: 08-11-2002/04:45:12]
+
+1.6
+----
+- sigh, a build screwup prevented PNGicons to work properly
+
+[released: 08-11-2002/18:26:33]
+
+1.7
+----
+- fixed screwup with RAW:
+- turns off silly requesters when checking the doslist
+- unblacklisted Emm's devices :)
+- wohoops, inserting removables didn't have any effect, fixed
+- fixed the case where more than one volume/device was added at the same time
+  and would produce screwups and enforcer hits when one was removed and
+  inserted again (cyfm)
+- added a string in the listers
+- appicons didn't show up anymore
+
+[released: 10-11-2002/04:51:12]
+
+1.8
+----
+- added some error reporting when prefs can't be written to disk
+- blacklisted IXPIPE: seems to fail for some people
+- changed sys:morphos to mossys:, pick your poison
+- fixed prefs bug where 'Test' followed by a 'Cancel' would kill all the
+  prefs in memory
+- new startup code, smaller, faster, better, etc..
+- removed most "Please insert volume MOSSYS:" on startup if the assign isn't
+  there
+- runs a shell if the ambient installation isn't found
+- fixed memory leak happening with every icon and going from 4 bytes to a few
+  KB
+- added sorting of icons by name
+
+[released: 18-11-2002/01:52:27]
+
+1.9
+----
+- added a 'newshell' menu
+- fixed left-out icons not being positioned properly
+- the double click to open the lister takes care of the drag & drop mouse
+  move delta trigger settings
+- icon.library checks more carefuly for bogus calls
+- implemented appicons for newicons, glowicons and pngicons
+- appicons can be moved freely
+
+[released: 20-11-2002/19:25:06]
+
+1.10
+----
+- resizing a window is taken into account by the layouter for the next
+  operations
+- appicons don't overlap other icons
+- overlapping icons don't confuse the layouter anymore on removal
+- added a frame and image clipboard in the prefs window
+- wrote new font rendering system, fixed many bugs regarding prefs refresh
+  (setting new font, color, etc..)
+- fixed icon.library to handle appicons without absolute path
+- added double buffering for icons
+- faster refresh of icons
+- format's verify mode now really stresses the HD by trying 5 tests
+- formatting doesn't allow empty filenames anymore
+- infowin show the dostype of an unsupported dostype instead of just showing the
+  last valid filesystem's dostype (laire)
+- formatting window disables all the gadgets while formatting
+- added visual feedback on selecting old icons with only one image
+- added support for screenmode changes
+- added font effect: normal, multicolor, shadow, outline and alphashadow
+- added the MorphOS release version number in the about screen so that people
+  stop confusing it with the Ambient version. Hopefully it works otherwise I'd
+  have to fix them as well
+- infowin over icons without real .info displays the default icon now
+
+[released: dunno, date command fucked up]
+
+1.11
+----
+- added a 'shutdown' menu
+- devices can be relabeled
+- added makedir
+- icons without a corresponding object (file or drawer) can be deleted
+
+[released: 16-12-2002/13:51:53]
+
+1.12
+----
+- when a directory/file deletion fails, an error is reported
+- first requester would never be centered within its parent window
+- requesters weren't thread safe and could cause some rare problems
+- fixed the issue where it was possible to make Ambient think the background
+  did scroll then have a wrong pattern backfill offset when refreshing
+- IPC is cleaned up on exit if it still has incoming messages
+- added drag & drop of tooltypes between infowindows
+- finally fixed the "let's trash memory and do evil side effects" bug related
+  with iconview refresh and scrolling
+
+[released: 28-12-2002/02:11:38]
+
+1.13
+----
+- hopefully fixed all the cases where the background offset for the icons
+  refreshed wrong
+- also fixed the stoneage bug where the background offset of the iconview was
+  wrong after a resize with a non null top/left offset
+- fixed font changes on the fly from the prefs
+- default fonts switched from topaz to xhelvetica
+- changed View as 'All Icons' to 'All files' to make Piru happy
+- disabled icon caching until I find time to resolve all the issues
+
+[released: 29-12-2002/06:00:26]
+
+1.14
+----
+- infowin reports both the filesystem's dostype and doslist dostype
+- devices without a disk.info file could have a wrong type set for the infowin
+- added 'select all' and 'invert' command for icons
+- added 'snapshot icons' and 'snapshot all', as well as 'unsnapshot icons' and
+  'unsnapshot all'
+- added workaround for wbstart.library and Fred Fish's wbrun
+- when dragging multiple tooltypes they're inserted in their original order
+- no more flickering when inserting multiple tooltypes
+- it wasn't possible to set the stack size using infowin
+- deleting a file/dir without an icon doesn't complain anymore about the
+  missing icon
+- moving an icon doesn't flicker all the other icons anymore
+- when double-clicking on a directory while pressing the left alt key, the
+  parent window is closed
+- it's now possible to drag & drop icons without corresponding file
+- temporarily disabled mouse wheel support, had side effects
+- fixed 'sort by name' screwing up the background
+
+[released: 31-12-2002/05:09:32]
+
+1.15
+----
+- fixed partially obscured icons on the right/bottom borders from trashing the
+  right/bottom borders
+- fixed the "Unknown error" problem with wbrun
+- error requester titles are more consistent
+- in case the screenmode prefs didn't run, Ambient wouldn't display any error
+- in case of CLUT screenmode, systemprefs are run with the screenmode prefs
+  panel only and not the whole
+- WBStartup errors requesters don't block the WBStartup loading anymore
+- ditto for backgrounds loading
+- added mempools to png.alib, bumped to 1.2
+- added mempools to z.alib, bumped to 1.1
+- fixed the icon clipping when moving around window borders
+- after a CLUT mode start error, Ambient tries to rerun once the user
+  configured a proper screenmode
+- added multiselection with mouse to listers, just select and drag
+- added a commodity manager
+- sometimes delete would leave locks around thus fail to delete
+
+[released: 08-01-2003/18:39:44]
+
+1.16
+----
+- fixed project icons with relative path
+- fixed project icons using the 'CLI' tooltype, like ScummVM's project icons
+- removed a possible "global freeze" when trying to delete a file from a non
+  responding volume
+- rewrote rexx handling from scratch. Now has a fully non blocking arexx port
+  with sync/async results depending on the command/arguments
+- added 'ScreenToBack' and 'ScreenToFront' commands
+- won't show dos requesters when mossys: is not around and launching prefs
+- workbench launching wouldn't concat arguments properly
+- fixed workbench arguments handling, it never really worked as it seems
+- added a 'Settings' command to open internal settings and system settings
+- added a way to configure the shell spawned by the 'Ambient/Newshell..' menu
+- the shell spawned by Ambient will have its current directory set to ram:
+- when clicking on the mailing-list address in the about menu and if
+  openurl.library is configured properly, you can just send the mail to
+  subscribe now
+
+[released: 31-01-2003/20:12:22]
+
+1.17
+----
+- fixed severe memory leak appearing mostly with pngicons
+- woops, 'Delete' command wouldn't show up a confirmation requester when being
+  called from a context menu but just delete the thing
+- pngicons without files are flagged properly as either project or tool
+- fixed alpha around the ambient logo (jacaDcaps)
+- rename works on icon files alone
+- added md5sum output in infowin
+- workbench.library doesn't take a sigbit for RemAppIcon() anymore
+- added appwindow support to workbench.library, bumped to 50.9
+- fixed launching of tools in CLI mode
+- fixed Exchange not updating its list when needed
+- added AppWindow support
+- added AppIcon drag&drop support
+
+[released: 13-02-2003/06:11:27]
+
+1.18
+----
+- fixed to spawn a shell if intuition's version was wrong instead of spawning
+  enforcer hits
+- early error requesters don't have trashed titles randomly anymore
+- added multiple d&d support for appicons
+- fixed d&d of devices into appwindows to have a proper path
+- fixed the issue where source drag was immediately targeted at an appwindow
+  with nothing in between. It wouldn't detect it was an appwindow then
+- multiple drag&drop of devices works as well now
+- fixed the dostype in listers and infowin
+
+[released: 15-02-2003/03:43:35]
+
+1.19
+----
+- format works on context menus also
+- group d&d alpha icon blending improved, still not perfect though
+- much less complex way of refreshing icons when changing their attributes
+  (fonts, etc..). Should be faster and visually better
+- increased default size of non-snapshoted windows
+- fixed some cyclechains in the prefs
+- reports errors more precisely when a background fails to load
+- fixed crash when pressing 'save' in the infowin on devices
+- MMB scrolling doesn't screw up background offsets anymore
+- reenabled wheel mouse
+- fixed window snapshot for half of the windows :o)
+- renaming a device then reopening the window would crash on window close then
+- disables the formatlist while formatting now
+- vertical icon size could be wrong for some icons
+- added support for datatypes icons
+- speed up of double buffering handling
+- fixed deadlock when opening MUI prefs from Ambient
+- added global MUI prefs launching to the 'Settings' menu
+- fixed crash when moving some icons over the titlebar
+- smarter screen locking functions, less overhead
+- fixed CPU detection, now actually works
+- fixed race condition issue which could make smartreq use 2 windows instead
+  of 1
+
+[released: 28-03-2003/17:00:36]
+
+1.20
+----
+- pressing 'Cancel' in formatwin doesn't close the window
+- format status update could be skipped randomly
+- rewrote prefs handling almost from scratch. Faster, smarter, less pool
+  fragmentation
+- icon.library can now save PNGicons. Bumped to 41.20
+- prefs saving is now async
+- fixed appwindow handling for apps making use of mouse coordinates
+- it's now possible to drag icons from their text
+- fixed iconview context menu doing nothing if it was opened over an icon but
+  outside its graphical area
+- fixed prefs' version string not being null terminated
+- fixed weird behaviours with uppercase .INFO files, thanks to Benjamin
+  VERNOUX
+- fixed a crash happening with icon multiselection and deleting icons
+- added background scaling
+- speed up of background loading
+- added 'color' background mode
+- fixed updating of the prefs, now it really updates what it needs to and
+  doesn't keep updating the previous things you didn't change anymore.
+  Especially useful for the 'test' button
+- takes the icon text into account so that icons don't appear under the left
+  window border anymore during free placement
+- no longer crashes miserabily when there's an exchange clone running and
+  Ambient's exchange is opened
+- added a new grouped layout mode, set as default
+- removed the gfx flickering when moving an icon using drag & drop
+- background prefs' last page wasn't remembered between consequent window
+  openings
+
+[released: 16-04-2003/15:52:19]
+
+1.21
+----
+- now rootwin uses the old layout placement and other windows use the new one
+- improved layout granularity
+- fixed some thread actions who could get really slow depending on the random
+  memory trash (read: forgot some TAG_DONE), sigh
+- transparent drag&drop is now enforced for icons with alpha
+- checkered drag&drop was broken for icons without a mask
+- fixed laire's dumb maskless ugly icons yet again
+- scripts started from wbstartup would report errors when they were launched
+  successfully
+- blits selected old icons correctly on bigendian cards
+- fixed memoryleak with debug builds *YET AGAIN*. Exactly the same old bug but
+  for a new code path, sigh
+- fixed Cx newbroker structure being wrong, even though it seemed to work
+- now icon.library keeps glowicons when saving, bumped to 41.21, and doesn't
+  add 5 bytes of crap at the end of icons when saving
+- setting d&d delta to 0 would prevent listers from opening
+- aborted threads wouldn't be detected properly as such sometimes
+- it was possible to fool Ambient in opening many times the same window, fixed
+- now timeouts if some handler gets stuck during proding so that the doslist
+  scanning has less chance to fail
+- it was impossible to set the stacksize of pngicons, fixed
+- icon.library wouldn't save pngicons properly but add new chunks at the end,
+  I don't know if I introduced that one later on. It strips duplicates chunks
+  now also. Bumped to 41.22
+- added panels
+
+[released: 06-05-2003/01:21:46]
+
+1.22
+----
+- fixed excessive notifications on panels resulting in too many panelprefs
+  saving in a row, no harm whatsoever though
+- fixed missing notifications on locking, zipping and other stuff
+- fixed redraw glitches over paneldrag objects when a panel is in zipped state
+- clicks on paneldrags are ignored when the panel is zipping/unzipping
+- no more context menu while zipping
+- added full keyboard navigation in the panelconfigwin
+- it's not possible to drag icons into locked panels anymore
+- dragging an icon directly into a panelgroup adds a button
+- deleting a panelitem properly saves the changes
+- mouse delta detection would only work in one dimension for listers
+- if icons are selected with shift, clicking on selected icons without shift
+  doesn't unselect them then
+- added lasso for cowboys to capture cows
+
+[released: 12-05-2003/01:28:44]
+
+1.23
+----
+- wohoops, I broke 'add to panel../button'
+- fixed lasso offset in windows
+- multiple d&d shows alpha icons again
+- added JoBBo's cool images to the prefslist
+- CPU's performance monitors weren't detected
+- lasso is now non flickering. Eat that! :)
+- fixed gfx glitch when clicking on the second paneldrag object of a zipped
+  panel
+- multiple icons can be deleted at once now
+- format does some sanity checks for 'sys:' and 'mossys:' and refuses them for
+  a volumename
+- no longer barfs when a panel doesn't fit the screen but opens it as big as
+  possible. Additional objects are not visible
+- screen titlebar could stay in some state if the window focus was changed
+- bitmap caching checks if the screenmode changed
+- fixed the "let't select an icon, scroll it off then click on an empty area.
+  oh, it's still selected" bug
+- background loading would report success for tiled background even if the
+  loading failed
+- implemented centered backgrounds
+
+[released: 21-05-2003/16:41:47]
+
+1.24
+----
+- fixed icon.library to detect project icons properly, bumped to 41.23
+- when switching a panel to locked mode, any config window is automatically
+  closed
+- changed prefs name from 'General' to 'Background'.. wtf
+- if a panel was in attached mode and moved next to a border, the position
+  wouldn't be saved
+- fixed tons of keyboard navigation stuff in the prefs
+- creating a new drawer defaults to 'with icon' when just pressing enter
+- icons are layouted in a more natural way
+- appicon loading is now async
+- fixed issues which would move appicons everytime they're removed then added
+  again
+- fixed wrong layouting calculations which would lead to icons not fitting
+  where they would perfectly fit and being placed on some other place
+- aborting a lasso doesn't trigger a context menu
+- lasso color can be chosen
+- optimized icon display speed a bit
+- now adds quotes around filenames with spaces in CLI mode
+- removed delta-x/y prefs settings. Now both are set to 4 pixels
+- removed all the masking stuff used by old icons. Old icons are now using the
+  same internal format as pngicons which simplifies a lot the operations
+  performed on them
+- removed the drag&drop modes, only transparent remains
+- removed FastUgly workarounds since MUI doesn't have that mode anymore
+- added icon label splitting
+- added some kludge against gfx trashing when resizing from top/left borders
+- finally fixed some doslist lockups. Could happen with buggy handlers and
+  when an USB device was mounted on boot
+- added icon resizing
+- fixed bug which would move files when dropping them on the infowin
+- fixed lasso which could be left activated
+
+[released: 03-06-2003/17:23:47]
+
+1.25
+----
+- fixed addappicon flushing memory and being generally broken
+- added multiple icons move within the same area
+- fixed resizing of windows to not flicker randomly
+- adjusted appicon stuff to not allow async cases where an app would return
+  from AddAppIcon() before it was really added and thus would cause problems
+  when removing it quickly afterwards
+- double click detection isn't triggered when unactivating the window then
+  coming back quickly
+- iconview windows have a more useful string in the title
+- added 'ScanDir' command
+- 'Delete' command doesn't hang calling rexx program indefinitely and returns
+  proper errorcode
+- infowin is completely asynchronous now
+- added a 'WAIT/S' option to 'IconInfo' which is much more complete and
+  reports everything
+- now disables topmenus for ambient windows
+
+[released: 26-06-2003/13:51:35]
+
+1.26
+----
+- when target icons for d&d operations were selected, they would display trash
+  as the selection effect
+- it's not possible to drop an icon on itself anymore
+- fixed a really nasty memtrashing that would happen if there was a background
+  pattern smaller than any icon
+- fixed datatype icon loading which didn't display anything properly since a
+  few revisions
+- doing info over a big icon will scale it down on the infowin
+- infowin over a deficon file/dir displays the right icon
+- added deficon caching
+- moving a group d&d to rootwin doesn't move them to PROGDIR: anymore
+- .backdrop is only loaded for bootup devices and not on insertion of a
+  removable
+- icon.library now returns ERROR_OBJECT_WRONG_TYPE if GetDefDiskObject() has
+  an input out of range instead of just returning NULL, bumped to 41.24
+- fixed to work without rexxsyslib
+- fixed lasso staying around when a window opens and steals the focus
+- added icon shortcuts support
+- removed the copy prefs options
+- fixed internal memleak while moving files
+- removed icon options since there's none atm
+- added a 'put away' context menu to remove shortcuts
+- changing the dragmode of a pannel wasn't saved immediately
+- screen titlebar changes are now double buffered to overcome intuition's
+  heavy braindamage
+- requesters calling other requesters no longer crash, eg. the shutdown
+  requester
+
+[released: 10-07-2003/05:40:30]
+
+1.27
+----
+- fixed bug which made old icons as project not run at all
+- fixed prefspool having a high probability to crash after a flush
+- panelitems now feature a special context menu with the panel options as
+  well, no need to press shift anymore
+- removed 'Save settings' menu.. useless
+- shortcuts now have a little evil arrow over them, courtesy of JoBBo
+- stops allocating one useless megabyte per pannel.. sigh
+- mouse wheel is disabled during lasso mode to avoid scaring cows
+- deficons now appear slightly transparent
+- font space is updated realtime
+- added some heuristic to find out if an old icon needs special masking
+  trickery to look "nice"
+- now the viewmode ('show all icons' for now) can be saved for pngicons
+- fixed volume date in the infowin
+- added a way to execute internal commands by adding '' around it in the
+  execute window, experimental
+- shortcuts which don't exist aren't shown
+- now the view mode is saved with the directory icon
+
+[released: 17-07-2003/04:18:10]
+
+1.28
+----
+- added JoBBo's cool button image into the panelitem window
+- added version.revision fields to the panelitem window
+- requesters don't keep the first title forever
+- doesn't whine if it cannot convert shortcuts from .backdrops for some
+  reasons
+- now the right context menu shows up on devices without disk.info
+- a requester tells about devices that cannot be formatted
+- renaming a device displays the old name
+- moved configurations from mossys:ambient/config to sys:prefs/ambient
+- fixed recursive copies to not fail when copying multiple drawers without
+  icons
+- when switching the resolution from a small one to a bigger one, Ambient
+  properly resizes the rootwin. This is a stoneage bug never properly reported
+- now reports more informations if it cannot start NadirPrefs if the screen is
+  a CLUT mode or so
+- after being centered on some window, following requesters would crash
+  randomly. That was some recently introduced bug
+- added some default frame when creating a panel.. makes more sense
+- the background of panels is settable
+- added a better built-in bilinear filtering scaler
+- added Scale2x support to the built-in scaler
+- some alpha effects use the fpu now
+- panel border auto attach handles offscreen modes now
+- added corner attraction for panels
+- fixed a problem which allowed attraction to fail when moving a panel quickly
+- paneldrag objects use a xen-like selection effect, also they redraw the
+  background
+- added settable panel zipping speed
+- fixed font outline rendering and probably others
+- no longer shows an iconview context menu when RMBing on a device's
+  titlename
+- it's possible to insert objects in any arbitrary place within a panel
+- added panel items arranging
+
+[released: 04-08-2003/05:01:56]
+
+1.29
+----
+- panelbuttons would leak memory everytime an imagery was replaced
+- dticons work in panels
+- icon.library wouldn't detect lonely .info files properly, bumped to 41.26
+- fixed vertical MMB panel arranging
+- added some more protection against bugged devices
+- formatting errors stay in the format window
+
+[released: 09-08-2003/ISO]
+
+1.30
+----
+- added a pointer for panel button moves
+- when a directory is specified as background, a random file in it is picked
+  up for the actual background
+- fixed internal memory leak when setting arexx return strings
+- added a 'Random' command
+- double clicking on an entry of the cxwindow list shows the commodity
+- cxlist is sorted alphabetically instead of in reverse order
+- switched to use random.library
+- fixed icon.library to load/write device icons properly (it would just fail
+  before if 'disk' wasn't concatenated), bumped to 41.27
+- fixed a bug that would show 'disk.info' within the device's window, as well
+  as not showing it within deeper directories
+- added a 'ParseURI' command
+- when a label split require a larger width because a line other than the
+  first one couldn't be cut, it would print the first line again
+
+[released: 25-08-2003/01:34:39]
+
+1.31
+----
+- removed all the internal stuff regarding icon caching, will be back in
+  another form
+- if ambient fails to start it no longer lets bigfoot's shell without dos
+  requesters
+- format window sorts the device entries by name
+- major speedup of icon loading
+- renamed 'WBStartup' to 'Startup'
+- added 'noarrow' variable to disable arrows over shortcuts
+- added 'RefreshVars' command to update variables
+- added multiple view support, major rewrite. Tons of stuff changed, expect
+  new bugs to show up and old ones to disappear (or not)
+- double buffering is only updated when needed, major overall speedup
+- finally fixed the bug which allowed to have a messed up background when
+  moving an icon would shrink a virtual group
+- major speedup for layout stuff
+- old icons palette remapping uses a gradient for undefined colors
+- changed the pointer for more precise cow capture
+- fixed menus not available in titlebar hiding mode
+- fixed crash when using the 'quit' menu
+- fixed possible screen titlebar crashing on exit
+- wbstartup's startpri was ignored
+- added inline renaming/relabeling
+- renaming/relabeling is now threaded like it should always have been
+- added always to front/back for panels
+- multiple drag & drop's radial alpha effect now centers around the pointer
+- same for the drag & drop target symbol
+- new "sort by name" grid alignement
+- added 'nohover' variable to disable hovering
+- recursive deletion aborts and tells which file failed
+
+[released: 09-01-2004/05:45:53]
+
+1.32
+----
+- grmbl. I broke "System prefs" launching
+- viewmode is remembered properly in the context menu for inherited views
+- "allow zipping" is now default for panels
+- now enables wildstar, touch sys:prefs/ambient/vars/nowildstar if you want
+  things to break
+- fixed unlimited loop when trying to sort by name when there's not enough
+  vertical space
+- significantly reduced memory usage by picture.datatype images
+- and another icon layout speedup
+- well, rewrote the layouter majorly. Now has an automatic layout mode
+- added some audio driver system
+- added ogg vorbis and mp3 decoding
+- added imageview (only jpegs for now)
+
+[released: 11-02-2004/17:44:42]
+
+1.33
+----
+- faster initial layout
+- readded icon downscaling
+- removed .backdrop support because I declare it obsolete, har
+- removed 'snapshot' over shortcut icons, it's automatic now
+- and as a bonus it stops removing them all at once
+- a shell should be spawned on any startup failure now
+- fixed background centering
+- scaled backgrounds now use the high quality internal scaling
+- infowin cannot block anymore
+- infowin finds out some capabilities of partitions and displays them
+- inline renaming changes are immediate
+
+[released: 29-02-2004/04:10:00]
+
+1.34
+----
+- fixed playing very small samples
+- fixed sound buffer status report
+- autolayout is enabled except for rootwin
+- notification support
+
+[released: 15-03-2004/01:37:21]
+
+1.35
+----
+- some path were recognized as mimetype.. fixed
+- it's possible to copy .info files without matching file/dir as well
+- added a new scaling mode for large downscalings
+- added rudimentary keyboard navigation into the imageview. space advances one
+  image and backspace goes one back
+- added multimedia sound support
+- added datatypes sound support
+- added a sound control window
+
+[released: 18-03-2004/01:41:54]
+
+1.36
+----
+- limited picture navigation to roughly 5 pics/second to avoid autorepeat
+  overflows
+- imageview now has a correct window size for pictures bigger than the current
+  screen
+- imageview has an original picture size mode with scrolling
+- fixed rows/lines of empty pixels during resizing with some cases
+- 's' in the imageview switches between original size or scaled
+- imageview displays some additional infos
+- fixed a recent bug where removeables wouldn't show up
+- version scanning could read random memory
+- added a text view
+- devices are automatically snapshoted
+
+[released: 31-03-2004/17:53:53]
+
+1.37
+----
+- altivec support
+- fixed removable icon dispose once again
+- datatypes recognize any image and any sound
+- scaling engine uses altivec for downscaling
+- fixed aspect ratio calculation
+- added support for datatypes returning 8-bit sound
+- multimedia subsystem recognizes any datatype that can be handled by one of
+  its decoder
+- changing picture in the imageview updates the title
+- added boopsiview
+- now traps 'multiview'
+- workaround for datatypes returning planar bitmap formats
+- fixed scripts (+s) launching again
+
+[released: 16-04-2004/00:42:39]
+
+1.38
+----
+- tries to open a shell if exec version is wrong
+- getting a directory size would never stop
+- abording some threads would hit in rare cases
+- datatype errors get reported properly on imageview
+- fixed prefspool randomly crashing when flushing the entries
+- reworked panelconfig window
+- restructured prefs presentation a bit
+- added double buffering to imageview
+- panels are compatible with MUI's new immediate images/frames changes
+- fixed recently introduced crash when saving icons
+- finally fixed the virtgroup background offset thingey
+- removed ghost effect for deficons
+- no more grouped context menu in rootwin
+
+[released: 27-04-2004/16:08:30]
+
+1.39
+----
+- fixed background pens
+- fixed image update when renaming
+- fixed immediate snapshot of pngicon's windows
+- added workaround for silly filesystems (all amiga filesystems but sfs)
+  returning a lock for non existing filenames. Only Amiga makes it possible
+- foobar.info without corresponding foobar defaults to WBTOOL and no longer
+  WBGARBAGE. Bumped icon.library to 41.35
+- stacksize of programs was ignored in some cases
+- now uses png.library and z.library
+- creating a directory is async like it should've been in the first place
+- reading fonts is async too
+- icon.library uses png.library, bumped to 41.36
+- fixes duplicate icons appearing when copying/moving
+- icons appearing in non showall window when copying don't appear anymore
+  (#127)
+- reduced 68k stacksize usage
+- fixed some funky side effects zeropage reads
+- added icon replacing through drag & drop to the infowindow
+- icons could show up without font at all
+- added thumbnails support
+- icon.library would fail to recognize devices without disk.info properly,
+  bumped to 41.37
+- now tries to keep a minimal number of threads under low memory situations
+- uses syscon: to spawn the initial shell
+- more flexible threads control, fixes lot of related problems
+- continues thumbnailing if there was an error (broken picture, out of memory,
+etc..)
+- added bubbles help over files
+- traps 'more' too
+- device type is displayed in the infowin
+- reduced CPU usage during file copy
+- requesters are displayed for all error cases during copy/move operations
+- new notify system could make recursive copy busyloop sometimes, fixed
+- removed 'default tool' from devices in the infowin
+
+[released: 04-09-2004/17:53:32]
+
+1.40
+----
+- fixed default icons without file
+- hopefully fixed all the infowin crashes Piru had :)
+- requesters always appear on front now
+- recursive deletion is aborted on quit
+- added requesters for deletion
+- window title doesn't add '..' for path components when not needed
+- added more workarounds for the damn OF
+- fixed crash when playing audio datatypes
+- added support for itix' OS4Emu
+- devices can be dragged into the infowin
+- execute command window's 'Ok' button is greyed out when needed
+- ditto for infowin
+- icontype is updated on drag & drop in the infowin as well
+- bubbles only appear once and don't follow the mouse pointer anymore
+- rewrote multimedia support for the new multimedia system
+- internal scaler didn't use all features for background scaling
+- imageview won't make MUI barf on too large pictures anymore
+
+[released: 22-01-2005/GPL source release]
+
+1.41
+----
+- some small cleanups
+- ported to MorphOS 1.4. Took only 2 hours.. is there any programmer left?
+
+[released: 08-02-2005/GPL source release]

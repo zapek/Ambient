@@ -1,0 +1,175 @@
+                        Ambient - the MorphOS desktop
+                        =============================
+
+                     Copyright 2001-2005 by David Gerber 
+                Copyright 2005-2016 by Ambient Opensource Team
+                            All Rights Reserved
+
+     This program is free software; you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by
+      the Free Software Foundation; either version 2 of the License, or
+                     (at your option) any later version.
+
+       This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+         MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+                 GNU General Public License for more details.
+
+      You should have received a copy of the GNU General Public License
+         along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+
+
+Disclaimer:
+-----------
+No guarantees, if it breaks you get to keep both pieces.
+
+
+Introduction:
+-------------
+Ambient is the MorphOS native desktop. It handles program icons, directory
+navigation, program launching, file handling and everything you need for
+managing your system.
+
+
+Features:
+---------
+- MUI based
+- fully asynchronous, multi-threaded design
+- does not use icon.library
+- built-in old style icons support, automatic remapping
+- built-in newicon support
+- built-in "OS" 3.5 Glowicon support
+- new true-color versatile icon format (Ambient PNGicon)
+- file notification
+- direct true-color rendering (no pen allocations)
+- support for deficons (devices)
+- 64-bit arithmetic to handle big storage devices
+- localized
+- fast file I/O functions
+- ARexx port (optional)
+- built-in disk formatting
+- built-in commodities manager
+- support for appwindows/appicons
+- built-in wbstart.library
+- supports both spatial (classic wb) and non-spatial (browseable) modes.
+- panels
+- and more...
+
+
+Requirements:
+-------------
+- a recent version of MorphOS
+- recent versions of CGX (aka the latest)
+- recent versions of MUI (aka the latest)
+- a hi/true-color screenmode. No CLUT screens support.
+
+
+Description of the system libraries:
+------------------------------------
+workbench.elf (PowerUP) / workbench.library (Pegasos):
+- PPC native workbench.library. Is required by Ambient for running it in
+WBR mode, for AppIcons, MenuItems, AppWindow and some other workbench 
+related features. If you run Ambient after another workbench, this library
+is not required (yet). This library will prevent the original workbench
+from running but won't disturb DOpus nor Scalos.
+
+icon.elf (PowerUP) / icon.library (Pegasos):
+- PPC native icon.library. Ambient doesn't pay attention to this
+library. Can be used by DOpus, Scalos and the original Workbench. Is needed
+if you want normal applications to be PNGicon-aware.
+
+
+Installation:
+-------------
+Copy the Ambient executable and all related files to MOSSYS:Ambient/, copy
+system libraries to MOSSYS:Libs/ and copy c/LoadWB to MOSSYS:c/. If required
+you can copy prefs/#? to SYS:Prefs/Ambient. You can also use the installation 
+script provided.
+
+
+Usage:
+------
+- normal mode: just run the executable from a shell
+- WBR mode: use the included workbench.elf as extmodule or library
+(see MorphOS startup utility docs) and boot in normal WB mode. If you use
+DOpus (by replacing LoadWB by LoadWB), press shift while booting (I think
+that this works with Scalos too).
+
+- controling the windows:
+LALT: Closes previous window on doubleclick in spatial (classic wb) mode.
+      In non-spatial (browseable) mode it works the other way around and
+      instead forces a new window to open.
+/   : Lets you supply a path manualy in non-spatial (browseable) mode.
+
+- controling the textviewer:
+/   : Opens a searchbox in textmode.
+F3  : Searches (and highlights) the next hit in textmode.
+
+- hidden features of the panel:
+You can launch applications in the panel with arguments by dropping the wanted
+files onto the panelbutton. (This only works if you locked the panel using the
+contextmenu).
+
+
+Bug reports:
+------------
+Turn on caps-lock before launching Ambient and it'll output debug informations
+using dprintf(). This debug info is very useful for us so please use it when
+you find a bug. If there's too much output, you can enable/disable selective
+debugging from the debug menu, they can be saved with the preferences as well.
+Debugging is only available in debug versions, check the About window to know.
+
+Be sure to check out the sourceforge project page at
+http://morphosambient.sf.net before you submit bugreports.
+
+
+License:
+--------
+Ambient is GPL. There's an exception for the following libraries:
+- icon.library (disk based)
+- workbench.library (disk based)
+- wbstart.library (created at runtime)
+
+These libraries APIs predate the creation of Ambient and therefore the GPL
+linking clause cannot be enforced for apps using their *well known and
+defined* APIs, which was set by Commodore for icon.library and
+workbench.library, and Stefan Becker for wbstart.library.
+
+Extensions added up to AmigaOS 3.9 are more or less supported in icon.library
+as well.
+
+Simply put, proprietary apps may freely use those *well known and defined*
+APIs without having to become GPL.
+
+In no way can that exception be used to extend Ambient's functionality by
+proprietary code, though (for example adding some API to have hooks used by
+some commercial plugin). Basically all those APIs are fixed and there
+shouldn't be any need to extend them. If you need more clarification, feel
+free to contact the original author.
+
+
+About the source:
+-----------------
+The sourcecode is obtainable via the sourceforge projectpage at
+http://morphosambient.sf.net.
+
+The source is configured to build on a vanilla MorphOS 1.4 release with the
+MorphOS SDK.
+
+First, check that you have the file gg:bin/awk, if not do the following:
+
+- cd gg:bin
+- ln -s gawk awk
+
+Then make sure you have a png2c binary in Ambient's 'src' directory.
+It can be downloaded from http://zapek.com/software/png2c/
+
+Then type 'make install'. Once the whole compilation process is done, you can
+reboot under a new Ambient. That's it!
+
+There are a few small limitations under 1.4. Multimedia support is disabled for
+now, Check the readme to know the new features, you can click on pictures,
+mp3s, vorbis, etc..
+
+Ambient still builds on 1.5 systems, check config.h for the magic define.

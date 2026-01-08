@@ -1,0 +1,5 @@
+#
+# $Id: makefile.libs,v 1.10 2011/11/11 17:11:16 chainq Exp $
+#
+
+LIBS = -labox -laboxstubs -lc -lmath -ldebug -lvambient

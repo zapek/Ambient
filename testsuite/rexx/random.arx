@@ -1,0 +1,10 @@
+/* gets a random number */
+
+options results;
+
+address 'AMBIENT';
+
+'random'
+
+echo RESULT;
+echo RC;

@@ -1,0 +1,7 @@
+#
+# $Id: makefile.libs,v 1.10 2007/02/11 22:35:32 fab Exp $
+#
+
+#LIBS += -lsyscall -lmemblock
+
+LIBS = -lc -ldebug -lvambient

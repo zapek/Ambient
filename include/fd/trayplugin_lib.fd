@@ -1,0 +1,8 @@
+##base _TrayPluginBase
+##bias 30
+##public
+trayplugin_version()()
+trayplugin_description()()
+trayplugin_author()()
+trayplugin_name()()
+##end

@@ -1,0 +1,28 @@
+APPLICATION = Ambient
+CATALOGDIR  = ambient.$$language.ct
+CATALOGS    = deutsch italiano czech svenska magyar suomi polski español dansk russian
+
+
+#DO NOT EDIT LINES BELOW
+
+scimport: 
+	@echo "    [SCIMPORT] $(APPLICATION).cd"
+	@c:SimpleCat QUIET import files $(APPLICATION).cd english to $(APPLICATION).cs
+	@for language in $(CATALOGS); \
+	do\
+		echo "    [SCIMPORT] $(CATALOGDIR)/$$language.ct";\
+		c:SimpleCat QUIET $(APPLICATION).cs import files $(CATALOGDIR) $$language to $(APPLICATION).cs;\
+	done 
+	echo "    [SCIMPORT] $(CATALOGDIR)/français.ct"
+	@c:SimpleCat QUIET $(APPLICATION).cs import files ambient.francais.ct français to $(APPLICATION).cs
+
+scexport: 
+	@echo "    [SCEXPORT] $(APPLICATION).cd"
+	@c:SimpleCat QUIET $(APPLICATION).cs export files $(APPLICATION).cd english
+	@for language in $(CATALOGS); \
+	do\
+		echo "    [SCEXPORT] $(CATALOGDIR)";\
+		c:SimpleCat QUIET $(APPLICATION).cs export files $(CATALOGDIR) $$language;\
+	done
+	echo "    [SCEXPORT] ambient.francais.ct"
+	@c:SimpleCat QUIET $(APPLICATION).cs export files ambient.francais.ct français

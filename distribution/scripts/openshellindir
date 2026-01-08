@@ -1,0 +1,13 @@
+.bra {
+.ket }
+.key PATH/A
+
+;
+; $VER: openshellindir 1.1 (27.08.2007)
+;
+
+set TFILENAME "T:osdtmp{$$}"
+echo "execute s:shell-startup*Ncd *"{path}*"" > $TFILENAME
+newshell from $TFILENAME
+delete >nil: $TFILENAME
+unset TFILENAME

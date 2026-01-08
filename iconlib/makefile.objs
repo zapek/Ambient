@@ -1,0 +1,12 @@
+#
+# $Id: makefile.objs,v 1.5 2017/09/06 00:08:49 nadir Exp $
+#
+
+COBJS = noexec.o libfunctable.o lib.o diskobject.o fakemethod.o freelist.o icon.o \
+	misc.o private.o tooltype.o wbobject.o crc32.o pngimage.o default.o
+
+COBJS_PARENT = iconio.o image.o pngicon.o svgicon.o pngio.o glowicon.o deficon_getpath.o \
+	sxmlc.o sxmlsearch.o sxmlhelp.o
+
+COBJS_NODEP = libfunctions.o
+

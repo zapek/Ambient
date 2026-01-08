@@ -1,0 +1,11 @@
+/* opens the icon information window */
+
+options results;
+
+address 'AMBIENT';
+
+'IconInfo harddisk:applications WAIT'
+
+echo RESULT;
+echo RC;
+

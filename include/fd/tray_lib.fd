@@ -1,0 +1,25 @@
+##base _TrayBase
+##bias 30
+##public
+tray_client_icon(a,b)(a0/a1)
+tray_client_info(a,b)(a0/a1)
+tray_client_menu(a,b)(a0/a1)
+tray_client_notify(a,b)(a0/a1)
+tray_private1(a,b)(a0/a1)
+tray_client_unregister(a,b)(a0)
+tray_server_icon(a,b)(a0/a1)
+tray_server_info(a,b)(a0/a1)
+tray_server_menu(a,b)(a0/a1)
+tray_server_notify(a,b)(a0/a1)
+tray_server_register(a,b,c)(a0/a1/a2)
+tray_server_unregister(a)(a0)
+tray_client_applet(a,b)(a0/a1)
+tray_client_popevent(a,b,c)(a0/a1/d0)
+tray_server_applet(a,b,b)(a0/a1/d0)
+tray_server_popevent(a,b)(a0/a1)
+tray_client_getserverdataA(a,b)(a0/a1)
+tray_server_pushpopevent(a)(a0)
+tray_server_getclientdataA(a,b)(a0/a1)
+tray_client_pushmethodA(a,b,c)(a0/a1/a2)
+tray_client_registerA(a,b)(a0/a1)
+##end

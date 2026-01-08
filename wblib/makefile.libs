@@ -1,0 +1,7 @@
+#
+# $Id: makefile.libs,v 1.3 2006/08/08 13:31:43 fab Exp $
+#
+
+#LIBS += -lsyscall -lmemblock
+
+LIBS = -laboxstubs -lc

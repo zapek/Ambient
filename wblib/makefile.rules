@@ -1,0 +1,18 @@
+#
+# $Id: makefile.rules,v 1.6 2007/05/08 19:27:13 fab Exp $
+#
+
+rev.h: .revinfo
+	$(OUT)../rev 
+
+libfunctions.c: fd/wb_lib.fd clib/wb_protos.h
+	$(ECHO) "CVINCLUDE $(notdir $<) -> $@"
+	$(OUT)$(CVINCLUDE) --libprefix=LIB_ --fd $(SOURCE)fd/wb_lib.fd --clib $(SOURCE)clib/wb_protos.h --gatestubs $@_tmp --quiet
+	$(OUT)echo "#include \"lib.h\"" >$@_tmp2
+	$(OUT)cat $@_tmp >> $@_tmp2
+	$(OUT)cat $@_tmp2 | sed -e "s,../../,," > $@
+	$(OUT)$(DELETE) $@_tmp $@_tmp2
+
+%.o : %.c
+	$(ECHO)	"CC $(notdir $<)"
+	$(OUT)$(CC) $(CFLAGS) -DBASE_NAME=\"$(notdir $<)\" $<

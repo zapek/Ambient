@@ -1,0 +1,10 @@
+#
+# $Id: makefile.objs,v 1.7 2016/08/11 17:02:38 itix Exp $
+#
+
+COBJS = wb.o libfunctable.o lib.o appicon.o appwindow.o appmenuitem.o control.o info.o \
+		objects.o selection.o zones.o private.o qport.o sendrexx.o createdrawer.o \
+		createicon.o icondata.o
+
+COBJS_NODEP = libfunctions.o
+

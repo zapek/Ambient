@@ -1,0 +1,5505 @@
+## version $VER: ambient.catalog 7.7 (16.01.2023)
+## language suomi
+## codeset 0
+;
+## chunk AUTH Harry Sintonen
+;
+;$Id: ambient.suomi.ct,v 1.96 2023/01/17 03:30:07 moats Exp $
+;
+; *** Please do not use these strings anymore.
+;
+MSG_OK
+Ok
+; Ok
+;
+MSG_CANCEL
+Peruuta
+; Cancel
+;
+MSG_NO
+Ei
+; No
+;
+MSG_YES
+Kyllä
+; Yes
+;
+MSG_SAVE
+Tallenna
+; Save
+;
+MSG_USE
+Käytä
+; Use
+;
+MSG_TEST
+Kokeile
+; Test
+;
+MSG_UNKNOWN
+Tuntematon
+; Unknown
+;
+MSG_CLOSE
+Sulje
+; Close
+;
+MSG_OK_REQ
+*OK
+; *OK
+;
+MSG_YES_NO_REQ
+*Kyllä|Ei
+; *Yes|No
+;
+MSG_YESNO
+_Kyllä|_Ei
+; _Yes|_No
+;
+MSG_SELECT
+Valitse
+; Select
+;
+MSG_ADD
+Lisää
+; Add
+;
+MSG_REMOVE
+Poista
+; Remove
+;
+MSG_REVERT
+Palauta
+; Revert
+;
+MSG_PERMSAVE
+Tallenna asetukset pysyvästi
+; Save settings permanently
+;
+; Menus.c (menus.c)
+;
+MSG_MENU_WB_DEVICELIST
+Oma MorphOS...
+; My MorphOS...
+;
+MSG_MENU_WB_EXECUTE
+Suorita...
+; Execute Command...
+;
+MSG_MENU_WB_NEWSHELL
+Uusi komentotulkki...
+; New Shell...
+;
+MSG_MENU_WB_LASTMESSAGE
+Edellinen viesti
+; Last Message
+;
+MSG_MENU_WB_ABOUT
+Tietoja...
+; About...
+;
+MSG_MENU_WB_ABOUTMOS
+Tietoja MorphOSista...
+; About MorphOS...
+;
+MSG_MENU_WB_QUIT
+Lopeta
+; Quit
+;
+MSG_MENU_SHUTDOWN
+Sammuta...
+; Shut Down...
+;
+MSG_MENU_EDIT
+Muokkaa
+; Edit
+;
+MSG_MENU_EDIT_CUT
+Leikkaa
+; Cut
+;
+MSG_MENU_EDIT_COPY
+Kopioi
+; Copy
+;
+MSG_MENU_EDIT_PASTE
+Liitä
+; Paste
+;
+MSG_MENU_EDIT_PASTEINTO
+Liitä kohteeseen...
+; Paste Into...
+;
+MSG_MENU_EDIT_SELECTALL
+Valitse kaikki
+; Select All
+;
+MSG_MENU_EDIT_INVERT
+Käänteinen valinta
+; Invert
+;
+MSG_MENU_VIEW
+Näytä
+; View
+;
+MSG_MENU_VIEW_NEWDRAWER
+Uusi kansio...
+; New Drawer...
+;
+MSG_MENU_VIEW_LIST
+Lista-tila
+; List Mode
+;
+MSG_MENU_VIEW_SORT
+Järjestä
+; Sort By
+;
+MSG_MENU_VIEW_SORTBYNAME
+Nimen mukaan
+; Name
+;
+MSG_MENU_VIEW_SORTBYTYPE
+Tyypin mukaan
+; Type
+;
+MSG_MENU_VIEW_SORTBYSIZE
+Koon mukaan
+; Size
+;
+MSG_MENU_VIEW_SORTBYDATE
+Päiväyksen mukaan
+; Date
+;
+MSG_MENU_ICONS
+Kuvakkeet
+; Icons
+;
+MSG_MENU_ICONS_INFORMATION
+Lisää tietoa...
+; Information...
+;
+MSG_MENU_ICONS_PUTAWAY
+Laita pois
+; Put Away
+;
+MSG_MENU_ICONS_EJECT
+Poista levy asemasta
+; Eject
+;
+MSG_MENU_ICONS_RENAME
+Nimeä uudelleen...
+; Rename...
+;
+MSG_MENU_ICONS_DELETE
+Poista
+; Delete
+;
+MSG_MENU_ICONS_FORMAT
+Alusta...
+; Format...
+;
+MSG_MENU_ICONS_TRASH
+Siirrä roskakoriin
+; Move to Trashcan
+;
+MSG_MENU_ICONS_RESTORE
+Restore
+; Restore
+;
+MSG_MENU_ICONS_EMPTY
+Tyhjennä roskakori
+; Empty Trashcan
+;
+MSG_MENU_VIEW_NETWORKSSETTINGS
+Verkkojakoasetukset...
+; Share Settings...
+;
+MSG_MENU_VIEW_NETWORKSCONNECT
+Yhdistä...
+; Connect...
+;
+MSG_MENU_UTILITIES
+Apuohjelmat
+; Utilities
+;
+MSG_MENU_UTILITIES_FORMAT
+Alusta levy...
+; Format Disk...
+;
+MSG_MENU_UTILITIES_FIND
+Etsi...
+; Find...
+;
+MSG_MENU_UTILITIES_SOUND
+Ääni...
+; Sound...
+;
+MSG_MENU_UTILITIES_SYSTEMINFO
+Järjestelmämonitori...
+; System Monitor...
+;
+MSG_MENU_UTILITIES_SYSTEMLOG
+Systeemiloki...
+; System Log...
+;
+MSG_MENU_UTILITIES_EXCHANGE
+Tehtävänvaihto...
+; Exchange...
+;
+MSG_MENU_SETTINGS
+Asetukset
+; Settings
+;
+MSG_MENU_SETTINGS_DESKTOP
+Ambientin asetukset...
+; Ambient...
+;
+MSG_MENU_SETTINGS_SYSTEM
+Käyttöjärjestelmän asetukset...
+; System...
+;
+MSG_MENU_SETTINGS_MUI
+Ambientin MUI-asetukset...
+; Ambient MUI...
+;
+MSG_MENU_SETTINGS_MUI_GLOBAL
+Yleiset MUI-asetukset...
+; MUI...
+;
+MSG_MENU_SETTINGS_SAVE
+Tallenna asetukset
+; Save Settings
+;
+MSG_MENU_TOOLS
+Työkalut
+; Tools
+;
+MSG_MENU_DEBUG
+Debuggaus
+; Debug
+;
+MSG_MENU_DEBUGACTION
+Debug-toiminnot
+; Debug Actions
+;
+MSG_MENU_DEBUGACTION_MEMCHECK
+Muistin tarkistus
+; Memory Check
+;
+MSG_MENU_DEBUGACTION_MEMSTATS
+Muistivedos
+; Dump Memory Stats
+;
+MSG_MENU_DEBUGACTION_MEMSTATS_ALL
+Yksityiskohtainen muistivedos
+; Dump Memory Details
+;
+MSG_MENU_DEBUGACTION_STARTMEMRECORD
+Aloita muistin tarkkailu
+; Start Memory Recording
+;
+MSG_MENU_DEBUGACTION_STOPMEMRECORD
+Lopeta muistin tarkkailu
+; Stop Memory Recording
+;
+; PrefsWin_MainClass.c (prefswin_mainclass.c)
+;
+MSG_PREFSWIN_SAVE
+_Tallenna
+; _Save
+;
+MSG_PREFSWIN_SAVE_HELP
+Any changes made in the preferences will be saved. The preferences get closed.
+; All changes made in the preferences will be saved and the window will be closed.
+;
+MSG_PREFSWIN_USE
+_Käytä
+; _Use
+;
+MSG_PREFSWIN_USE_HELP
+Any changes made in the preferences will get active until reboot. The preferences get closed.
+; All changes made in the preferences will stay active until next reboot and the window will be closed.
+;
+MSG_PREFSWIN_TEST
+_Kokeile
+; _Test
+;
+MSG_PREFSWIN_TEST_HELP
+Any changes made in the preferences will get temporary active for testing. The preferences stays opened.
+; All changes made in the preferences will become temporary active and the window stays open.
+;
+MSG_PREFSWIN_CANCEL
+_Peruuta
+; _Cancel
+;
+MSG_PREFSWIN_CANCEL_HELP
+All changed made will be rejected. The preferences get closed.
+; All changes made in the preferences will reset to last saved state and the window will be closed.
+;
+; *** Preferences Window Tabs
+;
+MSG_PREFSWIN_TAB_BACKGROUNDS
+Taustakuva
+; Backgrounds
+;
+MSG_PREFSWIN_TAB_ICONDISPLAY
+Kuvakkeet
+; Icon Display
+;
+MSG_PREFSWIN_TAB_BOOKMARKS
+Kirjanmerkit
+; Bookmarks
+;
+MSG_PREFSWIN_TAB_MISCELLANEOUS
+Sekalaiset
+; Miscellaneous
+;
+MSG_PREFSWIN_TAB_CLILAUNCHING
+Komentotulkki
+; CLI Launching
+;
+MSG_PREFSWIN_TAB_DRAGANDDROP
+Vedä & Pudota
+; Drag & Drop
+;
+MSG_PREFSWIN_TAB_PANELS
+Paneelit
+; Panels
+;
+MSG_PREFSWIN_TAB_LISTER
+Listat
+; Lister
+;
+MSG_PREFSWIN_TAB_MIME
+Ohjelmat
+; Mime
+;
+MSG_PREFSWIN_TAB_WINDOW
+Ikkuna
+; Window
+;
+MSG_PREFSWIN_TAB_KEYBOARD
+Näppäimistö
+; Keyboard
+;
+MSG_PREFSWIN_TAB_ADVANCED
+Lisäasetukset
+; Advanced
+;
+;MSG_PREFSWIN_TAB_TOOLBAR /* needed ???    <- yes, someday. (tokai)*/
+;Toolbar
+;Liîta
+;Dienstprogramm-Leiste  
+;Barre de navigation
+;Barra degli strumenti
+;Eszközsor
+;Pasek narzêdzi
+;Työkalupalkki
+;Verktygsfält
+;Toolbar
+;
+; PrefsWin_IconDisplay.c (prefswin_icondisplayclass.c)
+;
+MSG_PREFSWIN_ICONDISPLAY_MOUSEHOVER
+_Kuvakkeen hehkutus
+; Icon _glows under mouse
+;
+MSG_PREFSWIN_ICONDISPLAY_MOUSEHOVER_HELP
+Kuvake hehkuu, kun hiiri lipuu sen ylitse.
+; The icon under the mouse pointer gets highlighted when moving over it.
+;
+MSG_PREFSWIN_ICONDISPLAY_SEPARATEFILES
+_Tiedostojen ja hakemistojen erottelu
+; Separa_te files from drawers
+;
+;
+MSG_PREFSWIN_ICONDISPLAY_SEPARATEFILES_HELP
+File separation breaks into a new line after the last drawer icon in view. The first file in drawer will allways be located left within a new icon row.
+; Start a new row for files after last drawer icon in icon view.
+;
+MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP
+_Häivytä kuvakkeet käynnistyksessä
+; Fade icon on sta_rtup
+;
+MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP_HELP
+Enables icon fade when Ambient gets started.
+; Enables icon fade when Ambient gets started.
+;
+MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT
+_Läpinäkyvät oletuskuvakkeet
+; _Default icons transparent
+;
+MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT_HELP
+Default icons are displayed transparent when this option is enabled.
+; Default icons are displayed transparent when this option is enabled.
+;
+MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER
+_Ohjelmakuvakeen tunniste
+; A_ppicon identifier
+;
+MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER_HELP
+Any application icon gets a little mark when this option is enabled.
+; Any application icon gets a little mark when this option is enabled.
+;
+MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER
+_Pikakuvakkeen tunniste
+; S_hortcut identifier
+;
+MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER_HELP
+Any icon left out as shortcut will get marked by this option.
+; Any icon left out as shortcut will get marked by this option.
+;
+MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT
+_Automaattinen paikantallennus
+; _Automatic snapshot
+;
+MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT_HELP
+Icons will automatically be fixed at their current position.
+; Icons will automatically be fixed at their current position.
+;
+MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS
+Kak_sivaiheiset PNG-kuvakkeet
+; T_wo state PNG icons
+;
+MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS_HELP
+This enables dual png icon support, which contain a separate image for unselected and selected state.
+; This enables dual PNG icon support, which contain a separate image for unselected and selected state.
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION
+_Levytiedot:
+; Drive _info:
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION_HELP
+This gadget allows to specify the way the device icon provides available disk media space.
+; Specify the way device icons show available disk space.
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_NONE
+Ei mitään
+; None
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_TEXT
+Teksti
+; Text
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_GAUGE
+Mittari
+; Gauge
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_TEXTGAUGE
+Teksti ja mittari
+; Text+Gauge
+;
+MSG_PREFSWIN_ICONDISPLAY_REGTITLE_DESKTOP
+Työpöytä
+; Desktop
+;
+MSG_PREFSWIN_ICONDISPLAY_REGTITLE_WINDOW
+Ikkuna
+; Window
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_SOLID
+Kiinteä
+; Solid
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_CHECKERED
+Ruutukuvio
+; Checkered
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_TRANSPARENT
+Läpinäkyvä
+; Transparent
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAY
+Näkymä
+; Display
+;
+MSG_PREFSWIN_DRAGDROP_DRAGGING_EFFECT
+_Vetoefekti:
+; _Dragging effect:
+;
+MSG_PREFSWIN_DRAGDROP_DROPPING_MARK
+Pudotus-_merkki:
+; Dropping _mark:
+;
+; *** Progress Window
+;
+MSG_PROGRESS_MOVINGFILE_TITLE
+Ambient · Siirretään tiedostoa...
+; Ambient · Moving file...
+;
+MSG_PROGRESS_MOVINGFILES_TITLE
+Ambient · Siirretään tiedostoja...
+; Ambient · Moving files...
+;
+MSG_PROGRESS_COPYINGFILE_TITLE
+Ambient · Kopioidaan tiedostoa...
+; Ambient · Copying file...
+;
+MSG_PROGRESS_COPYINGFILES_TITLE
+Ambient · Kopioidaan tiedostoja...
+; Ambient · Copying files...
+;
+MSG_PROGRESS_DELETINGFILE_TITLE
+Ambient · Poistetaan tiedostoa...
+; Ambient · Deleting file...
+;
+MSG_PROGRESS_DELETINGFILES_TITLE
+Ambient · Poistetaan tiedostoja...
+; Ambient · Deleting files...
+;
+MSG_PROGRESS_BUFFERING
+Puskuroidaan...
+; Buffering...
+;
+MSG_PROGRESS_TIMEREMAINING
+Jäljellä oleva aika: %s. Nopeus: %s/s
+; Time remaining: %s.  Speed: %s/s
+;
+MSG_PROGRESS_DAY
+%ld päivä
+; %ld day
+;
+MSG_PROGRESS_DAYS
+%ld päivää
+; %ld days
+;
+MSG_PROGRESS_HOUR
+%ld tunti
+; %ld hour
+;
+MSG_PROGRESS_HOURS
+%ld tuntia
+; %ld hours
+;
+MSG_PROGRESS_MINUTE
+%ld minuutti
+; %ld minute
+;
+MSG_PROGRESS_MINUTES
+%ld minuuttia
+; %ld minutes
+;
+MSG_PROGRESS_SECOND
+%ld sekunti
+; %ld second
+;
+MSG_PROGRESS_SECONDS
+%ld sekuntia
+; %ld seconds
+;
+MSG_PROGRESS_FILESDONE
+Tiedostoja valmiina:
+; Files done:
+;
+MSG_PROGRESS_FILESDONE_HELP
+Shows detailed progress information.
+; Shows detailed progress information.
+;
+MSG_PROGRESS_STOP
+_Pysäytä
+; _Stop
+;
+MSG_PROGRESS_STOP_HELP
+Keskeytä toiminto.
+; Abort current action.
+;
+; *** Format Window
+;
+MSG_FORMAT_WINDOW_TITLE
+Alusta levy %s
+; Format Volume %s
+;
+MSG_FORMAT_MENU_PROJECT
+Format
+; Format
+;
+MSG_FORMAT_MENU_QUIT
+Lopeta
+; Quit
+;
+MSG_FORMAT_ERROR
+Alustusvirhe
+; Formatting error
+;
+MSG_FORMAT_FORMATING
+Alustan...
+; Formatting...
+;
+MSG_FORMAT_ERROR_RESERVED
+Käyttöjärjestelmä on varannut nimen omaan käyttöönsä.\nOle hyvä ja valitse toinen nimi.
+; This label is reserved by the system. Please use another name.
+;
+MSG_FORMAT_ERROR_NOTHING
+Levylle täytyy antaa nimi ennen kuin sen voi alustaa.
+; You must supply a valid label name for\nthe device to format. You supplied nothing.
+;
+MSG_FORMAT_ERROR_CANNOT
+Levyä ei voi alustaa.
+; This device cannot be formatted.
+;
+MSG_FORMAT_REALLY
+Haluatko varmasti alustaa levyn\n%s ?
+; Do you really want to format\n%s ?
+;
+MSG_FORMAT_LABEL
+Nimi:
+; _Label:
+;
+MSG_FORMAT_LABEL_HELP
+This name will be used as name for the volume.
+; This name will be used as name for the volume.
+;
+MSG_FORMAT_FILESYSTEM
+Tiedostojärjestelmä:
+; Filesystem:
+;
+MSG_FORMAT_FILESYSTEM_HELP
+This filesystem will used.
+; This filesystem will used.
+;
+MSG_FORMAT_STATUS
+Tila:
+; Status:
+;
+MSG_FORMAT_STATUS_HELP
+This is the current status of the volume.
+; This is the current status of the volume.
+;
+MSG_FORMAT_GENERAL_GROUP
+Yleistä
+; General
+;
+MSG_FORMAT_CREATE_ICON
+Tee kuvake
+; Create _icon
+;
+MSG_FORMAT_CREATE_ICON_HELP
+Levylle luodaan kuvake alustamisen yhteydessä.
+; An icon for the drive will be created during format process.
+;
+MSG_FORMAT_SPECIFIC_GROUP
+Lisäominaisuudet
+; Specific
+;
+MSG_FORMAT_CASE_SENSITIVE
+Isojen ja pienten kirjainten erottelu
+; Case sensiti_ve
+;
+MSG_FORMAT_CASE_SENSITIVE_HELP
+Kun valittuna isot ja pienet kirjaimet tulkitaan eri merkeiksi. Esim. "Data" ja "data" ovat eri tiedostot.
+; Interpret filenames case sensitive (e.g. "Foobar" would be a different file / directory than "foobar").
+;
+MSG_FORMAT_RECYCLED
+Tuhottujen tiedostojen säilytys
+; _Recycled
+;
+MSG_FORMAT_RECYCLED_HELP
+Kun päällä, tallennetaan viimeisimmmät poistetut tiedostot kansioon nimeltä ".recycled". Lisäoptioita löytyy Käyttöjärjestelmän asetuksista.
+; Create a ".recycled" directory. This directory contains all currently deleted files. Further configuration for each volume is possible in the MorphOS System Preferences.
+;
+MSG_FORMAT_SHOWRECYCLED
+Säilytyshakemisto näkyvissä
+; Show rec_ycled
+;
+MSG_FORMAT_SHOWRECYCLED_HELP
+Normaalisti ".recycled" ei ole näkyvissä hakemistolistauksessa. Tämän option avulla se tulee näkyväksi.
+; Makes the ".recycled" directory visible or invisible. If its invisible it can only be accessed from command line.
+;
+MSG_FORMAT_FORMATTED
+Alustettu
+; Formatted
+;
+MSG_FORMAT_UNFORMATTED
+Alustamaton
+; Unformatted
+;
+MSG_FORMAT_PREPARING
+Valmistelen...
+; Preparing...
+;
+MSG_FORMAT_QUICK
+Pika-alusta...
+; _Quick Format...
+;
+MSG_FORMAT_QUICK_HELP
+Alustaa median nopeasti kirjoittamatta kaikkia lohkoja. TIETOSUOJA: Pika-alustus ei poista kaikkea dataa levyltä, osa tiedoisto voi olla mahdollista palautaa!
+; Only the minimum required data will be written to media. ATTENTION: Special tools are able to retrieve data from such formatted drives!
+;
+MSG_FORMAT
+Alusta...
+; _Format...
+;
+MSG_FORMAT_HELP
+Koko media tyhjennetään! Tämä operaatio kestää pitkään, mutta tuhoaa kaiken datan levyltä!
+; The entire media will overwritten! Takes a lot of time, but destroys all data on drive!
+;
+MSG_FORMAT_AND_VERIFY
+Alusta ja tarkista...
+; Format & _Verify...
+;
+MSG_FORMAT_AND_VERIFY_HELP
+Koko media tyhjennetään! Lisäksi tarkistetaan median virheiden varalta.
+; The entire media will overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
+;
+MSG_FORMAT_CLOSE
+Sulje
+; _Close
+;
+MSG_FORMAT_CLOSE_HELP
+Sulkee alustusikkunan ilman operaatiota.
+; Window gets closed without any action.
+;
+; *** Rename Window
+;
+MSG_RENAME_WINDOW_TITLE
+Nimeä uudelleen
+; Rename
+;
+MSG_RENAME_NEW_NAME
+\033cKirjoita uusi nimi:
+; \033c\033bNew name:
+;
+MSG_RENAME_NEW_NAME_HELP
+Kirjoita kohteen uusi nimi tähän.
+; Enter the new name here.
+;
+MSG_RENAME_RENAME
+_Nimeä uudelleen
+; _Rename
+;
+MSG_RENAME_RENAME_HELP
+Kirjoita kohteen uusi nimi tähän.
+; The name specified within the text field in this window will be used as new name.
+;
+MSG_RENAME_CANCEL
+_Peruuta
+; _Cancel
+;
+MSG_RENAME_CANCEL_HELP
+Peruuta uudelleen nimeäminen.
+; Aborts the rename operation. The window will be closed.
+;
+; *** Appclass
+;
+MSG_DELETE_TITLE
+Poistetaan...
+; Deleting...
+;
+MSG_DELETE_CONFIRM
+Haluatko poistaa kohteen\n%s ?
+; Do you really want to delete\n%s ?
+;
+MSG_DELETE_CONFIRM_MULTIPLE
+Haluatko poistaa valitut kohteet (%lu) ?
+; Do you really want to delete\nselected items (%lu) ?
+;
+MSG_TRASH_TITLE
+Siirretään roskakoriin...
+; Moving to Trashcan...
+;
+MSG_TRASH_CONFIRM
+Haluatko tuhota kohteen\n%s ?
+; Do you really want to trash\n%s ?
+;
+MSG_TRASH_CONFIRM_MULTIPLE
+Haluatko tuhota valitut kohteet (%lu) ?
+; Do you really want to trash\nselected items (%lu) ?
+;
+; *** Icon Information Window
+;
+MSG_INFOWIN_OLD_AMIGA_ICON
+\033cvanha Amiga-kuvake
+; \033cClassic Amiga icon
+;
+MSG_INFOWIN_NEWICON
+\033cNewicon
+; \033cNewicon
+;
+MSG_INFOWIN_GLOWICON
+\033cGlowicon
+; \033cGlowicon
+;
+MSG_INFOWIN_PNGICON
+\033cPNG
+; \033cPNG icon
+;
+MSG_INFOWIN_DATATYPEICON
+\033cDatatyypi-kuvake
+; \033cDatatype icon
+;
+MSG_INFOWIN_SVGICON
+\033cSVG icon
+; \033cSVG icon
+;
+MSG_INFOWIN_TYPE_TOOL_PROJECT
+_Tyyppi:
+; _Type:
+;
+MSG_INFOWIN_TYPE_TOOL_PROJECT_HELP
+A Tool is a program. A Project is a file created by a tool, whose path or name is embedded within the icon so it can be opened again.
+; A Tool is a program. A Project is a file created by a tool, whose path or name is embedded within the icon so it can be opened again.
+;
+MSG_INFOWIN_SCRIPT
+_Komentojono (s)
+; Scr_ipt
+;
+MSG_INFOWIN_SCRIPT_HELP
+Komentojono on sisältää suoritettavia komentoja. Komentojono voidaan suorittaa antamalla jonon nimi jos tämä lippu on asetettu.
+; A MorphOS script is a file containing batch commands. It is directly executable if that bit is set.
+;
+MSG_INFOWIN_ARCHIVED
+_Arkistoitu (a)
+; _Archived
+;
+MSG_INFOWIN_ARCHIVED_HELP
+Arkisto-lippu asetetaan kun tiedosto on varmuuskopioitu. Tiedoston muokkaaminen poistaa lipun.
+; The archived bit is set by archiving and backup programs to tell the file has been processed. It is automatically cleared when the file is modified so one can quickly know which files changed.
+;
+MSG_INFOWIN_READABLE
+_Luku sallittu (r)
+; _Readable
+;
+MSG_INFOWIN_READABLE_HELP
+Tiedoston sisältöä voi lukea ainoastaan jos tämä lippu on asetettu.
+; The readable bit allows a file to be read. It doesn't make much sense to not have it set.
+;
+MSG_INFOWIN_WRITABLE
+_Kirjoitus sallittu (w)
+; _Writable
+;
+MSG_INFOWIN_WRITABLE_HELP
+Tiedostoon voi kirjoittaa ainoastaan jos tämä lippu on asetettu.
+; The writable bit allows a file to be written to. This can be used to prevent accidental writes to a file.
+;
+MSG_INFOWIN_EXECUTABLE
+S_uoritus sallittu (e)
+; _Executable
+;
+MSG_INFOWIN_EXECUTABLE_HELP
+Käyttöjärjestelmä saa käynnistää ohjelman ainoastaan jos tämä lippu on asetettu.
+; The executable bit allows a file to be loaded and run, provided it is a program. It doesn't make much sense to not have it set.
+;
+MSG_INFOWIN_DELETABLE
+_Poistaminen sallittu (d)
+; Deleta_ble
+;
+MSG_INFOWIN_DELETABLE_HELP
+Tiedoston pystyy poistamaan ainoastaan jos tämä lippu on asetettu.
+; The deletable bit allows a file to be deleted. This can be used to prevent accidental deletions. It is still possible to write to the file, though.
+;
+MSG_INFOWIN_TOOL
+Sovellus
+; Tool
+;
+MSG_INFOWIN_PROJECT
+Projekti
+; Project
+;
+MSG_INFOWIN_DISK_DISK
+Levy:
+; Disk:
+;
+MSG_INFOWIN_DISK_DISK_HELP
+Shows the disk name.
+; Shows the disk name.
+;
+MSG_INFOWIN_DISK_SIZE
+Koko:
+; Size:
+;
+MSG_INFOWIN_DISK_SIZE_HELP
+Shows the size of the media.
+; Shows the size of the media.
+;
+MSG_INFOWIN_DISK_USED
+Käytetty:
+; Used:
+;
+MSG_INFOWIN_DISK_USED_HELP
+Shows number of bytes currently in use.
+; Shows number of bytes currently in use.
+;
+MSG_INFOWIN_DISK_FREE
+Vapaana:
+; Free:
+;
+MSG_INFOWIN_DISK_FREE_HELP
+Shows number of bytes currently available.
+; Shows number of bytes currently available.
+;
+MSG_INFOWIN_DISK_FILESYSTEM
+Tiedostojärjestelmä:
+; Filesystem:
+;
+MSG_INFOWIN_DISK_FILESYSTEM_HELP
+Tiedostojärjestelmän tyyppi, jos tunnettu.
+; This is the filesystem type, if it can be detected.
+;
+MSG_INFOWIN_DISK_TYPE
+Tyyppi:
+; Type:
+;
+MSG_INFOWIN_DISK_TYPE_HELP
+Shows the media type.
+; Shows the media type.
+;
+MSG_INFOWIN_DISK_BLOCKSIZE
+Lohkokoko:
+; Blocksize:
+;
+MSG_INFOWIN_DISK_BLOCKSIZE_HELP
+Tiedostojärjestelmän lohkokoko. Tiedosto vie vähintään yhden lohkon.
+; Granularity of the filesystem. A block is the minimum size taken by a file.
+;
+MSG_INFOWIN_DISK_STATUS
+Tila:
+; Status:
+;
+MSG_INFOWIN_DISK_STATUS_HELP
+Tiedostojärjestelmän tila voi olla joko:\n\n\033bkirjoitussuojattu\033n\nmedia on kirjoitussuojattu.\n\n\033bkunnostaa\033n\ntiedostojärjestelmä on kunnostustilassa\nja yrittää parhaillaan korjata \
+itseään.\nTiedostojärjestelmästä voi vain lukea.\n\n\033bkunnossa\033n\ntiedostojärjestelmä on kunnossa.
+; The filesystem status can be one of:\n\n\033bwrite protected\033n\nthe volume is physically protected\nagainst writes.\n\n\033bvalidating\033n\nthe volume is inconsistent and the\nfilesystem is \
+; currently trying to\nbring it to a safe state. The volume\ncan be read from but not written to.\n\n\033bvalidated\033n\nthe volume is valid and can be fully used.
+;
+MSG_INFOWIN_DISK_FEATURES
+Lisäominaisuudet:
+; Features:
+;
+MSG_INFOWIN_DISK_FEATURES_HELP
+This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
+volumes.
+; This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
+; volumes.
+;
+MSG_INFOWIN_FILES
+Tiedostoja:
+; Files:
+;
+MSG_INFOWIN_FILES_HELP
+Shows the number of files inside the directory.
+; Shows the number of files inside the directory.
+;
+MSG_INFOWIN_DIRS
+Hakemistoja:
+; Dirs:
+;
+MSG_INFOWIN_DIRS_HELP
+Shows the number of directories inside.
+; Shows the number of directories inside.
+;
+MSG_INFOWIN_HARDLINKS
+Hardlinkkejä:
+; Hardlinks:
+;
+MSG_INFOWIN_HARDLINKS_HELP
+Shows the number of hardlinks inside the directory.
+; Shows the number of hardlinks inside the directory.
+;
+MSG_INFOWIN_SOFTLINKS
+Softlinkkejä:
+; Softlinks:
+;
+MSG_INFOWIN_SOFTLINKS_HELP
+Shows the number of softlinks inside the directory.
+; Shows the number of softlinks inside the directory.
+;
+MSG_INFOWIN_LAST_CHANGED
+Muutettu:
+; Modified:
+;
+MSG_INFOWIN_LAST_CHANGED_HELP
+Show when file, drawer or volume was changed the last time.
+; Show when file, drawer or volume was changed the last time.
+;
+MSG_INFOWIN_COMMENT
+Kommentti:
+; Comment:
+;
+MSG_INFOWIN_COMMENT_HELP
+This is the DOS file comment.
+; This is the DOS file comment.
+;
+MSG_INFOWIN_BLOCKS
+Lohkoja:
+; Blocks:
+;
+MSG_INFOWIN_BLOCKS_HELP
+Number of filesystem blocks taken by the file. A block is typically 512 bytes.
+; Number of filesystem blocks taken by the file. A block is typically 512 bytes.
+;
+MSG_INFOWIN_SIZE
+Koko:
+; Size:
+;
+MSG_INFOWIN_SIZE_HELP
+Size of the file. This might not be the exact size taken from the storage as filesystems usually work using fixed block sizes.
+; Size of the file. This might not be the exact size taken from the storage as filesystems usually work using fixed block sizes.
+;
+MSG_INFOWIN_SIZEONDISK
+Koko levyllä:
+; Size on disk:
+;
+MSG_INFOWIN_SIZEONDISK_HELP
+Tiedoston varaama tila levyllä. Riippuu levyn lohkojen koosta.
+; Space really taken by the file on the disk, which depends on the blocksize.
+;
+MSG_INFOWIN_STACK
+Pino:
+; Stack:
+;
+MSG_INFOWIN_STACK_HELP
+Stack size of the executable in bytes. A stack is an area of memory used by the executable to store private data. Special requirements regarding its size should be listed in the executable's \
+documentation although most executables set the stack size by themselves so you don't have to bother about this field.
+; Stack size of the executable in bytes. A stack is an area of memory used by the executable to store private data. Special requirements regarding its size should be listed in the executable's \
+; documentation although most executables set the stack size by themselves so you don't have to bother about this field.
+;
+MSG_INFOWIN_CREATED
+Luotu:
+; Created:
+;
+;
+MSG_INFOWIN_CREATED_HELP
+Date the volume was created.
+; Date the volume was created.
+;
+MSG_INFOWIN_TOOLTYPES
+Lisämääreet:
+; Tooltypes:
+;
+MSG_INFOWIN_TOOLTYPES_HELP
+These are the icons tool types.
+; These are the icons tool types.
+;
+MSG_INFOWIN_STATUS_WRITE_PROTECTED
+kirjoitussuojattu
+; write protected
+;
+MSG_INFOWIN_STATUS_VALIDATING
+kunnostaa
+; validating
+;
+MSG_INFOWIN_STATUS_VALIDATED
+kunnossa
+; validated
+;
+MSG_INFOWIN_FLAGS_LARGE_FILES
+isot tiedostot
+; large files
+;
+MSG_INFOWIN_FLAGS_CASE_SENSITIVE
+isojen ja pienten kirjainten erottelu
+; case sensitive
+;
+MSG_INFOWIN_FLAGS_NONE
+ei lisämääreitä
+; none
+;
+MSG_INFOWIN_TYPE_NOMEDIA
+Ei mediaa
+; No media
+;
+MSG_INFOWIN_SIZE_UNKNOWN
+ei tiedossa
+; unknown
+;
+MSG_INFOWIN_VERSION_SEARCHING
+Etsii...
+; Searching...
+;
+MSG_INFOWIN_VERSION
+_Versio:
+; _Version:
+;
+MSG_INFOWIN_VERSION_HELP
+Scans the file for a version string which gives informations about the version and revision numbers, when the file was built and possible copyright informations.
+; Scans the file for a version string which gives informations about the version and revision numbers, when the file was built and possible copyright informations.
+;
+MSG_INFOWIN_MD5_COMPUTING
+Laskee...
+; Computing...
+;
+MSG_INFOWIN_MD5SUM
+_MD5:
+; _MD5:
+;
+MSG_INFOWIN_MD5_HELP
+Computes an MD5 hash of the file's content. Can be used to check the integrity of a file as the hash is always the same for exactly identical files.
+; Computes an MD5 hash of the file's content. Can be used to check the integrity of a file as the hash is always the same for exactly identical files.
+;
+MSG_INFOWIN_DEFAULT_TOOL
+Oletussovellus:
+; De_fault Tool:
+;
+MSG_INFOWIN_DEFAULT_TOOL_HELP
+This program will be started along with this file as argument when opening the file.
+; This program will be started along with this file as argument when opening the file.
+;
+MSG_INFOWIN_DEFAULT_TOOL_SELECT
+Valitse oletussovellus
+; Select a default tool
+;
+MSG_INFOWIN_DEVICETYPE_DIRECT_ACCESS
+suorasaanti
+; direct access
+;
+MSG_INFOWIN_DEVICETYPE_SEQUENTIAL_ACCESS
+peräkkäissaanti
+; sequential access
+;
+MSG_INFOWIN_DEVICETYPE_PRINTER
+tulostin
+; printer
+;
+MSG_INFOWIN_DEVICETYPE_PROCESSOR
+suoritin
+; processor
+;
+MSG_INFOWIN_DEVICETYPE_WORM
+WORM
+; worm
+;
+MSG_INFOWIN_DEVICETYPE_CDROM
+CD-asema
+; CD-ROM
+;
+MSG_INFOWIN_DEVICETYPE_SCANNER
+skanneri
+; scanner
+;
+MSG_INFOWIN_DEVICETYPE_OPTICAL_DISK
+optinen levy
+; optical disk
+;
+MSG_INFOWIN_DEVICETYPE_MEDIUM_CHANGER
+vaihtaja
+; medium changer
+;
+MSG_INFOWIN_DEVICETYPE_NETWORK
+verkko
+; network
+;
+MSG_INFOWIN_DEVICETYPE_GRAPHICS
+grafiikka
+; graphics
+;
+MSG_INFOWIN_DEVICETYPE_UNKNOWN
+tuntematon
+; unknown
+;
+MSG_INFOWIN_DEVICETYPE_NA
+tuntematon
+; N/A
+;
+MSG_INFOWIN_WINDOW_TITLE_VOLUME
+Tietoa: %s (Levy)
+; Info: %s (Volume)
+;
+MSG_INFOWIN_WINDOW_TITLE_DRAWER
+Tietoa: %s (Hakemisto)
+; Info: %s (Drawer)
+;
+MSG_INFOWIN_WINDOW_TITLE_TOOL
+Tietoa: %s (Sovellus)
+; Info: %s (Tool)
+;
+MSG_INFOWIN_WINDOW_TITLE_PROJECT
+Tietoa: %s (Projekti)
+; Info: %s (Project)
+;
+MSG_INFOWIN_BYTES
+%llu tavua
+; %llu bytes
+;
+MSG_INFOWIN_MBYTES_BYTES
+%s (%llu tavua)
+; %s (%llu bytes)
+;
+MSG_INFOWIN_NEW
+Lisää
+; _New
+;
+MSG_INFOWIN_NEW_HELP
+Add new tool type to list.
+; Add new tool type to list.
+;
+MSG_INFOWIN_DEL
+Poista
+; _Delete
+;
+MSG_INFOWIN_DEL_HELP
+Remove active tool type from list.
+; Remove active tool type from list.
+;
+MSG_INFOWIN_SCAN
+Koko:
+; Total Size:
+;
+MSG_INFOWIN_SCAN_HELP
+Does a recursive scan of the directory to compute the number, type and total size of the files it contains.
+; Does a recursive scan of the directory to compute the number, type and total size of the files it contains.
+;
+MSG_INFOWIN_SAVE
+Tallenna
+; _Save
+;
+MSG_INFOWIN_SAVE_HELP
+Store settings into icon file.
+; Store settings into icon file.
+;
+MSG_INFOWIN_CANCEL
+_Peruuta
+; Cance_l
+;
+MSG_INFOWIN_CANCEL_HELP
+Discard icon setup and close window.
+; Discard icon setup and close window.
+;
+MSG_INFOWIN_CREATE_ICON_REQ
+Saving meta data requires an icon file.\nReally create an icon now?
+; Saving meta data requires an icon file.\nReally create an icon now?
+;
+MSG_INFOWIN_CREATE_ICON_GAD
+_Create icon
+; Create ic_on
+;
+MSG_INFOWIN_CREATE_ICON_HELP
+Create an icon file on disk.
+; Create an icon file on disk.
+;
+MSG_INFOWIN_USE_DEFAULT_ICON_GAD
+Get _default
+; _Get default
+;
+MSG_INFOWIN_USE_DEFAULT_ICON_HELP
+Reset to default icon.
+; Reset to default icon.
+;
+; *** Make Directory Window
+;
+MSG_MAKEDIR_WINDOWTITLE
+Uusi hakemisto
+; create a new directory
+;
+MSG_MAKEDIR_ENTERDIRECTORYNAME
+\033cKirjoita hakemiston nimi:
+; \033c\033bDirectory Name:
+;
+MSG_MAKEDIR_ENTER_DIRECTORYNAME_HELP
+Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+; Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+;
+MSG_MAKEDIR_UNNAMED
+Nimeämätön
+; Unnamed
+;
+MSG_MAKEDIR_WITHICON
+_Kuvakkeen kanssa
+; _With Icon
+;
+MSG_MAKEDIR_WITHICON_HELP
+A drawer and icon combination will be created.
+; A drawer and icon combination will be created.
+;
+MSG_MAKEDIR_WITHOUTICON
+_Ilman kuvaketta
+; With_out Icon
+;
+MSG_MAKEDIR_WITHOUTICON_HELP
+A drawer without icon will be created.
+; A drawer without icon will be created.
+;
+MSG_MAKEDIR_CANCEL
+_Peruuta
+; _Cancel
+;
+MSG_MAKEDIR_CANCEL_HELP
+The window get's closed without any further action.
+; The window get's closed without any further action.
+;
+MSG_MAKEDIR_TITLE
+Ambient · Create directory
+; Ambient · Create directory
+;
+MSG_MAKEDIR_ERRORMSG
+Couldn't create directory '%s'.\nDOS error: %S (#%N).
+; Couldn't create directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_MAKEDIR_RETRYCANCEL
+*_Retry|_Cancel
+; *_Retry|_Cancel
+;
+; *** Exchange Window
+;
+MSG_CX_MENU_PROJECT
+Exchange
+; Exchange
+;
+MSG_CX_MENU_QUIT
+Lopeta
+; Quit
+;
+MSG_CX_SHOW_INTERFACE
+_Näytä ohjelma
+; _Show Interface
+;
+MSG_CX_SHOW_INTERFACE_HELP
+Tuo esiin valitun ohjelman käyttöliittymän.
+; Opens the GUI of the selected Commodity.
+;
+;
+MSG_CX_HIDE_INTERFACE
+_Piilota ohjelma
+; _Hide Interface
+;
+MSG_CX_HIDE_INTERFACE_HELP
+Piilottaa valitun ohjelman käyttöliittymän.
+; Closes the GUI of the selected Commodity.
+;
+; MSG_CX_STATE is not displaced, so just use _x for hotkey support.
+MSG_CX_STATE
+_T
+; _A
+;
+MSG_CX_STATUS_HELP
+Here you can activate or deactivate the selected commodity.
+; Here you can activate or deactivate the selected Commodity.
+;
+MSG_CX_ACTIVE
+Toiminnassa
+; Active
+;
+MSG_CX_INACTIVE
+Ei toiminnassa
+; Inactive
+;
+MSG_CX_REMOVE
+_Poista
+; _Remove
+;
+MSG_CX_REMOVE_HELP
+The selected commodity will be removed if possible.
+; The selected commodity will be removed if possible.
+;
+; *** Execute window
+;
+MSG_EXEC_TITLE
+Ambient · Suorita
+; Ambient · Execute
+;
+MSG_EXEC_INFO
+\033c\033bKirjoita komento ja parametrit:
+; \033c\033bCommand and its arguments:
+;
+MSG_EXEC_ASL_TITLE
+Etsi
+; Find Command
+;
+MSG_EXEC_EXECUTE
+_Suorita
+; _Execute
+;
+MSG_EXEC_EXECUTE_HELP
+The command typed into the text field will be executed.
+; The command typed into the text field will be executed.
+;
+MSG_EXEC_CANCEL
+_Peruuta
+; _Cancel
+;
+MSG_EXEC_CANCEL_HELP
+The execute window will be closed without any action.
+; The execute window will be closed without any action.
+;
+MSG_EXEC_ERROR_TITLE
+Ambient suoritusvirhe
+; Ambient Execute Error
+;
+MSG_EXEC_ERROR_OPENOUTPUTSTREAMFAILED
+Kohdevirran avaaminen epäonnistui.
+; Failed to open output stream.
+;
+MSG_EXEC_ERROR_OPENINPUTSTREAMFAILED
+Lähdevirran avaaminen epäonnistui.
+; Failed to open input stream.
+;
+MSG_EXEC_CMENU_HISTORY_TITLE
+Command history
+; Command history
+;
+MSG_EXEC_CMENU_HISTORY_CLEARALL
+Clear all
+; Clear all
+;
+MSG_EXEC_CMENU_HISTORY_CLEARACTIVE
+Clear active
+; Clear active
+;
+MSG_EXEC_COMMAND_HELP
+You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", \
+"news://", "mailto:", "ftp." or "www.".
+; You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", \
+; "news://", "mailto:", "ftp." or "www.".
+;
+; PrefsWin_BackGroundClass.c (prefswin_backgroundclass.c)
+;
+MSG_PREFSWIN_BACKGROUND_DESKTOP
+Työpöytä
+; Desktop
+;
+MSG_PREFSWIN_BACKGROUND_MODE
+_Toimintatapa:
+; _Mode:
+;
+MSG_PREFSWIN_BACKGROUND_MODE_HELP
+Vaihtaa taustan asetukset.
+; Changes the way the background is displayed.
+;
+MSG_PREFSWIN_BACKGROUND_MODE_COLOR
+Väri
+; Color
+;
+MSG_PREFSWIN_BACKGROUND_MODE_COLOR_SELECT
+Valitse väri
+; Select a background color
+;
+MSG_PREFSWIN_BACKGROUND_MODE_TILED
+Toistuva
+; Tiled
+;
+MSG_PREFSWIN_BACKGROUND_MODE_CENTERED
+Keskitetty
+; Centered
+;
+MSG_PREFSWIN_BACKGROUND_MODE_SCALED
+Skaalattu
+; Scaled
+;
+MSG_PREFSWIN_BACKGROUND_MODE_STRETCHED
+Venytetty
+; Stretched
+;
+MSG_PREFSWIN_BACKGROUND_MODE_ZOOMED
+Zoomattu
+; Zoomed
+;
+MSG_PREFSWIN_BACKGROUND_FILE
+Tiedosto:
+; _File:
+;
+MSG_PREFSWIN_BACKGROUND_FILE_HELP
+Valitse taustakuva. Jos valitset pelkän hakemiston Ambient valitsee hakemistosta satunnaisen kuvan.
+; Path to the picture to be displayed as background. Specify a directory and pick a picture of your choice from its content.
+;
+MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY
+_Muuta taustakuva:
+; C_hange background after:
+;
+MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP
+If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS
+Ikkunat
+; Windows
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS_MODE
+T_oimintatapa:
+; M_ode:
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS_FILE
+Tiedosto:
+; F_ile:
+;
+MSG_PREFSWIN_BACKGROUND_REQUESTER
+Taustan valinta...
+; Background selection...
+;
+; bgrefreshdelaysliderclass.c
+;
+MSG_BGREFRESHSLIDERCLASS_NEVER
+Ei koskaan
+; Never
+;
+MSG_BGREFRESHSLIDERCLASS_MINUTES
+%ld minuutin välein
+; %ld minute(s)
+;
+MSG_BGREFRESHSLIDERCLASS_HOURS
+%ld tunnin välein
+; %ld hour(s)
+;
+MSG_BGREFRESHSLIDERCLASS_DAYS
+%ld päivän välein
+; %ld day(s)
+;
+; *** Prefswin Icondisplay
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION
+Käsittely
+; Selection
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT
+Valintatehoste:
+; Selection effect:
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT
+Värjää
+; Tint
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_REQ
+Select a color for tint effect.
+; Select a color for tint effect.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_BLUR
+Sumenna
+; Blur
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_BRIGHTEN
+Kirkasta
+; Brighten
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_DELTA
+Muutos
+; Delta
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_DARKEN
+Tummenna
+; Darken
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_GREY
+Mustavalko
+; Grey
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_NEGATIVE
+Negatiivi
+; Negative
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_NEGATIVE_FADE
+Hiipuva negatiivi
+; Negative Fade
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_FADE
+Hiipuva värjäys
+; Tint Fade
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_FADE_REQ
+Valitse hiipuvan värjäyksen väri.
+; Select a color for tintfade effect.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTEFFECT_HELP
+Effect to apply to mark selected icons.
+; Effect to apply to mark selected icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT
+Valinnan väri:
+; S_elect color:
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT_HELP
+Specifies the color of an selected icon.
+; Specifies the color of an selected icon.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT_TITLE
+Valitse kuvakkeen valintaväri
+; Select 'Icon select' Color
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO
+Lasson väri:
+; _Lasso color:
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO_HELP
+Color of the lasso used to select multiple icons with the mouse.
+; Color of the lasso used to select multiple icons with the mouse.
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO_TITLE
+Valitse lasson väri
+; Select Lasso Color
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK
+Kohteen väri:
+; Drop mar_k:
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK_HELP
+Specifies the color of active icon drop marks.
+; Specifies the color of active icon drop marks.
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK_TITLE
+Valitse kohteen väri
+; Select Drop Mark Color
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE
+Skaalaus
+; Resizing
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MINSIZE
+Väh_immäiskoko:
+; Mi_nimum size:
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MINSIZE_HELP
+Kuvakkeen vähimmäiskoko.
+; Minimum size of an icon. The icon will be stretched if needed.
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MAXSIZE
+Ma_ksimikoko:
+; Ma_ximum size:
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MAXSIZE_HELP
+Kuvakkeen maksimikoko.
+; Maximum size of an icon. The icon will be shrank if needed.
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MICRO
+Erittäin pieni   (16x16)
+; Micro   (16x16)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_SMALL
+Pieni   (24x24)
+; Small   (24x24)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MEDIUM
+Keskikoko   (32x32)
+; Medium   (32x32)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_LARGE
+Iso   (48x48)
+; Large   (48x48)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_HUGE
+Erittäin iso   (64x64)
+; Huge   (64x64)
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT
+Kuvakkeiden tekstit
+; Text rendering
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE
+_Tehoste:
+; _Mode:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_HELP
+Vaikuttaa kuvakkeiden tekstin ulkoasuun.
+; Changes the way the icon text is displayed.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_NORMAL
+Tavallinen
+; Normal
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_SHADOW
+Varjostettu
+; Shadow
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_ALPHASHADOW
+Läpinäkyvä varjo
+; Alpha Shadow
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_OUTLINE
+Ääriviivat
+; Outline
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_BACKGROUND
+Taustaväri
+; Background
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_MULTICOLOR
+Monivärinen
+; Multicolor
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_GRADIENT
+Väriliuku
+; Gradient
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT
+Kirjasin:
+; _Font:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT_HELP
+Big icon display font.
+; Big icon display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT_REQ
+Kirjasin:
+; Font
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT
+Pieni kirjasin:
+; Small font_:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT_HELP
+Small icon display font.
+; Small icon display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT_REQ
+Pieni kirjasin:
+; Small font
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR
+Väri:
+; C_olor:
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR_HELP
+Here you can select the icon text color for desktop icons.
+; Here you can select the icon text color for desktop icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR_TITLE
+Valitse kuvakkeiden tekstien väri työpöydällä.
+; Select Desktop color.
+;
+; MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK is not visible, so just define a logic _x hotkey
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK
+_w
+; _b
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_HELP
+Here you can select the icon back ground color for desktop icons.
+; Here you can select the icon back ground color for desktop icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_TITLE
+Valitse kuvakkeiden tekstien taustaväri työpöydällä
+; Desktop background color
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT
+Kirjasin:
+; _Font:
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_HELP
+Window display font.
+; Window display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_REQ
+Kirjasin
+; Font
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR
+Väri:
+; C_olor:
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR_HELP
+Here you can select the icon text color for window icons.
+; Here you can select the icon text color for window icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR_TITLE
+Valitse kuvakkeiden tekstien väri ikkunoissa
+; Select Text Color for Windows
+;
+; MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK is not visible, to just define _x hotkey
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK
+_W
+; _b
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK_HELP
+Here you can select the icon background color for window icons.
+; Here you can select the icon background color for window icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK_TITLE
+Valitse kuvakkeiden tekstien taustaväri ikkunoissa
+; Select Text Background for Windows
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_LABELSPACE
+_Väljyys:
+; _Label space:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_LABELSPACE_HELP
+Space in pixels between the bottom of the icon and the top of the text beneath.
+; Space in pixels between the bottom of the icon and the top of the text beneath.
+;
+MSG_PREFSWIN_ICONDISPLAY_EXTRA_FEATURES
+Lisäominaisuudet
+; Extra features
+;
+; PrefsWin_MiscellaneousClass.c (prefswin_miscellaneousclass.c)
+;
+MSG_PREFSWIN_WBSTARTUP
+Käynnistys
+; Startup
+;
+MSG_PREFSWIN_WBSTARTUP_PATH
+_Käynnistyshakemiston sijainti:
+; _Path to startup directory:
+;
+MSG_PREFSWIN_WBSTARTUP_PATH_HELP
+Path to the Startup directory. Files in that directory are automatically executed upon system boot.
+; Path to the Startup directory. Files in that directory are automatically executed upon system boot.
+;
+MSG_PREFSWIN_WBSTARTUP_PATH_REQ
+Käynnistyshakemiston sijainti
+; Path to startup directory
+;
+MSG_PREFSWIN_WBSTART_REMEMBER
+Muista:
+; Remember:
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES
+Hakemistot
+; Dra_wers
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES_HELP
+Remembers open Ambient drawers. After restarting the system these drawers will be open again.
+; Remembers opened Ambient drawers. After restarting the system these drawers will be open again.
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS
+Dokumentit
+; Docu_ments
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS_HELP
+Remembers open Ambient documents. After restarting the system these documents will be open again.
+; Remembers in Ambient opened documents. After restarting the system these documents will be open again.
+;
+MSG_PREFSWIN_DEFICONS
+Oletuskuvakkeet
+; Default Icons
+;
+MSG_PREFSWIN_DEFICONS_PATH
+_Oletuskuvakkeiden sijainti:
+; Path _to default icons:
+;
+MSG_PREFSWIN_DEFICONS_PATH_HELP
+Path to the default icons of the system. These icons are used as default for various filetypes, directories and devices.
+; Path to the default icons of the system. These icons are used as default for various filetypes, directories and devices.
+;
+MSG_PREFSWIN_DEFICONS_PATH_REQ
+_Oletuskuvakkeiden sijainti
+; Path to default icons
+;
+MSG_PREFSWIN_MISCELLANEOUS
+Sekalaiset
+; Miscellaneous
+;
+MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS
+Näytä Oma MorphOS -kuvake
+; Display M_yMorphos icon
+;
+MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS_HELP
+Enables and disables the MyMorphOS icon on desktop.
+; Enables and disables the MyMorphOS icon on desktop.
+;
+MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS
+Kaksoisnapsautus työpöydällä avaa Oma MorphOS -ikkunan
+; _Double click on desktop opens MyMorphos window
+;
+MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS_HELP
+Any double click on desktop opens MyMorphos window.
+; _Any double click on desktop opens MyMorphos window.
+;
+MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE
+Vedä & pudota siirtää tiedostot kopioinnin sijaan
+; Drag&drop moves files instead of copy
+;
+MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE_HELP
+Vedä & pudota siirtää tiedostot kopioinnin sijaan.
+; Drag & drop moves files instead of copy.
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL
+Ohita More-oletustyökalu
+; _Override More default tool
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL_HELP
+If icons contain the default tool MORE, this option allows to override with ambient internal text viewer instead.
+; If icons contain the default tool MORE, this option allows to override with Ambient internal text viewer instead.
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL
+Ohita MultiView-oletustyökalu
+; Override Multi_View default tool
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL_HELP
+If icons contain the default tool MULTIVIEW, this option allows to override with ambient internal viewer instead.
+; If icons contain the default tool MULTIVIEW, this option allows to override with Ambient internal viewer instead.
+;
+MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES
+Näytä pikkukuvakkeet valikoissa
+; S_how images in context menu
+;
+MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES_HELP
+Images in context can be turned off by using this option.
+; Images in context can be turned off by disabling this option.
+;
+MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER
+Luo kuvake uusille kansiolle oletuksena
+; C_reate icon for new drawer by default
+;
+MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER_HELP
+New drawer will automatically get a default drawer icon if this option is enabled.
+; New drawer will automatically get a default drawer icon if this option is enabled.
+;
+; *** Prefswin CLI launching
+;
+MSG_PREFSWIN_CLI_COMMANDLINE
+Komentotulkin asetukset
+; Command Line Settings
+;
+MSG_PREFSWIN_CLI_DEVICE
+Tul_ostusikkuna:
+; _Output window:
+;
+MSG_PREFSWIN_CLI_DEVICE_HELP
+Device to use to output DOS messages. Usually a CON:
+; Device to use to output DOS messages. Usually a CON:
+;
+MSG_PREFSWIN_CLI_STACKSIZE
+_Pino:
+; Stacksi_ze:
+;
+MSG_PREFSWIN_CLI_STACKSIZE_HELP
+Stacksize in bytes to use when launching CLI programs.
+; Stacksize in bytes to use when launching CLI programs.
+;
+MSG_PREFSWIN_CLI_NEWSHELL
+Kome_ntotulkin parametrit:
+; _Newshell arguments:
+;
+MSG_PREFSWIN_CLI_NEWSHELL_HELP
+Arguments to use when launching a shell from Ambient.
+; Arguments to use when launching a shell from Ambient.
+;
+; *** Preferences Window - Drag & Drop
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAY_HELP
+Effect to apply to icons becoming active for a drag & drop operation.
+; Effect to apply to icons becoming active for a drag & drop operation.
+;
+; *** Preferences Window - Main
+;
+MSG_PREFSWIN_MAIN_TITLE
+Ambientin asetukset
+; Ambient Settings
+;
+MSG_PREFSWIN_MAIN_CLIPBOARD_FRAMEIMAGE
+Leikepöytä raameille ja kuville
+; Frame and Image Clipboard
+;
+MSG_PREFSWIN_MAIN_CLIPBOARD_FRAMEIMAGE_HELP
+This gadget can be used as a clipboard to store the frame and image. Use drag & drop.
+; This gadget can be used as a clipboard to store the frame and image. Use drag & drop.
+;
+; *** Soundwin
+;
+MSG_SOUNDWIN_PLAY
+Toista
+; Play
+;
+MSG_SOUNDWIN_STOP
+Pysäytä
+; Stop
+;
+; *** Mimegroup
+;
+MSG_MIMEGROUP_ADD
+Lisää...
+; Add...
+;
+MSG_MIMEGROUP_COPY
+Kopioi
+; Copy
+;
+MSG_MIMEGROUP_EDIT
+Muokkaa...
+; Edit...
+;
+MSG_MIMEGROUP_REMOVE
+Poista
+; Remove
+;
+; *** Preferences Window - Mimeadjustgroup
+;
+MSG_MIMEGROUPADJUST_ADD
+Lisää...
+; Add...
+;
+MSG_MIMEGROUPADJUST_EDIT
+Muokkaa...
+; Edit...
+;
+MSG_MIMEGROUPADJUST_REMOVE
+Poista
+; Remove
+;
+; *** Preferences Window - Toolbar
+;
+MSG_PREFSWIN_TOOLBAR_ENABLE
+_Käytä selaustilaa
+; _Browser mode
+;
+MSG_PREFSWIN_TOOLBAR_ENABLE_HELP
+This check mark enables the tool bar mode.
+; This check mark enables the toolbar mode.
+;
+MSG_PREFSWIN_TOOLBAR_TOOLBUTTONS_GROUP
+Työkalut
+; Tool buttons
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE
+_Ulkoasu:
+; _Appearance:
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_HELP
+The appearance of the tool bar can be configured here.
+; The appearance of the tool bar can be configured here.
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME
+Painikkeiden kehys:
+; Button _Frame:
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_HELP
+Allows to specify the frame type and look for the tool buttons.
+; Allows to specify the frame type and look for the tool buttons.
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_WINTITLE
+Valitse painikkeiden kehys
+; Select Button Frame
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_IMAGETEXT
+Kuva ja teksti
+; Image With Text
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_IMAGE
+Kuva
+; Image Only
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_TEXT
+Teksti
+; Text Only
+;
+MSG_PREFSWIN_TOOLBAR_CURRENT_GROUP
+Nykyinen työkalupalkki
+; Current Toolbar
+;
+MSG_PREFSWIN_TOOLBAR_CURRENT_HELP
+These are the current tool bar buttons.
+; These are the current tool bar buttons.
+;
+MSG_PREFSWIN_TOOLBAR_AVAILABLE_GROUP
+Painikkeet
+; Available Buttons
+;
+MSG_PREFSWIN_TOOLBAR_AVAILABLE_HELP
+These are the available buttons for the tool bar.
+; These are the available buttons for the tool bar.
+;
+MSG_PREFSWIN_TOOLBAR_DEVICE_LIST
+Laitelista
+; Device List
+;
+MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP
+Näytä laitelista
+; Display Device List
+;
+MSG_PREFSWIN_TOOLBAR_COPY
+Kopioi
+; Copy
+;
+MSG_PREFSWIN_TOOLBAR_COPY_HELP
+Kopioi tiedosto tai hakemisto
+; Copy file or directory
+;
+MSG_PREFSWIN_TOOLBAR_COPY_AS
+Kopioi nimellä
+; Copy As
+;
+MSG_PREFSWIN_TOOLBAR_COPY_AS_HELP
+Kopioi tiedosto tai hakemisto nimellä
+; Copy As File or Directory
+;
+MSG_PREFSWIN_TOOLBAR_MOVE
+Siirrä
+; Move
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_HELP
+Siirrä tiedosto tai hakemisto
+; Move a file or a directory
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_AS
+Siirrä nimellä
+; Move As
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP
+Siirrä ja uudelleennimeä tiedosto tai hakemisto
+; Move and rename file or directory
+;
+MSG_PREFSWIN_TOOLBAR_DELETE
+Poista
+; Delete
+;
+MSG_PREFSWIN_TOOLBAR_DELETE_HELP
+Poista tiedosto tai hakemisto
+; Delete file or directory
+;
+MSG_PREFSWIN_TOOLBAR_TRASH
+Roskakori
+; Trash
+;
+MSG_PREFSWIN_TOOLBAR_TRASH_HELP
+Siirrä tiedosto tai hakemisto roskakoriin
+; Move file or directory to Trashcan
+;
+MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD
+Kopioi leikepöydälle
+; Copy To Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP
+Kopioi tiedosto tai hakemisto leikepöydälle
+; Copy file or directory to clipboard
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD
+Siirrä leikepöydälle
+; Move To Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP
+Siirrä tiedosto tai hakemisto leikepöydälle
+; Move file or directory to clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD
+Liitä leikepöydältä
+; Paste From Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP
+Liitä sisältöä leikepöydältä
+; Paste content of clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS
+Liitä leikepöydältä nimellä
+; Paste As From Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS_HELP
+Liitä leikepöydän sisältö nimellä
+; Paste and rename content of clipboard
+;
+MSG_PREFSWIN_TOOLBAR_SELECT
+Valitse
+; Select
+;
+MSG_PREFSWIN_TOOLBAR_SELECT_HELP
+Valitse tiedosto tai hakemisto
+; Select file or directory
+;
+MSG_PREFSWIN_TOOLBAR_ICONINFO
+Kuvakkeen tiedot
+; Icon Info
+;
+MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP
+Näyttää kuvaketietoikkunan
+; Display Icon Information window
+;
+MSG_PREFSWIN_TOOLBAR_FORMAT
+Alusta
+; Format
+;
+MSG_PREFSWIN_TOOLBAR_FORMAT_HELP
+Alustaa tiedostojärjestelmä
+; Format a filesystem
+;
+MSG_PREFSWIN_TOOLBAR_MAKEDIR
+Luo hakemisto
+; Add directory
+;
+MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP
+Luo hakemisto
+; Create a directory
+;
+MSG_PREFSWIN_TOOLBAR_MAKELINK
+Luo linkki
+; Add link
+;
+MSG_PREFSWIN_TOOLBAR_MAKELINK_HELP
+Luo linkki.
+; Add a link.
+;
+MSG_PREFSWIN_TOOLBAR_RENAME
+Uudelleennimeä
+; Rename
+;
+MSG_PREFSWIN_TOOLBAR_RENAME_HELP
+Nimeä tiedosto tai hakemisto uudelleen
+; Rename file or directory
+;
+MSG_PREFSWIN_TOOLBAR_FIND
+Etsi
+; Find
+;
+MSG_PREFSWIN_TOOLBAR_FIND_HELP
+Etsi tiedostoja
+; Finds files and directories
+;
+MSG_PREFSWIN_TOOLBAR_PARENT
+Edellinen
+; Parent
+;
+MSG_PREFSWIN_TOOLBAR_PARENT_HELP
+Edellinen hakemisto
+; Parent directory
+;
+MSG_PREFSWIN_TOOLBAR_BACK
+Takaisin
+; Back
+;
+MSG_PREFSWIN_TOOLBAR_BACK_HELP
+Siirtyy sivuhistoriassa taaksepäin.
+; Previous in history.
+;
+MSG_PREFSWIN_TOOLBAR_FORWARD
+Seuraava
+; Next
+;
+MSG_PREFSWIN_TOOLBAR_FORWARD_HELP
+Seuraava hakemisto
+; Next
+;
+MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW
+Vaihda näkymää
+; Switch view
+;
+MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP
+Vaihda näkymän tilaa
+; Change view display mode
+;
+MSG_PREFSWIN_TOOLBAR_BOOKMARKS
+Kirjanmerkit
+; Bookmarks
+;
+MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP
+Bookmark file or directory
+; Bookmark file or directory
+;
+MSG_PREFSWIN_TOOLBAR_SPACE
+Väli
+; Space
+;
+MSG_PREFSWIN_TOOLBAR_SPACE_HELP
+Add a space to toolbar
+; Add a space to toolbar
+;
+MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE
+Juostava väli
+; Flexible space
+;
+MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP
+Add a flexible space to toolbar
+; Add a flexible space to toolbar
+;
+MSG_PREFSWIN_TOOLBAR_SEPARTOR
+Erotin
+; Separator
+;
+MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP
+Separator between group of buttons
+; Separator between group of buttons
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULTDIMENSIONS_GROUP
+Oletuskoko
+; Default Dimensions and Position
+;
+MSG_PREFSWIN_TOOLBAR_PLACEUNDERMOUSE
+Kohdista _hiireen
+; _Place the window under mouse pointer
+;
+MSG_PREFSWIN_TOOLBAR_PLACEUNDERMOUSE_HELP
+If checkbox is on the window will be placed under mouse pointer.
+; If checkbox is on the window will be placed under mouse pointer.
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW
+_Hae ikkunasta...
+; _Get From Window...
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_HELP
+Allows to select a window and use it's coordinates as default.
+; Allows to select a window and use its coordinates as default.
+;
+MSG_PREFSWIN_TOOLBAR_COORDS
+Vasen: %ld  Ylä: %ld  Leveys: %ld  Korkeus: %ld
+; Left: %ld  Top: %ld  Width: %ld  Height: %ld
+;
+MSG_PREFSWIN_TOOLBAR_COORDS_HELP
+These are the current default window dimensions.
+; These are the current default window dimensions.
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_TITLE
+Ambient · Määrittele ikkuna
+; Ambient · Define Window
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_TEXT
+Määrittele sijainti ja paikka, ja sulje ikkuna.
+; Resize and place window as desired, then close it.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR
+Tilapalkki
+; Status Bar
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT
+Mu_otoilu:
+; F_ormat:
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_HELP
+Allows to set-up your own status bar.
+; Allows to set-up your own status bar.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_0
+%tf% - tiedostojen määrä nykyisessä hakemistossa.
+; %tf% - number of files in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_1
+%td% - hakemistojen määrä nykyisessä hakemistossa.
+; %td% - number of directories in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_2
+%i% - kuvaketiedostojen (.info) määrä nykyisessä hakemistossa.
+; %i% - number of icon files (.info) in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_3
+%l% - linkkien (soft/hard) määrä nykyisessä hakemistossa.
+; %l% - number of soft/hard links in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_4
+%du% - tiedostojen kokonaiskoko nykyisessä hakemistossa.
+; %du% - disk space used by files in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_5
+%ns% - valittujen tiedostojen määrä nykyisessä hakemistossa.
+; %ns% - number of selected files in current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_6
+%sdu% - valittujen tiedostojen ja kansioiden kokonaiskoko.
+; %sdu% - space occupied by selected files and directories.
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_GROUP
+Näkymän käytös
+; View Behaviour
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW
+Oletusnäkymä:
+; Default view:
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW_HELP
+Select which view should be used by default.
+; Select which view should be used by default.
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE
+Oletusnäkymätila:
+; Default view mode:
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE_HELP
+Select which view mode should be used by default.
+; Select which view mode should be used by default.
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_ICON
+Kuvakkeet
+; Icon
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_LIST
+Lista
+; List
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW
+Peri näkymä
+; Inherit view
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW_HELP
+When clicking a directory, decides if the current view or the default view should be applied.
+; When clicking a directory, decides if the current view or the default view should be applied.
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE
+Peri näkymätila
+; Inherit view mode
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE_HELP
+When clicking a directory, decides if the current view mode or the default view mode should be applied.
+; When clicking a directory, decides if the current view mode or the default view mode should be applied.
+;
+; *** System Information Window
+;
+MSG_SYSINFOWIN_TITLE
+Ambient · Järjestelmämonitori
+; Ambient · System Monitor
+;
+MSG_SYSINFOWIN_MENU_PROJECT
+Järjestelmämonitori
+; System Monitor
+;
+MSG_SYSINFOWIN_MENU_QUIT
+Lopeta
+; Quit
+;
+MSG_SYSINFOWIN_INFO_REGTITLE
+Järjestelmän tiedot
+; System Details
+;
+MSG_SYSINFOWIN_MONITOR_REGTITLE
+Järjestelmän seuranta
+; System Monitor
+;
+MSG_SYSINFOWIN_SYSTEM_GROUP
+Järjestelmä
+; System
+;
+MSG_SYSINFOWIN_CPULOAD
+CPU-kuorimitus
+; CPU load
+;
+MSG_SYSINFOWIN_MEMORY
+Järjestelmämuisti: %ld%%%%
+; System memory: %ld%%%%
+;
+MSG_SYSINFOWIN_MACHINE
+Tietokone:
+; Machine:
+;
+MSG_SYSINFOWIN_MACHINE_HELP
+This is the main board type and it's vendor.
+; This is the main board type and its vendor.
+;
+MSG_SYSINFOWIN_CPUCOUNT
+Suorittimien määrä:
+; CPU count:
+;
+MSG_SYSINFOWIN_CPUCOUNT_HELP
+Käytettävissä olevien suorittimien lukumäärä.
+; This is the number of CPUs available.
+;
+MSG_SYSINFOWIN_SYSTEMMEMORY
+Järjestelmämuisti:
+; System memory:
+;
+MSG_SYSINFOWIN_SYSTEMMEMORY_HELP
+Järjestelmän keskusmuistin (RAM) kokonaismäärä.
+; This is the systems total memory (RAM).
+;
+MSG_SYSINFOWIN_BCLOCK
+Väyläkello:
+; Bus clock:
+;
+MSG_SYSINFOWIN_BCLOCK_HELP
+Järjestelmän väyläkellon taajuus.
+; This is the systems bus clock.
+;
+MSG_SYSINFOWIN_TTICKS
+Kellopulsseja:
+; Timer ticks:
+;
+MSG_SYSINFOWIN_TTICKS_HELP
+Järjestelmän kellopulssien määrä.
+; This is the number of timer ticks.
+;
+MSG_SYSINFOWIN_COMPUTERON
+Tietokone päällä:
+; Computer turned on:
+;
+MSG_SYSINFOWIN_COMPUTERON_HELP
+Onko tietokone kytketty päälle?
+; Is the system turned on?
+;
+MSG_SYSINFOWIN_CPU_GROUP
+CPU
+; CPU
+;
+MSG_SYSINFOWIN_CPU_TITLE
+CPU %ld
+; CPU %ld
+;
+MSG_SYSINFOWIN_MODEL
+Malli:
+; Model:
+;
+MSG_SYSINFOWIN_MODEL_HELP
+This type of CPU is build into the system.
+; This type of CPU is built into the system.
+;
+MSG_SYSINFOWIN_DATASTREAM
+Datastream:
+; Datastream:
+;
+MSG_SYSINFOWIN_DATASTREAM_HELP
+Is the CPU supporting datastreams?
+; Is the CPU supporting datastreams?
+;
+MSG_SYSINFOWIN_ALTIVEC
+Altivec:
+; AltiVec:
+;
+MSG_SYSINFOWIN_ALTIVEC_HELP
+Contains the CPU a vector processing unit?
+; Does the CPU contain a vector processing unit?
+;
+MSG_SYSINFOWIN_PMON
+Suorituskykymonitori:
+; Performance monitor:
+;
+MSG_SYSINFOWIN_PMON_HELP
+Is the CPU supporting a performance monitor?
+; Is the CPU supporting a performance monitor?
+;
+MSG_SYSINFOWIN_CPUCACHE_GROUP
+Välimuisti
+; CPU Cache
+;
+MSG_SYSINFOWIN_CACHESIZE
+%s välimuistin koko:
+; %s cache size:
+;
+MSG_SYSINFOWIN_CACHESIZE_HELP
+This shows the CPU cache size.
+; This shows the CPU cache size.
+;
+MSG_SYSINFOWIN_CACHESPECS
+%s välimuistin toiminnot:
+; %s cache specs:
+;
+MSG_SYSINFOWIN_CACHESPECS_HELP
+This shows the CPU cache specifications.
+; This shows the CPU cache specifications.
+;
+MSG_SYSINFOWIN_AMBIENT_GROUP
+Ambient
+; Ambient
+;
+MSG_SYSINFOWIN_SNDDRIVER
+Ääniajuri:
+; Sound driver:
+;
+MSG_SYSINFOWIN_SNDDRIVER_HELP
+This is the audio driver system used.
+; This is the audio driver system used.
+;
+MSG_SYSINFOWIN_SNDDRIVER_NONE_INFO
+Ei mitään
+; None
+;
+MSG_SYSINFOWIN_CACHESPECSDETAILS1_INFO
+%lU kt (komento) / %lU kt (data)
+; %lU kB (instruction) / %lU kB (data)
+;
+MSG_SYSINFOWIN_CACHESPECSDETAILS2_INFO
+%lU kt
+; %lU kB
+;
+MSG_SYSINFOWIN_BATTERYCHARGING_INFO
+Akku: %ld mAh (lataa)
+; Battery: %ld mAh (charging)
+;
+MSG_SYSINFOWIN_BATTERY_INFO
+Akku: %ld mAh
+; Battery: %ld mAh
+;
+MSG_SYSINFOWIN_BATTERY_MISSING
+No battery found
+; No battery found
+;
+; *** MakeLinkWinClass (makelinkwinclass.c)
+;
+MSG_MAKELINKWINCLASS_TITLE
+Ambient · Linkki
+; Ambient · Shortcut
+;
+MSG_MAKELINKWINCLASS_ENTERSHORTCUT
+\033cSyötä linkki:
+; \033cShortcut:
+;
+MSG_MAKELINKWINCLASS_OK
+Ok
+; Ok
+;
+MSG_MAKELINKWINCLASS_CANCEL
+Peruuta
+; Cancel
+; *** AboutWinClass.c (aboutwinclass.c)
+;
+MSG_ABOUTWIN_WEBSUPPORT
+Virallinen sivusto:
+; Web Support:
+;
+MSG_ABOUTWIN_MUI
+Ilman \033bMUI\033n:ta Ambienttia ei olisi olemassa.
+; Without \033bMUI\033n, Ambient wouldn't exist.
+;
+MSG_ABOUTWIN_MD5
+Sisältää RSA Data Security, Inc.:n\n\033bMD5\033n Message-Digest Algoritmista johdettua koodia.
+; Contains software derived from the RSA Data Security, Inc.\n\033bMD5\033n Message-Digest Algorithm.
+;
+MSG_ABOUTWIN_ALTIVEC
+Käyttää \033bAltiVec\033n-kiihdystä.
+; Uses \033bAltiVec\033n instructions when available.
+;
+MSG_ABOUTWIN_MOSDESKTOP
+MorphOS työpöytä
+; The MorphOS Desktop
+;
+MSG_ABOUTWIN_VERSION
+versio
+; version
+;
+MSG_ABOUTWIN_ALLRIGHTS
+Kaikki oikeudet pidätetään
+; All Rights Reserved
+;
+MSG_ABOUTWIN_GPL
+General Public License
+; General Public License
+;
+MSG_ABOUTWIN_AMBIENTTEAM
+Ambient-työryhmä
+; The Ambient Team
+;
+MSG_ABOUTWIN_SCROLLINFO
+Perhaps you didn't know it but you can scroll that text up and down using the mouse wheel and stop the autoscroll with the left mouse button.
+; Perhaps you didn't know it but you can scroll that text up and down using the mouse wheel and stop the autoscroll with the left mouse button.
+;
+MSG_ABOUTWIN_SCROLLRESTART
+teksti alkaa uudelleen
+; scroll restart
+;
+MSG_ABOUTWIN_AMBIENTTITLE
+Ambient · Tietoja
+; Ambient · About
+;
+; *** AboutMosWinClass.c (aboutmoswinclass.c)
+;
+MSG_ABOUTWIN_DEVSUPPORT
+Ohjelmoijatuki:
+; Developer Support:
+;
+MSG_ABOUTWIN_MAILSUPPORT
+Sähköpostituki:
+; Mail Support:
+;
+MSG_ABOUTWIN_MOSRELEASE
+MorphOS-versio: %lu.%lu
+; MorphOS release: %lu.%lu
+;
+MSG_ABOUTWIN_PROGRAMMERS
+Ohjelmoijat
+; Programmers
+;
+MSG_ABOUTWIN_GRAPHICS
+Grafiikka
+; Graphic Artists
+;
+MSG_ABOUTWIN_DOCS
+Dokumentointi
+; Documentation
+;
+MSG_ABOUTWIN_MISC
+Olipa kerran elämä ja sen pituinen se
+; Miscellaneous stuff no one cares about
+;
+; *** Ambient main
+;
+MSG_SHUTDOWN_SELECT
+Valitse toiminto:
+; What do you want to do?
+;
+MSG_SHUTDOWN_REBOOT_CANCEL
+_Käynnistä uudelleen|_Peruuta
+; _Reboot|_Cancel
+;
+MSG_SHUTDOWN_SHUTDOWN_REBOOT_CANCEL
+_Sammuta|_Käynnistä uudelleen|_Peruuta
+; _Shutdown|_Reboot|_Cancel
+;
+MSG_MAIN_SCREENMODE
+Ambient ei toimi 8-bittisissä näyttötiloissa.\nValitse oikeantyyppinen näyttötila.
+; You need a hi/true-color screen to use Ambient.\nPlease select another screenmode.
+;
+MSG_MAIN_SCREENMODE_ACTION
+Muuta näytön asetuksia|Avaa komentotulkki|Peruuta
+; Run ScreenMode|Run Shell|Cancel
+;
+MSG_MAIN_PREFERENCES_START_ERROR
+Järjestelmän asetukset eivät auenneet.\nYritettiin suorittaa mossys:prefs/Preferences.\nKäynnistetään komentotulkki sen sijaan.
+; Couldn't start the system preferences.\nI tried to start mossys:prefs/Preferences (the file is here).\nTrying to run a shell then.
+;
+MSG_MAIN_PREFERENCES_FIND_ERROR
+Järjestelmän asetusohjelmaa ei löydy.\nYritin tiedostoa mossys:prefs/Preferences\nja sys:prefs/Preferences.\nKäynnistetään komentotulkki sen sijaan.
+; Couldn't find the system preferences.\nI tried the file mossys:prefs/Preferences\nand the file sys:prefs/Preferences.\nTrying to run a shell then.
+;
+MSG_MAIN_RUN_SHELL
+Käynnistä komentotulkki
+; Run Shell
+;
+; *** StatusBarClass.c (statusbarclass.c)
+;
+MSG_STATUSBAR_PATTERN_NORMAL
+%du% %td% hakemistossa ja %tf% tiedostossa. (%sdu% %ns% valittuna).
+; %du% in %td% directories and %tf% files. (%sdu% in %ns% selected).
+;
+MSG_STATUSBAR_PATTERN_SELECTED
+(%lu valittu)
+; (%lu selected)
+;
+; PanelSliderSizeClass.c (panelslidersizeclass.c)
+;
+MSG_PANELSLIDERSIZECLASS_16PIXEL
+16 pikseliä
+; 16 pixels
+;
+MSG_PANELSLIDERSIZECLASS_24PIXEL
+24 pikseliä
+; 24 pixels
+;
+MSG_PANELSLIDERSIZECLASS_32PIXEL
+32 pikseliä
+; 32 pixels
+;
+MSG_PANELSLIDERSIZECLASS_48PIXEL
+48 pikseliä
+; 48 pixels
+;
+MSG_PANELSLIDERSIZECLASS_64PIXEL
+64 pikseliä
+; 64 pixels
+;
+; *** ListViewClass.c (listviewclass.c)
+;
+MSG_LISTVIEWCLASS_WINTITLE
+%s - %s vapaana, %s/%s käytettynä, %ld%% täynnä
+; %s - %s free, %s/%s used, %ld%% full
+;
+; *** DeviceListClass.c (devicelistclass.c)
+;
+;MSG_MISC_HIDDEN_DRIVES
+;Hidden drives
+;Skrytá zaêízení
+;Versteckte Laufwerke
+;Disques cachés
+;Periferiche nascoste
+;Rejtett meghajtók
+;Ukryj napêdy
+;Piilotetut asemat
+;Hidden drives
+;Impulsiones ocultadas
+;
+MSG_DEVICELISTCLASS_HIDDENDRIVESCOLUMN
+Aseman nimi
+; Drive name
+;
+; *** PrefsWin_ListerClass.c (prefswin_listerclass.c)
+;
+MSG_PREFSWIN_LISTER_FILES
+Tiedostot
+; File Properties
+;
+MSG_PREFSWIN_LISTER_DEVICES
+Levyt
+; Device Properties
+;
+MSG_PREFSWIN_LISTER_ICONSIZEFILES
+_Kuvakkeiden koko:
+; _Icons size:
+;
+MSG_PREFSWIN_LISTER_ICONSIZEFILES_HELP
+Kuvakkeiden koko tiedostolistassa.
+; Icon size in file list.
+;
+MSG_PREFSWIN_LISTER_ICONSIZEDEVICES
+Kuv_akkeiden koko:
+; Icons si_ze:
+;
+MSG_PREFSWIN_LISTER_ICONSIZEDEVICES_HELP
+Kuvakkeiden koko tiedostolistassa.
+; Icons size in file list.
+;
+MSG_PREFSWIN_LISTER_ICON_SMALL
+Pieni        (20x20)
+; Small   (20x20)
+;
+MSG_PREFSWIN_LISTER_ICON_MEDIUM
+Keskikoko    (32x32)
+; Medium  (32x32)
+;
+MSG_PREFSWIN_LISTER_ICON_LARGE
+Iso          (48x48)
+; Large   (48x48)
+;
+MSG_PREFSWIN_LISTER_ICON_HUGE
+Erittäin iso (64x64)
+; Huge    (64x64)
+;
+MSG_PREFSWIN_LISTER_MODES
+_Näkymä:
+; _Mode:
+;
+MSG_PREFSWIN_LISTER_MODES_HELP
+This mode gets active when list mode is selected.
+; This mode gets active when list mode is selected.
+;
+MSG_PREFSWIN_LISTER_COMPACT_SIZE
+_Tiivistetty näkymä
+; Compact size displa_y
+;
+MSG_PREFSWIN_LISTER_COMPACT_SIZE_HELP
+Size is shown in compact form if this switch is enabled.
+; Size is shown in compact form if this switch is enabled.
+;
+MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS
+Näytä _assignit
+; Display _assigns
+;
+MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS_HELP
+In device list assigns will be shown, if this gadget is activated.
+; In device list assigns will be shown, if this gadget is activated.
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE
+Paikanpäällinen muokkaus:
+; Inline edi_ting:
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE_HELP
+Using the given action allows to edit names without an additional context.
+; Using the given action allows to edit names without an additional context.
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_DISABLED
+Pois päältä
+; Disabled
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MIDDLEBUTTON
+Hiiren keskipainike
+; Middle Button
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_LONG_LEFTBUTTON
+Hiiren vasen painike (pitkään)
+; Left Button (long)
+;
+MSG_PREFSWIN_LISTER_COLORS
+Värit
+; Colors
+;
+MSG_PREFSWIN_LISTER_FILE
+Tiedosto:
+; _File:
+;
+MSG_PREFSWIN_LISTER_FILE_HELP
+This color is used to display files within the lister.
+; This color is used to display files within the lister.
+;
+MSG_PREFSWIN_LISTER_FILE_COLOR
+Tiedoston väri
+; File color
+;
+MSG_PREFSWIN_LISTER_DIRECTORY
+Hakemisto:
+; _Directory:
+;
+MSG_PREFSWIN_LISTER_DIRECTORY_HELP
+This color is used to display drawers within the lister.
+; This color is used to display drawers within the lister.
+;
+MSG_PREFSWIN_LISTER_DIRECTORY_COLOR
+Hakemiston väri
+; Directory color
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE
+Tiedosto valittuna:
+; Se_lected file:
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE_HELP
+This color is used to display selected files within the lister.
+; This color is used to display selected files within the lister.
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE_COLOR
+Valitun tiedoston väri
+; Selected file color
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY
+Hakemisto valittuna:
+; Sel_ected directory:
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY_HELP
+This color is used to display selected drawers within the lister.
+; This color is used to display selected drawers within the lister.
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY_COLOR
+Valitun hakemiston väri
+; Selected directory color
+;
+MSG_PREFSWIN_LISTER_SOFTLINK
+Softlin_kki:
+; Softlin_k:
+;
+MSG_PREFSWIN_LISTER_SOFTLINK_HELP
+This color is used to display softlinks within the lister.
+; This color is used to display softlinks within the lister.
+;
+MSG_PREFSWIN_LISTER_SOFTLINK_COLOR
+Softlinkin väri
+; Softlink color
+;
+MSG_PREFSWIN_LISTER_HARDLINK
+_Hardlinkki:
+; _Hardlink:
+;
+MSG_PREFSWIN_LISTER_HARDLINK_HELP
+This color is used to display hardlinks within the lister.
+; This color is used to display hardlinks within the lister.
+;
+MSG_PREFSWIN_LISTER_HARDLINK_COLOR
+Hardlinkin väri
+; Hardlink color
+;
+MSG_PREFSWIN_LISTER_VOLUME
+Levy:
+; _Volume:
+;
+MSG_PREFSWIN_LISTER_VOLUME_HELP
+This color is used to display volumes within the lister.
+; This color is used to display volumes within the lister.
+;
+MSG_PREFSWIN_LISTER_VOLUME_COLOR
+Levyn väri
+; Volume color
+;
+MSG_PREFSWIN_LISTER_ASSIGN
+Assi_gni:
+; Assi_gn:
+;
+MSG_PREFSWIN_LISTER_ASSIGN_HELP
+This color is used to display assigns within the lister.
+; This color is used to display assigns within the lister.
+;
+MSG_PREFSWIN_LISTER_ASSIGN_COLOR
+Assignin väri
+; Assign color
+;
+MSG_PREFSWIN_LISTER_COLUMN
+Sarake:
+; Colum_n:
+;
+MSG_PREFSWIN_LISTER_COLUMN_HELP
+This color is used to display columns within the lister.
+; This color is used to display columns within the lister.
+;
+MSG_PREFSWIN_LISTER_COLUMN_COLOR
+Sarakkeen väri
+; Column color
+;
+MSG_PREFSWIN_LISTER_USEWINDOWBACKGROUND
+Käytä _taustakuvaa
+; Use _window background
+;
+MSG_PREFSWIN_LISTER_USEWINDOWBACKGROUND_HELP
+When activated the normal window background is displayed in list mode.
+; When activated the normal window background is displayed in list mode.
+;
+MSG_PREFSWIN_LISTER_SHOWICONS
+Näytä _kuvakkeet
+; Show _icons
+;
+MSG_PREFSWIN_LISTER_SHOWICONS_HELP
+Specifies if icons should be displayed.
+; Specifies if icons should be displayed.
+;
+MSG_PREFSWIN_LISTER_FONT
+Kirjasin:
+; Font:
+;
+MSG_PREFSWIN_LISTER_FONT_HELP
+Specifies the font to be used in list view.
+; Specifies the font to be used in list view.
+;
+MSG_PREFSWIN_LISTER_FONT_REQ
+Kirjasin
+; Font
+;
+MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES
+Lihavoidut hakemistot
+; Bold directories
+;
+MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES_HELP
+When activated, directories are shown in bold style.
+; When activated, directories are shown in bold style.
+;
+MSG_PREFSWIN_LISTER_ALTERNATED_ROWS
+Vaihteleva riviväri
+; Alternated rows
+;
+MSG_PREFSWIN_LISTER_ALTERNATED_ROWS_HELP
+When activated, every other line is 10% brighter.
+; When activated, every other line is 10% brighter.
+;
+MSG_PREFSWIN_LISTER_SELECTION_MODES
+Valitatila:
+; Selection mode:
+;
+MSG_PREFSWIN_LISTER_SELECTION_MODES_HELP
+Valitse oletusvalintatilan ja tahmean valintatilan (Directory Opus -tyylinen) välillä
+; This mode allows to choose between the default selection mode and the sticky selection mode (DirectoryOpus-like)
+;
+MSG_PREFSWIN_LISTER_SELECTION_DEFAULT
+Oletus
+; Default
+;
+MSG_PREFSWIN_LISTER_SELECTION_ALWAYS
+Aina
+; Always
+;
+MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN
+Korostettu järjestys-sarake
+; Highlighted sorting column
+;
+MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN_HELP
+When activated, the currently sorting column is brighter than other ones.
+; When activated, the currently sorting column is brighter than other ones.
+;
+; *** PrefsWin_KeyboardClass.c (prefswin_keyboardclass.c)
+;
+MSG_PREFSWIN_KEYBOARDCLASS_BUILTINGROUP
+Sisäänrakennetut pikakomentonäppäimet
+; Builtin commands hotkeys
+;
+MSG_PREFSWIN_KEYBOARDCLASS_CUSTOMGROUP
+Omat pikakomentonäppäimet
+; Custom commands hotkeys
+;
+MSG_PREFSWIN_KEYBOARDCLASS_ADDAHOTKEY
+Lisää pikanäppäin
+; Add a Hotkey
+;
+MSG_PREFSWIN_KEYBOARDCLASS_NEWSHORTCUT
+uusi pikatoiminto
+; new shortcut
+;
+; *** KeyShortCutClass.c (keyshortcutclass.c)
+;
+MSG_KEYSHORTCUTCLASS_ACTION
+Muokkaa toimintoa
+; Edit Command
+;
+MSG_KEYSHORTCUTCLASS_REMOVE
+Poista
+; Remove
+;
+MSG_KEYSHORTCUTCLASS_LABEL_FORMAT
+%s:
+; %s:
+;
+; *** KeyShortCuts.c (keyshortcuts.c)
+;
+MSG_KEYSHORTCUT_DELETE
+Poista
+; Delete
+;
+MSG_KEYSHORTCUT_RENAME
+Nimeä uudelleen
+; Rename
+;
+MSG_KEYSHORTCUT_INFORMATION
+Lisää tietoa
+; Information
+;
+MSG_KEYSHORTCUT_PARENT
+Edellinen
+; Parent
+;
+MSG_KEYSHORTCUT_LEAVEOUT
+Jätä ulos
+; Leave out
+;
+MSG_KEYSHORTCUT_PUTAWAY
+Laita pois
+; Put away
+;
+MSG_KEYSHORTCUT_SELECTALL
+Valitse kaikki
+; Select all
+;
+MSG_KEYSHORTCUT_SELECTNONE
+Poista valinnat
+; Deselect all
+;
+MSG_KEYSHORTCUT_SELECTINVERT
+Käänteinen valinta
+; Invert selection
+;
+MSG_KEYSHORTCUT_SELECTPATTERN
+Valitse lausekkeen kanssa
+; Select with pattern
+;
+MSG_KEYSHORTCUT_CLIPBOARDCOPY
+Kopioi leikepöydälle
+; Copy to clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDCUT
+Leikkaa leikepöydälle
+; Cut to clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDPASTE
+Liitä leikepöydältä
+; Paste from clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDPASTEAS
+Liitä leikepöydältä nimellä
+; Paste from clipboard as
+;
+MSG_KEYSHORTCUT_CYCLEMODE
+Kierrätä kuvaketilaa
+; Cycle Mode
+;
+MSG_KEYSHORTCUT_CYCLESUBMODE
+Kierrätä alitilaa
+; Cycle Submode
+;
+MSG_KEYSHORTCUT_FINDFILES
+Etsi tiedostoja
+; Find files
+;
+; *** Find Window
+;
+MSG_FINDCLASS_TITLE
+Etsi
+; Find
+;
+MSG_FINDCLASS_MENU_PROJECT
+Etsi
+; Find
+;
+MSG_FINDCLASS_MENU_QUIT
+Lopeta
+; Quit
+;
+MSG_FINDCLASS_NAME
+Nimi:
+; Name:
+;
+MSG_FINDCLASS_NAME_HELP
+Name of the file(s) to search.
+; Name of the file(s) to search.
+;
+MSG_FINDCLASS_TEXT
+Teksti:
+; Text:
+;
+MSG_FINDCLASS_TEXT_HELP
+Text to search within files.
+; Text to search within files.
+;
+MSG_FINDCLASS_TYPE
+Tyyppi:
+; Type:
+;
+MSG_FINDCLASS_TYPE_HELP
+Filetype of the files to search.
+; Filetype of the files to search.
+;
+MSG_FINDCLASS_COMMENT
+Kommentti:
+; Comment:
+;
+MSG_FINDCLASS_COMMENT_HELP
+Filecomment of the files to search.
+; Filecomment of the files to search.
+;
+MSG_FINDCLASS_ADDSTRING_HELP
+New locations can be entered here.
+; New locations can be entered here.
+;
+MSG_FINDCLASS_ADD
+_Lisää
+; _Add
+;
+MSG_FINDCLASS_ADD_HELP
+Lisää kohteen sijaintiluotteloon.
+; This gadget adds the specified location to the location list.
+;
+MSG_FINDCLASS_REMOVE
+_Poista
+; _Remove
+;
+MSG_FINDCLASS_REMOVE_HELP
+Poistaa valitun kohteen sijaintiluettelosta.
+; This button removes the selected item from location list.
+;
+MSG_FINDCLASS_LOCATIONS
+Sijainnit
+; Locations
+;
+MSG_FINDCLASS_LOCATIONS_HELP
+These locations will be searched.
+; These locations will be searched.
+;
+MSG_FINDCLASS_RESULTS
+Tulokset
+; Results
+;
+MSG_FINDCLASS_RESULTS_HELP
+Here the search results will be displayed.
+; Here the search results will be displayed.
+;
+MSG_FINDCLASS_SEARCH
+_Etsi
+; _Search
+;
+MSG_FINDCLASS_SEARCH_HELP
+Aloita etsiminen.
+; Start search with the given parameters.
+;
+MSG_FINDCLASS_STOP
+_Pysäytä
+; S_top
+;
+MSG_FINDCLASS_STOP_HELP
+Lopeta etsiminen.
+; Stop search right now.
+;
+MSG_FINDCLASS_FINISHED
+Valmis
+; Finished
+;
+; FindResultList.c (findresultlist.c)
+;
+MSG_FINDRESULTLISTCLASS_NAME
+Nimi
+; Name
+;
+MSG_FINDRESULTLISTCLASS_CONTAINER
+Kansiossa
+; Container
+;
+MSG_FINDRESULTLISTCLASS_COMMENT
+Kommentti
+; Comment
+;
+;
+; *** Icons
+;
+MSG_ICON_MYMORPHOS
+Oma MorphOS
+; My MorphOS
+;
+; *** Icon view window (lister and normal)
+;
+MSG_ICONVIEW_SCANNING_LOCATION
+ - Lukee hakemistoa...
+; - Scanning location...
+;
+; *** contextmenu.c (ContextMenu.c)
+;
+MSG_CMENUTITLE_PROPERTIES
+Ominaisuudet
+; Properties
+;
+MSG_CMENUTITLE_ICON
+Kuvake
+; Icon
+;
+MSG_CMENUTITLE_ICONS
+Kuvakkeet
+; Icons
+;
+MSG_CMENUTITLE_APPICON
+AppIcon
+; AppIcon
+;
+MSG_CMENUTITLE_FILE
+Tiedosto
+; File
+;
+MSG_CMENUTITLE_FILES
+Tiedostot
+; Files
+;
+MSG_CMENUTITLE_PANELGROUP
+Paneeli
+; Panel
+;
+MSG_CMENUTITLE_PANELBUTTON
+Paneelipainike
+; Panel Button
+;
+MSG_CMENUTITLE_PANELSPACER
+Paneelivälikappale
+; Panel Spacer
+;
+MSG_CMENUTITLE_PANELSEPARATOR
+Paneelierotin
+; Panel Separator
+;
+MSG_CMENUTITLE_PANELPOPUP
+Ponnahdusikkuna
+; Popup
+;
+MSG_CMENUTITLE_PANELPOPUPAPPICONS
+Ohjelmakuvakkeet
+; Appicons
+;
+MSG_CMENUTITLE_PANELPOPUPBOOKMARKS
+Kirjanmerkit
+; Bookmarks
+;
+MSG_CMENUTITLE_PANELPOPUPVIEWS
+Näkymät
+; Views
+;
+MSG_CMENUTITLE_PANELGROUPSUB
+Paneelikohde
+; Panel Item
+;
+MSG_CMENUTITLE_VIEW
+Näkymä
+; View
+;
+MSG_CMENU_ABOUT
+Tietoja...
+; About...
+;
+MSG_CMENU_ADDTOPANEL
+Lisää paneeliin...
+; Add to Panel...
+;
+MSG_CMENU_CUT
+Leikkaa
+; Cut
+;
+MSG_CMENU_CUT_SHORTCUT
+X
+; X
+;
+MSG_CMENU_COPY
+Kopioi
+; Copy
+;
+MSG_CMENU_COPY_SHORTCUT
+C
+; C
+;
+MSG_CMENU_PASTE
+Liitä
+; Paste
+;
+MSG_CMENU_PASTE_SHORTCUT
+V
+; V
+;
+MSG_CMENU_PASTEINTO
+Liitä kohteeseen
+; Paste Into
+;
+MSG_CMENU_PASTEAS
+Liitä nimellä...
+; Paste As...
+;
+MSG_CMENU_PASTEASINTO
+Liitä nimellä kohteeseen...
+; Paste as Into...
+;
+MSG_CMENU_DELETE
+Poista
+; Delete
+;
+MSG_CMENU_DELBUTTON
+Poista painike
+; Delete Button
+;
+MSG_CMENU_STAYOPEN
+Pysy auki
+; Stay Open
+;
+MSG_CMENU_PANELDELFROM
+Poista paneelista...
+; Remove Item...
+;
+MSG_CMENU_PANELDEL
+Poista paneeli...
+; Delete...
+;
+MSG_CMENU_PANELCREATE
+Uusi paneeli
+; Create New
+;
+MSG_CMENU_PANELSAVE
+Tallenna paneeli
+; Save
+;
+MSG_CMENU_PANELPREFS
+Open Panelprefs...
+; Configure...
+;
+MSG_CMENU_FORMAT
+Alusta...
+; Format...
+;
+MSG_CMENU_EJECT
+Poista levy asemasta
+; Eject
+;
+MSG_CMENU_EJECT_SHORTCUT
+J
+; J
+;
+MSG_CMENU_HELP
+Apua...
+; Help...
+;
+MSG_CMENU_INFO
+Lisää tietoa...
+; Information...
+;
+MSG_CMENU_INFO_SHORTCUT
+I
+; I
+;
+MSG_CMENU_INVERT
+Käänteinen valinta
+; Invert
+;
+MSG_CMENU_INVERT_SHORTCUT
+\000
+; \000
+;
+MSG_CMENU_LOCKED
+Lukittu
+; Locked
+;
+MSG_CMENU_MOVE
+Siirrä
+; Move Item
+;
+MSG_CMENU_MOVE_SHORTCUT
+\000
+; \000
+;
+MSG_CMENU_MANAGEAPPLETS
+Hallitse liitännäisiä...
+; Manage Applets...
+;
+MSG_CMENU_NEWDRAWER
+Uusi hakemisto...
+; New Drawer...
+;
+MSG_CMENU_PANEL
+Paneeli
+; Panel
+;
+MSG_CMENU_SNAPSHOT
+Tallenna paikka
+; Snapshot
+;
+MSG_CMENU_PROPERTIES
+Ominaisuudet...
+; Properties...
+;
+MSG_CMENU_PUTAWAY
+Laita pois
+; Put Away
+;
+MSG_CMENU_RENAME
+Nimeä uudelleen...
+; Rename...
+;
+MSG_CMENU_RENAME_SHORTCUT
+R
+; R
+;
+MSG_CMENU_SELECTALL
+Valitse kaikki
+; Select All
+;
+MSG_CMENU_SELECTALL_SHORTCUT
+A
+; A
+;
+MSG_CMENU_SHOW
+Näytä
+; Show
+;
+MSG_CMENU_SNAPSHOTWIN
+Tallenna ikkunan paikka
+; Snapshot Window
+;
+MSG_CMENU_UNSNAPSHOTWIN
+Vapauta paikka
+; UnSnapshot Window
+;
+MSG_CMENU_SORT
+Järjestä
+; Sort By
+;
+MSG_CMENU_SORT_BYDATE
+Päivämäärän mukaan
+; Date
+;
+MSG_CMENU_SORT_BYNAME
+Aakkosjärjestykseen
+; Name
+;
+MSG_CMENU_SORT_BYSIZE
+Koon mukaan
+; Size
+;
+MSG_CMENU_SORT_BYTYPE
+Tyypin mukaan
+; Type
+;
+MSG_CMENU_UNSNAPSHOT
+Vapauta paikka
+; UnSnapshot
+;
+MSG_CMENU_VIEW
+Näkymä
+; View
+;
+MSG_CMENU_WINDOW
+Ikkuna
+; Window
+;
+MSG_CMENU_ALL
+Kaikki
+; All
+;
+MSG_CMENU_ICONS
+Kuvakkeet
+; Icons
+;
+MSG_CMENU_LISTTITLE_GETDIRECTORYSIZES
+Laske hakemistojen koot
+; Get Directory Sizes
+;
+MSG_CMENU_LISTTITLE_RESETTODEFAULTFORMAT
+Palauta oletusmuotoon
+; Reset to Default Format
+;
+; *** CMENU Items (mimetype.c)
+;
+MSG_CMENU_MIME_OPEN
+Avaa
+; Open
+;
+MSG_CMENU_MIME_OPENINNEWWINDOW
+Avaa uudessa ikkunassa...
+; Open in New Window...
+;
+MSG_CMENU_MIME_OPENANDCLOSEOLD
+Avaa ja sulje vanha
+; Open and Close Old
+;
+MSG_CMENU_MIME_OPENINDESTINATION
+Avaa kohteessa
+; Open in Destination
+;
+MSG_CMENU_MIME_OPENSHELL
+Avaa komentotulkki...
+; Open Shell...
+;
+MSG_CMENU_MIME_FIND
+Etsi...
+; Find...
+;
+MSG_CMENU_MIME_COPYTO
+Kopioi kohteeseen...
+; Copy To...
+;
+MSG_CMENU_MIME_MOVETO
+Siirrä kohteeseen...
+; Move To...
+;
+; *** Listview Title (listviewlistclass.c)
+;
+MSG_CMENU_LVTITLES_NAME
+Nimi
+; Name
+;
+MSG_CMENU_LVTITLES_SIZE
+Koko
+; Size
+;
+MSG_CMENU_LVTITLES_DATE
+Päiväys
+; Date
+;
+MSG_CMENU_LVTITLES_ATTRS
+Attribuutit
+; Attrs
+;
+MSG_CMENU_LVTITLES_COMMENT
+Kommentti
+; Comment
+;
+MSG_CMENU_LVTITLES_FILETYPE
+Tyyppi
+; Filetype
+;
+MSG_CMENU_LVTITLES_VERSION
+Versio
+; Version
+;
+MSG_CMENU_LVTITLES_FULLDATE
+Pvm ja aika
+; Date & Time
+;
+MSG_CMENU_LVTITLES_UID
+Käyttäjä
+; User
+;
+MSG_CMENU_LVTITLES_GID
+Ryhmä
+; Group
+;
+MSG_CMENU_LVTITLES_MD5
+MD5
+; MD5
+;
+MSG_CMENU_LVTITLES_VOLUMENAME
+Levyn nimi
+; Volume Name
+;
+MSG_CMENU_LVTITLES_FREE
+Vapaana
+; Free
+;
+MSG_CMENU_LVTITLES_TOTAL
+Yhteensä
+; Total
+;
+MSG_CMENU_LVTITLES_DOSTYPE
+DOS-tyyppi
+; DOS Type
+;
+MSG_CMENU_TRASH
+Siirrä roskakoriin...
+; Move to Trashcan...
+;
+MSG_CMENU_RESTORE
+Palauta
+; Restore
+;
+MSG_CMENU_EMPTY
+Tyhjennä roskakori
+; Empty Trashcan
+;
+;
+MSG_CMENU_NETWORKSSETTINGS
+Verkkojakoasetukset...
+; Share Settings...
+;
+MSG_CMENU_NETWORKSCONNECT
+Yhdistä...
+; Connect...
+;
+MSG_LISTVIEWLISTCLASS_EMPTY
+<Tyhjä>
+; <Empty>
+;
+MSG_LISTVIEWLISTCLASS_DIRECTORY
+<Hakemisto>
+; <Directory>
+;
+MSG_LISTVIEWLISTCLASS_LINK
+<Linkki>
+; <Link>
+;
+MSG_LISTVIEWLISTCLASS_ASSIGN
+<Assigni>
+; <Assign>
+;
+; *** Column type descriptors (columnslistclass.c)
+;
+MSG_COLUMNSLIST_ICON
+Kuvake
+; Icon
+;
+MSG_COLUMNSLIST_SORTBY
+Järjestys
+; Sort By
+;
+MSG_COLUMNSLIST_NAME
+Nimi
+; Name
+;
+MSG_COLUMNSLIST_HIDDEN
+Piilotettu
+; Hidden
+;
+; *** Mime Type Descriptors (mimetype.c)
+;
+MSG_MIMETYPE_MORPHOSEXECUTABLE
+MorphOS-ohjelmatiedosto
+; MorphOS Executable
+;
+MSG_MIMETYPE_AMIGAOS68KEXECUTABLE
+AmigaOS-ohjelmatiedosto
+; AmigaOS 68k Executable
+;
+MSG_MIMETYPE_AMIGAOS4PPCEXECUTABLE
+OS4-ohjelmatiedosto
+; OS4 Executable
+;
+MSG_MIMETYPE_SCRIPT
+Komentojono
+; Script
+;
+MSG_MIMETYPE_OGGVORBIS
+Ogg Vorbis
+; Ogg Vorbis Audio
+;
+MSG_MIMETYPE_MPEGLAYER3
+MPEG Layer-3
+; MPEG Layer-3 Audio
+;
+MSG_MIMETYPE_MULTIMEDIAOBJECT
+Mediatiedosto
+; Multimedia Object
+;
+MSG_MIMETYPE_DEVICE
+Levy
+; Device
+;
+MSG_MIMETYPE_DIRECTORY
+Hakemisto
+; Directory
+;
+MSG_MIMETYPE_DATATYPE
+Datatyyppi
+; Datatype
+;
+MSG_MIMETYPE_PROJECT
+Projekti
+; Project
+;
+; *** Internal filetype (actionlistclass.c)
+;
+MSG_FILETYPE_INTERNAL
+Tämä tiedostotyyppi on sisäänrakennettu Ambientiin ja\nsiksi sitä ei voi muokata. Voit kuitenkin luoda uuden\ntiedostotyypin joka korvaa sisäänrakennetun.
+; This filetype is an internal definition in Ambient and\nis therefore not editable. You can however override this\nfiletype by defining one that overrides it.
+;
+; ** mouse over icon bubble strings (metadata.c)
+;
+MSG_METADATA_UNKNOWN
+Tuntematon
+; Unknown
+;
+MSG_METADATA_TYPE
+Tyyppi: %s
+; Type: %s
+;
+MSG_METADATA_DATESIZE
+\nPvm: %s, %s\nKoko: %s
+; \nDate: %s, %s\nUsed: %s
+;
+; ** View names (viewapi.c)
+;
+MSG_VIEW_ICON
+Kuvake
+; Icon
+;
+MSG_VIEW_ICONS
+Kuvakkeet
+; Icons
+;
+MSG_VIEW_ALLFILES
+Kaikki tiedostot
+; All Files
+;
+MSG_VIEW_THUMB
+Esikatselu
+; Thumbnails
+;
+MSG_VIEW_LIST
+Lista
+; List
+;
+MSG_VIEW_SCALED
+Skaalattu
+; Scaled
+;
+MSG_VIEW_NORMAL
+Normaali
+; Normal
+;
+; ** File size capacity (capacity.c)
+;
+MSG_CAPACITY_FORMAT_BYTES
+%u tavua
+; %u bytes
+;
+MSG_CAPACITY_FORMAT_KBYTES
+%u.%u Kt
+; %u.%u KB
+;
+MSG_CAPACITY_FORMAT_MBYTES
+%u,%u Mt
+; %u.%u MB
+;
+MSG_CAPACITY_FORMAT_GBYTES
+%u,%u Gt
+; %u.%u GB
+;
+MSG_CAPACITY_FORMAT_TBYTES
+%u,%u Tt
+; %u.%u TB
+;
+MSG_CAPACITY_FORMAT_COMPACT_BYTES
+%u tavua
+; %u bytes
+;
+MSG_CAPACITY_FORMAT_COMPACT_KBYTES
+%uKt
+; %uKB
+;
+MSG_CAPACITY_FORMAT_COMPACT_MBYTES
+%uMt
+; %uMB
+;
+MSG_CAPACITY_FORMAT_COMPACT_GBYTES
+%uGt
+; %uGB
+;
+MSG_CAPACITY_FORMAT_COMPACT_TBYTES
+%uTt
+; %uTB
+;
+; ** SmartReq (smartreq.c)
+;
+MSG_SMARTREQUEST_AMBIENTREQUEST
+Ambientin ilmoitus
+; Ambient Request
+;
+MSG_SMARTREQUEST_AMBIENTDOSERROR
+Ambient DOS-virhe
+; Ambient DOS Error
+;
+MSG_SMARTREQUEST_AMBIENTIOERROR
+Ambient I/O-virhe
+; Ambient I/O Error
+;
+MSG_SMARTREQUEST_SOURCE
+Lähde
+; Source
+;
+MSG_SMARTREQUEST_TARGET
+Kohde
+; Target
+;
+MSG_SMARTREQUEST_VERSION
+Versio
+; Version
+;
+MSG_SMARTREQUEST_MD5
+MD5
+; MD5
+;
+MSG_SMARTREQUEST_CHECKING
+Hakee...
+; Checking...
+;
+MSG_SMARTREQUEST_UNKNOWN
+tuntematon
+; unknown
+;
+; ** FileAction  (fileaction.c )
+;
+MSG_FILEACTION_DELETETITLE
+Ambient · Poistaminen
+; Ambient · Delete
+;
+MSG_FILEACTION_DELETEMSG
+Ei voitu poistaa kohdetta\n'%s'.\n\nDOS-virhe: %S\n(#%N).
+; Couldn't delete '%s'.\n\nDOS error: %S\n(#%N).
+;
+MSG_FILEACTION_OVERWRITETITLE
+Ambient · Korvaaminen
+; Ambient · Overwrite
+;
+MSG_FILEACTION_OVERWRITEMSG
+Tiedosto '%s'\non suojattu ylikirjoitukselta.
+; File '%s'\nis protected from overwrite.
+;
+MSG_FILEACTION_PROTECTBUTTONS
+*Poista _suojaus|Poista suojaus kaikista|_Ohita|Ohita kaikki|_Peruuta
+; *_Unprotect|Unprotect All|_Skip|Skip All|_Cancel
+;
+MSG_FILEACTION_PROTECTIONERROR
+Ei voitu muuttaa suojausta kohteessa\n'%s'.\n\nDOS-virhe: %S\n(#%N).
+; Couldn't set the protection mode of '%s'.\n\nDOS error: %S\n(#%N).
+;
+MSG_FILEACTION_COPYTITLE
+Ambient · Kopiointi
+; Ambient · Copy
+;
+MSG_FILEACTION_MOVETITLE
+Ambient · Siirtäminen
+; Ambient · Move
+;
+MSG_FILEACTION_REPLACEMSG
+Tiedosto '%s'\non jo olemassa ja korvataan.
+; File '%s'\nalready exists and will be replaced.
+;
+MSG_FILEACTION_REPLACEBUTTONS
+*_Korvaa|Korvaa kaikki|_Ohita|Ohita kaikki|_Peruuta
+; *_Replace|Replace All|_Skip|Skip All|_Cancel
+;
+; ** FindVer (findver.c)
+;
+MSG_FINDVER_RETRIEVINGVERSION
+etsii versiotietoa...
+; retrieving version string...
+;
+MSG_FINDVER_VERSIONNOTFOUND
+Versiotietoa ei ole
+; Couldn't find version string
+;
+; ** MD5Sum.c (md5sumc.c)
+;
+MSG_MD5SUM_COMPUTINGMD5SUM
+laskee MD5-summaa...
+; computing MD5 sum...
+;
+; ** Devices.c  (devices.c)
+;
+MSG_DEVICES_FREE
+%s, %s vapaana
+; %s, %s free
+;
+; PanelGroupClass.c (panelgroupclass.c)
+;
+MSG_PANELGROUPCLASS_TITLE
+Ambient-paneeli
+; Ambient Panel
+;
+MSG_PANELGROUPCLASS_DELETEMSG
+Haluatko poistaa paneelin?
+; Do you really want to delete the panel?
+;
+MSG_PANELGROUPCLASS_DELETECANCEL
+Poista|Peruuta
+; Delete|Cancel
+;
+; Rename.c (rename.c)
+;
+MSG_RENAME_TITLE
+Ambient · Nimeä uudelleen
+; Ambient · Rename
+;
+MSG_RENAME_FILEISADIRECTORY
+Tiedosto '%s' on hakemisto
+; File '%s' is a directory
+;
+MSG_RENAME_FILECANTBERENAMED
+Tiedostoa '%s' ei voitu nimetä uudelleen.\nDOS-virhe: %S (#%N).
+; File '%s' can't be renamed.\nDOS error: %S (#%N).
+;
+MSG_RENAME_CANTBERENAMED
+Kohdetta '%s' ei voitu nimetä uudelleen.\nDOS-virhe: %S (#%N).
+; '%s' can't be renamed.\nDOS error: %S (#%N).
+;
+MSG_RENAME_SKIPCANCEL
+*_Ohita|Peruuta
+; *_Skip|Cancel
+;
+MSG_RENAME_OK
+*_Ok
+; *_OK
+;
+; MoveDir.c (movedir.c)
+;
+MSG_MOVEDIR_TITLE
+Ambient · Kopioi
+; Ambient · Copy
+;
+MSG_MOVEDIR_ERRORWHILEMOVING
+Virhe kopioidessa tiedostoa '%s'
+; Error while copying '%s'
+;
+MSG_MOVEDIR_ERRORISAFILE
+'%s' on tiedosto
+; '%s' is a file
+;
+MSG_MOVEDIR_RETRYSKIPCANCEL
+*_Yritä uudelleen|Ohita|Peruuta
+; *_Retry|Skip|Cancel
+;
+MSG_MOVEDIR_REPLACECANCEL
+*_Korvaa|Peruuta
+; *_Replace|Cancel
+;
+; Clipboard.c (clipboard.c)
+;
+MSG_CLIPBOARD_TITLE
+Ambient · Leikepöytä
+; Ambient · Clipboard
+;
+MSG_CLIPBOARD_COPYCANCEL
+*_Kopioi|Peruuta
+; *_Copy|Cancel
+;
+MSG_CLIPBOARD_COPIED
+kopioidaan
+; copied
+;
+MSG_CLIPBOARD_CUT
+leikataan
+; cut
+;
+MSG_CLIPBOARD_FILESWILLBE
+Seuraavat \033b%d\033n tiedostoa ovat leikepöydällä ja\nne \033b%s\033n kohteeseen "\033b%s\033n" :\n\n
+; The following \033b%d\033n files are in the clipboard and\nwill be \033b%s\033n to "\033b%s\033n" :\n\n
+;
+; PanelSpacerClass.c (panelspacerclass.c)
+;
+MSG_PANELITEM_SPACER
+Välikappale
+; Spacer
+;
+MSG_PANELITEM_SPACERDESC
+Lisää tyhjää tilaa kappaleiden väliin.
+; Inserts empty area between items.
+;
+; PanelSeparatorClass.c (panelseparatorclass.c)
+;
+MSG_PANELITEM_SEPARATOR
+Erotin
+; Separator
+;
+MSG_PANELITEM_SEPARATORDESC
+Voit ryhmittää muita kappaleita erottimilla.
+; Allows to optically group other panel objects, like e.g. buttons.
+;
+; PanelViewWatcherClass.c (panelviewwatcherclass.c)
+;
+MSG_PANELITEM_VIEWWATCHER
+Näkymälista
+; View Watcher
+;
+MSG_PANELITEM_VIEWWATCHERDESC
+Näyttää listan avonaisista näkymistä ja voit vaihtaa haluamaasi näkymään.
+; Shows a list of the opened views and allows to switch between them.
+;
+MSG_PANELITEM_VIEWWATCHER_SHORTHELP
+Näkymälista
+; Viewwatcher
+;
+; PanelBookmarksClass.c (panelbookmarksclass.c)
+;
+MSG_PANELITEM_BOOKMARKS
+Kirjanmerkit
+; Bookmarks
+;
+MSG_PANELITEM_BOOKMARKSDESC
+Näyttää listan kirjanmerkeistä.
+; Shows a list of bookmarked locations.
+;
+MSG_PANELITEM_BOOKMARKS_SHORTHELP
+Kirjanmerkit
+; Bookmarks
+;
+; PanelDirPanelClass.c (paneldirpanelclass.c)
+;
+MSG_PANELITEM_DIRPANEL
+Hakemisto
+; Directory
+;
+MSG_PANELITEM_DIRPANELDESC
+Shows all icons within a directory in a sub panel.
+; Shows all icons within a directory in a sub panel.
+;
+; PanelSubPanelClass.c (panelsubpanelclass.c)
+;
+MSG_PANELITEM_SUBPANEL
+Alipaneeli
+; Sub Panel
+;
+MSG_PANELITEM_SUBPANELDESC
+Allows to group icons in sub panels.
+; Allows to group icons in sub panels.
+;
+MSG_PANELITEM_SUBPANEL_SHORTHELP
+Alipaneeli
+; Subpanel
+;
+; PanelItemWinClass.c
+;
+MSG_PANELITEMWINCLASS_DESCGROUPTITLE
+Kuvaus
+; Description
+;
+MSG_PANELITEMWINCLASS_NONE
+Ei mitään
+; None
+;
+MSG_PANELITEMWINCLASS_UNKNOWN
+Tuntematon
+; Unknown
+;
+; ActionEditorWinClass.c (actioneditorwinclass.c)
+;
+MSG_ACTIONEDITORWINCLASS_TITLE
+Ambient · Toimintomuokkain
+; Ambient · Action Editor
+;
+; ActionEditorClass.c (actioneditorclass.c)
+;
+MSG_ACTIONEDITORCLASS_TYPE
+Tyyppi
+; Type
+;
+MSG_ACTIONEDITORCLASS_TYPE_HELP
+This is the type of action for the current entry.
+; This is the type of action for the current entry.
+;
+MSG_ACTIONEDITORCLASS_COMMANDSTRING
+Komentorivi
+; Command String
+;
+MSG_ACTIONEDITORCLASS_INTERNAL
+Sisäinen
+; Internal
+;
+MSG_ACTIONEDITORCLASS_AMIGADOS
+AmigaDOS
+; AmigaDOS
+;
+MSG_ACTIONEDITORCLASS_WORKBENCH
+Workbench
+; Workbench
+;
+MSG_ACTIONEDITORCLASS_SCRIPT
+Komentojono
+; Script
+;
+MSG_ACTIONEDITORCLASS_AREXX
+Arexx
+; Arexx
+;
+MSG_ACTIONEDITORCLASS_UNKNOWN
+Tuntematon
+; Unknown
+;
+MSG_ACTIONEDITORCLASS_COMMANDGROUP
+Komento
+; Command
+;
+MSG_ACTIONEDITORCLASS_NAME
+_Nimi :
+; _Name :
+;
+MSG_ACTIONEDITORCLASS_NAME_HELP
+Toiminnon nimi.
+; Name of the action.
+;
+MSG_ACTIONEDITORCLASS_ADD
+_Lisää
+; _Add
+;
+MSG_ACTIONEDITORCLASS_ADD_HELP
+Lisää toiminto listaan.
+; Add a new action to the list.
+;
+MSG_ACTIONEDITORCLASS_REMOVE
+_Poista
+; _Remove
+;
+MSG_ACTIONEDITORCLASS_REMOVE_HELP
+Poista valittu toiminto.
+; Removes the current active action.
+;
+MSG_ACTIONEDITORCLASS_ACTIONLIST_HELP
+This list contains all actions.
+; This list contains all actions.
+;
+MSG_ACTIONEDITORCLASS_UP_HELP
+Moves the selected entry up the action list.
+; Moves the selected entry up the action list.
+;
+MSG_ACTIONEDITORCLASS_DOWN_HELP
+Moves the selected entry down the action list.
+; Moves the selected entry down the action list.
+;
+MSG_ACTIONEDITORCLASS_COMMAND_HELP
+Command to be executed.\n\nUse:\n%sp for entry full path.\n%sf for entry file part.\n%S for source view path.\n%Si for source view identifier.\n%D for destination view path.\n%Di for destination view \
+identifier.
+; Command to be executed.\n\nUse:\n%sp for entry full path.\n%sf for entry file part.\n%S for source view path.\n%Si for source view identifier.\n%D for destination view path.\n%Di for destination view \
+; identifier.
+;
+MSG_ACTIONEDITORCLASS_EVENTTYPE
+_Tapahtuman tyyppi:
+; _Event type:
+;
+MSG_ACTIONEDITORCLASS_EVENTTYPE_HELP
+Määrittelee tapahtuman tyypin joka aiheuttaa tämän toiminnon.
+; Allows to specify the type of event causing this action.
+;
+MSG_ACTIONEDITORCLASS_EVENTDOUBLE
+Kaksoisnapsautus
+; DoubleClick
+;
+MSG_ACTIONEDITORCLASS_EVENTMENU
+Valikko
+; Menu
+;
+MSG_ACTIONEDITORCLASS_EVENTDRAGNDROP
+Vedä & pudota
+; Drag'n'Drop
+;
+MSG_ACTIONEDITORCLASS_QUALIFIER
+_Näppäinmääre :
+; _Qualifier :
+;
+MSG_ACTIONEDITORCLASS_QUALNONE
+Ei mitään
+; None
+;
+MSG_ACTIONEDITORCLASS_QUALSHIFT
+Vaihto
+; Shift
+;
+MSG_ACTIONEDITORCLASS_QUALALT
+Alt
+; Alt
+;
+MSG_ACTIONEDITORCLASS_QUALCONTROL
+Control
+; Control
+;
+MSG_ACTIONEDITORCLASS_SORTBYPARENT
+Järjestä edellisen mukaan
+; Sort by parent
+;
+MSG_ACTIONEDITORCLASS_SORTBYPARENT_HELP
+The name of the parent element will be used to sort menu items.
+; The name of the parent element will be used to sort menu items.
+;
+MSG_ACTIONEDITORCLASS_PARENTNAME
+Edellisen valikon nimi
+; Parent Menu Name
+;
+MSG_ACTIONEDITORCLASS_PARENTNAME_HELP
+Specify the name of the parent menu.
+; Specify the name of the parent menu.
+;
+MSG_ACTIONEDITORCLASS_CDTOSOURCE
+Vaihda työhakemisto _lähdehakemistoksi
+; Change working directory to _source
+;
+MSG_ACTIONEDITORCLASS_CDTOSOURCE_HELP
+Ennen toimintoa vaihda työhakemisto lähdehakemistoksi.
+; Before the action take place the current dir will be changed to source drawer.
+;
+MSG_ACTIONEDITORCLASS_CDTODESTINATION
+Vaihda työhakemisto _kohdehakemistoksi
+; Change working directory to _destination
+;
+MSG_ACTIONEDITORCLASS_CDTODESTINATION_HELP
+Ennen toimintoa vaihda työhakemisto kohdehakemistoksi.
+; Before the action take place the current dir will be changed to destination drawer.
+;
+MSG_ACTIONEDITORCLASS_DONTQUOTEARGS
+Ei _lainausmerkkejä
+; Don't _quote arguments
+;
+MSG_ACTIONEDITORCLASS_DONTQUOTEARGS_HELP
+Älä laita parametreja lainausmerkkeihin.
+; Don't surround arguments by a quotation mark if this switch is enabled.
+;
+MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES
+_Yhdistä valinnat
+; _Merge selection
+;
+MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES_HELP
+Merge selected files in a single string.
+; Merge selected files in a single string.
+;
+MSG_ACTIONEDITORCLASS_OK
+_Ok
+; _Ok
+;
+MSG_ACTIONEDITORCLASS_OK_HELP
+The current setup will be used.
+; The current setup will be used.
+;
+MSG_ACTIONEDITORCLASS_CANCEL
+_Peruuta
+; _Cancel
+;
+MSG_ACTIONEDITORCLASS_CANCEL_HELP
+The current setup will be rejected.
+; The current setup will be rejected.
+;
+MSG_ACTIONEDITORCLASS_SPECIFYCOMMANDHERE
+Kirjoita komento tähän.
+; Specify command here.
+;
+; *** MimeAdjustListClass.c (mimeadjustlistclass.c)
+;
+MSG_MIMEADJUSTLISTCLASS_NAME
+Nimi
+; Name
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTTYPE
+Tapahtuman tyyppi
+; Event Type
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTDOUBLE
+Kaksoisnapsautus
+; DoubleClick
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTMENU
+Valikko
+; Menu
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTDRAGNDROP
+Vedä ja pudota
+; Drag'n'Drop
+;
+MSG_MIMEADJUSTLISTCLASS_QUALSHIFT
+[Vaihto]
+; [Shift]
+;
+MSG_MIMEADJUSTLISTCLASS_QUALALT
+[Alt]
+; [Alt]
+;
+MSG_MIMEADJUSTLISTCLASS_QUALCONTROL
+[Control]
+; [Control]
+;
+MSG_MIMEADJUSTLISTCLASS_INHERITEDACTION
+[peritty toiminto]\033i
+; [inherited action]\033i
+;
+; *** MimeGroupClass.c (mimegroupclass.c)
+;
+MSG_MIMEGROUPCLASS_ADD
+_Lisää
+; _Add
+;
+MSG_MIMEGROUPCLASS_ADD_HELP
+Adds an action to action list.
+; Adds an action to action list.
+;
+MSG_MIMEGROUPCLASS_COPY
+_Kopioi
+; Cop_y
+;
+MSG_MIMEGROUPCLASS_COPY_HELP
+Copies the current entry.
+; Copies the current entry.
+;
+MSG_MIMEGROUPCLASS_EDIT
+_Muokkaa
+; _Edit
+;
+MSG_MIMEGROUPCLASS_EDIT_HELP
+Edit the current active entry.
+; Edit the current active entry.
+;
+MSG_MIMEGROUPCLASS_REMOVE
+_Poista
+; _Remove
+;
+MSG_MIMEGROUPCLASS_REMOVE_HELP
+Remove the current entry.
+; Remove the current entry.
+;
+MSG_MIMEGROUPCLASS_SEARCH
+Etsi
+; Search
+;
+MSG_MIMEGROUPCLASS_SEARCH_HELP
+Opens the mime search context.
+; Opens the mime search context.
+;
+; *** MimeAdjustWinClass.c (mimeadjustwinclass.c)
+;
+MSG_MIMEADJUSTWINCLASS_TITLE
+Ambient · MIME-muokkain
+; Ambient · MIME Editor
+;
+; *** MimeAdjustGroupClass.c (mimeadjustgroupclass.c)
+;
+MSG_MIMEADJUSTGROUPCLASS_ICON_HELP
+Simply drag and drop an icon onto this image to replace the default mime type icon.
+; Simply drag and drop an icon onto this image to replace the default mime type icon.
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMETYPE
+_Mime-tyyppi:
+; _Mimetype:
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMETYPE_HELP
+Type used to identify a file.
+; Type used to identify a file.
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMESUBTYPE_HELP
+Subtype used to identify a file.
+; Subtype used to identify a file.
+;
+MSG_MIMEADJUSTGROUPCLASS_PRIORITY
+_Prioriteetti:
+; _Priority:
+;
+MSG_MIMEADJUSTGROUPCLASS_PRIORITY_HELP
+Specifies the priority in the mime type list.
+; Specifies the priority in the mime type list.
+;
+MSG_MIMEADJUSTGROUPCLASS_DESCRIPTION
+_Kuvaus:
+; _Description:
+;
+MSG_MIMEADJUSTGROUPCLASS_DESCRIPTION_HELP
+Description of the current mime type.
+; Description of the current mime type.
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONS_GROUP
+Toiminnot
+; Actions
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONS_HELP
+These actions are currently defined for the current mime type.
+; These actions are currently defined for the current mime type.
+;
+MSG_MIMEADJUSTGROUPCLASS_ADD
+_Lisää...
+; _Add...
+;
+MSG_MIMEADJUSTGROUPCLASS_ADD_HELP
+Adds an action.
+; Adds an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_EDIT
+_Muokkaa...
+; _Edit...
+;
+MSG_MIMEADJUSTGROUPCLASS_EDIT_HELP
+Allows to edit an action.
+; Allows to edit an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_REMOVE
+_Poista
+; _Remove
+;
+MSG_MIMEADJUSTGROUPCLASS_REMOVE_HELP
+Removes an action.
+; Removes an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_UP_HELP
+Moves the selected entry up the list.
+; Moves the selected entry up the list.
+;
+MSG_MIMEADJUSTGROUPCLASS_DOWN_HELP
+Moves the selected entry down the list.
+; Moves the selected entry down the list.
+;
+MSG_MIMEADJUSTGROUPCLASS_OK
+_Ok
+; _Ok
+;
+MSG_MIMEADJUSTGROUPCLASS_OK_HELP
+All selections made in this window will be used.
+; All selections made in this window will be used.
+;
+MSG_MIMEADJUSTGROUPCLASS_CANCEL
+_Peruuta
+; _Cancel
+;
+MSG_MIMEADJUSTGROUPCLASS_CANCEL_HELP
+All selections made in this window will be rejected.
+; All selections made in this window will be rejected.
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONSTOPERFORM_HELP
+Actions to perform. It can be a primary action (doubleclick) or secondary action (eg. menu, drag'n'drop).
+; Actions to perform. It can be a primary action (doubleclick) or secondary action (eg. menu, drag'n'drop).
+;
+MSG_MIMEADJUSTGROUPCLASS_DISABLED_HELP
+Actions are disabled because there's no valid mimetype in the mimetype string above.
+; Actions are disabled because there's no valid mimetype in the mimetype string above.
+;
+MSG_MIMEADJUSTGROUPCLASS_TITLE_REQ
+Ambient · MIME-tyypit
+; Ambient · MIME Types
+;
+MSG_MIMEADJUSTGROUPCLASS_OK_REQ
+*Ok
+; *OK
+;
+MSG_MIMEADJUSTGROUPCLASS_COULDNTSAVEFILETYPEDESC
+Ei voitu tallentaa "%s" tiedostotyyppikuvausta.
+; Couldn't save "%s" filetype descriptor.
+;
+MSG_MIMEADJUSTGROUPCLASS_COULDNTSAVEDEFAULTICON
+Ei voitu tallentaa "%s" oletuskuvaketta.
+; Couldn't save "%s" default icon.
+;
+; *** AppletsWinClass.c (appletswinclass.c)
+;
+MSG_APPLETSWINCLASS_TITLE
+Hallitse appletteja
+; Manage applets
+;
+MSG_APPLETSWINCLASS_GROUP_WHITELIST
+Sallitut
+; White list
+;
+MSG_APPLETSWINCLASS_GROUP_BLACKLIST
+Kielletyt
+; Black list
+;
+MSG_APPLETSWINCLASS_CANCEL
+_Peruuta
+; _Cancel
+;
+MSG_APPLETSWINCLASS_USE
+_Käytä
+; _Use
+;
+; *** Prefs_Advanced_ListClass.c (prefs_advanced_listclass.c)
+;
+MSG_PREFSADVANCEDLISTCLASS_VARIABLE
+Muuttuja
+; Variable
+;
+MSG_PREFSADVANCEDLISTCLASS_STATUS
+Tila
+; Status
+;
+MSG_PREFSADVANCEDLISTCLASS_INIT
+Init
+; Init
+;
+MSG_PREFSADVANCEDLISTCLASS_TYPE
+Tyyppi
+; Type
+;
+MSG_PREFSADVANCEDLISTCLASS_VALUE
+Arvo
+; Value
+;
+MSG_PREFSADVANCEDLISTCLASS_DEFAULTVALUE
+Oletusarvo
+; Default Value
+;
+; *** Prefs_Advanced_GroupClass.c (prefs_advanced_groupclass.c)
+;
+MSG_PREFSADVANCEDGROUPCLASS_VALUE
+Arvo
+; Value
+;
+MSG_PREFSADVANCEDGROUPCLASS_RESETTODEFAULT
+_Palauta oletukset
+; _Reset to Default
+;
+MSG_PREFSADVANCEDGROUPCLASS_RESETTODEFAULT_HELP
+The value of the selected item will be reset to it's default.
+; The value of the selected item will be reset to its default.
+;
+MSG_PREFSADVANCEDGROUPCLASS_ON
+Käytössä
+; On
+;
+MSG_PREFSADVANCEDGROUPCLASS_OFF
+Pois
+; Off
+;
+; *** MimeListTreeClass.c (mimelisttreeclass.c)
+;
+MSG_MIMELISTTREECLASS_TYPE
+Tyyppi
+; Type
+;
+MSG_MIMELISTTREECLASS_NAME
+Nimi
+; Name
+;
+; *** SearchBarClass.c (searchbarclass.c)
+;
+MSG_SEARCHBARCLASS_SEARCH
+_Etsi
+; S_earch
+;
+MSG_SEARCHBARCLASS_SEARCH_HELP
+Etsittävä merkkijono.
+; Enter the string to search for.
+;
+MSG_SEARCHBARCLASS_CASESENSITIVE
+_Erottele isot ja pienet kirjaimet
+; Case se_nsitive:
+;
+MSG_SEARCHBARCLASS_CASESENSITIVE_HELP
+Valitsee, täytyykö kirjainkoon vastata hakua.
+; If activated "foo" is different to "FOO".
+;
+MSG_SEARCHBARCLASS_PREV
+Edellinen
+; Prev
+;
+MSG_SEARCHBARCLASS_NEXT
+Seuraava
+; Next
+;
+MSG_SEARCHBARCLASS_TEXTNOTFOUND
+Tekstiä ei löydy.
+; Text not found.
+;
+; *** PatternRenameWinClass.c (patternrenamewinclass.c)
+;
+MSG_PATTERNRENAMEWINCLASS_WINDOWTITLE
+Nimeä uudelleen
+; Rename
+;
+MSG_PATTERNRENAMEWINCLASS_OLDNAME
+\033c_Vanha nimi tai lauseke:
+; \033c\033bSource name or pattern:
+;
+MSG_PATTERNRENAMEWINCLASS_OLDNAME_HELP
+Name or pattern for original name.
+; Name or pattern for original name.
+;
+MSG_PATTERNRENAMEWINCLASS_NEWNAME
+\033c_Uusi nimi tai lauseke:
+; \033c\033bDesti_nation name or pattern:
+;
+MSG_PATTERNRENAMEWINCLASS_NEWNAME_HELP
+Name or pattern for new name.
+; Name or pattern for new name.
+;
+MSG_PATTERNRENAMEWINCLASS_RENAME
+_Nimeä uudelleen
+; _Rename
+;
+MSG_PATTERNRENAMEWINCLASS_RENAME_HELP
+The name specified within the text field in this window will be used as new name.
+; The name specified within the text field in this window will be used as new name.
+;
+MSG_PATTERNRENAMEWINCLASS_SKIP
+_Ohita
+; _Skip
+;
+MSG_PATTERNRENAMEWINCLASS_SKIP_HELP
+Skip the current file and continue with the next file.
+; Skip the current file and continue with the next file.
+;
+MSG_PATTERNRENAMEWINCLASS_CANCEL
+_Peruuta
+; _Cancel
+;
+MSG_PATTERNRENAMEWINCLASS_CANCEL_HELP
+Keskeytä uudelleennimeäminen. Ikkuna suljetaan.
+; Aborts the rename operation. The window will be closed.
+;
+; *** Print.c (print.c)
+;
+MSG_PRINT_REQUESTERTITLE
+Tulostus
+; Print
+;
+MSG_PRINT_OK
+_Ok
+; _OK
+;
+MSG_PRINT_COULDNOTFINDPRINTER
+Tulostinta ei löydy.
+; Could not find printer.
+;
+; BookMarkListClass.c (bootmarklistclass.c)
+;
+MSG_BOOKMARK_NAME_LISTTITLE
+Nimi
+; Name
+;
+MSG_BOOKMARK_LOCATION_LISTTITLE
+Sijainti
+; Location
+;
+MSG_BOOKMARK_UNNAMED
+Nimeämätön
+; Unnamed
+;
+; PrefsWin_BookmarksClass.c (prefswin_bookmarksclass.c)
+;
+MSG_PREFSWIN_BOOKMARKS_GROUP
+Kirjanmerkit
+; Bookmarks
+;
+MSG_PREFSWIN_BOOKMARKS_HELP
+List of the currently defined bookmarks.
+; List of the currently defined bookmarks.
+;
+MSG_PREFSWIN_BOOKMARKS_ADD
+_Lisää
+; _Add
+;
+MSG_PREFSWIN_BOOKMARKS_ADD_HELP
+Adds a new bookmark to the list.
+; Adds a new bookmark to the list.
+;
+MSG_PREFSWIN_BOOKMARKS_REMOVE
+_Poista
+; _Remove
+;
+MSG_PREFSWIN_BOOKMARKS_REMOVE_HELP
+The active bookmark will be removed from list.
+; The active bootmark will be removed from list.
+;
+MSG_PREFSWIN_BOOKMARKS_LOCATION
+_Sijainti
+; _Location
+;
+MSG_PREFSWIN_BOOKMARKS_LOCATION_HELP
+This path specifies the location the bookmark is leading to.
+; This path specifies the location the bookmark is leading to.
+;
+MSG_PREFSWIN_BOOKMARKS_NAME
+_Nimi
+; _Name
+;
+MSG_PREFSWIN_BOOKMARKS_NAME_HELP
+The name entered here is used in context menus to identify the bookmark.
+; The name entered here is used in context menus to identify the bootmark.
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAY_GROUP
+Näkymäasetukset
+; Display Options
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS
+_Näytä:
+; _Display as:
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_HELP
+Only the specified information will be shown in bookmark lists.
+; Only the specified information will be shown in bookmark lists.
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_NAMESANDLOCATIONS
+Nimi ja sijainti
+; Name & Location
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_NAMES
+Nimi
+; Name
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_LOCATIONS
+Sijainti
+; Location
+;
+; Bookmarks.c (bookmarks.c)
+;
+MSG_BOOKMARKS_MENUTITLE
+Kirjanmerkki
+; Bookmark
+;
+MSG_BOOKMARKS_ADD
+Lisää kirjanmerkki...
+; Add Bookmark...
+;
+MSG_BOOKMARKS_ADD_TEMPORARY
+Lisää väliaikainen kirjanmerkki...
+; Add Temporary Bookmark...
+;
+; AddBookmarkWinClass.c (addbookmarkwinclass.c)
+;
+MSG_ADDBOOKMARKWINCLASS_WINDOWTITLE
+Kirjanmerkki
+; Bookmark
+;
+MSG_ADDBOOKMARKWINCLASS_ENTERBOOKMARKNAME
+\033c\033bSyötä kirjanmerkin nimi
+; \033c\033bEnter bookmark name
+;
+MSG_ADDBOOKMARKWINCLASS_OK
+_Ok
+; _Ok
+;
+MSG_ADDBOOKMARKWINCLASS_OK_HELP
+Bookmark will be added to bookmark list.
+; Bookmark will be added to bookmark list.
+;
+MSG_ADDBOOKMARKWINCLASS_CANCEL
+_Peruuta
+; _Cancel
+;
+MSG_ADDBOOKMARKWINCLASS_CANCEL_HELP
+The bookmark creation will be aborted.
+; The bookmark creation will be aborted.
+;
+; SelectWinClass.c (selectwinclass.c)
+;
+MSG_SELECTWINCLASS_WINDOWTITLE
+Lausekevalinta
+; Pattern Selection
+;
+MSG_SELECTWINCLASS_ENTERSELECTIONPATTERN
+\033cSyötä valintalauseke:
+; \033cEnter file selection pattern:
+;
+MSG_SELECTWINCLASS_OK
+_Ok
+; _Ok
+;
+MSG_SELECTWINCLASS_OK_HELP
+Tiedostot jotka vastaavat valintalauseketta valitaan.
+; Files matching the pattern will be selected.
+;
+MSG_SELECTWINCLASS_CANCEL
+_Peruuta
+; _Cancel
+;
+MSG_SELECTWINCLASS_CANCEL_HELP
+Peruuta valintatoiminto.
+; Abort the selection without any action.
+;
+; DeleteDir.c (deletedir.c)
+;
+MSG_DELETEDIR_TITLE
+Ambient · Poista hakemisto
+; Ambient · Delete directory
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGFILE
+Tiedostoa '%s' ei voitu poistaa.\nDOS-virhe: %S (#%N).
+; Couldn't delete file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGDIRECTORY
+Hakemistoa '%s' ei voitu poistaa.\nDOS-virhe: %S (#%N).
+; Couldn't delete directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGDIRECTORYICON
+Hakemiston '%s' kuvaketta ei voitu poistaa.\nDOS-virhe: %S (#%N).
+; Couldn't delete icon of directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORUNABLETOSETPROTECTON
+Ei voitu muuttaa suojausta kohteessa '%s'.\nDOS-virhe: %S (#%N).
+; Couldn't set the protection mode of '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_SKIPSKIPALWAYSRETRYABORT
+_Ohita|Ohita _aina|*_Yritä uudelleen|_Keskeytä
+; _Skip|Skip Always|*_Retry|_Abort
+;
+MSG_DELETEDIR_RETRYCANCEL
+*_Yritä uudelleen|_Peruuta
+; *_Retry|_Cancel
+;
+MSG_DELETEDIR_RETRYSKIPICONCANCEL
+*_Yritä uudelleen|_Ohita kuvake|_Peruuta
+; *_Retry|_Skip Icon|_Cancel
+;
+; DeleteFile.c (deletefile.c)
+;
+MSG_DELETEFILE_TITLE
+Ambient · Poista tiedosto
+; Ambient · Delete file
+;
+MSG_DELETEFILE_ERRORWHILEDELETINGFILE
+Tiedostoa '%s' ei voitu poistaa.\nDOS-virhe: %S (#%N).
+; Couldn't delete file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEFILE_ERRORWHILEDELETINGFILEICON
+Tiedoston '%s' kuvaketta ei voitu poistaa.\nDOS-virhe: %S (#%N).
+; Couldn't delete icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEFILE_RETRYCANCEL
+*_Yritä uudelleen|_Peruuta
+; *_Retry|_Cancel
+;
+MSG_DELETEFILE_RETRYSKIPICONCANCEL
+*_Yritä uudelleen|_Ohita kuvake|_Peruuta
+; *_Retry|_Skip Icon|_Cancel
+;
+; trashcan.c
+;
+MSG_TRASHFILE_TITLE
+Ambient · Tuhoa tiedosto
+; Ambient · Trash file
+;
+MSG_TRASHFILE_ERRORWHILEDELETINGFILE
+Tiedostoa '%s' ei voitu tuhota.\nDOS-virhe: %S (#%N).
+; Couldn't trash file '%s'.\nDOS error: %S (#%N).
+;
+MSG_TRASHFILE_ERRORWHILEDELETINGFILEICON
+Tiedoston '%s' kuvaketta ei voitu tuhota.\nDOS-virhe: %S (#%N).
+; Couldn't trash icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_TRASHFILE_RETRYCANCEL
+*_Yritä uudelleen|_Peruuta
+; *_Retry|_Cancel
+;
+MSG_TRASHFILE_RETRYSKIPICONCANCEL
+*_Yritä uudelleen|_Ohita kuvake|_Peruuta
+; *_Retry|_Skip Icon|_Cancel
+;
+MSG_RESTOREFILE_TITLE
+Ambient · Palauta tiedosto
+; Ambient · Restore file
+;
+MSG_RESTOREFILE_ERRORWHILEDELETINGFILE
+Tiedostoa '%s' ei voitu palauttaa.\nDOS-virhe: %S (#%N).
+; Couldn't restore trashed file '%s'.\nDOS error: %S (#%N).
+;
+MSG_RESTOREFILE_ERRORWHILEDELETINGFILEICON
+Tiedoston '%s' kuvaketta ei voitu palauttaa.\nDOS-virhe: %S (#%N).
+; Couldn't restore trashed icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_RESTOREFILE_RETRYCANCEL
+*_Yritä uudelleen|_Peruuta
+; *_Retry|_Cancel
+;
+MSG_RESTOREFILE_RETRYSKIPICONCANCEL
+*_Yritä uudelleen|_Ohita kuvake|_Peruuta
+; *_Retry|_Skip Icon|_Cancel
+;
+;
+; *** PanelWinClass.c (panelwinclass.c)
+;
+MSG_PANELWIN_NAME_LOOK
+Nimi & ulkonäkö
+; Name & Look
+;
+MSG_PANELWIN_BEHAVIOUR
+Käyttäytyminen
+; Behaviour
+;
+MSG_PANELWIN_NAME
+Nimi:
+; Name:
+;
+MSG_PANELWIN_NAME_HELP
+Name for panel in prefswin and on disk.
+; Name for panel in prefswin and on disk.
+;
+MSG_PANELWIN_BACKGROUND
+Tausta:
+; Background:
+;
+MSG_PANELWIN_BACKGROUND_HELP
+Background for panelwindow.
+; Background for panelwindow.
+;
+MSG_PANELWIN_BACKMODE_COLOR
+Väri
+; Color
+;
+MSG_PANELWIN_BACKMODE_IMAGE
+Kuva
+; Image
+;
+MSG_PANELWIN_ALPHA
+Läpinäkyvyys:
+; Alpha:
+;
+MSG_PANELWIN_ALPHA_HELP
+Global alpha for panelwindow.
+; Global alpha for panel.
+;
+MSG_PANELWIN_DEPTHS_NORMAL
+Normaali
+; Normal
+;
+MSG_PANELWIN_DEPTHS_BACK
+Aina taustalla
+; Always to Back
+;
+MSG_PANELWIN_DEPTHS_FRONT
+Aina edessä
+; Always to Front
+;
+MSG_PANELWIN_PLACEMENTH_NONE
+Ei mitään
+; None
+;
+MSG_PANELWIN_PLACEMENTH_BEGINNING
+Alussa
+; Beginning
+;
+MSG_PANELWIN_PLACEMENTH_END
+Lopussa
+; End
+;
+MSG_PANELWIN_PLACEMENTH_BOTH
+Molemmissa
+; Both
+;
+MSG_PANELWIN_ORIENTATION
+Asent_o:
+; _Orientation:
+;
+MSG_PANELWIN_ORIENTATION_HELP
+Changes the orientation of the panel.
+; Changes the orientation of the panel.
+;
+MSG_PANELWIN_TITLES_VERTICAL
+Pystysuora
+; Vertical
+;
+MSG_PANELWIN_TITLES_HORIZONTAL
+Vaakasuora
+; Horizontal
+;
+MSG_PANELWIN_POSITIONING
+Sijottelu:
+; _Positioning:
+;
+MSG_PANELWIN_POSITIONING_HELP
+Makes the screen borders act as a kind of magnet.
+; Makes the screen borders act as a kind of magnet.
+;
+MSG_PANELWIN_MODES_FLOATING
+Kelluva
+; Floating
+;
+MSG_PANELWIN_MODES_ATTACHED
+Kiinnittyneenä reunuksiin
+; Attached to Borders
+;
+MSG_PANELWIN_MODES_FIXED
+Fixed to position
+; Fixed to position
+;
+MSG_PANELWIN_SIZE
+Koko:
+; S_ize:
+;
+MSG_PANELWIN_SIZE_HELP
+Changes the size of the panel.
+; Changes the size of the panel.
+;
+MSG_PANELWIN_DEPTH_ARRANGEMENT
+Syvyysasettelu:
+; _Depth arrangement:
+;
+MSG_PANELWIN_DEPTH_ARRANGEMENT_HELP
+Tells how a panel should behave regarding depth arrangement with other windows.
+; Tells how a panel should behave regarding depth arrangement with other windows.
+;
+MSG_PANELWIN_DRAG_GADGET
+Vetopainike:
+; Drag _gadget:
+;
+MSG_PANELWIN_DRAG_GADGET_HELP
+Changes the place and number of dragging gadgets, which allow to drag the panel around.
+; Changes the place and number of dragging gadgets, which allow to drag the panel around.
+;
+MSG_PANELWIN_ALLOW_ZIPPING
+Salli viuhahdus
+; Allow _zipping
+;
+MSG_PANELWIN_ALLOW_ZIPPING_HELP
+Allows to reduce the panel to its minimal size by clicking on a drag gadget.
+; Allows to reduce the panel to its minimal size by clicking on a drag gadget.
+;
+MSG_PANELWIN_AUTO_ZIPPING
+_Automaattiviuhahdus
+; _Autozipping
+;
+MSG_PANELWIN_AUTO_ZIPPING_HELP
+Zip panel when mouse enters and leaves panel.
+; Zip panel when mouse enters and leaves panel.
+;
+MSG_PANELWIN_HIDE_DRAGBAR
+Piilota vetopalkki
+; Hide Dragbar
+;
+MSG_PANELWIN_HIDE_DRAGBAR_HELP
+Only show dragbar(s) when under mousepointer.
+; Only show dragbar(s) when under mousepointer.
+;
+; *** PanelBaseButtonClass.c (panelbasebuttonclass.c)
+;
+MSG_PANELBASEBUTTON_ICON
+Kuvake:
+; Icon:
+;
+MSG_PANELBASEBUTTON_ICON_HELP
+Icon displayed in parent panel.
+; Icon displayed in parent panel.
+;
+MSG_PANELBASEBUTTON_ICON_DEFAULT
+Oletus
+; Default
+;
+MSG_PANELBASEBUTTON_ICON_CUSTOM
+Mukautettu
+; Custom
+;
+; (unused???)
+MSG_PANELBASEBUTTON_ICON_FILE
+Tiedosto
+; File
+;
+; *** PanelSubWinClass.c (panelsubwinclass.c)
+;
+MSG_PANELSUBWIN_BUTTON_FRAME
+Painike
+; Button
+;
+MSG_PANELSUBWIN_PANEL_FRAME
+Paneeli
+; Panel
+;
+MSG_PANELSUBWIN_BACKGROUND
+Tausta:
+; Background:
+;
+MSG_PANELSUBWIN_BACKGROUND_HELP
+Background for panel.
+; Background for panel.
+;
+MSG_PANELSUBWIN_ALPHA
+Läpinäkyvyys
+; Alpha
+;
+MSG_PANELSUBWIN_ALPHA_HELP
+Global alpha for sub panel.
+; Global alpha for sub panel.
+;
+MSG_PANELSUBWIN_BACKMODE_COLOR
+Väri
+; Color
+;
+MSG_PANELSUBWIN_BACKMODE_IMAGE
+Kuva
+; Image
+;
+MSG_PANELSUBWIN_BACKMODE_CLONE
+Kloonaa vanhempi
+; Clone Parent
+;
+; *** PanelDirPanelButtonClass.c (panelsubwinclass.c)
+;
+MSG_PANELDIRPANELBUTTON_DIRECTORY
+Hakemisto:
+; Directory:
+;
+MSG_PANELDIRPANELBUTTON_DIRECTORY_HELP
+Directory to be shown in a sub panel.
+; Directory to be shown in a sub panel.
+;
+MSG_PANELDIRPANELBUTTON_SHORTHELP
+Hakemisto
+; Directory
+;
+; *** PrefsWinPanelClass.c (prefswin_panelclass.c)
+;
+MSG_PREFSWIN_PANEL_PANELS
+Paneelit
+; Panels
+;
+MSG_PREFSWIN_PANEL_GLOBAL
+Yleiset
+; Global
+;
+MSG_PREFSWIN_PANEL_NEW
+Uusi paneeli
+; New Panel
+;
+MSG_PREFSWIN_PANEL_NEW_HELP
+Creates new panel.
+; Creates new panel.
+;
+MSG_PREFSWIN_PANEL_DELETE
+Poista
+; Delete
+;
+MSG_PREFSWIN_PANEL_DELETE_HELP
+Delete panel or panelitem.
+; Delete panel or panelitem.
+;
+MSG_PREFSWIN_PANEL_LIST_HELP
+Drag object into listtree.
+; Drag object into listtree.
+;
+MSG_PREFSWIN_PANEL_RESCAN
+Hae uudelleen
+; Rescan
+;
+MSG_PREFSWIN_PANEL_RESCAN_HELP
+Rescan for added classes and update the class list.
+; Rescan for added classes and update the class list.
+;
+MSG_PREFSWIN_PANEL_ZIPSPEED
+Viuhahdusnopeus:
+; Zipping speed:
+;
+MSG_PREFSWIN_PANEL_ZIPSPEED_HELP
+Sets the animation speed of the panels' zipping effect.
+; Sets the animation speed of the panels' zipping effect.
+;
+MSG_PREFSWIN_PANEL_LAYOUT
+Asettelu
+; Layout
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE
+Automaattitallennus
+; Autosave
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DROP
+Kuvake pudotetaan paneeliin
+; Icon dropped into window
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DROP_HELP
+Save the panel when icon is added by dropping it onto panel.
+; Save the panel when icon is added by dropping it onto panel.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DELETE
+Kuvake poistetaan
+; Icon deleted
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DELETE_HELP
+Save the panel when icon is deleted from contextmenu.
+; Save the panel when icon is deleted from contextmenu.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_MOVE
+Kuvaketta siirretään paneelin sisällä
+; Icon moved inside window
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_MOVE_HELP
+Save the panel when icon is moved.
+; Save the panel when icon is moved.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_WINDOWPOS
+Paneelia siirretään ruudulla
+; Panel moved on screen
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_WINDOWPOS_HELP
+Save the panel when panel is dragged to a new position.
+; Save the panel when panel is dragged to a new position.
+;
+MSG_PREFSWIN_PANEL_EFFECTS
+Kuvake-efektit
+; Icon effects
+;
+MSG_PREFSWIN_PANEL_HIGHLIGHT
+Korostus:
+; Highlight:
+;
+MSG_PREFSWIN_PANEL_HIGHLIGHT_HELP
+Effect on icon when mouse is hovering over it.
+; Effect on icon when mouse is hovering over it.
+;
+MSG_PREFSWIN_PANEL_DRAGDROP_EFFECT
+Vedä & Pudota:
+; Drag&Drop:
+;
+MSG_PREFSWIN_PANEL_DRAGDROP_EFFECT_HELP
+Effect on icon when object is dragged over it.
+; Effect on icon when object is dragged over it.
+;
+MSG_PREFSWIN_PANEL_SELECTED_EFFECT
+Valittu:
+; Selected:
+;
+MSG_PREFSWIN_PANEL_SELECTED_EFFECT_HELP
+Effect on icon when object is selected.
+; Effect on icon when object is selected.
+;
+MSG_PREFSWIN_PANEL_EFFECT_NONE
+Ei mitään
+; None
+;
+MSG_PREFSWIN_PANEL_EFFECT_CLONE_ICONVIEW
+Kloonaa kuvakenäkymästä
+; Clone from iconview
+;
+MSG_PREFSWIN_PANEL_EFFECT_LASSO
+Lasso
+; Lasso
+;
+MSG_PREFSWIN_PANEL_EFFECT_BRIGHTEN
+Kirkasta
+; Brighten
+;
+MSG_PREFSWIN_PANEL_EFFECT_DARKEN
+Tummenna
+; Darken
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT
+Värjää
+; Tint
+;
+MSG_PREFSWIN_PANEL_EFFECT_BLUR
+Sumenna
+; Blur
+;
+MSG_PREFSWIN_PANEL_EFFECT_GREY
+Mustavalko
+; Grey
+;
+MSG_PREFSWIN_PANEL_EFFECT_NEGATIVE
+Negatiivi
+; Negative
+;
+MSG_PREFSWIN_PANEL_EFFECT_NEGATIVE_FADE
+Hiipuva negatiivi
+; Negative Fade
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_FADE
+Hiipuva värjäys
+; Tint Fade
+;
+MSG_PREFSWIN_PANEL_EFFECT_DELTA
+Muutos
+; Delta
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_REQ
+Valitse värjäysefektin väri.
+; Select a color for tint effect.
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_FADE_REQ
+Valitse hiipuvan värjäyksen väri.
+; Select a color for tintfade effect.
+;
+MSG_PREFSWIN_PANEL_FORCE_GRID
+Pakota kuvakkeet neliöruudukkoon.
+; Force icons into square grid.
+;
+MSG_PREFSWIN_PANEL_FORCE_GRID_HELP
+Icon based panel objects will always use space where width and height are the panelsize instead of adapting one to the icon's aspect ratio.
+; Icon based panel objects will always use space where width and height are the panelsize instead of adapting one to the icon's aspect ratio.
+;
+MSG_PREFSWIN_PANEL_CLASS_NAME
+\033bNimi:
+; \033bName:
+;
+MSG_PREFSWIN_PANEL_CLASS_NAME_HELP
+Name of the selected panel item.
+; Name of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_VERSION
+\033bVersio:
+; \033bVersion:
+;
+MSG_PREFSWIN_PANEL_CLASS_VERSION_HELP
+Version of the selected panel item.
+; Version of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_AUTHOR
+\033bTekijä:
+; \033bAuthor:
+;
+MSG_PREFSWIN_PANEL_CLASS_AUTHOR_HELP
+Author of the selected panel item.
+; Author of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE
+Kuvaus
+; Description
+;
+MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE_HELP
+Description of the selected panel item.
+; Description of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_NOPREFSAVAILABLE
+Ei asetuksia saatavilla.
+; No preferences available.
+;
+; PanelSliderSpeedClass.c (Panelsliderspeedclass.c)
+;
+MSG_PREFSWIN_PANEL_SPEED_SLOW
+Hidas
+; Slow
+;
+MSG_PREFSWIN_PANEL_SPEED_MEDIUM
+Keskinopea
+; Medium
+;
+MSG_PREFSWIN_PANEL_SPEED_FAST
+Nopea
+; Fast
+;
+MSG_PREFSWIN_PANEL_SPEED_INSTANT
+Välitön
+; Instant
+;
+; Information requesters
+;
+MSG_PROGRAM_NOT_STARTED_REQ
+Ohjelman käynnistys epäonnistui:\n%s.
+; Couldn't start program\n%s.
+;
+MSG_PROJECT_NOT_STARTED_REQ
+Projektin %s käynnistys epäonnistui.\nTyökalu: %s.
+; Couldn't start project %s.\nTool: %s.
+;
+MSG_WBSTARTUP_PATH_ERROR_REQ
+WBStartup -polkua ei ole määritelty. Ole hyvä ja\naseta se valikosta Asetukset/Ambientin asetukset.../Sekalaiset.
+; WBStartup path not set, please configure it\nfrom the menu Settings/Ambient settings.../Miscellaneous.
+;
+MSG_REQUESTER_OK_GAD
+*Ok
+; *OK
+;
+MSG_AMBIENT_REQ
+Ambient
+; Ambient
+;
+MSG_WBSTARTUP_REQ
+Ambientin WBStartup
+; Ambient WBStartup
+;
+MSG_TOOLBAR_CLASS_VIEWMODE_ICONS_HELP
+Vaihda kuvakenäkymään
+; Switch to Icons viewmode
+;
+MSG_TOOLBAR_CLASS_VIEWMODE_LIST_HELP
+Vaihda listanäkymään. Käytä hiiren rullaa zoomataksesi!
+; Switch to List viewmode. Use the mouse wheel to zoom!
+;
+MSG_IMAGEVIEW_CLASS_HOTKEYS_HELP
+\033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPRTSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
+\033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
+image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+; \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPRTSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
+; \033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
+; image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR
+Vä_ri:
+; Colo_r:
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR_HELP
+Tilapalkin tekstin väri.
+; This color is used to display the status bar text.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR_WINTITLE
+Tilapalkin tekstin väri
+; Status bar text color
+;
+; MoveList.c (movelist.c)
+;
+MSG_MOVELIST_TITLE
+Ambient · Kopioi
+; Ambient · Copy
+;
+MSG_MOVELIST_ERRORWHILEMOVING
+Virhe kopioidessa '%s'
+; Error while copying '%s'
+;
+MSG_MOVELIST_BUTS_RETRYSKIPSKIPALLCANCEL
+*_Yritä uudelleen|Ohita|Ohita kaikki|Peruuta
+; *_Retry|Skip|Skip all|Cancel
+;
+; FastCopy.c (fastcopy.c)
+;
+MSG_FASTCOPY_BUTS_OK
+*_Ok
+; *_Ok
+;
+MSG_FASTCOPY_BUTS_DELETEKEEP
+*_Poista|Pidä
+; *_Delete|Keep
+;
+MSG_FASTCOPY_DESTISDIR
+Kohde '%s' on hakemisto.
+; Destination '%s' is a directory.
+;
+MSG_FASTCOPY_FILECANTBEDELETEDDOSERROR
+Tiedoston '%s' poisto epäonnistui.\nDOS-virhe: %S (#%N).
+; File '%s' can't be deleted.\nDOS error: %S (#%N).
+;
+MSG_FASTCOPY_FILEINCOMPLETE
+Tiedosto '%s' ei ole valmis.
+; File '%s' is not complete.
+;
+MSG_FASTCOPY_FILEINCOMPLETEDOSERROR
+Tiedosto '%s' ei ole valmis.\nDOS-virhe: %S (#%N).
+; File '%s' is not complete.\nDOS error: %S (#%N).
+;
+; MakeLink.c (makelink.c)
+;
+MSG_MAKELINK_TITLE
+Ambient · Tee linkki
+; Ambient · Makelink
+;
+MSG_MAKELINK_BUTS_RETRYCANCEL
+*_Yritä uudelleen|Peruuta
+; *_Retry|Cancel
+;
+MSG_MAKELINK_COULDNTCREATELINKDOSERROR
+Linkin '%s' luonti epäonnistui.\nDOS-virhe: %S (#%N).
+; Couldn't create link '%s'.\nDOS error: %S (#%N).
+;
+MSG_CMENU_PANELOPENPARENT
+Avaa edellinen
+; Open Parent
+;
+MSG_PREFSWIN_BACKGROUND_TRANSITION
+Salli efektit
+; Enable effects
+;
+MSG_PREFSWIN_BACKGROUND_TRANSITION_HELP
+Enable transition effects
+; Enable transition effects
+;

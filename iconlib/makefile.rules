@@ -1,0 +1,35 @@
+#
+# $Id: makefile.rules,v 1.3 2006/02/22 14:48:24 fab Exp $
+#
+
+rev.h: .revinfo
+	$(OUT)../rev
+
+libfunctions.c: fd/icon_lib.fd clib/icon_protos.h
+	$(ECHO) "CVINCLUDE $(notdir $<) -> $@"
+	$(OUT)$(CVINCLUDE) --libprefix=LIB_ --fd $(SOURCE)fd/icon_lib.fd --clib $(SOURCE)clib/icon_protos.h --gatestubs $@_tmp --quiet
+	$(OUT)echo "#include \"lib.h\"" >$@_tmp2
+	$(OUT)cat $@_tmp >> $@_tmp2
+	$(OUT)cat $@_tmp2 | sed -e "s,../../,," > $@
+	$(OUT)$(DELETE) $@_tmp $@_tmp2
+
+# Special tool
+getimage : getimage.c
+	$(OUT)$(HOSTCC) $(HOSTCFLAGS) $< -o $@
+
+# Special rule (only use it then the images have changed)
+rebuild_defaults : default_template.c getimage images/default_png.info images/default.info
+	$(ECHO) -n "generating default images.."
+	$(OUT)copy default_template.c default.c
+	$(OUT)getimage images/default_png.info default.c $(QUIET)
+	$(OUT)getimage images/default.info default.c $(QUIET)
+	$(OUT)getimage images/default_disk.info default.c $(QUIET)
+	$(OUT)getimage images/default_drawer.info default.c $(QUIET)
+	$(OUT)getimage images/default_kick.info default.c $(QUIET)
+	$(OUT)getimage images/default_project.info default.c $(QUIET)
+	$(OUT)getimage images/default_tool.info default.c $(QUIET)
+	$(ECHO) " done"
+
+%.o : %.c
+	$(ECHO)	"CC $(notdir $<)"
+	$(OUT)$(CC) $(CFLAGS) $<

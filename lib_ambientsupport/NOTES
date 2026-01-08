@@ -1,0 +1,22 @@
+
+To enable AmbientSupport add this to Ambient.h file:
+
+#include <workbench/ambientsupport.h>
+#define USE_INLINE_STDARG
+#include <proto/ambientsupport.h>
+#undef USE_INLINE_STDARG
+
+You also need to open and close "ambientsupport.library" in libs.c
+
+To compile it is required to remove the already replaced objects from
+makefile.obj which are currently all objects defined in "GFXOBJS ="
+line.
+
+Side Effects
+-------------
+
+Unfortunatly the ambient internal debug code is going hovac when used with the
+new code. This is because objects allocated with ambientsupport.library do not
+contain the debug information, so ambient spits warnings on any use.
+
+

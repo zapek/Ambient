@@ -1,0 +1,22 @@
+/* bar */
+
+options results;
+
+address 'AMBIENT';
+
+/*'PlaySound bydo:home/zapek/dl/space_cat_-_power_up.mp3';*/
+
+if ~show('L','rexxreqtools.library') then if ~addlib('rexxreqtools.library',0,-30,0) then do
+   echo "no rexxreqtools.library"
+   exit
+end
+
+song = rtfilerequest(,,"Select Ogg Vorbis song:");
+
+if song!="" then do
+	'PlaySound' song;
+end
+
+
+echo RESULT;
+echo RC;

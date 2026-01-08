@@ -1,0 +1,110 @@
+;
+;  $Id: Advanced.conf,default,v 1.10 2022/01/31 12:57:01 geit Exp $
+;
+;
+;  Ambient Advanced Config File
+;
+;  Only edit if you know what you're doing. To use this prefs copy it to
+;  SYS:Prefs/Ambient/Advanced.conf. Some of the options might need a restart
+;  of Ambient or reboot (they are marked with 'I' - init only). 
+;
+;  You can activate options by removing the comment.
+;
+;  The variable names are case sensitive!
+;
+
+;  NOTE: Not all of this options are supported anymore. Nobody bothered
+;        updating this very file.
+
+;
+;   progresswindowdelay [UINT] - opens the progresswindow for drag'n'drop file 
+;       operations delayed. Avoids (f.ex.) poping up the window when just single files 
+;       are moved (default: 0, min: 0, max: 2000)
+;
+;progresswindowdelay = 500
+
+;
+;   progresswindowfocus [BOOL] - open the progress window for drag'n'drop operations 
+;       activated. (default: true)
+;
+;progresswindowfocus = false
+
+;
+;  commodityfilter [STRING] - allows to filter which Commodities are shown in Exchange. 
+;      This is useful to hide programs which announce themself as Commodity, but aren't 
+;      real Commodities. Newstring.mcc is such nasty canditate, f.ex. (default: #?)
+;
+;commodityfilter = "~(Newstring.mcc)"
+
+;
+;  exchangehotkey [STRING] - can be used to specify the popup hotkey for Exchange. Empty
+;      string ("") disables the popup hotkey. (default: "control alt help")
+;
+;exchangehotkey = ""
+
+;
+;  popuprename [BOOL] - use a popup window for rename options instead an inline
+;      string gadget (default: true)
+;
+;popuprename = false
+
+;
+;   autosort [BOOL] - icons are automatically sorted when displayed (default: true)
+;
+;autosort = false
+
+;
+;   mmkeysevents [BOOL] - enabled/disable support for multimedia key events 
+;       (MorphOS 1.5+ only, default: true) 
+;
+;       - power/ user key:  opens 'Reboot/ ShutDown' requester
+;       - my computer key:  opens 'My MorphOS' window
+;
+;mmkeyevents = false
+
+;
+;   infowinauto#? [BOOL] - enable/ disable automatical retrieving of version tag or 
+;       md5sum in the Information window on fast media (e.g.: local HDD). (default: on) 
+;
+;   infowinautolimit [UINT] - limits enabled auto md5sum'ing/ version'ing to files of 
+;       a size smaller than infowinautolimit (in Bytes). To disable the limiter set the 
+;       option to 0. (default: 0)
+;
+;infowinautoversion = off
+;infowinautomd5sum  = off
+;infowinautolimit   = 67108864
+
+
+;
+;  sfx_#? [STRING] - plays a specified sample on the named event. Please use full path
+;      to the file location. You can use all sample types which are supported by the
+;      datatypes system. Using short samples is a smart idea ;)
+;
+;sfx_boot       = "partition:file.mp3"
+;sfx_panelzip   = "partition:file.aiff"
+;sfx_panelunzip = "partition:file.8svx"
+
+;  
+;  nodatatypesmimename [BOOL] - do not displays "Datatype" as filetype description for files 
+;      which aren't detected by ambients recognition rules. Only useful for developing, no
+;      need to touch this usually. (default: false)
+;
+;nodatatypesmimename = true
+
+;
+; donotputrefwindowtosleep [BOOL] - don't put reference window to sleep while doing some
+;      long term actions. (default: false)
+;
+; donotputrefwindowtosleep = true
+
+;
+; differentInactiveWindowTitles [BOOL] - display just the path as window title for inactive
+;      lister windows. (default: false)
+;
+;differentinactivewindowtitles = true
+
+;
+; iconZoomSlider [BOOL] - show a small slider gadget next to the statusbar to zoom icons
+;      (default: false)
+;
+;iconzoomslider = true

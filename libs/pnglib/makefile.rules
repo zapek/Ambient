@@ -1,0 +1,23 @@
+#
+# $Id: makefile.rules,v 1.5 2006/08/08 13:31:40 fab Exp $
+#
+
+rev.h: .revinfo
+	rev DIRECTORY=../../
+
+libpng/libpng.a:
+	$(OUT)$(MAKE) $(NODIR) $(SILENT) -C libpng build FEATURES="$(LIBPNG_FEATURES)" CPU=$(CPU_DEFAULT)
+
+ppcinline/png.h: fd/png_lib.fd clib/png_protos.h
+	$(ECHO) "CVINCLUDE $(notdir $<) -> $@"
+	$(OUT)$(MKDIR) ppcinline
+	$(OUT)$(CVINCLUDE) --quiet --fd=fd/png_lib.fd --clib=clib/png_protos.h --inlines=ppcinline/png.h --quiet
+
+proto/png.h: fd/png_lib.fd clib/png_protos.h
+	$(ECHO) "CVINCLUDE $(notdir $<) -> $@"
+	$(OUT)$(MKDIR) proto
+	$(OUT)$(CVINCLUDE) --quiet --fd=fd/png_lib.fd --clib=clib/png_protos.h --proto=proto/png.h
+
+%.o : %.c
+	$(ECHO)	"CC $(notdir $<)"
+	$(OUT)$(CC) $(CFLAGS) -DBASE_NAME=\"$(notdir $<)\" $<

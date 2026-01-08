@@ -1,0 +1,7 @@
+##base _AboutBase
+##bias 30
+##public
+About_GetPongClass()(sysv)
+About_GetLogo(type,width,height,depth)(sysv)
+About_GetText(type)(sysv)
+##end

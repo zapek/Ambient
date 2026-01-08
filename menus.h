@@ -1,0 +1,100 @@
+#ifndef AMBIENT_MENUS_H
+#define AMBIENT_MENUS_H
+/*
+ * $Id: menus.h,v 1.19 2023/01/12 20:33:12 jacadcaps Exp $
+*/
+
+#include <libraries/gadtools.h> // bitRocky: else GGC5 complains about "newmenus[]" declaration
+
+ULONG menus_init(void);
+void menus_cleanup(void);
+
+void menus_execute(APTR app, APTR viewobj, LONG menunum);
+void menus_shutdown(APTR menu);
+#ifdef DEBUG
+void menus_bind_debug(APTR menu);
+#endif /* DEBUG */
+
+void menus_user_add(CONST_STRPTR id, CONST_STRPTR title, CONST_STRPTR shortcut, CONST_STRPTR type, CONST_STRPTR parentid, CONST_STRPTR command, ULONG commandtype);
+void menus_user_remove(void);
+void menus_user_add_to_view(APTR obj);
+
+/*
+ * "Intuition" menus
+ */
+extern struct NewMenu newmenus[];
+
+
+/*
+ * Intuition Menu IDs
+ */
+enum {
+	MENU_dummy = 5000,
+	MENU_WB_DEVICELIST,
+	MENU_WB_EXECUTE,
+	MENU_WB_NEWSHELL,
+	MENU_WB_LASTMESSAGE,
+	MENU_WB_ABOUT,
+	MENU_WB_ABOUTMOS,
+	MENU_WB_QUIT,
+
+	MENU_EDIT,
+	MENU_EDIT_CUT,
+	MENU_EDIT_COPY,
+	MENU_EDIT_PASTE,
+//	MENU_EDIT_PASTEINTO,
+	MENU_EDIT_SELECTALL,
+	MENU_EDIT_INVERT,
+
+	MENU_VIEW_NEWDRAWER,
+	MENU_VIEW_NETWORKSCONNECT,
+	MENU_VIEW_LIST,
+	MENU_VIEW_SORT,
+	MENU_VIEW_SORT_BYNAME,
+	MENU_VIEW_SORT_BYTYPE,
+	MENU_VIEW_SORT_BYSIZE,
+	MENU_VIEW_SORT_BYDATE,
+
+	MENU_ICONS_INFORMATION,
+	MENU_ICONS_PUTAWAY,
+	MENU_ICONS_EJECT,
+	MENU_ICONS_RENAME,
+	MENU_ICONS_DELETE,
+	MENU_ICONS_TRASH,
+	MENU_ICONS_RESTORE,
+	MENU_ICONS_EMPTY,
+	MENU_ICONS_FORMAT,
+
+//	MENU_UTILITIES_SOUND,
+	MENU_UTILITIES_EXCHANGE,
+	MENU_UTILITIES_SYSTEMINFO,
+#if !USE_LEGACY
+	MENU_UTILITIES_SYSTEMLOG,
+#endif
+	MENU_UTILITIES_FORMAT,
+	MENU_UTILITIES_FIND,
+	
+	MENU_SETTINGS_DESKTOP,
+	MENU_SETTINGS_MUI,
+	MENU_SETTINGS_MUI_GLOBAL,
+	MENU_SETTINGS_SAVE,
+	MENU_SETTINGS_SYSTEM,
+
+#ifdef DEBUG
+	MENU_DEBUGACTION_MEMCHECK = 6000,
+	MENU_DEBUGACTION_MEMSTATS,
+	MENU_DEBUGACTION_MEMSTATS_ALL,
+	MENU_DEBUGACTION_STARTMEMRECORD,
+	MENU_DEBUGACTION_STOPMEMRECORD,
+#endif
+
+#ifdef DEBUG
+	MENU_DEBUG_BASE = 7000,
+#endif /* DEBUG */
+
+	MENU_USER_BASE = 9000,
+
+	/* do not put anything here ! */
+};
+
+#endif /* AMBIENT_MENUS_H */

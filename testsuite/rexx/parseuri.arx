@@ -1,0 +1,37 @@
+/* parses some URIs */
+
+options results;
+
+address 'AMBIENT';
+
+echo "";
+call outuri("http://www.meanmachine.ch/");
+call outuri("http://www.meanmachine.ch");
+call outuri("http://foobar@www.meanmachine.ch/");
+call outuri("http://foobar:fuck@www.meanmachine.ch/");
+call outuri("http://www.meanmachine.ch/some/place/somewhere");
+call outuri("http://www.meanmachine.ch/some/place/somewhere?foo#heya");
+call outuri("http://www.meanmachine.ch/some/place/somewhere#heya");
+call outuri("http://foobar:fuck@www.meanmachine.ch/some/place/somewhere?foo#heya");
+call outuri("http://foobar:fuck@www.meanmachine.ch:89/some/place/somewhere?foo#heya");
+call outuri("http://foobar:fuck@www.meanmachine.ch:89/some/place/somewhere?foo=grumpl&gnah=plop&hm=blerk#heya");
+call outuri("file:///harddisk:?left=170&top=126&width=299&height=283&mode=icon");
+call outuri("harddisk:?left=170&top=126&width=299&height=283&mode=icon");
+
+return;
+
+outuri:
+	parse arg uriname;
+    'ParseURI' uriname st;
+    echo "URI:" st.uri;
+    echo "scheme:" st.scheme;
+    echo "host:" st.host;
+    echo "port:" st.port;
+    echo "username:" st.username;
+    echo "password:" st.password;
+    echo "path:" st.path;
+    echo "args:" st.args;
+    echo "fragment:" st.fragment;
+    echo "local:" st.local;
+    echo "";
+return;

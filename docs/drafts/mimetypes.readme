@@ -1,0 +1,106 @@
+Ambient draft: mimetypes
+$Id: mimetypes.readme,v 1.2 2005/07/04 23:06:09 laire Exp $
+
+
+Introduction:
+-------------
+Mimetypes are a way to determine what an URI actually is. If it's a file its
+type needs to be recognized. Same case for eg. an HTTP content.
+
+
+Basics:
+-------
+- Identification: a mimetype can be determined by the stream/file content if
+it's not provided otherwise. There are basically 3 ways to determine a
+mimetype:
+
+  - by analyzing the content. This works best when the content has a mark at
+  the beginning of the file. Unfortunately it can be an expensive operation if
+  this is not the case
+
+  - by having the mimetype as metadata. For example an HTTP server sends such
+  info in the headers. Sometimes mimetypes are badly configured, the most
+  obvious case are missing mimetypes so the file is seen as text/plain or
+  binary
+
+  - by checking the file extension. Eg. *.jpg. It is possible that the
+  extension is wrong, but rare though.
+
+- Priority: given those 3 kind of identification we can use them in different
+  cases.
+
+  - file extention: fast, pretty reliable
+  - content: slow, very reliable
+  - metadata: fast, reliable but not always available
+
+
+Recognizers:
+------------
+- Built in: N/A
+
+- Multimedia: N/A
+
+- Datatypes: Ambient can ask the datatypes subsystem to recognize the data.
+The returned GID can be used, like:
+  GID_SYSTEM (directory, executables, libraries, devices, fonts, ..)
+   -> hexview
+  GID_TEXT (text files, .txt, ..)
+   -> textview
+  GID_DOCUMENT (no clue)
+   -> boopsiview
+  GID_SOUND (sound data)
+   -> sound output
+  GID_INSTRUMENT (probably some aiff instrument)
+   -> boopsiview
+  GID_MUSIC (probably some tracker files)
+   -> boopsiview
+  GID_PICTURE (image)
+   -> imageview
+  GID_ANIMATION (animations, rare stuff)
+   -> boopsiview
+  GID_MOVIE (movies, rare stuff)
+   -> boopsiview
+
+
+Actions:
+--------
+Actions specify what to do with a mimetype. There can be multiple actions per
+mimetypes. The first one is the default action, the next ones appear in the
+context menu. The action types are:
+
+ - external: run an external program, placeholder to specify arguments
+ - view: use a view (only possible if there's a view that can handle it)
+ - datatypes: use datatypes, always available as there's no way to find out if
+   a datatype handles something
+ - multimedia: use multimedia. available if there's a matching mimetype
+ - internal: use built-in support if there's a matching datatype (eg.
+   ogg-vorbis, script or mp3)
+
+
+Storage:
+--------
+There are 2 databases. An internal database and the user database.
+
+
+Updates:
+--------
+The user database is updated/populated by mossys:ambient/modules/mimedb.amod
+whose version is checked against the one stored in the prefs. If the version
+is newer, some mimedb function is called which updates the mime database. It's
+also possible to trigger that function through the prefs (eg. 'rebuild
+database', or even 'revert to defaults').
+
+- Internal mimetypes (within Ambient):
+  - ELF PPC
+  - HUNK 68k
+
+- External default mimetypes (in mimedb.amod)
+  - scripts
+  - ogg vorbis
+  - mp3
+  - multimedia
+  - datatypes
+
+
+
+

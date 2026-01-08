@@ -1,0 +1,22 @@
+
+12.08.2008
+ - Open without arguments acts now like used with "" and opens the current
+   drawer. (geit)
+
+14.06.2008
+ - Added smart url detection, so simply wrong spelled filenames don't cause
+   the web browser to be launched. (geit)
+
+28.02.2008
+ - Renamed to "open" to stop whining. :D (geit) If you liked "do" use alias command
+   in user-startup. (geit)
+ - Added open url support. (geit)
+ - Added pattern matching support (use with care, as it may overload your entire system when
+   opening 1000 jpg at the same time by using #?.jpg ). (geit)
+ - Added multi argument parsing. (geit)
+
+11.06.2006
+ - First version of "do". Do allows to use the Ambient filetypes via
+   Shell/CLI. May only be used by me, but who cares! ;) (geit)
+ - made reentrant (tokai)
+

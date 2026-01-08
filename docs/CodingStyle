@@ -1,0 +1,219 @@
+$Id: CodingStyle,v 1.4 2006/09/18 23:17:33 fab Exp $
+
+
+First things todo...
+--------------------------------------------------------------------------
+
+1. please subscribe to Ambient devel mailinglist, if not already done:
+   http://lists.sourceforge.net/mailman/listinfo/morphosambient-devel
+
+2. Its also an good idea to subscribe to the Ambient public mailinglist:
+   http://lists.sourceforge.net/mailman/listinfo/morphosambient-public
+
+
+About coding style...
+--------------------------------------------------------------------------
+
+1. *Keep the current style used in the source*
+
+
+2. Use proper indentation.
+
+   We indent our code using a *tabulator*, but only at the beginning
+   of the line.
+
+   /*  wrong:
+    */
+   {
+   <tab>int<tab>i;
+
+        return<tab>i;
+   }
+   
+   /*  correct:
+    */
+   {
+   <tab>int i;
+    
+   <tab>return i;
+   } 
+
+
+2. Insert spaces before and after operators
+
+	var=blah;     /* wrong   */
+	var = blah;   /* correct */
+
+
+4. Function and control block braces begin and end in the first column 
+   (BSD/Allman/Amiga style)
+
+	if (a == b)
+	{
+		int i; 
+		int j;
+
+		return (0);
+	}
+
+
+5. Structure braces use the K&R style 
+
+	struct my_data {
+		ULONG count;
+		APTR  image;
+	};
+
+   (remark: I wonder why? Same style as for functions would be nice IMHO -tokai)
+
+
+6. Keeping track of braces:
+
+   It's highly suggested to add comments to the closing bracet of a large block
+   which might contain nested blocks. This helps to avoid the risk of losing track 
+   of which braces belong to which control statements.
+
+	if (blah = malloc())
+	{
+		if (moo)
+		{
+			DoSomething();
+		}   
+
+		... much more lines...
+
+		if (frog)
+		{
+			DoSomethingMore();
+		}
+
+	} /* if blah */
+
+
+7. Use braces! 
+
+	/*   very bad (was used a few times with D(debug) functions already)
+	 */
+	if (blah)
+		moo();
+
+	/*   good
+	 */
+	if (blah)
+	{
+		moo();
+	}
+
+
+8. Comment your code!
+
+   Don't be lazy and add comments when required, *don't* expect that others
+   immediatelly get all your thoughts about the piece of code in question. 
+   Comments can help *a lot* here, but avoid C++ style comments.
+
+	/*  good comment style
+	 */
+	if (blah)
+
+	/*
+	**  bad comment style
+	*/
+	if (blah)
+
+	a = b; // bad comment style
+
+	a = b; /* good comment style */
+
+
+9. Variablenames are lowercase, try to use meaningful names.
+
+
+10. Macros.
+
+   Macronames are UPPERCASE.
+
+   Make use of the proper set of vapor macros as used everythere else in 
+   the code, see includes/macros/#?.
+
+   Use exec list macros: ADDHEAD, REMHEAD, NEWLIST etc. instead the
+   functions (AddHead(), RemHead(), NewList()). 
+
+   
+11. Variable types
+
+   We use exec types as defined in <exec/types.h>
+
+   UQUAD, QUAD     (64bit integers)
+   ULONG, LONG     (32bit integers)
+   UWORD, WORD     (16bit integers)
+   UBYTE, BYTE     (8bit integers)
+   DOUBLE, FLOAT   (64bit and 32bit floats)
+
+   CONST_STRPTR    
+   STRPTR
+   TEXT
+   APTR            
+
+   e.g.
+   CONST_STRPTR infotext = "Ambient Information";
+   TEXT textbuf[128];
+
+   APTR o = MUI_NewObject(MUIC_Area, TAG_DONE);
+
+
+12. Align repeating code.
+
+   If you have similiar statements, initializations, etc. directly after
+   each other it can greatly improve readability if you align the code 
+   with spaces:
+
+	/*  bad
+	 */
+	struct blah {
+		LONG b;
+		UBYTE c;
+		STRPTR s;
+	};
+
+	/*  good
+	 */
+	struct blah {
+		LONG   b;
+		UBYTE  c;
+		STRPTR s;
+	};
+
+
+	/*  bad
+	 */
+	snprintf(cm_command_about, 64, template, "dummy", GSI(MSG_CMENU_ABOUT));
+	snprintf(cm_command_addpanel, 64, template, "dummy", GSI(MSG_CMENU_ADDTOPANEL));
+	snprintf(cm_command_cut, 64, template, "cut", GSI(MSG_CMENU_CUT));
+
+	/*  good
+	 */
+	snprintf(cm_command_about,    64, template, "dummy", GSI(MSG_CMENU_ABOUT));
+	snprintf(cm_command_addpanel, 64, template, "dummy", GSI(MSG_CMENU_ADDTOPANEL));
+	snprintf(cm_command_cut,      64, template, "cut",   GSI(MSG_CMENU_CUT));
+
+
+13. strncpy() is braindead. Use stccpy() instead.
+
+
+Commiting your finished work...
+--------------------------------------------------------------------------
+
+Before you commit code to cvs you should take care for th following steps 
+to avoid problems:
+
+1. Do a "cvs up" before commit and check for conflicts
+
+2. Make sure your code compiles
+
+3. check changes with "cvs diff" before commiting is an good idea and 
+   helps to verify everything is ok fine.
+
+4. check if your code uses the above listed coding style rules 
+
+5. if it's not just a small cosmetic fix, then add the list of your 
+   changes to 'ambient.notes'

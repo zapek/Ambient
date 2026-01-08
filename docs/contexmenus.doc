@@ -1,0 +1,262 @@
+$Id: contexmenus.doc,v 1.2 2006/03/05 13:47:55 fab Exp $
+
+/*
+ *  Ambient - Context Menu Design
+ *  -----------------------------
+ *  Copyright 2005-2006 Ambient Open Source Team
+ *  All Rights Reserved
+ *
+ *  author(s): tokaiz@users.sourceforge.net
+ */
+
+
+History of this document
+------------------------
+
+2006/02/26 1.1  - updated with menu titles, hint by GGS (tokai)
+2006/02/26 1.1  - updated for Assigns in "My MorphOS" (tokai)
+2006/02/26 1.0  - first final draft (tokai)
+
+
+The goals of this document
+--------------------------
+
+With current Ambient (26th February 2006) context menus have no design at
+all, but are just a randomly put together bunch of the required actions.
+This is not only confusing, but sometimes also frustrating for the user
+when the menues are far away from usability (e.g. View and Show are very
+confusing, happens not rarely you go to wrong menu first. This is Stop-
+Energy would ChaoZer say ;).
+
+The main idea of this very concept is that all actions which appear
+somethere in the context menus follow a global order. So the small
+part of the actions which appear in each sub context menu still appear
+in the same order always. This is less confusing for the user and brings
+more consistency to the desktop.
+
+The second idea is that all actions in the global order are sorted
+into logical groups sorted by priority of use. First default actions,
+then actions, options and lastly selection and the cut/copy/paste
+block (which are actions too, but very rarely used usually and not
+really required as Copy/Move is usually done by just dragging the
+icons to different destination directly on the desktop).
+
+As 3rd idea Show/View gets merged into one submenu which is more
+logical build up.
+
+
+Advantages/ Disadvantages
+-------------------------
+
+Current system:  - no real uniform look (same options appear at different
+                   places across the miscellanous menus)
+                 - subitems appear not in logical order of priority
+                   (so important stuff is at bottom, less important
+                   at top, etc.)
+                 - very confusing View/Show submenus
+
+New system:      - more work :)
+                 + uniform look across all submenus
+                 + logical order of priority
+                 + nice View submenu
+
+
+The global design/ order
+------------------------
+
+  Menu                            Description
+  ------------------------------
+  Open                            ; default action (fileactions) or opens dir in current view (browser mode)
+  Open...                         ; opens dir in new window (spatial mode)
+  Open in new Window...           ; opens dir in new window (browser mode)
+  Open Shell...
+  Find...
+  Actions >>   ....               ; submenu for other cutom actions
+  ------------------------------
+  Information...
+  ------------------------------
+  New Drawer...
+  Rename...                       ; dots are not shown if actions doesn't popup the window (prefs)
+  Put Away...
+  Dismount...                     ; for Assigns in "My MorphOS", maybe misleading.. but thats opposite to "Assign" in DOS i think :)
+  Delete...
+  Format...
+  ------------------------------
+  View    >>   [x] as Icons       ; radio list
+                   as List
+               -----------------
+               [x] All files      ; if activated all files are shown, else only files with an icon
+               [x] Thumbnails     ; if activated it will show thumbnails for graphic files with no icon
+
+  Sort    >>   [x] automaticaly   ; if deactivated manual sorting is possible (for later, maybe ;)
+               ----------------
+               [x] by Name        ; radio list
+                   by Type
+                   by Size
+                   by Date
+  -----------------------------
+  Snapshot
+  -----------------------------
+  Select All
+  Invert
+  -----------------------------
+  Cut                       
+  Copy
+  Paste
+  Paste into                      ; takes currently selected drawer as paste target
+  -----------------------------
+
+
+
+The submenus
+------------
+
+Basic overview of all required context menues depending on place the
+user clicked. Titles of the menues are between [ and ] at top of each
+picture.
+
+
+on a drawer icon:
+
+    (spatial view)                   (browser view)
+
+    [Directory]                      [Directory]
+    ----------------------------     ----------------------------
+    Open...                          Open
+    Open Shell...                    Open in new Window...
+    Find...                          Open Shell...
+    ----------------------------     Find...
+    Information...                   ----------------------------
+    ----------------------------     Information...
+    Rename...                        ----------------------------
+    Delete...                        Rename...
+    ----------------------------     Delete...
+    Cut                              ----------------------------
+    Copy                             Cut
+    Paste into                       Copy
+    ----------------------------     Paste into
+                                     ----------------------------
+
+
+
+inside drawer/device window:
+
+    [Icons/List]¹
+    ----------------------------
+    Open Shell...
+    Find...
+    ----------------------------
+    New Drawer...
+    ----------------------------
+    View                      >>   
+    Sort                      >> 
+    ----------------------------
+    Snapshot
+    ----------------------------
+    Select All
+    Invert
+    ----------------------------
+    Cut                       
+    Copy
+    Paste
+    ----------------------------
+    
+    ¹) depending on current view, maybe just "Files" is enough. Currently it
+    uses "Icons" for icon view and "Files" for list view.
+
+  
+
+on device icon in root window:
+
+    (spatial view)                  (browser view)
+    [Volume]                        [Volume]
+    ----------------------------    ----------------------------
+    Open...                         Open...
+    Open Shell...                   Open Shell...
+    Find...                         Find...
+    ----------------------------    ----------------------------
+    Information...                  Information...
+    ----------------------------    ----------------------------
+    Rename...                       Rename...
+    Put Away...                     Put Away...
+    Format...                       Format...
+    ----------------------------    ----------------------------
+    Paste into                      Paste into
+    ----------------------------    ----------------------------
+
+on device icon in "My MorphOS":
+
+    (spatial view)                  (browser view)
+    [Volume]                        [Volume]
+    ----------------------------    ----------------------------
+    Open...                         Open
+    Open Shell...                   Open in new Window...
+    Find...                         Open Shell...
+    ----------------------------    Find...
+    Information...                  ----------------------------
+    ----------------------------    Information...
+    Rename...                       ----------------------------
+    Put Away...                     Rename...
+    Format...                       Put Away...
+    ----------------------------    Format...
+    Paste into                      ----------------------------
+    ----------------------------    Paste into
+                                    ----------------------------
+
+on "My MorphOS" icon (root window):
+
+    [My MorphOS]
+    ----------------------------
+    Open...
+    Find...
+    ----------------------------
+    Put Away...
+    ----------------------------
+
+
+on "Assign" icon in "My MorphOS"¹:
+
+    (spatial view)                  (browser view)
+    [Assign]                        [Assign]
+    ----------------------------    ----------------------------
+    Open...                         Open
+    Open Shell...                   Open in new Window...
+    Find...                         Open Shell...
+    ----------------------------    Find...
+    Dismount...                     ----------------------------
+    ----------------------------    Dismount...
+    Paste into                      ----------------------------
+    ----------------------------    Paste into
+                                    ----------------------------    
+
+    ¹) no "Information" menu item , as it's missleading in this 
+       context: get Information on Assign or the destination 
+       directory?
+
+
+on a file (with example actions)²:
+
+    (without icon or default        (with icon and default
+     tool)                           tool)
+    [<filetype>]                    [<filetype>]
+    ----------------------------    ----------------------------
+    Open with Multiview...          Open with [Defaulttool]...¹
+    Actions                   >>    Actions                   >>
+        +----------------------+        +----------------------+
+        | Edit with MorphED... |        | Open with Multiview..|
+        | Compile with gcc     |        | Edit with MorphED... |
+        +----------------------+        | Compile with gcc     |
+    ----------------------------        +----------------------+
+    Information...                  ----------------------------
+    ----------------------------    Information
+    Rename...                       ...
+    Delete...
+    ----------------------------
+    Cut                       
+    Copy
+    ----------------------------
+
+    ¹) [DefaultTool] == FilePart(DefaultTool) of course :)
+    ²) Executables have no "actions" block. (needs input, as they could
+       have possible Actions as "Open in HEX Editor" etc., so they maybe should
+       have at least the "Actions >>" submenu).

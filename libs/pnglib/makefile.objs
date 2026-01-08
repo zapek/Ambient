@@ -1,0 +1,10 @@
+#
+# $Id: makefile.objs,v 1.2 2005/07/04 23:06:11 laire Exp $
+#
+
+COBJS = noexec.o libfunctable.o lib.o png.o replacements.o pngmem.o
+
+COBJS_NODEP =
+
+LOBJS = libpng/libpng.a
+

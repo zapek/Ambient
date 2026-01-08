@@ -1,0 +1,3 @@
+cd sys:morphos/ambient
+ambient
+cd work:dev/ambient

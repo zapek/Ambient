@@ -1,0 +1,7 @@
+#
+# $Id: makefile.libs,v 1.2 2005/07/04 23:06:12 laire Exp $
+#
+
+#LIBs += -lsyscall
+
+LIBS = -lc

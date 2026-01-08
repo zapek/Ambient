@@ -1,0 +1,23 @@
+#
+# $Id: makefile.rules,v 1.5 2006/08/08 13:31:41 fab Exp $
+#
+
+rev.h: .revinfo
+	rev DIRECTORY=../../
+
+libz/libz.a:
+	$(OUT)$(MAKE) $(NODIR) $(SILENT) -C libz CPU=$(CPU_DEFAULT)
+
+ppcinline/z.h: fd/z_lib.fd clib/z_protos.h
+	$(ECHO) "CVINCLUDE $(notdir $<) -> $@"
+	$(OUT)$(MKDIR) ppcinline
+	$(OUT)$(CVINCLUDE) --quiet --fd=fd/z_lib.fd --clib=clib/z_protos.h --inlines=ppcinline/z.h --quiet
+
+proto/z.h: fd/z_lib.fd clib/z_protos.h
+	$(ECHO) "CVINCLUDE $(notdir $<) -> $@"
+	$(OUT)$(MKDIR) proto
+	$(OUT)$(CVINCLUDE) --quiet --fd=fd/z_lib.fd --clib=clib/z_protos.h --proto=proto/z.h
+
+%.o : %.c
+	$(ECHO)	"CC $(notdir $<)"
+	$(OUT)$(CC) $(CFLAGS) -DBASE_NAME=\"$(notdir $<)\" $<

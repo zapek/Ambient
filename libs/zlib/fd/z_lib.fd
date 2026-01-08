@@ -1,0 +1,29 @@
+##base _ZLibBase
+##bias 30
+##public
+deflateInit_(strm,level,version,stream_size)(sysv)
+deflate(strm,flush)(sysv)
+deflateEnd(strm)(sysv)
+
+inflateInit_(strm,version,stream_size)(sysv)
+inflate(strm,flush)(sysv)
+inflateEnd(strm)(sysv)
+
+deflateInit2_(strm,level,method,windowBits,memLevel,strategy,version,stream_size)(sysv)
+deflateSetDictionary(strm,dictionary,dictLength)(sysv)
+deflateCopy(dest,source)(sysv)
+deflateReset(strm)(sysv)
+deflateParams(strm,level,strategy)(sysv)
+
+inflateInit2_(strm,windowBits,version,stream_size)(sysv)
+inflateSetDictionary(strm,dictionary,dictLength)(sysv)
+inflateSync(strm)(sysv)
+inflateReset(strm)(sysv)
+
+compress(dest,destLen,source,sourceLen)(sysv)
+compress2(dest,destLen,source,sourceLen,level)(sysv)
+uncompress(dest,destLen,source,sourceLen)(sysv)
+
+adler32(adler,buf,len)(sysv)
+crc32(crc,buf,len)(sysv)
+##end

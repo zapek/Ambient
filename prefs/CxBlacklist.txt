@@ -1,0 +1,13 @@
+;
+;  $Id: CxBlacklist.txt,v 1.1 2006/03/23 14:39:30 fab Exp $
+;
+;  Ambient Commodity Blacklist
+;
+;  Blocks listing of Commodities in Exchange. This is useful to
+;  hide programs which announce themself as Commodity, but aren't
+;  real Commodities. Newstring.mcc is such nasty canditate, f.ex. 
+;  
+;  Each line one blacklisting; max 24 characters each. Lines 
+;  starting with semicolon are ignored.
+;
+Newstring.mcc

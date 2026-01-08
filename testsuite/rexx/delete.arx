@@ -1,0 +1,13 @@
+/* deletes a file */
+
+options results;
+
+address 'AMBIENT';
+
+address command 'touch ram:plopplop';
+
+'Delete ram:plopplop'
+
+echo RESULT;
+echo RC;
+

@@ -1,0 +1,10 @@
+/* wtf */
+
+options results;
+
+address 'AMBIENT';
+
+'tbh'
+
+echo RESULT;
+echo RC;

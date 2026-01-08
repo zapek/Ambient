@@ -1,0 +1,5468 @@
+## version $VER: ambient.catalog 7.0 (29.09.2007)
+## codeset 0
+## language dansk
+;
+;$Id: ambient.dansk.ct,v 1.60 2019/05/26 14:44:57 bitrocky Exp $
+;
+; *** Please do not use these strings anymore.
+;
+MSG_OK
+Ok
+; Ok
+;
+MSG_CANCEL
+Afbryd
+; Cancel
+;
+MSG_NO
+Nej
+; No
+;
+MSG_YES
+Ja
+; Yes
+;
+MSG_SAVE
+Gem
+; Save
+;
+MSG_USE
+Anvend
+; Use
+;
+MSG_TEST
+Test
+; Test
+;
+MSG_UNKNOWN
+Ukendt
+; Unknown
+;
+MSG_CLOSE
+Luk
+; Close
+;
+MSG_OK_REQ
+*OK
+; *OK
+;
+MSG_YES_NO_REQ
+*Ja|Nej
+; *Yes|No
+;
+MSG_YESNO
+_Ja|_Nej
+; _Yes|_No
+;
+MSG_SELECT
+Vælg
+; Select
+;
+MSG_ADD
+Tilføj
+; Add
+;
+MSG_REMOVE
+Fjern
+; Remove
+;
+MSG_REVERT
+Gendan
+; Revert
+;
+MSG_PERMSAVE
+Gem indstillingerne permanent
+; Save settings permanently
+;
+; Menus.c (menus.c)
+;
+MSG_MENU_WB_DEVICELIST
+Mit MorphOS...
+; My MorphOS...
+;
+MSG_MENU_WB_EXECUTE
+Udfør kommando...
+; Execute Command...
+;
+MSG_MENU_WB_NEWSHELL
+Ny skal...
+; New Shell...
+;
+MSG_MENU_WB_LASTMESSAGE
+Seneste meddelelse
+; Last Message
+;
+MSG_MENU_WB_ABOUT
+Om...
+; About...
+;
+MSG_MENU_WB_ABOUTMOS
+Om MorphOS...
+; About MorphOS...
+;
+MSG_MENU_WB_QUIT
+Afslut
+; Quit
+;
+MSG_MENU_SHUTDOWN
+Luk ned...
+; Shut Down...
+;
+MSG_MENU_EDIT
+Rediger
+; Edit
+;
+MSG_MENU_EDIT_CUT
+Klip
+; Cut
+;
+MSG_MENU_EDIT_COPY
+Kopier
+; Copy
+;
+MSG_MENU_EDIT_PASTE
+Klistre ind
+; Paste
+;
+MSG_MENU_EDIT_PASTEINTO
+Klistre ind i...
+; Paste Into...
+;
+MSG_MENU_EDIT_SELECTALL
+Vælg alt
+; Select All
+;
+MSG_MENU_EDIT_INVERT
+Vende
+; Invert
+;
+MSG_MENU_VIEW
+Se
+; View
+;
+MSG_MENU_VIEW_NEWDRAWER
+Ny skuffe...
+; New Drawer...
+;
+MSG_MENU_VIEW_LIST
+Liste
+; List Mode
+;
+MSG_MENU_VIEW_SORT
+Sorter ved
+; Sort By
+;
+MSG_MENU_VIEW_SORTBYNAME
+Navn
+; Name
+;
+MSG_MENU_VIEW_SORTBYTYPE
+Type
+; Type
+;
+MSG_MENU_VIEW_SORTBYSIZE
+Størrelse
+; Size
+;
+MSG_MENU_VIEW_SORTBYDATE
+Dato
+; Date
+;
+MSG_MENU_ICONS
+Ikoner
+; Icons
+;
+MSG_MENU_ICONS_INFORMATION
+Information...
+; Information...
+;
+MSG_MENU_ICONS_PUTAWAY
+Gem væk
+; Put Away
+;
+MSG_MENU_ICONS_EJECT
+Skyd ud
+; Eject
+;
+MSG_MENU_ICONS_RENAME
+Omdøb...
+; Rename...
+;
+MSG_MENU_ICONS_DELETE
+Slet
+; Delete
+;
+MSG_MENU_ICONS_FORMAT
+Formater...
+; Format...
+;
+MSG_MENU_ICONS_TRASH
+Move to Trashcan
+; Move to Trashcan
+;
+MSG_MENU_ICONS_RESTORE
+Restore
+; Restore
+;
+MSG_MENU_ICONS_EMPTY
+Empty Trashcan
+; Empty Trashcan
+;
+MSG_MENU_UTILITIES
+Tilbehør
+; Utilities
+;
+MSG_MENU_UTILITIES_FORMAT
+Formater disk...
+; Format Disk...
+;
+MSG_MENU_UTILITIES_FIND
+Find...
+; Find...
+;
+MSG_MENU_UTILITIES_SOUND
+Lyd...
+; Sound...
+;
+MSG_MENU_UTILITIES_SYSTEMINFO
+Systemovervåger...
+; System Monitor...
+;
+MSG_MENU_UTILITIES_SYSTEMLOG
+System logbog...
+; System Log...
+;
+MSG_MENU_UTILITIES_EXCHANGE
+Exchange...
+; Exchange...
+;
+MSG_MENU_SETTINGS
+Indstillinger
+; Settings
+;
+MSG_MENU_SETTINGS_DESKTOP
+Ambient...
+; Ambient...
+;
+MSG_MENU_SETTINGS_SYSTEM
+System...
+; System...
+;
+MSG_MENU_SETTINGS_MUI
+Ambient MUI...
+; Ambient MUI...
+;
+MSG_MENU_SETTINGS_MUI_GLOBAL
+Globale MUI...
+; MUI...
+;
+MSG_MENU_SETTINGS_SAVE
+Gem indstillinger
+; Save Settings
+;
+MSG_MENU_TOOLS
+Værktøj
+; Tools
+;
+MSG_MENU_DEBUG
+Fejlfind
+; Debug
+;
+MSG_MENU_DEBUGACTION
+Fejlfindingshandlinger
+; Debug Actions
+;
+MSG_MENU_DEBUGACTION_MEMCHECK
+Hukommelseskontrol
+; Memory Check
+;
+MSG_MENU_DEBUGACTION_MEMSTATS
+Udmål hukommelsesstatistik
+; Dump Memory Stats
+;
+MSG_MENU_DEBUGACTION_MEMSTATS_ALL
+Udmål hukommelsesdetaljer
+; Dump Memory Details
+;
+MSG_MENU_DEBUGACTION_STARTMEMRECORD
+Start hukommelsesoptagelse
+; Start Memory Recording
+;
+MSG_MENU_DEBUGACTION_STOPMEMRECORD
+Stop hukommelsesoptagelse
+; Stop Memory Recording
+;
+; PrefsWin_MainClass.c (prefswin_mainclass.c)
+;
+MSG_PREFSWIN_SAVE
+_Gem
+; _Save
+;
+MSG_PREFSWIN_SAVE_HELP
+Alle ændringer i præferencer vil blive gemt. Preferencer vil blive lukket.
+; All changes made in the preferences will be saved and the window will be closed.
+;
+MSG_PREFSWIN_USE
+_Anvend
+; _Use
+;
+MSG_PREFSWIN_USE_HELP
+Alle ændringer i præferencer vil forblive aktive indtil reboot. Præferencer vil blive lukket.
+; All changes made in the preferences will stay active until next reboot and the window will be closed.
+;
+MSG_PREFSWIN_TEST
+_Test
+; _Test
+;
+MSG_PREFSWIN_TEST_HELP
+Alle ændringer i præferencer vil blive midlertidgt aktive for test. Præferencer vil forblive åbne.
+; All changes made in the preferences will become temporary active and the window stays open.
+;
+MSG_PREFSWIN_CANCEL
+_Afbryd
+; _Cancel
+;
+MSG_PREFSWIN_CANCEL_HELP
+Alle ændringer vil blive afvist. Præferencer vil blive lukket.
+; All changes made in the preferences will reset to last saved state and the window will be closed.
+;
+; *** Preferences Window Tabs
+;
+MSG_PREFSWIN_TAB_BACKGROUNDS
+Baggrunde
+; Backgrounds
+;
+MSG_PREFSWIN_TAB_ICONDISPLAY
+Ikonvisning
+; Icon Display
+;
+MSG_PREFSWIN_TAB_BOOKMARKS
+Bogmærker
+; Bookmarks
+;
+MSG_PREFSWIN_TAB_MISCELLANEOUS
+Diverse
+; Miscellaneous
+;
+MSG_PREFSWIN_TAB_CLILAUNCHING
+CLI opstart
+; CLI Launching
+;
+MSG_PREFSWIN_TAB_DRAGANDDROP
+Træk & Slip
+; Drag & Drop
+;
+MSG_PREFSWIN_TAB_PANELS
+Paneler
+; Panels
+;
+MSG_PREFSWIN_TAB_LISTER
+Liste
+; Lister
+;
+MSG_PREFSWIN_TAB_MIME
+MIME
+; Mime
+;
+MSG_PREFSWIN_TAB_WINDOW
+Vindue
+; Window
+;
+MSG_PREFSWIN_TAB_KEYBOARD
+Tastatur
+; Keyboard
+;
+MSG_PREFSWIN_TAB_ADVANCED
+Avanceret
+; Advanced
+;
+;MSG_PREFSWIN_TAB_TOOLBAR /* needed ???    <- yes, someday. (tokai)*/
+;Toolbar
+;Li�ta
+;Dienstprogramm-Leiste  
+;Barre de navigation
+;Barra degli strumenti
+;Eszk�zsor
+;Pasek narz�dzi
+;Ty�kalupalkki
+;Verktygsf�lt
+;Toolbar
+;
+; PrefsWin_IconDisplay.c (prefswin_icondisplayclass.c)
+;
+MSG_PREFSWIN_ICONDISPLAY_MOUSEHOVER
+_Ikoner gløder under musen
+; Icon _glows under mouse
+;
+MSG_PREFSWIN_ICONDISPLAY_MOUSEHOVER_HELP
+Ikonerne starter med at gløde, når musen er over dem.
+; The icon under the mouse pointer gets highlighted when moving over it.
+;
+MSG_PREFSWIN_ICONDISPLAY_SEPARATEFILES
+Adskil filer fra skufferne
+; Separa_te files from drawers
+;
+;
+MSG_PREFSWIN_ICONDISPLAY_SEPARATEFILES_HELP
+Start en ny rækker filer efter den sidste skuffe i ikon visningen.
+; Start a new row for files after last drawer icon in icon view.
+;
+MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP
+Fadende ikoner ved opstart
+; Fade icon on sta_rtup
+;
+MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP_HELP
+Tænder fadende ikoner når Ambient startes.
+; Enables icon fade when Ambient gets started.
+;
+MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT
+Forudvalgte gennemsigtige ikoner
+; _Default icons transparent
+;
+MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT_HELP
+Forudvalgte ikoner vises gennemsnigtige, når denne funktion er valgt.
+; Default icons are displayed transparent when this option is enabled.
+;
+MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER
+Appicon indentificerer
+; A_ppicon identifier
+;
+MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER_HELP
+Alle applikationsikoner får et lille mærke, når denne funktion er valgt.
+; Any application icon gets a little mark when this option is enabled.
+;
+MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER
+Genvejs indentificerer
+; S_hortcut identifier
+;
+MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER_HELP
+Ethvert ikon som er efterladt ude som genvej vil få et mærke hvis denne funktion er valgt.
+; Any icon left out as shortcut will get marked by this option.
+;
+MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT
+Automatisk fastgørelse
+; _Automatic snapshot
+;
+MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT_HELP
+Ikoner vil automatisk blive fastgjort på deres nuværende position.
+; Icons will automatically be fixed at their current position.
+;
+MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS
+T_delte PNG ikoner
+; T_wo state PNG icons
+;
+MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS_HELP
+Dette tænder understøttelse af PNG ikoner som indeholder et billeder til brug for når det er valgt, og et når det ikke er.
+; This enables dual PNG icon support, which contain a separate image for unselected and selected state.
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION
+Drev _info:
+; Drive _info:
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION_HELP
+Denne gadget muliggør, at man man kan specificere måden enhedsikoner viser den tilgængelige disk plads på.
+; Specify the way device icons show available disk space.
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_NONE
+Ingen
+; None
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_TEXT
+Tekst
+; Text
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_GAUGE
+Måler
+; Gauge
+;
+MSG_PREFSWIN_ICONDISPLAY_DRIVE_TEXTGAUGE
+Tekst og måler
+; Text+Gauge
+;
+MSG_PREFSWIN_ICONDISPLAY_REGTITLE_DESKTOP
+Skrivebord
+; Desktop
+;
+MSG_PREFSWIN_ICONDISPLAY_REGTITLE_WINDOW
+Vindue
+; Window
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_SOLID
+Solid
+; Solid
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_CHECKERED
+Ternet
+; Checkered
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAYMODE_TRANSPARENT
+Gennemsigtig
+; Transparent
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAY
+Vis
+; Display
+;
+MSG_PREFSWIN_DRAGDROP_DRAGGING_EFFECT
+_Trække effekt:
+; _Dragging effect:
+;
+MSG_PREFSWIN_DRAGDROP_DROPPING_MARK
+Drop _mærke:
+; Dropping _mark:
+;
+; *** Progress Window
+;
+MSG_PROGRESS_MOVINGFILE_TITLE
+Ambient - Flytter fil...
+; Ambient � Moving file...
+;
+MSG_PROGRESS_MOVINGFILES_TITLE
+Ambient - Flytter filer...
+; Ambient � Moving files...
+;
+MSG_PROGRESS_COPYINGFILE_TITLE
+Ambient - Kopierer fil...
+; Ambient � Copying file...
+;
+MSG_PROGRESS_COPYINGFILES_TITLE
+Ambient - Kopierer filer...
+; Ambient � Copying files...
+;
+MSG_PROGRESS_DELETINGFILE_TITLE
+Ambient - Sletter fil...
+; Ambient � Deleting file...
+;
+MSG_PROGRESS_DELETINGFILES_TITLE
+Ambient - Sletter filer...
+; Ambient � Deleting files...
+;
+MSG_PROGRESS_BUFFERING
+Buffering...
+; Buffering...
+;
+MSG_PROGRESS_TIMEREMAINING
+Tid tilbage: %s. Hastighed: %s/s
+; Time remaining: %s.  Speed: %s/s
+;
+MSG_PROGRESS_DAY
+%ld dag
+; %ld day
+;
+MSG_PROGRESS_DAYS
+%ld dage
+; %ld days
+;
+MSG_PROGRESS_HOUR
+%ld time
+; %ld hour
+;
+MSG_PROGRESS_HOURS
+%ld timer
+; %ld hours
+;
+MSG_PROGRESS_MINUTE
+%ld minut
+; %ld minute
+;
+MSG_PROGRESS_MINUTES
+%ld minutter
+; %ld minutes
+;
+MSG_PROGRESS_SECOND
+%ld sekund
+; %ld second
+;
+MSG_PROGRESS_SECONDS
+%ld sekunder
+; %ld seconds
+;
+MSG_PROGRESS_FILESDONE
+Færdige filer:
+; Files done:
+;
+MSG_PROGRESS_FILESDONE_HELP
+Vis detaljeret fremgangsinformation.
+; Shows detailed progress information.
+;
+MSG_PROGRESS_STOP
+_Stop
+; _Stop
+;
+MSG_PROGRESS_STOP_HELP
+Denne knap stopper den nuværende handling.
+; Abort current action.
+;
+; *** Format Window
+;
+MSG_FORMAT_WINDOW_TITLE
+Formater enhed %s
+; Format Volume %s
+;
+MSG_FORMAT_MENU_PROJECT
+Format
+; Format
+;
+MSG_FORMAT_MENU_QUIT
+Afslut
+; Quit
+;
+MSG_FORMAT_ERROR
+Formateringsfejl
+; Formating error
+;
+MSG_FORMAT_FORMATING
+Formaterer...
+; Formating...
+;
+MSG_FORMAT_ERROR_RESERVED
+Denne titel er reserveret til systemet. Vælg venligst en anden.
+; This label is reserved by the system. Please use another name.
+;
+MSG_FORMAT_ERROR_NOTHING
+Du skal leverer en brugbar titel før\nat enheden kan formateres. Du leverede ingenting.
+; You must supply a valid label name for\nthe device to format. You supplied nothing.
+;
+MSG_FORMAT_ERROR_CANNOT
+Denne enhed kan ikke formateres.
+; This device cannot be formatted.
+;
+MSG_FORMAT_REALLY
+Er du sikker på, at du vil formaterere\n%s ?
+; Do you really want to format\n%s ?
+;
+MSG_FORMAT_LABEL
+Titel:
+; _Label:
+;
+MSG_FORMAT_LABEL_HELP
+Denne titel vil blive brugt som navn for enheden.
+; This name will be used as name for the volume.
+;
+MSG_FORMAT_FILESYSTEM
+Filsystem:
+; Filesystem:
+;
+MSG_FORMAT_FILESYSTEM_HELP
+Dette filsystem vil blive brugt.
+; This filesystem will used.
+;
+MSG_FORMAT_STATUS
+Status:
+; Status:
+;
+MSG_FORMAT_STATUS_HELP
+Dette er den nuværende status for enheden.
+; This is the current status of the volume.
+;
+MSG_FORMAT_GENERAL_GROUP
+Generel
+; General
+;
+MSG_FORMAT_CREATE_ICON
+Skab ikon
+; Create _icon
+;
+MSG_FORMAT_CREATE_ICON_HELP
+Et ikon til drevet vil blive skabt under formateringen.
+; An icon for the drive will be created during format process.
+;
+MSG_FORMAT_SPECIFIC_GROUP
+Specifik
+; Specific
+;
+MSG_FORMAT_CASE_SENSITIVE
+Forskel på store og små bogstaver
+; Case sensiti_ve
+;
+MSG_FORMAT_CASE_SENSITIVE_HELP
+Filnavne bliver følsomme overfor store og små bogstaver, når du markerer her. F.eks. vil filen "Data" være en anden fil en filen "data".
+; Interpret filenames case sensitive (e.g. "Foobar" would be a different file / directory than "foobar").
+;
+MSG_FORMAT_RECYCLED
+Genanvend
+; _Recycled
+;
+MSG_FORMAT_RECYCLED_HELP
+Ved at aktivere det formaterede drev får man en skuffe kaldet ".recycled". Denne skuffe indeholder de sidst slettede filer. Yderligere konfiguration kan ske ved hjælp af MorphOS præferencer.
+; Create a ".recycled" directory. This directory contains all currently deleted files. Further configuration for each volume is possible in the MorphOS System Preferences.
+;
+MSG_FORMAT_SHOWRECYCLED
+Vise genanvendelseskatalog
+; Show rec_ycled
+;
+MSG_FORMAT_SHOWRECYCLED_HELP
+Normalt er skuffen ".recycled" usynlig. Ved at at aktivere denne funktion er det muligt at gøre den synlig.
+; Makes the ".recycled" directory visible or invisible. If its invisible it can only be accessed from command line.
+;
+MSG_FORMAT_FORMATTED
+Formateret
+; Formatted
+;
+MSG_FORMAT_UNFORMATTED
+Uformateret
+; Unformatted
+;
+MSG_FORMAT_PREPARING
+Forbereder...
+; Preparing...
+;
+MSG_FORMAT_QUICK
+Hurtigformatering...
+; _Quick Format...
+;
+MSG_FORMAT_QUICK_HELP
+Kun de absolut nødvendige data vil blive skrevet til mediet. HUSK: Specielle værktøj er istand til at genskabe data fra et drev formateret på denne måde!
+; Only the minimum required data will be written to media. ATTENTION: Special tools are able to retrieve data from such formatted drives!
+;
+MSG_FORMAT
+Formaterer...
+; _Format...
+;
+MSG_FORMAT_HELP
+Hele mediet vil blive overskrevet! Det tager en del tid, men vil ødelægge alle data på drevet!
+; The entire media will overwritten! Takes a lot of time, but destroys all data on drive!
+;
+MSG_FORMAT_AND_VERIFY
+Formater & verificer...
+; Format & _Verify...
+;
+MSG_FORMAT_AND_VERIFY_HELP
+Hele mediet vil blive overskrevet og al gammel data vil blive slettet! Herudover vil det skrevne data blive geninlæst for at sikre mediets integritet.
+; The entire media will overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
+;
+MSG_FORMAT_CLOSE
+Luk
+; _Close
+;
+MSG_FORMAT_CLOSE_HELP
+Vinduet bliver lukket unden nogen handling.
+; Window gets closed without any action.
+;
+; *** Rename Window
+;
+MSG_RENAME_WINDOW_TITLE
+Omdøb
+; Rename
+;
+MSG_RENAME_NEW_NAME
+\033cAngive et nyt navn:
+; \033c\033bNew name:
+;
+MSG_RENAME_NEW_NAME_HELP
+Angiv det nye navn her.
+; Enter the new name here.
+;
+MSG_RENAME_RENAME
+_Omdøb
+; _Rename
+;
+MSG_RENAME_RENAME_HELP
+Navnet specificeret inden for tekstfeltet i dette vindue vil blive brugt som det nye navn.
+; The name specified within the text field in this window will be used as new name.
+;
+MSG_RENAME_CANCEL
+_Afbryd
+; _Cancel
+;
+MSG_RENAME_CANCEL_HELP
+Afbryder omdøbningen. Vinduet vil blive lukket.
+; Aborts the rename operation. The window will be closed.
+;
+; *** Appclass
+;
+MSG_DELETE_TITLE
+Sletter...
+; Deleting...
+;
+MSG_DELETE_CONFIRM
+Vil du virkelig slette\n%s ?
+; Do you really want to delete\n%s ?
+;
+MSG_DELETE_CONFIRM_MULTIPLE
+Vil du virkelig slette\n valgte objekter (%lu) ?
+; Do you really want to delete\nselected items (%lu) ?
+;
+MSG_TRASH_TITLE
+Moving to Trashcan...
+; Moving to Trashcan...
+;
+MSG_TRASH_CONFIRM
+Do you really want to trash\n%s ?
+; Do you really want to trash\n%s ?
+;
+MSG_TRASH_CONFIRM_MULTIPLE
+Do you really want to trash\nselected items (%lu) ?
+; Do you really want to trash\nselected items (%lu) ?
+;
+; *** Icon Information Window
+;
+MSG_INFOWIN_OLD_AMIGA_ICON
+\033cKlassisk ikon
+; \033cClassic Amiga icon
+;
+MSG_INFOWIN_NEWICON
+\033cNewicon
+; \033cNewicon
+;
+MSG_INFOWIN_GLOWICON
+\033cGlowicon
+; \033cGlowicon
+;
+MSG_INFOWIN_PNGICON
+\033cPNG ikon
+; \033cPNG icon
+;
+MSG_INFOWIN_DATATYPEICON
+\033cDatatype ikon
+; \033cDatatype icon
+;
+MSG_INFOWIN_SVGICON
+\033cSVG icon
+; \033cSVG icon
+;
+MSG_INFOWIN_TYPE_TOOL_PROJECT
+_Type:
+; _Type:
+;
+MSG_INFOWIN_TYPE_TOOL_PROJECT_HELP
+Et værktøj er et program. Et projekt er en fil som startes via et program.
+; A Tool is a program. A Project is a file created by a tool, whose path or name is embedded within the icon so it can be opened again.
+;
+MSG_INFOWIN_SCRIPT
+S_kript
+; Scr_ipt
+;
+MSG_INFOWIN_SCRIPT_HELP
+Et MorphOS skript er en fil som indeholder kommandoer. Det er direkte eksekverbart, hvis dette flag er sat.
+; A MorphOS script is a file containing batch commands. It is directly executable if that bit is set.
+;
+MSG_INFOWIN_ARCHIVED
+_Arkiveret
+; _Archived
+;
+MSG_INFOWIN_ARCHIVED_HELP
+Arkiveret-flaget bliver sat af arkiv- og backup-prgrammer, for at angive om filen er blevet kontrolleret. Slås automatiskt fra hvis filen ændres.
+; The archived bit is set by archiving and backup programs to tell the file has been processed. It is automatically cleared when the file is modified so one can quickly know which files changed.
+;
+MSG_INFOWIN_READABLE
+_Læsbar
+; _Readable
+;
+MSG_INFOWIN_READABLE_HELP
+Læsbar-flaget angiver om en fil er læsbar eller ikke.
+; The readable bit allows a file to be read. It doesn't make much sense to not have it set.
+;
+MSG_INFOWIN_WRITABLE
+_Skrivbar
+; _Writable
+;
+MSG_INFOWIN_WRITABLE_HELP
+Skrivbar-flaget angiver om der kan skrives til en fil. Kan sættes for at forhindre ændringer af en fil.
+; The writable bit allows a file to be written to. This can be used to prevent accidental writes to a file.
+;
+MSG_INFOWIN_EXECUTABLE
+_Eksekverbar
+; _Executable
+;
+MSG_INFOWIN_EXECUTABLE_HELP
+Eksekverbar-flaget angiver om en fil - hvis det er et program - kan køres eller ikke. Det giver ikke megen menig ikke at have det sat.
+; The executable bit allows a file to be loaded and run, provided it is a program. It doesn't make much sense to not have it set.
+;
+MSG_INFOWIN_DELETABLE
+_Sletbar
+; Deleta_ble
+;
+MSG_INFOWIN_DELETABLE_HELP
+Sletbar-flaget angiver om en fil kan slettes. Kan sættes for at beskytte en fil fra at blive slettet. Det er dog stadig muligt at skrive til filen.
+; The deletable bit allows a file to be deleted. This can be used to prevent accidental deletions. It is still possible to write to the file, though.
+;
+MSG_INFOWIN_TOOL
+Værktøj
+; Tool
+;
+MSG_INFOWIN_PROJECT
+Projekt
+; Project
+;
+MSG_INFOWIN_DISK_DISK
+Disk:
+; Disk:
+;
+MSG_INFOWIN_DISK_DISK_HELP
+Shows the disk name.
+; Shows the disk name.
+;
+MSG_INFOWIN_DISK_SIZE
+Størrelse:
+; Size:
+;
+MSG_INFOWIN_DISK_SIZE_HELP
+Viser mediets størrelse.
+; Shows the size of the media.
+;
+MSG_INFOWIN_DISK_USED
+Brugt:
+; Used:
+;
+MSG_INFOWIN_DISK_USED_HELP
+Viser antallet af bytes som p.t. er i brug.
+; Shows number of bytes currently in use.
+;
+MSG_INFOWIN_DISK_FREE
+Ledig:
+; Free:
+;
+MSG_INFOWIN_DISK_FREE_HELP
+Viser antallet af bytes som p.t. er til rådighed.
+; Shows number of bytes currently available.
+;
+MSG_INFOWIN_DISK_FILESYSTEM
+Filsystem:
+; Filesystem:
+;
+MSG_INFOWIN_DISK_FILESYSTEM_HELP
+Dette er filsystemet på disken - hvis det kan opspores.
+; This is the filesystem type, if it can be detected.
+;
+MSG_INFOWIN_DISK_TYPE
+Type:
+; Type:
+;
+MSG_INFOWIN_DISK_TYPE_HELP
+Viser mediets type.
+; Shows the media type.
+;
+MSG_INFOWIN_DISK_BLOCKSIZE
+Blokstørrelse:
+; Blocksize:
+;
+MSG_INFOWIN_DISK_BLOCKSIZE_HELP
+Filsystemets kornethed. En blok er en fils minimumsstørrelse.
+; Granularity of the filesystem. A block is the minimum size taken by a file.
+;
+MSG_INFOWIN_DISK_STATUS
+Status:
+; Status:
+;
+MSG_INFOWIN_DISK_STATUS_HELP
+Filsystemets status kan være en af følgende:\n\n\033bskrivebeskyttet\033n\nEnheden er fysisk beskyttet mod skrivning.\n\n\033bvaliderer\033n\nEnheden har en fejl og filsystemet forsøger at reparere \
+sig selv. Der kan læses fra enheden men ikke skrives til.\n\n\033bvalideret\033n\nEnheden er fejlfri og kan anvendes som normalt.
+; The filesystem status can be one of:\n\n\033bwrite protected\033n\nthe volume is physically protected\nagainst writes.\n\n\033bvalidating\033n\nthe volume is inconsistent and the\nfilesystem is currently trying to\nbring it to a safe state. The volume\ncan be read from but not written to.\n\n\033bvalidated\033n\nthe volume is valid and can be fully used.
+;
+MSG_INFOWIN_DISK_FEATURES
+Funktioner:
+; Features:
+;
+MSG_INFOWIN_DISK_FEATURES_HELP
+Viser nuværande funktioner:\n\n\033bstore filer:\033n\nEnheden understøtter filer større end 2GB.\n\n\033bfølsom overfor store og små bogstaver\033n\nEnheden ser forskel på små og store tegn i \
+filnavne. Ikke anbefalet.
+; This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such volumes.
+;
+MSG_INFOWIN_FILES
+Filer:
+; Files:
+;
+MSG_INFOWIN_FILES_HELP
+Viser antallet af filer.
+; Shows the number of files inside the directory.
+;
+MSG_INFOWIN_DIRS
+Kataloger:
+; Dirs:
+;
+MSG_INFOWIN_DIRS_HELP
+Viser antallet af kataloger indeni.
+; Shows the number of directories inside.
+;
+MSG_INFOWIN_HARDLINKS
+Hårde lænker:
+; Hardlinks:
+;
+MSG_INFOWIN_HARDLINKS_HELP
+Viser antallet af hårde lænker i et katalog.
+; Shows the number of hardlinks inside the directory.
+;
+MSG_INFOWIN_SOFTLINKS
+Bløde lænker:
+; Softlinks:
+;
+MSG_INFOWIN_SOFTLINKS_HELP
+Viser antallet af bløde lænker i et katalog.
+; Shows the number of softlinks inside the directory.
+;
+MSG_INFOWIN_LAST_CHANGED
+Senest ændret:
+; Modified:
+;
+MSG_INFOWIN_LAST_CHANGED_HELP
+Viser hvornår filen, skuffen eller enheden blev ændret sidst.
+; Show when file, drawer or volume was changed the last time.
+;
+MSG_INFOWIN_COMMENT
+Kommentar:
+; Comment:
+;
+MSG_INFOWIN_COMMENT_HELP
+Dette er DOS fil kommentaren.
+; This is the DOS file comment.
+;
+MSG_INFOWIN_BLOCKS
+Blokke:
+; Blocks:
+;
+MSG_INFOWIN_BLOCKS_HELP
+Antallet af filsystemblokke som filen optager. En blok er normalt 512 byte.
+; Number of filesystem blocks taken by the file. A block is typically 512 bytes.
+;
+MSG_INFOWIN_SIZE
+Størrelse:
+; Size:
+;
+MSG_INFOWIN_SIZE_HELP
+Størrelsen på filen. Dette er nødvendigvis ikke den præcise størrelse tager fra enheden, da filsystemet normalt bruger blokstørrelser.
+; Size of the file. This might not be the exact size taken from the storage as filesystems usually work using fixed block sizes.
+;
+MSG_INFOWIN_SIZEONDISK
+Størrelsen på disken:
+; Size on disk:
+;
+MSG_INFOWIN_SIZEONDISK_HELP
+Den plads som filen optager på disken.
+; Space really taken by the file on the disk, which depends on the blocksize.
+;
+MSG_INFOWIN_STACK
+Stak:
+; Stack:
+;
+MSG_INFOWIN_STACK_HELP
+Stakkens størrelse i byte som programmet anvender. En stak er et område af hukommelsen som programmet bruger til at gemme private data. Specielle krav til dens størrelse er normalt anført i \
+programmets dokumentation. For det meste sætter programmet selv sin stakstørrelse, så du behøver normalt ikke spekulere på dette felt.
+; Stack size of the executable in bytes. A stack is an area of memory used by the executable to store private data. Special requirements regarding its size should be listed in the executable's documentation although most executables set the stack size by themselves so you don't have to bother about this field.
+;
+MSG_INFOWIN_CREATED
+Skabt:
+; Created:
+;
+;
+MSG_INFOWIN_CREATED_HELP
+Den dato som enheden blev skabt.
+; Date the volume was created.
+;
+MSG_INFOWIN_TOOLTYPES
+Værktøjstype:
+; Tooltypes:
+;
+MSG_INFOWIN_TOOLTYPES_HELP
+Dette er ikonernes værktøjstype.
+; These are the icons tool types.
+;
+MSG_INFOWIN_STATUS_WRITE_PROTECTED
+skrivebeskyttet
+; write protected
+;
+MSG_INFOWIN_STATUS_VALIDATING
+validerer
+; validating
+;
+MSG_INFOWIN_STATUS_VALIDATED
+valideret
+; validated
+;
+MSG_INFOWIN_FLAGS_LARGE_FILES
+store filer
+; large files
+;
+MSG_INFOWIN_FLAGS_CASE_SENSITIVE
+følsom overfor stor og små bogstaver
+; case sensitive
+;
+MSG_INFOWIN_FLAGS_NONE
+ingen
+; none
+;
+MSG_INFOWIN_TYPE_NOMEDIA
+Intet medie
+; No media
+;
+MSG_INFOWIN_SIZE_UNKNOWN
+ukendt
+; unknown
+;
+MSG_INFOWIN_VERSION_SEARCHING
+Søger...
+; Searching...
+;
+MSG_INFOWIN_VERSION
+_Version:
+; _Version:
+;
+MSG_INFOWIN_VERSION_HELP
+Søger gennem filen for en versionsstreng som giver information om version- og revisions nummer, hvornår filen blev bygget samt eventuel copyright information.
+; Scans the file for a version string which gives informations about the version and revision numbers, when the file was built and possible copyright informations.
+;
+MSG_INFOWIN_MD5_COMPUTING
+Beregner...
+; Computing...
+;
+MSG_INFOWIN_MD5SUM
+_MD5:
+; _MD5:
+;
+MSG_INFOWIN_MD5_HELP
+Søger gennem filen og skaber en MD5 sum for dens indhold. Kan bl.a. bruges til at kontrollere integriteten af en fil, da MD5 summen altid er den samme for identiske filer.
+; Computes an MD5 hash of the file's content. Can be used to check the integrity of a file as the hash is always the same for exactly identical files.
+;
+MSG_INFOWIN_DEFAULT_TOOL
+Forvalgt værktøj:
+; De_fault Tool:
+;
+MSG_INFOWIN_DEFAULT_TOOL_HELP
+Dette program vil blive startet sammen med denne fil som argument, når du åbner filen.
+; This program will be started along with this file as argument when opening the file.
+;
+MSG_INFOWIN_DEFAULT_TOOL_SELECT
+Vælg forvalgt værktøj
+; Select a default tool
+;
+MSG_INFOWIN_DEVICETYPE_DIRECT_ACCESS
+direkte adgang
+; direct access
+;
+MSG_INFOWIN_DEVICETYPE_SEQUENTIAL_ACCESS
+sekventiel adgang
+; sequential access
+;
+MSG_INFOWIN_DEVICETYPE_PRINTER
+printer
+; printer
+;
+MSG_INFOWIN_DEVICETYPE_PROCESSOR
+processor
+; processor
+;
+MSG_INFOWIN_DEVICETYPE_WORM
+orm
+; worm
+;
+MSG_INFOWIN_DEVICETYPE_CDROM
+CD-ROM
+; CD-ROM
+;
+MSG_INFOWIN_DEVICETYPE_SCANNER
+skanner
+; scanner
+;
+MSG_INFOWIN_DEVICETYPE_OPTICAL_DISK
+optisk enhed
+; optical disk
+;
+MSG_INFOWIN_DEVICETYPE_MEDIUM_CHANGER
+medie skifter
+; medium changer
+;
+MSG_INFOWIN_DEVICETYPE_NETWORK
+netværk
+; network
+;
+MSG_INFOWIN_DEVICETYPE_GRAPHICS
+grafik
+; graphics
+;
+MSG_INFOWIN_DEVICETYPE_UNKNOWN
+ukendt
+; unknown
+;
+MSG_INFOWIN_DEVICETYPE_NA
+N/A
+; N/A
+;
+MSG_INFOWIN_WINDOW_TITLE_VOLUME
+Info: %s (Enhed)
+; Info: %s (Volume)
+;
+MSG_INFOWIN_WINDOW_TITLE_DRAWER
+Info: %s (Skuffe)
+; Info: %s (Drawer)
+;
+MSG_INFOWIN_WINDOW_TITLE_TOOL
+Info: %s (Værktøj)
+; Info: %s (Tool)
+;
+MSG_INFOWIN_WINDOW_TITLE_PROJECT
+Info: %s (Projekt)
+; Info: %s (Project)
+;
+MSG_INFOWIN_BYTES
+%llu byte
+; %llu bytes
+;
+MSG_INFOWIN_MBYTES_BYTES
+%s (%llu byte)
+; %s (%llu bytes)
+;
+MSG_INFOWIN_NEW
+Ny
+; _New
+;
+MSG_INFOWIN_NEW_HELP
+Tilføj ny værktøjstype til listen.
+; Add new tool type to list.
+;
+MSG_INFOWIN_DEL
+Slet
+; _Delete
+;
+MSG_INFOWIN_DEL_HELP
+Fjern aktiv værktøjstype fra listen.
+; Remove active tool type from list.
+;
+MSG_INFOWIN_SCAN
+Total størrelse:
+; Total Size:
+;
+MSG_INFOWIN_SCAN_HELP
+Lav en genlæsning for at beregne antallet af filer, deres type og størrelse.
+; Does a recursive scan of the directory to compute the number, type and total size of the files it contains.
+;
+MSG_INFOWIN_SAVE
+_Gem
+; _Save
+;
+MSG_INFOWIN_SAVE_HELP
+Gem indstillingerne i ikon filen.
+; Store settings into icon file.
+;
+MSG_INFOWIN_CANCEL
+_Afbryd
+; Cance_l
+;
+MSG_INFOWIN_CANCEL_HELP
+Smid ikonopsætning væk og luk vinduet.
+; Discard icon setup and close window.
+;
+MSG_INFOWIN_CREATE_ICON_REQ
+Saving meta data requires an icon file.\nReally create an icon now?
+; Saving meta data requires an icon file.\nReally create an icon now?
+;
+MSG_INFOWIN_CREATE_ICON_GAD
+_Create icon
+; Create ic_on
+;
+MSG_INFOWIN_CREATE_ICON_HELP
+Create an icon file on disk.
+; Create an icon file on disk.
+;
+MSG_INFOWIN_USE_DEFAULT_ICON_GAD
+Get _default
+; _Get default
+;
+MSG_INFOWIN_USE_DEFAULT_ICON_HELP
+Reset to default icon.
+; Reset to default icon.
+;
+; *** Make Directory Window
+;
+MSG_MAKEDIR_WINDOWTITLE
+Skab katalog
+; create a new directory
+;
+MSG_MAKEDIR_ENTERDIRECTORYNAME
+\033cAngiv katalognavnet:
+; \033c\033bDirectory Name:
+;
+MSG_MAKEDIR_ENTER_DIRECTORYNAME_HELP
+Her bliver navnet på den ny skuffe specificeret. Vær opmærksom på, at karakterer som "/" og ":" ikke er tilladt.
+; Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+;
+MSG_MAKEDIR_UNNAMED
+Ikke navngivet
+; Unnamed
+;
+MSG_MAKEDIR_WITHICON
+_Med ikon
+; _With Icon
+;
+MSG_MAKEDIR_WITHICON_HELP
+En skuffe og ikon kombination vil blive skabt.
+; A drawer and icon combination will be created.
+;
+MSG_MAKEDIR_WITHOUTICON
+_Uden ikon
+; With_out Icon
+;
+MSG_MAKEDIR_WITHOUTICON_HELP
+En skuffe uden ikon vil blive skabt.
+; A drawer without icon will be created.
+;
+MSG_MAKEDIR_CANCEL
+_Afbryd
+; _Cancel
+;
+MSG_MAKEDIR_CANCEL_HELP
+Vinduet vil blive lukket uden yderligere handlinger.
+; The window get's closed without any further action.
+;
+MSG_MAKEDIR_TITLE
+Ambient � Create directory
+; Ambient � Create directory
+;
+MSG_MAKEDIR_ERRORMSG
+Couldn't create directory '%s'.\nDOS error: %S (#%N).
+; Couldn't create directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_MAKEDIR_RETRYCANCEL
+*_Retry|_Cancel
+; *_Retry|_Cancel
+;
+; *** Exchange Window
+;
+MSG_CX_MENU_PROJECT
+Exchange
+; Exchange
+;
+MSG_CX_MENU_QUIT
+Afslut
+; Quit
+;
+MSG_CX_SHOW_INTERFACE
+_Vis grænseflade
+; _Show Interface
+;
+MSG_CX_SHOW_INTERFACE_HELP
+Viser den grafiske brugerflade for den valgte "commodity".
+; Opens the GUI of the selected Commodity.
+;
+;
+MSG_CX_HIDE_INTERFACE
+_Gem grænsesnittet
+; _Hide Interface
+;
+MSG_CX_HIDE_INTERFACE_HELP
+Lukker den grafiske brugerflade for den valgte "commodity".
+; Closes the GUI of the selected Commodity.
+;
+; MSG_CX_STATE is not displaced, so just use _x for hotkey support.
+MSG_CX_STATE
+_A
+; _A
+;
+MSG_CX_STATUS_HELP
+Her kan du aktivere eller deaktivere den valgte "commodity".
+; Here you can activate or deactivate the selected Commodity.
+;
+MSG_CX_ACTIVE
+Aktiv
+; Active
+;
+MSG_CX_INACTIVE
+Inaktiv
+; Inactive
+;
+MSG_CX_REMOVE
+_Fjern
+; _Remove
+;
+MSG_CX_REMOVE_HELP
+Den valgte "commodity" vil blive fjernet hvis muligt.
+; The selected commodity will be removed if possible.
+;
+; *** Execute window
+;
+MSG_EXEC_TITLE
+Ambient - Udfør
+; Ambient � Execute
+;
+MSG_EXEC_INFO
+\033c\033bSkriv en kommando og dens argumenter:
+; \033c\033bCommand and its arguments:
+;
+MSG_EXEC_ASL_TITLE
+Finde kommando
+; Find Command
+;
+MSG_EXEC_EXECUTE
+_Udfør
+; _Execute
+;
+MSG_EXEC_EXECUTE_HELP
+Kommandoen som er skrevet ind i dette tekstfelt vil blive udf�rt.
+; The command typed into the text field will be executed.
+;
+MSG_EXEC_CANCEL
+_Afbryd
+; _Cancel
+;
+MSG_EXEC_CANCEL_HELP
+Udførelsesvinduet vil blive lukket uden nogen handling.
+; The execute window will be closed without any action.
+;
+MSG_EXEC_ERROR_TITLE
+Ambient udførelsesfejl
+; Ambient Execute Error
+;
+MSG_EXEC_ERROR_OPENOUTPUTSTREAMFAILED
+Det lykkedes ikke at åbne outputstrømmen.
+; Failed to open output stream.
+;
+MSG_EXEC_ERROR_OPENINPUTSTREAMFAILED
+Det lykkedes ikke at åbne inputstrømmen.
+; Failed to open input stream.
+;
+MSG_EXEC_CMENU_HISTORY_TITLE
+Command history
+; Command history
+;
+MSG_EXEC_CMENU_HISTORY_CLEARALL
+Clear all
+; Clear all
+;
+MSG_EXEC_CMENU_HISTORY_CLEARACTIVE
+Clear active
+; Clear active
+;
+MSG_EXEC_COMMAND_HELP
+You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", \
+"news://", "mailto:", "ftp." or "www.".
+; You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", "news://", "mailto:", "ftp." or "www.".
+;
+; PrefsWin_BackGroundClass.c (prefswin_backgroundclass.c)
+;
+MSG_PREFSWIN_BACKGROUND_DESKTOP
+Skrivebord
+; Desktop
+;
+MSG_PREFSWIN_BACKGROUND_MODE
+_Indstilling:
+; _Mode:
+;
+MSG_PREFSWIN_BACKGROUND_MODE_HELP
+Ændrer måden som baggrunden vises på.
+; Changes the way the background is displayed.
+;
+MSG_PREFSWIN_BACKGROUND_MODE_COLOR
+Farve
+; Color
+;
+MSG_PREFSWIN_BACKGROUND_MODE_COLOR_SELECT
+Vælg en baggrundsfarve
+; Select a background color
+;
+MSG_PREFSWIN_BACKGROUND_MODE_TILED
+Gentagelser
+; Tiled
+;
+MSG_PREFSWIN_BACKGROUND_MODE_CENTERED
+Centreret
+; Centered
+;
+MSG_PREFSWIN_BACKGROUND_MODE_SCALED
+Skaleret
+; Scaled
+;
+MSG_PREFSWIN_BACKGROUND_MODE_STRETCHED
+Strukket
+; Stretched
+;
+MSG_PREFSWIN_BACKGROUND_MODE_ZOOMED
+Zoomed
+; Zoomed
+;
+MSG_PREFSWIN_BACKGROUND_FILE
+Fil:
+; _File:
+;
+MSG_PREFSWIN_BACKGROUND_FILE_HELP
+Søgevejen til billedet der skal vises som baggrund. Angiv et katalog for at få et tilfældigt billede fra kataloget.
+; Path to the picture to be displayed as background. Specify a directory and pick a picture of your choice from its content.
+;
+MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY
+Æ_ndre baggrund efter:
+; C_hange background after:
+;
+MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP
+Hvis baggrundsfilen er en skuffe, vil alle billeder heri blive vist i tilfældig rækkefølge. Ved at vælge at billedet skal genopfriskes, vil det blive skiftet efter et specificeret tidsrum.
+; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS
+Vindue
+; Windows
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS_MODE
+I_ndstilling:
+; M_ode:
+;
+MSG_PREFSWIN_BACKGROUND_WINDOWS_FILE
+Fil:
+; F_ile:
+;
+MSG_PREFSWIN_BACKGROUND_REQUESTER
+Valg af baggrund...
+; Background selection...
+;
+; bgrefreshdelaysliderclass.c
+;
+MSG_BGREFRESHSLIDERCLASS_NEVER
+Aldrig
+; Never
+;
+MSG_BGREFRESHSLIDERCLASS_MINUTES
+%ld minut(ter)
+; %ld minute(s)
+;
+MSG_BGREFRESHSLIDERCLASS_HOURS
+%ld time(r)
+; %ld hour(s)
+;
+MSG_BGREFRESHSLIDERCLASS_DAYS
+%ld dag(e)
+; %ld day(s)
+;
+; *** Prefswin Icondisplay
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION
+Valg
+; Selection
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT
+Valgets effekt:
+; Selection effect:
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT
+Tone
+; Tint
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_REQ
+Vælg en farve som skal tones.
+; Select a color for tint effect.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_BLUR
+Slør
+; Blur
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_BRIGHTEN
+Lysne
+; Brighten
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_DELTA
+Delta
+; Delta
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_DARKEN
+Mørkne
+; Darken
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_GREY
+Grå
+; Grey
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_NEGATIVE
+Lav negativ
+; Negative
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_NEGATIVE_FADE
+Negativ toning
+; Negative Fade
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_FADE
+Toned fadening
+; Tint Fade
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_FADE_REQ
+Vælg en farve til den tonede fadeeffekt.
+; Select a color for tintfade effect.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECTEFFECT_HELP
+Ekket som markerer valgte ikoner.
+; Effect to apply to mark selected icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT
+V_ælg farve:
+; S_elect color:
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT_HELP
+Specificer farven på en valgt ikon.
+; Specifies the color of an selected icon.
+;
+MSG_PREFSWIN_ICONDISPLAY_SELECT_TITLE
+Vælg 'Valgt ikon' farve
+; Select 'Icon select' Color
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO
+Lassofarven:
+; _Lasso color:
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO_HELP
+Farven på lassoen som bruges til at vælge flere ikoner på en gang med musen.
+; Color of the lasso used to select multiple icons with the mouse.
+;
+MSG_PREFSWIN_ICONDISPLAY_LASSO_TITLE
+Vælg lassofarve
+; Select Lasso Color
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK
+Slip mærke:
+; Drop mar_k:
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK_HELP
+Specificerer farven på aktiv ikon slip mærke.
+; Specifies the color of active icon drop marks.
+;
+MSG_PREFSWIN_ICONDISPLAY_DROPMARK_TITLE
+Vælg slip mærke farve
+; Select Drop Mark Color
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE
+Skalering
+; Resizing
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MINSIZE
+M_inimum størrelse:
+; Mi_nimum size:
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MINSIZE_HELP
+Minimumstørrelse på et ikon. Ikonet vil bliver forstørret, hvis der er behov.
+; Minimum size of an icon. The icon will be stretched if needed.
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MAXSIZE
+Ma_ksimum størrelse:
+; Ma_ximum size:
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MAXSIZE_HELP
+Maksimum størrelse på ikonet. Ikonet vil blive formindsket, hvis der er behov.
+; Maximum size of an icon. The icon will be shrank if needed.
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MICRO
+Mikro   (16x16)
+; Micro   (16x16)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_SMALL
+Lille   (24x24)
+; Small   (24x24)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_MEDIUM
+Normal   (32x32)
+; Medium   (32x32)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_LARGE
+Stor   (48x48)
+; Large   (48x48)
+;
+MSG_PREFSWIN_ICONDISPLAY_RESIZE_HUGE
+Enorm   (64x64)
+; Huge   (64x64)
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT
+Tekst rendering
+; Text rendering
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE
+_Indstilling:
+; _Mode:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_HELP
+Ændrer måden som ikontekster vises på.
+; Changes the way the icon text is displayed.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_NORMAL
+Normal
+; Normal
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_SHADOW
+Skyggeeffekt
+; Shadow
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_ALPHASHADOW
+Alfaskygge
+; Alpha Shadow
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_OUTLINE
+Linie om yderkant
+; Outline
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_BACKGROUND
+Baggrund
+; Background
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_MULTICOLOR
+Flerfarvet
+; Multicolor
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_MODE_GRADIENT
+Farveovergang
+; Gradient
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT
+Skrifttype:
+; _Font:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT_HELP
+Stor ikon skrifttype.
+; Big icon display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT_REQ
+Skrifttype
+; Font
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT
+Lille skrifttype:
+; Small font_:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT_HELP
+Lille ikon skrifttype.
+; Small icon display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT_REQ
+Lille skrifttype
+; Small font
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR
+Farve:
+; C_olor:
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR_HELP
+Her kan du vælge tekstfarven for ikonerne på skrivebordet.
+; Here you can select the icon text color for desktop icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR_TITLE
+Farven på skrivebordet.
+; Select Desktop color.
+;
+; MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK is not visible, so just define a logic _x hotkey
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK
+_w
+; _b
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_HELP
+Her kan du vælge baggrundsfarven for ikonerne på skrivebordet.
+; Here you can select the icon back ground color for desktop icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_TITLE
+Bagrundsfarven på skrivebordet
+; Desktop background color
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT
+Skrifttype:
+; _Font:
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_HELP
+Vinduets skrifttype.
+; Window display font.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_REQ
+Skrifttype
+; Font
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR
+Farve
+; C_olor:
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR_HELP
+Her kan du vælge tekstfarven for ikoner i vinduer.
+; Here you can select the icon text color for window icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR_TITLE
+Vælg tekstfarver for vinduer
+; Select Text Color for Windows
+;
+; MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK is not visible, to just define _x hotkey
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK
+_W
+; _b
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK_HELP
+Her kan du vælge baggrundsfarven for ikoner i vinduer.
+; Here you can select the icon background color for window icons.
+;
+MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK_TITLE
+Vælg tekstbaggrund for vinduet
+; Select Text Background for Windows
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_LABELSPACE
+_Etikette mellemrum:
+; _Label space:
+;
+MSG_PREFSWIN_ICONDISPLAY_TEXT_LABELSPACE_HELP
+Afstand i pixel mellem den nederste del af et ikon og teksten under det.
+; Space in pixels between the bottom of the icon and the top of the text beneath.
+;
+MSG_PREFSWIN_ICONDISPLAY_EXTRA_FEATURES
+Ekstra funktioner
+; Extra features
+;
+; PrefsWin_MiscellaneousClass.c (prefswin_miscellaneousclass.c)
+;
+MSG_PREFSWIN_WBSTARTUP
+Opstart
+; Startup
+;
+MSG_PREFSWIN_WBSTARTUP_PATH
+_Søgevej til opstartskataloget:
+; _Path to startup directory:
+;
+MSG_PREFSWIN_WBSTARTUP_PATH_HELP
+Søgevej til WBStartup kataloget. Filer i dette katalog startes automatiskt ved systemstart.
+; Path to the Startup directory. Files in that directory are automatically executed upon system boot.
+;
+MSG_PREFSWIN_WBSTARTUP_PATH_REQ
+Søgevej til opstartskataloget:
+; Path to startup directory
+;
+MSG_PREFSWIN_WBSTART_REMEMBER
+Husk:
+; Remember:
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES
+Husk Ambient kataloger
+; Dra_wers
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES_HELP
+Husker åbne Ambient kataloger. Efter genstart vil disse skuffer blive åbnet igen.
+; Remembers opened Ambient drawers. After restarting the system these drawers will be open again.
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS
+Husker Ambient dokumenter
+; Docu_ments
+;
+MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS_HELP
+Husker åbne Ambient dokumenter. Efter genstart vil disse dokumenter blive åbnet igen.
+; Remembers in Ambient opened documents. After restarting the system these documents will be open again.
+;
+MSG_PREFSWIN_DEFICONS
+Forvalgte ikoner
+; Default Icons
+;
+MSG_PREFSWIN_DEFICONS_PATH
+Søgevej til forvalgte ikoner:
+; Path _to default icons:
+;
+MSG_PREFSWIN_DEFICONS_PATH_HELP
+Søgevej til forvalgte ikoner på systemet. Disse ikoner anvendes som forvalgte ikoner for diverse filtyper, kataloger og enheder.
+; Path to the default icons of the system. These icons are used as default for various filetypes, directories and devices.
+;
+MSG_PREFSWIN_DEFICONS_PATH_REQ
+Søgevej til forvalgte ikoner
+; Path to default icons
+;
+MSG_PREFSWIN_MISCELLANEOUS
+Diverse
+; Miscellaneous
+;
+MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS
+Vis MitMorphos ikon
+; Display M_yMorphos icon
+;
+MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS_HELP
+Tænder eller slukker MitMorphOS ikonet på skrivebordet.
+; Enables and disables the MyMorphOS icon on desktop.
+;
+MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS
+Dobbeltklik på skrivebordet åbner MitMorphOS vinduet
+; _Double click on desktop opens MyMorphos window
+;
+MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS_HELP
+Ethvert dobbeltklik på skrivebordet åbner MitMorphOS vinduet.
+; _Any double click on desktop opens MyMorphos window.
+;
+MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE
+Træk & Slip flytter filer istedet for at kopiere
+; Drag&drop moves files instead of copy
+;
+MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE_HELP
+Træk & Slip flytter filer istedet for at kopiere.
+; Drag & drop moves files instead of copy.
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL
+Ignorerer More forudvalg værktøj
+; _Override More default tool
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL_HELP
+Hvis ikonet indeholder det forudvalgte vørktøj MORE, giver dette dig mulighed for at bruge den istedet for Ambients indbyggede fremviser.
+; If icons contain the default tool MORE, this option allows to override with Ambient internal text viewer instead.
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL
+Ignorer MultiView som forudvalgt værktøj
+; Override Multi_View default tool
+;
+MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL_HELP
+Hvis ikonet indeholder det forudvalgte værktøk MULTIVIEW, giver dette dig mulighed for at bruge Ambients indbyggede fremviser istedet for.
+; If icons contain the default tool MULTIVIEW, this option allows to override with Ambient internal viewer instead.
+;
+MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES
+Vis billeder i kontekst menu
+; S_how images in context menu
+;
+MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES_HELP
+Billeder i kontekst kan slukkes med denne funktion.
+; Images in context can be turned off by disabling this option.
+;
+MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER
+Skab per definition et ikon for en ny skuffe
+; C_reate icon for new drawer by default
+;
+MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER_HELP
+En ny skuffe vil automatisk få et skuffeikon når denne funktion er valgt.
+; New drawer will automatically get a default drawer icon if this option is enabled.
+;
+; *** Prefswin CLI launching
+;
+MSG_PREFSWIN_CLI_COMMANDLINE
+Kommondoline-indstillinger
+; Command Line Settings
+;
+MSG_PREFSWIN_CLI_DEVICE
+_Udførelsesvindue:
+; _Output window:
+;
+MSG_PREFSWIN_CLI_DEVICE_HELP
+Enhed som skal anvendes for at vise DOS meddelelser. Normalt CON:
+; Device to use to output DOS messages. Usually a CON:
+;
+MSG_PREFSWIN_CLI_STACKSIZE
+_Stakstørrelse:
+; Stacksi_ze:
+;
+MSG_PREFSWIN_CLI_STACKSIZE_HELP
+Stakstørrelse i byte når et CLI program startes.
+; Stacksize in bytes to use when launching CLI programs.
+;
+MSG_PREFSWIN_CLI_NEWSHELL
+_Nye skal argumenter:
+; _Newshell arguments:
+;
+MSG_PREFSWIN_CLI_NEWSHELL_HELP
+Argumenter som anvendes når en skal startes fra Ambient.
+; Arguments to use when launching a shell from Ambient.
+;
+; *** Preferences Window - Drag & Drop
+;
+MSG_PREFSWIN_DRAGDROP_DISPLAY_HELP
+Effekt som skal bruges på ikoner som aktivers med Træk & Slip handlinger.
+; Effect to apply to icons becoming active for a drag & drop operation.
+;
+; *** Preferences Window - Main
+;
+MSG_PREFSWIN_MAIN_TITLE
+Ambient indstillinger
+; Ambient Settings
+;
+MSG_PREFSWIN_MAIN_CLIPBOARD_FRAMEIMAGE
+Ramme og billede klippebord
+; Frame and Image Clipboard
+;
+MSG_PREFSWIN_MAIN_CLIPBOARD_FRAMEIMAGE_HELP
+Dette felt kan anvendes som klippebord til at gemme rammer og billeder. Anvend Træk & Slip.
+; This gadget can be used as a clipboard to store the frame and image. Use drag & drop.
+;
+; *** Soundwin
+;
+MSG_SOUNDWIN_PLAY
+Spil
+; Play
+;
+MSG_SOUNDWIN_STOP
+Stop
+; Stop
+;
+; *** Mimegroup
+;
+MSG_MIMEGROUP_ADD
+Læg til...
+; Add...
+;
+MSG_MIMEGROUP_COPY
+Kopier
+; Copy
+;
+MSG_MIMEGROUP_EDIT
+Rediger...
+; Edit...
+;
+MSG_MIMEGROUP_REMOVE
+Fjern
+; Remove
+;
+; *** Preferences Window - Mimeadjustgroup
+;
+MSG_MIMEGROUPADJUST_ADD
+Læg til...
+; Add...
+;
+MSG_MIMEGROUPADJUST_EDIT
+Rediger...
+; Edit...
+;
+MSG_MIMEGROUPADJUST_REMOVE
+Fjern
+; Remove
+;
+; *** Preferences Window - Toolbar
+;
+MSG_PREFSWIN_TOOLBAR_ENABLE
+_Slå browservisning til
+; _Browser mode
+;
+MSG_PREFSWIN_TOOLBAR_ENABLE_HELP
+Denne rude starter værktøjsbarindstillingen.
+; This check mark enables the toolbar mode.
+;
+MSG_PREFSWIN_TOOLBAR_TOOLBUTTONS_GROUP
+Værktøjsknapper
+; Tool buttons
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE
+_Udseende:
+; _Appearance:
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_HELP
+Værktøjsliniens udseende kan konfigureres her.
+; The appearance of the tool bar can be configured here.
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME
+Knap ramme:
+; Button _Frame:
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_HELP
+Allows to specify the frame type and look for the tool buttons.
+; Allows to specify the frame type and look for the tool buttons.
+;
+MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_WINTITLE
+Select Button Frame
+; Select Button Frame
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_IMAGETEXT
+Billede med tekst
+; Image With Text
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_IMAGE
+Kun billede
+; Image Only
+;
+MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_TEXT
+Kun tekst
+; Text Only
+;
+MSG_PREFSWIN_TOOLBAR_CURRENT_GROUP
+Nuværende værktøjsfelt
+; Current Toolbar
+;
+MSG_PREFSWIN_TOOLBAR_CURRENT_HELP
+Dette er de nuværende værktøjslinieknapper.
+; These are the current tool bar buttons.
+;
+MSG_PREFSWIN_TOOLBAR_AVAILABLE_GROUP
+Tilgængelige knapper
+; Available Buttons
+;
+MSG_PREFSWIN_TOOLBAR_AVAILABLE_HELP
+Dette er de tilgængelige knapper for værktøjslinien.
+; These are the available buttons for the tool bar.
+;
+MSG_PREFSWIN_TOOLBAR_DEVICE_LIST
+Device List
+; Device List
+;
+MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP
+Display Device List
+; Display Device List
+;
+MSG_PREFSWIN_TOOLBAR_COPY
+Copy
+; Copy
+;
+MSG_PREFSWIN_TOOLBAR_COPY_HELP
+Copy file or directory
+; Copy file or directory
+;
+MSG_PREFSWIN_TOOLBAR_COPY_AS
+Copy As
+; Copy As
+;
+MSG_PREFSWIN_TOOLBAR_COPY_AS_HELP
+Copy As File or Directory
+; Copy As File or Directory
+;
+MSG_PREFSWIN_TOOLBAR_MOVE
+Move
+; Move
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_HELP
+Move a file or a directory
+; Move a file or a directory
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_AS
+Move As
+; Move As
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP
+Move and rename file or directory
+; Move and rename file or directory
+;
+MSG_PREFSWIN_TOOLBAR_DELETE
+Delete
+; Delete
+;
+MSG_PREFSWIN_TOOLBAR_DELETE_HELP
+Delete file or directory
+; Delete file or directory
+;
+MSG_PREFSWIN_TOOLBAR_TRASH
+Trash
+; Trash
+;
+MSG_PREFSWIN_TOOLBAR_TRASH_HELP
+Move file or directory to Trashcan
+; Move file or directory to Trashcan
+;
+MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD
+Copy To Clipboard
+; Copy To Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP
+Copy file or directory to clipboard
+; Copy file or directory to clipboard
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD
+Move To Clipboard
+; Move To Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP
+Move file or directory to clipboard
+; Move file or directory to clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD
+Paste From Clipboard
+; Paste From Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP
+Paste content of clipboard
+; Paste content of clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS
+Paste As From Clipboard
+; Paste As From Clipboard
+;
+MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS_HELP
+Paste and rename content of clipboard
+; Paste and rename content of clipboard
+;
+MSG_PREFSWIN_TOOLBAR_SELECT
+Select
+; Select
+;
+MSG_PREFSWIN_TOOLBAR_SELECT_HELP
+Select file or directory
+; Select file or directory
+;
+MSG_PREFSWIN_TOOLBAR_ICONINFO
+Icon Info
+; Icon Info
+;
+MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP
+Display Icon Information window
+; Display Icon Information window
+;
+MSG_PREFSWIN_TOOLBAR_FORMAT
+Format
+; Format
+;
+MSG_PREFSWIN_TOOLBAR_FORMAT_HELP
+Format a filesystem
+; Format a filesystem
+;
+MSG_PREFSWIN_TOOLBAR_MAKEDIR
+Makedir
+; Add directory
+;
+MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP
+Create a directory
+; Create a directory
+;
+MSG_PREFSWIN_TOOLBAR_MAKELINK
+Makelink
+; Add link
+;
+MSG_PREFSWIN_TOOLBAR_MAKELINK_HELP
+Create a link.
+; Add a link.
+;
+MSG_PREFSWIN_TOOLBAR_RENAME
+Rename
+; Rename
+;
+MSG_PREFSWIN_TOOLBAR_RENAME_HELP
+Rename file or directory
+; Rename file or directory
+;
+MSG_PREFSWIN_TOOLBAR_FIND
+Søg
+; Find
+;
+MSG_PREFSWIN_TOOLBAR_FIND_HELP
+Søg efter filer og kataloger
+; Finds files and directories
+;
+MSG_PREFSWIN_TOOLBAR_PARENT
+Parent
+; Parent
+;
+MSG_PREFSWIN_TOOLBAR_PARENT_HELP
+Parent directory
+; Parent directory
+;
+MSG_PREFSWIN_TOOLBAR_BACK
+Tilbage
+; Back
+;
+MSG_PREFSWIN_TOOLBAR_BACK_HELP
+Foregående i historikken.
+; Previous in history.
+;
+MSG_PREFSWIN_TOOLBAR_FORWARD
+Next
+; Next
+;
+MSG_PREFSWIN_TOOLBAR_FORWARD_HELP
+Next
+; Next
+;
+MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW
+Swith view
+; Switch view
+;
+MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP
+Change view display mode
+; Change view display mode
+;
+MSG_PREFSWIN_TOOLBAR_BOOKMARKS
+Bookmarks
+; Bookmarks
+;
+MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP
+Bookmark file or directory
+; Bookmark file or directory
+;
+MSG_PREFSWIN_TOOLBAR_SPACE
+Space
+; Space
+;
+MSG_PREFSWIN_TOOLBAR_SPACE_HELP
+Add a space to toolbar
+; Add a space to toolbar
+;
+MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE
+Flexible space
+; Flexible space
+;
+MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP
+Add a flexible space to toolbar
+; Add a flexible space to toolbar
+;
+MSG_PREFSWIN_TOOLBAR_SEPARTOR
+Separator
+; Separator
+;
+MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP
+Separator between group of buttons
+; Separator between group of buttons
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULTDIMENSIONS_GROUP
+Forudbestemte dimensioner
+; Default Dimensions and Position
+;
+MSG_PREFSWIN_TOOLBAR_PLACEUNDERMOUSE
+_Placer vinduet under muse pilen
+; _Place the window under mouse pointer
+;
+MSG_PREFSWIN_TOOLBAR_PLACEUNDERMOUSE_HELP
+Hvis denne er makeret vil vinduet blive placeret under muse pilen.
+; If checkbox is on the window will be placed under mouse pointer.
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW
+_Få fra vinduet...
+; _Get From Window...
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_HELP
+Tillader at du vælger et vindue og bruger dets koordinator som forudbestemt.
+; Allows to select a window and use its coordinates as default.
+;
+MSG_PREFSWIN_TOOLBAR_COORDS
+Venste: %ld  Top: %ld  Bredde: %ld  Højde: %ld
+; Left: %ld  Top: %ld  Width: %ld  Height: %ld
+;
+MSG_PREFSWIN_TOOLBAR_COORDS_HELP
+Disse er de nuværende forudbestemte vindue dimensioner.
+; These are the current default window dimensions.
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_TITLE
+Ambient - Definer vindue
+; Ambient � Define Window
+;
+MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_TEXT
+Lav størrelsen om og placer vinduet som ønsket - luk til sidst.
+; Resize and place window as desired, then close it.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR
+Status bar
+; Status Bar
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT
+Format:
+; F_ormat:
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_HELP
+Tillader at man laver sin egen statusbar.
+; Allows to set-up your own status bar.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_0
+%tf% - antallet af filer i det nuværende katalog.
+; %tf% - number of files in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_1
+%td% - antallet af kataloger i det nuværende katalog.
+; %td% - number of directories in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_2
+%i% - antallet af ikon filer (.info) i det nuværende katalog.
+; %i% - number of icon files (.info) in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_3
+%l% - antallet af hårde/blæde lænker i det nuværende katalog.
+; %l% - number of soft/hard links in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_4
+%du% - disk plads brugt af filer i det nuværende katalog.
+; %du% - disk space used by files in the current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_5
+%ns% - antallet af valgte filer i det nuværende katalog.
+; %ns% - number of selected files in current directory.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_6
+%sdu% - plads optaget af valgte filer og kataloger.
+; %sdu% - space occupied by selected files and directories.
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_GROUP
+View Behaviour
+; View Behaviour
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW
+Default view:
+; Default view:
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW_HELP
+Select which view should be used by default.
+; Select which view should be used by default.
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE
+Default view mode:
+; Default view mode:
+;
+MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE_HELP
+Select which view mode should be used by default.
+; Select which view mode should be used by default.
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_ICON
+Icon
+; Icon
+;
+MSG_PREFSWIN_TOOLBAR_VIEW_LIST
+List
+; List
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW
+Inherit view
+; Inherit view
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW_HELP
+When clicking a directory, decides if the current view or the default view should be applied.
+; When clicking a directory, decides if the current view or the default view should be applied.
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE
+Inherit view mode
+; Inherit view mode
+;
+MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE_HELP
+When clicking a directory, decides if the current view mode or the default view mode should be applied.
+; When clicking a directory, decides if the current view mode or the default view mode should be applied.
+;
+; *** System Information Window
+;
+MSG_SYSINFOWIN_TITLE
+Ambient - Systemovervåger
+; Ambient � System Monitor
+;
+MSG_SYSINFOWIN_MENU_PROJECT
+Systemovervåger
+; System Monitor
+;
+MSG_SYSINFOWIN_MENU_QUIT
+Afslut
+; Quit
+;
+MSG_SYSINFOWIN_INFO_REGTITLE
+Systemdetaljer
+; System Details
+;
+MSG_SYSINFOWIN_MONITOR_REGTITLE
+Systemresurser
+; System Monitor
+;
+MSG_SYSINFOWIN_SYSTEM_GROUP
+System
+; System
+;
+MSG_SYSINFOWIN_CPULOAD
+CPU belastning
+; CPU load
+;
+MSG_SYSINFOWIN_MEMORY
+System memory: %ld%%%%
+; System memory: %ld%%%%
+;
+MSG_SYSINFOWIN_MACHINE
+Computer:
+; Machine:
+;
+MSG_SYSINFOWIN_MACHINE_HELP
+Dette er dit bundkorts type samt producent.
+; This is the main board type and its vendor.
+;
+MSG_SYSINFOWIN_CPUCOUNT
+Cpu count:
+; CPU count:
+;
+MSG_SYSINFOWIN_CPUCOUNT_HELP
+This is the number of cpus available.
+; This is the number of CPUs available.
+;
+MSG_SYSINFOWIN_BCLOCK
+Busklokke:
+; Bus clock:
+;
+MSG_SYSINFOWIN_BCLOCK_HELP
+Dette er systemets busklokke.
+; This is the systems bus clock.
+;
+MSG_SYSINFOWIN_TTICKS
+Tidstagnings ticks:
+; Timer ticks:
+;
+MSG_SYSINFOWIN_TTICKS_HELP
+Dette er antallet af tidstagnings ticks.
+; This is the number of timer ticks.
+;
+MSG_SYSINFOWIN_COMPUTERON
+Computer tændt:
+; Computer turned on:
+;
+MSG_SYSINFOWIN_COMPUTERON_HELP
+Er systemet tændt?
+; Is the system turned on?
+;
+MSG_SYSINFOWIN_CPU_GROUP
+CPU
+; CPU
+;
+MSG_SYSINFOWIN_CPU_TITLE
+CPU %ld
+; CPU %ld
+;
+MSG_SYSINFOWIN_MODEL
+Model:
+; Model:
+;
+MSG_SYSINFOWIN_MODEL_HELP
+Dette er den type CPU som er indbygget i dit system.
+; This type of CPU is built into the system.
+;
+MSG_SYSINFOWIN_DATASTREAM
+Datastrøm:
+; Datastream:
+;
+MSG_SYSINFOWIN_DATASTREAM_HELP
+Understøtter din CPU datastrømme?
+; Is the CPU supporting datastreams?
+;
+MSG_SYSINFOWIN_ALTIVEC
+Altivec:
+; AltiVec:
+;
+MSG_SYSINFOWIN_ALTIVEC_HELP
+Indeholder CPU'en en vectorberegnings enhed?
+; Does the CPU contain a vector processing unit?
+;
+MSG_SYSINFOWIN_PMON
+Præstationsovervåger:
+; Performance monitor:
+;
+MSG_SYSINFOWIN_PMON_HELP
+Understøtter din CPU en præstationsovervåger?
+; Is the CPU supporting a performance monitor?
+;
+MSG_SYSINFOWIN_CPUCACHE_GROUP
+CPU Cache
+; CPU Cache
+;
+MSG_SYSINFOWIN_CACHESIZE
+%s cache størrelse:
+; %s cache size:
+;
+MSG_SYSINFOWIN_CACHESIZE_HELP
+Dette viser CPU'ens cache størrelse.
+; This shows the CPU cache size.
+;
+MSG_SYSINFOWIN_CACHESPECS
+%s cache specifikationer:
+; %s cache specs:
+;
+MSG_SYSINFOWIN_CACHESPECS_HELP
+Dette viser CPU'ens cache specifikationer.
+; This shows the CPU cache specifications.
+;
+MSG_SYSINFOWIN_SNDDRIVER
+Lyddriver:
+; Sound driver:
+;
+MSG_SYSINFOWIN_SNDDRIVER_HELP
+Dette er det lyddriver system som bruges.
+; This is the audio driver system used.
+;
+MSG_SYSINFOWIN_SNDDRIVER_NONE_INFO
+None
+; None
+;
+MSG_SYSINFOWIN_CACHESPECSDETAILS1_INFO
+%lU kB (instruction) / %lU kB (data)
+; %lU kB (instruction) / %lU kB (data)
+;
+MSG_SYSINFOWIN_CACHESPECSDETAILS2_INFO
+%lU kB
+; %lU kB
+;
+MSG_SYSINFOWIN_BATTERYCHARGING_INFO
+Battery: %ld mAh (charging)
+; Battery: %ld mAh (charging)
+;
+MSG_SYSINFOWIN_BATTERY_INFO
+Battery: %ld mAh
+; Battery: %ld mAh
+;
+MSG_SYSINFOWIN_BATTERY_MISSING
+No battery found
+; No battery found
+;
+; *** MakeLinkWinClass (makelinkwinclass.c)
+;
+MSG_MAKELINKWINCLASS_TITLE
+Ambient - Genvej
+; Ambient � Shortcut
+;
+MSG_MAKELINKWINCLASS_ENTERSHORTCUT
+\033cGenvej:
+; \033cShortcut:
+;
+MSG_MAKELINKWINCLASS_OK
+Ok
+; Ok
+;
+MSG_MAKELINKWINCLASS_CANCEL
+Afbryd
+; Cancel
+; *** AboutWinClass.c (aboutwinclass.c)
+;
+MSG_ABOUTWIN_WEBSUPPORT
+Web hjælp:
+; Web Support:
+;
+MSG_ABOUTWIN_MUI
+Uden \033bMUI\033n ville Ambient ikke eksistere.
+; Without \033bMUI\033n, Ambient wouldn't exist.
+;
+MSG_ABOUTWIN_MD5
+Indeholder software hentet fra RSA's Data Security, Inc.\n\033bMD5\033n Message-Digest algoritm.
+; Contains software derived from the RSA Data Security, Inc.\n\033bMD5\033n Message-Digest Algorithm.
+;
+MSG_ABOUTWIN_ALTIVEC
+Bruger \033bAltiVec\033n instruktioner hvis de er tilgængelige.
+; Uses \033bAltiVec\033n instructions when available.
+;
+MSG_ABOUTWIN_MOSDESKTOP
+MorphOS skrivebordet
+; The MorphOS Desktop
+;
+MSG_ABOUTWIN_VERSION
+version
+; version
+;
+MSG_ABOUTWIN_ALLRIGHTS
+Alle rettigheder er reserveret
+; All Rights Reserved
+;
+MSG_ABOUTWIN_GPL
+GPL licens
+; General Public License
+;
+MSG_ABOUTWIN_AMBIENTTEAM
+Ambient holdet
+; The Ambient Team
+;
+MSG_ABOUTWIN_SCROLLINFO
+Det kan være du ikke vidste dette, men du kan rulle teksten op og ned ved at anvende musehjulet samt stoppe den automatiske rulning med ventre museknap.
+; Perhaps you didn't know it but you can scroll that text up and down using the mouse wheel and stop the autoscroll with the left mouse button.
+;
+MSG_ABOUTWIN_SCROLLRESTART
+Rulningen starter på ny
+; scroll restart
+;
+MSG_ABOUTWIN_AMBIENTTITLE
+Ambient - Om
+; Ambient � About
+;
+; *** AboutMosWinClass.c (aboutmoswinclass.c)
+;
+MSG_ABOUTWIN_DEVSUPPORT
+Udvikler hjælp:
+; Developer Support:
+;
+MSG_ABOUTWIN_MAILSUPPORT
+Mail hjælp:
+; Mail Support:
+;
+MSG_ABOUTWIN_MOSRELEASE
+MorphOS udgave: %lu.%lu
+; MorphOS release: %lu.%lu
+;
+MSG_ABOUTWIN_PROGRAMMERS
+Programmører
+; Programmers
+;
+MSG_ABOUTWIN_GRAPHICS
+Grafikere
+; Graphic Artists
+;
+MSG_ABOUTWIN_DOCS
+Dokumentation
+; Documentation
+;
+MSG_ABOUTWIN_MISC
+Diverse som ingen interesserer sig for
+; Miscellaneous stuff no one cares about
+;
+; *** Ambient main
+;
+MSG_SHUTDOWN_SELECT
+Vælg hvad du vil gøre:
+; What do you want to do?
+;
+MSG_SHUTDOWN_REBOOT_CANCEL
+Genstarte|Afbryd
+; _Reboot|_Cancel
+;
+MSG_SHUTDOWN_SHUTDOWN_REBOOT_CANCEL
+Luk ned|Genstarte|Afbryd
+; _Shutdown|_Reboot|_Cancel
+;
+MSG_MAIN_SCREENMODE
+Det kræver hi/true-color skærmopløsning for at kunne anvende Ambient.\nVælg en anden skærmopløsning.
+; You need a hi/true-color screen to use Ambient.\nPlease select another screenmode.
+;
+MSG_MAIN_SCREENMODE_ACTION
+Indstil skærmopløsning|Start skal|Afbryd
+; Run ScreenMode|Run Shell|Cancel
+;
+MSG_MAIN_PREFERENCES_START_ERROR
+Kunne ikke starte systemindstillingerne. Prøvede at starte mossys:prefs/Preferences (filen er her).\nPrøver at starte en skal.
+; Couldn't start the system preferences.\nI tried to start mossys:prefs/Preferences (the file is here).\nTrying to run a shell then.
+;
+MSG_MAIN_PREFERENCES_FIND_ERROR
+Kunne ikke finde systemindstillingerne.\nmossys:prefs/Perferences\neller sys:prefs/Preferences findes ikke.
+; Couldn't find the system preferences.\nI tried the file mossys:prefs/Preferences\nand the file sys:prefs/Preferences.\nTrying to run a shell then.
+;
+MSG_MAIN_RUN_SHELL
+Start skal
+; Run Shell
+;
+; *** StatusBarClass.c (statusbarclass.c)
+;
+MSG_STATUSBAR_PATTERN_NORMAL
+%du% i %td% kataloger og %tf% filer. (%sdu% i %ns% valgte).
+; %du% in %td% directories and %tf% files. (%sdu% in %ns% selected).
+;
+MSG_STATUSBAR_PATTERN_SELECTED
+(%lu valgte)
+; (%lu selected)
+;
+; PanelSliderSizeClass.c (panelslidersizeclass.c)
+;
+MSG_PANELSLIDERSIZECLASS_16PIXEL
+16 pixels
+; 16 pixels
+;
+MSG_PANELSLIDERSIZECLASS_24PIXEL
+24 pixels
+; 24 pixels
+;
+MSG_PANELSLIDERSIZECLASS_32PIXEL
+32 pixels
+; 32 pixels
+;
+MSG_PANELSLIDERSIZECLASS_48PIXEL
+48 pixels
+; 48 pixels
+;
+MSG_PANELSLIDERSIZECLASS_64PIXEL
+64 pixels
+; 64 pixels
+;
+; *** ListViewClass.c (listviewclass.c)
+;
+MSG_LISTVIEWCLASS_WINTITLE
+%s - %s free, %s/%s used, %ld%% full
+; %s - %s free, %s/%s used, %ld%% full
+;
+; *** DeviceListClass.c (devicelistclass.c)
+;
+;MSG_MISC_HIDDEN_DRIVES
+;Hidden drives
+;Skryt� za��zen�
+;Versteckte Laufwerke
+;Disques cach�s
+;Periferiche nascoste
+;Rejtett meghajt�k
+;Ukryj nap�dy
+;Piilotetut asemat
+;Hidden drives
+;Impulsiones ocultadas
+;
+MSG_DEVICELISTCLASS_HIDDENDRIVESCOLUMN
+Drevets navn
+; Drive name
+;
+; *** PrefsWin_ListerClass.c (prefswin_listerclass.c)
+;
+MSG_PREFSWIN_LISTER_FILES
+Filer
+; File Properties
+;
+MSG_PREFSWIN_LISTER_DEVICES
+Enheder
+; Device Properties
+;
+MSG_PREFSWIN_LISTER_ICONSIZEFILES
+_Ikonstørrelse:
+; _Icons size:
+;
+MSG_PREFSWIN_LISTER_ICONSIZEFILES_HELP
+Ikonstørrelse i fil listen.
+; Icon size in file list.
+;
+MSG_PREFSWIN_LISTER_ICONSIZEDEVICES
+Ikonernes størrelse:
+; Icons si_ze:
+;
+MSG_PREFSWIN_LISTER_ICONSIZEDEVICES_HELP
+Ikonernes størrelse i fil listen.
+; Icons size in file list.
+;
+MSG_PREFSWIN_LISTER_ICON_SMALL
+Lille   (20x20)
+; Small   (20x20)
+;
+MSG_PREFSWIN_LISTER_ICON_MEDIUM
+Medium  (32x32)
+; Medium  (32x32)
+;
+MSG_PREFSWIN_LISTER_ICON_LARGE
+Stor   (48x48)
+; Large   (48x48)
+;
+MSG_PREFSWIN_LISTER_ICON_HUGE
+Enorm   (64x64)
+; Huge    (64x64)
+;
+MSG_PREFSWIN_LISTER_MODES
+_Indstilling:
+; _Mode:
+;
+MSG_PREFSWIN_LISTER_MODES_HELP
+Denne indstilling aktiveres, når en liste indstillng er valgt.
+; This mode gets active when list mode is selected.
+;
+MSG_PREFSWIN_LISTER_COMPACT_SIZE
+Kompakt størrelsesvisning
+; Compact size displa_y
+;
+MSG_PREFSWIN_LISTER_COMPACT_SIZE_HELP
+Størrelse er vist i kompakt form, hvis denne knap er valgt.
+; Size is shown in compact form if this switch is enabled.
+;
+MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS
+Visnings _tildelinger
+; Display _assigns
+;
+MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS_HELP
+Tildelinger vil blive vist i enhedslisten, hvis denne gadget er aktiveret.
+; In device list assigns will be shown, if this gadget is activated.
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE
+Inline edition:
+; Inline edi_ting:
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE_HELP
+Med denne handling kan man ændre navne uden en tilhørende kontekst.
+; Using the given action allows to edit names without an additional context.
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_DISABLED
+Deaktiveret
+; Disabled
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_MIDDLEBUTTON
+Miderste knap
+; Middle Button
+;
+MSG_PREFSWIN_LISTER_INLINE_EDIT_LONG_LEFTBUTTON
+Venstre knap (lang)
+; Left Button (long)
+;
+MSG_PREFSWIN_LISTER_COLORS
+Farver
+; Colors
+;
+MSG_PREFSWIN_LISTER_FILE
+Fil:
+; _File:
+;
+MSG_PREFSWIN_LISTER_FILE_HELP
+Denne farve bruges til at vise filer inden i listen.
+; This color is used to display files within the lister.
+;
+MSG_PREFSWIN_LISTER_FILE_COLOR
+Farven på filer
+; File color
+;
+MSG_PREFSWIN_LISTER_DIRECTORY
+Katalog:
+; _Directory:
+;
+MSG_PREFSWIN_LISTER_DIRECTORY_HELP
+Denne farve bliver brugt til at vise skuffer inden i listen.
+; This color is used to display drawers within the lister.
+;
+MSG_PREFSWIN_LISTER_DIRECTORY_COLOR
+Farven på kataloger
+; Directory color
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE
+Valgt fil:
+; Se_lected file:
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE_HELP
+Denne fil bruges til at vise de valgte filer inden i listen.
+; This color is used to display selected files within the lister.
+;
+MSG_PREFSWIN_LISTER_SELECTED_FILE_COLOR
+Farven på valgte filer
+; Selected file color
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY
+Valgt katalog:
+; Sel_ected directory:
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY_HELP
+Denne farve bruges til at vise de valgte skuffer inden i listen.
+; This color is used to display selected drawers within the lister.
+;
+MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY_COLOR
+Farven på valgt katalog
+; Selected directory color
+;
+MSG_PREFSWIN_LISTER_SOFTLINK
+Blød læn_ke:
+; Softlin_k:
+;
+MSG_PREFSWIN_LISTER_SOFTLINK_HELP
+Denne farve bruges til at vise bløde lænker inden i listen.
+; This color is used to display softlinks within the lister.
+;
+MSG_PREFSWIN_LISTER_SOFTLINK_COLOR
+Farven på bløde lænker
+; Softlink color
+;
+MSG_PREFSWIN_LISTER_HARDLINK
+_Hårde lænker:
+; _Hardlink:
+;
+MSG_PREFSWIN_LISTER_HARDLINK_HELP
+Denne farve bruges til at vise hårde lænker inden i listen.
+; This color is used to display hardlinks within the lister.
+;
+MSG_PREFSWIN_LISTER_HARDLINK_COLOR
+Farven på hårde lænker
+; Hardlink color
+;
+MSG_PREFSWIN_LISTER_VOLUME
+Enhed:
+; _Volume:
+;
+MSG_PREFSWIN_LISTER_VOLUME_HELP
+Denne farve bruges til at vise enheder inden i listen.
+; This color is used to display volumes within the lister.
+;
+MSG_PREFSWIN_LISTER_VOLUME_COLOR
+Farve på enheder
+; Volume color
+;
+MSG_PREFSWIN_LISTER_ASSIGN
+Tildelnin_ger:
+; Assi_gn:
+;
+MSG_PREFSWIN_LISTER_ASSIGN_HELP
+Denne farve bliver brugt til at vise tildelinger indenfor listen.
+; This color is used to display assigns within the lister.
+;
+MSG_PREFSWIN_LISTER_ASSIGN_COLOR
+Farven på tildelinger
+; Assign color
+;
+MSG_PREFSWIN_LISTER_COLUMN
+Kolonne:
+; Colum_n:
+;
+MSG_PREFSWIN_LISTER_COLUMN_HELP
+Denne farve bruges til at vise kolonnen indenfor listen.
+; This color is used to display columns within the lister.
+;
+MSG_PREFSWIN_LISTER_COLUMN_COLOR
+Kolonnefarve
+; Column color
+;
+MSG_PREFSWIN_LISTER_USEWINDOWBACKGROUND
+Brug _vindue baggrund
+; Use _window background
+;
+MSG_PREFSWIN_LISTER_USEWINDOWBACKGROUND_HELP
+Når aktiveret vil den normale vindue baggrund blive vist som liste.
+; When activated the normal window background is displayed in list mode.
+;
+MSG_PREFSWIN_LISTER_SHOWICONS
+Vis _ikoner
+; Show _icons
+;
+MSG_PREFSWIN_LISTER_SHOWICONS_HELP
+Specificerer om ikoner skal vises.
+; Specifies if icons should be displayed.
+;
+MSG_PREFSWIN_LISTER_FONT
+Skrifttype:
+; Font:
+;
+MSG_PREFSWIN_LISTER_FONT_HELP
+Specificerer hvilken skrifttype der skal bruges ved listning.
+; Specifies the font to be used in list view.
+;
+MSG_PREFSWIN_LISTER_FONT_REQ
+Skrifttype
+; Font
+;
+MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES
+Kataloger vist i fed
+; Bold directories
+;
+MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES_HELP
+Når aktiveret bliver kataloger vist i fed.
+; When activated, directories are shown in bold style.
+;
+MSG_PREFSWIN_LISTER_ALTERNATED_ROWS
+Hver anden række
+; Alternated rows
+;
+MSG_PREFSWIN_LISTER_ALTERNATED_ROWS_HELP
+Når aktiveret bliver hver anden linie 10 % lysere.
+; When activated, every other line is 10% brighter.
+;
+MSG_PREFSWIN_LISTER_SELECTION_MODES
+Selection mode:
+; Selection mode:
+;
+MSG_PREFSWIN_LISTER_SELECTION_MODES_HELP
+This mode allows to choose between the default selection mode and the sticky selection mode (DirectoryOpus-like)
+; This mode allows to choose between the default selection mode and the sticky selection mode (DirectoryOpus-like)
+;
+MSG_PREFSWIN_LISTER_SELECTION_DEFAULT
+Default
+; Default
+;
+MSG_PREFSWIN_LISTER_SELECTION_ALWAYS
+Always
+; Always
+;
+MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN
+Aktiveret sorteringskolonne
+; Hilighted sorting column
+;
+MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN_HELP
+Når aktiveret er den nuværende sorteringskolonne lysere end de andre.
+; When activated, the currently sorting column is brighter than other ones.
+;
+; *** PrefsWin_KeyboardClass.c (prefswin_keyboardclass.c)
+;
+MSG_PREFSWIN_KEYBOARDCLASS_BUILTINGROUP
+Indbyggede kommando hotkeys
+; Builtin commands hotkeys
+;
+MSG_PREFSWIN_KEYBOARDCLASS_CUSTOMGROUP
+Specielle kommando hotkeys
+; Custom commands hotkeys
+;
+MSG_PREFSWIN_KEYBOARDCLASS_ADDAHOTKEY
+Tilføj en hotkey
+; Add a Hotkey
+;
+MSG_PREFSWIN_KEYBOARDCLASS_NEWSHORTCUT
+Ny genvej
+; new shortcut
+;
+; *** KeyShortCutClass.c (keyshortcutclass.c)
+;
+MSG_KEYSHORTCUTCLASS_ACTION
+Rediger kommando
+; Edit Command
+;
+MSG_KEYSHORTCUTCLASS_REMOVE
+Fjern
+; Remove
+;
+MSG_KEYSHORTCUTCLASS_LABEL_FORMAT
+%s:
+; %s:
+;
+; *** KeyShortCuts.c (keyshortcuts.c)
+;
+MSG_KEYSHORTCUT_DELETE
+Slet
+; Delete
+;
+MSG_KEYSHORTCUT_RENAME
+Omdøb
+; Rename
+;
+MSG_KEYSHORTCUT_INFORMATION
+Information
+; Information
+;
+MSG_KEYSHORTCUT_PARENT
+Forældre
+; Parent
+;
+MSG_KEYSHORTCUT_LEAVEOUT
+Efterlad ude
+; Leave out
+;
+MSG_KEYSHORTCUT_PUTAWAY
+Læg tilbage
+; Put away
+;
+MSG_KEYSHORTCUT_SELECTALL
+Vælg alle
+; Select all
+;
+MSG_KEYSHORTCUT_SELECTNONE
+Fravælg alle
+; Deselect all
+;
+MSG_KEYSHORTCUT_SELECTINVERT
+Spejlvend valg
+; Invert selection
+;
+MSG_KEYSHORTCUT_SELECTPATTERN
+Vælg med mønster
+; Select with pattern
+;
+MSG_KEYSHORTCUT_CLIPBOARDCOPY
+Kopier til udklipsholder
+; Copy to clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDCUT
+Klip til udklipsholder
+; Cut to clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDPASTE
+Klistre ind fra udklipsholder
+; Paste from clipboard
+;
+MSG_KEYSHORTCUT_CLIPBOARDPASTEAS
+Klistre ind fra udklipsholder som
+; Paste from clipboard as
+;
+MSG_KEYSHORTCUT_CYCLEMODE
+Cykle indstilling
+; Cycle Mode
+;
+MSG_KEYSHORTCUT_CYCLESUBMODE
+Cykle underindstilling
+; Cycle Submode
+;
+MSG_KEYSHORTCUT_FINDFILES
+Find filer
+; Find files
+;
+; *** Find Window
+;
+MSG_FINDCLASS_TITLE
+Find
+; Find
+;
+MSG_FINDCLASS_MENU_PROJECT
+Projekt
+; Find
+;
+MSG_FINDCLASS_MENU_QUIT
+Afslut
+; Quit
+;
+MSG_FINDCLASS_NAME
+Navn:
+; Name:
+;
+MSG_FINDCLASS_NAME_HELP
+Navnet på filen(erne) der skal søges på.
+; Name of the file(s) to search.
+;
+MSG_FINDCLASS_TEXT
+Tekst:
+; Text:
+;
+MSG_FINDCLASS_TEXT_HELP
+Tekst som skal søges på indenfor filerne.
+; Text to search within files.
+;
+MSG_FINDCLASS_TYPE
+Type:
+; Type:
+;
+MSG_FINDCLASS_TYPE_HELP
+Typen af fil som skal søges.
+; Filetype of the files to search.
+;
+MSG_FINDCLASS_COMMENT
+Comment:
+; Comment:
+;
+MSG_FINDCLASS_COMMENT_HELP
+Filecomment of the files to search.
+; Filecomment of the files to search.
+;
+MSG_FINDCLASS_ADDSTRING_HELP
+Ny placering kan indsættes her.
+; New locations can be entered here.
+;
+MSG_FINDCLASS_ADD
+Tilføj
+; _Add
+;
+MSG_FINDCLASS_ADD_HELP
+Denne gadget tilføjer den specificerede placering til placeringslisten.
+; This gadget adds the specified location to the location list.
+;
+MSG_FINDCLASS_REMOVE
+_Fjern
+; _Remove
+;
+MSG_FINDCLASS_REMOVE_HELP
+Denne knap fjerner det valgte element fra placeringslisten.
+; This button removes the selected item from location list.
+;
+MSG_FINDCLASS_LOCATIONS
+Placering
+; Locations
+;
+MSG_FINDCLASS_LOCATIONS_HELP
+Disse placeringer vil blive undersøgt.
+; These locations will be searched.
+;
+MSG_FINDCLASS_RESULTS
+Resultater
+; Results
+;
+MSG_FINDCLASS_RESULTS_HELP
+Her vil søgeresultatet blive vist.
+; Here the search results will be displayed.
+;
+MSG_FINDCLASS_SEARCH
+_Søg
+; _Search
+;
+MSG_FINDCLASS_SEARCH_HELP
+Start søgningen med de givne parametre.
+; Start search with the given parameters.
+;
+MSG_FINDCLASS_STOP
+_Afbryd
+; S_top
+;
+MSG_FINDCLASS_STOP_HELP
+Stop søgningen med det samme.
+; Stop search right now.
+;
+MSG_FINDCLASS_FINISHED
+Færdig
+; Finished
+;
+; FindResultList.c (findresultlist.c)
+;
+MSG_FINDRESULTLISTCLASS_NAME
+Navn
+; Name
+;
+MSG_FINDRESULTLISTCLASS_CONTAINER
+Beholder
+; Container
+;
+MSG_FINDRESULTLISTCLASS_COMMENT
+Comment
+; Comment
+;
+;
+; *** Icons
+;
+MSG_ICON_MYMORPHOS
+Mit MorphOS
+; My MorphOS
+;
+; *** Icon view window (lister and normal)
+;
+MSG_ICONVIEW_SCANNING_LOCATION
+ - Skanner placering...
+; - Scanning location...
+;
+; *** contextmenu.c (ContextMenu.c)
+;
+MSG_CMENUTITLE_PROPERTIES
+Indstillinger
+; Properties
+;
+MSG_CMENUTITLE_ICON
+Ikon
+; Icon
+;
+MSG_CMENUTITLE_ICONS
+Ikoner
+; Icons
+;
+MSG_CMENUTITLE_APPICON
+AppIcon
+; AppIcon
+;
+MSG_CMENUTITLE_FILE
+Fil
+; File
+;
+MSG_CMENUTITLE_FILES
+Filer
+; Files
+;
+MSG_CMENUTITLE_PANELGROUP
+Panel
+; Panel
+;
+MSG_CMENUTITLE_PANELBUTTON
+Panel-knap
+; Panel Button
+;
+MSG_CMENUTITLE_PANELSPACER
+Panel-mellemrum
+; Panel Spacer
+;
+MSG_CMENUTITLE_PANELSEPARATOR
+Panel-adskiller
+; Panel Separator
+;
+MSG_CMENUTITLE_PANELPOPUP
+Popup
+; Popup
+;
+MSG_CMENUTITLE_PANELPOPUPAPPICONS
+Appicons
+; Appicons
+;
+MSG_CMENUTITLE_PANELPOPUPBOOKMARKS
+Bogmærker
+; Bookmarks
+;
+MSG_CMENUTITLE_PANELPOPUPVIEWS
+Visninger
+; Views
+;
+MSG_CMENUTITLE_PANELGROUPSUB
+Panel-element
+; Panel Item
+;
+MSG_CMENUTITLE_VIEW
+Vis
+; View
+;
+MSG_CMENU_ABOUT
+Om...
+; About...
+;
+MSG_CMENU_ADDTOPANEL
+Tilføj til panel...
+; Add to Panel...
+;
+MSG_CMENU_CUT
+Klip
+; Cut
+;
+MSG_CMENU_CUT_SHORTCUT
+X
+; X
+;
+MSG_CMENU_COPY
+Kopier
+; Copy
+;
+MSG_CMENU_COPY_SHORTCUT
+C
+; C
+;
+MSG_CMENU_PASTE
+Klistre ind
+; Paste
+;
+MSG_CMENU_PASTE_SHORTCUT
+V
+; V
+;
+MSG_CMENU_PASTEINTO
+Klistre ind i
+; Paste Into
+;
+MSG_CMENU_PASTEAS
+Klistre ind i som...
+; Paste As...
+;
+MSG_CMENU_PASTEASINTO
+Klistre som ind i...
+; Paste as Into...
+;
+MSG_CMENU_DELETE
+Slet
+; Delete
+;
+MSG_CMENU_DELBUTTON
+Slet knap
+; Delete Button
+;
+MSG_CMENU_STAYOPEN
+Stay Open
+; Stay Open
+;
+MSG_CMENU_PANELDELFROM
+Slet fra panel...
+; Remove Item...
+;
+MSG_CMENU_PANELDEL
+Slet panel...
+; Delete...
+;
+MSG_CMENU_PANELCREATE
+Skab panel
+; Create New
+;
+MSG_CMENU_PANELSAVE
+Save Panel
+; Save
+;
+MSG_CMENU_PANELPREFS
+Open Panelprefs...
+; Configure...
+;
+MSG_CMENU_FORMAT
+Formater...
+; Format...
+;
+MSG_CMENU_EJECT
+Skyd ud
+; Eject
+;
+MSG_CMENU_EJECT_SHORTCUT
+J
+; J
+;
+MSG_CMENU_HELP
+Hjælp...
+; Help...
+;
+MSG_CMENU_INFO
+Information...
+; Information...
+;
+MSG_CMENU_INFO_SHORTCUT
+I
+; I
+;
+MSG_CMENU_INVERT
+Spejlvend
+; Invert
+;
+MSG_CMENU_INVERT_SHORTCUT
+\000
+; \000
+;
+MSG_CMENU_LOCKED
+Låst
+; Locked
+;
+MSG_CMENU_MOVE
+Flyt
+; Move Item
+;
+MSG_CMENU_MOVE_SHORTCUT
+\000
+; \000
+;
+MSG_CMENU_MANAGEAPPLETS
+Styr applets...
+; Manage Applets...
+;
+MSG_CMENU_NEWDRAWER
+Ny skuffe...
+; New Drawer...
+;
+MSG_CMENU_PANEL
+Panel
+; Panel
+;
+MSG_CMENU_SNAPSHOT
+Husk positionen
+; Snapshot
+;
+MSG_CMENU_PROPERTIES
+Egenskaber...
+; Properties...
+;
+MSG_CMENU_PUTAWAY
+Læg tllbage
+; Put Away
+;
+MSG_CMENU_RENAME
+Omdøb...
+; Rename...
+;
+MSG_CMENU_RENAME_SHORTCUT
+R
+; R
+;
+MSG_CMENU_SELECTALL
+Vælg alle
+; Select All
+;
+MSG_CMENU_SELECTALL_SHORTCUT
+A
+; A
+;
+MSG_CMENU_SHOW
+Vis
+; Show
+;
+MSG_CMENU_SNAPSHOTWIN
+Husk vinduets position
+; Snapshot Window
+;
+MSG_CMENU_UNSNAPSHOTWIN
+Glem vinduets position
+; UnSnapshot Window
+;
+MSG_CMENU_SORT
+Sorter efter
+; Sort By
+;
+MSG_CMENU_SORT_BYDATE
+Dato
+; Date
+;
+MSG_CMENU_SORT_BYNAME
+Navn
+; Name
+;
+MSG_CMENU_SORT_BYSIZE
+Størrelse
+; Size
+;
+MSG_CMENU_SORT_BYTYPE
+Type
+; Type
+;
+MSG_CMENU_UNSNAPSHOT
+Glem position
+; UnSnapshot
+;
+MSG_CMENU_VIEW
+Vis
+; View
+;
+MSG_CMENU_WINDOW
+Vindue
+; Window
+;
+MSG_CMENU_ALL
+Alle
+; All
+;
+MSG_CMENU_ICONS
+Ikoner
+; Icons
+;
+MSG_CMENU_LISTTITLE_GETDIRECTORYSIZES
+Få katalogets størrelse
+; Get Directory Sizes
+;
+MSG_CMENU_LISTTITLE_RESETTODEFAULTFORMAT
+Tilbagefør til forudbestemt format
+; Reset to Default Format
+;
+; *** CMENU Items (mimetype.c)
+;
+MSG_CMENU_MIME_OPEN
+Åben
+; Open
+;
+MSG_CMENU_MIME_OPENINNEWWINDOW
+Åben i et nyt vindue...
+; Open in New Window...
+;
+MSG_CMENU_MIME_OPENANDCLOSEOLD
+Åben og luk foregående
+; Open and Close Old
+;
+MSG_CMENU_MIME_OPENINDESTINATION
+Åben i destination
+; Open in Destination
+;
+MSG_CMENU_MIME_OPENSHELL
+Åben skal...
+; Open Shell...
+;
+MSG_CMENU_MIME_FIND
+Søg...
+; Find...
+;
+MSG_CMENU_MIME_COPYTO
+Kopier til...
+; Copy To...
+;
+MSG_CMENU_MIME_MOVETO
+Flyt til...
+; Move To...
+;
+; *** Listview Title (listviewlistclass.c)
+;
+MSG_CMENU_LVTITLES_NAME
+Navn
+; Name
+;
+MSG_CMENU_LVTITLES_SIZE
+Størrelse
+; Size
+;
+MSG_CMENU_LVTITLES_DATE
+Dato
+; Date
+;
+MSG_CMENU_LVTITLES_ATTRS
+Attrs
+; Attrs
+;
+MSG_CMENU_LVTITLES_COMMENT
+Kommentar
+; Comment
+;
+MSG_CMENU_LVTITLES_FILETYPE
+Filtype
+; Filetype
+;
+MSG_CMENU_LVTITLES_VERSION
+Version
+; Version
+;
+MSG_CMENU_LVTITLES_FULLDATE
+Dato & Tid
+; Date & Time
+;
+MSG_CMENU_LVTITLES_UID
+Bruger
+; User
+;
+MSG_CMENU_LVTITLES_GID
+Gruppe
+; Group
+;
+MSG_CMENU_LVTITLES_MD5
+MD5
+; MD5
+;
+MSG_CMENU_LVTITLES_VOLUMENAME
+Enhedsnavn
+; Volume Name
+;
+MSG_CMENU_LVTITLES_FREE
+Ledig
+; Free
+;
+MSG_CMENU_LVTITLES_TOTAL
+Total
+; Total
+;
+MSG_CMENU_LVTITLES_DOSTYPE
+DOS type
+; DOS Type
+;
+MSG_CMENU_TRASH
+Move to Trashcan...
+; Move to Trashcan...
+;
+MSG_CMENU_RESTORE
+Restore
+; Restore
+;
+MSG_CMENU_EMPTY
+Empty Trashcan
+; Empty Trashcan
+;
+;
+MSG_LISTVIEWLISTCLASS_EMPTY
+<Tom>
+; <Empty>
+;
+MSG_LISTVIEWLISTCLASS_DIRECTORY
+<Katalog>
+; <Directory>
+;
+MSG_LISTVIEWLISTCLASS_LINK
+<Lænke>
+; <Link>
+;
+MSG_LISTVIEWLISTCLASS_ASSIGN
+<Tildel>
+; <Assign>
+;
+; *** Column type descriptors (columnslistclass.c)
+;
+MSG_COLUMNSLIST_ICON
+Ikon
+; Icon
+;
+MSG_COLUMNSLIST_SORTBY
+Sorter ved
+; Sort By
+;
+MSG_COLUMNSLIST_NAME
+Navn
+; Name
+;
+MSG_COLUMNSLIST_HIDDEN
+Skjult
+; Hidden
+;
+; *** Mime Type Descriptors (mimetype.c)
+;
+MSG_MIMETYPE_MORPHOSEXECUTABLE
+MorphOS program
+; MorphOS Executable
+;
+MSG_MIMETYPE_AMIGAOS68KEXECUTABLE
+AmigaOS program
+; AmigaOS 68k Executable
+;
+MSG_MIMETYPE_AMIGAOS4PPCEXECUTABLE
+OS4 program
+; OS4 Executable
+;
+MSG_MIMETYPE_SCRIPT
+Skript
+; Script
+;
+MSG_MIMETYPE_OGGVORBIS
+Ogg Vorbis Audio
+; Ogg Vorbis Audio
+;
+MSG_MIMETYPE_MPEGLAYER3
+MPEG Layer-3 Audio
+; MPEG Layer-3 Audio
+;
+MSG_MIMETYPE_MULTIMEDIAOBJECT
+Multimedieobjekt
+; Multimedia Object
+;
+MSG_MIMETYPE_DEVICE
+Enhed
+; Device
+;
+MSG_MIMETYPE_DIRECTORY
+Katalog
+; Directory
+;
+MSG_MIMETYPE_DATATYPE
+Datatype
+; Datatype
+;
+MSG_MIMETYPE_PROJECT
+Projekt
+; Project
+;
+; *** Internal filetype (actionlistclass.c)
+;
+MSG_FILETYPE_INTERNAL
+Denne filtype er internt defineret i Ambient og er derfor\nikke redigerbar. Du har dog muligheden for at definere\n egne filtyper som dermed tilsidesætter denne.
+; This filetype is an internal definition in Ambient and\nis therefore not editable. You can however override this\nfiletype by defining one that overrides it.
+;
+; ** mouse over icon bubble strings (metadata.c)
+;
+MSG_METADATA_UNKNOWN
+Ukendt
+; Unknown
+;
+MSG_METADATA_TYPE
+Type: %s
+; Type: %s
+;
+MSG_METADATA_DATESIZE
+\nDato: %s, %s\nStørrelse: %s
+; \nDate: %s, %s\nUsed: %s
+;
+; ** View names (viewapi.c)
+;
+MSG_VIEW_ICON
+Ikon
+; Icon
+;
+MSG_VIEW_ICONS
+Ikoner
+; Icons
+;
+MSG_VIEW_ALLFILES
+Alle filer
+; All Files
+;
+MSG_VIEW_THUMB
+Thumbnails
+; Thumbnails
+;
+MSG_VIEW_LIST
+Liste
+; List
+;
+MSG_VIEW_SCALED
+Skaleret
+; Scaled
+;
+MSG_VIEW_NORMAL
+Normal
+; Normal
+;
+; ** File size capacity (capacity.c)
+;
+MSG_CAPACITY_FORMAT_BYTES
+%u bytes
+; %u bytes
+;
+MSG_CAPACITY_FORMAT_KBYTES
+%u.%u KB
+; %u.%u KB
+;
+MSG_CAPACITY_FORMAT_MBYTES
+%u.%u MB
+; %u.%u MB
+;
+MSG_CAPACITY_FORMAT_GBYTES
+%u.%u GB
+; %u.%u GB
+;
+MSG_CAPACITY_FORMAT_TBYTES
+%u.%u TB
+; %u.%u TB
+;
+MSG_CAPACITY_FORMAT_COMPACT_BYTES
+%u bytes
+; %u bytes
+;
+MSG_CAPACITY_FORMAT_COMPACT_KBYTES
+%uKB
+; %uKB
+;
+MSG_CAPACITY_FORMAT_COMPACT_MBYTES
+%uMB
+; %uMB
+;
+MSG_CAPACITY_FORMAT_COMPACT_GBYTES
+%uGB
+; %uGB
+;
+MSG_CAPACITY_FORMAT_COMPACT_TBYTES
+%uTB
+; %uTB
+;
+; ** SmartReq (smartreq.c)
+;
+MSG_SMARTREQUEST_AMBIENTREQUEST
+Ambient handlingsønske
+; Ambient Request
+;
+MSG_SMARTREQUEST_AMBIENTDOSERROR
+Ambient DOS fejl
+; Ambient DOS Error
+;
+MSG_SMARTREQUEST_AMBIENTIOERROR
+Ambient I/O fejl
+; Ambient I/O Error
+;
+MSG_SMARTREQUEST_SOURCE
+Kilde
+; Source
+;
+MSG_SMARTREQUEST_TARGET
+Mål
+; Target
+;
+MSG_SMARTREQUEST_VERSION
+Version
+; Version
+;
+MSG_SMARTREQUEST_MD5
+MD5
+; MD5
+;
+MSG_SMARTREQUEST_CHECKING
+Checker...
+; Checking...
+;
+MSG_SMARTREQUEST_UNKNOWN
+ukendt
+; unknown
+;
+; ** FileAction  (fileaction.c )
+;
+MSG_FILEACTION_DELETETITLE
+Ambient - Slet
+; Ambient � Delete
+;
+MSG_FILEACTION_DELETEMSG
+Kunne ikke slette '%s'.\n\nDOS fejl: %S\n(#%N).
+; Couldn't delete '%s'.\n\nDOS error: %S\n(#%N).
+;
+MSG_FILEACTION_OVERWRITETITLE
+Ambient - Overskriv
+; Ambient � Overwrite
+;
+MSG_FILEACTION_OVERWRITEMSG
+Filen '%s'\ner beskyttet mod overskrivning.
+; File '%s'\nis protected from overwrite.
+;
+MSG_FILEACTION_PROTECTBUTTONS
+*_Ubeskyt|Ubeskyt alle|_Spring over|Spring alle over|_Afbryd
+; *_Unprotect|Unprotect All|_Skip|Skip All|_Cancel
+;
+MSG_FILEACTION_PROTECTIONERROR
+Kunne ikke sætte beskyttelse på '%s'.\n\nDOS fejl: %S\n(#%N).
+; Couldn't set the protection mode of '%s'.\n\nDOS error: %S\n(#%N).
+;
+MSG_FILEACTION_COPYTITLE
+Ambient - Kopier
+; Ambient � Copy
+;
+MSG_FILEACTION_MOVETITLE
+Ambient � Flyt
+; Ambient � Move
+;
+MSG_FILEACTION_REPLACEMSG
+Filen '%s'\neksiterer allerede og vil blive overskrevet.
+; File '%s'\nalready exists and will be replaced.
+;
+MSG_FILEACTION_REPLACEBUTTONS
+*_Erstat|Erstat alle|_Spring over|Spring alle over|_Afbryd
+; *_Replace|Replace All|_Skip|Skip All|_Cancel
+;
+; ** FindVer (findver.c)
+;
+MSG_FINDVER_RETRIEVINGVERSION
+Finder versionsstreng...
+; retrieving version string...
+;
+MSG_FINDVER_VERSIONNOTFOUND
+Kunne ikke finde versionsstreng
+; Couldn't find version string
+;
+; ** MD5Sum.c (md5sumc.c)
+;
+MSG_MD5SUM_COMPUTINGMD5SUM
+beregner MD5 sum...
+; computing MD5 sum...
+;
+; ** Devices.c  (devices.c)
+;
+MSG_DEVICES_FREE
+%s, %s fri
+; %s, %s free
+;
+; PanelGroupClass.c (panelgroupclass.c)
+;
+MSG_PANELGROUPCLASS_TITLE
+Ambient panel
+; Ambient Panel
+;
+MSG_PANELGROUPCLASS_DELETEMSG
+Vil du virkelig slette panelet?
+; Do you really want to delete the panel?
+;
+MSG_PANELGROUPCLASS_DELETECANCEL
+Slet|Afbryd
+; Delete|Cancel
+;
+; Rename.c (rename.c)
+;
+MSG_RENAME_TITLE
+Ambient - Omdøb
+; Ambient � Rename
+;
+MSG_RENAME_FILEISADIRECTORY
+Filen '%s' er et katalog
+; File '%s' is a directory
+;
+MSG_RENAME_FILECANTBERENAMED
+File '%s' kan ikke omdøbes.\nDOS fejl: %S (#%N).
+; File '%s' can't be renamed.\nDOS error: %S (#%N).
+;
+MSG_RENAME_CANTBERENAMED
+'%s' kan ikke omdøbes.\nDOS fejl: %S (#%N).
+; '%s' can't be renamed.\nDOS error: %S (#%N).
+;
+MSG_RENAME_SKIPCANCEL
+*_Spring over|Afbryd
+; *_Skip|Cancel
+;
+MSG_RENAME_OK
+*_OK
+; *_OK
+;
+; MoveDir.c (movedir.c)
+;
+MSG_MOVEDIR_TITLE
+Ambient - Kopier
+; Ambient � Copy
+;
+MSG_MOVEDIR_ERRORWHILEMOVING
+Fejl under kopiering '%s'
+; Error while copying '%s'
+;
+MSG_MOVEDIR_ERRORISAFILE
+'%s' er en fil
+; '%s' is a file
+;
+MSG_MOVEDIR_RETRYSKIPCANCEL
+*_Forsøg igen|Spring over|Afbryd
+; *_Retry|Skip|Cancel
+;
+MSG_MOVEDIR_REPLACECANCEL
+*_Erstat|Afbryd
+; *_Replace|Cancel
+;
+; Clipboard.c (clipboard.c)
+;
+MSG_CLIPBOARD_TITLE
+Ambient - Udklipsholder
+; Ambient � Clipboard
+;
+MSG_CLIPBOARD_COPYCANCEL
+*_Kopier|Afbryd
+; *_Copy|Cancel
+;
+MSG_CLIPBOARD_COPIED
+kopieret
+; copied
+;
+MSG_CLIPBOARD_CUT
+klip
+; cut
+;
+MSG_CLIPBOARD_FILESWILLBE
+De følgende \033b%d\033n filer er i udklipsholderrn og\nvil blive \033b%s\033n to "\033b%s\033n" :\n\n
+; The following \033b%d\033n files are in the clipboard and\nwill be \033b%s\033n to "\033b%s\033n" :\n\n
+;
+; PanelSpacerClass.c (panelspacerclass.c)
+;
+MSG_PANELITEM_SPACER
+Mellemrum
+; Spacer
+;
+MSG_PANELITEM_SPACERDESC
+Indsætter tomt mellemrum mellem elementer.
+; Inserts empty area between items.
+;
+; PanelSeparatorClass.c (panelseparatorclass.c)
+;
+MSG_PANELITEM_SEPARATOR
+Adskiller
+; Separator
+;
+MSG_PANELITEM_SEPARATORDESC
+Tillader at man grupperer andre panelobjekter som f.eks. knapper.
+; Allows to optically group other panel objects, like e.g. buttons.
+;
+; PanelViewWatcherClass.c (panelviewwatcherclass.c)
+;
+MSG_PANELITEM_VIEWWATCHER
+Visningsovervåger
+; View Watcher
+;
+MSG_PANELITEM_VIEWWATCHERDESC
+Viser en liste over de åbne visninger og tillader, at man skifter imellem dem.
+; Shows a list of the opened views and allows to switch between them.
+;
+MSG_PANELITEM_VIEWWATCHER_SHORTHELP
+Viewwatcher
+; Viewwatcher
+;
+; PanelBookmarksClass.c (panelbookmarksclass.c)
+;
+MSG_PANELITEM_BOOKMARKS
+Bogmærker
+; Bookmarks
+;
+MSG_PANELITEM_BOOKMARKSDESC
+Viser en liste over bogmærkede placeringer.
+; Shows a list of bookmarked locations.
+;
+MSG_PANELITEM_BOOKMARKS_SHORTHELP
+Bookmarks
+; Bookmarks
+;
+; PanelDirPanelClass.c (paneldirpanelclass.c)
+;
+MSG_PANELITEM_DIRPANEL
+Directory
+; Directory
+;
+MSG_PANELITEM_DIRPANELDESC
+Shows all icons within a directory in a sub panel.
+; Shows all icons within a directory in a sub panel.
+;
+; PanelSubPanelClass.c (panelsubpanelclass.c)
+;
+MSG_PANELITEM_SUBPANEL
+Sub Panel
+; Sub Panel
+;
+MSG_PANELITEM_SUBPANELDESC
+Allows to group icons in sub panels.
+; Allows to group icons in sub panels.
+;
+MSG_PANELITEM_SUBPANEL_SHORTHELP
+Subpanel
+; Subpanel
+;
+; PanelItemWinClass.c
+;
+MSG_PANELITEMWINCLASS_DESCGROUPTITLE
+Beskrivelse
+; Description
+;
+MSG_PANELITEMWINCLASS_NONE
+Ingen
+; None
+;
+MSG_PANELITEMWINCLASS_UNKNOWN
+Ukendt
+; Unknown
+;
+; ActionEditorWinClass.c (actioneditorwinclass.c)
+;
+MSG_ACTIONEDITORWINCLASS_TITLE
+Ambient - Handlingsredigerer
+; Ambient � Action Editor
+;
+; ActionEditorClass.c (actioneditorclass.c)
+;
+MSG_ACTIONEDITORCLASS_TYPE
+Type
+; Type
+;
+MSG_ACTIONEDITORCLASS_TYPE_HELP
+Dette er aktionstypen for den nuværende indskrivning.
+; This is the type of action for the current entry.
+;
+MSG_ACTIONEDITORCLASS_COMMANDSTRING
+Kommando streng
+; Command String
+;
+MSG_ACTIONEDITORCLASS_INTERNAL
+Intern
+; Internal
+;
+MSG_ACTIONEDITORCLASS_AMIGADOS
+AmigaDOS
+; AmigaDOS
+;
+MSG_ACTIONEDITORCLASS_WORKBENCH
+Workbench
+; Workbench
+;
+MSG_ACTIONEDITORCLASS_SCRIPT
+Skript
+; Script
+;
+MSG_ACTIONEDITORCLASS_AREXX
+Arexx
+; Arexx
+;
+MSG_ACTIONEDITORCLASS_UNKNOWN
+Ukendt
+; Unknown
+;
+MSG_ACTIONEDITORCLASS_COMMANDGROUP
+Kommando
+; Command
+;
+MSG_ACTIONEDITORCLASS_NAME
+_Navn :
+; _Name :
+;
+MSG_ACTIONEDITORCLASS_NAME_HELP
+Navnet på handlingen.
+; Name of the action.
+;
+MSG_ACTIONEDITORCLASS_ADD
+_Tilføj
+; _Add
+;
+MSG_ACTIONEDITORCLASS_ADD_HELP
+Tilføj en ny handling til listen.
+; Add a new action to the list.
+;
+MSG_ACTIONEDITORCLASS_REMOVE
+_Fjern
+; _Remove
+;
+MSG_ACTIONEDITORCLASS_REMOVE_HELP
+Fjerner de nuværende aktive handlinger.
+; Removes the current active action.
+;
+MSG_ACTIONEDITORCLASS_ACTIONLIST_HELP
+Denne liste indeholder alle handlinger.
+; This list contains all actions.
+;
+MSG_ACTIONEDITORCLASS_UP_HELP
+Flytter den valgte indskrivning til handlingslisten.
+; Moves the selected entry up the action list.
+;
+MSG_ACTIONEDITORCLASS_DOWN_HELP
+Flytter den valgte indskrivning ned ad handlingslisten.
+; Moves the selected entry down the action list.
+;
+MSG_ACTIONEDITORCLASS_COMMAND_HELP
+Kommando der skal udføres.\n\nUse:\n%sp for indgang fuld sti.\n%sf for indgang fil del.\n%S for kilde vis sti.\n%Si for kilde vis identificerer.\n%D for destination vis sti.\n%Di for destination vis \
+identificerer.
+; Command to be executed.\n\nUse:\n%sp for entry full path.\n%sf for entry file part.\n%S for source view path.\n%Si for source view identifier.\n%D for destination view path.\n%Di for destination view identifier.
+;
+MSG_ACTIONEDITORCLASS_EVENTTYPE
+_Begivenhedstype :
+; _Event type:
+;
+MSG_ACTIONEDITORCLASS_EVENTTYPE_HELP
+Tillader at man speciferer typen af begivenhed der fremkalder denne handling.
+; Allows to specify the type of event causing this action.
+;
+MSG_ACTIONEDITORCLASS_EVENTDOUBLE
+Dobbeltklik
+; DoubleClick
+;
+MSG_ACTIONEDITORCLASS_EVENTMENU
+Menu
+; Menu
+;
+MSG_ACTIONEDITORCLASS_EVENTDRAGNDROP
+Træk & Slip
+; Drag'n'Drop
+;
+MSG_ACTIONEDITORCLASS_QUALIFIER
+_Kvalificerer :
+; _Qualifier :
+;
+MSG_ACTIONEDITORCLASS_QUALNONE
+Ingen
+; None
+;
+MSG_ACTIONEDITORCLASS_QUALSHIFT
+Shift
+; Shift
+;
+MSG_ACTIONEDITORCLASS_QUALALT
+Alt
+; Alt
+;
+MSG_ACTIONEDITORCLASS_QUALCONTROL
+Control
+; Control
+;
+MSG_ACTIONEDITORCLASS_SORTBYPARENT
+Sorter efter forældre
+; Sort by parent
+;
+MSG_ACTIONEDITORCLASS_SORTBYPARENT_HELP
+Navnet på forældreelementet vil blive brugt til at sortere menuen.
+; The name of the parent element will be used to sort menu items.
+;
+MSG_ACTIONEDITORCLASS_PARENTNAME
+Forældre menu navn
+; Parent Menu Name
+;
+MSG_ACTIONEDITORCLASS_PARENTNAME_HELP
+Specificer navnet på forældre menuen.
+; Specify the name of the parent menu.
+;
+MSG_ACTIONEDITORCLASS_CDTOSOURCE
+Ændrer arbejdsdirectory til _source
+; Change working directory to _source
+;
+MSG_ACTIONEDITORCLASS_CDTOSOURCE_HELP
+Før handlingen foretages vil det nuværende katalog blive ændret til kilde skuffen.
+; Before the action take place the current dir will be changed to source drawer.
+;
+MSG_ACTIONEDITORCLASS_CDTODESTINATION
+Ændre arbejdsbibliotek til _destination
+; Change working directory to _destination
+;
+MSG_ACTIONEDITORCLASS_CDTODESTINATION_HELP
+Før handlingen foretages vil det nuværende katalog blive ændret til destinations skiffen.
+; Before the action take place the current dir will be changed to destination drawer.
+;
+MSG_ACTIONEDITORCLASS_DONTQUOTEARGS
+Lad være med _quote argumenter
+; Don't _quote arguments
+;
+MSG_ACTIONEDITORCLASS_DONTQUOTEARGS_HELP
+Omslut ikke argumenter med citationstegn hvis denne kontakt er aktiveret.
+; Don't surround arguments by a quotation mark if this switch is enabled.
+;
+MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES
+_Flet det valgte
+; _Merge selection
+;
+MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES_HELP
+Flet de valgte filer i en enkelt streng.
+; Merge selected files in a single string.
+;
+MSG_ACTIONEDITORCLASS_OK
+_Ok
+; _Ok
+;
+MSG_ACTIONEDITORCLASS_OK_HELP
+Den nuværende indstilling vil blive brugt.
+; The current setup will be used.
+;
+MSG_ACTIONEDITORCLASS_CANCEL
+_Afbryd
+; _Cancel
+;
+MSG_ACTIONEDITORCLASS_CANCEL_HELP
+Den nuværende indstilling vil blive afvist.
+; The current setup will be rejected.
+;
+MSG_ACTIONEDITORCLASS_SPECIFYCOMMANDHERE
+Specificer kommando her.
+; Specify command here.
+;
+; *** MimeAdjustListClass.c (mimeadjustlistclass.c)
+;
+MSG_MIMEADJUSTLISTCLASS_NAME
+Navn
+; Name
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTTYPE
+Begivenhedstype
+; Event Type
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTDOUBLE
+Dobbeltklik
+; DoubleClick
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTMENU
+Menu
+; Menu
+;
+MSG_MIMEADJUSTLISTCLASS_EVENTDRAGNDROP
+Træk & Slip
+; Drag'n'Drop
+;
+MSG_MIMEADJUSTLISTCLASS_QUALSHIFT
+[Shift]
+; [Shift]
+;
+MSG_MIMEADJUSTLISTCLASS_QUALALT
+[Alt]
+; [Alt]
+;
+MSG_MIMEADJUSTLISTCLASS_QUALCONTROL
+[Control]
+; [Control]
+;
+MSG_MIMEADJUSTLISTCLASS_INHERITEDACTION
+[arvet handling]\033i
+; [inherited action]\033i
+;
+; *** MimeGroupClass.c (mimegroupclass.c)
+;
+MSG_MIMEGROUPCLASS_ADD
+_Tilføj
+; _Add
+;
+MSG_MIMEGROUPCLASS_ADD_HELP
+Tilføjer en handling til en handlingsliste.
+; Adds an action to action list.
+;
+MSG_MIMEGROUPCLASS_COPY
+Kopie_r
+; Cop_y
+;
+MSG_MIMEGROUPCLASS_COPY_HELP
+Kopierer den nuværende indtastning.
+; Copies the current entry.
+;
+MSG_MIMEGROUPCLASS_EDIT
+_Rediger
+; _Edit
+;
+MSG_MIMEGROUPCLASS_EDIT_HELP
+Rediger den nuværende indtastning.
+; Edit the current active entry.
+;
+MSG_MIMEGROUPCLASS_REMOVE
+_Fjern
+; _Remove
+;
+MSG_MIMEGROUPCLASS_REMOVE_HELP
+Fjern den nuværende indtastning.
+; Remove the current entry.
+;
+MSG_MIMEGROUPCLASS_SEARCH
+Søg
+; Search
+;
+MSG_MIMEGROUPCLASS_SEARCH_HELP
+Åbner mime-søg kontekst.
+; Opens the mime search context.
+;
+; *** MimeAdjustWinClass.c (mimeadjustwinclass.c)
+;
+MSG_MIMEADJUSTWINCLASS_TITLE
+Ambient - MIME redigerer
+; Ambient � MIME Editor
+;
+; *** MimeAdjustGroupClass.c (mimeadjustgroupclass.c)
+;
+MSG_MIMEADJUSTGROUPCLASS_ICON_HELP
+Træk & Slip et ikon ind i dette billede for at erstatte det indbyggede mime-type ikon.
+; Simply drag and drop an icon onto this image to replace the default mime type icon.
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMETYPE
+_Mimetype:
+; _Mimetype:
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMETYPE_HELP
+Type brugt til at indentificere en fil.
+; Type used to identify a file.
+;
+MSG_MIMEADJUSTGROUPCLASS_MIMESUBTYPE_HELP
+Subtype brugt til at identificere en fil.
+; Subtype used to identify a file.
+;
+MSG_MIMEADJUSTGROUPCLASS_PRIORITY
+_Prioritet:
+; _Priority:
+;
+MSG_MIMEADJUSTGROUPCLASS_PRIORITY_HELP
+Specificerer prioriteten i mime-type listen.
+; Specifies the priority in the mime type list.
+;
+MSG_MIMEADJUSTGROUPCLASS_DESCRIPTION
+_Beskrivelse:
+; _Description:
+;
+MSG_MIMEADJUSTGROUPCLASS_DESCRIPTION_HELP
+Beskrivelse af den nuværende mime-type.
+; Description of the current mime type.
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONS_GROUP
+Handlinger
+; Actions
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONS_HELP
+Disse handlinger er på nuværende tidspunkt defineret for den nuværende mime-type.
+; These actions are currently defined for the current mime type.
+;
+MSG_MIMEADJUSTGROUPCLASS_ADD
+_Tilføj...
+; _Add...
+;
+MSG_MIMEADJUSTGROUPCLASS_ADD_HELP
+Tilføjer en handling.
+; Adds an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_EDIT
+_Rediger...
+; _Edit...
+;
+MSG_MIMEADJUSTGROUPCLASS_EDIT_HELP
+Tillader at man redigerer en handling.
+; Allows to edit an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_REMOVE
+_Fjern
+; _Remove
+;
+MSG_MIMEADJUSTGROUPCLASS_REMOVE_HELP
+Fjerner en handling.
+; Removes an action.
+;
+MSG_MIMEADJUSTGROUPCLASS_UP_HELP
+Flytter det valgte op af listen.
+; Moves the selected entry up the list.
+;
+MSG_MIMEADJUSTGROUPCLASS_DOWN_HELP
+Flytter det valgte ned af listen.
+; Moves the selected entry down the list.
+;
+MSG_MIMEADJUSTGROUPCLASS_OK
+_Ok
+; _Ok
+;
+MSG_MIMEADJUSTGROUPCLASS_OK_HELP
+Alle valg foretaget i dette vindue vil blive brugt.
+; All selections made in this window will be used.
+;
+MSG_MIMEADJUSTGROUPCLASS_CANCEL
+_Afbryd
+; _Cancel
+;
+MSG_MIMEADJUSTGROUPCLASS_CANCEL_HELP
+Alle valg foretaget i dette vindue vil blive afvist.
+; All selections made in this window will be rejected.
+;
+MSG_MIMEADJUSTGROUPCLASS_ACTIONSTOPERFORM_HELP
+Handlinger der skal foretages. Det kan være en primær handling (dobbeltklik) eller en sekundær handling (f.eks. menu, Træk & Slip).
+; Actions to perform. It can be a primary action (doubleclick) or secondary action (eg. menu, drag'n'drop).
+;
+MSG_MIMEADJUSTGROUPCLASS_DISABLED_HELP
+Handlinger er ikke brugbare fordi der ikke er en valid mime-type i mime-type-strengen ovenfor.
+; Actions are disabled because there's no valid mimetype in the mimetype string above.
+;
+MSG_MIMEADJUSTGROUPCLASS_TITLE_REQ
+Ambient - Mimetyper
+; Ambient � MIME Types
+;
+MSG_MIMEADJUSTGROUPCLASS_OK_REQ
+*OK
+; *OK
+;
+MSG_MIMEADJUSTGROUPCLASS_COULDNTSAVEFILETYPEDESC
+Kunne ikke gemme "%s" filetype beskriver.
+; Couldn't save "%s" filetype descriptor.
+;
+MSG_MIMEADJUSTGROUPCLASS_COULDNTSAVEDEFAULTICON
+Kunne ikke gemme "%s" forudvalgt icon.
+; Couldn't save "%s" default icon.
+;
+; *** AppletsWinClass.c (appletswinclass.c)
+;
+MSG_APPLETSWINCLASS_TITLE
+Styre applets
+; Manage applets
+;
+MSG_APPLETSWINCLASS_GROUP_WHITELIST
+Hvidliste
+; White list
+;
+MSG_APPLETSWINCLASS_GROUP_BLACKLIST
+Sortliste
+; Black list
+;
+MSG_APPLETSWINCLASS_CANCEL
+_Afbryd
+; _Cancel
+;
+MSG_APPLETSWINCLASS_USE
+_Brug
+; _Use
+;
+; *** Prefs_Advanced_ListClass.c (prefs_advanced_listclass.c)
+;
+MSG_PREFSADVANCEDLISTCLASS_VARIABLE
+Variable
+; Variable
+;
+MSG_PREFSADVANCEDLISTCLASS_STATUS
+Status
+; Status
+;
+MSG_PREFSADVANCEDLISTCLASS_INIT
+Init
+; Init
+;
+MSG_PREFSADVANCEDLISTCLASS_TYPE
+Type
+; Type
+;
+MSG_PREFSADVANCEDLISTCLASS_VALUE
+Værdi
+; Value
+;
+MSG_PREFSADVANCEDLISTCLASS_DEFAULTVALUE
+Forudbestemt værdi
+; Default Value
+;
+; *** Prefs_Advanced_GroupClass.c (prefs_advanced_groupclass.c)
+;
+MSG_PREFSADVANCEDGROUPCLASS_VALUE
+Værdi
+; Value
+;
+MSG_PREFSADVANCEDGROUPCLASS_RESETTODEFAULT
+_Tilbagefør til den forudbestemte værdi
+; _Reset to Default
+;
+MSG_PREFSADVANCEDGROUPCLASS_RESETTODEFAULT_HELP
+Værdien på den valgte vil blive tilbageført til dens forudbestemte værdi.
+; The value of the selected item will be reset to its default.
+;
+MSG_PREFSADVANCEDGROUPCLASS_ON
+Tændt
+; On
+;
+MSG_PREFSADVANCEDGROUPCLASS_OFF
+Slukket
+; Off
+;
+; *** MimeListTreeClass.c (mimelisttreeclass.c)
+;
+MSG_MIMELISTTREECLASS_TYPE
+Type
+; Type
+;
+MSG_MIMELISTTREECLASS_NAME
+Navn
+; Name
+;
+; *** SearchBarClass.c (searchbarclass.c)
+;
+MSG_SEARCHBARCLASS_SEARCH
+S_øg
+; S_earch
+;
+MSG_SEARCHBARCLASS_SEARCH_HELP
+Indskriv den streng der skal søges efter.
+; Enter the string to search for.
+;
+MSG_SEARCHBARCLASS_CASESENSITIVE
+Følsom over store og små bogstaver:
+; Case se_nsitive:
+;
+MSG_SEARCHBARCLASS_CASESENSITIVE_HELP
+Hvis aktiveret er "foo" anderledes end "FOO".
+; If activated "foo" is different to "FOO".
+;
+MSG_SEARCHBARCLASS_PREV
+Foregående
+; Prev
+;
+MSG_SEARCHBARCLASS_NEXT
+Næste
+; Next
+;
+MSG_SEARCHBARCLASS_TEXTNOTFOUND
+Tekst ikke fundet.
+; Text not found.
+;
+; *** PatternRenameWinClass.c (patternrenamewinclass.c)
+;
+MSG_PATTERNRENAMEWINCLASS_WINDOWTITLE
+Omdøb
+; Rename
+;
+MSG_PATTERNRENAMEWINCLASS_OLDNAME
+\033cDet _gamle navn:
+; \033c\033bSource name or pattern:
+;
+MSG_PATTERNRENAMEWINCLASS_OLDNAME_HELP
+Navn eller mønster for originalt navn.
+; Name or pattern for original name.
+;
+MSG_PATTERNRENAMEWINCLASS_NEWNAME
+\033c_Nyt navn:
+; \033c\033bDesti_nation name or pattern:
+;
+MSG_PATTERNRENAMEWINCLASS_NEWNAME_HELP
+Navn eller mønster for nyt navn.
+; Name or pattern for new name.
+;
+MSG_PATTERNRENAMEWINCLASS_RENAME
+_Omdøb
+; _Rename
+;
+MSG_PATTERNRENAMEWINCLASS_RENAME_HELP
+Navnet specificeret i tekst ruden i dette vindue vil blive brugt som det nye navn.
+; The name specified within the text field in this window will be used as new name.
+;
+MSG_PATTERNRENAMEWINCLASS_SKIP
+_Spring over
+; _Skip
+;
+MSG_PATTERNRENAMEWINCLASS_SKIP_HELP
+Overspring den nuværende fil og gå videre med den næste.
+; Skip the current file and continue with the next file.
+;
+MSG_PATTERNRENAMEWINCLASS_CANCEL
+_Cancel
+; _Cancel
+;
+MSG_PATTERNRENAMEWINCLASS_CANCEL_HELP
+Afbryder omdøbningen. Vinduet vil blive lukket.
+; Aborts the rename operation. The window will be closed.
+;
+; *** Print.c (print.c)
+;
+MSG_PRINT_REQUESTERTITLE
+Print
+; Print
+;
+MSG_PRINT_OK
+_Ok
+; _OK
+;
+MSG_PRINT_COULDNOTFINDPRINTER
+Kunne ikke finde en printer.
+; Could not find printer.
+;
+; BookMarkListClass.c (bootmarklistclass.c)
+;
+MSG_BOOKMARK_NAME_LISTTITLE
+Navn
+; Name
+;
+MSG_BOOKMARK_LOCATION_LISTTITLE
+Placering
+; Location
+;
+MSG_BOOKMARK_UNNAMED
+Unavngivet
+; Unnamed
+;
+; PrefsWin_BookmarksClass.c (prefswin_bookmarksclass.c)
+;
+MSG_PREFSWIN_BOOKMARKS_GROUP
+Bogmærker
+; Bookmarks
+;
+MSG_PREFSWIN_BOOKMARKS_HELP
+Liste over de nuværende definerede bogmærker.
+; List of the currently defined bookmarks.
+;
+MSG_PREFSWIN_BOOKMARKS_ADD
+_Tilføj
+; _Add
+;
+MSG_PREFSWIN_BOOKMARKS_ADD_HELP
+Tilføjer et nyt bogmærke til listen.
+; Adds a new bookmark to the list.
+;
+MSG_PREFSWIN_BOOKMARKS_REMOVE
+_Fjern
+; _Remove
+;
+MSG_PREFSWIN_BOOKMARKS_REMOVE_HELP
+Det aktive bogmærke vil blive fjernet fra listen.
+; The active bootmark will be removed from list.
+;
+MSG_PREFSWIN_BOOKMARKS_LOCATION
+_Placering
+; _Location
+;
+MSG_PREFSWIN_BOOKMARKS_LOCATION_HELP
+Denne sti specificerer placeringen som bogmærket fører til.
+; This path specifies the location the bookmark is leading to.
+;
+MSG_PREFSWIN_BOOKMARKS_NAME
+_Navn
+; _Name
+;
+MSG_PREFSWIN_BOOKMARKS_NAME_HELP
+Navnet her bruges til at identificere bogmærket i kontekstmenuen.
+; The name entered here is used in context menus to identify the bootmark.
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAY_GROUP
+Visningsmuligheder
+; Display Options
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS
+_Vis som:
+; _Display as:
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_HELP
+Kun den specificerede information vil blive vist i bogmærkelisten.
+; Only the specified information will be shown in bookmark lists.
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_NAMESANDLOCATIONS
+Navn & Placering
+; Name & Location
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_NAMES
+Navn
+; Name
+;
+MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_LOCATIONS
+Placering
+; Location
+;
+; Bookmarks.c (bookmarks.c)
+;
+MSG_BOOKMARKS_MENUTITLE
+Bogmærke
+; Bookmark
+;
+MSG_BOOKMARKS_ADD
+Tilføj bogmærke...
+; Add Bookmark...
+;
+MSG_BOOKMARKS_ADD_TEMPORARY
+Tilføj midlertidig bogmærke...
+; Add Temporary Bookmark...
+;
+; AddBookmarkWinClass.c (addbookmarkwinclass.c)
+;
+MSG_ADDBOOKMARKWINCLASS_WINDOWTITLE
+Bogmærke
+; Bookmark
+;
+MSG_ADDBOOKMARKWINCLASS_ENTERBOOKMARKNAME
+\033c\033bSkriv bogmærkets navn
+; \033c\033bEnter bookmark name
+;
+MSG_ADDBOOKMARKWINCLASS_OK
+_Ok
+; _Ok
+;
+MSG_ADDBOOKMARKWINCLASS_OK_HELP
+Bogmærket vil blive tilføjet bogmærkelisten.
+; Bookmark will be added to bookmark list.
+;
+MSG_ADDBOOKMARKWINCLASS_CANCEL
+_Afbryd
+; _Cancel
+;
+MSG_ADDBOOKMARKWINCLASS_CANCEL_HELP
+Tilføjelsen af bogmærket vil blive afbrudt.
+; The bookmark creation will be aborted.
+;
+; SelectWinClass.c (selectwinclass.c)
+;
+MSG_SELECTWINCLASS_WINDOWTITLE
+Pattern Selection
+; Pattern Selection
+;
+MSG_SELECTWINCLASS_ENTERSELECTIONPATTERN
+\033cEnter file selection pattern:
+; \033cEnter file selection pattern:
+;
+MSG_SELECTWINCLASS_OK
+_Ok
+; _Ok
+;
+MSG_SELECTWINCLASS_OK_HELP
+Files matching the pattern will be selected.
+; Files matching the pattern will be selected.
+;
+MSG_SELECTWINCLASS_CANCEL
+_Afbryd
+; _Cancel
+;
+MSG_SELECTWINCLASS_CANCEL_HELP
+Abort the selection without any action.
+; Abort the selection without any action.
+;
+; DeleteDir.c (deletedir.c)
+;
+MSG_DELETEDIR_TITLE
+Ambient � Delete directory
+; Ambient � Delete directory
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGFILE
+Couldn't delete file '%s'.\nDOS error: %S (#%N).
+; Couldn't delete file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGDIRECTORY
+Couldn't delete directory '%s'.\nDOS error: %S (#%N).
+; Couldn't delete directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORWHILEDELETINGDIRECTORYICON
+Couldn't delete icon of directory '%s'.\nDOS error: %S (#%N).
+; Couldn't delete icon of directory '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_ERRORUNABLETOSETPROTECTON
+Couldn't set the protection mode of '%s'.\nDOS error: %S (#%N).
+; Couldn't set the protection mode of '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEDIR_SKIPSKIPALWAYSRETRYABORT
+_Skip|Skip Always|*_Retry|_Abort
+; _Skip|Skip Always|*_Retry|_Abort
+;
+MSG_DELETEDIR_RETRYCANCEL
+*_Retry|_Cancel
+; *_Retry|_Cancel
+;
+MSG_DELETEDIR_RETRYSKIPICONCANCEL
+*_Retry|_Skip Icon|_Cancel
+; *_Retry|_Skip Icon|_Cancel
+;
+; DeleteFile.c (deletefile.c)
+;
+MSG_DELETEFILE_TITLE
+Ambient � Delete file
+; Ambient � Delete file
+;
+MSG_DELETEFILE_ERRORWHILEDELETINGFILE
+Couldn't delete file '%s'.\nDOS error: %S (#%N).
+; Couldn't delete file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEFILE_ERRORWHILEDELETINGFILEICON
+Couldn't delete icon of file '%s'.\nDOS error: %S (#%N).
+; Couldn't delete icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_DELETEFILE_RETRYCANCEL
+*_Retry|_Cancel
+; *_Retry|_Cancel
+;
+MSG_DELETEFILE_RETRYSKIPICONCANCEL
+*_Retry|_Skip Icon|_Cancel
+; *_Retry|_Skip Icon|_Cancel
+;
+; trashcan.c
+;
+MSG_TRASHFILE_TITLE
+Ambient � Trash file
+; Ambient � Trash file
+;
+MSG_TRASHFILE_ERRORWHILEDELETINGFILE
+Couldn't trash file '%s'.\nDOS error: %S (#%N).
+; Couldn't trash file '%s'.\nDOS error: %S (#%N).
+;
+MSG_TRASHFILE_ERRORWHILEDELETINGFILEICON
+Couldn't trash icon of file '%s'.\nDOS error: %S (#%N).
+; Couldn't trash icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_TRASHFILE_RETRYCANCEL
+*_Retry|_Cancel
+; *_Retry|_Cancel
+;
+MSG_TRASHFILE_RETRYSKIPICONCANCEL
+*_Retry|_Skip Icon|_Cancel
+; *_Retry|_Skip Icon|_Cancel
+;
+MSG_RESTOREFILE_TITLE
+Ambient � Restore file
+; Ambient � Restore file
+;
+MSG_RESTOREFILE_ERRORWHILEDELETINGFILE
+Couldn't restore trashed file '%s'.\nDOS error: %S (#%N).
+; Couldn't restore trashed file '%s'.\nDOS error: %S (#%N).
+;
+MSG_RESTOREFILE_ERRORWHILEDELETINGFILEICON
+Couldn't restore trashed icon of file '%s'.\nDOS error: %S (#%N).
+; Couldn't restore trashed icon of file '%s'.\nDOS error: %S (#%N).
+;
+MSG_RESTOREFILE_RETRYCANCEL
+*_Retry|_Cancel
+; *_Retry|_Cancel
+;
+MSG_RESTOREFILE_RETRYSKIPICONCANCEL
+*_Retry|_Skip Icon|_Cancel
+; *_Retry|_Skip Icon|_Cancel
+;
+;
+; *** PanelWinClass.c (panelwinclass.c)
+;
+MSG_PANELWIN_NAME_LOOK
+Name & Look
+; Name & Look
+;
+MSG_PANELWIN_BEHAVIOUR
+Behaviour
+; Behaviour
+;
+MSG_PANELWIN_NAME
+Name:
+; Name:
+;
+MSG_PANELWIN_NAME_HELP
+Name for panel in prefswin and on disk.
+; Name for panel in prefswin and on disk.
+;
+MSG_PANELWIN_BACKGROUND
+Background:
+; Background:
+;
+MSG_PANELWIN_BACKGROUND_HELP
+Background for panelwindow.
+; Background for panelwindow.
+;
+MSG_PANELWIN_BACKMODE_COLOR
+Color
+; Color
+;
+MSG_PANELWIN_BACKMODE_IMAGE
+Image
+; Image
+;
+MSG_PANELWIN_ALPHA
+Alpha:
+; Alpha:
+;
+MSG_PANELWIN_ALPHA_HELP
+Global alpha for panel.
+; Global alpha for panel.
+;
+MSG_PANELWIN_DEPTHS_NORMAL
+Normal
+; Normal
+;
+MSG_PANELWIN_DEPTHS_BACK
+Always to Back
+; Always to Back
+;
+MSG_PANELWIN_DEPTHS_FRONT
+Always to Front
+; Always to Front
+;
+MSG_PANELWIN_PLACEMENTH_NONE
+None
+; None
+;
+MSG_PANELWIN_PLACEMENTH_BEGINNING
+Beginning
+; Beginning
+;
+MSG_PANELWIN_PLACEMENTH_END
+End
+; End
+;
+MSG_PANELWIN_PLACEMENTH_BOTH
+Both
+; Both
+;
+MSG_PANELWIN_ORIENTATION
+_Orientation:
+; _Orientation:
+;
+MSG_PANELWIN_ORIENTATION_HELP
+Changes the orientation of the panel.
+; Changes the orientation of the panel.
+;
+MSG_PANELWIN_TITLES_VERTICAL
+Vertical
+; Vertical
+;
+MSG_PANELWIN_TITLES_HORIZONTAL
+Horizontal
+; Horizontal
+;
+MSG_PANELWIN_POSITIONING
+_Positionierung:
+; _Positioning:
+;
+MSG_PANELWIN_POSITIONING_HELP
+Makes the screen borders act as a kind of magnet.
+; Makes the screen borders act as a kind of magnet.
+;
+MSG_PANELWIN_MODES_FLOATING
+Floating
+; Floating
+;
+MSG_PANELWIN_MODES_ATTACHED
+Attached to Borders
+; Attached to Borders
+;
+MSG_PANELWIN_MODES_FIXED
+Fixed to position
+; Fixed to position
+;
+MSG_PANELWIN_SIZE
+S_ize:
+; S_ize:
+;
+MSG_PANELWIN_SIZE_HELP
+Changes the size of the panel.
+; Changes the size of the panel.
+;
+MSG_PANELWIN_DEPTH_ARRANGEMENT
+_Depth arrangement:
+; _Depth arrangement:
+;
+MSG_PANELWIN_DEPTH_ARRANGEMENT_HELP
+Tells how a panel should behave regarding depth arrangement with other windows.
+; Tells how a panel should behave regarding depth arrangement with other windows.
+;
+MSG_PANELWIN_DRAG_GADGET
+Drag _gadget:
+; Drag _gadget:
+;
+MSG_PANELWIN_DRAG_GADGET_HELP
+Changes the place and number of dragging gadgets, which allow to drag the panel around.
+; Changes the place and number of dragging gadgets, which allow to drag the panel around.
+;
+MSG_PANELWIN_ALLOW_ZIPPING
+Allow _zipping
+; Allow _zipping
+;
+MSG_PANELWIN_ALLOW_ZIPPING_HELP
+Allows to reduce the panel to its minimal size by clicking on a drag gadget.
+; Allows to reduce the panel to its minimal size by clicking on a drag gadget.
+;
+MSG_PANELWIN_AUTO_ZIPPING
+_Autozipping
+; _Autozipping
+;
+MSG_PANELWIN_AUTO_ZIPPING_HELP
+Zip panel when mouse enters and leaves panel.
+; Zip panel when mouse enters and leaves panel.
+;
+MSG_PANELWIN_HIDE_DRAGBAR
+Hide Dragbar
+; Hide Dragbar
+;
+MSG_PANELWIN_HIDE_DRAGBAR_HELP
+Only show dragbar(s) when under mousepointer.
+; Only show dragbar(s) when under mousepointer.
+;
+; *** PanelBaseButtonClass.c (panelbasebuttonclass.c)
+;
+MSG_PANELBASEBUTTON_ICON
+Icon:
+; Icon:
+;
+MSG_PANELBASEBUTTON_ICON_HELP
+Icon displayed in parent panel.
+; Icon displayed in parent panel.
+;
+MSG_PANELBASEBUTTON_ICON_DEFAULT
+Default
+; Default
+;
+MSG_PANELBASEBUTTON_ICON_CUSTOM
+Custom
+; Custom
+;
+; (unused???)
+MSG_PANELBASEBUTTON_ICON_FILE
+File
+; File
+;
+; *** PanelSubWinClass.c (panelsubwinclass.c)
+;
+MSG_PANELSUBWIN_BUTTON_FRAME
+Button
+; Button
+;
+MSG_PANELSUBWIN_PANEL_FRAME
+Panel
+; Panel
+;
+MSG_PANELSUBWIN_BACKGROUND
+Background:
+; Background:
+;
+MSG_PANELSUBWIN_BACKGROUND_HELP
+Background for panel.
+; Background for panel.
+;
+MSG_PANELSUBWIN_ALPHA
+Alpha
+; Alpha
+;
+MSG_PANELSUBWIN_ALPHA_HELP
+Global alpha for sub panel.
+; Global alpha for sub panel.
+;
+MSG_PANELSUBWIN_BACKMODE_COLOR
+Color
+; Color
+;
+MSG_PANELSUBWIN_BACKMODE_IMAGE
+Image
+; Image
+;
+MSG_PANELSUBWIN_BACKMODE_CLONE
+Clone Parent
+; Clone Parent
+;
+; *** PanelDirPanelButtonClass.c (panelsubwinclass.c)
+;
+MSG_PANELDIRPANELBUTTON_DIRECTORY
+Directory:
+; Directory:
+;
+MSG_PANELDIRPANELBUTTON_DIRECTORY_HELP
+Directory to be shown in a sub panel.
+; Directory to be shown in a sub panel.
+;
+MSG_PANELDIRPANELBUTTON_SHORTHELP
+Directory
+; Directory
+;
+; *** PrefsWinPanelClass.c (prefswin_panelclass.c)
+;
+MSG_PREFSWIN_PANEL_PANELS
+Panels
+; Panels
+;
+MSG_PREFSWIN_PANEL_GLOBAL
+Global
+; Global
+;
+MSG_PREFSWIN_PANEL_NEW
+New Panel
+; New Panel
+;
+MSG_PREFSWIN_PANEL_NEW_HELP
+Creates new panel.
+; Creates new panel.
+;
+MSG_PREFSWIN_PANEL_DELETE
+Delete
+; Delete
+;
+MSG_PREFSWIN_PANEL_DELETE_HELP
+Delete panel or panelitem.
+; Delete panel or panelitem.
+;
+MSG_PREFSWIN_PANEL_LIST_HELP
+Drag object into listtree.
+; Drag object into listtree.
+;
+MSG_PREFSWIN_PANEL_RESCAN
+Rescan
+; Rescan
+;
+MSG_PREFSWIN_PANEL_RESCAN_HELP
+Rescan for added classes and update the class list.
+; Rescan for added classes and update the class list.
+;
+MSG_PREFSWIN_PANEL_ZIPSPEED
+Zipping speed:
+; Zipping speed:
+;
+MSG_PREFSWIN_PANEL_ZIPSPEED_HELP
+Sætter animationshastigheden på panelers visning og lukning.
+; Sets the animation speed of the panels' zipping effect.
+;
+MSG_PREFSWIN_PANEL_LAYOUT
+Layout
+; Layout
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE
+Autosave
+; Autosave
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DROP
+Icon dropped into window
+; Icon dropped into window
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DROP_HELP
+Save the panel when icon is added by dropping it onto panel.
+; Save the panel when icon is added by dropping it onto panel.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DELETE
+Icon deleted
+; Icon deleted
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_DELETE_HELP
+Save the panel when icon is deleted from contextmenu.
+; Save the panel when icon is deleted from contextmenu.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_MOVE
+Icon moved inside window
+; Icon moved inside window
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_MOVE_HELP
+Save the panel when icon is moved.
+; Save the panel when icon is moved.
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_WINDOWPOS
+Panel moved on screen
+; Panel moved on screen
+;
+MSG_PREFSWIN_PANEL_AUTOSAVE_WINDOWPOS_HELP
+Save the panel when panel is dragged to a new position.
+; Save the panel when panel is dragged to a new position.
+;
+MSG_PREFSWIN_PANEL_EFFECTS
+Icon effects
+; Icon effects
+;
+MSG_PREFSWIN_PANEL_HIGHLIGHT
+Highlight:
+; Highlight:
+;
+MSG_PREFSWIN_PANEL_HIGHLIGHT_HELP
+Effect on icon when mouse is hovering over it.
+; Effect on icon when mouse is hovering over it.
+;
+MSG_PREFSWIN_PANEL_DRAGDROP_EFFECT
+Drag&Drop:
+; Drag&Drop:
+;
+MSG_PREFSWIN_PANEL_DRAGDROP_EFFECT_HELP
+Effect on icon when object is dragged over it.
+; Effect on icon when object is dragged over it.
+;
+MSG_PREFSWIN_PANEL_SELECTED_EFFECT
+Selected:
+; Selected:
+;
+MSG_PREFSWIN_PANEL_SELECTED_EFFECT_HELP
+Effect on icon when object is selected.
+; Effect on icon when object is selected.
+;
+MSG_PREFSWIN_PANEL_EFFECT_NONE
+Ingen
+; None
+;
+MSG_PREFSWIN_PANEL_EFFECT_CLONE_ICONVIEW
+Clone from iconview
+; Clone from iconview
+;
+MSG_PREFSWIN_PANEL_EFFECT_LASSO
+Lasso
+; Lasso
+;
+MSG_PREFSWIN_PANEL_EFFECT_BRIGHTEN
+Lysne
+; Brighten
+;
+MSG_PREFSWIN_PANEL_EFFECT_DARKEN
+Mørkne
+; Darken
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT
+Tone
+; Tint
+;
+MSG_PREFSWIN_PANEL_EFFECT_BLUR
+Slør
+; Blur
+;
+MSG_PREFSWIN_PANEL_EFFECT_GREY
+Grå
+; Grey
+;
+MSG_PREFSWIN_PANEL_EFFECT_NEGATIVE
+Lav negativ
+; Negative
+;
+MSG_PREFSWIN_PANEL_EFFECT_NEGATIVE_FADE
+Negativ toning
+; Negative Fade
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_FADE
+Toned fadening
+; Tint Fade
+;
+MSG_PREFSWIN_PANEL_EFFECT_DELTA
+Delta
+; Delta
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_REQ
+Vælg en farve som skal tones.
+; Select a color for tint effect.
+;
+MSG_PREFSWIN_PANEL_EFFECT_TINT_FADE_REQ
+Vælg en farve til den tonede fadeeffekt.
+; Select a color for tintfade effect.
+;
+MSG_PREFSWIN_PANEL_FORCE_GRID
+Force icons into square grid.
+; Force icons into square grid.
+;
+MSG_PREFSWIN_PANEL_FORCE_GRID_HELP
+Icon based panel objects will always use space where width and height are the panelsize instead of adapting one to the icon's aspect ratio.
+; Icon based panel objects will always use space where width and height are the panelsize instead of adapting one to the icon's aspect ratio.
+;
+MSG_PREFSWIN_PANEL_CLASS_NAME
+\033bName:
+; \033bName:
+;
+MSG_PREFSWIN_PANEL_CLASS_NAME_HELP
+Name of the selected panel item.
+; Name of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_VERSION
+\033bVersion:
+; \033bVersion:
+;
+MSG_PREFSWIN_PANEL_CLASS_VERSION_HELP
+Version of the selected panel item.
+; Version of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_AUTHOR
+\033bAuthor:
+; \033bAuthor:
+;
+MSG_PREFSWIN_PANEL_CLASS_AUTHOR_HELP
+Author of the selected panel item.
+; Author of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE
+Description
+; Description
+;
+MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE_HELP
+Description of the selected panel item.
+; Description of the selected panel item.
+;
+MSG_PREFSWIN_PANEL_CLASS_NOPREFSAVAILABLE
+No preferences available.
+; No preferences available.
+;
+; PanelSliderSpeedClass.c (Panelsliderspeedclass.c)
+;
+MSG_PREFSWIN_PANEL_SPEED_SLOW
+Slow
+; Slow
+;
+MSG_PREFSWIN_PANEL_SPEED_MEDIUM
+Medium
+; Medium
+;
+MSG_PREFSWIN_PANEL_SPEED_FAST
+Fast
+; Fast
+;
+MSG_PREFSWIN_PANEL_SPEED_INSTANT
+Instant
+; Instant
+;
+; Information requesters
+;
+MSG_PROGRAM_NOT_STARTED_REQ
+Couldn't start program\n%s.
+; Couldn't start program\n%s.
+;
+MSG_PROJECT_NOT_STARTED_REQ
+Couldn't start project %s.\nTool: %s.
+; Couldn't start project %s.\nTool: %s.
+;
+MSG_WBSTARTUP_PATH_ERROR_REQ
+WBStartup path not set, please configure it\nfrom the menu Settings/Ambient settings.../Miscellaneous.
+; WBStartup path not set, please configure it\nfrom the menu Settings/Ambient settings.../Miscellaneous.
+;
+MSG_REQUESTER_OK_GAD
+*OK
+; *OK
+;
+MSG_AMBIENT_REQ
+Ambient
+; Ambient
+;
+MSG_WBSTARTUP_REQ
+Ambient WBStartup
+; Ambient WBStartup
+;
+MSG_TOOLBAR_CLASS_VIEWMODE_ICONS_HELP
+Switch to Icons viewmode
+; Switch to Icons viewmode
+;
+MSG_TOOLBAR_CLASS_VIEWMODE_LIST_HELP
+Switch to List viewmode. Use the mouse wheel to zoom!
+; Switch to List viewmode. Use the mouse wheel to zoom!
+;
+MSG_IMAGEVIEW_CLASS_HOTKEYS_HELP
+\033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPTRSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
+\033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
+image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+; \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPTRSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR
+Colo_r:
+; Colo_r:
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR_HELP
+This color is used to display the status bar text.
+; This color is used to display the status bar text.
+;
+MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR_WINTITLE
+Status bar text color
+; Status bar text color
+;
+; MoveList.c (movelist.c)
+;
+MSG_MOVELIST_TITLE
+Ambient � Copy
+; Ambient � Copy
+;
+MSG_MOVELIST_ERRORWHILEMOVING
+Error while copying '%s'
+; Error while copying '%s'
+;
+MSG_MOVELIST_BUTS_RETRYSKIPSKIPALLCANCEL
+*_Retry|Skip|Skip all|Cancel
+; *_Retry|Skip|Skip all|Cancel
+;
+; FastCopy.c (fastcopy.c)
+;
+MSG_FASTCOPY_BUTS_OK
+*_Ok
+; *_Ok
+;
+MSG_FASTCOPY_BUTS_DELETEKEEP
+*_Delete|Keep
+; *_Delete|Keep
+;
+MSG_FASTCOPY_DESTISDIR
+Destination '%s' is a directory.
+; Destination '%s' is a directory.
+;
+MSG_FASTCOPY_FILECANTBEDELETEDDOSERROR
+File '%s' can't be deleted.\nDos error: %S (#%N).
+; File '%s' can't be deleted.\nDOS error: %S (#%N).
+;
+MSG_FASTCOPY_FILEINCOMPLETE
+File '%s' is not complete.
+; File '%s' is not complete.
+;
+MSG_FASTCOPY_FILEINCOMPLETEDOSERROR
+File '%s' is not complete.\nDos error: %S (#%N).
+; File '%s' is not complete.\nDOS error: %S (#%N).
+;
+; MakeLink.c (makelink.c)
+;
+MSG_MAKELINK_TITLE
+Ambient � Makelink
+; Ambient � Makelink
+;
+MSG_MAKELINK_BUTS_RETRYCANCEL
+*_Retry|Cancel
+; *_Retry|Cancel
+;
+MSG_MAKELINK_COULDNTCREATELINKDOSERROR
+Couldn't create link '%s'.\nDOS error: %S (#%N).
+; Couldn't create link '%s'.\nDOS error: %S (#%N).
+;
+MSG_CMENU_PANELOPENPARENT
+Open Parent
+; Open Parent
+;
+MSG_PREFSWIN_BACKGROUND_TRANSITION
+Enable effects
+; Enable effects
+;
+MSG_PREFSWIN_BACKGROUND_TRANSITION_HELP
+Enable transition effects
+; Enable transition effects
+;

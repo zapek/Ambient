@@ -1,0 +1,14 @@
+#
+# $Id: makefile.objs,v 1.4 2006/04/12 14:02:00 fab Exp $
+#
+
+COBJS = noexec.o libfunctable.o lib.o about.o pongclass.o logos.o texts.o
+
+IMAGES = ambient_logo.o morphos_logo.o mui_logo.o altivec_logo.o zlib_logo.o libpng_logo.o
+
+COBJS_NODEP = aboutcrypt.o $(IMAGES)
+
+LOBJS =
+
+LIBS = -lmemblock -labox -laboxstubs -lsyscall
+

@@ -1,0 +1,10 @@
+#
+# $Id: makefile.objs,v 1.2 2005/07/04 23:06:12 laire Exp $
+#
+
+COBJS = noexec.o libfunctable.o lib.o zmem.o z.o
+
+COBJS_NODEP =
+
+LOBJS = libz/libz.a
+

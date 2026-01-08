@@ -1,0 +1,117 @@
+#
+# $Id: makefile.objs,v 1.41 2022/12/28 17:49:19 jacadcaps Exp $
+#
+
+
+CLASSEOBJS = virtgroupclass.o toolbargroup.o imagecache.o statusbarclass.o clickpathclass.o history.o navigationclass.o toolbarclass.o \
+		toolbuttonclass.o toolbutton_actionclass.o toolbutton_spacerclass.o toolbutton_historyclass.o toolbutton_viewswitchclass.o \
+		toolbutton_bookmarksclass.o \
+		appclass.o iconclass.o windowclass.o iconviewclass.o aboutwinclass.o \
+		infowinclass.o capacitytextclass.o ttlistviewclass.o executewinclass.o \
+		smarttextclass.o progresswinclass.o formatwinclass.o \
+		listviewclass.o listviewlistclass.o renamewinclass.o formatclass.o formatlistclass.o \
+		menuitemclass.o \
+		menuclass.o menustripclass.o makedirwinclass.o \
+		logoclass.o ttlistclass.o cxwinclass.o cxlistclass.o panelwinclass.o \
+		panelgroupclass.o paneldragclass.o panelspacerclass.o \
+		panelseparatorclass.o panelviewwatcherclass.o panelbookmarksclass.o \
+		bgrenderclass.o fasttitlegroupclass.o \
+		fasttitletextclass.o viewclass.o viewsizegroupclass.o viewgroupclass.o crawlclass.o \
+		editstringclass.o imageviewclass.o addtextclass.o soundwinclass.o textviewclass.o hexviewclass.o \
+		boopsiviewclass.o panelslidersizeclass.o \
+		mimegroupclass.o mimelisttreeclass.o mimeadjustwinclass.o mimeadjustgroupclass.o mimeadjustlistclass.o \
+		mimeactionwinclass.o mimeactiongroupclass.o infoicongroupclass.o sysinfowinclass.o \
+		makelinkwinclass.o gfx_rotate.o searchbarclass.o searchstringclass.o \
+		graphclass.o action.o actiondispatcherclass.o listsort.o descparser.o destselectwinclass.o \
+		strings.o typescanner.o clipboard.o listviewentryclass.o vfs.o \
+		aboutmoswinclass.o actionlistclass.o actioneditclass.o actioneditwinclass.o \
+		selectwinclass.o notificationclass.o dropeffectclass.o panelsliderspeedclass.o \
+		findclass.o findresultlistclass.o clickpathbuttonclass.o \
+		columnslistclass.o viewselectwinclass.o keyshortcutclass.o \
+		actioneditorclass.o actioneditorwinclass.o clipboarddevice.o \
+		prefs_advanced_groupclass.o prefs_advanced_listclass.o bgrefreshdelaysliderclass.o patternrenamewinclass.o \
+		bookmarklistclass.o addbookmarkwinclass.o \
+		panelsubpanelbuttonclass.o paneldirpanelbuttonclass.o panelsubwinclass.o \
+		panelcommandbuttonclass.o panelbasebuttonclass.o panellisttreeclass.o panelclasslistclass.o \
+		panelitem_listclass.o panelexternalsupportclass.o preferences_update.o iconzoomsliderclass.o \
+		panelmessengerclass.o panelmessengerfamilyclass.o mimetypeclass.o
+
+PREFSCLASSEOBJS = prefswin_mainclass.o prefswin_listclass.o prefswin_backgroundclass.o \
+		prefswin_icondisplayclass.o prefswin_bookmarksclass.o prefswin_clilaunchclass.o \
+		prefswin_miscellaneousclass.o prefswin_panelclass.o \
+		prefswin_listerclass.o prefswin_mimeclass.o prefswin_windowclass.o prefswin_dragdropclass.o \
+		prefswin_keyboardclass.o prefswin_advancedclass.o
+
+DOSOBJS = iconio.o devices.o newicon.o image.o glowicon.o scandir.o wbstartup.o wbstart.o \
+		iffio.o deletedir.o recurse.o file_func.o exdir.o args.o getdirsize.o findver.o \
+		movedir.o fastcopy.o movefile.o deletefile.o movelist.o device_func.o format.o \
+		doslistcache.o pngicon.o pngio.o snapshot.o snapshotlist.o deleteall.o \
+		md5sum.o dosreq.o readargs.o vars.o viewapi.o recog.o mimetype.o rename.o \
+		modules.o datatypes.o multimedia.o makedir.o makelink.o fileaction.o zutils.o trashcan.o \
+		svgicon.o networksfs.o
+
+GFXOBJS = gfx_alpha.o gfx_alpha_vec.o gfx_blit.o gfx_blur.o gfx_color.o gfx_dbuf.o gfx_fft.o gfx_mask.o \
+		gfx_pen.o gfx_scale.o gfx_scale_vec.o gfx_bitmap.o gfx_cmap.o gfx_linedraw.o gfx_analyze.o
+
+SOUNDOBJS = sound.o playsound.o snd_codecs.o sndcodec_mpega.o sndcodec_vorbis.o sndcodec_multimedia.o \
+		sndcodec_datatypes.o snddrv_ahi.o soundlib.o
+
+INITOBJS = classes.o init.o libs.o
+
+MISCOBJS = errorreq.o iconmem.o methodstack.o mui_func.o \
+		colormap.o time_func.o debug.o byterun1.o \
+		reggae_picture.o threads.o threads_tp.o thread_dispatcher.o locale.o menus.o background.o common_picture.o datatypes_picture.o \
+		prefs.o fonts.o screen.o tags.o threadtags.o \
+		path.o backdrop.o updatelist.o contextmenu.o template.o rexx.o \
+		deficon.o deficon_getpath.o smartreq.o dosnotify.o ipc.o appicon.o memhandler_threads.o \
+		capacity.o hash.o dostype.o wbstartlib.o panellib.o errormsg.o deficonpool.o \
+		malloc.o segtracker.o layout.o memtrack.o textbox.o cx.o md5.o \
+		appmessage.o wbarg.o panelitem.o datatypeicon.o input.o altivec.o \
+		prefspool.o prefsio.o panelprefs.o paneleffects.o lasso.o \
+		math_sqrt.o shortcuts.o pointer.o random.o mimeuri.o loaduri.o strap.o cpu.o str.o \
+		mimeprefs.o name.o crypto.o loadimage.o notify.o timeout.o fmt.o align_vec.o cpu_vec.o \
+		keymap.o thumbs.o metadata.o spacegauge.o descsaver.o cache.o storage.o prefs_desktop.o \
+		eject.o prefs_advanced.o iostdreq.o qport.o examine64.o info64.o avcodec.o keyshortcuts.o \
+		broker.o prefs_startup.o print.o bookmarks.o sxmlc.o sxmlsearch.o sxmlhelp.o
+
+STARTUPOBJS = zstartup.o callmain.o
+
+AOBJS =
+
+COBJS =  $(STARTUPOBJS) main.o $(INITOBJS) $(DOSOBJS) $(GFXOBJS) $(SOUNDOBJS) $(MISCOBJS) $(CLASSEOBJS) $(PREFSCLASSEOBJS)
+
+LINKLIBS =  $(SOURCE)$(BUILDDIR)/lib/libvambient.a
+
+IMAGEOBJS = ddunknown_logo.o ddshortcut_logo.o \
+		 ddcopy_solid_logo.o ddunknown_solid_logo.o ddshortcut_solid_logo.o \
+		 def_disk_logo.o def_tool_logo.o def_drawer_logo.o def_mymorphos_logo.o def_view_logo.o \
+		 panelitem_button_logo.o prefslist_cli_logo.o prefslist_copy_logo.o \
+		 prefslist_dnd_logo.o prefslist_general_logo.o prefslist_icondisplay_logo.o \
+		 prefslist_iconoptions_logo.o prefslist_lister_logo.o prefslist_mimetype_logo.o \
+		 prefslist_miscellaneous_logo.o shortcut_logo.o prefslist_panels_logo.o \
+		 prefslist_window_logo.o prefslist_keyboard_logo.o \
+		 toolbar_prev_logo.o toolbar_next_logo.o toolbar_search_logo.o toolbar_up_logo.o \
+		 info_error_logo.o info_help_logo.o info_warning_logo.o \
+		 actioneditor_dnd_logo.o actioneditor_menu_logo.o viewwatcher_arrow_logo.o appicon_logo.o
+
+CATOBJ = locale/ambient.czech.catalog locale/ambient.svenska.catalog \
+		locale/ambient.magyar.catalog locale/ambient.suomi.catalog \
+		locale/ambient.polski.catalog locale/ambient.francais.catalog \
+		locale/ambient.deutsch.catalog locale/ambient.italiano.catalog \
+		locale/ambient.español.catalog locale/ambient.dansk.catalog \
+		locale/ambient.russian.catalog
+
+
+COBJS_NODEP = ambient_cat.o cryptstr.o rev_strings.o $(IMAGEOBJS)
+COBJS_NODEP_H = modules/about/ppcinline/about.h rev.h
+COBJS_NODEP_DIRS = modules/about/ppcinline $(BUILDDIR)/lib
+
+ifeq ($(LIBPNG),1)
+COBJS_NODEP_H += libs/pnglib/ppcinline/png.h
+COBJS_NODEP_DIRS += libs/pnglib/ppcinline
+endif
+
+ifeq ($(LIBZ),1)
+COBJS_NODEP_H += libs/zlib/ppcinline/z.h
+COBJS_NODEP_DIRS += libs/zlib/ppcinline
+endif
