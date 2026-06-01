@@ -1,7 +1,7 @@
 #ifndef AMBIENT_MIMETYPE_H
 #define AMBIENT_MIMETYPE_H
 /*
- * $Id: mimetype.h,v 1.9 2008/07/12 23:20:37 kiero Exp $
+ * $Id: mimetype.h,v 1.10 2025/08/10 22:08:31 jacadcaps Exp $
  */
 
 #define RECOGNITION_FILE "recognition.db"
@@ -126,6 +126,7 @@ void mimetype_cleanup(void);
 
 APTR mimetype_create(CONST_STRPTR scheme, CONST_STRPTR path, ULONG flags);
 void mimetype_delete(APTR ctx);
+APTR mimetype_duplicate(APTR ctx);
 
 APTR mimetype_getattr(APTR ctx, ULONG attr);
 void v_mimetype_setattrs(APTR ctx, struct TagItem *tags);

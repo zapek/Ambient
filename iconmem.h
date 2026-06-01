@@ -1,7 +1,7 @@
 #ifndef AMBIENT_MEM_H
 #define AMBIENT_MEM_H
 /*
- * $Id: iconmem.h,v 1.6 2006/08/08 13:31:34 fab Exp $
+ * $Id: iconmem.h,v 1.8 2025/09/03 15:15:46 piru Exp $
  */
 
 #if !USE_MEMTRACK
@@ -14,7 +14,8 @@ void iconmem_cleanup(void);
 
 #ifdef BUILD_ICONLIB
 #define icon_malloc(s) FreeAlloc(fl, s, MEMF_ANY)
-#define icon_free(p) if (1) {}
+extern VOID _FreeFree(struct FreeList *freelist, APTR mem);
+#define icon_free(p) _FreeFree(fl, p)
 #else
 #if USE_MEMTRACK
 #include "memtrack.h"

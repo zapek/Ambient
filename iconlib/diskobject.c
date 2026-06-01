@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: diskobject.c,v 1.7 2017/09/21 19:28:03 nadir Exp $
+ * $Id: diskobject.c,v 1.9 2025/09/03 15:18:42 piru Exp $
  */
 
 #include "globals.h"
@@ -204,6 +204,11 @@ struct DiskObject * GetDiskObject(CONST UBYTE *name)
 		if ((diskobj->fl = create_freelist(NULL)))
 		{
 			D(GETDO,bug("diskobj's fl 0x%lx\n", (ULONG)diskobj->fl));
+
+			NEWLIST(&diskobj->tooltypelist);
+			diskobj->origflags = ~0;
+			diskobj->origviewmodes = ~0;
+
 			if (name)
 			{
 				if (GetIcon((STRPTR) name, (struct DiskObject *) diskobj, diskobj->fl))
@@ -300,10 +305,11 @@ void FreeDiskObject(struct DiskObject *diskobj)
 	D(FREEDO,bug("called diskobj 0x%lx\n", (ULONG)diskobj));
 	if (diskobj)
 	{
-		#if USE_ICONLIB_PNG
+		#if USE_ICONLIB_PNG || USE_ICONLIB_SVG
 		struct OwnDiskObject *odo = (struct OwnDiskObject *)diskobj;
 		if (ISOWN(odo))
 		{
+			#if USE_ICONLIB_PNG
 			/* better make sure */
 			odo->ownmagic = 0;
 			odo->ownptr = 0;
@@ -315,13 +321,15 @@ void FreeDiskObject(struct DiskObject *diskobj)
 			#if USE_ICONLIB_PNGLIB
 			pngimage_delete(odo);
 			#endif
-		}
-		#endif
-		#if USE_ICONLIB_SVG
-		if(ISOWN(odo) && odo->svgdoc)
-		{		
-			XMLDoc_free(odo->svgdoc);
-			FreeMem(odo->svgdoc, sizeof(XMLDoc));
+			#endif
+
+			#if USE_ICONLIB_SVG
+			if(odo->svgdoc)
+			{
+				XMLDoc_free(odo->svgdoc);
+				FreeMem(odo->svgdoc, sizeof(XMLDoc));
+			}
+			#endif
 		}
 		#endif
 		if (((struct OwnDiskObject *)diskobj)->fl) /* we must not free default icons */

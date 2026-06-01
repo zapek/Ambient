@@ -1,10 +1,10 @@
-## version $VER: ambient.catalog 7.17 (15.01.2023)
+## version $VER: ambient.catalog 7.21 (07.04.2026)
 ## language italiano
 ## codeset 0
 ;
-## chunk AUTH Paolo Russo
+## chunk AUTH "Paolo Russo" "Guido Mersmann"
 ;
-;$Id: ambient.italiano.ct,v 1.76 2023/01/16 03:30:14 moats Exp $
+;$Id: ambient.italiano.ct,v 1.78 2026/04/08 03:31:34 moats Exp $
 ;
 ; *** Please do not use these strings anymore.
 ;
@@ -462,7 +462,7 @@ Icona PN_G a due stati
 ; T_wo state PNG icons
 ;
 MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS_HELP
-Questa opzione abilita la visualizzazione delle icone PNG\n
+Questa opzione abilita la visualizzazione delle icone PNG.
 ; This enables dual PNG icon support, which contain a separate image for unselected and selected state.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION
@@ -655,7 +655,7 @@ Filesystem:
 ;
 MSG_FORMAT_FILESYSTEM_HELP
 Verrà usato questo filesystem.
-; This filesystem will used.
+; This filesystem will be used.
 ;
 MSG_FORMAT_STATUS
 Stato:
@@ -732,7 +732,7 @@ Formatta...
 ;
 MSG_FORMAT_HELP
 L'intera periferica verrà sovrascritta! Questa operazione può\ndurare molto tempo, ma elimina tutti i files della periferica!
-; The entire media will overwritten! Takes a lot of time, but destroys all data on drive!
+; The entire media will be overwritten! This will take a lot of time, but destroys all data on drive!
 ;
 MSG_FORMAT_AND_VERIFY
 Formatta e Verifica...
@@ -740,7 +740,7 @@ Formatta e Verifica...
 ;
 MSG_FORMAT_AND_VERIFY_HELP
 L'intera periferica verrà sovrascritta e i vecchi dati andranno persi!\nInoltre, i dati verranno letti di nuovo per verificare lo stato di\nintegrità della periferica appena formattata.
-; The entire media will overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
+; The entire media will be overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
 ;
 MSG_FORMAT_CLOSE
 Chiudi
@@ -967,7 +967,7 @@ Caratteristiche:
 ;
 MSG_INFOWIN_DISK_FEATURES_HELP
 Questa è la lista delle caratteristiche:\n\n\033bfiles grandi\033n\nla periferica supporta files più grandi\ndi 2GB.\n\n\033bsensibile alle maiuscole\033n\nla periferica è sensibile alle maiuscole.\nNon è raccomandabile usare questi tipo di\nperiferiche.
-; This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
+; This lists the current features:\n\n\033blarge files\033n\nthe volume supports files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
 ; volumes.
 ;
 MSG_INFOWIN_FILES
@@ -1233,7 +1233,7 @@ Dimensione totale:
 ; Total Size:
 ;
 MSG_INFOWIN_SCAN_HELP
-Esegue una scansione ricorsiva della directory per\ndeterminare il numero, il tipo e la grandezza totale\n
+Esegue una scansione ricorsiva della directory per\ndeterminare il numero, il tipo e la grandezza totale.
 ; Does a recursive scan of the directory to compute the number, type and total size of the files it contains.
 ;
 MSG_INFOWIN_SAVE
@@ -1284,7 +1284,7 @@ MSG_MAKEDIR_ENTERDIRECTORYNAME
 ;
 MSG_MAKEDIR_ENTER_DIRECTORYNAME_HELP
 Qui viene specificato il nome della nuova directory.\nDa notare che i caratteri "/" e ":" non sono consentiti.
-; Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+; Here the name of the new drawer gets specified. Please note, that characters like "/" and ":" are not allowed.
 ;
 MSG_MAKEDIR_UNNAMED
 Senza nome
@@ -1493,7 +1493,7 @@ Cambia lo sfondo dopo:
 ;
 MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP
 Se si è scelto come sfondo un'intera directory, verrà selezionata\nun'immagine a caso all'interno della stessa. Specificando il tempo\ndi permanenza di ogni immagine,lo sfondo cambierà a rotazione.
-; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specific amount of time.
 ;
 MSG_PREFSWIN_BACKGROUND_WINDOWS
 Finestre
@@ -1746,7 +1746,7 @@ _w
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_HELP
 Qui puoi scegliere il colore di sfondo del testo delle icone del Desktop.
-; Here you can select the icon back ground color for desktop icons.
+; Here you can select the icon background color for desktop icons.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_TITLE
 Seleziona colore di sfondo del testo delle icone del Desktop
@@ -1823,6 +1823,10 @@ MSG_PREFSWIN_WBSTART_REMEMBER
 Ricorda:
 ; Remember:
 ;
+MSG_PREFSWIN_WBSTART_REMEMBER_HELP
+Dopo caver riavviato il sistema quanto segue verrà ricordato.
+; After restarting the system the following will be remembered.
+;
 MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES
 Car_telle
 ; Dra_wers
@@ -1873,14 +1877,14 @@ _Doppio click sul desktop per aprire la finestra "Mio Morphos"
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS_HELP
 Un qualsiasi doppio click sul desktop apre automaticamente la finestra "Mio Morphos".
-; _Any double click on desktop opens MyMorphos window.
+; Any double click on desktop opens MyMorphos window.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE
 Il "Drag&drop" sposta i _files al posto di copiarli
 ; Drag&drop moves files instead of copy
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE_HELP
-L'operazione di "Drag&drop" sposta i file da\nuna locazione all'altra invece di copiarli. 
+L'operazione di "Drag&drop" sposta i file da\nuna locazione all'altra invece di copiarli.
 ; Drag & drop moves files instead of copy.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL
@@ -2034,7 +2038,7 @@ _Cornice Pulsante:
 ; Button _Frame:
 ;
 MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_HELP
-Consente di specificare il tipo di cornice\n
+Consente di specificare il tipo di cornice.
 ; Allows to specify the frame type and look for the tool buttons.
 ;
 MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_WINTITLE
@@ -2074,120 +2078,120 @@ Lista Periferiche
 ; Device List
 ;
 MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP
-Mostra LIsta Periferiche
-; Display Device List
+Mostra LIsta Periferiche.
+; Display Device List.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY
 Copia
 ; Copy
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_HELP
-Copia file o directory
-; Copy file or directory
+Copia file o directory.
+; Copy file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS
 Copia Come
 ; Copy As
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS_HELP
-Copia come File o Directory
-; Copy As File or Directory
+Copia come File o Directory.
+; Copy As File or Directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE
 Sposta
 ; Move
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_HELP
-Sposta un file o una directory
-; Move a file or a directory
+Sposta un file o una directory.
+; Move a file or a directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS
 Sposta Come
 ; Move As
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP
-Sposta e rinomina file o directory
-; Move and rename file or directory
+Sposta e rinomina file o directory.
+; Move and rename file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE
 Cancella
 ; Delete
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE_HELP
-Cancella file o directory
-; Delete file or directory
+Cancella file o directory.
+; Delete file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH
 Cestino
 ; Trash
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH_HELP
-Sposta file o directory nel cestino
-; Move file or directory to Trashcan
+Sposta file o directory nel cestino.
+; Move file or directory to Trashcan.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD
 Copia Negli Appunti
 ; Copy To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP
-Copia file o directory negli appunti
-; Copy file or directory to clipboard
+Copia file o directory negli appunti.
+; Copy file or directory to clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD
 Sposta Negli Appunti
 ; Move To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP
-Sposta file o directory negli appunti
-; Move file or directory to clipboard
+Sposta file o directory negli appunti.
+; Move file or directory to clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD
 Incolla Dagli Appunti
 ; Paste From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP
-Incolla il contenuto degli appunti
-; Paste content of clipboard
+Incolla il contenuto degli appunti.
+; Paste content of clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS
 Incolla Come Dagli Appunti
 ; Paste As From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS_HELP
-Incolla e rinomina il contenuto degli appunti
-; Paste and rename content of clipboard
+Incolla e rinomina il contenuto degli appunti.
+; Paste and rename content of clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT
 Seleziona
 ; Select
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT_HELP
-Seleziona file o directory
-; Select file or directory
+Seleziona file o directory.
+; Select file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO
 Info Icona
 ; Icon Info
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP
-Mostra una finestra con informazioni sull'icona
-; Display Icon Information window
+Mostra una finestra con informazioni sull'icona.
+; Display the Icon Information window
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT
 Formatta
 ; Format
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT_HELP
-Formatta un filesystem
-; Format a filesystem
+Formatta un filesystem.
+; Format a filesystem.
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR
 Crea Directory
 ; Add directory
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP
-Crea una directory
-; Create a directory
+Crea una directory.
+; Create a directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MAKELINK
 Crea Collegamento
@@ -2202,24 +2206,24 @@ Rinomina
 ; Rename
 ;
 MSG_PREFSWIN_TOOLBAR_RENAME_HELP
-Rinomina file o directory
-; Rename file or directory
+Rinomina file o directory.
+; Rename file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_FIND
 Cerca
 ; Find
 ;
 MSG_PREFSWIN_TOOLBAR_FIND_HELP
-Cerca files e directory
-; Finds files and directories
+Cerca files e directory.
+; Finds files and directories.
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT
 Parente
 ; Parent
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT_HELP
-Directory parente
-; Parent directory
+Directory parente.
+; Parent directory.
 ;
 MSG_PREFSWIN_TOOLBAR_BACK
 Indietro
@@ -2235,23 +2239,23 @@ Avanti
 ;
 MSG_PREFSWIN_TOOLBAR_FORWARD_HELP
 Successivo nella cronologia.
-; Next
+; Next in history.
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW
 Cambia visualizzazione
 ; Switch view
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP
-Cambia la modalità di visualizzazione
-; Change view display mode
+Cambia la modalità di visualizzazione.
+; Change view display mode.
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS
 Segnalibri
 ; Bookmarks
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP
-Segnalibri per file o directory
-; Bookmark file or directory
+Segnalibri per file o directory.
+; Bookmark file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE
 Spazio
@@ -2259,23 +2263,23 @@ Spazio
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE_HELP
 Aggiunge uno spazio alla barra strumenti.
-; Add a space to toolbar
+; Add a space to toolbar.
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE
 Spazio adattabile
 ; Flexible space
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP
-Aggiunge uno spazio adattabile alla barra strumenti
-; Add a flexible space to toolbar
+Aggiunge uno spazio adattabile alla barra strumenti.
+; Add a flexible space to toolbar.
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR
 Separatore
 ; Separator
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP
-Separatore tra un gruppo di pulsanti
-; Separator between group of buttons
+Separatore tra un gruppo di pulsanti.
+; Separator between group of buttons.
 ;
 MSG_PREFSWIN_TOOLBAR_DEFAULTDIMENSIONS_GROUP
 Dimensioni di Default
@@ -2810,7 +2814,7 @@ _Modalità:
 ;
 MSG_PREFSWIN_LISTER_MODES_HELP
 Questa modalità diventa attiva quando viene selezionata l'opzione lista.
-; This mode gets active when list mode is selected.
+; Defines the display type of list mode: all files, icons, or thumbnails.
 ;
 MSG_PREFSWIN_LISTER_COMPACT_SIZE
 Viualizzazione in m_odalità compatta
@@ -3031,30 +3035,38 @@ Quando attivato, la colonna selezionata diventa più chiara rispetto alle altre.
 ; *** PrefsWin_KeyboardClass.c (prefswin_keyboardclass.c)
 ;
 MSG_PREFSWIN_KEYBOARDCLASS_BUILTINGROUP
-Hotkeys Predefiniti
+Hotkeys predefinite
 ; Builtin commands hotkeys
 ;
 MSG_PREFSWIN_KEYBOARDCLASS_CUSTOMGROUP
-Hoykeys Personalizzati
+Hotkeys personalizzate
 ; Custom commands hotkeys
 ;
 MSG_PREFSWIN_KEYBOARDCLASS_ADDAHOTKEY
-Aggiungi un'hotkey
+Aggiungi una hotkey
 ; Add a Hotkey
 ;
 MSG_PREFSWIN_KEYBOARDCLASS_NEWSHORTCUT
-nuova shortcut
+nuova scorciatoia
 ; new shortcut
 ;
 ; *** KeyShortCutClass.c (keyshortcutclass.c)
 ;
 MSG_KEYSHORTCUTCLASS_ACTION
-Comando Edit
-; Edit Command
+Modifica comando...
+; Edit Command...
+;
+MSG_KEYSHORTCUTCLASS_ACTION_HELP
+Apre la finestra di configurazione delle azioni, che consente di configurare le azioni per questa hotkey.
+; Opens the action editor window, which allows you to configure the actions for this hotkey.
 ;
 MSG_KEYSHORTCUTCLASS_REMOVE
 Rimuovi
 ; Remove
+;
+MSG_KEYSHORTCUTCLASS_REMOVE_HELP
+Rimuove questa hotkey insieme all'azione specificata nella configurazione.
+; Remove this hotkey along with the defined action from the configuration.
 ;
 MSG_KEYSHORTCUTCLASS_LABEL_FORMAT
 %s:
@@ -5410,14 +5422,20 @@ Passa alla visualizzazione per Icone
 ; Switch to Icons viewmode
 ;
 MSG_TOOLBAR_CLASS_VIEWMODE_LIST_HELP
-Passa alla visualizzazione Listato.\n
+Passa alla visualizzazione Listato.
 ; Switch to List viewmode. Use the mouse wheel to zoom!
 ;
 MSG_IMAGEVIEW_CLASS_HOTKEYS_HELP
 \033u\033b\033cScorciatoie disponibili:\033n\033l\n\n\033bPTRSCREEN\033n: Stampa l'immagine\n\033bCursore Sinistra/Destra/Alto/Basso\033n: Scorre l'immagine, prova anche i tasti\nctrl/shift/alt (solo in modalità "Normale"!)\n\033bHome/End\033n: Scorre in cima/fondo all'immagine (solo in modalità "Normale"!)\n\033bRotellina Su/Giù\033n: Scorre di su/giù alcuni pixel (solo in modalità "Normale"!)\n\033bPage Pagina Su/Giù\033n: Mostra l'immagine precedente/successiva\n\033bl/r\033n: Ruota l'immagine sulla sinistra/destra\n\nÈ possibile muovere liberamente l'immagine con il pulsante sinistro o\ncentrale del mouse (solo in modalità "Normale"!)
-; \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPRTSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
-; \033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
-; image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+; \033c\033u\033bAvailable Controls:\033n\n\
+; \033c(Movements only available in "normal" mode!)\033n\n\n\
+; \033l\033bPRTSCREEN:\033n Print the image\n\
+; \033l\033bCTRL/SHIFT/ALT + Cursor keys:\033n Scroll the image\n\
+; \033l\033bHome/End:\033n Scroll to the top/bottom of the image\n\
+; \033l\033bWheel Up/Down:\033n Scroll some pixels up/down\n\
+; \033l\033bPage Up/Down:\033n Show the prev/next image\n\
+; \033l\033bL/R:\033n Rotate the image to the left/right\n\n\
+; \033lYou can drag the image around using the left or middle mousebutton.
 ;
 MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR
 Colo_re:

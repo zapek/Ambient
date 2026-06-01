@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: keyshortcuts.c,v 1.15 2016/08/01 18:51:29 itix Exp $
+ * $Id: keyshortcuts.c,v 1.16 2025/05/31 21:57:11 cyfm Exp $
  */
 
 #include "ambient.h"
@@ -390,7 +390,7 @@ static const struct key_shortcut_t default_shortcuts[] =
 		SHORTCUT_FLAG_BUILTIN | SHORTCUT_FLAG_ENABLED
 	},
 
-	/* clipboard copy shortcut */
+	/* clipboard pasteas shortcut */
 	{
 		SHORTCUT_ID_CLIPBOARDPASTEAS,
 		"Paste from clipboard as",

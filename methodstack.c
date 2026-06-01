@@ -19,10 +19,17 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: methodstack.c,v 1.14 2022/01/01 00:01:15 piru Exp $
+ * $Id: methodstack.c,v 1.17 2026/01/25 17:36:24 kronos Exp $
  */
 
+#ifndef PANEL_APP
 #include "ambient.h"
+#else
+#include <exec/nodes.h>
+#include "debug.h"
+#include "../include/macros/vapor.h"
+#define ENABLE_METHODSTACK_PUSHSYNCSAFE 1
+#endif
 
 /* public */
 #include <exec/memory.h>
@@ -205,7 +212,7 @@ ULONG methodstack_push_sync(APTR obj, ULONG cnt, ...)
 
 		replyport = ((struct taskdata *)thisproc->pr_Task.tc_UserData)->msport;
 
-		pm->obj = DoMethod(obj, OM_RETAIN);
+		pm->obj = (Object*) DoMethod(obj, OM_RETAIN);
 
 		pm->flags |= PMF_SYNC;
 
@@ -313,7 +320,7 @@ ULONG methodstack_push_sync_safe(APTR obj, ULONG cnt, ...)
 			return (res);
 		}
 
-		pm->obj = DoMethod(obj, OM_RETAIN);
+		pm->obj = (Object*) DoMethod(obj, OM_RETAIN);
 
 		pm->flags |= PMF_SYNC;
 

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: updatelist.c,v 1.22 2018/08/20 21:55:17 itix Exp $
+ * $Id: updatelist.c,v 1.24 2025/09/16 15:52:30 kronos Exp $
  */
 
 #include "ambient.h"
@@ -298,7 +298,7 @@ void updatelist_end(ULONG doit, ULONG clearit)
 						update_root |= MF_Application_DisplayUpdate_Fonts;
 						break;
 					/* XXX: til there.. */
-
+#if USE_INTERNAL_PANELS
 					case DSI_PANEL_ZIPSPEED:
 					case DSI_PANEL_AUTOSAVE_DROP:
 					case DSI_PANEL_AUTOSAVE_DELETE:
@@ -322,7 +322,7 @@ void updatelist_end(ULONG doit, ULONG clearit)
 					case DSI_PANEL_LAYOUT_GRID:
 						LOADPREFSID;
 						break;
-
+#endif
 					case DSI_MISC_REMEMBER_WINDOWS:
 					case DSI_MISC_REMEMBER_DOCUMENTS:
 						LOADPREFSID;
@@ -436,7 +436,7 @@ void updatelist_end(ULONG doit, ULONG clearit)
 
 		if (update_mymorphos)
 		{
-			APTR wo = (APTR)DoMethod(app, MM_Application_FindWindowByType, MV_Window_Type_Rootview);
+			APTR wo = (APTR)DoMethod(app, MM_Application_FindWindowByID, MV_Window_ID_Root);
 			APTR vo = wo ? (APTR)getv(wo, MA_Window_Viewobj) : NULL;
 
 			if (vo != NULL)

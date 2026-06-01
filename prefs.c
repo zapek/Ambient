@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: prefs.c,v 1.27 2017/11/08 13:54:01 bitrocky Exp $
+ * $Id: prefs.c,v 1.28 2025/07/23 22:53:31 geit Exp $
  */
 
 #include "ambient.h"
@@ -338,11 +338,11 @@ static const struct MUI_PenSpec pcol_white = {
 static const struct MUI_PenSpec pcol_red = {
 	"rffffffff,10101010,10101010"
 };
-
+#if 0
 static const struct MUI_PenSpec pcol_yellow = {
 	"rec44ec44,eeeeeeee,22f422f4"
 };
-
+#endif
 static const struct MUI_PenSpec pcol_green_fluo = {
 	"r16731673,eeeeeeee,00000000"
 };
@@ -366,11 +366,11 @@ static const struct MUI_PenSpec pcol_mback = {
 static const struct MUI_PenSpec pcol_mtext = {
 	"m5"
 };
-
+#if 0
 static const struct MUI_PenSpec pcol_mfill = {
 	"m6"
 };
-
+#endif
 /* the default desktop color */
 static const struct MUI_PenSpec pcol_desktop = {
 	"r49494949,8c8c8c8c,a7a7a7a7"

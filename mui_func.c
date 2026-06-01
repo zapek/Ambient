@@ -19,10 +19,22 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: mui_func.c,v 1.16 2017/08/09 23:41:19 cyfm Exp $
+ * $Id: mui_func.c,v 1.18 2026/01/25 17:36:24 kronos Exp $
 */
 
+
+#ifndef PANEL_APP
 #include "ambient.h"
+#else
+#include <stddef.h>
+#include <string.h>
+#include <exec/nodes.h>
+#include "debug.h"
+
+extern const char * const __stringtable[];
+#define GSI(x) ( STRPTR )__stringtable[x]
+#endif
+
 
 /* public */
 #include <mui/NumericString_mcc.h>

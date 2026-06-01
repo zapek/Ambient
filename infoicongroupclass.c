@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: infoicongroupclass.c,v 1.11 2016/08/11 11:36:54 itix Exp $
+ * $Id: infoicongroupclass.c,v 1.12 2025/03/05 00:48:45 bitrocky Exp $
  */
 
 #include "ambient.h"
@@ -34,6 +34,10 @@
 #include "iconio.h"
 #include "threads.h"
 
+#include <proto/multimedia.h>
+#include <classes/multimedia/multimedia.h>
+#include <classes/multimedia/video.h>
+#include "multimedia.h"
 
 struct Data {
 	APTR  iconobj;
@@ -230,12 +234,56 @@ DEFMMETHOD(DragQuery)
 	return (MUIV_DragQuery_Refuse);
 }
 
+BOOL reggae_picture_getWHT(char *filename, long *width, long *height, char **type);
+
+BOOL reggae_picture_getWHT(char *filename, long *width, long *height, char**type)
+{
+	BOOL ret=false;
+
+	if (filename && width && height && type && multimedia_open())
+	{
+		struct TagItem tags[4];
+		APTR obj;
+		
+		tags[0].ti_Tag = MMA_StreamType;
+		tags[0].ti_Data = (ULONG)"file.stream";
+		tags[1].ti_Tag = MMA_StreamName;
+		tags[1].ti_Data = (ULONG)filename;
+		tags[2].ti_Tag = MMA_MediaType;
+		tags[2].ti_Data = MMT_PICTURE,
+		tags[3].ti_Tag = TAG_END;
+		tags[3].ti_Data = 0;
+
+		if((obj = MediaNewObjectTagList(tags)))
+		{
+			*type = (char*)MediaGetPort(obj, 0, MMA_DataFormat); // "PNG"
+			*width = MediaGetPort(obj, 0, MMA_Video_Width);
+			*height = MediaGetPort(obj, 0, MMA_Video_Height);
+			DisposeObject(obj);
+			ret = true;
+		}
+		multimedia_close();	
+	}
+	return ret;
+}
+
 DEFMMETHOD(DragDrop)
 {
 	if (msg->obj != obj)
 	{
+		char *name = (char *)getv(msg->obj, MA_Icon_Name);
+		long w, h;
+		char *t = NULL;
+		BOOL usePNG=false;
+	
+		if (strcasecmp((char*)(name+strlen(name)-5), ".INFO") != 0)
+		{
+			reggae_picture_getWHT((char*)getv(msg->obj, MA_Icon_Path), &w, &h, &t);
+			usePNG = (t && (strcmp(t, "PNG")==0)) && (w < 2048) && (h < 2048);
+		}
+
 		do_action(obj, TA_Infoicon_Load,
-			TT_Infoicon_Load_Path, getv(msg->obj, MA_Icon_PathInfo),
+			TT_Infoicon_Load_Path, usePNG ? getv(msg->obj, MA_Icon_Path) : getv(msg->obj, MA_Icon_PathInfo),
 		TAG_DONE);
 	}
 

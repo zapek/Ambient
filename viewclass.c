@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: viewclass.c,v 1.38 2023/01/18 02:53:09 jacadcaps Exp $
+ * $Id: viewclass.c,v 1.40 2025/08/16 14:04:55 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -414,7 +414,7 @@ DEFTMETHOD(View_Abort)
 
 DEFMMETHOD(ContextMenuBuild)
 {
-	if (!getv(_view(obj), MA_View_IsRoot))
+	if (!getv(_view(obj), MA_View_IsRoot) && !getv(_view(obj), MA_View_IsRootExtra))
 	{
 		GETDATA;
 		ULONG flags;
@@ -675,6 +675,7 @@ DEFSMETHOD(View_ParseWindowArgs)
 			ULONG i=0;
 			ColNode *cols;
 
+#warning "These strnicmp/Strnicmp calls are suspect. I mean is it really meant to work like this?"
 			cols = (args.view && (strnicmp(args.view, "DLIST", strlen(args.view))==0)) ? (ColNode*)&dcols :
 				 ( (args.view && (strnicmp(args.view, "LIST", strlen(args.view))==0)) ? (ColNode*)&fcols : (ColNode*)&icols );
 			

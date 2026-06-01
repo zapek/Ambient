@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: lib.c,v 1.9.10.1 2025/01/06 00:28:00 cyfm Exp $
+ * $Id: lib.c,v 1.10 2025/01/06 00:25:50 cyfm Exp $
  */
 
 #include "globals.h"

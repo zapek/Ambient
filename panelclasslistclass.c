@@ -1,4 +1,3 @@
-
 #include <dos/exall.h>
 #include <dos/dosextens.h>
 #include <proto/dos.h>
@@ -11,6 +10,8 @@
 #include "panelitem.h"
 #include "panelclasslist.h"
 #include "classes.h"
+
+#if USE_INTERNAL_PANELS
 
 #include "file_func.h" // bitRocky: just for some tests in ScanDirectory
 /************************************************************************/
@@ -165,4 +166,5 @@ DECTMETHOD(Panelclasslist_FreeClasslist)
 ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_Notify, panelclasslistclass)
+#endif
 

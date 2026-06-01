@@ -1,9 +1,10 @@
-## version $VER: ambient.catalog 7.0 (29.09.2007)
-## codeset 0
+## version $VER: ambient.catalog 7.3 (06.03.2026)
 ## language magyar
-## chunk AUTH Károly Balogh
+## codeset 0
 ;
-;$Id: ambient.magyar.ct,v 1.77 2019/05/26 14:44:57 bitrocky Exp $
+## chunk AUTH "Károly Balogh" "Guido Mersmann"
+;
+;$Id: ambient.magyar.ct,v 1.78 2026/03/07 03:30:22 moats Exp $
 ;
 ; *** Please do not use these strings anymore.
 ;
@@ -208,6 +209,14 @@ Restore
 MSG_MENU_ICONS_EMPTY
 Empty Trashcan
 ; Empty Trashcan
+;
+MSG_MENU_VIEW_NETWORKSSETTINGS
+
+; Share Settings...
+;
+MSG_MENU_VIEW_NETWORKSCONNECT
+
+; Connect...
 ;
 MSG_MENU_UTILITIES
 Segédeszközök
@@ -610,11 +619,11 @@ Kilépés
 ;
 MSG_FORMAT_ERROR
 Formázási hiba
-; Formating error
+; Formatting error
 ;
 MSG_FORMAT_FORMATING
 Formázás...
-; Formating...
+; Formatting...
 ;
 MSG_FORMAT_ERROR_RESERVED
 Ez az azonosító a rendszer számára foglalt. Használj más azonosítót.
@@ -646,7 +655,7 @@ Fájlrendszer:
 ;
 MSG_FORMAT_FILESYSTEM_HELP
 A kötet ezzel a fájlrendszerrel lesz megformázva.
-; This filesystem will used.
+; This filesystem will be used.
 ;
 MSG_FORMAT_STATUS
 Állapot:
@@ -723,7 +732,7 @@ Formáz...
 ;
 MSG_FORMAT_HELP
 Az egész lemez felülíródik! Hosszú idõt vesz igénybe és minden adatot töröl a lemezrõl!
-; The entire media will overwritten! Takes a lot of time, but destroys all data on drive!
+; The entire media will be overwritten! This will take a lot of time, but destroys all data on drive!
 ;
 MSG_FORMAT_AND_VERIFY
 Formáz és ellenõriz...
@@ -731,7 +740,7 @@ Formáz és ellenõriz...
 ;
 MSG_FORMAT_AND_VERIFY_HELP
 Az egész lemez felülíródik! Ezen kívül a formázott területek visszaolvasásra kerülnek, így ellenõrizve a lemez épségét.
-; The entire media will overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
+; The entire media will be overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
 ;
 MSG_FORMAT_CLOSE
 Bezár
@@ -950,7 +959,8 @@ MSG_INFOWIN_DISK_STATUS
 MSG_INFOWIN_DISK_STATUS_HELP
 A fájlrendszer állapotai a következõk lehetnek:\n\n\033bírásvédett\033n\na kötet fizikailag védett\naz írások ellen.\n\n\033bellenõrzés\033n\na kötet tartalmában következetlenségek vannak és\n\
 a fájlrendszer próbálja kijavítani ezeket. A kötet\nolvasható, de nem írható.\n\n\033bellenõrzött\033n\na kötet tartalma hibátlan, és használatra kész.
-; The filesystem status can be one of:\n\n\033bwrite protected\033n\nthe volume is physically protected\nagainst writes.\n\n\033bvalidating\033n\nthe volume is inconsistent and the\nfilesystem is currently trying to\nbring it to a safe state. The volume\ncan be read from but not written to.\n\n\033bvalidated\033n\nthe volume is valid and can be fully used.
+; The filesystem status can be one of:\n\n\033bwrite protected\033n\nthe volume is physically protected\nagainst writes.\n\n\033bvalidating\033n\nthe volume is inconsistent and the\nfilesystem is \
+; currently trying to\nbring it to a safe state. The volume\ncan be read from but not written to.\n\n\033bvalidated\033n\nthe volume is valid and can be fully used.
 ;
 MSG_INFOWIN_DISK_FEATURES
 Jellemzõk:
@@ -959,7 +969,8 @@ Jellemzõk:
 MSG_INFOWIN_DISK_FEATURES_HELP
 A fájlrendszer jellemzõi a következõk lehetnek:\n\n\033bnagy fájlok\033n\na kötet támogatja a 2GB-nál nagyobb állományokat.\n\n\033bkis/nagybetûk megkülönböztetése\033n\na kötet megkülönbözteti a kis- \
 és nagybetûket a fájlnevekben.\nIlyen kötetek használata nem javasolt.
-; This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such volumes.
+; This lists the current features:\n\n\033blarge files\033n\nthe volume supports files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
+; volumes.
 ;
 MSG_INFOWIN_FILES
 Fájlok:
@@ -1040,7 +1051,8 @@ Verem:
 MSG_INFOWIN_STACK_HELP
 A futtatható állományhoz tartozó veremméret bájtokban. A verem egy olyan memóriaterület, ahol az egyes programok privát adatok tárolására használnak. Ha van különleges követelmény a veremmérettel \
 kapcsolatban, azt megtalálhatod a program dokumentációjában. Manapság a legtöbb program saját maga foglalja a neki megfelelõ méretû vermet, tehát nem kell sokat foglalkoznod ezzel a mezõvel.
-; Stack size of the executable in bytes. A stack is an area of memory used by the executable to store private data. Special requirements regarding its size should be listed in the executable's documentation although most executables set the stack size by themselves so you don't have to bother about this field.
+; Stack size of the executable in bytes. A stack is an area of memory used by the executable to store private data. Special requirements regarding its size should be listed in the executable's \
+; documentation although most executables set the stack size by themselves so you don't have to bother about this field.
 ;
 MSG_INFOWIN_CREATED
 Létrehozva:
@@ -1275,7 +1287,7 @@ MSG_MAKEDIR_ENTERDIRECTORYNAME
 ;
 MSG_MAKEDIR_ENTER_DIRECTORYNAME_HELP
 Itt add meg az új könyvtár nevét. A "/", ":" és hasonló karakterek nem engedélyezettek.
-; Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+; Here the name of the new drawer gets specified. Please note, that characters like "/" and ":" are not allowed.
 ;
 MSG_MAKEDIR_UNNAMED
 Névtelen
@@ -1426,7 +1438,8 @@ Clear active
 MSG_EXEC_COMMAND_HELP
 You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", \
 "news://", "mailto:", "ftp." or "www.".
-; You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", "news://", "mailto:", "ftp." or "www.".
+; You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", \
+; "news://", "mailto:", "ftp." or "www.".
 ;
 ; PrefsWin_BackGroundClass.c (prefswin_backgroundclass.c)
 ;
@@ -1484,7 +1497,7 @@ Háttérváltás intervalluma:
 ;
 MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP
 Ha a háttérként megadott hely egy könyvtár, a benne található képek véletlenszerûen lesznek használva. Az Ambient az itt megadott intervallumonként új képet választ.
-; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specific amount of time.
 ;
 MSG_PREFSWIN_BACKGROUND_WINDOWS
 Ablakok
@@ -1737,7 +1750,7 @@ _w
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_HELP
 Itt kiválasztható az asztali ikonokhoz megjelenített szöveg háttérszíne.
-; Here you can select the icon back ground color for desktop icons.
+; Here you can select the icon background color for desktop icons.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_TITLE
 Szöveg háttérszíne az asztalon
@@ -1864,7 +1877,7 @@ _Duplakattintás az asztalon megnyitja a MorphOS Rendszer ablakot
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS_HELP
 Ha engedélyezett, az asztalon történõ duplakattintásra megnyílik a MorphOS Rendszer ikon.
-; _Any double click on desktop opens MyMorphos window.
+; Any double click on desktop opens MyMorphos window.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE
 A húzd és ejtsd mûvelet nem másol, hanem mozgat
@@ -2065,7 +2078,7 @@ Eszközlista
 ; Device List
 ;
 MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP
-Eszközlista megjelenítése
+Eszközlista megjelenítése.
 ; Display Device List
 ;
 MSG_PREFSWIN_TOOLBAR_COPY
@@ -2073,7 +2086,7 @@ Másol
 ; Copy
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_HELP
-Fájl vagy könyvtár másolása
+Fájl vagy könyvtár másolása.
 ; Copy file or directory
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS
@@ -2089,7 +2102,7 @@ Mozgat
 ; Move
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_HELP
-Fájl vagy könyvtár mozgatása
+Fájl vagy könyvtár mozgatása.
 ; Move a file or a directory
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS
@@ -2097,7 +2110,7 @@ Mozgat mint
 ; Move As
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP
-Fájl vagy könyvtár mozgatása átnevezéssel
+Fájl vagy könyvtár mozgatása átnevezéssel.
 ; Move and rename file or directory
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE
@@ -2105,7 +2118,7 @@ Töröl
 ; Delete
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE_HELP
-Fájl vagy könyvtár törlése
+Fájl vagy könyvtár törlése.
 ; Delete file or directory
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH
@@ -2113,7 +2126,7 @@ Kukáz
 ; Trash
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH_HELP
-Fájl vagy könyvtár mozgatása a kukába
+Fájl vagy könyvtár mozgatása a kukába.
 ; Move file or directory to Trashcan
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD
@@ -2121,7 +2134,7 @@ Vágólapra másol
 ; Copy To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP
-Fájl vagy könyvtár másolása a vágólapra
+Fájl vagy könyvtár másolása a vágólapra.
 ; Copy file or directory to clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD
@@ -2129,7 +2142,7 @@ Vágólapra mozgat
 ; Move To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP
-Fájl vagy könyvtár mozgatás a vágólapra
+Fájl vagy könyvtár mozgatás a vágólapra.
 ; Move file or directory to clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD
@@ -2137,7 +2150,7 @@ Beillesztés vágólapról
 ; Paste From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP
-A vágólap tartalmának beillesztése
+A vágólap tartalmának beillesztése.
 ; Paste content of clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS
@@ -2153,7 +2166,7 @@ Kijelöl
 ; Select
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT_HELP
-Fájl vagy könyvtár kijelölése
+Fájl vagy könyvtár kijelölése.
 ; Select file or directory
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO
@@ -2161,7 +2174,7 @@ Ikon Infó
 ; Icon Info
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP
-Az ikon információs ablak megjelenítése
+Az ikon információs ablak megjelenítése.
 ; Display Icon Information window
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT
@@ -2169,7 +2182,7 @@ Formáz
 ; Format
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT_HELP
-Fájlrendszer formázása
+Fájlrendszer formázása.
 ; Format a filesystem
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR
@@ -2177,7 +2190,7 @@ MSG_PREFSWIN_TOOLBAR_MAKEDIR
 ; Add directory
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP
-Új könyvtár létrehozása
+Új könyvtár létrehozása.
 ; Create a directory
 ;
 MSG_PREFSWIN_TOOLBAR_MAKELINK
@@ -2185,7 +2198,7 @@ MSG_PREFSWIN_TOOLBAR_MAKELINK
 ; Add link
 ;
 MSG_PREFSWIN_TOOLBAR_MAKELINK_HELP
-Új link létrehozása
+Új link létrehozása.
 ; Add a link.
 ;
 MSG_PREFSWIN_TOOLBAR_RENAME
@@ -2193,7 +2206,7 @@ MSG_PREFSWIN_TOOLBAR_RENAME
 ; Rename
 ;
 MSG_PREFSWIN_TOOLBAR_RENAME_HELP
-Fájl vagy könyvtár átnevezése
+Fájl vagy könyvtár átnevezése.
 ; Rename file or directory
 ;
 MSG_PREFSWIN_TOOLBAR_FIND
@@ -2201,7 +2214,7 @@ Keresés
 ; Find
 ;
 MSG_PREFSWIN_TOOLBAR_FIND_HELP
-Fájlok és könyvtárak keresése
+Fájlok és könyvtárak keresése.
 ; Finds files and directories
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT
@@ -2209,7 +2222,7 @@ Szülõ
 ; Parent
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT_HELP
-Szülõ könyvtár
+Szülõ könyvtár.
 ; Parent directory
 ;
 MSG_PREFSWIN_TOOLBAR_BACK
@@ -2225,7 +2238,7 @@ Következõ
 ; Next
 ;
 MSG_PREFSWIN_TOOLBAR_FORWARD_HELP
-Következõ
+Következõ.
 ; Next
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW
@@ -2233,7 +2246,7 @@ Nézetet vált
 ; Switch view
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP
-Az ablak nézetének váltása
+Az ablak nézetének váltása.
 ; Change view display mode
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS
@@ -2241,7 +2254,7 @@ Könyvjelzõ
 ; Bookmarks
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP
-Fájl vagy könyvtár megjelölése könyvjelzõvel
+Fájl vagy könyvtár megjelölése könyvjelzõvel.
 ; Bookmark file or directory
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE
@@ -2249,7 +2262,7 @@ Köz
 ; Space
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE_HELP
-Üres közt ad az eszközsávhoz
+Üres közt ad az eszközsávhoz.
 ; Add a space to toolbar
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE
@@ -2257,7 +2270,7 @@ Rugalmas köz
 ; Flexible space
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP
-Változtatható méretû üres közt ad az eszközsávhoz
+Változtatható méretû üres közt ad az eszközsávhoz.
 ; Add a flexible space to toolbar
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR
@@ -2265,7 +2278,7 @@ Elválasztó
 ; Separator
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP
-Elválasztósáv a gombcsoportok közé
+Elválasztósáv a gombcsoportok közé.
 ; Separator between group of buttons
 ;
 MSG_PREFSWIN_TOOLBAR_DEFAULTDIMENSIONS_GROUP
@@ -2438,6 +2451,14 @@ MSG_SYSINFOWIN_CPUCOUNT_HELP
 A rendszerben található CPU-k száma.
 ; This is the number of CPUs available.
 ;
+MSG_SYSINFOWIN_SYSTEMMEMORY
+
+; System memory:
+;
+MSG_SYSINFOWIN_SYSTEMMEMORY_HELP
+
+; This is the systems total memory (RAM).
+;
 MSG_SYSINFOWIN_BCLOCK
 Busz órajel:
 ; Bus clock:
@@ -2521,6 +2542,10 @@ MSG_SYSINFOWIN_CACHESPECS
 MSG_SYSINFOWIN_CACHESPECS_HELP
 A processzorban található cache (gyorsítótár) specifikációja.
 ; This shows the CPU cache specifications.
+;
+MSG_SYSINFOWIN_AMBIENT_GROUP
+
+; Ambient
 ;
 MSG_SYSINFOWIN_SNDDRIVER
 Hang alrendszer:
@@ -2789,7 +2814,7 @@ _Mód:
 ;
 MSG_PREFSWIN_LISTER_MODES_HELP
 Ez a mód kerül aktiválásra listás megjelenítéskor.
-; This mode gets active when list mode is selected.
+; Defines the display type of list mode: all files, icons, or thumbnails.
 ;
 MSG_PREFSWIN_LISTER_COMPACT_SIZE
 Rövid formá_jú méret
@@ -3001,7 +3026,7 @@ Always
 ;
 MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN
 Kiemelt rendezõ oszlop
-; Hilighted sorting column
+; Highlighted sorting column
 ;
 MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN_HELP
 Ha engedélyezett, az oszlop, ami alapján a lista rendezve van, világossabban jelenik meg.
@@ -3029,11 +3054,19 @@ MSG_PREFSWIN_KEYBOARDCLASS_NEWSHORTCUT
 ;
 MSG_KEYSHORTCUTCLASS_ACTION
 Parancs szerkesztése
-; Edit Command
+; Edit Command...
+;
+MSG_KEYSHORTCUTCLASS_ACTION_HELP
+
+; Opens the action editor window, which allows you to configure the actions for this hotkey.
 ;
 MSG_KEYSHORTCUTCLASS_REMOVE
 Eltávolít
 ; Remove
+;
+MSG_KEYSHORTCUTCLASS_REMOVE_HELP
+
+; Remove this hotkey along with the defined action from the configuration.
 ;
 MSG_KEYSHORTCUTCLASS_LABEL_FORMAT
 %s:
@@ -3633,6 +3666,14 @@ Empty Trashcan
 ; Empty Trashcan
 ;
 ;
+MSG_CMENU_NETWORKSSETTINGS
+
+; Share Settings...
+;
+MSG_CMENU_NETWORKSCONNECT
+
+; Connect...
+;
 MSG_LISTVIEWLISTCLASS_EMPTY
 <Üres>
 ; <Empty>
@@ -4164,7 +4205,8 @@ Lefelé mozgatja a kiválasztott elemet a mûveletek listájában.
 MSG_ACTIONEDITORCLASS_COMMAND_HELP
 A végrehajtandó parancs.\n\nHasználható:\n%sp a forrás elérési útvonala\n%sf a forrás fájl neve\n%S a forrás nézet útvonala\n%Si a forrás nézet azonosítója\n%D a cél nézet útvonala\n%Di a cél nézet \
 azonosítója.
-; Command to be executed.\n\nUse:\n%sp for entry full path.\n%sf for entry file part.\n%S for source view path.\n%Si for source view identifier.\n%D for destination view path.\n%Di for destination view identifier.
+; Command to be executed.\n\nUse:\n%sp for entry full path.\n%sf for entry file part.\n%S for source view path.\n%Si for source view identifier.\n%D for destination view path.\n%Di for destination view \
+; identifier.
 ;
 MSG_ACTIONEDITORCLASS_EVENTTYPE
 _Esemény Típusa :
@@ -5289,11 +5331,11 @@ Szín kiválasztása a színtónus effektushoz.
 ; Select a color for tintfade effect.
 ;
 MSG_PREFSWIN_PANEL_FORCE_GRID
-Ikonok igazítása négyzetrácshoz
+Ikonok igazítása négyzetrácshoz.
 ; Force icons into square grid.
 ;
 MSG_PREFSWIN_PANEL_FORCE_GRID_HELP
-Az ikon alapú panel objektumok mindig a panel által megadott méretet fogjáh használni, az ikon saját arányai helyett. 
+Az ikon alapú panel objektumok mindig a panel által megadott méretet fogjáh használni, az ikon saját arányai helyett.
 ; Icon based panel objects will always use space where width and height are the panelsize instead of adapting one to the icon's aspect ratio.
 ;
 MSG_PREFSWIN_PANEL_CLASS_NAME
@@ -5388,7 +5430,9 @@ MSG_IMAGEVIEW_CLASS_HOTKEYS_HELP
 \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPTRSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
 \033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
 image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
-; \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPTRSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+; \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPRTSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
+; \033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
+; image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
 ;
 MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR
 Szí_n:

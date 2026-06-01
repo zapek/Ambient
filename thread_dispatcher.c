@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: thread_dispatcher.c,v 1.12 2020/08/16 21:10:18 jacadcaps Exp $
+ * $Id: thread_dispatcher.c,v 1.13 2025/09/16 15:52:30 kronos Exp $
  */
 
 #include "ambient.h"
@@ -362,7 +362,7 @@ ULONG thread_domsg(struct thread_msg *msg)
 			return (tr_prefs_save(msg->obj,
 				(APTR)GetTagData(TT_Prefs_Save_Ctx, (ULONG)NULL, msg->taglist)
 			));
-
+#if USE_INTERNAL_PANELS
 		case TA_Panels_LoadAll:
 			return (tr_panels_loadall());
 
@@ -391,7 +391,7 @@ ULONG thread_domsg(struct thread_msg *msg)
 				GetTagData(TT_Panels_Zip_Reversed, FALSE, msg->taglist),
 				GetTagData(TT_Panels_Zip_ZipSpeed, MV_Panel_ZipSpeed_Medium, msg->taglist)
 			));
-
+#endif
 		case TA_Appicon_Read:
 			{
 				ULONG rc;

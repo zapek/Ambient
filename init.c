@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: init.c,v 1.15 2017/07/25 20:36:32 piru Exp $
+ * $Id: init.c,v 1.18 2025/09/16 15:52:29 kronos Exp $
  */
 
 #include "ambient.h"
@@ -50,7 +50,6 @@
 #include "doslistcache.h"
 #include "pngicon.h"
 #include "wbstartlib.h"
-#include "panellib.h"
 #include "dosreq.h"
 #include "pngio.h"
 #include "deficonpool.h"
@@ -83,13 +82,11 @@
 #include "soundwin.h"
 #include "thumbs.h"
 #include "trashcan.h"
+#include "ambient_lib.h"
+
 
 #if USE_AVCODEC
 #include "avcodec.h"
-#endif
-
-#if USE_MULTIPLE_DESKTOP
-#include "screen.h"
 #endif
 
 #include "keyshortcuts.h"
@@ -136,7 +133,9 @@ static struct initdesc id[] = {
 	INITENTRY(smartreq),
 	INITENTRY(iconmem),
 	INITENTRY(prefs),
+#if USE_INTERNAL_PANELS
 	INITENTRY(panelprefs),
+#endif
 	INITENTRY(methodstack),
 	INITENTRY(timer),
 	INITENTRY(random),
@@ -186,23 +185,11 @@ static struct initdesc id[] = {
 	#endif
 	INITENTRY(thumb),
 	INITENTRY(trashcan),
-	#if USE_PANEL_LIB 
-	INITENTRY(panellib),
+	#if USE_AMBIENT_LIB 
+	INITENTRY(ambientlib),
 	#endif
 	ENDENTRY
 };
-
-#if USE_MULTIPLE_DESKTOP
-/*  note: all the multidesktop stuff should move into an  
- *        own file, multidesktop.c/h with proper 
- *        multidesktop_init and multidesktop_cleanup functions 
- *        and static globals (access to them by multiscreen_#? 
- *        functions). init.c is the wrong place for this!
- *        -- tokai
- */
-struct Screen *myscreen;
-char *activescreenname;
-#endif
 
 ULONG init_open(void)
 {
@@ -228,12 +215,6 @@ ULONG init_open(void)
 		}
 	}
 
-	#if USE_MULTIPLE_DESKTOP
-	activescreenname=active_screen_name();
-	myscreen=LockPubScreen(activescreenname);
-	UnlockPubScreen(activescreenname, myscreen);
-	#endif
-
 	return (TRUE);
 }
 
@@ -252,16 +233,6 @@ void init_close(void)
 			id[i].exitfunc();
 		}
 	}
-	#if USE_MULTIPLE_DESKTOP
-#warning This is broken and works only by luck!
-	/*  this only works because libs_cleanup doesn't NULL the
-	 *  library pointers after closing them and IntuiBase 
-	 *  stays valid. It needs to move to multidesktop_cleanup
-	 *  which is called from proper place, see note at top of 
-	 *  this file. -- tokai
-	 */
-	CloseScreen(myscreen);
-	#endif
 }
 
 

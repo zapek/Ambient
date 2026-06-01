@@ -1,0 +1,14 @@
+.bra {
+.ket }
+.key FILE/A,TITLE/A,POSITIVE/A
+
+UnSet destdir
+Set destdir `MOSSYS:C/RequestFile DRAWER "RAM:" DRAWERSONLY TITLE "{TITLE}" POSITIVE "{POSITIVE}"`
+If NOT WARN
+	If "$destdir" NOT EQ ""
+		If EXISTS "$destdir"
+			MOSSYS:C/LhA -I x "{FILE}" "$destdir"
+		EndIf
+	EndIf
+EndIf
+UnSet destdir

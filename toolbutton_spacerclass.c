@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: toolbutton_spacerclass.c,v 1.6 2006/12/20 13:34:15 fab Exp $
+ * $Id: toolbutton_spacerclass.c,v 1.10 2025/09/13 10:34:01 piru Exp $
  */
 
 #include "ambient.h"
@@ -135,7 +135,7 @@ DEFGET
 		case MA_Toolbutton_Args:
 		{
 			data->args[ 0 ]   = (ULONG)data->mode_str;
-			data->args[ 1 ]   = NULL;
+			data->args[ 1 ]   = (ULONG)NULL;
 			*msg->opg_Storage = (ULONG)data->args;
 			return (TRUE);
 		}

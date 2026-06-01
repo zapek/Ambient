@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: dropeffectclass.c,v 1.8 2006/12/20 13:34:14 fab Exp $
+ * $Id: dropeffectclass.c,v 1.9 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -62,7 +62,7 @@ DEFNEW
 	obj = DoSuperNew(cl, obj,
 		Child, HGroup,
 			
-			Child, cyc_effect = MUI_MakeObject(MUIO_Cycle, GetTagData(MA_DropEffect_Label, NULL, INITTAGS), effects),
+			Child, cyc_effect = MUI_MakeObject(MUIO_Cycle, GetTagData(MA_DropEffect_Label, 0, INITTAGS), effects),
 
 			Child, grp_effect = PageGroup,
 				
@@ -126,7 +126,7 @@ DEFNEW
 
 	if (!obj)
 	{
-		return (NULL);
+		return ((ULONG)NULL);
 	}
 
 	data = INST_DATA(cl, obj);

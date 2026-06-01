@@ -1,6 +1,6 @@
 #version 7
 ;
-;$Id: ambient.cd,v 1.111 2023/01/12 20:33:12 jacadcaps Exp $
+;$Id: ambient.cd,v 1.129 2026/05/14 22:40:54 geit Exp $
 ;
 ; *** Please do not use these strings anymore.
 ;
@@ -495,7 +495,7 @@ MSG_FORMAT_FILESYSTEM (//)
 Filesystem:
 ;
 MSG_FORMAT_FILESYSTEM_HELP (//)
-This filesystem will used.
+This filesystem will be used.
 ;
 MSG_FORMAT_STATUS (//)
 Status:
@@ -552,13 +552,13 @@ MSG_FORMAT (//)
 _Format...
 ;
 MSG_FORMAT_HELP (//)
-The entire media will overwritten! Takes a lot of time, but destroys all data on drive!
+The entire media will be overwritten! This will take a lot of time, but destroys all data on drive!
 ;
 MSG_FORMAT_AND_VERIFY (//)
 Format & _Verify...
 ;
 MSG_FORMAT_AND_VERIFY_HELP (//)
-The entire media will overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
+The entire media will be overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
 ;
 MSG_FORMAT_CLOSE (//)
 _Close
@@ -730,7 +730,7 @@ MSG_INFOWIN_DISK_FEATURES (//)
 Features:
 ;
 MSG_INFOWIN_DISK_FEATURES_HELP (//)
-This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
+This lists the current features:\n\n\033blarge files\033n\nthe volume supports files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
 volumes.
 ;
 MSG_INFOWIN_FILES (//)
@@ -969,7 +969,7 @@ MSG_MAKEDIR_ENTERDIRECTORYNAME (//)
 \033c\033bDirectory Name:
 ;
 MSG_MAKEDIR_ENTER_DIRECTORYNAME_HELP (//)
-Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+Here the name of the new drawer gets specified. Please note, that characters like "/" and ":" are not allowed.
 ;
 MSG_MAKEDIR_UNNAMED (//)
 Unnamed
@@ -1128,7 +1128,7 @@ MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY (//)
 C_hange background after:
 ;
 MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP (//)
-If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specific amount of time.
 ;
 MSG_PREFSWIN_BACKGROUND_WINDOWS (//)
 Windows
@@ -1319,7 +1319,7 @@ MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK (//)
 _b
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_HELP (//)
-Here you can select the icon back ground color for desktop icons.
+Here you can select the icon background color for desktop icons.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_TITLE (//)
 Desktop background color
@@ -1378,6 +1378,9 @@ Path to startup directory
 MSG_PREFSWIN_WBSTART_REMEMBER (//)
 Remember:
 ;
+MSG_PREFSWIN_WBSTART_REMEMBER_HELP (//)
+After restarting the system the following will be remembered.
+;
 MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES (//)
 Dra_wers
 ;
@@ -1406,16 +1409,16 @@ MSG_PREFSWIN_MISCELLANEOUS (//)
 Miscellaneous
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS (//)
-Display M_yMorphos icon
+Display M_yMorphOS icon
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS_HELP (//)
 Enables and disables the MyMorphOS icon on desktop.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS (//)
-_Double click on desktop opens MyMorphos window
+_Double click on desktop opens MyMorphOS window
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS_HELP (//)
-_Any double click on desktop opens MyMorphos window.
+Any double click on desktop opens MyMorphOS window.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE (//)
 Drag&drop moves files instead of copy
@@ -1446,6 +1449,12 @@ C_reate icon for new drawer by default
 ;
 MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER_HELP (//)
 New drawer will automatically get a default drawer icon if this option is enabled.
+;
+MSG_PREFSWIN_MISCELLANEOUS_HIDEDOTFILENAMES (//)
+Hide filenames beginning with a dot ( _. )
+;
+MSG_PREFSWIN_MISCELLANEOUS_HIDEDOTFILENAMES_HELP (//)
+This option makes Ambient hide any files whose names begin with a dot.
 ;
 ; *** Prefswin CLI launching
 ;
@@ -1570,91 +1579,91 @@ MSG_PREFSWIN_TOOLBAR_DEVICE_LIST (//)
 Device List
 ;
 MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP (//)
-Display Device List
+Display Device List.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY (//)
 Copy
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_HELP (//)
-Copy file or directory
+Copy file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS (//)
 Copy As
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS_HELP (//)
-Copy As File or Directory
+Copy As File or Directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE (//)
 Move
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_HELP (//)
-Move a file or a directory
+Move a file or a directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS (//)
 Move As
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP (//)
-Move and rename file or directory
+Move and rename file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE (//)
 Delete
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE_HELP (//)
-Delete file or directory
+Delete file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH (//)
 Trash
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH_HELP (//)
-Move file or directory to Trashcan
+Move file or directory to Trashcan.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD (//)
 Copy To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP (//)
-Copy file or directory to clipboard
+Copy file or directory to clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD (//)
 Move To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP (//)
-Move file or directory to clipboard
+Move file or directory to clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD (//)
 Paste From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP (//)
-Paste content of clipboard
+Paste content of clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS (//)
 Paste As From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS_HELP (//)
-Paste and rename content of clipboard
+Paste and rename content of clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT (//)
 Select
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT_HELP (//)
-Select file or directory
+Select file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO (//)
 Icon Info
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP (//)
-Display Icon Information window
+Display the Icon Information window
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT (//)
 Format
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT_HELP (//)
-Format a filesystem
+Format a filesystem.
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR (//)
 Add directory
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP (//)
-Create a directory
+Create a directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MAKELINK (//)
 Add link
@@ -1666,19 +1675,19 @@ MSG_PREFSWIN_TOOLBAR_RENAME (//)
 Rename
 ;
 MSG_PREFSWIN_TOOLBAR_RENAME_HELP (//)
-Rename file or directory
+Rename file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_FIND (//)
 Find
 ;
 MSG_PREFSWIN_TOOLBAR_FIND_HELP (//)
-Finds files and directories
+Finds files and directories.
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT (//)
 Parent
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT_HELP (//)
-Parent directory
+Parent directory.
 ;
 MSG_PREFSWIN_TOOLBAR_BACK (//)
 Back
@@ -1690,37 +1699,37 @@ MSG_PREFSWIN_TOOLBAR_FORWARD (//)
 Next
 ;
 MSG_PREFSWIN_TOOLBAR_FORWARD_HELP (//)
-Next
+Next in history.
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW (//)
 Switch view
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP (//)
-Change view display mode
+Change view display mode.
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS (//)
 Bookmarks
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP (//)
-Bookmark file or directory
+Bookmark file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE (//)
 Space
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE_HELP (//)
-Add a space to toolbar
+Add a space to toolbar.
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE (//)
 Flexible space
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP (//)
-Add a flexible space to toolbar
+Add a flexible space to toolbar.
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR (//)
 Separator
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP (//)
-Separator between group of buttons
+Separator between group of buttons.
 ;
 MSG_PREFSWIN_TOOLBAR_DEFAULTDIMENSIONS_GROUP (//)
 Default Dimensions and Position
@@ -2129,7 +2138,7 @@ MSG_PREFSWIN_LISTER_MODES (//)
 _Mode:
 ;
 MSG_PREFSWIN_LISTER_MODES_HELP (//)
-This mode gets active when list mode is selected.
+Defines the display type of list mode: all files, icons, or thumbnails.
 ;
 MSG_PREFSWIN_LISTER_COMPACT_SIZE (//)
 Compact size displa_y
@@ -2310,10 +2319,16 @@ new shortcut
 ; *** KeyShortCutClass.c (keyshortcutclass.c)
 ;
 MSG_KEYSHORTCUTCLASS_ACTION (//)
-Edit Command
+Edit Command...
+;
+MSG_KEYSHORTCUTCLASS_ACTION_HELP (//)
+Opens the action editor window, which allows you to configure the actions for this hotkey.
 ;
 MSG_KEYSHORTCUTCLASS_REMOVE (//)
 Remove
+;
+MSG_KEYSHORTCUTCLASS_REMOVE_HELP (//)
+Remove this hotkey along with the defined action from the configuration.
 ;
 MSG_KEYSHORTCUTCLASS_LABEL_FORMAT (//)
 %s:
@@ -4114,9 +4129,15 @@ MSG_TOOLBAR_CLASS_VIEWMODE_LIST_HELP (//)
 Switch to List viewmode. Use the mouse wheel to zoom!
 ;
 MSG_IMAGEVIEW_CLASS_HOTKEYS_HELP (//)
-\033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPRTSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
-\033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
-image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+\033c\033u\033bAvailable Controls:\033n\n\
+\033c(Movements only available in "normal" mode!)\033n\n\n\
+\033l\033bPRTSCREEN:\033n Print the image\n\
+\033l\033bCTRL/SHIFT/ALT + Cursor keys:\033n Scroll the image\n\
+\033l\033bHome/End:\033n Scroll to the top/bottom of the image\n\
+\033l\033bWheel Up/Down:\033n Scroll some pixels up/down\n\
+\033l\033bPage Up/Down:\033n Show the prev/next image\n\
+\033l\033bL/R:\033n Rotate the image to the left/right\n\n\
+\033lYou can drag the image around using the left or middle mousebutton.
 ;
 MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR (//)
 Colo_r:
@@ -4177,4 +4198,105 @@ Enable effects
 ;
 MSG_PREFSWIN_BACKGROUND_TRANSITION_HELP (//)
 Enable transition effects
+;
+MSG_RECOGNITION_DB_START (//)
+Configure Filetype Actions...
+;
+MSG_RECOGNITION_DB_0001 (//)
+Open
+;
+MSG_RECOGNITION_DB_0002 (//)
+Extract
+;
+MSG_RECOGNITION_DB_0003 (//)
+Extract To...
+;
+MSG_RECOGNITION_DB_0004 (//)
+Mount...
+;
+MSG_RECOGNITION_DB_0005 (//)
+Mount
+;
+MSG_RECOGNITION_DB_0006 (//)
+Insert (no mount)
+;
+MSG_RECOGNITION_DB_0007 (//)
+Burn to Disc...
+;
+MSG_RECOGNITION_DB_0008 (//)
+Open With...
+;
+MSG_RECOGNITION_DB_0009 (//)
+Open with VPDF...
+;
+MSG_RECOGNITION_DB_0010 (//)
+Open with Apdf...
+;
+MSG_RECOGNITION_DB_0011 (//)
+Open with Multiview...
+;
+MSG_RECOGNITION_DB_0012 (//)
+Open with OpenURL...
+;
+MSG_RECOGNITION_DB_0013 (//)
+Execute with RX...
+;
+MSG_RECOGNITION_DB_0014 (//)
+Execute with LuaX...
+;
+MSG_RECOGNITION_DB_0015 (//)
+Create LhA Archive...
+;
+MSG_RECOGNITION_DB_0016 (//)
+UnCompress with Bz2...
+;
+MSG_RECOGNITION_DB_0017 (//)
+Extract with UnRAR...
+;
+MSG_RECOGNITION_DB_0018 (//)
+Flush...
+;
+MSG_RECOGNITION_DB_0019 (//)
+Version...
+;
+MSG_RECOGNITION_DB_0020 (//)
+Play...
+;
+MSG_RECOGNITION_DB_0021 (//)
+Play with Multiview...
+;
+MSG_RECOGNITION_DB_0022 (//)
+View with Multiview...
+;
+MSG_RECOGNITION_DB_0023 (//)
+Multiview...
+;
+MSG_RECOGNITION_DB_0024 (//)
+ShowCase...
+;
+MSG_RECOGNITION_DB_0025 (//)
+Mysticview...
+;
+MSG_RECOGNITION_DB_0026 (//)
+Edit with Sketch...
+;
+MSG_RECOGNITION_DB_0027 (//)
+More...
+;
+MSG_RECOGNITION_DB_0028 (//)
+Edit...
+;
+; CONTEXT SUB MENU NAMES
+;
+MSG_RECOGNITION_DB_0029 (//)
+Open With
+;
+MSG_RECOGNITION_DB_0030 (//)
+View With
+;
+;
+; COMMAND TEXTS
+;
+MSG_RECOGNITION_DB_0031 (//)
+Select Destination...
 ;

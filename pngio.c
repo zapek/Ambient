@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: pngio.c,v 1.15.10.1 2024/01/18 18:23:23 piru Exp $
+ * $Id: pngio.c,v 1.17 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -474,7 +474,7 @@ static ULONG pngio_encode_image(struct pngio_context *ct, APTR fh)
 #endif
 
 
-STATIC BOOL pngio_write_chunks(APTR fh, struct pngio_context *ct, struct MinList *list)
+STATIC BOOL pngio_write_chunks(APTR fh, struct pngio_context *ct UNUSED, struct MinList *list)
 {
 	const struct pngio_chunk *chunk, *nextchunk;
 	BOOL retval = ISLISTEMPTY(list);

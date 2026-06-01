@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: ipc.c,v 1.10 2015/10/26 21:18:02 itix Exp $
+ * $Id: ipc.c,v 1.11 2025/08/09 16:51:41 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -36,9 +36,7 @@
 #include "mui_func.h"
 #include "args.h"
 #include "threads.h"
-#if USE_MULTIPLE_DESKTOP
-#include "screen.h"
-#endif
+
 /*
  * IPC is mostly used for workbench.library <-> Ambient communications.
  */
@@ -47,43 +45,6 @@ struct IpcData ipcdata;
 static struct MsgPort *ipcport;
 
 ULONG ipcsig;
-
-#if USE_MULTIPLE_DESKTOP
-ULONG ipc_init(void)
-{
-	static UBYTE portnamebuf[24]   = "Ambient IPC";
-	static UBYTE screennamebuf[24] = "Ambient.1";
-	ULONG portcnt = 0;
-
-	Forbid();
-	while (FindPort(portnamebuf))
-	{
-		portcnt++;
-		NewRawDoFmt("Ambient IPC.%lu", NULL, portnamebuf, portcnt);
-		DB(("ipc--%s--\n", portnamebuf));
-	}
-	Permit();
-
-
-	if (portcnt != 0)
-	{
-		NewRawDoFmt("Ambient.%lu", NULL, screennamebuf, portcnt);
-		create_screen(screennamebuf);
-	}
-
-	if ( (ipcport = AddExecNode(NULL,
-	                            SAL_Type, NT_MSGPORT,
-	                            SAL_Name, (ULONG) portnamebuf,
-	                            TAG_DONE)) )
-	{
-		ipcsig = 1L << ipcport->mp_SigBit;
-		return (TRUE);
-	}
-
-	return (FALSE);
-}
-
-#else
 
 ULONG ipc_init(void)
 {
@@ -108,7 +69,6 @@ ULONG ipc_init(void)
 	}
 	return (FALSE);
 }
-#endif
 
 void ipc_cleanup(void)
 {

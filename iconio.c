@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: iconio.c,v 1.32.6.4 2025/01/04 21:34:03 piru Exp $
+ * $Id: iconio.c,v 1.37 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -399,7 +399,7 @@ static STRPTR assign_to_filename(CONST_STRPTR filename)
 #endif
 
 
-static BPTR lock_icon(CONST_STRPTR filename, LONG is_assign)
+static BPTR lock_icon(CONST_STRPTR filename, LONG is_assign UNUSED)
 {
 	BPTR l;
 
@@ -427,7 +427,7 @@ static BPTR lock_icon(CONST_STRPTR filename, LONG is_assign)
 }
 
 
-static APTR open_icon(CONST_STRPTR filename, ULONG mode, LONG is_assign)
+static APTR open_icon(CONST_STRPTR filename, ULONG mode, LONG is_assign UNUSED)
 {
 	APTR fh;
 

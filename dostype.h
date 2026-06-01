@@ -1,7 +1,7 @@
 #ifndef AMBIENT_DOSTYPE_H
 #define AMBIENT_DOSTYPE_H
 /*
- * $Id: dostype.h,v 1.5 2009/09/10 22:54:43 tokai Exp $
+ * $Id: dostype.h,v 1.6 2026/05/03 10:42:01 cyfm Exp $
  */
 
 CONST_STRPTR dostype_get(ULONG id);
@@ -101,6 +101,7 @@ CONST_STRPTR dostype_get(ULONG id);
 #define FS_AMIGA_MSDOS_HF       0x4d534800
 #define FS_AMIGA_BFFS           0x42464653
 #define FS_AMIGA_SFS            0x53465300
+#define FS_AMIGA_SFS2           0x53465302
 
 #define FS_AMIGA_BAD            0x42414400
 #define FS_AMIGA_NDOS           0x4e444f53

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: navigationclass.c,v 1.8 2013/10/28 20:02:39 geit Exp $
+ * $Id: navigationclass.c,v 1.9 2025/07/23 23:54:26 geit Exp $
  */
 
 #include "ambient.h"
@@ -85,7 +85,7 @@ static ULONG ASL_StartFunc(void)
 		{
 			{ ASLFR_DoPatterns    , TRUE        },
 			{ ASLFR_RejectIcons   , TRUE        },
-			{ TAG_DONE            , NULL        }
+			{ TAG_DONE            , 0           }
 		};
 
 		stccpy(new, path, pathlen);
@@ -221,7 +221,7 @@ DEFNEW
 	data->pop_path = pop_path;
 	data->lv_entries = lv_entries;
 	data->history_path = NULL;
-	data->storageid = NULL;
+	data->storageid = 0;
 	data->disk_storage = FALSE;
 
 	data->StartHook.h_Entry = (HOOKFUNC)&StartGate;

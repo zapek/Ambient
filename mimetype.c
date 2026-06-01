@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: mimetype.c,v 1.24 2020/08/16 03:15:18 jacadcaps Exp $
+ * $Id: mimetype.c,v 1.27 2025/08/14 19:07:30 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -1987,6 +1987,35 @@ ULONG mimetype_checkpath(APTR mimetype, CONST_STRPTR path)
 	return rc;
 }
 
+APTR mimetype_duplicate(APTR ctx)
+{
+	struct mimetype_ctx *ct = ctx;
+	struct mimetype_ctx *out;
+	
+	if (!ctx)
+		return NULL;
+	
+	out = malloc(sizeof(*out));
+	if (out)
+	{
+		ULONG length;
+		memcpy(out, ct, sizeof(*out));
+		out->mimetype = out->description = NULL;
+
+#define MIME_STRCOPY(__field__) \
+	if (ct->__field__) { \
+	length = strlen(ct->__field__); \
+	out->__field__ = malloc(length + 1); \
+	if (!out->__field__) { mimetype_delete(out); return NULL; } \
+	memcpy(out->__field__, ct->__field__, length + 1); } else { \
+	out->__field__ = NULL; }
+		
+		MIME_STRCOPY(mimetype);
+		MIME_STRCOPY(description);
+	}
+	return out;
+}
+
 void mimetype_delete(APTR ctx)
 {
 	struct mimetype_ctx *ct = ctx;
@@ -2115,7 +2144,7 @@ void mimetype_invalidate(APTR imn, CONST_STRPTR mimetype)
 	DoMethod(app, MM_Application_WindowDoMethodByAttr, MA_Window_Type, MV_Window_Type_View,
 			MM_Window_DoView, NULL, MM_View_InvalidateMimeType, mimetype);
 
-	DoMethod(app, MM_Application_RootDoMethodByAttr, NULL, NULL,
+	DoMethod(app, MM_Application_DoMethodByAttr, MV_Window_ID_Root, NULL, NULL,
 			MM_Window_DoView, NULL, MM_View_InvalidateMimeType, mimetype);
 
 

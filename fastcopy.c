@@ -19,13 +19,14 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: fastcopy.c,v 1.21 2019/09/22 17:22:41 bitrocky Exp $
+ * $Id: fastcopy.c,v 1.24 2025/11/17 20:34:36 bitrocky Exp $
  */
 
 #include "ambient.h"
 
 /* public */
 #include <dos/dos.h>
+#include <dos/dostags.h>
 #include <libraries/asyncio.h>
 #include <proto/asyncio.h>
 #include <proto/exec.h>
@@ -174,8 +175,10 @@ STATIC ULONG fastcopy_cb(struct Hook *hook, APTR dummy, AsyncReadHookMsg *msg)
 
 		if (!aborted)
 		{
+			D(COPY,bug("Before WriteAsync(), fcd->totaldone = %ld\n", fcd->totaldone));
 			fcd->totaldone += WriteAsync( fcd->dest, msg->Buffer, msg->BytesInBuffer );
 			aborted = threads_check_abort();
+			D(COPY,bug("After  WriteAsync(), fcd->totaldone = %ld, aborted = %ld\n", fcd->totaldone, aborted));
 		}
 
 		if (aborted)
@@ -190,10 +193,19 @@ STATIC ULONG fastcopy_cb(struct Hook *hook, APTR dummy, AsyncReadHookMsg *msg)
 }
 #endif
 
+static const struct TagItem extags[] =
+{
+#ifdef EX64TAG_PosixDate
+	{EX64TAG_PosixDate, TRUE},
+#endif
+	{TAG_DONE,}
+};
+
 ULONG fastcopy( APTR obj, CONST_STRPTR from, CONST_STRPTR to, ULONG clone, ULONG *time, ULONG cnt, QUAD * totaldone, ULONG *reqflags )
 {
 #if COPYIO_USE_ASYNCIO
 	struct AsyncFile *af1, *af2;
+	LONG ioErr = 0; // will be used after CloseAsync() of the dest file, to check for an error
 #else
 	BPTR f1, f2;
 	ULONG own_alloc, blocksize;
@@ -336,10 +348,13 @@ ULONG fastcopy( APTR obj, CONST_STRPTR from, CONST_STRPTR to, ULONG clone, ULONG
 			{
 				struct FileInfoBlock fib;
 
+#ifdef fib_ActExtFlags
+				fib.fib_ActExtFlags = 0;
+#endif
 				#if COPYIO_USE_ASYNCIO
-				if (ExamineFH64(af1->af_File, &fib, NULL))
+				if (ExamineFH64(af1->af_File, &fib, LIB_MINVER(DOSBase, 51, 66) ? (struct TagItem *) extags : NULL))
 				#else
-				if (ExamineFH64(f1, &fib, NULL))
+				if (ExamineFH64(f1, &fib, LIB_MINVER(DOSBase, 51, 66) ? (struct TagItem *) extags : NULL))
 				#endif
 				{
 					D(COPY,bug("examinefh64()d ok -> %lld\n", fib.fib_Size64 ) );
@@ -416,7 +431,7 @@ ULONG fastcopy( APTR obj, CONST_STRPTR from, CONST_STRPTR to, ULONG clone, ULONG
 							#else
 							got2 = Write( f2, buf, got );
 							#endif
-
+							D(COPY,bug("got (read) = %ld, got2 (write) = %ld\n", got, got2));
 							if( totaldone )
 							{
 								( *totaldone ) += got2;
@@ -496,7 +511,16 @@ ULONG fastcopy( APTR obj, CONST_STRPTR from, CONST_STRPTR to, ULONG clone, ULONG
 						retval = FASTCOPY_OK;
 					}
 					#if COPYIO_USE_ASYNCIO
-					CloseAsync( af2 );
+					{
+						LONG res = CloseAsync( af2 );
+						D(COPY,bug("CloseAsync() = %ld\n", res));
+						if (res < 0)
+						{
+							ioErr = IoErr();
+							D(COPY,bug("ioErr = %ld\n", ioErr));
+							fileincomplete = TRUE;
+						}
+					}
 					#else
 					Close( f2 );
 					#endif
@@ -524,7 +548,16 @@ ULONG fastcopy( APTR obj, CONST_STRPTR from, CONST_STRPTR to, ULONG clone, ULONG
 						{
 							if( retval == FASTCOPY_OK )
 							{
-								if( !SetFileDate( to, &fib.fib_Date ) )
+								LONG dateres;
+
+#if defined(fib_ActExtFlags) && defined(FIBEXTF_POSIXDATE) && defined(SetFilePosixDate)
+								if( fib.fib_ActExtFlags & FIBEXTF_POSIXDATE )
+									dateres = SetFilePosixDate( to, &fib.fib_PosixDate, NULL );
+								else
+#endif
+									dateres = SetFileDate( to, &fib.fib_Date );
+
+								if( !dateres )
 								{
 									//smartreq_doserror( "Ambient copy", "Couldn't set the date of file %s", to );
 									D(COPY, bug("setfiledate failed\n"));
@@ -584,6 +617,10 @@ ULONG fastcopy( APTR obj, CONST_STRPTR from, CONST_STRPTR to, ULONG clone, ULONG
 	{
 		size_t rc;
 
+		#if COPYIO_USE_ASYNCIO
+		if (ioErr != 0) SetIoErr(ioErr);
+		#endif
+		
 		if (IoErr() == 0)
 			rc = smartreq_request_sync(NULL, "Ambient · Copy", "*_Delete|Keep", MV_Notification_Error, "File '%s' is not complete.", to);
 		else

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: menus.c,v 1.28 2023/01/18 02:53:09 jacadcaps Exp $
+ * $Id: menus.c,v 1.29 2025/08/13 16:17:01 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -37,7 +37,7 @@
 #include "actiondispatcherclass.h"
 #include "mimetype.h"
 #include "dragdrop.h"
-
+#include "screen.h"
 
 /*
  * Shortcuts:
@@ -260,7 +260,7 @@ void menus_execute(APTR app, APTR viewobj, LONG menunum)
 
 		/* Devicelist */
 		case MENU_WB_DEVICELIST:
-			DoMethod(app, MM_Application_OpenDevicesWindow, 0);
+			DoMethod(app, MM_Application_OpenDevicesWindow, 0, get_screen_pubname(viewobj));
 			break;
 
 		/* Execute command... */

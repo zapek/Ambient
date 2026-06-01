@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: executewinclass.c,v 1.13 2019/05/26 15:17:41 bitrocky Exp $
+ * $Id: executewinclass.c,v 1.15 2025/09/16 13:52:45 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -61,7 +61,6 @@ DEFNEW
 	APTR bt_ok, bt_cancel, pop_command, menClearAct, menClearAll;
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_ID, MAKE_ID('E','X','E','C'),
 		MUIA_Window_Title, GSI(MSG_EXEC_TITLE),

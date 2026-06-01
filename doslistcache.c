@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: doslistcache.c,v 1.21 2023/03/12 14:34:01 piru Exp $
+ * $Id: doslistcache.c,v 1.23 2025/08/17 17:18:57 piru Exp $
  */
 
 #include "ambient.h"
@@ -260,7 +260,7 @@ static struct dlcnode * add_dummydevice(struct dlcnode *dlc, struct InfoData *id
 	strcpy(dln->name, dlc->name);
 
 #if !USE_LEGACY
-	if ( !LIB_MINVER(&DOSBase->dl_lib, 51, 8) ||
+	if ( /*!LIB_MINVER(&DOSBase->dl_lib, 51, 8) ||*/
 	     !DoPkt(dlc->mp, ACTION_QUERY_ATTR, FQA_NumBlocks, (LONG) &numblocks, sizeof(numblocks), 0, 0) ||
 	     !DoPkt(dlc->mp, ACTION_QUERY_ATTR, FQA_NumBlocksUsed, (LONG) &numblocksused, sizeof(numblocksused), 0, 0)) {
 #endif
@@ -521,7 +521,7 @@ static ULONG isfilesystem_timeout(STRPTR name, ULONG ticks)
 					 * Lock("name:", ACCESS_READ);
 					 */
 					pkt->dp_Type = ACTION_LOCATE_OBJECT;
-					pkt->dp_Arg1 = NULL; /* zero lock */
+					pkt->dp_Arg1 = 0; /* zero lock */
 					pkt->dp_Arg2 = MKBADDR("");
 					pkt->dp_Arg3 = SHARED_LOCK;
 					if (dopkt(pkt, &me->pr_MsgPort, dvp->dvp_Port, ticks))

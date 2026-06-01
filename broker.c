@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: broker.c,v 1.5 2012/04/29 15:18:23 itix Exp $
+ * $Id: broker.c,v 1.6 2025/08/13 16:17:01 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -66,7 +66,7 @@ STATIC VOID BrokerFunc(void)
 									return;
 
 								case EXTRAWKEY_MYCOMPUTER:
-									DoMethod(app, MM_Application_OpenDevicesWindow, 0);
+									DoMethod(app, MM_Application_OpenDevicesWindow, 0, 0);
 									return;
 							}
 						}

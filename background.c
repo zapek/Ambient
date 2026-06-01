@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: background.c,v 1.24 2019/12/05 21:58:14 jacadcaps Exp $
+ * $Id: background.c,v 1.26 2025/08/14 19:07:30 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -49,6 +49,9 @@
 #include "gfx_blit.h"
 #include "recurse.h"
 #include "random.h"
+#include "threads.h"
+
+void dprintf(char *, ...) __attribute__ ((format (printf, 1, 2)));
 
 /************************************************************************/
 
@@ -151,12 +154,30 @@ ULONG tr_background_load( APTR obj, ULONG type, ULONG mode, CONST_STRPTR filenam
 			
 			if ( ( l = Lock( filename, ACCESS_READ ) ) )
 			{
-				struct Screen *screen = screen_lock();
+				struct Screen *screen = NULL;
+				int i;
 
-				if (screen)
+				switch (type)
 				{
-					rc = background_load(obj, type, mode, filename, l, screen);
-					screen_unlock(screen);
+				case TV_Background_Load_Type_Root:
+					for (i = 0; i <= AMBIENT_MAX_EXTRA_SCREENS; i++)
+					{
+						screen = screen_lock_by_id(i);
+						if (screen)
+						{
+							rc = background_load(obj, MV_Application_AddBackground_Root + i, mode, filename, l, screen);
+							screen_unlock(screen);
+						}
+					}
+					break;
+				case TV_Background_Load_Type_Window:
+					screen = screen_lock();
+					if (screen)
+					{
+						rc = background_load(obj, MV_Application_AddBackground_Window, mode, filename, l, screen);
+						screen_unlock(screen);
+					}
+					break;
 				}
 
 				UnLock(l);
@@ -174,254 +195,254 @@ ULONG tr_background_load( APTR obj, ULONG type, ULONG mode, CONST_STRPTR filenam
 
 STATIC ULONG background_load( APTR obj, ULONG type, ULONG mode, CONST_STRPTR filename, BPTR lock, struct Screen *screen )
 {
-				TEXT file[ PATH_SIZE ];
-				APTR dtp;
-				ULONG retval = FALSE;
-				ULONG showerror = TRUE;
-				D_S(struct FileInfoBlock, fib);
+	TEXT file[ PATH_SIZE ];
+	APTR dtp;
+	ULONG retval = FALSE;
+	ULONG showerror = TRUE;
+	D_S(struct FileInfoBlock, fib);
 
-				if( Examine( lock, fib ) )
+	if( Examine( lock, fib ) )
+	{
+		ULONG compositing = FALSE;
+
+		if( fib->fib_DirEntryType > 0 )
+		{
+			struct bgfilectx bgctx;
+			/*
+			 * User specified a directory. Try to get
+			 * a random file from it.
+			 */
+
+			NEWLIST( &bgctx.l );
+			showerror = FALSE; /* disable annoying errors if loading fails */
+			bgctx.cnt = 0;
+			bgctx.dircnt = 0;
+
+			recurse( obj, filename, "~(#?.(info|txt|readme))", enterdir, NULL, addfile, &bgctx ); /* XXX: retcode.. ? */
+
+			if( bgctx.cnt )
+			{
+				ULONG randnum;
+				struct bgfilenode *bgfn, *nextbgfn;
+
+				randnum = random_ulong() % bgctx.cnt;
+
+				bgfn = FIRSTNODE( &bgctx.l );
+
+				while( randnum-- )
 				{
-					ULONG compositing = FALSE;
+					bgfn = NEXTNODE( bgfn );
+				}
 
-					if( fib->fib_DirEntryType > 0 )
+				stccpy( file, bgfn->path, sizeof(file) );
+				filename = file;
+
+				/* XXX: we could try to Lock() it also? bah.. */
+
+				ITERATELISTSAFE( bgfn, nextbgfn, &bgctx.l )
+				{
+					free( bgfn );
+				}
+			}
+		}
+
+		GetAttr( SA_CompositingLayers, (Object *) screen,&compositing );
+
+		if( mode == BGRENDER_Tiled )
+		{
+			if ( ( dtp = datatypes_picture_create( filename, PICTAG_Screen, screen,
+															 PICTAG_VMem, compositing ? FALSE : TRUE,
+															 TAG_DONE ) ) )
+			{
+				#ifdef DEBUG
+				if( !compositing )
+					gfx_bitmap_check_vmem( picture_getattr( dtp, PICTURE_BITMAP ) );
+				#endif
+
+				methodstack_push_sync( obj, 3, MM_Application_AddBackground, type, dtp );
+				retval = TRUE;
+			}
+		}
+		else if( mode == BGRENDER_Scaled || mode == BGRENDER_Stretched )
+		{
+			ULONG txs, tys;
+
+			txs = screen->Width;
+			tys = screen->Height;// - (GetSkinInfoAttr(GetScreenDrawInfo(screen), SI_ScreenTitlebarHeight, TAG_DONE));
+
+			if ( ( dtp = datatypes_picture_create( filename, PICTAG_ARGB32, TRUE, TAG_DONE ) ) )
+			{
+				/*
+				 * BitMapScale() is stupid and uses filtering only if the destination is
+				 * ARGB32, something our internal scaler does better. So unfortunately we have
+				 * to allocate bitmaps 3 times.
+				 */
+				APTR bm;
+				
+				ULONG w = (ULONG) picture_getattr( dtp, PICTURE_WIDTH  );
+				ULONG h = (ULONG) picture_getattr( dtp, PICTURE_HEIGHT );
+
+				if( mode == BGRENDER_Scaled )
+				{
+					gfx_scale_calc_aspect_constraints( w, h, &txs, &tys );
+				}
+
+				if ( ( bm = gfx_bitmap_create( txs, tys, 32, BITMAPTAG_Format, BITMAPVAL_Format_ARGB32, TAG_DONE ) ) )
+				{
+					APTR tbm;
+
+					if ( gfx_scale( picture_getattr( dtp, PICTURE_BITMAP), bm, txs, tys,
+											SCALETAG_Nearest, TRUE,
+											SCALETAG_Bilinear, TRUE,
+											SCALETAG_Average, TRUE,
+											TAG_DONE ) )
 					{
-						struct bgfilectx bgctx;
-						/*
-						 * User specified a directory. Try to get
-						 * a random file from it.
-						 */
-
-						NEWLIST( &bgctx.l );
-						showerror = FALSE; /* disable annoying errors if loading fails */
-						bgctx.cnt = 0;
-						bgctx.dircnt = 0;
-
-						recurse( obj, filename, "~(#?.(info|txt|readme))", enterdir, NULL, addfile, &bgctx ); /* XXX: retcode.. ? */
-
-						if( bgctx.cnt )
+						if ( ( tbm = gfx_bitmap_create(txs, tys, BITMAPDEPTH_Clone, BITMAPTAG_VMem, compositing ? FALSE : TRUE, BITMAPTAG_ScreenFriend, screen, TAG_DONE ) ) )
 						{
-							ULONG randnum;
-							struct bgfilenode *bgfn, *nextbgfn;
+							gfx_blit( bm, tbm, TAG_DONE );
 
-							randnum = random_ulong() % bgctx.cnt;
-
-							bgfn = FIRSTNODE( &bgctx.l );
-
-							while( randnum-- )
-							{
-								bgfn = NEXTNODE( bgfn );
-							}
-
-							stccpy( file, bgfn->path, sizeof(file) );
-							filename = file;
-
-							/* XXX: we could try to Lock() it also? bah.. */
-
-							ITERATELISTSAFE( bgfn, nextbgfn, &bgctx.l )
-							{
-								free( bgfn );
-							}
-						}
-					}
-
-					GetAttr( SA_CompositingLayers, (Object *) screen,&compositing );
-
-					if( mode == BGRENDER_Tiled )
-					{
-						if ( ( dtp = datatypes_picture_create( filename, PICTAG_Screen, screen,
-																		 PICTAG_VMem, compositing ? FALSE : TRUE,
-																		 TAG_DONE ) ) )
-						{
 							#ifdef DEBUG
-							if( !compositing )
-								gfx_bitmap_check_vmem( picture_getattr( dtp, PICTURE_BITMAP ) );
+							if (!compositing)
+								gfx_bitmap_check_vmem( tbm );
 							#endif
-
+						
+							picture_set_bitmap( dtp, tbm );
 							methodstack_push_sync( obj, 3, MM_Application_AddBackground, type, dtp );
 							retval = TRUE;
 						}
 					}
-					else if( mode == BGRENDER_Scaled || mode == BGRENDER_Stretched )
+					gfx_bitmap_delete( bm );
+				}
+					
+				if( !retval )
+				{
+					picture_delete( dtp );
+				}
+			}
+		}
+		else if( mode == BGRENDER_Zoomed )
+		{
+			ULONG txs, tys;
+			ULONG swidth, sheight;
+
+			/*
+			 * In this mode we scale image so it will fill screen without borders and after that
+			 * we crop additional space which was produced in a process.
+			 */
+
+			swidth  = txs = screen->Width;
+			sheight = tys = screen->Height - (GetSkinInfoAttr( GetScreenDrawInfo(screen), SI_ScreenTitlebarHeight, TAG_DONE ) );
+
+			if ( ( dtp = datatypes_picture_create(filename, PICTAG_ARGB32, TRUE, TAG_DONE ) ) )
+			{
+				/*
+				 * BitMapScale() is stupid and uses filtering only if the destination is
+				 * ARGB32, something our internal scaler does better. So unfortunately we have
+				 * to allocate bitmaps 3 times.
+				 */
+
+				APTR bm;
+
+				ULONG w = (ULONG) picture_getattr( dtp, PICTURE_WIDTH  );
+				ULONG h = (ULONG) picture_getattr( dtp, PICTURE_HEIGHT );
+
+				ULONG txs1 = txs , tys1 = 9999; /* give it 'infinite' space horizontaly */
+				ULONG txs2 = 9999, tys2 = tys;  /* same verticaly */
+
+				gfx_scale_calc_aspect_constraints( w, h, &txs1, &tys1 );
+				gfx_scale_calc_aspect_constraints( w, h, &txs2, &tys2 );
+
+				/* choose bigger image to make sure it fills the screen completely */
+
+				if( txs1 > txs2 )
+				{
+					txs = txs1; tys = tys1;
+				} else {
+					txs = txs2; tys = tys2;
+				}
+
+				if ( ( bm = gfx_bitmap_create( txs, tys, 32, BITMAPTAG_Format, BITMAPVAL_Format_ARGB32, TAG_DONE ) ) )
+				{
+					APTR tbm;
+
+					if( gfx_scale( picture_getattr( dtp, PICTURE_BITMAP ), bm, txs, tys,
+							SCALETAG_Nearest, TRUE,
+							SCALETAG_Bilinear, TRUE,
+							SCALETAG_Average, TRUE,
+							TAG_DONE ) )
 					{
-						ULONG txs, tys;
+						ULONG memory = 0;
+						Object *monitor = NULL;
+						GetAttr(SA_MonitorObject, (Object *)screen, (ULONG*)&monitor);
+						GetAttr(MA_MemorySize, monitor, &memory);
 
-						txs = screen->Width;
-						tys = screen->Height;// - (GetSkinInfoAttr(GetScreenDrawInfo(screen), SI_ScreenTitlebarHeight, TAG_DONE));
-
-						if ( ( dtp = datatypes_picture_create( filename, PICTAG_ARGB32, TRUE, TAG_DONE ) ) )
+						// On systems with lots of vmem, allow the bitmap to vmem in this case to allow for accelerated transitions
+						if (memory > MINIMUM_TRANSITIONS_VMEM)
+							compositing = FALSE;
+						
+						if ( ( tbm = gfx_bitmap_create( swidth, sheight, BITMAPDEPTH_Clone, BITMAPTAG_VMem, compositing ? FALSE : TRUE,BITMAPTAG_ScreenFriend, screen, TAG_DONE ) ) )
 						{
-							/*
-							 * BitMapScale() is stupid and uses filtering only if the destination is
-							 * ARGB32, something our internal scaler does better. So unfortunately we have
-							 * to allocate bitmaps 3 times.
-							 */
-							APTR bm;
-							
-							ULONG w = (ULONG) picture_getattr( dtp, PICTURE_WIDTH  );
-							ULONG h = (ULONG) picture_getattr( dtp, PICTURE_HEIGHT );
+							LONG ox = 0;
+							LONG oy = 0;
 
-							if( mode == BGRENDER_Scaled )
+							/* when blitting, cut off additional borders (limit to screen dimensions) if neded */
+
+							if (txs > swidth)
 							{
-								gfx_scale_calc_aspect_constraints( w, h, &txs, &tys );
+								ox = ( txs - swidth  ) / 2;
+							}
+							if (tys > sheight)
+							{
+								oy = ( tys - sheight ) / 2;
 							}
 
-							if ( ( bm = gfx_bitmap_create( txs, tys, 32, BITMAPTAG_Format, BITMAPVAL_Format_ARGB32, TAG_DONE ) ) )
-							{
-								APTR tbm;
+							gfx_blit( bm, tbm,
+								BLITTAG_DstWidth, swidth,
+								BLITTAG_DstHeight, sheight,
+								BLITTAG_SrcX, ox,
+								BLITTAG_SrcY, oy,
+								TAG_DONE );
 
-								if ( gfx_scale( picture_getattr( dtp, PICTURE_BITMAP), bm, txs, tys,
-														SCALETAG_Nearest, TRUE,
-														SCALETAG_Bilinear, TRUE,
-														SCALETAG_Average, TRUE,
-														TAG_DONE ) )
-								{
-									if ( ( tbm = gfx_bitmap_create(txs, tys, BITMAPDEPTH_Clone, BITMAPTAG_VMem, compositing ? FALSE : TRUE, BITMAPTAG_ScreenFriend, screen, TAG_DONE ) ) )
-									{
-										gfx_blit( bm, tbm, TAG_DONE );
+							#ifdef DEBUG
+							if (!compositing)
+								gfx_bitmap_check_vmem( tbm );
+							#endif
 
-										#ifdef DEBUG
-										if (!compositing)
-											gfx_bitmap_check_vmem( tbm );
-										#endif
-									
-										picture_set_bitmap( dtp, tbm );
-										methodstack_push_sync( obj, 3, MM_Application_AddBackground, type, dtp );
-										retval = TRUE;
-									}
-								}
-								gfx_bitmap_delete( bm );
-							}
-								
-							if( !retval )
-							{
-								picture_delete( dtp );
-							}
-						}
-					}
-					else if( mode == BGRENDER_Zoomed )
-					{
-						ULONG txs, tys;
-						ULONG swidth, sheight;
-
-						/*
-						 * In this mode we scale image so it will fill screen without borders and after that
-						 * we crop additional space which was produced in a process.
-						 */
-
-						swidth  = txs = screen->Width;
-						sheight = tys = screen->Height - (GetSkinInfoAttr( GetScreenDrawInfo(screen), SI_ScreenTitlebarHeight, TAG_DONE ) );
-
-						if ( ( dtp = datatypes_picture_create(filename, PICTAG_ARGB32, TRUE, TAG_DONE ) ) )
-						{
-							/*
-							 * BitMapScale() is stupid and uses filtering only if the destination is
-							 * ARGB32, something our internal scaler does better. So unfortunately we have
-							 * to allocate bitmaps 3 times.
-							 */
-
-							APTR bm;
-
-							ULONG w = (ULONG) picture_getattr( dtp, PICTURE_WIDTH  );
-							ULONG h = (ULONG) picture_getattr( dtp, PICTURE_HEIGHT );
-
-							ULONG txs1 = txs , tys1 = 9999; /* give it 'infinite' space horizontaly */
-							ULONG txs2 = 9999, tys2 = tys;  /* same verticaly */
-
-							gfx_scale_calc_aspect_constraints( w, h, &txs1, &tys1 );
-							gfx_scale_calc_aspect_constraints( w, h, &txs2, &tys2 );
-
-							/* choose bigger image to make sure it fills the screen completely */
-
-							if( txs1 > txs2 )
-							{
-								txs = txs1; tys = tys1;
-							} else {
-								txs = txs2; tys = tys2;
-							}
-
-							if ( ( bm = gfx_bitmap_create( txs, tys, 32, BITMAPTAG_Format, BITMAPVAL_Format_ARGB32, TAG_DONE ) ) )
-							{
-								APTR tbm;
-
-								if( gfx_scale( picture_getattr( dtp, PICTURE_BITMAP ), bm, txs, tys,
-										SCALETAG_Nearest, TRUE,
-										SCALETAG_Bilinear, TRUE,
-										SCALETAG_Average, TRUE,
-										TAG_DONE ) )
-								{
-									ULONG memory = 0;
-									Object *monitor = NULL;
-									GetAttr(SA_MonitorObject, (Object *)screen, (IPTR)&monitor);
-									GetAttr(MA_MemorySize, monitor, &memory);
-
-									// On systems with lots of vmem, allow the bitmap to vmem in this case to allow for accelerated transitions 
-									if (memory > MINIMUM_TRANSITIONS_VMEM)
-										compositing = FALSE;
-									
-									if ( ( tbm = gfx_bitmap_create( swidth, sheight, BITMAPDEPTH_Clone, BITMAPTAG_VMem, compositing ? FALSE : TRUE,BITMAPTAG_ScreenFriend, screen, TAG_DONE ) ) )
-									{
-										LONG ox = 0;
-										LONG oy = 0;
-
-										/* when blitting, cut off additional borders (limit to screen dimensions) if neded */
-
-										if (txs > swidth)
-										{
-											ox = ( txs - swidth  ) / 2;
-										}
-										if (tys > sheight)
-										{
-											oy = ( tys - sheight ) / 2;
-										}
-
-										gfx_blit( bm, tbm,
-											BLITTAG_DstWidth, swidth,
-											BLITTAG_DstHeight, sheight,
-											BLITTAG_SrcX, ox,
-											BLITTAG_SrcY, oy,
-											TAG_DONE );
-
-										#ifdef DEBUG
-										if (!compositing)
-											gfx_bitmap_check_vmem( tbm );
-										#endif
-
-										picture_set_bitmap( dtp, tbm );
-										methodstack_push_sync( obj, 3, MM_Application_AddBackground, type, dtp );
-										retval = TRUE;
-									}
-								}
-								gfx_bitmap_delete( bm );
-							}
-
-							if( !retval )
-							{
-								picture_delete( dtp );
-							}
-						}
-					}
-					else if ( mode == BGRENDER_Centered )
-					{
-						if ( ( dtp = datatypes_picture_create( filename,
-								PICTAG_Screen, screen,
-								PICTAG_ARGB32, TRUE,
-								TAG_DONE ) ) ) /* some datatypes return formats that disturb cgx so we convert */
-						{
-							methodstack_push_sync(obj, 3, MM_Application_AddBackground, type, dtp);
+							picture_set_bitmap( dtp, tbm );
+							methodstack_push_sync( obj, 3, MM_Application_AddBackground, type, dtp );
 							retval = TRUE;
 						}
 					}
+					gfx_bitmap_delete( bm );
 				}
-				
-				if (!retval)
+
+				if( !retval )
 				{
-					if( showerror )
-					{
-						smartreq_info("Ambient Background", MV_Notification_Warning, "Background %s\ncouldn't be loaded by the datatypes subsystem.\nCheck that you have a datatype installed for the kind of image format you're\ntrying to use as a background.", filename);
-					}
-					return( FALSE );
+					picture_delete( dtp );
 				}
+			}
+		}
+		else if ( mode == BGRENDER_Centered )
+		{
+			if ( ( dtp = datatypes_picture_create( filename,
+					PICTAG_Screen, screen,
+					PICTAG_ARGB32, TRUE,
+					TAG_DONE ) ) ) /* some datatypes return formats that disturb cgx so we convert */
+			{
+				methodstack_push_sync(obj, 3, MM_Application_AddBackground, type, dtp);
+				retval = TRUE;
+			}
+		}
+	}
+	
+	if (!retval)
+	{
+		if( showerror )
+		{
+			smartreq_info("Ambient Background", MV_Notification_Warning, "Background %s\ncouldn't be loaded by the datatypes subsystem.\nCheck that you have a datatype installed for the kind of image format you're\ntrying to use as a background.", filename);
+		}
+		return( FALSE );
+	}
 
 	return( TRUE );
 }

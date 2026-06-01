@@ -19,7 +19,7 @@
  * long with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: listviewclass.c,v 1.79 2023/01/12 20:33:12 jacadcaps Exp $
+ * $Id: listviewclass.c,v 1.86 2026/04/20 16:37:58 piru Exp $
  */
 
 #include "ambient.h"
@@ -3980,7 +3980,7 @@ DEFSMETHOD(Notify_Change)
 						ead.ed_Days     = fi.fi_Date.ds_Days;
 						ead.ed_Mins     = fi.fi_Date.ds_Minute;
 						ead.ed_Ticks    = fi.fi_Date.ds_Tick;
-						ead.ed_Comment  = fi.fi_Comment;
+						ead.ed_Comment  = fi.fi_Comment[0] ? fi.fi_Comment : NULL;
 						ead.ed_OwnerUID = fi.fi_OwnerUID;
 						ead.ed_OwnerGID = fi.fi_OwnerGID;
 						#if !USE_LEGACY
@@ -4211,7 +4211,7 @@ DEFMMETHOD(ContextMenuBuild)
 			{
 				if(1) //????  (tn = malloc(sizeof(*tn) + strlen(data->path) + 1)) )
 				{
-					Object *mimeTypeObject = DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
+					Object *mimeTypeObject = (Object*) DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
 					NEWLIST(l);
 
 					for(pos=0;;pos++)
@@ -4279,9 +4279,9 @@ DEFMMETHOD(ContextMenuBuild)
 					contextmenu_add_global( data->cmenu, NULL, globaltype );
 
 					/* Add mimetype menu */
-					if ( xget(mimeTypeObject, MA_Mimetype_Type) != NULL )
+					if ( xget(mimeTypeObject, MA_Mimetype_Type) != 0 )
 					{
-						struct internal_mimetype_node *imn = xget(mimeTypeObject, MA_Mimetype_Type);
+						struct internal_mimetype_node *imn = (APTR) xget(mimeTypeObject, MA_Mimetype_Type);
 						D(MIMETYPE,bug("Common mimetype:%s\n", imn->mimetype ));
 
 						contextmenu_add_mime( data->cmenu, NULL, imn );
@@ -4382,7 +4382,7 @@ DEFMMETHOD(ContextMenuBuild)
 						 */
 
 						LONG cnt = 0;
-						Object *mimeTypeObject = DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
+						Object *mimeTypeObject = (Object*) DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
 
 						if (do_action(data->list, TA_MimeType_Scan,
 						          TT_MimeType_Scan_Path, path,
@@ -4568,6 +4568,14 @@ DEFMMETHOD(ContextMenuChoice)
 					listview_reset_to_default(obj, data);
 
 					return (0);
+				}
+				/* Ugly Hack: Abort the preview to unlock the file. This makes it possible
+				   to actually delete it. This doesn't solve the the issue that the selected
+				   file is still locked from deletion, for example from shell.
+				   See MT#2841 for discussion. */
+				if(!stricmp(cm->args, "Delete"))
+				{
+					listview_abort_thread(TA_Listview_ShowPreview, FALSE, obj, data);
 				}
 			}
 			#endif
@@ -5405,6 +5413,13 @@ DEFTMETHOD(Listview_RunPreviewThread)
 		LONG percent = -1;
 		if(video_validate((STRPTR) getv(al->obj, MA_Icon_Path) , (APTR) getv(al->obj, MA_Icon_MimeType), &percent))
 		{
+      /*
+       * Ensure that the iconobj cannot be disposed while
+       * the videopreview thread is working on it. - Piru
+       */
+      //kprintf("%s: OM_RETAIN al->obj %p\n", __func__, al->obj);
+      DoMethod(al->obj, OM_RETAIN);
+
 			if(do_action(obj, TA_Listview_ShowPreview,
 				TT_Listview_Entry, al->obj,
 				TT_Listview_Data, data,
@@ -5412,6 +5427,10 @@ DEFTMETHOD(Listview_RunPreviewThread)
 			{
 				rc = TRUE;
 			}
+      else
+      {
+        DoMethod(al->obj, OM_RELEASE);
+      }
 		}
 #endif
 	}
@@ -5490,9 +5509,9 @@ ULONG tr_listview_showpreview(APTR obj, APTR entry, APTR d)
 	APTR oldimage = NULL;
 	APTR bitmapobject = NULL;
 	struct timerequest * timer;
-	struct timeval tv;
-	struct timeval tv_start;
-	struct timeval tv_end;
+	struct TimeVal tv;
+	struct TimeVal tv_start;
+	struct TimeVal tv_end;
 	ULONG  elapsed = 0;
 	double framerate = 24.0;
 	APTR winsave = _win(obj);
@@ -5627,7 +5646,10 @@ ULONG tr_listview_showpreview(APTR obj, APTR entry, APTR d)
 										}
 									}
 
-									ThbNextFrame(thumb);
+									if (!ThbNextFrame(thumb))
+									{
+										abort = TRUE;
+									}
 								}
 								else
 								{
@@ -5668,6 +5690,13 @@ ULONG tr_listview_showpreview(APTR obj, APTR entry, APTR d)
 
 		timer_delete(timer);
 	}
+
+  /*
+   * We no longer access the iconobj in question, so let it
+   * to be disposed. - Piru
+   */
+  //kprintf("%s: OM_RELEASE entry %p\n", __func__, entry);
+  methodstack_push(entry, 1, OM_RELEASE);
 
 #endif
 

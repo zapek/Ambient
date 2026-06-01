@@ -1,5 +1,5 @@
 #
-# $Id: makefile.rules,v 1.13 2017/07/29 00:27:51 cyfm Exp $
+# $Id: makefile.rules,v 1.19 2026/02/08 13:42:00 kronos Exp $
 #
 
 #
@@ -161,3 +161,33 @@ cryptstr.o: default_cryptstr.c tcrypt cryptstr.txt
 	$(ECHO) "CRYPT $(notdir $<) -> $@"
 	$(OUT)./tcrypt ../../cryptstr.txt cryptstr.c cryptstr.h
 	$(OUT)$(CC) $(CFLAGS) $*.c
+
+#
+# panel
+#
+panel: ambient_includes
+	cd panel; make -f makefile all
+	cd panelprefs; make -f makefile all
+
+#
+# create provisional includes for ambient.library
+#
+
+ambient_includes: includes-private/fd/ambient_lib.fd  includes-private/proto/ambient.h includes-private/ppcinline/ambient.h 
+
+includes-private/fd/ambient_lib.fd: ambient_lib.c
+	@mkdir -p includes-private/fd
+ifeq ($(shell uname), MorphOS)
+	genfd.pl ambient_lib.c > includes-private/fd/ambient_lib.fd
+else
+	../development/tools/genfd/genfd.pl ambient_lib.c > includes-private/fd/ambient_lib.fd
+endif
+
+includes-private/proto/ambient.h:  ambient_lib.c
+	@mkdir -p includes-private/proto
+	cvinclude.pl --fd includes-private/fd/ambient_lib.fd --proto $@
+
+includes-private/ppcinline/ambient.h:  ambient_lib.c includes-private/clib/ambient_protos.h
+	@mkdir -p includes-private/ppcinline
+	cvinclude.pl --fd includes-private/fd/ambient_lib.fd --clib includes-private/clib/ambient_protos.h --inline $@
+

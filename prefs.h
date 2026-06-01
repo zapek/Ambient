@@ -1,7 +1,7 @@
 #ifndef AMBIENT_PREFS_H
 #define AMBIENT_PREFS_H
 /*
- * $Id: prefs.h,v 1.22 2018/08/20 21:55:17 itix Exp $
+ * $Id: prefs.h,v 1.24 2026/04/25 23:05:00 jacadcaps Exp $
  */
 
 /*
@@ -115,6 +115,7 @@
 #define DSI_MISC_TRAPMULTIVIEW         (DSI_MISC + 12)
 #define DSI_MISC_CONTEXTMENUIMAGES     (DSI_MISC + 13)
 #define DSI_MISC_CREATEICONFORNEWDRAWER (DSI_MISC + 14)
+#define DSI_MISC_HIDEDOTFILENAMES      (DSI_MISC + 15)
 
 /* Icon options */
 #define DSI_ICON                (DSI_GROUP(6))
@@ -261,6 +262,7 @@ enum {
 #define DSI_PANELGROUP_BACKCOLOR	          (DSI_PANELGROUP + 22)
 #define DSI_PANELGROUP_BACKDROP		          (DSI_PANELGROUP + 23)
 #define DSI_PANELGROUP_HIDEDRAGBAR            (DSI_PANELGROUP + 24)
+#define DSI_PANELGROUP_DOCKMODE               (DSI_PANELGROUP + 25)
 
 /* Panel (listpool) */
 #define DSI_LISTPOOL_PANEL                    (DSI_GROUP(13) | DSF_LISTPOOL)
@@ -520,6 +522,9 @@ struct global_prefs {
 	/* startup prefs */
 	ULONG misc_remember_windows;
 	ULONG misc_remember_documents;
+
+	/* here because fuck you, getprefs_ctx isn't O(1) */
+	ULONG hide_dot_filenames;
 };
 
 extern struct global_prefs *gprefs;

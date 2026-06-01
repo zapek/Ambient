@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: mimeadjustgroupclass.c,v 1.12 2016/01/02 19:07:23 itix Exp $
+ * $Id: mimeadjustgroupclass.c,v 1.14 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -481,7 +481,7 @@ DEFNEW
 
 	if (!obj)
 	{
-		return (NULL);
+		return ((ULONG)NULL);
 	}
 
 	data = INST_DATA(cl, obj);
@@ -565,14 +565,14 @@ DEFNEW
 	if(!data->mime_node_temp)
 	{
 		CoerceMethod(cl, obj, OM_DISPOSE);
-		return (NULL);
+		return ((ULONG)NULL);
 	}
 
 	/* fill with mimetype information */
 	if(!mimeadjustgroup_refresh_mimetype(obj, data, mimetype))
 	{
 		CoerceMethod(cl, obj, OM_DISPOSE);
-		return (NULL);
+		return ((ULONG)NULL);
 	}
 
 	DoMethod(obj, MUIM_MultiSet, MUIA_CycleChain, 1,
@@ -848,13 +848,24 @@ DEFTMETHOD(Mimeadjustgroup_Action_Remove)
 {
 	GETDATA;
 	struct ActionEntry * ae;
+
 	DoMethod(data->lst_actions, MUIM_List_GetEntry,  MUIV_List_GetEntry_Active, (ULONG *)&ae);
 
 	if(ae)
 	{
+/*	
+		do this after accessing ae->action_node, because MUIM_List_Remove changes ae->action_node! Its 0xefefefef afterwards!
+		DB(("Before MUIM_List_Remove, ae->action_node = 0x%08lx, ae->name = '%s'\n", ae->action_node, ae->name));
 		DoMethod(data->lst_actions, MUIM_List_Remove, MUIV_List_Remove_Active);
+		DB(("After MUIM_List_Remove, ae->action_node = 0x%08lx\n", ae->action_node));
+*/
+	
 		REMOVE(ae->action_node);
 		actionnode_delete(ae->action_node);
+
+		DB(("Before MUIM_List_Remove, ae->action_node = 0x%08lx, ae->name = '%s'\n", ae->action_node, ae->name));
+		DoMethod(data->lst_actions, MUIM_List_Remove, MUIV_List_Remove_Active);
+		DB(("After MUIM_List_Remove, ae->action_node = 0x%08lx\n", ae->action_node));
 
 		/* if there are no own actions, add foreign actions list again, if it exists */
 		if(!data->generic && ISLISTEMPTY(data->mime_node_temp->action_list))
@@ -935,14 +946,14 @@ DEFSMETHOD(Mimeadjustgroup_Accept)
 			if(data->generic)
 			{
 				stccpy(descriptor, PREFS_PATH "filetypes/", sizeof(descriptor));
-				strncat(descriptor, cycleopts[getv(data->cyc_mime, MUIA_Cycle_Active)], sizeof(descriptor));
-				strncat(descriptor, "/", sizeof(descriptor));
-				strncat(descriptor, "default", sizeof(descriptor));
+				strncat(descriptor, cycleopts[getv(data->cyc_mime, MUIA_Cycle_Active)], sizeof(descriptor)-1);
+				strncat(descriptor, "/", sizeof(descriptor)-1);
+				strncat(descriptor, "default", sizeof(descriptor)-1);
 			}
 			else
 			{
 				stccpy(descriptor, PREFS_PATH "filetypes/", sizeof(descriptor));
-				strncat(descriptor, data->mime_node_temp->mimetype, sizeof(descriptor));
+				strncat(descriptor, data->mime_node_temp->mimetype, sizeof(descriptor)-1);
 			}
 
 			data->mime_node_temp->descriptor = name_build(descriptor);

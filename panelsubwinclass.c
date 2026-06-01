@@ -1,5 +1,6 @@
-
 #include "ambient.h"
+
+#if USE_INTERNAL_PANELS
 
 #include <proto/gadtools.h>
 #include <proto/dos.h>
@@ -36,7 +37,7 @@ struct Data
 	APTR                        group;
 	APTR                        parent;
 	APTR                        nctx;
-	struct timeval              open_time;
+	struct TimeVal              open_time;
 	BOOL                        timeout;
 	struct MUI_InputHandlerNode ihnode;
 };
@@ -205,7 +206,7 @@ DEFTMETHOD(Panelsubwin_ParseDir)
 			char iconpath[ PARSEDIR_PATH_SIZEOF ];
 			char path[ PARSEDIR_PATH_SIZEOF ];
 
-			eac->eac_LastKey = NULL;
+			eac->eac_LastKey = 0;
 			while( e )
 			{
 				e = ExAll( conflock, (struct ExAllData*) confListBuffer, PARSEDIR_BUFFER_SIZEOF, ED_NAME, eac );
@@ -257,7 +258,7 @@ DEFTMETHOD(Panelwin_SaveConfig)
 DEFSMETHOD(Panelsubwin_Open)
 {
 	GETDATA;
-    struct timeval currenttime;
+    struct TimeVal currenttime;
 	BOOL winclose = FALSE;
 
 	if( msg->open )
@@ -525,18 +526,18 @@ DEFTMETHOD(Panel_Settings_Group)
 	ULONG RGB[3],color;
 	ULONG alpha_val;
 	ULONG mode;
-	ULONG aslshow   = FALSE;
-	ULONG colorshow = FALSE;
-	ULONG spaceshow = FALSE;
+//	ULONG aslshow   = FALSE;
+//	ULONG colorshow = FALSE;
+//	ULONG spaceshow = FALSE;
 
 	static STRPTR cyc_backmodes[ MSG_PANELSUBWIN_BACKMODE_CLONE - MSG_PANELSUBWIN_BACKMODE_COLOR + 2 ];
 
 	get( data->group, MA_Panelgroup_BackColor, &color );
 	get( data->group, MA_Panelgroup_BackMode , &mode );
 
-	if( mode == MV_Panelgroup_BackMode_Picture ) aslshow =TRUE;
-	else if( mode == MV_Panelgroup_BackMode_Color ) colorshow =TRUE;
-	else spaceshow = TRUE;
+//	if( mode == MV_Panelgroup_BackMode_Picture ) aslshow =TRUE;
+//	else if( mode == MV_Panelgroup_BackMode_Color ) colorshow =TRUE;
+//	else spaceshow = TRUE;
 
 	RGB[0] = ( color >> 16 ) << 24;
 	RGB[1] = ( color >> 8  ) << 24;
@@ -627,4 +628,4 @@ ENDMTABLE
 
 
 DECSUBCLASS_NC(MUIC_Window,  panelsubwinclass)
-
+#endif

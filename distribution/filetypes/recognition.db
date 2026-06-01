@@ -2,7 +2,7 @@
 ;
 ;
 ;  File Format Recognition Database
-;  $VER: recognition.db 1.46 (17.02.2024) © 2006-2024 Christian Rosentreter, Harry Sintonen
+;  $VER: recognition.db 1.47 (25.05.2026) © 2006-2026 Christian Rosentreter, Harry Sintonen
 ;
 ;  Additional Contributions By:
 ;      Fabien Coerjoly,
@@ -10,7 +10,7 @@
 ;      Michal Wozniak.
 ;
 ;
-;  $Id: recognition.db,v 1.70.4.6 2024/02/17 14:38:14 piru Exp $
+;  $Id: recognition.db,v 1.83 2026/05/18 11:23:40 piru Exp $
 ;
 
 ;
@@ -139,7 +139,7 @@ Type internal/x-morphos-globalaction-directory
 Match
 	End
 Action
-	Name Create Archive...
+	Name Create LhA Archive...
 	Event Menu
 	Command AMIGADOS MOSSYS:C/LhA a -r -a `MOSSYS:C/RequestFile` %sp
 	;Command AMIGADOS MOSSYS:C/LhA a -r -a %sp.lha %sp
@@ -230,7 +230,7 @@ Action
 Action
 	Name Extract To...
 	Event Menu
-	Command AMIGADOS MOSSYS:C/LhA -I x %sp `MOSSYS:C/RequestFile DRAWERSONLY TITLE "Select Destination..."`
+	Command AMIGADOS Execute MOSSYS:Ambient/Scripts/LhAExtractTo %sp TITLE "${Select Destination...}" POSITIVE "${Extract}"
 	Flag cd destination
 	End
 End
@@ -879,13 +879,7 @@ Match
 	Match $425A68
 	End
 Action
-    Name Open
-    Event Menu
-    Command INTERNAL loaduri "vfs:///%sp?type=xad" VIEWID %Si
-	Flag unquoted
-    End
-Action
-	Name UnCompress with Bz2...
+	Name UnCompress with Bz2
 	Event DoubleClick
 	Command AMIGADOS Run DETACH PRI -1 MOSSYS:C/Bz2 FROM %sp TO `MOSSYS:C/List %sp LFORMAT "*"%m*""` DECOMPRESS PM
 	Flag cd source
@@ -903,13 +897,7 @@ Match
 	Match $425A68
 	End
 Action
-    Name Open
-    Event Menu
-    Command INTERNAL loaduri "vfs:///%sp?type=xad" VIEWID %Si
-	Flag unquoted
-    End
-Action
-	Name UnCompress with Bz2...
+	Name UnCompress with Bz2
 	Event DoubleClick
 	Command AMIGADOS Run DETACH PRI -1 MOSSYS:C/Bz2 FROM %sp TO `MOSSYS:C/List %sp LFORMAT "*"%m*""` DECOMPRESS PM
 	Flag cd source
@@ -986,12 +974,6 @@ Match
 	PatternHint #?.dms
 	Match $444D5321
 	End
-Action
-    Name Open
-    Event DoubleClick
-    Command INTERNAL loaduri "vfs:///%sp?type=xad" VIEWID %Si
-	Flag unquoted
-    End
 End
 
 
@@ -1814,7 +1796,7 @@ Match
 	(
 		Match $7f454c4601020100000000000000000000010014
 		OR
-		Match $7f4d4f530
+		Match $7f4d4f5300
 	)
 	End
 Action
@@ -1841,7 +1823,7 @@ Match
 	(
 		Match $7f454c4601020100000000000000000000010014
 		OR
-		Match $7f4d4f530
+		Match $7f4d4f5300
 	)
 	End
 Action
@@ -1868,7 +1850,7 @@ Match
 	(
 		Match $7f454c4601020100000000000000000000010014
 		OR
-		Match $7f4d4f530
+		Match $7f4d4f5300
 	)
 	End
 Action
@@ -3009,11 +2991,15 @@ Match
 	)
 	End
 Action
-    Name Open
-    Event DoubleClick
-    Command INTERNAL loaduri "vfs:///%sp?type=xad" VIEWID %Si
-	Flag unquoted
-    End
+	Name Mount
+	Event Menu
+	Command AMIGADOS SYS:Tools/FileImageCtrl >NIL: INSERT MOUNT FILE=%sp
+	End
+Action
+	Name Insert (no mount)
+	Event Menu
+	Command AMIGADOS SYS:Tools/FileImageCtrl >NIL: INSERT FILE=%sp
+	End
 End
 
 
@@ -3060,11 +3046,15 @@ Match
 	)
 	End
 Action
-    Name Open
-    Event DoubleClick
-    Command INTERNAL loaduri "vfs:///%sp?type=xad" VIEWID %Si
-	Flag unquoted
-    End
+	Name Mount
+	Event Menu
+	Command AMIGADOS SYS:Tools/FileImageCtrl >NIL: INSERT MOUNT FILE=%sp
+	End
+Action
+	Name Insert (no mount)
+	Event Menu
+	Command AMIGADOS SYS:Tools/FileImageCtrl >NIL: INSERT FILE=%sp
+	End
 End
 
 

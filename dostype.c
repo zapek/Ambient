@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: dostype.c,v 1.4 2006/08/08 13:31:33 fab Exp $
+ * $Id: dostype.c,v 1.5 2026/05/03 10:42:01 cyfm Exp $
  */
 
 #include "ambient.h"
@@ -134,6 +134,7 @@ static const struct parttype pt[] = {
 	{FS_AMIGA_MSDOS_HF      , "MSDOS PC-Task hardfile"},     /* "MSH\0" */
 	{FS_AMIGA_BFFS          , "BFFS"},                       /* "BFFS" */
 	{FS_AMIGA_SFS           , "SFS"},                        /* "SFS\0 */
+	{FS_AMIGA_SFS2          , "SFS2"},                       /* "SFS\2 */
 
 	/* Those are special amiga stuff */
 	{FS_AMIGA_BAD , "Unreadable disk"},            /* "BAD\0" */

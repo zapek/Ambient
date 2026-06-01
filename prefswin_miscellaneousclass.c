@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: prefswin_miscellaneousclass.c,v 1.14 2016/12/25 22:00:57 geit Exp $
+ * $Id: prefswin_miscellaneousclass.c,v 1.15 2026/04/25 23:05:00 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -53,6 +53,7 @@ struct Data {
 	APTR bt_trapmultiview;
 	APTR bt_contextmenuimages;
 	APTR bt_createiconfornewdrawer;
+	APTR bt_hidedotfilenames;
 };
 
 TEXT buf[PATH_SIZE];
@@ -132,6 +133,7 @@ DEFNEW
 	APTR bt_trapmultiview;
 	APTR bt_contextmenuimages;
 	APTR bt_createiconfornewdrawer;
+	APTR bt_hidedotfilenames;
 
 	if (!deficon_getpath(buf, PATH_SIZE, NULL))
 	{
@@ -203,6 +205,8 @@ DEFNEW
 						Child, MUICreateLabel( MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES, MUIO_Label_SingleFrame | MUIO_Label_LeftAligned ),
 						Child, bt_createiconfornewdrawer = MUICreateCheckbox( MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER, TRUE, "PREF_MISC_CREATEICONFORNEWDRAWER"),
 						Child, MUICreateLabel( MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER, MUIO_Label_SingleFrame | MUIO_Label_LeftAligned ),
+						Child, bt_hidedotfilenames = MUICreateCheckbox( MSG_PREFSWIN_MISCELLANEOUS_HIDEDOTFILENAMES, TRUE, "PREF_MISC_HIDEDOTFILENAMES"),
+						Child, MUICreateLabel( MSG_PREFSWIN_MISCELLANEOUS_HIDEDOTFILENAMES, MUIO_Label_SingleFrame | MUIO_Label_LeftAligned ),
 					End,
 					Child, HSpace(0),
 				End,
@@ -227,6 +231,7 @@ DEFNEW
 	data->bt_trapmultiview = bt_trapmultiview;
 	data->bt_contextmenuimages = bt_contextmenuimages;
 	data->bt_createiconfornewdrawer = bt_createiconfornewdrawer;
+	data->bt_hidedotfilenames = bt_hidedotfilenames;
 
 	SetAttrs( def_str, MUIA_CycleChain, TRUE, MUIA_ControlChar, MUIGetUnderScore( MSG_PREFSWIN_DEFICONS_PATH ), TAG_DONE);
 
@@ -244,6 +249,7 @@ DEFNEW
 	setupprefs(bt_trapmultiview, MUIA_Selected, getprefslong(DSI_MISC_TRAPMULTIVIEW));
 	setupprefs(bt_contextmenuimages, MUIA_Selected, getprefslong(DSI_MISC_CONTEXTMENUIMAGES));
 	setupprefs(bt_createiconfornewdrawer, MUIA_Selected, getprefslong(DSI_MISC_CREATEICONFORNEWDRAWER));
+	setupprefs(bt_hidedotfilenames, MUIA_Selected, gprefs->hide_dot_filenames);
 
 	DoMethod(str_defpath, MUIM_Notify, MUIA_String_Contents, MUIV_EveryTime,
 	         obj, 1, MM_Prefswin_Misc_SetDefIconPath);
@@ -268,6 +274,8 @@ DEFTMETHOD(Prefswin_Store)
 	setprefslong(DSI_MISC_CONTEXTMENUIMAGES, getv(data->bt_contextmenuimages, MUIA_Selected));
 	setprefslong(DSI_MISC_CREATEICONFORNEWDRAWER, getv(data->bt_createiconfornewdrawer, MUIA_Selected));
 
+	setprefslong(DSI_MISC_HIDEDOTFILENAMES, getv(data->bt_hidedotfilenames, MUIA_Selected));
+	gprefs->hide_dot_filenames = getv(data->bt_hidedotfilenames, MUIA_Selected);
 
 	return (0);
 }

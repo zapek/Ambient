@@ -18,10 +18,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: panelitem_listclass.c,v 1.16 2012/08/13 10:49:37 geit Exp $
+ * $Id: panelitem_listclass.c,v 1.18 2025/09/16 15:52:30 kronos Exp $
  */
 
 #include "ambient.h"
+
+#if USE_INTERNAL_PANELS
 
 /* public */
 
@@ -97,7 +99,7 @@ DEFMMETHOD(List_Destruct)
 
 DEFNEW
 {
-	struct Data *data;
+//	struct Data *data;
 	struct PanelItem *pi;
 	struct List *classlist;
 
@@ -107,7 +109,7 @@ DEFNEW
 								TAG_MORE, INITTAGS ) ) )
 	{
 
-		data = INST_DATA( cl, obj );
+//		data = INST_DATA( cl, obj );
 
 		/*  create internal panel items. */
 		{
@@ -251,3 +253,4 @@ DECMMETHOD(Cleanup)
 ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_List, panelitem_listclass)
+#endif

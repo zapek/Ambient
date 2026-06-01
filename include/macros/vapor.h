@@ -10,7 +10,7 @@
  * All rights reserved
  *
  *
- * $Id: vapor.h,v 1.8 2012/08/15 05:38:04 geit Exp $
+ * $Id: vapor.h,v 1.9 2025/07/23 22:20:41 geit Exp $
  *
 */
 
@@ -325,11 +325,11 @@ extern const char * const __stringtable[];
 
 /* following 2 macros DON'T return NULL when the list is empty ! */
 #ifndef FIRSTNODE
-#define FIRSTNODE(l) ((APTR)((struct List*)l)->lh_Head)
+#define FIRSTNODE(l) ((APTR)((struct MinList*)l)->mlh_Head)
 #endif
 
 #ifndef LASTNODE
-#define LASTNODE(l) ((APTR)((struct List*)l)->lh_TailPred)
+#define LASTNODE(l) ((APTR)((struct MinList*)l)->mlh_TailPred)
 #endif
 
 #ifndef NEXTNODE

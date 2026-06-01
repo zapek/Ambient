@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: mimeactionwinclass.c,v 1.4 2006/09/18 23:17:29 fab Exp $
+ * $Id: mimeactionwinclass.c,v 1.6 2025/09/09 12:46:46 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -38,7 +38,7 @@ struct Data {
 DEFNEW
 {
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_Title, "Ambient · MIME Action",
 		MUIA_Window_ShowIconify, FALSE,
@@ -51,7 +51,7 @@ DEFNEW
 
 	if (!obj)
 	{
-		return (NULL);
+		return ( (ULONG) NULL);
 	}
 
 	DoMethod(obj, MUIM_Notify, MUIA_Window_CloseRequest, TRUE,

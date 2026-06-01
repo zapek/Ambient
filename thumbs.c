@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: thumbs.c,v 1.24 2021/12/23 01:17:47 piru Exp $
+ * $Id: thumbs.c,v 1.25 2025/07/23 23:54:26 geit Exp $
  */
 
 #include "ambient.h"
@@ -214,7 +214,7 @@ APTR tr_thumb_createbitmap(STRPTR path, APTR mimetype UNUSED, ULONG flags)
 	return bm;
 }
 
-ULONG tr_thumb_createicon(APTR obj, APTR o, STRPTR path, ULONG flags)
+ULONG tr_thumb_createicon(APTR obj UNUSED, APTR o, STRPTR path, ULONG flags)
 {
 	THREAD;
 	CHECKOBJECT(obj);

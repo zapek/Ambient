@@ -1,10 +1,10 @@
-## version $VER: ambient.catalog 7.7 (16.01.2023)
+## version $VER: ambient.catalog 7.31 (15.05.2026)
 ## language suomi
 ## codeset 0
 ;
-## chunk AUTH Harry Sintonen
+## chunk AUTH "Harry Sintonen"
 ;
-;$Id: ambient.suomi.ct,v 1.96 2023/01/17 03:30:07 moats Exp $
+;$Id: ambient.suomi.ct,v 1.107 2026/05/16 03:30:08 moats Exp $
 ;
 ; *** Please do not use these strings anymore.
 ;
@@ -143,7 +143,7 @@ Näytä
 ; View
 ;
 MSG_MENU_VIEW_NEWDRAWER
-Uusi kansio...
+Uusi hakemisto...
 ; New Drawer...
 ;
 MSG_MENU_VIEW_LIST
@@ -309,7 +309,7 @@ _Tallenna
 ; _Save
 ;
 MSG_PREFSWIN_SAVE_HELP
-Any changes made in the preferences will be saved. The preferences get closed.
+Kaikki muutokset asetuksiin talletetaan ja ikkuna suljetaan.
 ; All changes made in the preferences will be saved and the window will be closed.
 ;
 MSG_PREFSWIN_USE
@@ -317,7 +317,7 @@ _Käytä
 ; _Use
 ;
 MSG_PREFSWIN_USE_HELP
-Any changes made in the preferences will get active until reboot. The preferences get closed.
+Kaikki muutokset asetuksiin pidetään voimassa järjestelmän uudelleenkäynnistykseen asti ja ikkuna suljetaan.
 ; All changes made in the preferences will stay active until next reboot and the window will be closed.
 ;
 MSG_PREFSWIN_TEST
@@ -325,7 +325,7 @@ _Kokeile
 ; _Test
 ;
 MSG_PREFSWIN_TEST_HELP
-Any changes made in the preferences will get temporary active for testing. The preferences stays opened.
+Kaikki muutokset asetuksiin otetaan väliaikaisesti käyttöön ja ikkuna pysyy auki.
 ; All changes made in the preferences will become temporary active and the window stays open.
 ;
 MSG_PREFSWIN_CANCEL
@@ -333,7 +333,7 @@ _Peruuta
 ; _Cancel
 ;
 MSG_PREFSWIN_CANCEL_HELP
-All changed made will be rejected. The preferences get closed.
+Kaikki muutokset asetuksiin peruutetaan ja ikkuna suljetaan.
 ; All changes made in the preferences will reset to last saved state and the window will be closed.
 ;
 ; *** Preferences Window Tabs
@@ -414,7 +414,7 @@ _Tiedostojen ja hakemistojen erottelu
 ;
 ;
 MSG_PREFSWIN_ICONDISPLAY_SEPARATEFILES_HELP
-File separation breaks into a new line after the last drawer icon in view. The first file in drawer will allways be located left within a new icon row.
+Aloita uusi rivi tiedostoja varten viimeisen hakemistokuvakkeen jälkeen.
 ; Start a new row for files after last drawer icon in icon view.
 ;
 MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP
@@ -422,7 +422,7 @@ _Häivytä kuvakkeet käynnistyksessä
 ; Fade icon on sta_rtup
 ;
 MSG_PREFSWIN_ICONDISPLAY_FADEICONSONSTARTUP_HELP
-Enables icon fade when Ambient gets started.
+Ottaa käyttöön kuvakkeiden häivitysefektin Ambientin käynnistyksessä.
 ; Enables icon fade when Ambient gets started.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT
@@ -430,7 +430,7 @@ _Läpinäkyvät oletuskuvakkeet
 ; _Default icons transparent
 ;
 MSG_PREFSWIN_ICONDISPLAY_DEFAULTICONSTRANSPARENT_HELP
-Default icons are displayed transparent when this option is enabled.
+Oletuskuvakkeen näytetään läpinäkyvinä.
 ; Default icons are displayed transparent when this option is enabled.
 ;
 MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER
@@ -438,7 +438,7 @@ _Ohjelmakuvakeen tunniste
 ; A_ppicon identifier
 ;
 MSG_PREFSWIN_ICONDISPLAY_APPICONIDENTIFIER_HELP
-Any application icon gets a little mark when this option is enabled.
+Ohjelmakuvakkeiden kulmaan lisätään tunniste.
 ; Any application icon gets a little mark when this option is enabled.
 ;
 MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER
@@ -446,7 +446,7 @@ _Pikakuvakkeen tunniste
 ; S_hortcut identifier
 ;
 MSG_PREFSWIN_ICONDISPLAY_SHORTCUTIDENTIFIER_HELP
-Any icon left out as shortcut will get marked by this option.
+Pikakuvakkeisiin lisätään tunniste.
 ; Any icon left out as shortcut will get marked by this option.
 ;
 MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT
@@ -454,7 +454,7 @@ _Automaattinen paikantallennus
 ; _Automatic snapshot
 ;
 MSG_PREFSWIN_ICONDISPLAY_AUTOMATICSNAPSHOT_HELP
-Icons will automatically be fixed at their current position.
+Kuvakkeiden paikkatieto tallennetaan automaattisesti.
 ; Icons will automatically be fixed at their current position.
 ;
 MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS
@@ -462,7 +462,7 @@ Kak_sivaiheiset PNG-kuvakkeet
 ; T_wo state PNG icons
 ;
 MSG_PREFSWIN_ICONDISPLAY_TWOSTATEPNGICONS_HELP
-This enables dual png icon support, which contain a separate image for unselected and selected state.
+Otetaan käyttöön kaksivaiheiset PNG-kuvaketiedostot, joissa on erilliset kuvat normaalille ja valitulle tilalle.
 ; This enables dual PNG icon support, which contain a separate image for unselected and selected state.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION
@@ -470,7 +470,7 @@ _Levytiedot:
 ; Drive _info:
 ;
 MSG_PREFSWIN_ICONDISPLAY_DRIVEINFORMATION_HELP
-This gadget allows to specify the way the device icon provides available disk media space.
+Valitsee tavan jolla vapaa levytila näytetään.
 ; Specify the way device icons show available disk space.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DRIVE_NONE
@@ -592,7 +592,7 @@ Tiedostoja valmiina:
 ; Files done:
 ;
 MSG_PROGRESS_FILESDONE_HELP
-Shows detailed progress information.
+Näyttää tarkan toiminnon etenemistiedon.
 ; Shows detailed progress information.
 ;
 MSG_PROGRESS_STOP
@@ -610,7 +610,7 @@ Alusta levy %s
 ; Format Volume %s
 ;
 MSG_FORMAT_MENU_PROJECT
-Format
+Alusta
 ; Format
 ;
 MSG_FORMAT_MENU_QUIT
@@ -646,7 +646,7 @@ Nimi:
 ; _Label:
 ;
 MSG_FORMAT_LABEL_HELP
-This name will be used as name for the volume.
+Tiedostojärjestelmän nimi.
 ; This name will be used as name for the volume.
 ;
 MSG_FORMAT_FILESYSTEM
@@ -654,15 +654,15 @@ Tiedostojärjestelmä:
 ; Filesystem:
 ;
 MSG_FORMAT_FILESYSTEM_HELP
-This filesystem will used.
-; This filesystem will used.
+Käytetty tiedostojärjestelmä.
+; This filesystem will be used.
 ;
 MSG_FORMAT_STATUS
 Tila:
 ; Status:
 ;
 MSG_FORMAT_STATUS_HELP
-This is the current status of the volume.
+Näyttää tiedostojärjestelmän tilan.
 ; This is the current status of the volume.
 ;
 MSG_FORMAT_GENERAL_GROUP
@@ -694,7 +694,7 @@ Tuhottujen tiedostojen säilytys
 ; _Recycled
 ;
 MSG_FORMAT_RECYCLED_HELP
-Kun päällä, tallennetaan viimeisimmmät poistetut tiedostot kansioon nimeltä ".recycled". Lisäoptioita löytyy Käyttöjärjestelmän asetuksista.
+Kun päällä, tallennetaan viimeisimmmät poistetut tiedostot hakemistoon nimeltä ".recycled". Lisäoptioita löytyy Käyttöjärjestelmän asetuksista.
 ; Create a ".recycled" directory. This directory contains all currently deleted files. Further configuration for each volume is possible in the MorphOS System Preferences.
 ;
 MSG_FORMAT_SHOWRECYCLED
@@ -731,7 +731,7 @@ Alusta...
 ;
 MSG_FORMAT_HELP
 Koko media tyhjennetään! Tämä operaatio kestää pitkään, mutta tuhoaa kaiken datan levyltä!
-; The entire media will overwritten! Takes a lot of time, but destroys all data on drive!
+; The entire media will be overwritten! This will take a lot of time, but destroys all data on drive!
 ;
 MSG_FORMAT_AND_VERIFY
 Alusta ja tarkista...
@@ -739,7 +739,7 @@ Alusta ja tarkista...
 ;
 MSG_FORMAT_AND_VERIFY_HELP
 Koko media tyhjennetään! Lisäksi tarkistetaan median virheiden varalta.
-; The entire media will overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
+; The entire media will be overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
 ;
 MSG_FORMAT_CLOSE
 Sulje
@@ -808,7 +808,7 @@ Haluatko tuhota valitut kohteet (%lu) ?
 ; *** Icon Information Window
 ;
 MSG_INFOWIN_OLD_AMIGA_ICON
-\033cvanha Amiga-kuvake
+\033cVanha Amiga-kuvake
 ; \033cClassic Amiga icon
 ;
 MSG_INFOWIN_NEWICON
@@ -836,7 +836,7 @@ _Tyyppi:
 ; _Type:
 ;
 MSG_INFOWIN_TYPE_TOOL_PROJECT_HELP
-A Tool is a program. A Project is a file created by a tool, whose path or name is embedded within the icon so it can be opened again.
+Työkalu on ohjelma. Projekti on tiedosto jonka työkalu on luonut, ja tämän työkalun polku on projektikuvakkeessa jotta se voidaan avata uudelleen.
 ; A Tool is a program. A Project is a file created by a tool, whose path or name is embedded within the icon so it can be opened again.
 ;
 MSG_INFOWIN_SCRIPT
@@ -900,7 +900,7 @@ Levy:
 ; Disk:
 ;
 MSG_INFOWIN_DISK_DISK_HELP
-Shows the disk name.
+Näyttää levyn nimen.
 ; Shows the disk name.
 ;
 MSG_INFOWIN_DISK_SIZE
@@ -908,7 +908,7 @@ Koko:
 ; Size:
 ;
 MSG_INFOWIN_DISK_SIZE_HELP
-Shows the size of the media.
+Näyttää median koon.
 ; Shows the size of the media.
 ;
 MSG_INFOWIN_DISK_USED
@@ -916,7 +916,7 @@ Käytetty:
 ; Used:
 ;
 MSG_INFOWIN_DISK_USED_HELP
-Shows number of bytes currently in use.
+Näyttää tällä hetkellä käytetyn levytilan.
 ; Shows number of bytes currently in use.
 ;
 MSG_INFOWIN_DISK_FREE
@@ -924,7 +924,7 @@ Vapaana:
 ; Free:
 ;
 MSG_INFOWIN_DISK_FREE_HELP
-Shows number of bytes currently available.
+Näyttää tällä hetkellä vapaan levytilan.
 ; Shows number of bytes currently available.
 ;
 MSG_INFOWIN_DISK_FILESYSTEM
@@ -940,7 +940,7 @@ Tyyppi:
 ; Type:
 ;
 MSG_INFOWIN_DISK_TYPE_HELP
-Shows the media type.
+Näyttää median tyypin.
 ; Shows the media type.
 ;
 MSG_INFOWIN_DISK_BLOCKSIZE
@@ -966,9 +966,16 @@ Lisäominaisuudet:
 ; Features:
 ;
 MSG_INFOWIN_DISK_FEATURES_HELP
-This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
-volumes.
-; This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
+Näyttää tiedostojärjestelmän ominaisuudet:\n\
+\n\
+\033bsuuret tiedostot\033n\n\
+tiedostojärjestelmä tukee yli 2Gt tiedostoja.\n\
+\n\
+\033bisojen ja pienten kirjainten erottelu\033n\n\
+tiedostojärjestelmä tekee eron isojen ja pienten\n\
+merkkien välillä. tällaisten tiedostojärjestelmien\n\
+käyttöä ei suositella.
+; This lists the current features:\n\n\033blarge files\033n\nthe volume supports files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
 ; volumes.
 ;
 MSG_INFOWIN_FILES
@@ -976,7 +983,7 @@ Tiedostoja:
 ; Files:
 ;
 MSG_INFOWIN_FILES_HELP
-Shows the number of files inside the directory.
+Näyttää tiedostojen lukumäärän hakemistossa.
 ; Shows the number of files inside the directory.
 ;
 MSG_INFOWIN_DIRS
@@ -984,7 +991,7 @@ Hakemistoja:
 ; Dirs:
 ;
 MSG_INFOWIN_DIRS_HELP
-Shows the number of directories inside.
+Näyttää hakemistojen määrän hakemistossa.
 ; Shows the number of directories inside.
 ;
 MSG_INFOWIN_HARDLINKS
@@ -992,7 +999,7 @@ Hardlinkkejä:
 ; Hardlinks:
 ;
 MSG_INFOWIN_HARDLINKS_HELP
-Shows the number of hardlinks inside the directory.
+Näyttää hardlinkkien määrän hakemistossa.
 ; Shows the number of hardlinks inside the directory.
 ;
 MSG_INFOWIN_SOFTLINKS
@@ -1000,7 +1007,7 @@ Softlinkkejä:
 ; Softlinks:
 ;
 MSG_INFOWIN_SOFTLINKS_HELP
-Shows the number of softlinks inside the directory.
+Näyttää softlinkkien määrän hakemistossa.
 ; Shows the number of softlinks inside the directory.
 ;
 MSG_INFOWIN_LAST_CHANGED
@@ -1008,7 +1015,7 @@ Muutettu:
 ; Modified:
 ;
 MSG_INFOWIN_LAST_CHANGED_HELP
-Show when file, drawer or volume was changed the last time.
+Näyttää milloin tiedostoa, hakemistoa tai tiedostojärjestelmää on viimeksi muutettu.
 ; Show when file, drawer or volume was changed the last time.
 ;
 MSG_INFOWIN_COMMENT
@@ -1016,7 +1023,7 @@ Kommentti:
 ; Comment:
 ;
 MSG_INFOWIN_COMMENT_HELP
-This is the DOS file comment.
+Tämä on objektin DOS-kommentti.
 ; This is the DOS file comment.
 ;
 MSG_INFOWIN_BLOCKS
@@ -1024,7 +1031,7 @@ Lohkoja:
 ; Blocks:
 ;
 MSG_INFOWIN_BLOCKS_HELP
-Number of filesystem blocks taken by the file. A block is typically 512 bytes.
+Tiedoston käyttämä levylohkojen määrä. Levylohko on tyypillisesti 512 tavua.
 ; Number of filesystem blocks taken by the file. A block is typically 512 bytes.
 ;
 MSG_INFOWIN_SIZE
@@ -1032,7 +1039,7 @@ Koko:
 ; Size:
 ;
 MSG_INFOWIN_SIZE_HELP
-Size of the file. This might not be the exact size taken from the storage as filesystems usually work using fixed block sizes.
+Tiedoston koko. Tämä ei välttämättä ole sama kuin tiedoston viemä tila itse tiedostojärjestelmässä koska tyypillisesti ne käyttävät kiinteän kokoisia levylohkoja.
 ; Size of the file. This might not be the exact size taken from the storage as filesystems usually work using fixed block sizes.
 ;
 MSG_INFOWIN_SIZEONDISK
@@ -1048,8 +1055,7 @@ Pino:
 ; Stack:
 ;
 MSG_INFOWIN_STACK_HELP
-Stack size of the executable in bytes. A stack is an area of memory used by the executable to store private data. Special requirements regarding its size should be listed in the executable's \
-documentation although most executables set the stack size by themselves so you don't have to bother about this field.
+Sovellukselle varattavan pinon koko.
 ; Stack size of the executable in bytes. A stack is an area of memory used by the executable to store private data. Special requirements regarding its size should be listed in the executable's \
 ; documentation although most executables set the stack size by themselves so you don't have to bother about this field.
 ;
@@ -1059,7 +1065,7 @@ Luotu:
 ;
 ;
 MSG_INFOWIN_CREATED_HELP
-Date the volume was created.
+Päivämäärä jolloin tiedostojärjestelmä luotiin.
 ; Date the volume was created.
 ;
 MSG_INFOWIN_TOOLTYPES
@@ -1067,7 +1073,7 @@ Lisämääreet:
 ; Tooltypes:
 ;
 MSG_INFOWIN_TOOLTYPES_HELP
-These are the icons tool types.
+Kuvakkeen lisämääreet.
 ; These are the icons tool types.
 ;
 MSG_INFOWIN_STATUS_WRITE_PROTECTED
@@ -1111,7 +1117,7 @@ _Versio:
 ; _Version:
 ;
 MSG_INFOWIN_VERSION_HELP
-Scans the file for a version string which gives informations about the version and revision numbers, when the file was built and possible copyright informations.
+Hakee tiedoston sisältämän versiotiedon, mikäli sellainen löytyy.
 ; Scans the file for a version string which gives informations about the version and revision numbers, when the file was built and possible copyright informations.
 ;
 MSG_INFOWIN_MD5_COMPUTING
@@ -1123,7 +1129,7 @@ _MD5:
 ; _MD5:
 ;
 MSG_INFOWIN_MD5_HELP
-Computes an MD5 hash of the file's content. Can be used to check the integrity of a file as the hash is always the same for exactly identical files.
+Laskee MD5-tiivisteen tiedoston sisällöstä.
 ; Computes an MD5 hash of the file's content. Can be used to check the integrity of a file as the hash is always the same for exactly identical files.
 ;
 MSG_INFOWIN_DEFAULT_TOOL
@@ -1131,7 +1137,7 @@ Oletussovellus:
 ; De_fault Tool:
 ;
 MSG_INFOWIN_DEFAULT_TOOL_HELP
-This program will be started along with this file as argument when opening the file.
+Sovellus joka käynnistetään tämä tiedosto parametrinaan kun tiedosto avataan.
 ; This program will be started along with this file as argument when opening the file.
 ;
 MSG_INFOWIN_DEFAULT_TOOL_SELECT
@@ -1219,7 +1225,7 @@ Lisää
 ; _New
 ;
 MSG_INFOWIN_NEW_HELP
-Add new tool type to list.
+Lisää lisämääre.
 ; Add new tool type to list.
 ;
 MSG_INFOWIN_DEL
@@ -1227,7 +1233,7 @@ Poista
 ; _Delete
 ;
 MSG_INFOWIN_DEL_HELP
-Remove active tool type from list.
+Poista valittu lisämääre.
 ; Remove active tool type from list.
 ;
 MSG_INFOWIN_SCAN
@@ -1235,7 +1241,7 @@ Koko:
 ; Total Size:
 ;
 MSG_INFOWIN_SCAN_HELP
-Does a recursive scan of the directory to compute the number, type and total size of the files it contains.
+Tutki koko hakemistorakenteen sisältö ja laske lukumäärät, tyypit ja kokonaiskoko sen sisällöstä.
 ; Does a recursive scan of the directory to compute the number, type and total size of the files it contains.
 ;
 MSG_INFOWIN_SAVE
@@ -1243,7 +1249,7 @@ Tallenna
 ; _Save
 ;
 MSG_INFOWIN_SAVE_HELP
-Store settings into icon file.
+Tallenna asetukset kuvakkeeseen.
 ; Store settings into icon file.
 ;
 MSG_INFOWIN_CANCEL
@@ -1251,27 +1257,28 @@ _Peruuta
 ; Cance_l
 ;
 MSG_INFOWIN_CANCEL_HELP
-Discard icon setup and close window.
+Peruuta kuvakkeeseen tehdyt muutokset.
 ; Discard icon setup and close window.
 ;
 MSG_INFOWIN_CREATE_ICON_REQ
-Saving meta data requires an icon file.\nReally create an icon now?
+Metatietojen tallentamisen vaatii kuvaketiedoston\n\
+luomisen. Luodaanko kuvaketiedosto nyt?
 ; Saving meta data requires an icon file.\nReally create an icon now?
 ;
 MSG_INFOWIN_CREATE_ICON_GAD
-_Create icon
+_Luo kuvake
 ; Create ic_on
 ;
 MSG_INFOWIN_CREATE_ICON_HELP
-Create an icon file on disk.
+Luo kuvaketiedosto levylle.
 ; Create an icon file on disk.
 ;
 MSG_INFOWIN_USE_DEFAULT_ICON_GAD
-Get _default
+_Hae oletus
 ; _Get default
 ;
 MSG_INFOWIN_USE_DEFAULT_ICON_HELP
-Reset to default icon.
+Alusta oletuskuvakkeeksi.
 ; Reset to default icon.
 ;
 ; *** Make Directory Window
@@ -1285,8 +1292,8 @@ MSG_MAKEDIR_ENTERDIRECTORYNAME
 ; \033c\033bDirectory Name:
 ;
 MSG_MAKEDIR_ENTER_DIRECTORYNAME_HELP
-Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
-; Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+Syötä mini luotavalle hakemistolle. Huomaa, että merkit "/" ja ":" eivät ole sallittuja.
+; Here the name of the new drawer gets specified. Please note, that characters like "/" and ":" are not allowed.
 ;
 MSG_MAKEDIR_UNNAMED
 Nimeämätön
@@ -1297,7 +1304,7 @@ _Kuvakkeen kanssa
 ; _With Icon
 ;
 MSG_MAKEDIR_WITHICON_HELP
-A drawer and icon combination will be created.
+Luo hakemiston lisäksi myös hakemistokuvake.
 ; A drawer and icon combination will be created.
 ;
 MSG_MAKEDIR_WITHOUTICON
@@ -1305,7 +1312,7 @@ _Ilman kuvaketta
 ; With_out Icon
 ;
 MSG_MAKEDIR_WITHOUTICON_HELP
-A drawer without icon will be created.
+Hakemisto luodaan ilman kuvaketta.
 ; A drawer without icon will be created.
 ;
 MSG_MAKEDIR_CANCEL
@@ -1313,19 +1320,20 @@ _Peruuta
 ; _Cancel
 ;
 MSG_MAKEDIR_CANCEL_HELP
-The window get's closed without any further action.
+Ikkuna suljetaan ilman suoritettavaa toimintoa.
 ; The window get's closed without any further action.
 ;
 MSG_MAKEDIR_TITLE
-Ambient · Create directory
+Ambient · Lue hakemisto
 ; Ambient · Create directory
 ;
 MSG_MAKEDIR_ERRORMSG
-Couldn't create directory '%s'.\nDOS error: %S (#%N).
+Hakemiston '%s' luominen epäonnistui.\n\
+DOS-virhe: %S (#%N).
 ; Couldn't create directory '%s'.\nDOS error: %S (#%N).
 ;
 MSG_MAKEDIR_RETRYCANCEL
-*_Retry|_Cancel
+*_Yritä uudelleen|_Peruuta
 ; *_Retry|_Cancel
 ;
 ; *** Exchange Window
@@ -1361,7 +1369,7 @@ _T
 ; _A
 ;
 MSG_CX_STATUS_HELP
-Here you can activate or deactivate the selected commodity.
+Tästä voi muuttaa ohjelman tilaa.
 ; Here you can activate or deactivate the selected Commodity.
 ;
 MSG_CX_ACTIVE
@@ -1377,7 +1385,7 @@ _Poista
 ; _Remove
 ;
 MSG_CX_REMOVE_HELP
-The selected commodity will be removed if possible.
+Valittu sovellus sammutetaan mikäli mahdollista.
 ; The selected commodity will be removed if possible.
 ;
 ; *** Execute window
@@ -1399,7 +1407,7 @@ _Suorita
 ; _Execute
 ;
 MSG_EXEC_EXECUTE_HELP
-The command typed into the text field will be executed.
+Kenttään syötetty komento suoritetaan.
 ; The command typed into the text field will be executed.
 ;
 MSG_EXEC_CANCEL
@@ -1407,11 +1415,11 @@ _Peruuta
 ; _Cancel
 ;
 MSG_EXEC_CANCEL_HELP
-The execute window will be closed without any action.
+Ikkuna suljetaan ilman suoritettavaa toimintoa.
 ; The execute window will be closed without any action.
 ;
 MSG_EXEC_ERROR_TITLE
-Ambient suoritusvirhe
+Ambient-suoritusvirhe
 ; Ambient Execute Error
 ;
 MSG_EXEC_ERROR_OPENOUTPUTSTREAMFAILED
@@ -1423,20 +1431,20 @@ Lähdevirran avaaminen epäonnistui.
 ; Failed to open input stream.
 ;
 MSG_EXEC_CMENU_HISTORY_TITLE
-Command history
+Komentohistoria
 ; Command history
 ;
 MSG_EXEC_CMENU_HISTORY_CLEARALL
-Clear all
+Tyhjennä kaikki
 ; Clear all
 ;
 MSG_EXEC_CMENU_HISTORY_CLEARACTIVE
-Clear active
+Tyhjennä aktiivinen
 ; Clear active
 ;
 MSG_EXEC_COMMAND_HELP
-You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", \
-"news://", "mailto:", "ftp." or "www.".
+Voit käyttää ulkoisia komentoja ja myös sisäisiä komentoja (aloita komento hipsulla, esim. 'Exchange) tai jopa \
+URLeja kuten "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", "news://", "mailto:", "ftp." tai "www.".
 ; You can use external commands and also internal commands (preceding with a single quote, f.e 'Exchange) or even open urls like "http://", "ftp://", "gopher://", "https://", "telnet://", "irc://", \
 ; "news://", "mailto:", "ftp." or "www.".
 ;
@@ -1495,8 +1503,8 @@ _Muuta taustakuva:
 ; C_hange background after:
 ;
 MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP
-If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
-; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+Jos taustakuvaksi valitaan hakemisto, valitaan taustakuva hakemiston kuvista satunnaisesti. Valitsemalla päivitysvälin kuvaa vaihdetaan tietyin väliajoin.
+; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specific amount of time.
 ;
 MSG_PREFSWIN_BACKGROUND_WINDOWS
 Ikkunat
@@ -1547,7 +1555,7 @@ Värjää
 ; Tint
 ;
 MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_TINT_REQ
-Select a color for tint effect.
+Valitse väri värjäysefektille.
 ; Select a color for tint effect.
 ;
 MSG_PREFSWIN_ICONDISPLAY_SELECTION_EFFECT_BLUR
@@ -1587,7 +1595,7 @@ Valitse hiipuvan värjäyksen väri.
 ; Select a color for tintfade effect.
 ;
 MSG_PREFSWIN_ICONDISPLAY_SELECTEFFECT_HELP
-Effect to apply to mark selected icons.
+Valittujen kuvakkeiden merkitsemiseen käytettävä tehoste.
 ; Effect to apply to mark selected icons.
 ;
 MSG_PREFSWIN_ICONDISPLAY_SELECT
@@ -1595,7 +1603,7 @@ Valinnan väri:
 ; S_elect color:
 ;
 MSG_PREFSWIN_ICONDISPLAY_SELECT_HELP
-Specifies the color of an selected icon.
+Määrittää valitun kuvakkeen värin.
 ; Specifies the color of an selected icon.
 ;
 MSG_PREFSWIN_ICONDISPLAY_SELECT_TITLE
@@ -1607,7 +1615,7 @@ Lasson väri:
 ; _Lasso color:
 ;
 MSG_PREFSWIN_ICONDISPLAY_LASSO_HELP
-Color of the lasso used to select multiple icons with the mouse.
+Lasson väri, jota käytetään useiden kuvakkeiden valitsemiseen hiirellä.
 ; Color of the lasso used to select multiple icons with the mouse.
 ;
 MSG_PREFSWIN_ICONDISPLAY_LASSO_TITLE
@@ -1619,7 +1627,7 @@ Kohteen väri:
 ; Drop mar_k:
 ;
 MSG_PREFSWIN_ICONDISPLAY_DROPMARK_HELP
-Specifies the color of active icon drop marks.
+Määrittää aktiivisten kuvakkeiden pudotusmerkkien värin.
 ; Specifies the color of active icon drop marks.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DROPMARK_TITLE
@@ -1711,7 +1719,7 @@ Kirjasin:
 ; _Font:
 ;
 MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT_HELP
-Big icon display font.
+Iso kuvakenäyttökirjasin.
 ; Big icon display font.
 ;
 MSG_PREFSWIN_ICONDISPLAY_TEXT_FONT_REQ
@@ -1723,7 +1731,7 @@ Pieni kirjasin:
 ; Small font_:
 ;
 MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT_HELP
-Small icon display font.
+Pieni kuvakenäyttökirjasin.
 ; Small icon display font.
 ;
 MSG_PREFSWIN_ICONDISPLAY_TEXT_SMALLFONT_REQ
@@ -1735,7 +1743,7 @@ Väri:
 ; C_olor:
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR_HELP
-Here you can select the icon text color for desktop icons.
+Valitsee työpöydän kuvakkeiden tekstin värin.
 ; Here you can select the icon text color for desktop icons.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTCOLOR_TITLE
@@ -1748,8 +1756,8 @@ _w
 ; _b
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_HELP
-Here you can select the icon back ground color for desktop icons.
-; Here you can select the icon back ground color for desktop icons.
+Valitse kuvakkeiden tekstien taustaväri työpöydällä.
+; Here you can select the icon background color for desktop icons.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_TITLE
 Valitse kuvakkeiden tekstien taustaväri työpöydällä
@@ -1760,7 +1768,7 @@ Kirjasin:
 ; _Font:
 ;
 MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_HELP
-Window display font.
+Ikkunan näyttökirjasin.
 ; Window display font.
 ;
 MSG_PREFSWIN_ICONDISPLAY_WINTEXTFONT_REQ
@@ -1772,7 +1780,7 @@ Väri:
 ; C_olor:
 ;
 MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR_HELP
-Here you can select the icon text color for window icons.
+Valitse ikkunakuvakkeiden tekstin väri.
 ; Here you can select the icon text color for window icons.
 ;
 MSG_PREFSWIN_ICONDISPLAY_WINTEXTCOLOR_TITLE
@@ -1785,7 +1793,7 @@ _W
 ; _b
 ;
 MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK_HELP
-Here you can select the icon background color for window icons.
+Valitse ikkunakuvakkeiden taustaväri.
 ; Here you can select the icon background color for window icons.
 ;
 MSG_PREFSWIN_ICONDISPLAY_WINTEXTBACK_TITLE
@@ -1797,7 +1805,7 @@ _Väljyys:
 ; _Label space:
 ;
 MSG_PREFSWIN_ICONDISPLAY_TEXT_LABELSPACE_HELP
-Space in pixels between the bottom of the icon and the top of the text beneath.
+Välys pikseleinä kuvakkeen alaosan ja tekstin välissä.
 ; Space in pixels between the bottom of the icon and the top of the text beneath.
 ;
 MSG_PREFSWIN_ICONDISPLAY_EXTRA_FEATURES
@@ -1815,7 +1823,7 @@ _Käynnistyshakemiston sijainti:
 ; _Path to startup directory:
 ;
 MSG_PREFSWIN_WBSTARTUP_PATH_HELP
-Path to the Startup directory. Files in that directory are automatically executed upon system boot.
+Polku Käynnistys-hakemistoon. Hakemiston tiedostot suoritetaan automaattisesti järjestelmän käynnistyksen yhteydessä.
 ; Path to the Startup directory. Files in that directory are automatically executed upon system boot.
 ;
 MSG_PREFSWIN_WBSTARTUP_PATH_REQ
@@ -1826,12 +1834,16 @@ MSG_PREFSWIN_WBSTART_REMEMBER
 Muista:
 ; Remember:
 ;
+MSG_PREFSWIN_WBSTART_REMEMBER_HELP
+Järjestelmän uudelleenkäynnistyksen jälkeen seuraavat tiedot muistetaan.
+; After restarting the system the following will be remembered.
+;
 MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES
 Hakemistot
 ; Dra_wers
 ;
 MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES_HELP
-Remembers open Ambient drawers. After restarting the system these drawers will be open again.
+Muistetaan avatut hakemistot. Uudelleenkäynnistyksen jälkeen hakemistot avataan uudelleen.
 ; Remembers opened Ambient drawers. After restarting the system these drawers will be open again.
 ;
 MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS
@@ -1839,7 +1851,7 @@ Dokumentit
 ; Docu_ments
 ;
 MSG_PREFSWIN_WBSTART_REMEMBERDOCUMENTS_HELP
-Remembers open Ambient documents. After restarting the system these documents will be open again.
+Muistetan avatut dokumentit. Uudelleenkäynnistyksen jälkeen dokumentit avataan uudelleen.
 ; Remembers in Ambient opened documents. After restarting the system these documents will be open again.
 ;
 MSG_PREFSWIN_DEFICONS
@@ -1851,7 +1863,7 @@ _Oletuskuvakkeiden sijainti:
 ; Path _to default icons:
 ;
 MSG_PREFSWIN_DEFICONS_PATH_HELP
-Path to the default icons of the system. These icons are used as default for various filetypes, directories and devices.
+Järjestelmän oletuskuvakkeiden polku. Näitä kuvakkeita käytetään oletuskuvakkeina erilaisille tiedostotyypeille, hakemistoille ja laitteille.
 ; Path to the default icons of the system. These icons are used as default for various filetypes, directories and devices.
 ;
 MSG_PREFSWIN_DEFICONS_PATH_REQ
@@ -1864,19 +1876,19 @@ Sekalaiset
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS
 Näytä Oma MorphOS -kuvake
-; Display M_yMorphos icon
+; Display M_yMorphOS icon
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS_HELP
-Enables and disables the MyMorphOS icon on desktop.
+Ottaa käyttöön ja poistaa käytöstä MyMorphOS-kuvakkeen työpöydällä.
 ; Enables and disables the MyMorphOS icon on desktop.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS
 Kaksoisnapsautus työpöydällä avaa Oma MorphOS -ikkunan
-; _Double click on desktop opens MyMorphos window
+; _Double click on desktop opens MyMorphOS window
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS_HELP
-Any double click on desktop opens MyMorphos window.
-; _Any double click on desktop opens MyMorphos window.
+Kaksoisnapsautus työpöydällä avaa MyMorphos-ikkunan.
+; Any double click on desktop opens MyMorphOS window.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE
 Vedä & pudota siirtää tiedostot kopioinnin sijaan
@@ -1891,7 +1903,7 @@ Ohita More-oletustyökalu
 ; _Override More default tool
 ;
 MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMOREDEFAULTTOOL_HELP
-If icons contain the default tool MORE, this option allows to override with ambient internal text viewer instead.
+Ohjaa More-työkalun käynnistys käyttämään Ambientin sisäistä näytintä.
 ; If icons contain the default tool MORE, this option allows to override with Ambient internal text viewer instead.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL
@@ -1899,7 +1911,7 @@ Ohita MultiView-oletustyökalu
 ; Override Multi_View default tool
 ;
 MSG_PREFSWIN_MISCELLANEOUS_OVERRIDEMULTIVIEWDEFAULTTOOL_HELP
-If icons contain the default tool MULTIVIEW, this option allows to override with ambient internal viewer instead.
+Ohjaa Mulview-työkalun käynnistys käyttämään Ambientin sisäistä näytintä.
 ; If icons contain the default tool MULTIVIEW, this option allows to override with Ambient internal viewer instead.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES
@@ -1907,16 +1919,24 @@ Näytä pikkukuvakkeet valikoissa
 ; S_how images in context menu
 ;
 MSG_PREFSWIN_MISCELLANEOUS_SHOWCONTEXTIMAGES_HELP
-Images in context can be turned off by using this option.
+Näytetäänkö pikkukuvakkeet valikoissa.
 ; Images in context can be turned off by disabling this option.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER
-Luo kuvake uusille kansiolle oletuksena
+Luo kuvake uusille hakemistoille oletuksena
 ; C_reate icon for new drawer by default
 ;
 MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER_HELP
-New drawer will automatically get a default drawer icon if this option is enabled.
+Uusi hakemisto saa automaattisesti oletusarvoisen hakemistokuvakkeen, jos tämä asetus on käytössä.
 ; New drawer will automatically get a default drawer icon if this option is enabled.
+;
+MSG_PREFSWIN_MISCELLANEOUS_HIDEDOTFILENAMES
+Piilota tiedostonimet, jotka alkavat pisteellä ( _. ).
+; Hide filenames beginning with a dot ( _. )
+;
+MSG_PREFSWIN_MISCELLANEOUS_HIDEDOTFILENAMES_HELP
+Tämä asetus saa Ambientin piilottamaan kaikki tiedostot, joiden nimet alkavat pisteellä.
+; This option makes Ambient hide any files whose names begin with a dot.
 ;
 ; *** Prefswin CLI launching
 ;
@@ -1929,7 +1949,7 @@ Tul_ostusikkuna:
 ; _Output window:
 ;
 MSG_PREFSWIN_CLI_DEVICE_HELP
-Device to use to output DOS messages. Usually a CON:
+Mihin laiteohjaimeen komennon tulosteet lähetetään. Yleensä CON:
 ; Device to use to output DOS messages. Usually a CON:
 ;
 MSG_PREFSWIN_CLI_STACKSIZE
@@ -1937,7 +1957,7 @@ _Pino:
 ; Stacksi_ze:
 ;
 MSG_PREFSWIN_CLI_STACKSIZE_HELP
-Stacksize in bytes to use when launching CLI programs.
+Pinon koko käynnistettäessä komentoja.
 ; Stacksize in bytes to use when launching CLI programs.
 ;
 MSG_PREFSWIN_CLI_NEWSHELL
@@ -1945,13 +1965,13 @@ Kome_ntotulkin parametrit:
 ; _Newshell arguments:
 ;
 MSG_PREFSWIN_CLI_NEWSHELL_HELP
-Arguments to use when launching a shell from Ambient.
+Komentoriviparametrit käynnistettäessä kuorta Ambientista.
 ; Arguments to use when launching a shell from Ambient.
 ;
 ; *** Preferences Window - Drag & Drop
 ;
 MSG_PREFSWIN_DRAGDROP_DISPLAY_HELP
-Effect to apply to icons becoming active for a drag & drop operation.
+Efekti jota käytetään kun kuvake tulee aktiiviseksi vedä & pudota -toiminnossa.
 ; Effect to apply to icons becoming active for a drag & drop operation.
 ;
 ; *** Preferences Window - Main
@@ -1965,7 +1985,7 @@ Leikepöytä raameille ja kuville
 ; Frame and Image Clipboard
 ;
 MSG_PREFSWIN_MAIN_CLIPBOARD_FRAMEIMAGE_HELP
-This gadget can be used as a clipboard to store the frame and image. Use drag & drop.
+Tätä painiketta voidaan käyttää leikepöydänä kehyksen ja kuvan tallentamiseen. Käytä vetämistä ja pudottamista.
 ; This gadget can be used as a clipboard to store the frame and image. Use drag & drop.
 ;
 ; *** Soundwin
@@ -2017,7 +2037,7 @@ _Käytä selaustilaa
 ; _Browser mode
 ;
 MSG_PREFSWIN_TOOLBAR_ENABLE_HELP
-This check mark enables the tool bar mode.
+Ottaa käyttöön työkalupalkkitilan.
 ; This check mark enables the toolbar mode.
 ;
 MSG_PREFSWIN_TOOLBAR_TOOLBUTTONS_GROUP
@@ -2029,7 +2049,7 @@ _Ulkoasu:
 ; _Appearance:
 ;
 MSG_PREFSWIN_TOOLBAR_DISPLAYMODE_HELP
-The appearance of the tool bar can be configured here.
+Työkalupalkin ulkoasua voidaan säätää täällä.
 ; The appearance of the tool bar can be configured here.
 ;
 MSG_PREFSWIN_TOOLBAR_BUTTONFRAME
@@ -2037,7 +2057,7 @@ Painikkeiden kehys:
 ; Button _Frame:
 ;
 MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_HELP
-Allows to specify the frame type and look for the tool buttons.
+Mahdollistaa kehystyypin määrittämisen ja työkalupainikkeiden etsimisen.
 ; Allows to specify the frame type and look for the tool buttons.
 ;
 MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_WINTITLE
@@ -2061,7 +2081,7 @@ Nykyinen työkalupalkki
 ; Current Toolbar
 ;
 MSG_PREFSWIN_TOOLBAR_CURRENT_HELP
-These are the current tool bar buttons.
+Nämä ovat nykyiset työkalupalkin painikkeet.
 ; These are the current tool bar buttons.
 ;
 MSG_PREFSWIN_TOOLBAR_AVAILABLE_GROUP
@@ -2069,7 +2089,7 @@ Painikkeet
 ; Available Buttons
 ;
 MSG_PREFSWIN_TOOLBAR_AVAILABLE_HELP
-These are the available buttons for the tool bar.
+Nämä ovat työkalupalkin käytettävissä olevat painikkeet.
 ; These are the available buttons for the tool bar.
 ;
 MSG_PREFSWIN_TOOLBAR_DEVICE_LIST
@@ -2077,24 +2097,24 @@ Laitelista
 ; Device List
 ;
 MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP
-Näytä laitelista
-; Display Device List
+Näytä laitelista.
+; Display Device List.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY
 Kopioi
 ; Copy
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_HELP
-Kopioi tiedosto tai hakemisto
-; Copy file or directory
+Kopioi tiedosto tai hakemisto.
+; Copy file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS
 Kopioi nimellä
 ; Copy As
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS_HELP
-Kopioi tiedosto tai hakemisto nimellä
-; Copy As File or Directory
+Kopioi tiedosto tai hakemisto nimellä.
+; Copy As File or Directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE
 Siirrä
@@ -2102,95 +2122,95 @@ Siirrä
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_HELP
 Siirrä tiedosto tai hakemisto
-; Move a file or a directory
+; Move a file or a directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS
 Siirrä nimellä
 ; Move As
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP
-Siirrä ja uudelleennimeä tiedosto tai hakemisto
-; Move and rename file or directory
+Siirrä ja uudelleennimeä tiedosto tai hakemisto.
+; Move and rename file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE
 Poista
 ; Delete
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE_HELP
-Poista tiedosto tai hakemisto
-; Delete file or directory
+Poista tiedosto tai hakemisto.
+; Delete file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH
 Roskakori
 ; Trash
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH_HELP
-Siirrä tiedosto tai hakemisto roskakoriin
-; Move file or directory to Trashcan
+Siirrä tiedosto tai hakemisto roskakoriin.
+; Move file or directory to Trashcan.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD
 Kopioi leikepöydälle
 ; Copy To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP
-Kopioi tiedosto tai hakemisto leikepöydälle
-; Copy file or directory to clipboard
+Kopioi tiedosto tai hakemisto leikepöydälle.
+; Copy file or directory to clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD
 Siirrä leikepöydälle
 ; Move To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP
-Siirrä tiedosto tai hakemisto leikepöydälle
-; Move file or directory to clipboard
+Siirrä tiedosto tai hakemisto leikepöydälle.
+; Move file or directory to clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD
 Liitä leikepöydältä
 ; Paste From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP
-Liitä sisältöä leikepöydältä
-; Paste content of clipboard
+Liitä sisältöä leikepöydältä.
+; Paste content of clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS
 Liitä leikepöydältä nimellä
 ; Paste As From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS_HELP
-Liitä leikepöydän sisältö nimellä
-; Paste and rename content of clipboard
+Liitä leikepöydän sisältö nimellä.
+; Paste and rename content of clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT
 Valitse
 ; Select
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT_HELP
-Valitse tiedosto tai hakemisto
-; Select file or directory
+Valitse tiedosto tai hakemisto.
+; Select file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO
 Kuvakkeen tiedot
 ; Icon Info
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP
-Näyttää kuvaketietoikkunan
-; Display Icon Information window
+Näyttää kuvaketietoikkunan.
+; Display the Icon Information window
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT
 Alusta
 ; Format
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT_HELP
-Alustaa tiedostojärjestelmä
-; Format a filesystem
+Alustaa tiedostojärjestelmä.
+; Format a filesystem.
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR
 Luo hakemisto
 ; Add directory
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP
-Luo hakemisto
-; Create a directory
+Luo hakemisto.
+; Create a directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MAKELINK
 Luo linkki
@@ -2205,24 +2225,24 @@ Uudelleennimeä
 ; Rename
 ;
 MSG_PREFSWIN_TOOLBAR_RENAME_HELP
-Nimeä tiedosto tai hakemisto uudelleen
-; Rename file or directory
+Nimeä tiedosto tai hakemisto uudelleen.
+; Rename file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_FIND
 Etsi
 ; Find
 ;
 MSG_PREFSWIN_TOOLBAR_FIND_HELP
-Etsi tiedostoja
-; Finds files and directories
+Etsi tiedostoja.
+; Finds files and directories.
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT
 Edellinen
 ; Parent
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT_HELP
-Edellinen hakemisto
-; Parent directory
+Edellinen hakemisto.
+; Parent directory.
 ;
 MSG_PREFSWIN_TOOLBAR_BACK
 Takaisin
@@ -2237,48 +2257,48 @@ Seuraava
 ; Next
 ;
 MSG_PREFSWIN_TOOLBAR_FORWARD_HELP
-Seuraava hakemisto
-; Next
+Seuraava hakemisto.
+; Next in history.
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW
 Vaihda näkymää
 ; Switch view
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP
-Vaihda näkymän tilaa
-; Change view display mode
+Vaihda näkymän tilaa.
+; Change view display mode.
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS
 Kirjanmerkit
 ; Bookmarks
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP
-Bookmark file or directory
-; Bookmark file or directory
+Kirjanmerkki tiedostoon tai hakemistoon.
+; Bookmark file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE
 Väli
 ; Space
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE_HELP
-Add a space to toolbar
-; Add a space to toolbar
+Lisää väli työkalupalkkiin.
+; Add a space to toolbar.
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE
 Juostava väli
 ; Flexible space
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP
-Add a flexible space to toolbar
-; Add a flexible space to toolbar
+Lisää työkalupalkkiin joustava tila.
+; Add a flexible space to toolbar.
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR
 Erotin
 ; Separator
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP
-Separator between group of buttons
-; Separator between group of buttons
+Erotin painikeryhmän välillä.
+; Separator between group of buttons.
 ;
 MSG_PREFSWIN_TOOLBAR_DEFAULTDIMENSIONS_GROUP
 Oletuskoko
@@ -2289,7 +2309,7 @@ Kohdista _hiireen
 ; _Place the window under mouse pointer
 ;
 MSG_PREFSWIN_TOOLBAR_PLACEUNDERMOUSE_HELP
-If checkbox is on the window will be placed under mouse pointer.
+Ikkuna sijoitetaan hiiren osoittimen alle.
 ; If checkbox is on the window will be placed under mouse pointer.
 ;
 MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW
@@ -2297,7 +2317,7 @@ _Hae ikkunasta...
 ; _Get From Window...
 ;
 MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_HELP
-Allows to select a window and use it's coordinates as default.
+Mahdollistaa ikkunan valitsemisen ja sen koordinaattien käyttämisen oletusarvoisina.
 ; Allows to select a window and use its coordinates as default.
 ;
 MSG_PREFSWIN_TOOLBAR_COORDS
@@ -2305,7 +2325,7 @@ Vasen: %ld  Ylä: %ld  Leveys: %ld  Korkeus: %ld
 ; Left: %ld  Top: %ld  Width: %ld  Height: %ld
 ;
 MSG_PREFSWIN_TOOLBAR_COORDS_HELP
-These are the current default window dimensions.
+ämä ovat nykyiset oletusarvoiset ikkunamitat.
 ; These are the current default window dimensions.
 ;
 MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_TITLE
@@ -2325,7 +2345,7 @@ Mu_otoilu:
 ; F_ormat:
 ;
 MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_HELP
-Allows to set-up your own status bar.
+Mahdollistaa oman tilarivin määrittämisen.
 ; Allows to set-up your own status bar.
 ;
 MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_0
@@ -2353,7 +2373,7 @@ MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_5
 ; %ns% - number of selected files in current directory.
 ;
 MSG_PREFSWIN_TOOLBAR_STATUSBAR_FORMAT_6
-%sdu% - valittujen tiedostojen ja kansioiden kokonaiskoko.
+%sdu% - valittujen tiedostojen ja hakemistojen kokonaiskoko.
 ; %sdu% - space occupied by selected files and directories.
 ;
 MSG_PREFSWIN_TOOLBAR_VIEW_GROUP
@@ -2365,7 +2385,7 @@ Oletusnäkymä:
 ; Default view:
 ;
 MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEW_HELP
-Select which view should be used by default.
+Valitse oletusarvoisesti käytettävä näkymä.
 ; Select which view should be used by default.
 ;
 MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE
@@ -2373,7 +2393,7 @@ Oletusnäkymätila:
 ; Default view mode:
 ;
 MSG_PREFSWIN_TOOLBAR_DEFAULT_VIEWMODE_HELP
-Select which view mode should be used by default.
+Valitse oletusarvoisesti käytettävä katselutila.
 ; Select which view mode should be used by default.
 ;
 MSG_PREFSWIN_TOOLBAR_VIEW_ICON
@@ -2389,7 +2409,7 @@ Peri näkymä
 ; Inherit view
 ;
 MSG_PREFSWIN_TOOLBAR_INHERIT_VIEW_HELP
-When clicking a directory, decides if the current view or the default view should be applied.
+Kun hakemisto avataan, päättää peritäänkö edellinen näkymä vai käytetäänkö oletusnäkymää.
 ; When clicking a directory, decides if the current view or the default view should be applied.
 ;
 MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE
@@ -2397,7 +2417,7 @@ Peri näkymätila
 ; Inherit view mode
 ;
 MSG_PREFSWIN_TOOLBAR_INHERIT_VIEWMODE_HELP
-When clicking a directory, decides if the current view mode or the default view mode should be applied.
+Kun hakemisto avataan, päättää peritäänkö edellinen näkymätila vai käytetäänkö oletusnäkymätilaa.
 ; When clicking a directory, decides if the current view mode or the default view mode should be applied.
 ;
 ; *** System Information Window
@@ -2427,7 +2447,7 @@ Järjestelmä
 ; System
 ;
 MSG_SYSINFOWIN_CPULOAD
-CPU-kuorimitus
+CPU-kuormitus
 ; CPU load
 ;
 MSG_SYSINFOWIN_MEMORY
@@ -2439,7 +2459,7 @@ Tietokone:
 ; Machine:
 ;
 MSG_SYSINFOWIN_MACHINE_HELP
-This is the main board type and it's vendor.
+Tämä on emolevyn tyyppi ja sen valmistaja.
 ; This is the main board type and its vendor.
 ;
 MSG_SYSINFOWIN_CPUCOUNT
@@ -2495,7 +2515,7 @@ Malli:
 ; Model:
 ;
 MSG_SYSINFOWIN_MODEL_HELP
-This type of CPU is build into the system.
+Tämä suoritin on sisäänrakennettu järjestelmään.
 ; This type of CPU is built into the system.
 ;
 MSG_SYSINFOWIN_DATASTREAM
@@ -2503,7 +2523,7 @@ Datastream:
 ; Datastream:
 ;
 MSG_SYSINFOWIN_DATASTREAM_HELP
-Is the CPU supporting datastreams?
+Tukeeko suoritin datavirtoja?
 ; Is the CPU supporting datastreams?
 ;
 MSG_SYSINFOWIN_ALTIVEC
@@ -2511,7 +2531,7 @@ Altivec:
 ; AltiVec:
 ;
 MSG_SYSINFOWIN_ALTIVEC_HELP
-Contains the CPU a vector processing unit?
+Sisältääkö CPU vektoriprosessointiyksikön?
 ; Does the CPU contain a vector processing unit?
 ;
 MSG_SYSINFOWIN_PMON
@@ -2519,7 +2539,7 @@ Suorituskykymonitori:
 ; Performance monitor:
 ;
 MSG_SYSINFOWIN_PMON_HELP
-Is the CPU supporting a performance monitor?
+Tukeeko suoritin suorituskykymonitoria?
 ; Is the CPU supporting a performance monitor?
 ;
 MSG_SYSINFOWIN_CPUCACHE_GROUP
@@ -2531,7 +2551,7 @@ MSG_SYSINFOWIN_CACHESIZE
 ; %s cache size:
 ;
 MSG_SYSINFOWIN_CACHESIZE_HELP
-This shows the CPU cache size.
+Tämä näyttää suorittimen välimuistin koon.
 ; This shows the CPU cache size.
 ;
 MSG_SYSINFOWIN_CACHESPECS
@@ -2539,7 +2559,7 @@ MSG_SYSINFOWIN_CACHESPECS
 ; %s cache specs:
 ;
 MSG_SYSINFOWIN_CACHESPECS_HELP
-This shows the CPU cache specifications.
+Tämä näyttää suorittimen välimuistin tekniset tiedot.
 ; This shows the CPU cache specifications.
 ;
 MSG_SYSINFOWIN_AMBIENT_GROUP
@@ -2551,7 +2571,7 @@ MSG_SYSINFOWIN_SNDDRIVER
 ; Sound driver:
 ;
 MSG_SYSINFOWIN_SNDDRIVER_HELP
-This is the audio driver system used.
+Tämä on käytetty ääniajurijärjestelmä.
 ; This is the audio driver system used.
 ;
 MSG_SYSINFOWIN_SNDDRIVER_NONE_INFO
@@ -2575,7 +2595,7 @@ Akku: %ld mAh
 ; Battery: %ld mAh
 ;
 MSG_SYSINFOWIN_BATTERY_MISSING
-No battery found
+Akkua ei löydy
 ; No battery found
 ;
 ; *** MakeLinkWinClass (makelinkwinclass.c)
@@ -2634,7 +2654,7 @@ Ambient-työryhmä
 ; The Ambient Team
 ;
 MSG_ABOUTWIN_SCROLLINFO
-Perhaps you didn't know it but you can scroll that text up and down using the mouse wheel and stop the autoscroll with the left mouse button.
+Ehkä et tiennyt sitä, mutta voit vierittää tekstiä ylös ja alas hiiren rullaa käyttäen ja pysäyttää automaattisen vierityksen hiiren vasemmalla painikkeella.
 ; Perhaps you didn't know it but you can scroll that text up and down using the mouse wheel and stop the autoscroll with the left mouse button.
 ;
 MSG_ABOUTWIN_SCROLLRESTART
@@ -2812,15 +2832,15 @@ _Näkymä:
 ; _Mode:
 ;
 MSG_PREFSWIN_LISTER_MODES_HELP
-This mode gets active when list mode is selected.
-; This mode gets active when list mode is selected.
+Määrittää tiedostolistan tyypin: kaikki tiedostot, kuvakkeet tai esikatselukuvat.
+; Defines the display type of list mode: all files, icons, or thumbnails.
 ;
 MSG_PREFSWIN_LISTER_COMPACT_SIZE
-_Tiivistetty näkymä
+_Tiivistetty kokonäkymä
 ; Compact size displa_y
 ;
 MSG_PREFSWIN_LISTER_COMPACT_SIZE_HELP
-Size is shown in compact form if this switch is enabled.
+Kun valittuna koot näytetään tiivistettynä.
 ; Size is shown in compact form if this switch is enabled.
 ;
 MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS
@@ -2828,7 +2848,7 @@ Näytä _assignit
 ; Display _assigns
 ;
 MSG_PREFSWIN_LISTER_DISPLAY_ASSIGNS_HELP
-In device list assigns will be shown, if this gadget is activated.
+Laiteluettelossa näkyvät määritykset, jos tämä laite on aktivoitu.
 ; In device list assigns will be shown, if this gadget is activated.
 ;
 MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE
@@ -2836,7 +2856,7 @@ Paikanpäällinen muokkaus:
 ; Inline edi_ting:
 ;
 MSG_PREFSWIN_LISTER_INLINE_EDIT_MODE_HELP
-Using the given action allows to edit names without an additional context.
+Kun valittuna listanäkymässä voi muokata listan kohteita suoraan.
 ; Using the given action allows to edit names without an additional context.
 ;
 MSG_PREFSWIN_LISTER_INLINE_EDIT_DISABLED
@@ -2860,7 +2880,7 @@ Tiedosto:
 ; _File:
 ;
 MSG_PREFSWIN_LISTER_FILE_HELP
-This color is used to display files within the lister.
+Tätä väriä käytetään tiedostojen näyttämiseen listauksessa.
 ; This color is used to display files within the lister.
 ;
 MSG_PREFSWIN_LISTER_FILE_COLOR
@@ -2872,7 +2892,7 @@ Hakemisto:
 ; _Directory:
 ;
 MSG_PREFSWIN_LISTER_DIRECTORY_HELP
-This color is used to display drawers within the lister.
+Tätä väriä käytetään hakemistojen näyttämiseen listauksessa.
 ; This color is used to display drawers within the lister.
 ;
 MSG_PREFSWIN_LISTER_DIRECTORY_COLOR
@@ -2884,7 +2904,7 @@ Tiedosto valittuna:
 ; Se_lected file:
 ;
 MSG_PREFSWIN_LISTER_SELECTED_FILE_HELP
-This color is used to display selected files within the lister.
+Tätä väriä käytetään valittujen tiedostojen näyttämiseen listauksessa.
 ; This color is used to display selected files within the lister.
 ;
 MSG_PREFSWIN_LISTER_SELECTED_FILE_COLOR
@@ -2896,7 +2916,7 @@ Hakemisto valittuna:
 ; Sel_ected directory:
 ;
 MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY_HELP
-This color is used to display selected drawers within the lister.
+Tätä väriä käytetään valittujen hakemistojen näyttämiseen listauksessa.
 ; This color is used to display selected drawers within the lister.
 ;
 MSG_PREFSWIN_LISTER_SELECTED_DIRECTORY_COLOR
@@ -2908,7 +2928,7 @@ Softlin_kki:
 ; Softlin_k:
 ;
 MSG_PREFSWIN_LISTER_SOFTLINK_HELP
-This color is used to display softlinks within the lister.
+Tätä väriä käytetään näyttämään softlinkkejä listauksessa.
 ; This color is used to display softlinks within the lister.
 ;
 MSG_PREFSWIN_LISTER_SOFTLINK_COLOR
@@ -2920,7 +2940,7 @@ _Hardlinkki:
 ; _Hardlink:
 ;
 MSG_PREFSWIN_LISTER_HARDLINK_HELP
-This color is used to display hardlinks within the lister.
+Tätä väriä käytetään näyttämään hardlinkkejä listauksessa.
 ; This color is used to display hardlinks within the lister.
 ;
 MSG_PREFSWIN_LISTER_HARDLINK_COLOR
@@ -2932,7 +2952,7 @@ Levy:
 ; _Volume:
 ;
 MSG_PREFSWIN_LISTER_VOLUME_HELP
-This color is used to display volumes within the lister.
+Tätä väriä käytetään näyttämään levyjä listauksessa.
 ; This color is used to display volumes within the lister.
 ;
 MSG_PREFSWIN_LISTER_VOLUME_COLOR
@@ -2944,7 +2964,7 @@ Assi_gni:
 ; Assi_gn:
 ;
 MSG_PREFSWIN_LISTER_ASSIGN_HELP
-This color is used to display assigns within the lister.
+Tätä väriä käytetään näyttämään assignit listauksessa.
 ; This color is used to display assigns within the lister.
 ;
 MSG_PREFSWIN_LISTER_ASSIGN_COLOR
@@ -2956,7 +2976,7 @@ Sarake:
 ; Colum_n:
 ;
 MSG_PREFSWIN_LISTER_COLUMN_HELP
-This color is used to display columns within the lister.
+Tätä väriä käytetään sarakkeiden näyttämiseen listauksessa.
 ; This color is used to display columns within the lister.
 ;
 MSG_PREFSWIN_LISTER_COLUMN_COLOR
@@ -2968,7 +2988,7 @@ Käytä _taustakuvaa
 ; Use _window background
 ;
 MSG_PREFSWIN_LISTER_USEWINDOWBACKGROUND_HELP
-When activated the normal window background is displayed in list mode.
+Kun valittuna, ikkunan taustakuva näytetään myös listatilassa.
 ; When activated the normal window background is displayed in list mode.
 ;
 MSG_PREFSWIN_LISTER_SHOWICONS
@@ -2976,7 +2996,7 @@ Näytä _kuvakkeet
 ; Show _icons
 ;
 MSG_PREFSWIN_LISTER_SHOWICONS_HELP
-Specifies if icons should be displayed.
+Määrittää, näytetäänkö kuvakkeita.
 ; Specifies if icons should be displayed.
 ;
 MSG_PREFSWIN_LISTER_FONT
@@ -2984,7 +3004,7 @@ Kirjasin:
 ; Font:
 ;
 MSG_PREFSWIN_LISTER_FONT_HELP
-Specifies the font to be used in list view.
+Määrittää luettelonäkymässä käytettävän kirjasimen.
 ; Specifies the font to be used in list view.
 ;
 MSG_PREFSWIN_LISTER_FONT_REQ
@@ -2996,7 +3016,7 @@ Lihavoidut hakemistot
 ; Bold directories
 ;
 MSG_PREFSWIN_LISTER_BOLD_DIRECTORIES_HELP
-When activated, directories are shown in bold style.
+Kun valittuna, hakemistot näytetään lihavoidulla tekstityylillä.
 ; When activated, directories are shown in bold style.
 ;
 MSG_PREFSWIN_LISTER_ALTERNATED_ROWS
@@ -3004,7 +3024,7 @@ Vaihteleva riviväri
 ; Alternated rows
 ;
 MSG_PREFSWIN_LISTER_ALTERNATED_ROWS_HELP
-When activated, every other line is 10% brighter.
+Kun valittuna, joka toinen rivi on 10% vaaleampi.
 ; When activated, every other line is 10% brighter.
 ;
 MSG_PREFSWIN_LISTER_SELECTION_MODES
@@ -3028,7 +3048,7 @@ Korostettu järjestys-sarake
 ; Highlighted sorting column
 ;
 MSG_PREFSWIN_LISTER_HILIGHTED_SORTING_COLUMN_HELP
-When activated, the currently sorting column is brighter than other ones.
+Kun valittuna, järjestelyn määrittävä sarake on vaaleampi kuin muut.
 ; When activated, the currently sorting column is brighter than other ones.
 ;
 ; *** PrefsWin_KeyboardClass.c (prefswin_keyboardclass.c)
@@ -3052,12 +3072,20 @@ uusi pikatoiminto
 ; *** KeyShortCutClass.c (keyshortcutclass.c)
 ;
 MSG_KEYSHORTCUTCLASS_ACTION
-Muokkaa toimintoa
-; Edit Command
+Muokkaa toimintoa...
+; Edit Command...
+;
+MSG_KEYSHORTCUTCLASS_ACTION_HELP
+Avaa toimintoeditori-ikkunan, jossa voit määrittää tämän pikanäppäimen toiminnot.
+; Opens the action editor window, which allows you to configure the actions for this hotkey.
 ;
 MSG_KEYSHORTCUTCLASS_REMOVE
 Poista
 ; Remove
+;
+MSG_KEYSHORTCUTCLASS_REMOVE_HELP
+Poista tämä pikanäppäin ja siihen määritetty toiminto asetuksista.
+; Remove this hotkey along with the defined action from the configuration.
 ;
 MSG_KEYSHORTCUTCLASS_LABEL_FORMAT
 %s:
@@ -3152,7 +3180,7 @@ Nimi:
 ; Name:
 ;
 MSG_FINDCLASS_NAME_HELP
-Name of the file(s) to search.
+Haettavan tiedoston/tiedostojen nimi.
 ; Name of the file(s) to search.
 ;
 MSG_FINDCLASS_TEXT
@@ -3160,7 +3188,7 @@ Teksti:
 ; Text:
 ;
 MSG_FINDCLASS_TEXT_HELP
-Text to search within files.
+Teksti tiedostoista etsimistä varten.
 ; Text to search within files.
 ;
 MSG_FINDCLASS_TYPE
@@ -3168,7 +3196,7 @@ Tyyppi:
 ; Type:
 ;
 MSG_FINDCLASS_TYPE_HELP
-Filetype of the files to search.
+Haettavien tiedostojen tiedostotyyppi.
 ; Filetype of the files to search.
 ;
 MSG_FINDCLASS_COMMENT
@@ -3176,11 +3204,11 @@ Kommentti:
 ; Comment:
 ;
 MSG_FINDCLASS_COMMENT_HELP
-Filecomment of the files to search.
+Haettavien tiedostojen tiedostokommentti.
 ; Filecomment of the files to search.
 ;
 MSG_FINDCLASS_ADDSTRING_HELP
-New locations can be entered here.
+Uusia sijainteja voi syöttää tähän.
 ; New locations can be entered here.
 ;
 MSG_FINDCLASS_ADD
@@ -3204,7 +3232,7 @@ Sijainnit
 ; Locations
 ;
 MSG_FINDCLASS_LOCATIONS_HELP
-These locations will be searched.
+Tiedostoja etsitään näistä sijainneista.
 ; These locations will be searched.
 ;
 MSG_FINDCLASS_RESULTS
@@ -3212,7 +3240,7 @@ Tulokset
 ; Results
 ;
 MSG_FINDCLASS_RESULTS_HELP
-Here the search results will be displayed.
+Tässä näytetään hakutulokset.
 ; Here the search results will be displayed.
 ;
 MSG_FINDCLASS_SEARCH
@@ -3242,7 +3270,7 @@ Nimi
 ; Name
 ;
 MSG_FINDRESULTLISTCLASS_CONTAINER
-Kansiossa
+Säiliössä
 ; Container
 ;
 MSG_FINDRESULTLISTCLASS_COMMENT
@@ -3401,7 +3429,7 @@ Tallenna paneeli
 ; Save
 ;
 MSG_CMENU_PANELPREFS
-Open Panelprefs...
+Konfiguroi...
 ; Configure...
 ;
 MSG_CMENU_FORMAT
@@ -4078,7 +4106,7 @@ Hakemisto
 ; Directory
 ;
 MSG_PANELITEM_DIRPANELDESC
-Shows all icons within a directory in a sub panel.
+Näyttää kaikki hakemiston kuvakkeet alipaneelissa.
 ; Shows all icons within a directory in a sub panel.
 ;
 ; PanelSubPanelClass.c (panelsubpanelclass.c)
@@ -4088,7 +4116,7 @@ Alipaneeli
 ; Sub Panel
 ;
 MSG_PANELITEM_SUBPANELDESC
-Allows to group icons in sub panels.
+Mahdollistaa kuvakkeiden ryhmittelyn alipaneeleissa.
 ; Allows to group icons in sub panels.
 ;
 MSG_PANELITEM_SUBPANEL_SHORTHELP
@@ -4122,7 +4150,7 @@ Tyyppi
 ; Type
 ;
 MSG_ACTIONEDITORCLASS_TYPE_HELP
-This is the type of action for the current entry.
+Tämä on nykyisen valinnan toimintotyyppi.
 ; This is the type of action for the current entry.
 ;
 MSG_ACTIONEDITORCLASS_COMMANDSTRING
@@ -4182,20 +4210,19 @@ Poista valittu toiminto.
 ; Removes the current active action.
 ;
 MSG_ACTIONEDITORCLASS_ACTIONLIST_HELP
-This list contains all actions.
+Tämä lista sisältää kaikki toimenpiteet.
 ; This list contains all actions.
 ;
 MSG_ACTIONEDITORCLASS_UP_HELP
-Moves the selected entry up the action list.
+Siirtää valitun toiminnon ylöspäin toimintoluettelossa.
 ; Moves the selected entry up the action list.
 ;
 MSG_ACTIONEDITORCLASS_DOWN_HELP
-Moves the selected entry down the action list.
+Siirtää valitun toiminnon alaspäin toimintoluettelossa.
 ; Moves the selected entry down the action list.
 ;
 MSG_ACTIONEDITORCLASS_COMMAND_HELP
-Command to be executed.\n\nUse:\n%sp for entry full path.\n%sf for entry file part.\n%S for source view path.\n%Si for source view identifier.\n%D for destination view path.\n%Di for destination view \
-identifier.
+Suoritettava komento.\n\nKäytä:\n%sp merkinnän koko polulle.\n%sf merkinnän tiedoston osalle.\n%S lähdenäkymän polulle.\n%Si lähdenäkymän tunnukselle.\n%D kohdenäkymän polulle.\n%Di kohdenäkymän tunnukselle.\n
 ; Command to be executed.\n\nUse:\n%sp for entry full path.\n%sf for entry file part.\n%S for source view path.\n%Si for source view identifier.\n%D for destination view path.\n%Di for destination view \
 ; identifier.
 ;
@@ -4244,7 +4271,7 @@ Järjestä edellisen mukaan
 ; Sort by parent
 ;
 MSG_ACTIONEDITORCLASS_SORTBYPARENT_HELP
-The name of the parent element will be used to sort menu items.
+Ylätason elementin nimeä käytetään valikkokohtien lajitteluun.
 ; The name of the parent element will be used to sort menu items.
 ;
 MSG_ACTIONEDITORCLASS_PARENTNAME
@@ -4252,7 +4279,7 @@ Edellisen valikon nimi
 ; Parent Menu Name
 ;
 MSG_ACTIONEDITORCLASS_PARENTNAME_HELP
-Specify the name of the parent menu.
+Määritä päävalikon nimi.
 ; Specify the name of the parent menu.
 ;
 MSG_ACTIONEDITORCLASS_CDTOSOURCE
@@ -4284,7 +4311,7 @@ _Yhdistä valinnat
 ; _Merge selection
 ;
 MSG_ACTIONEDITORCLASS_ACTIONMULTIPLEFILES_HELP
-Merge selected files in a single string.
+Yhdistä valitut tiedostot yhdeksi merkkijonoksi.
 ; Merge selected files in a single string.
 ;
 MSG_ACTIONEDITORCLASS_OK
@@ -4292,7 +4319,7 @@ _Ok
 ; _Ok
 ;
 MSG_ACTIONEDITORCLASS_OK_HELP
-The current setup will be used.
+Nykyistä kokoonpanoa käytetään.
 ; The current setup will be used.
 ;
 MSG_ACTIONEDITORCLASS_CANCEL
@@ -4300,7 +4327,7 @@ _Peruuta
 ; _Cancel
 ;
 MSG_ACTIONEDITORCLASS_CANCEL_HELP
-The current setup will be rejected.
+Nykyinen määritys hylätään.
 ; The current setup will be rejected.
 ;
 MSG_ACTIONEDITORCLASS_SPECIFYCOMMANDHERE
@@ -4352,7 +4379,7 @@ _Lisää
 ; _Add
 ;
 MSG_MIMEGROUPCLASS_ADD_HELP
-Adds an action to action list.
+Lisää toiminnon toimintoluetteloon.
 ; Adds an action to action list.
 ;
 MSG_MIMEGROUPCLASS_COPY
@@ -4360,7 +4387,7 @@ _Kopioi
 ; Cop_y
 ;
 MSG_MIMEGROUPCLASS_COPY_HELP
-Copies the current entry.
+Kopioi nykyisen merkinnän.
 ; Copies the current entry.
 ;
 MSG_MIMEGROUPCLASS_EDIT
@@ -4368,7 +4395,7 @@ _Muokkaa
 ; _Edit
 ;
 MSG_MIMEGROUPCLASS_EDIT_HELP
-Edit the current active entry.
+Muokkaa nykyistä aktiivista merkintää.
 ; Edit the current active entry.
 ;
 MSG_MIMEGROUPCLASS_REMOVE
@@ -4376,7 +4403,7 @@ _Poista
 ; _Remove
 ;
 MSG_MIMEGROUPCLASS_REMOVE_HELP
-Remove the current entry.
+Poista nykyinen merkintä.
 ; Remove the current entry.
 ;
 MSG_MIMEGROUPCLASS_SEARCH
@@ -4384,7 +4411,7 @@ Etsi
 ; Search
 ;
 MSG_MIMEGROUPCLASS_SEARCH_HELP
-Opens the mime search context.
+Avaa MIME-hakuikkunan.
 ; Opens the mime search context.
 ;
 ; *** MimeAdjustWinClass.c (mimeadjustwinclass.c)
@@ -4396,7 +4423,7 @@ Ambient · MIME-muokkain
 ; *** MimeAdjustGroupClass.c (mimeadjustgroupclass.c)
 ;
 MSG_MIMEADJUSTGROUPCLASS_ICON_HELP
-Simply drag and drop an icon onto this image to replace the default mime type icon.
+Vedä ja pudota kuvake tähän kuvaan korvataksesi oletusarvoisen MIME-tyypin kuvakkeen.
 ; Simply drag and drop an icon onto this image to replace the default mime type icon.
 ;
 MSG_MIMEADJUSTGROUPCLASS_MIMETYPE
@@ -4404,11 +4431,11 @@ _Mime-tyyppi:
 ; _Mimetype:
 ;
 MSG_MIMEADJUSTGROUPCLASS_MIMETYPE_HELP
-Type used to identify a file.
+Tiedoston tunnistamiseen käytetty tyyppi.
 ; Type used to identify a file.
 ;
 MSG_MIMEADJUSTGROUPCLASS_MIMESUBTYPE_HELP
-Subtype used to identify a file.
+Tiedoston tunnistamiseen käytetty alityyppi.
 ; Subtype used to identify a file.
 ;
 MSG_MIMEADJUSTGROUPCLASS_PRIORITY
@@ -4416,7 +4443,7 @@ _Prioriteetti:
 ; _Priority:
 ;
 MSG_MIMEADJUSTGROUPCLASS_PRIORITY_HELP
-Specifies the priority in the mime type list.
+Määrittää prioriteetin MIME-tyyppiluettelossa.
 ; Specifies the priority in the mime type list.
 ;
 MSG_MIMEADJUSTGROUPCLASS_DESCRIPTION
@@ -4424,7 +4451,7 @@ _Kuvaus:
 ; _Description:
 ;
 MSG_MIMEADJUSTGROUPCLASS_DESCRIPTION_HELP
-Description of the current mime type.
+Nykyisen MIME-tyypin kuvaus.
 ; Description of the current mime type.
 ;
 MSG_MIMEADJUSTGROUPCLASS_ACTIONS_GROUP
@@ -4432,7 +4459,7 @@ Toiminnot
 ; Actions
 ;
 MSG_MIMEADJUSTGROUPCLASS_ACTIONS_HELP
-These actions are currently defined for the current mime type.
+Nämä toiminnot on tällä hetkellä määritelty nykyiselle MIMEtyypille.
 ; These actions are currently defined for the current mime type.
 ;
 MSG_MIMEADJUSTGROUPCLASS_ADD
@@ -4440,7 +4467,7 @@ _Lisää...
 ; _Add...
 ;
 MSG_MIMEADJUSTGROUPCLASS_ADD_HELP
-Adds an action.
+Lisää toiminnon.
 ; Adds an action.
 ;
 MSG_MIMEADJUSTGROUPCLASS_EDIT
@@ -4448,7 +4475,7 @@ _Muokkaa...
 ; _Edit...
 ;
 MSG_MIMEADJUSTGROUPCLASS_EDIT_HELP
-Allows to edit an action.
+Mahdollistaa toiminnon muokkaamisen.
 ; Allows to edit an action.
 ;
 MSG_MIMEADJUSTGROUPCLASS_REMOVE
@@ -4456,15 +4483,15 @@ _Poista
 ; _Remove
 ;
 MSG_MIMEADJUSTGROUPCLASS_REMOVE_HELP
-Removes an action.
+Poistaa toiminnon.
 ; Removes an action.
 ;
 MSG_MIMEADJUSTGROUPCLASS_UP_HELP
-Moves the selected entry up the list.
+Siirtää valitun merkinnän ylöspäin listalla.
 ; Moves the selected entry up the list.
 ;
 MSG_MIMEADJUSTGROUPCLASS_DOWN_HELP
-Moves the selected entry down the list.
+Siirtää valitun merkinnän alaspäin luettelossa.
 ; Moves the selected entry down the list.
 ;
 MSG_MIMEADJUSTGROUPCLASS_OK
@@ -4472,7 +4499,7 @@ _Ok
 ; _Ok
 ;
 MSG_MIMEADJUSTGROUPCLASS_OK_HELP
-All selections made in this window will be used.
+Kaikki tässä ikkunassa tehdyt valinnat otetaan käyttöön.
 ; All selections made in this window will be used.
 ;
 MSG_MIMEADJUSTGROUPCLASS_CANCEL
@@ -4480,15 +4507,15 @@ _Peruuta
 ; _Cancel
 ;
 MSG_MIMEADJUSTGROUPCLASS_CANCEL_HELP
-All selections made in this window will be rejected.
+Ikkuna suljetaan ilman suoritettavaa toimintoa.
 ; All selections made in this window will be rejected.
 ;
 MSG_MIMEADJUSTGROUPCLASS_ACTIONSTOPERFORM_HELP
-Actions to perform. It can be a primary action (doubleclick) or secondary action (eg. menu, drag'n'drop).
+Suoritettavat toiminnot. Se voi olla ensisijainen toiminto (kaksoisnapsautus) tai toissijainen toiminto (esim. valikko, raahaa ja pudota).
 ; Actions to perform. It can be a primary action (doubleclick) or secondary action (eg. menu, drag'n'drop).
 ;
 MSG_MIMEADJUSTGROUPCLASS_DISABLED_HELP
-Actions are disabled because there's no valid mimetype in the mimetype string above.
+Toiminnot on poistettu käytöstä, koska yllä olevassa MIME-tyyppimerkkijonossa ei ole kelvollista MIME-tyyppiä.
 ; Actions are disabled because there's no valid mimetype in the mimetype string above.
 ;
 MSG_MIMEADJUSTGROUPCLASS_TITLE_REQ
@@ -4566,7 +4593,7 @@ _Palauta oletukset
 ; _Reset to Default
 ;
 MSG_PREFSADVANCEDGROUPCLASS_RESETTODEFAULT_HELP
-The value of the selected item will be reset to it's default.
+Valitun kohteen arvo palautetaan oletusarvoon.
 ; The value of the selected item will be reset to its default.
 ;
 MSG_PREFSADVANCEDGROUPCLASS_ON
@@ -4628,7 +4655,7 @@ MSG_PATTERNRENAMEWINCLASS_OLDNAME
 ; \033c\033bSource name or pattern:
 ;
 MSG_PATTERNRENAMEWINCLASS_OLDNAME_HELP
-Name or pattern for original name.
+Alkuperäisen nimen nimi tai lauseke.
 ; Name or pattern for original name.
 ;
 MSG_PATTERNRENAMEWINCLASS_NEWNAME
@@ -4636,7 +4663,7 @@ MSG_PATTERNRENAMEWINCLASS_NEWNAME
 ; \033c\033bDesti_nation name or pattern:
 ;
 MSG_PATTERNRENAMEWINCLASS_NEWNAME_HELP
-Name or pattern for new name.
+Uuden nimen nimi tai lauseke.
 ; Name or pattern for new name.
 ;
 MSG_PATTERNRENAMEWINCLASS_RENAME
@@ -4644,7 +4671,7 @@ _Nimeä uudelleen
 ; _Rename
 ;
 MSG_PATTERNRENAMEWINCLASS_RENAME_HELP
-The name specified within the text field in this window will be used as new name.
+Tämän ikkunan tekstikentässä määritettyä nimeä käytetään uutena nimenä.
 ; The name specified within the text field in this window will be used as new name.
 ;
 MSG_PATTERNRENAMEWINCLASS_SKIP
@@ -4652,7 +4679,7 @@ _Ohita
 ; _Skip
 ;
 MSG_PATTERNRENAMEWINCLASS_SKIP_HELP
-Skip the current file and continue with the next file.
+Ohita nykyinen tiedosto ja jatka seuraavaan tiedostoon.
 ; Skip the current file and continue with the next file.
 ;
 MSG_PATTERNRENAMEWINCLASS_CANCEL
@@ -4698,7 +4725,7 @@ Kirjanmerkit
 ; Bookmarks
 ;
 MSG_PREFSWIN_BOOKMARKS_HELP
-List of the currently defined bookmarks.
+Luettelo määritetyistä kirjanmerkeistä.
 ; List of the currently defined bookmarks.
 ;
 MSG_PREFSWIN_BOOKMARKS_ADD
@@ -4706,7 +4733,7 @@ _Lisää
 ; _Add
 ;
 MSG_PREFSWIN_BOOKMARKS_ADD_HELP
-Adds a new bookmark to the list.
+Lisää uuden kirjanmerkin luetteloon.
 ; Adds a new bookmark to the list.
 ;
 MSG_PREFSWIN_BOOKMARKS_REMOVE
@@ -4714,7 +4741,7 @@ _Poista
 ; _Remove
 ;
 MSG_PREFSWIN_BOOKMARKS_REMOVE_HELP
-The active bookmark will be removed from list.
+Aktiivinen kirjanmerkki poistetaan listalta.
 ; The active bootmark will be removed from list.
 ;
 MSG_PREFSWIN_BOOKMARKS_LOCATION
@@ -4722,7 +4749,7 @@ _Sijainti
 ; _Location
 ;
 MSG_PREFSWIN_BOOKMARKS_LOCATION_HELP
-This path specifies the location the bookmark is leading to.
+Tämä polku määrittää sijainnin, johon kirjanmerkki johtaa.
 ; This path specifies the location the bookmark is leading to.
 ;
 MSG_PREFSWIN_BOOKMARKS_NAME
@@ -4730,7 +4757,7 @@ _Nimi
 ; _Name
 ;
 MSG_PREFSWIN_BOOKMARKS_NAME_HELP
-The name entered here is used in context menus to identify the bookmark.
+Tähän syötettyä nimeä käytetään kontekstivalikoissa käynnistysmerkin tunnistamiseen.
 ; The name entered here is used in context menus to identify the bootmark.
 ;
 MSG_PREFSWIN_BOOKMARKS_DISPLAY_GROUP
@@ -4742,7 +4769,7 @@ _Näytä:
 ; _Display as:
 ;
 MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_HELP
-Only the specified information will be shown in bookmark lists.
+Kirjanmerkkiluetteloissa näytetään vain määritetyt tiedot.
 ; Only the specified information will be shown in bookmark lists.
 ;
 MSG_PREFSWIN_BOOKMARKS_DISPLAYAS_NAMESANDLOCATIONS
@@ -4786,7 +4813,7 @@ _Ok
 ; _Ok
 ;
 MSG_ADDBOOKMARKWINCLASS_OK_HELP
-Bookmark will be added to bookmark list.
+Kirjanmerkki lisätään kirjanmerkkiluetteloon.
 ; Bookmark will be added to bookmark list.
 ;
 MSG_ADDBOOKMARKWINCLASS_CANCEL
@@ -4794,7 +4821,7 @@ _Peruuta
 ; _Cancel
 ;
 MSG_ADDBOOKMARKWINCLASS_CANCEL_HELP
-The bookmark creation will be aborted.
+Kirjanmerkin luominen perutaan.
 ; The bookmark creation will be aborted.
 ;
 ; SelectWinClass.c (selectwinclass.c)
@@ -4886,11 +4913,11 @@ Ambient · Tuhoa tiedosto
 ; Ambient · Trash file
 ;
 MSG_TRASHFILE_ERRORWHILEDELETINGFILE
-Tiedostoa '%s' ei voitu tuhota.\nDOS-virhe: %S (#%N).
+Tiedostoa '%s' ei voitu poistaa.\nDOS-virhe: %S (#%N).
 ; Couldn't trash file '%s'.\nDOS error: %S (#%N).
 ;
 MSG_TRASHFILE_ERRORWHILEDELETINGFILEICON
-Tiedoston '%s' kuvaketta ei voitu tuhota.\nDOS-virhe: %S (#%N).
+Tiedoston '%s' kuvaketta ei voitu poistaa.\nDOS-virhe: %S (#%N).
 ; Couldn't trash icon of file '%s'.\nDOS error: %S (#%N).
 ;
 MSG_TRASHFILE_RETRYCANCEL
@@ -4937,7 +4964,7 @@ Nimi:
 ; Name:
 ;
 MSG_PANELWIN_NAME_HELP
-Name for panel in prefswin and on disk.
+Paneelin nimi asetusikkunassa ja levyllä.
 ; Name for panel in prefswin and on disk.
 ;
 MSG_PANELWIN_BACKGROUND
@@ -4945,7 +4972,7 @@ Tausta:
 ; Background:
 ;
 MSG_PANELWIN_BACKGROUND_HELP
-Background for panelwindow.
+Paneeli-ikkunan tausta.
 ; Background for panelwindow.
 ;
 MSG_PANELWIN_BACKMODE_COLOR
@@ -4961,7 +4988,7 @@ Läpinäkyvyys:
 ; Alpha:
 ;
 MSG_PANELWIN_ALPHA_HELP
-Global alpha for panelwindow.
+Paneelin läpinäkyvyys.
 ; Global alpha for panel.
 ;
 MSG_PANELWIN_DEPTHS_NORMAL
@@ -4997,7 +5024,7 @@ Asent_o:
 ; _Orientation:
 ;
 MSG_PANELWIN_ORIENTATION_HELP
-Changes the orientation of the panel.
+Muuttaa paneelin asentoa.
 ; Changes the orientation of the panel.
 ;
 MSG_PANELWIN_TITLES_VERTICAL
@@ -5013,7 +5040,7 @@ Sijottelu:
 ; _Positioning:
 ;
 MSG_PANELWIN_POSITIONING_HELP
-Makes the screen borders act as a kind of magnet.
+Saa näytön reunat toimimaan eräänlaisena magneettina.
 ; Makes the screen borders act as a kind of magnet.
 ;
 MSG_PANELWIN_MODES_FLOATING
@@ -5025,7 +5052,7 @@ Kiinnittyneenä reunuksiin
 ; Attached to Borders
 ;
 MSG_PANELWIN_MODES_FIXED
-Fixed to position
+Kiinteä paikka
 ; Fixed to position
 ;
 MSG_PANELWIN_SIZE
@@ -5033,7 +5060,7 @@ Koko:
 ; S_ize:
 ;
 MSG_PANELWIN_SIZE_HELP
-Changes the size of the panel.
+Muuttaa paneelin kokoa.
 ; Changes the size of the panel.
 ;
 MSG_PANELWIN_DEPTH_ARRANGEMENT
@@ -5041,7 +5068,7 @@ Syvyysasettelu:
 ; _Depth arrangement:
 ;
 MSG_PANELWIN_DEPTH_ARRANGEMENT_HELP
-Tells how a panel should behave regarding depth arrangement with other windows.
+Miten paneeli suhtautuu syvyysjärjestelyssä muihin ikkunoihin.
 ; Tells how a panel should behave regarding depth arrangement with other windows.
 ;
 MSG_PANELWIN_DRAG_GADGET
@@ -5049,7 +5076,7 @@ Vetopainike:
 ; Drag _gadget:
 ;
 MSG_PANELWIN_DRAG_GADGET_HELP
-Changes the place and number of dragging gadgets, which allow to drag the panel around.
+Vaihda vetopainikkeiden sijoittelua ja lukumäärää.
 ; Changes the place and number of dragging gadgets, which allow to drag the panel around.
 ;
 MSG_PANELWIN_ALLOW_ZIPPING
@@ -5057,7 +5084,7 @@ Salli viuhahdus
 ; Allow _zipping
 ;
 MSG_PANELWIN_ALLOW_ZIPPING_HELP
-Allows to reduce the panel to its minimal size by clicking on a drag gadget.
+Sallii paneelin pienentämisen klikkaamalla sen vetopainiketta.
 ; Allows to reduce the panel to its minimal size by clicking on a drag gadget.
 ;
 MSG_PANELWIN_AUTO_ZIPPING
@@ -5065,7 +5092,7 @@ _Automaattiviuhahdus
 ; _Autozipping
 ;
 MSG_PANELWIN_AUTO_ZIPPING_HELP
-Zip panel when mouse enters and leaves panel.
+Paneeli suurenee ja pienenee kun hiiren osoitin siirtyy sen päälle.
 ; Zip panel when mouse enters and leaves panel.
 ;
 MSG_PANELWIN_HIDE_DRAGBAR
@@ -5073,7 +5100,7 @@ Piilota vetopalkki
 ; Hide Dragbar
 ;
 MSG_PANELWIN_HIDE_DRAGBAR_HELP
-Only show dragbar(s) when under mousepointer.
+Näytä vetopalkit vain kun hiiren osoitin on niiden päällä.
 ; Only show dragbar(s) when under mousepointer.
 ;
 ; *** PanelBaseButtonClass.c (panelbasebuttonclass.c)
@@ -5083,7 +5110,7 @@ Kuvake:
 ; Icon:
 ;
 MSG_PANELBASEBUTTON_ICON_HELP
-Icon displayed in parent panel.
+Kuvake näkyy pääpaneelissa.
 ; Icon displayed in parent panel.
 ;
 MSG_PANELBASEBUTTON_ICON_DEFAULT
@@ -5114,7 +5141,7 @@ Tausta:
 ; Background:
 ;
 MSG_PANELSUBWIN_BACKGROUND_HELP
-Background for panel.
+Paneelin tausta.
 ; Background for panel.
 ;
 MSG_PANELSUBWIN_ALPHA
@@ -5122,7 +5149,7 @@ Läpinäkyvyys
 ; Alpha
 ;
 MSG_PANELSUBWIN_ALPHA_HELP
-Global alpha for sub panel.
+Alipaneelin yleinen läpinäkyvyys.
 ; Global alpha for sub panel.
 ;
 MSG_PANELSUBWIN_BACKMODE_COLOR
@@ -5144,7 +5171,7 @@ Hakemisto:
 ; Directory:
 ;
 MSG_PANELDIRPANELBUTTON_DIRECTORY_HELP
-Directory to be shown in a sub panel.
+Alipaneelissa näytettävä hakemisto.
 ; Directory to be shown in a sub panel.
 ;
 MSG_PANELDIRPANELBUTTON_SHORTHELP
@@ -5166,7 +5193,7 @@ Uusi paneeli
 ; New Panel
 ;
 MSG_PREFSWIN_PANEL_NEW_HELP
-Creates new panel.
+Luo uuden paneelin.
 ; Creates new panel.
 ;
 MSG_PREFSWIN_PANEL_DELETE
@@ -5174,11 +5201,11 @@ Poista
 ; Delete
 ;
 MSG_PREFSWIN_PANEL_DELETE_HELP
-Delete panel or panelitem.
+Poista paneeli tai paneelin kohde.
 ; Delete panel or panelitem.
 ;
 MSG_PREFSWIN_PANEL_LIST_HELP
-Drag object into listtree.
+Vedä objekti listapuuhun.
 ; Drag object into listtree.
 ;
 MSG_PREFSWIN_PANEL_RESCAN
@@ -5186,7 +5213,7 @@ Hae uudelleen
 ; Rescan
 ;
 MSG_PREFSWIN_PANEL_RESCAN_HELP
-Rescan for added classes and update the class list.
+Skannaa uudelleen lisättyjen luokkien varalta ja päivitä luokkaluettelo.
 ; Rescan for added classes and update the class list.
 ;
 MSG_PREFSWIN_PANEL_ZIPSPEED
@@ -5194,7 +5221,7 @@ Viuhahdusnopeus:
 ; Zipping speed:
 ;
 MSG_PREFSWIN_PANEL_ZIPSPEED_HELP
-Sets the animation speed of the panels' zipping effect.
+Asettaa nopeuden jolla paneeli sulkeutuu ja avautuu.
 ; Sets the animation speed of the panels' zipping effect.
 ;
 MSG_PREFSWIN_PANEL_LAYOUT
@@ -5210,7 +5237,7 @@ Kuvake pudotetaan paneeliin
 ; Icon dropped into window
 ;
 MSG_PREFSWIN_PANEL_AUTOSAVE_DROP_HELP
-Save the panel when icon is added by dropping it onto panel.
+Tallenna paneeli pudottamalla kuvake paneeliin, kun se lisätään.
 ; Save the panel when icon is added by dropping it onto panel.
 ;
 MSG_PREFSWIN_PANEL_AUTOSAVE_DELETE
@@ -5218,7 +5245,7 @@ Kuvake poistetaan
 ; Icon deleted
 ;
 MSG_PREFSWIN_PANEL_AUTOSAVE_DELETE_HELP
-Save the panel when icon is deleted from contextmenu.
+Tallenna paneeli, kun kuvake poistetaan kontekstivalikosta.
 ; Save the panel when icon is deleted from contextmenu.
 ;
 MSG_PREFSWIN_PANEL_AUTOSAVE_MOVE
@@ -5226,7 +5253,7 @@ Kuvaketta siirretään paneelin sisällä
 ; Icon moved inside window
 ;
 MSG_PREFSWIN_PANEL_AUTOSAVE_MOVE_HELP
-Save the panel when icon is moved.
+Tallenna paneeli, kun kuvaketta siirretään.
 ; Save the panel when icon is moved.
 ;
 MSG_PREFSWIN_PANEL_AUTOSAVE_WINDOWPOS
@@ -5234,7 +5261,7 @@ Paneelia siirretään ruudulla
 ; Panel moved on screen
 ;
 MSG_PREFSWIN_PANEL_AUTOSAVE_WINDOWPOS_HELP
-Save the panel when panel is dragged to a new position.
+Tallenna paneeli, kun se vedetään uuteen paikkaan.
 ; Save the panel when panel is dragged to a new position.
 ;
 MSG_PREFSWIN_PANEL_EFFECTS
@@ -5246,7 +5273,7 @@ Korostus:
 ; Highlight:
 ;
 MSG_PREFSWIN_PANEL_HIGHLIGHT_HELP
-Effect on icon when mouse is hovering over it.
+Vaikutus kuvakkeeseen, kun hiiri viedään sen päälle.
 ; Effect on icon when mouse is hovering over it.
 ;
 MSG_PREFSWIN_PANEL_DRAGDROP_EFFECT
@@ -5254,7 +5281,7 @@ Vedä & Pudota:
 ; Drag&Drop:
 ;
 MSG_PREFSWIN_PANEL_DRAGDROP_EFFECT_HELP
-Effect on icon when object is dragged over it.
+Vaikutus kuvakkeeseen, kun objekti vedetään sen yli.
 ; Effect on icon when object is dragged over it.
 ;
 MSG_PREFSWIN_PANEL_SELECTED_EFFECT
@@ -5262,7 +5289,7 @@ Valittu:
 ; Selected:
 ;
 MSG_PREFSWIN_PANEL_SELECTED_EFFECT_HELP
-Effect on icon when object is selected.
+Vaikutus kuvakkeeseen, kun kohde on valittu.
 ; Effect on icon when object is selected.
 ;
 MSG_PREFSWIN_PANEL_EFFECT_NONE
@@ -5326,7 +5353,7 @@ Pakota kuvakkeet neliöruudukkoon.
 ; Force icons into square grid.
 ;
 MSG_PREFSWIN_PANEL_FORCE_GRID_HELP
-Icon based panel objects will always use space where width and height are the panelsize instead of adapting one to the icon's aspect ratio.
+Kuvakepohjaiset paneeliobjektit käyttävät aina tilaa, jossa leveys ja korkeus ovat paneelin kokoa sen sijaan, että ne mukautuisivat kuvakkeen kuvasuhteeseen.
 ; Icon based panel objects will always use space where width and height are the panelsize instead of adapting one to the icon's aspect ratio.
 ;
 MSG_PREFSWIN_PANEL_CLASS_NAME
@@ -5334,7 +5361,7 @@ MSG_PREFSWIN_PANEL_CLASS_NAME
 ; \033bName:
 ;
 MSG_PREFSWIN_PANEL_CLASS_NAME_HELP
-Name of the selected panel item.
+Valitun paneelikohteen nimi.
 ; Name of the selected panel item.
 ;
 MSG_PREFSWIN_PANEL_CLASS_VERSION
@@ -5342,7 +5369,7 @@ MSG_PREFSWIN_PANEL_CLASS_VERSION
 ; \033bVersion:
 ;
 MSG_PREFSWIN_PANEL_CLASS_VERSION_HELP
-Version of the selected panel item.
+Valitun paneelikohteen versio.
 ; Version of the selected panel item.
 ;
 MSG_PREFSWIN_PANEL_CLASS_AUTHOR
@@ -5350,7 +5377,7 @@ MSG_PREFSWIN_PANEL_CLASS_AUTHOR
 ; \033bAuthor:
 ;
 MSG_PREFSWIN_PANEL_CLASS_AUTHOR_HELP
-Author of the selected panel item.
+Valitun paneelikohteen tekijä.
 ; Author of the selected panel item.
 ;
 MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE
@@ -5358,7 +5385,7 @@ Kuvaus
 ; Description
 ;
 MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE_HELP
-Description of the selected panel item.
+Valitun paneelikohteen kuvaus.
 ; Description of the selected panel item.
 ;
 MSG_PREFSWIN_PANEL_CLASS_NOPREFSAVAILABLE
@@ -5418,12 +5445,24 @@ Vaihda listanäkymään. Käytä hiiren rullaa zoomataksesi!
 ; Switch to List viewmode. Use the mouse wheel to zoom!
 ;
 MSG_IMAGEVIEW_CLASS_HOTKEYS_HELP
-\033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPRTSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
-\033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
-image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
-; \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPRTSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
-; \033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
-; image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+\033c\033u\033bKäytettävissä olevat pikanäppäimet:\033n\n\
+\033c(Liikuttelu vain "Normaali"-tilassa!)\033n\n\n\
+\033l\033bPRTSCREEN:\033n Tulosta kuva\n\
+\033l\033bCtrl/Shift/Alt + Kursorinäppäimet:\033n Vieritä kuvaa\n\
+\033l\033bHome/End:\033n Vieritä kuvan ylä-/alareunaan\n\
+\033l\033bRulla ylös/alas:\033n Vieritä joitakin pikseleitä ylös/alas\n\
+\033l\033bSivu ylös/alas:\033n Näytä edellinen/seuraava kuva\n\
+\033l\033bL/R:\033n Kierrä kuvaa vasemmalle/oikealle\n\n\
+\033lVoit vetää kuvaa hiiren vasemmalla tai keskimmäisellä hiiren painikkeella.
+; \033c\033u\033bAvailable Controls:\033n\n\
+; \033c(Movements only available in "normal" mode!)\033n\n\n\
+; \033l\033bPRTSCREEN:\033n Print the image\n\
+; \033l\033bCTRL/SHIFT/ALT + Cursor keys:\033n Scroll the image\n\
+; \033l\033bHome/End:\033n Scroll to the top/bottom of the image\n\
+; \033l\033bWheel Up/Down:\033n Scroll some pixels up/down\n\
+; \033l\033bPage Up/Down:\033n Show the prev/next image\n\
+; \033l\033bL/R:\033n Rotate the image to the left/right\n\n\
+; \033lYou can drag the image around using the left or middle mousebutton.
 ;
 MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR
 Vä_ri:
@@ -5466,7 +5505,7 @@ Kohde '%s' on hakemisto.
 ; Destination '%s' is a directory.
 ;
 MSG_FASTCOPY_FILECANTBEDELETEDDOSERROR
-Tiedoston '%s' poisto epäonnistui.\nDOS-virhe: %S (#%N).
+Tiedoston '%s' ei voitu poistaa.\nDOS-virhe: %S (#%N).
 ; File '%s' can't be deleted.\nDOS error: %S (#%N).
 ;
 MSG_FASTCOPY_FILEINCOMPLETE
@@ -5500,6 +5539,139 @@ Salli efektit
 ; Enable effects
 ;
 MSG_PREFSWIN_BACKGROUND_TRANSITION_HELP
-Enable transition effects
+Ota käyttöön siirtymäefektit
 ; Enable transition effects
+;
+MSG_RECOGNITION_DB_START
+Tiedostotyyppitoimintojen määrittäminen...
+; Configure Filetype Actions...
+;
+MSG_RECOGNITION_DB_0001
+Avaa
+; Open
+;
+MSG_RECOGNITION_DB_0002
+Pura
+; Extract
+;
+MSG_RECOGNITION_DB_0003
+Pura kohteeseen...
+; Extract To...
+;
+MSG_RECOGNITION_DB_0004
+Kiinnitä...
+; Mount...
+;
+MSG_RECOGNITION_DB_0005
+Kiinnitä
+; Mount
+;
+MSG_RECOGNITION_DB_0006
+Liitä (kiinnittämättä tiedostojärjestelmää)
+; Insert (no mount)
+;
+MSG_RECOGNITION_DB_0007
+Polta levylle...
+; Burn to Disc...
+;
+MSG_RECOGNITION_DB_0008
+Avaa sovelluksella...
+; Open With...
+;
+MSG_RECOGNITION_DB_0009
+Avaa VPDF:a...
+; Open with VPDF...
+;
+MSG_RECOGNITION_DB_0010
+Avaa Apdf:a...
+; Open with Apdf...
+;
+MSG_RECOGNITION_DB_0011
+Avaa Multiview:a...
+; Open with Multiview...
+;
+MSG_RECOGNITION_DB_0012
+Avaa OpenURL:a...
+; Open with OpenURL...
+;
+MSG_RECOGNITION_DB_0013
+Suorita RX:a...
+; Execute with RX...
+;
+MSG_RECOGNITION_DB_0014
+Suorita LuaX:a...
+; Execute with LuaX...
+;
+MSG_RECOGNITION_DB_0015
+Luo LhA-arkisto...
+; Create LhA Archive...
+;
+MSG_RECOGNITION_DB_0016
+Pura Bz2:a...
+; UnCompress with Bz2...
+;
+MSG_RECOGNITION_DB_0017
+Pura UnRAR:a...
+; Extract with UnRAR...
+;
+MSG_RECOGNITION_DB_0018
+Huuhtele...
+; Flush...
+;
+MSG_RECOGNITION_DB_0019
+Versio...
+; Version...
+;
+MSG_RECOGNITION_DB_0020
+Toista...
+; Play...
+;
+MSG_RECOGNITION_DB_0021
+Toista Multiview:a...
+; Play with Multiview...
+;
+MSG_RECOGNITION_DB_0022
+Näytä Multiview:a...
+; View with Multiview...
+;
+MSG_RECOGNITION_DB_0023
+Multiview...
+; Multiview...
+;
+MSG_RECOGNITION_DB_0024
+ShowCase...
+; ShowCase...
+;
+MSG_RECOGNITION_DB_0025
+Mysticview...
+; Mysticview...
+;
+MSG_RECOGNITION_DB_0026
+Muokkaa Sketch:a...
+; Edit with Sketch...
+;
+MSG_RECOGNITION_DB_0027
+More...
+; More...
+;
+MSG_RECOGNITION_DB_0028
+Muokkaa...
+; Edit...
+;
+; CONTEXT SUB MENU NAMES
+;
+MSG_RECOGNITION_DB_0029
+Avaa sovelluksella
+; Open With
+;
+MSG_RECOGNITION_DB_0030
+Näytä sovelluksella
+; View With
+;
+;
+; COMMAND TEXTS
+;
+MSG_RECOGNITION_DB_0031
+Valitse kohdehakemisto...
+; Select Destination...
 ;

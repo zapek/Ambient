@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: devices.c,v 1.20 2020/08/16 03:15:18 jacadcaps Exp $
+ * $Id: devices.c,v 1.24 2025/08/17 17:00:32 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -369,7 +369,7 @@ struct tempnode{
 	TEXT name[0];
 };
 
-ULONG tr_devices_updateinfo(APTR obj)
+ULONG tr_devices_updateinfo(APTR obj UNUSED)
 {
 	ULONG rc = TRUE;
 	struct timerequest *timer;
@@ -381,7 +381,7 @@ ULONG tr_devices_updateinfo(APTR obj)
 
 	if (timer)
 	{
-		struct timeval tv = {10, 0};
+		struct TimeVal tv = {10, 0};
 		ULONG abort = FALSE, changed, initial = TRUE;
 
 		for (;;)
@@ -480,7 +480,7 @@ ULONG tr_devices_updateinfo(APTR obj)
 
 				if (changed)
 				{
-					DoMethod(app, MUIM_Application_PushMethod, app, 6 | MUIF_PUSHMETHOD_SINGLE, MM_Application_RootDoMethodByAttr, MA_Window_Type, MV_Window_Type_Rootview, MM_Window_DoView, NULL, MM_Iconview_UpdateDriveInfo);
+					DoMethod(app, MUIM_Application_PushMethod, app, 7 | MUIF_PUSHMETHOD_SINGLE, MM_Application_DoMethodByAttr, MV_Window_ID_Root, MA_Window_Type, MV_Window_Type_Rootview, MM_Window_DoView, NULL, MM_Iconview_UpdateDriveInfo);
 					DoMethod(app, MUIM_Application_PushMethod, app, 6 | MUIF_PUSHMETHOD_SINGLE, MM_Application_WindowDoMethodByAttr, MA_Window_Type, MV_Window_Type_View, MM_Window_DoView, NULL, MM_Iconview_UpdateDriveInfo);
 				}
 

@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: addbookmarkwinclass.c,v 1.2 2013/10/28 19:48:26 geit Exp $
+ * $Id: addbookmarkwinclass.c,v 1.4 2025/09/09 12:46:45 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -54,7 +54,7 @@ DEFNEW
 	APTR str_name, txt_uri, bt_ok, bt_cancel;
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_Title, GSI(MSG_ADDBOOKMARKWINCLASS_WINDOWTITLE),
 		MUIA_Window_LeftEdge, MUIV_Window_LeftEdge_Moused,
@@ -96,7 +96,7 @@ DEFNEW
 
 	if (obj == NULL)
 	{
-		return (NULL);
+		return( (ULONG) NULL);
 	}
 
 	data = INST_DATA(cl, obj);

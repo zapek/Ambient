@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: listviewlistclass.c,v 1.50 2018/04/15 13:28:01 bitrocky Exp $
+ * $Id: listviewlistclass.c,v 1.60 2026/01/25 17:36:24 kronos Exp $
  */
 
 #include "ambient.h"
@@ -62,6 +62,10 @@
 #include "time_func.h"
 #include "iconio.h"
 #include "fonts.h"
+#include "ipc.h"
+#include "wbarg.h"
+
+#include "wblib/AppWindow.h"
 
 #define LISTTITLE_BUFFER_SIZE 64
 
@@ -163,6 +167,9 @@ struct Data {
 
 	/* drag'n'drop */
 	LONG dropmark;
+	
+	/* store appwindow during dragevents */
+	struct ipc_appwindow appwin;
 };
 
 
@@ -290,7 +297,8 @@ DEFNEW
 		data->alternated_rows = getprefslong(DSI_FASTLIST_ALTERNATED_ROWS);
 		data->hilighted_sorting_column = getprefslong(DSI_FASTLIST_HILIGHTED_SORTING_COLUMN);
 		data->bold_directories = getprefslong(DSI_FASTLIST_BOLD_DIRECTORIES);
-
+		data->appwin.window = NULL;
+		
 		set(obj, MUIA_String_MaxLen, 106); // huh? why that?
 
 		DoMethod(obj, MUIM_Notify, MUIA_List_TitleClick, MUIV_EveryTime,
@@ -1993,23 +2001,128 @@ DEFMMETHOD(Setup)
 
 DEFMMETHOD(DragEvent)
 {
+	GETDATA;
 	// objwindow is a temporary ptr, unless msg->obj is non-NULL
 	// in our case, we just want to find out if the window is an appwindow
 	// in case the msg->obj is NULL (meaning the win doesn't belong to us)
 	// do not that we might get one of our app's windows here too
+
 	if (msg->objwindow && !msg->obj)
 	{
 		struct ipc_appwindow *appwin;
-
-		if ( (appwin = (APTR)AppWindowObtain(msg->objwindow)) )
+		if ( (data->appwin.window  != msg->objwindow) )
 		{
-			// use a normal mouse ptr, means we can drop stuff
+	 		if ( (appwin = (APTR)AppWindowObtain(msg->objwindow)) )
+			{
+				data->appwin = *appwin;
+				// use a normal mouse ptr, means we can drop stuff
+				msg->mouseptrtype = POINTERTYPE_NORMAL;
+				// tell MUI we can drop stuff and that we've changed the mouse ptr
+				msg->flags |= MUIF_DRAGEVENT_FOREIGNDROP | MUIF_DRAGEVENT_MOUSECHANGED;
+			}
+			else
+			{
+				if((data->appwin.message_types  & AM_CLASS_MOUSEEXIT) && (data->appwin.window ))
+				{
+					struct wbargs *wba;
+					if ( (wba = wba_create(obj)) )
+					{
+						do_action(app, TA_AppMsg_Send,/* XXX: I *think* 'app' is ok here.. check */
+							TT_AppMsg_Send_Type,      AMTYPE_APPWINDOW,
+							TT_AppMsg_Send_Window,    data->appwin.window,
+							TT_AppMsg_Send_Path,      wba->basepath,
+							TT_AppMsg_Send_ID,        data->appwin.id,
+							TT_AppMsg_Send_Userdata,  data->appwin.userdata,
+							TT_AppMsg_Send_NumArgs,   wba->count,
+							TT_AppMsg_Send_WBArgList, wba->wba,
+							TT_AppMsg_Send_Class,     AM_CLASS_MOUSEEXIT,
+							TT_AppMsg_Send_MouseX,    data->appwin.window->WScreen->MouseX,
+							TT_AppMsg_Send_MouseY,    data->appwin.window->WScreen->MouseY,
+							TAG_DONE);
+
+						wba_delete(wba);
+					}
+					
+				}
+
+				data->appwin.window = NULL;
+				data->appwin.message_types = 0;
+			}
+
+			if((data->appwin.message_types & AM_CLASS_MOUSEENTER) && (data->appwin.window ))
+			{
+				struct wbargs *wba;
+				if ( (wba = wba_create(obj)) )
+				{
+					do_action(app, TA_AppMsg_Send,/* XXX: I *think* 'app' is ok here.. check */
+						TT_AppMsg_Send_Type,      AMTYPE_APPWINDOW,
+						TT_AppMsg_Send_Window,    data->appwin.window,
+						TT_AppMsg_Send_Path,      wba->basepath,
+						TT_AppMsg_Send_ID,        data->appwin.id,
+						TT_AppMsg_Send_Userdata,  data->appwin.userdata,
+						TT_AppMsg_Send_NumArgs,   wba->count,
+						TT_AppMsg_Send_WBArgList, wba->wba,
+						TT_AppMsg_Send_Class,     AM_CLASS_MOUSEENTER,
+						TT_AppMsg_Send_MouseX,    data->appwin.window->WScreen->MouseX,
+						TT_AppMsg_Send_MouseY,    data->appwin.window->WScreen->MouseY,
+					TAG_DONE);
+					wba_delete(wba);
+				}
+			}
+
+			AppWindowRelease();
+		}
+		else if ( (data->appwin.window ))
+		{
+			if (data->appwin.message_types & AM_CLASS_MOUSEMOVE)
+			{
+				struct wbargs *wba;
+				if ( (wba = wba_create(obj)) )
+				{
+					do_action(app, TA_AppMsg_Send,/* XXX: I *think* 'app' is ok here.. check */
+						TT_AppMsg_Send_Type,      AMTYPE_APPWINDOW,
+						TT_AppMsg_Send_Window,    data->appwin.window,
+						TT_AppMsg_Send_Path,      wba->basepath,
+						TT_AppMsg_Send_ID,        data->appwin.id,
+						TT_AppMsg_Send_Userdata,  data->appwin.userdata,
+						TT_AppMsg_Send_NumArgs,   wba->count,
+						TT_AppMsg_Send_WBArgList, wba->wba,
+						TT_AppMsg_Send_Class,     AM_CLASS_MOUSEMOVE,
+						TT_AppMsg_Send_MouseX,    data->appwin.window->WScreen->MouseX,
+						TT_AppMsg_Send_MouseY,    data->appwin.window->WScreen->MouseY,
+					TAG_DONE);
+					wba_delete(wba);
+				}
+			}
+
+			// keep telling MUI to show the 'drop ok' pointer
 			msg->mouseptrtype = POINTERTYPE_NORMAL;
-			// tell MUI we can drop stuff and that we've changed the mouse ptr
 			msg->flags |= MUIF_DRAGEVENT_FOREIGNDROP | MUIF_DRAGEVENT_MOUSECHANGED;
 		}
-
-		AppWindowRelease();
+	}
+	else if (data->appwin.window )
+	{
+		if(data->appwin.message_types  & AM_CLASS_MOUSEEXIT)
+		{
+			struct wbargs *wba;
+			if ( (wba = wba_create(obj)) )
+			{
+				do_action(app, TA_AppMsg_Send,/* XXX: I *think* 'app' is ok here.. check */
+					TT_AppMsg_Send_Type,      AMTYPE_APPWINDOW,
+					TT_AppMsg_Send_Window,    data->appwin.window,
+					TT_AppMsg_Send_Path,      wba->basepath,
+					TT_AppMsg_Send_ID,        data->appwin.id,
+					TT_AppMsg_Send_Userdata,  data->appwin.userdata,
+					TT_AppMsg_Send_NumArgs,   wba->count,
+					TT_AppMsg_Send_WBArgList, wba->wba,
+					TT_AppMsg_Send_Class,     AM_CLASS_MOUSEEXIT,
+					TT_AppMsg_Send_MouseX,    data->appwin.window->WScreen->MouseX,
+					TT_AppMsg_Send_MouseY,    data->appwin.window->WScreen->MouseY,
+					TAG_DONE);
+				wba_delete(wba);
+			}
+		}
+		data->appwin.window = NULL;
 	}
 
 	return (0);

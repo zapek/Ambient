@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: viewgroupclass.c,v 1.17 2018/04/30 16:45:27 bitrocky Exp $
+ * $Id: viewgroupclass.c,v 1.23 2026/03/21 20:36:34 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -43,6 +43,7 @@
 #include "rexx.h"
 #include "deficonpool.h"
 #include "file_func.h"
+void dprintf(char *, ...) __attribute__ ((format (printf, 1, 2)));
 
 #define WINDOWTITLESIZE 1024 /* should be enough for everyone (tm) */
 
@@ -50,8 +51,12 @@
 // bitRocky: used in MM_View_Focus, should they go into struct Data?
 LONG prev_iselect = 0, prev_len = 0;
 
+#define isrootOrExtra (data->isroot || data->isrootExtra)
+
 struct Data {
 	ULONG isroot;
+	ULONG isrootExtra;
+	ULONG screenID;
 	ULONG currentview;
 	ULONG currentindex;
 	ULONG pendingview;
@@ -133,6 +138,14 @@ static void doset(APTR obj, struct Data *data, struct TagItem *tags)
 
 		case MA_View_IsRoot:
 			data->isroot = tag->ti_Data;
+			break;
+		
+		case MA_View_IsRootExtra:
+			data->isrootExtra = tag->ti_Data;
+			break;
+			
+		case MA_View_ScreenID:
+			data->screenID = tag->ti_Data;
 			break;
 
 		case MA_Viewgroup_MIMEctx:
@@ -370,7 +383,7 @@ static void doset(APTR obj, struct Data *data, struct TagItem *tags)
 		 * remove it and only get path here?
 		 */
 
-		if	( !data->isroot && newpath )
+		if	( !isrootOrExtra && newpath )
 		{
 			ULONG index;
 			STRPTR previouspath = (STRPTR) getv(obj, MA_View_PreviousPath);
@@ -445,8 +458,8 @@ DEFNEW
 	data->searchedit = 0;
 	
 	doset(obj, data, INITTAGS);
-
-	if ( !data->isroot )
+ 
+	if ( !isrootOrExtra )
 	{
 		searchstring = StringObject, StringFrame,
 			MUIA_String_Reject, "/:",
@@ -504,7 +517,7 @@ DEFTMETHOD(Viewgroup_GetBgPen)
 
 	if (data->aftersetup)
 	{
-		data->bgpen = gfx_get_penspec_value(muiRenderInfo(obj), data->isroot ? getprefs(DSI_BACKGROUND_ROOT_BGCOLOR) : &_conf(window_bgcolor));
+		data->bgpen = gfx_get_penspec_value(muiRenderInfo(obj), isrootOrExtra ? getprefs(DSI_BACKGROUND_ROOT_BGCOLOR) : &_conf(window_bgcolor));
 		if (muiRenderInfo(obj) && _win(obj))
 		{
 			set(_win(obj), MA_Window_BgPen, data->bgpen);
@@ -566,7 +579,7 @@ DEFMMETHOD(Setup)
 
 		/* setup eventhandler for 'jump to' function */
 
-		if ( !data->isroot )
+		if ( !isrootOrExtra )
 		{
 			data->ehnode.ehn_Object = obj;
 			data->ehnode.ehn_Class = cl;
@@ -593,7 +606,7 @@ DEFMMETHOD(Cleanup)
 	data->dopos = FALSE;
 	data->winsave = _win(obj); /* if the window is closed we cannot use _win(obj) anymore so we save it here */
 
-	if ( !data->isroot )
+	if ( !isrootOrExtra )
 	{
 		DoMethod(_win(obj), MUIM_Window_RemEventHandler, (ULONG)&data->ehnode);
 		DoMethod(_win(obj), MUIM_KillNotifyObj, MUIA_Window_ActiveObject, obj );
@@ -718,6 +731,13 @@ DEFGET
 			{
 				*msg->opg_Storage = data->isroot;
 				return (TRUE);
+			}
+			break;
+			
+		case MA_View_IsRootExtra:
+			{
+				*msg->opg_Storage = data->isrootExtra;
+				return TRUE;
 			}
 			break;
 
@@ -875,6 +895,13 @@ DEFGET
 				return (TRUE);
 			}
 			break;
+		
+		case MA_Viewgroup_MIMEctx:
+			{
+				*msg->opg_Storage = data->mimectx;
+				return (TRUE);
+			}
+			break;
 	}
 	return (DOSUPER);
 }
@@ -929,7 +956,7 @@ DEFSMETHOD(Viewgroup_ChangeView)
 
 			if (DoMethod(obj, MM_View_ReadArgs, VIEW_TEMPLATE, &args))
 			{
-				TEXT newargs[256];
+				TEXT newargs[258]; // to remove the strncat() warnings
 				TEXT buf[256];
 
 				newargs[0] = '\0';
@@ -937,50 +964,50 @@ DEFSMETHOD(Viewgroup_ChangeView)
 				if(args.left)
 				{
 					snprintf(buf, sizeof(buf), "&left=%ld", *args.left);
-					strncat(newargs, buf, sizeof(newargs));
+					strncat(newargs, buf, sizeof(newargs)-1);
 				}
 
 				if(args.top)
 				{
 					snprintf(buf, sizeof(buf), "&top=%ld", *args.top);
-					strncat(newargs, buf, sizeof(newargs));
+					strncat(newargs, buf, sizeof(newargs)-1);
 				}
 
 				if(args.width)
 				{
 					snprintf(buf, sizeof(buf), "&width=%ld", *args.width);
-					strncat(newargs, buf, sizeof(newargs));
+					strncat(newargs, buf, sizeof(newargs)-1);
 				}
 
 				if(args.height)
 				{
 					snprintf(buf, sizeof(buf), "&height=%ld", *args.height);
-					strncat(newargs, buf, sizeof(newargs));
+					strncat(newargs, buf, sizeof(newargs)-1);
 				}
 
 				if(args.sortby)
 				{
 					snprintf(buf, sizeof(buf), "&sortby=%s", args.sortby);
-					strncat(newargs, buf, sizeof(newargs));
+					strncat(newargs, buf, sizeof(newargs)-1);
 				}
 
 				if(args.sortorder)
 				{
 					snprintf(buf, sizeof(buf), "&sortorder=%s", args.sortorder);
-					strncat(newargs, buf, sizeof(newargs));
+					strncat(newargs, buf, sizeof(newargs)-1);
 				}
 				
 				if (p && *p)
 				{
 					snprintf(buf, sizeof(buf), "&mode=%s", viewapi_getmodename( vn, data->pendingindex ));
-					strncat(newargs, buf, sizeof(newargs));
+					strncat(newargs, buf, sizeof(newargs)-1);
 				}
 				else if(args.mode)
 				{
 					data->pendingindex = viewapi_getmodeindex(vn, args.mode);
 
 					snprintf(buf, sizeof(buf), "&mode=%s", args.mode);
-					strncat(newargs, buf, sizeof(newargs));
+					strncat(newargs, buf, sizeof(newargs)-1);
 				}
 				else
 				{
@@ -990,7 +1017,7 @@ DEFSMETHOD(Viewgroup_ChangeView)
 				snprintf(buf, sizeof(buf), "&view=%s&type=%s",
 										vn->name,
 										args.type ? args.type : (STRPTR)"" );
-				strncat(newargs, buf, sizeof(newargs));
+				strncat(newargs, buf, sizeof(newargs)-1);
 
 				mimeuri_setattrs( data->mimectx, MIMEURIATTR_ARGS, newargs, TAG_DONE );
 			}
@@ -1093,7 +1120,7 @@ DEFTMETHOD(Viewgroup_ChangeView2)
 
 			flags |= viewapi_getflags( vn );
 
-			if (data->isroot)
+			if (isrootOrExtra)
 			{
 				flags &= ~(VF_SCROLLWIN | VF_SCROLLGROUP | VF_SCROLLERS); /* XXX: hm, it could have some scrollers actually.. check */
 			}
@@ -1108,7 +1135,7 @@ DEFTMETHOD(Viewgroup_ChangeView2)
 				 * interested in the size.
 				 */
 				data->subgrp = NewObject(getviewsizegroupclass(), NULL,
-						MA_Viewsizegroup_IsRoot, data->isroot,
+						MA_Viewsizegroup_IsRoot, isrootOrExtra,
 						MUIA_Group_Horiz, TRUE,
 						(flags & VF_SPACE) ? TAG_IGNORE : MUIA_FillArea, FALSE,
 						(flags & VF_SPACE) ? TAG_IGNORE : MUIA_InnerLeft, 0,
@@ -1159,6 +1186,7 @@ DEFTMETHOD(Viewgroup_ChangeView2)
 						MA_Viewgroup_VScroller, vscroller,
 						MA_Viewgroup_HScroller, hscroller,
 						MA_View_IsRoot, data->isroot,
+						MA_View_IsRootExtra, data->isrootExtra,
 						MA_View_ModeIndex, data->pendingindex,
 						MA_Viewgroup_ID, data->viewid,
 						TAG_DONE))) /* XXX: MA_View_IsRoot.. is it the best way ? */
@@ -1600,6 +1628,8 @@ DEFSMETHOD(View_Focus)
 	TEXT partialname[NAME_SIZE];
 	TEXT partialname2[NAME_SIZE];
 	ULONG searchmode = SEARCH_FILE;
+	STRPTR parsepat = NULL; // bitRocky: for pattern search
+	ULONG patsize; // bitRocky: for pattern search
 
 	/* if it's not partial name then we can focus immediately */
 
@@ -1645,6 +1675,17 @@ DEFSMETHOD(View_Focus)
 		ULONG matchcount = 0;
 		LONG i;
 
+		// bitRocky: for pattern search
+		patsize = len * 2 + 2;
+		if ((parsepat = malloc( patsize )))
+		{
+			// check, if there are wildcards in search name
+			if ( (ParsePattern( partialname2, parsepat, patsize ) != 1) ) // no wildcards or error
+			{
+				free( parsepat ); parsepat = NULL;
+			}
+		}
+		
 		for(i = prev_iselect; ; msg->searchUp ? i-- : i++)//i++)// bitRocky 30-Apr-2018
 		{
 			APTR entry = (APTR)DoMethod( data->subview, MM_View_GetEntry, i );
@@ -1665,7 +1706,7 @@ DEFSMETHOD(View_Focus)
 				STRPTR filename = (STRPTR)getv( entry, MA_Icon_Path );
 				if ( filename )
 				{
-					ULONG cnt;
+					ULONG cnt=-1;
 					STRPTR filepart = FilePart( filename );
 
 					if ( filepart && filepart[ 0 ] )
@@ -1673,8 +1714,16 @@ DEFSMETHOD(View_Focus)
 
 					stccpy( name, filename, sizeof(name) );
 					strlower( name );
-
-					cnt	= match( name, partialname2 );
+					
+					// bitRocky: test pattern matching search, only if there were wildcards in the search name
+					if ( parsepat ) 
+					{
+						cnt = MatchPattern( parsepat, name ) ? len : 0;
+					}
+					else
+					{
+						cnt	= match( name, partialname2 );
+					}
 
 					if ( cnt > matchcount )
 					{
@@ -1702,7 +1751,6 @@ DEFSMETHOD(View_Focus)
 		}
 */
 	}
-
 
 	if((iselect == -1) && (len == 1)) // only for the first letter
 	{
@@ -1766,7 +1814,7 @@ DEFSMETHOD(View_Focus)
 			DoMethod( app, MUIM_Application_PushMethod, data->str_search, 3 | MUIV_PushMethod_Delay(100),
 				MUIM_Set, MUIA_Background, (stricmp(filename, name)==0 || (len==1 && partialname[0]==0)) ? (STRPTR)MUII_StringActiveBack : "2:ffffffff,00000000,00000000" );
 			//set(data->str_search, MUIA_Background, (stricmp(filename, name)==0) ? (STRPTR)MUII_StringActiveBack : "2:ffffffff,00000000,00000000");
-			prev_iselect = (partialname[0] == ToLower(filename[0])) ? iselect : 0 ;
+			prev_iselect = ( (partialname[0] == ToLower(filename[0])) || parsepat ) ? iselect : 0 ;
 			prev_len = len;
 
 			// check if the found filename has a ":" at the end (is a device or assign), then remove it! because in MyMorphOS View, the ":" isn't shown!
@@ -1782,6 +1830,7 @@ DEFSMETHOD(View_Focus)
 		set(data->str_search, MUIA_Background, "2:ffffffff,00000000,00000000");
 		prev_iselect = 0;
 	}
+	if (parsepat) { free( parsepat ); }; // bitRocky: for pattern search
 
 	return (0);
 }

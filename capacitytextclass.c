@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: capacitytextclass.c,v 1.6 2006/04/12 14:01:53 fab Exp $
+ * $Id: capacitytextclass.c,v 1.7 2025/07/23 23:54:26 geit Exp $
  */
 
 #include "ambient.h"
@@ -39,7 +39,7 @@ struct Data {
 
 DEFNEW
 {
-	struct Data *data;
+//	struct Data *data;
 	struct TagItem *ti;
 
 	obj = DoSuperNew(cl, obj,
@@ -49,16 +49,16 @@ DEFNEW
 
 	if (!obj)
 	{
-		return (NULL);
+		return ((ULONG)NULL);
 	}
 
-	data = INST_DATA(cl, obj);
+//	data = INST_DATA(cl, obj);
 
 	if (FindTagItem(MUIA_Text_Contents, INITTAGS))
 	{
 		ti = FindTagItem(MA_CapacityText_Total, INITTAGS);
 
-		DoMethod(obj, MM_CapacityText_Build, ti ? ti->ti_Data : NULL);
+		DoMethod(obj, MM_CapacityText_Build, ti ? ti->ti_Data : 0);
 	}
 	return ((ULONG)obj);
 }

@@ -1,14 +1,16 @@
 #ifndef AMBIENT_PREFSWIN_H
 #define AMBIENT_PREFSWIN_H
 /*
- * $Id: prefswin.h,v 1.11 2014/03/26 17:05:54 geit Exp $
+ * $Id: prefswin.h,v 1.15 2026/03/01 15:06:20 kronos Exp $
  */
 
 #include <exec/types.h>
 
 extern APTR prefswin;
 
-#define NUMPAGES 10
+
+#define NUMPAGES 11
+
 
 #define PREFSWIN_NUMPAGES (NUMPAGES +  USE_DROP_EFFECT_PREFS)
 
@@ -37,6 +39,7 @@ static inline void setupprefs_noset(APTR o, ULONG tag, ULONG defval)
 typedef APTR (*GRPFUNC)(void);
 
 struct prefsgroup {
+	STRPTR class_name;  /* for external prefs, NULL for internal */
 	STRPTR english_name;
 	ULONG labelid;
 	GRPFUNC class;

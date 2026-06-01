@@ -1,7 +1,7 @@
 #ifndef AMBIENT_IPC_H
 #define AMBIENT_IPC_H
 /*
- * $Id: ipc.h,v 1.7 2015/10/26 21:18:02 itix Exp $
+ * $Id: ipc.h,v 1.8 2025/07/05 12:31:05 kronos Exp $
  */
 
 #include <dos/dos.h>
@@ -64,6 +64,7 @@ struct ipc_appwindow {
 	ULONG userdata;           /* user supplied */
 	struct Window *window;    /* user supplied */
 	struct MsgPort *userport; /* user supplied */
+	ULONG message_types;
 	/* XXX: add tagitem list perhaps.. check what crap Olsen added */
 };
 

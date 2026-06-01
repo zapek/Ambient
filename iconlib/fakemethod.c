@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: fakemethod.c,v 1.10.8.1 2025/01/04 21:34:03 piru Exp $
+ * $Id: fakemethod.c,v 1.13 2025/09/03 15:18:42 piru Exp $
  */
 
 #include "globals.h"
@@ -35,12 +35,19 @@
 #include "icon_internal.h"
 #include "clib/icon_protos.h"
 #include "../classes.h"
+#include "freelist.h"
 
 
 #define DB_PUSHFM 0
 
 //extern void kprintf(char *, ...);
 
+static struct MinList emptylist =
+{
+	(struct MinNode *) &emptylist.mlh_Tail,
+	NULL,
+	(struct MinNode *) &emptylist.mlh_Head
+};
 
 static void create_drawerdata(struct DiskObject *diskobj, struct FreeList *fl)
 {
@@ -197,10 +204,11 @@ void pushfakemethod(struct FreeList *fl, APTR obj, ULONG cnt, ...)
 				{
 					size = strlen(name) + 1;
 				}
-				if ((*p = FreeAlloc(fl, size, MEMF_ANY)))
+
+				*p = FreeAlloc(fl, size, MEMF_ANY);
+				if (*p)
 				{
 					strcpy(*p, name);
-				
 					#if defined(USE_ICONLIB_PNG) || defined(USE_ICONLIB_SVG)
 					if (ISOWN(diskobj))
 					{
@@ -375,6 +383,42 @@ void pushfakemethod(struct FreeList *fl, APTR obj, ULONG cnt, ...)
 					D(PUSHFM,bug("type: %ld\n", (ULONG)diskobj->do_Type));
 					break;
 
+				case MA_Icon_HasPos:
+					{
+						ULONG haspos = va_arg(va, ULONG);
+						/*if (ISOWN(diskobj))
+						{
+							struct OwnDiskObject *odo = (struct OwnDiskObject *)diskobj;
+							odo->haspos = haspos;
+						}*/
+						if (!haspos)
+						{
+							diskobj->do_CurrentX = NO_ICON_POSITION;
+							diskobj->do_CurrentY = NO_ICON_POSITION;
+						}
+					}
+					break;
+
+				case MA_Icon_HasDrawerData:
+					{
+						ULONG hasdrawerdata = va_arg(va, ULONG);
+						/*if (ISOWN(diskobj))
+						{
+							struct OwnDiskObject *odo = (struct OwnDiskObject *)diskobj;
+							odo->hasdrawerdata = hasdrawerdata;
+						}*/
+						if (!diskobj->do_DrawerData && hasdrawerdata)
+						{
+							create_drawerdata(diskobj, fl);
+						}
+						else if (diskobj->do_DrawerData && !hasdrawerdata)
+						{
+							_FreeFree(fl, diskobj->do_DrawerData);
+							diskobj->do_DrawerData = NULL;
+						}
+					}
+					break;
+
 				case MA_Icon_StackSize:
 					diskobj->do_StackSize = (LONG)va_arg(va, ULONG);
 					D(PUSHFM,bug("stacksize: %ld\n", diskobj->do_StackSize));
@@ -478,26 +522,44 @@ void pushfakemethod(struct FreeList *fl, APTR obj, ULONG cnt, ...)
 					break;
 
 				case MA_Icon_ViewMode:
-					if (diskobj->do_DrawerData)
 					{
 						ULONG viewmode = va_arg(va, ULONG);
-
-						switch (viewmode)
+						if (diskobj->do_DrawerData)
 						{
-							case MV_Icon_ViewMode_Icon:
-								diskobj->do_DrawerData->dd_Flags = DDFLAGS_SHOWICONS;
-								break;
+							switch (viewmode)
+							{
+								case MV_Icon_ViewMode_Icon:
+									diskobj->do_DrawerData->dd_Flags = DDFLAGS_SHOWICONS;
+									break;
 
-							case MV_Icon_ViewMode_IconAll:
-								diskobj->do_DrawerData->dd_Flags = DDFLAGS_SHOWICONS | DDFLAGS_SHOWALL;
-								break;
+								case MV_Icon_ViewMode_IconAll:
+									diskobj->do_DrawerData->dd_Flags = DDFLAGS_SHOWICONS | DDFLAGS_SHOWALL;
+									break;
 
-							case MV_Icon_ViewMode_Lister:
-								diskobj->do_DrawerData->dd_Flags = DDFLAGS_SHOWICONS;
-								diskobj->do_DrawerData->dd_ViewModes = DDVM_BYNAME;
-								break;
-						
-							/* XXX: missing actionlister */
+								case MV_Icon_ViewMode_Lister:
+									diskobj->do_DrawerData->dd_Flags = DDFLAGS_SHOWICONS;
+									diskobj->do_DrawerData->dd_ViewModes = DDVM_BYNAME;
+									break;
+
+								/* XXX: missing actionlister */
+							}
+						}
+						if (ISOWN(diskobj))
+						{
+							struct OwnDiskObject *odo = (struct OwnDiskObject *)diskobj;
+							/* store the actual viewmode */
+							odo->viewmode = viewmode;
+							if (diskobj->do_DrawerData)
+							{
+								/* Keep values we can compare against in get */
+								odo->origflags = diskobj->do_DrawerData->dd_Flags;
+								odo->origviewmodes = diskobj->do_DrawerData->dd_ViewModes;
+							}
+							else
+							{
+								odo->origflags = ~0;
+								odo->origviewmodes = ~0;
+							}
 						}
 					}
 					break;
@@ -535,8 +597,172 @@ void pushfakemethod(struct FreeList *fl, APTR obj, ULONG cnt, ...)
 					break;
 #endif
 			}
+			break;
 		}
-		break;
+
+		case OM_GET:
+		{
+			ULONG attr = va_arg(va, ULONG);
+			ULONG *ptr = va_arg(va, ULONG *);
+			D(PUSHFM,bug("OM_GET\n"));
+			switch (attr)
+			{
+				case MA_Icon_Type:
+					*ptr = diskobj->do_Type;
+					break;
+
+				case MA_Icon_HasPos:
+					/*if (ISOWN(diskobj))
+					{
+						struct OwnDiskObject *odo = (struct OwnDiskObject *)diskobj;
+						*ptr = odo->haspos;
+					}
+					else*/
+					{
+						*ptr = diskobj->do_CurrentX != NO_ICON_POSITION &&
+						       diskobj->do_CurrentY != NO_ICON_POSITION;
+					}
+					break;
+
+				case MA_Icon_HasDrawerData:
+					/*if (ISOWN(diskobj))
+					{
+						struct OwnDiskObject *odo = (struct OwnDiskObject *)diskobj;
+						*ptr = odo->hasdrawerdata;
+					}
+					else*/
+					{
+						*ptr = diskobj->do_DrawerData != NULL ? 1 : 0;
+					}
+					break;
+
+				case MA_Icon_ToolTypeList:
+					D(PUSHFM,bug("MA_Icon_ToolTypeList %p\n", ptr));
+					if (ISOWN(diskobj))
+					{
+						struct OwnDiskObject *odo = (struct OwnDiskObject *)diskobj;
+						char **tt;
+						struct ToolTypeNode *node, *succnode;
+						/* Free previous tooltypelist */
+						for (node = (struct ToolTypeNode *) odo->tooltypelist.mlh_Head;
+						     (succnode =  (struct ToolTypeNode *) node->n.mln_Succ);
+						     node = succnode)
+						{
+							_FreeFree(fl, node);
+						}
+						NEWLIST(&odo->tooltypelist);
+						/* Convert current do_ToolTypes to a tooltype list */
+						tt = diskobj->do_ToolTypes;
+						if (tt)
+						{
+							for (; *tt; tt++)
+							{
+								size_t len = strlen(*tt) + 1;
+								node = FreeAlloc(fl, sizeof(*node) + len, MEMF_ANY);
+								if (!node)
+									break;
+								memcpy(node->tt, *tt, len);
+								ADDTAIL(&odo->tooltypelist, &node->n);
+							}
+						}
+						*ptr = (IPTR) &odo->tooltypelist;
+					}
+					else
+					{
+						*ptr = (IPTR) &emptylist; /* not supported */
+					}
+					break;
+
+				case MA_Icon_X:
+					*ptr = diskobj->do_CurrentX;
+					break;
+
+				case MA_Icon_Y:
+					*ptr = diskobj->do_CurrentY;
+					break;
+
+				case MA_Icon_StackSize:
+					*ptr = diskobj->do_StackSize;
+					break;
+
+#define MKDD(a,b) \
+				case a: \
+					*ptr = diskobj->do_DrawerData ? diskobj->do_DrawerData->b : 0; \
+					break
+
+				MKDD(MA_Icon_WindowLeft, dd_NewWindow.LeftEdge);
+				MKDD(MA_Icon_WindowTop, dd_NewWindow.TopEdge);
+				MKDD(MA_Icon_WindowWidth, dd_NewWindow.Width);
+				MKDD(MA_Icon_WindowHeight, dd_NewWindow.Height);
+				MKDD(MA_Icon_OffsetX, dd_CurrentX);
+				MKDD(MA_Icon_OffsetY, dd_CurrentY);
+
+				case MA_Icon_DefaultTool:
+					*ptr = (IPTR) diskobj->do_DefaultTool;
+					break;
+
+				case MA_Icon_ViewMode:
+					if (ISOWN(diskobj))
+					{
+						struct OwnDiskObject *odo = (struct OwnDiskObject *)diskobj;
+						/* If the flags/modes were not touched, use the original viewmode value */
+						if (diskobj->do_DrawerData &&
+						    odo->origflags == diskobj->do_DrawerData->dd_Flags &&
+						    odo->origviewmodes == diskobj->do_DrawerData->dd_ViewModes)
+						{
+							*ptr = odo->viewmode;
+							break;
+						}
+					}
+
+					/* Best effort fallback - this can't be 100% */
+					if (!diskobj->do_DrawerData)
+					{
+						*ptr = MV_Icon_ViewMode_Icon;
+						break;
+					}
+					if (diskobj->do_DrawerData->dd_Flags == DDFLAGS_SHOWICONS)
+					{
+						if (diskobj->do_DrawerData->dd_ViewModes == DDVM_BYNAME)
+							*ptr = MV_Icon_ViewMode_Lister;
+						else
+							*ptr = MV_Icon_ViewMode_Icon;
+					}
+					else if (diskobj->do_DrawerData->dd_Flags == (DDFLAGS_SHOWICONS | DDFLAGS_SHOWALL))
+						*ptr = MV_Icon_ViewMode_IconAll;
+					else
+						*ptr = MV_Icon_ViewMode_Icon;
+					break;
+
+
+				case MA_Icon_SortMode:
+					if (!diskobj->do_DrawerData)
+					{
+						*ptr = 0;
+						break;
+					}
+					switch (diskobj->do_DrawerData->dd_ViewModes)
+					{
+						case DDVM_BYICON:
+							*ptr = MV_Icon_SortMode_Name;
+							break;
+						case DDVM_BYDATE:
+							*ptr = MV_Icon_SortMode_Date;
+							break;
+						case DDVM_BYSIZE:
+							*ptr = MV_Icon_SortMode_Size;
+							break;
+						case DDVM_BYTYPE:
+							*ptr = MV_Icon_SortMode_Type;
+							break;
+						default:
+							*ptr = 0;
+							break;
+					}
+					break;
+			}
+			break;
+		}
 
 		/* XXX: add a way to add an image */
 #ifdef DEBUG

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: windowclass.c,v 1.43 2023/01/18 02:53:09 jacadcaps Exp $
+ * $Id: windowclass.c,v 1.49 2026/03/21 20:36:34 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -58,6 +58,8 @@
 #include "prefs_advanced.h" // bitRocky: for checking "differentInactiveWindowTitles"
 #include "networksfs.h"
 
+void dprintf(char *, ...) __attribute__ ((format (printf, 1, 2)));
+
 struct Data {
 	APTR viewobj;
 	STRPTR wintitle;
@@ -79,6 +81,7 @@ struct Data {
 	APTR statusbar;
 	ULONG is_root;
 	APTR menustrip;
+	STRPTR publicScreen;
 
 	/* iconify stuff */
 
@@ -164,11 +167,11 @@ static ULONG add_iconified_window(struct Data * data, CONST_STRPTR path, ULONG v
 					methodstack_push_sync(o, 3, MUIM_Set, MA_Icon_Path, data->wintitle);
 				}
 
-				methodstack_push(app, 8, MM_Application_RootDoMethodByAttr, NULL, NULL,
+				methodstack_push(app, 9, MM_Application_DoMethodByAttr, MV_Window_ID_Root, NULL, NULL,
 							  MM_Window_DoView, NULL,
 							  MM_Iconview_AddIcon, o, FALSE);
 
-				methodstack_push_sync(app, 6, MM_Application_RootDoMethodByAttr, NULL, NULL,
+				methodstack_push_sync(app, 7, MM_Application_DoMethodByAttr, MV_Window_ID_Root, NULL, NULL,
 							  MM_Window_DoView, NULL,
 							  MM_Iconview_DoLayout);
 
@@ -187,11 +190,11 @@ static ULONG add_iconified_window(struct Data * data, CONST_STRPTR path, ULONG v
 
 static void remove_iconified_window(struct Data * data)
 {
-	methodstack_push(app, 7, MM_Application_RootDoMethodByAttr, NULL, NULL,
+	methodstack_push(app, 8, MM_Application_DoMethodByAttr, MV_Window_ID_Root, NULL, NULL,
 				  MM_Window_DoView, NULL,
 				  MM_Iconview_DeleteIcon, data->iconify_obj);
 
-	methodstack_push_sync(app, 6, MM_Application_RootDoMethodByAttr, NULL, NULL,
+	methodstack_push_sync(app, 7, MM_Application_DoMethodByAttr, MV_Window_ID_Root, NULL, NULL,
 				  MM_Window_DoView, NULL,
 				  MM_Iconview_DoLayout);
 
@@ -219,7 +222,9 @@ DEFNEW
 	APTR sb_seperator = NULL;
 	ULONG bgmode = 0; /* XXX: put a proper define.. */
 	ULONG browser = _conf(toolbar_browsermode);
-	ULONG viewid = getv(app, MA_Application_NextID); /* used for notifies and identifications */
+	ULONG viewid = MV_Window_ID_Unknown;/* used for notifies and identifications */
+	BOOL isRoot = FALSE;
+	CONST_STRPTR publicScreen = NULL;
 
 	struct Hook *bfhook = NULL;
 
@@ -227,6 +232,9 @@ DEFNEW
 	{
 		case MA_Window_Type:
 			type = tag->ti_Data;
+			isRoot = type == MV_Window_Type_Rootview || type == MV_Window_Type_Rootview_Extra;
+			if (type == MV_Window_Type_Rootview)
+				viewid = MV_Window_ID_Root;
 			break;
 
 		case MA_Window_MIMEctx:
@@ -244,19 +252,50 @@ DEFNEW
 		case MA_Window_Browser:
 			browser	= tag->ti_Data;
 			break;
+			
+		case MA_Window_PublicScreen:
+			if (tag->ti_Data)
+			{
+				ULONG length = strlen((STRPTR)tag->ti_Data) + 1;
+				publicScreen = malloc(length);
+				if (publicScreen)
+				{
+					memcpy(publicScreen, tag->ti_Data, length);
+				}
+			}
+			break;
 	}
 	NEXTTAG
+
+	if (type == MV_Window_Type_Rootview_Extra)
+	{
+		viewid = MV_Window_ID_RootExtra + get_screen_id(publicScreen) - 1;
+		if (viewid < MV_Window_ID_RootExtra || viewid > MV_Window_ID_RootExtra_Max)
+		{
+			free(publicScreen);
+			return (0);
+		}
+	}
+
+	if (viewid == MV_Window_ID_Unknown)
+		viewid = getv(app, MA_Application_NextID);
 
 	ASSERT(type);
 
 	if (!(bfhook = malloc(sizeof(*bfhook))))
  	{
+		if (publicScreen)
+			free(publicScreen);
 		return (size_t)(NULL);
  	}
 
-	viewobj = root = NewObject(getviewgroupclass(), NULL, MA_Viewgroup_ID, viewid, MA_View_IsRoot, (type == MV_Window_Type_Rootview), MA_Viewgroup_MIMEctx, mimectx, TAG_DONE);
+	viewobj = root = NewObject(getviewgroupclass(), NULL, MA_Viewgroup_ID, viewid,
+		MA_View_IsRoot, type == MV_Window_Type_Rootview,
+		MA_View_IsRootExtra, type == MV_Window_Type_Rootview_Extra,
+		type == MV_Window_Type_Rootview_Extra && publicScreen ? : MA_View_ScreenID, get_screen_id(publicScreen),
+		MA_Viewgroup_MIMEctx, mimectx, TAG_DONE);
 
-	if (type != MV_Window_Type_Rootview)
+	if (!isRoot)
 	{
 		root = VGroup,
 			MUIA_Group_VertSpacing, 0,
@@ -272,7 +311,8 @@ DEFNEW
 
 	obj = DoSuperNew(cl, obj,
 		MUIA_Window_Menustrip,   menu = MUI_MakeObject(MUIO_MenustripNM, (IPTR)newmenus, 0),
-		MUIA_Window_Screen, get_screen(),
+		publicScreen ? MUIA_Window_PublicScreen : TAG_IGNORE, publicScreen,
+		publicScreen ? TAG_IGNORE : MUIA_Window_Screen, publicScreen ? NULL : get_screen(),
 		MUIA_Window_ShowIconify, TRUE,
 		MUIA_Window_ShowPrefs, FALSE,
 		MUIA_Window_ShowJump, FALSE,
@@ -281,8 +321,8 @@ DEFNEW
 		MUIA_Window_ShowAbout, FALSE,
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_AllowTopMenus, FALSE,
-		(type == MV_Window_Type_Rootview) ? TAG_IGNORE : MUIA_Window_UseRightBorderScroller, TRUE, /* XXX: is that true for every viewmode ? don't think so.. */
-		(type == MV_Window_Type_Rootview) ? TAG_IGNORE : MUIA_Window_UseBottomBorderScroller, TRUE,
+		isRoot ? TAG_IGNORE : MUIA_Window_UseRightBorderScroller, TRUE, /* XXX: is that true for every viewmode ? don't think so.. */
+		isRoot ? TAG_IGNORE : MUIA_Window_UseBottomBorderScroller, TRUE,
 		MUIA_Window_BackfillHook, bfhook,
 		MUIA_Window_RootObject, root,
 		TAG_MORE, INITTAGS
@@ -294,6 +334,8 @@ DEFNEW
 		{
 			free(bfhook);
 		}
+		if (publicScreen)
+			free(publicScreen);
 		return (size_t)(NULL);
 	}
 
@@ -307,10 +349,11 @@ DEFNEW
 	data->id = viewid;
 	data->nr = NULL;
 	data->browser = browser;
-	data->is_root = type == MV_Window_Type_Rootview;
+	data->is_root = isRoot;
 	data->is_iconified = FALSE;
 	data->iconify_obj = NULL;
 	data->menustrip = menu;
+	data->publicScreen = publicScreen;
 
 	DoMethod(data->statusbar, MUIM_Notify, MUIA_ShowMe, MUIV_EveryTime, sb_seperator, 3, MUIM_Set, MUIA_ShowMe, MUIV_TriggerValue);
 
@@ -323,7 +366,7 @@ DEFNEW
 
 	/* insert first entry */
 
-	if (type != MV_Window_Type_Rootview)
+	if (!isRoot)
 	{
 		DoSuperMethod(cl, obj, MUIM_Notify, MUIA_Window_CloseRequest, TRUE,
 			MUIV_Notify_Application, 5, MUIM_Application_PushMethod, obj, 2, MM_Window_Close, TRUE
@@ -569,6 +612,10 @@ DEFGET
 		case MA_Window_IsIconified:
 			*msg->opg_Storage = data->is_iconified;
 			return (TRUE);
+		
+		case MA_Window_MIMEctx:
+			*msg->opg_Storage = xget(data->viewobj, MA_Viewgroup_MIMEctx);
+			return (TRUE);
 	}
 	return (DOSUPER);
 }
@@ -594,6 +641,9 @@ DEFDISP
 	{
 		free(data->wintitle);
 	}
+	
+	if (data->publicScreen)
+		free(data->publicScreen);
 
 	#if 0
 	killpushedmethods(data->viewobj); /* XXX: sure ? I think so */

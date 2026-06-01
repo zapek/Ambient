@@ -1,7 +1,7 @@
 #ifndef AMBIENT_MIMEURI_H
 #define AMBIENT_MIMEURI_H
 /*
- * $Id: mimeuri.h,v 1.7 2007/02/11 22:35:30 fab Exp $
+ * $Id: mimeuri.h,v 1.8 2025/08/10 22:08:31 jacadcaps Exp $
  */
 
 /*
@@ -81,6 +81,7 @@ enum {
 
 APTR mimeuri_create(void);
 void mimeuri_delete(APTR ctx);
+APTR mimeuri_duplicate(APTR ctx);
 ULONG v_mimeuri_gather(APTR ctx, CONST_STRPTR uri, struct TagItem *tags);
 ULONG mimeuri_gather(APTR ctx, CONST_STRPTR uri, ...);
 APTR mimeuri_getattr(APTR ctx, ULONG attr);

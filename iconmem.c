@@ -18,10 +18,18 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: iconmem.c,v 1.5 2006/04/12 14:01:54 fab Exp $
+ * $Id: iconmem.c,v 1.7 2026/01/25 17:36:24 kronos Exp $
  */
 
+
+#ifndef PANEL_APP
 #include "ambient.h"
+#else
+#include <stddef.h>
+#include <exec/nodes.h>
+#include "debug.h"
+#endif
+
 
 /* public */
 #include <clib/alib_protos.h>

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: sysinfowinclass.c,v 1.25 2022/02/01 15:49:29 geit Exp $
+ * $Id: sysinfowinclass.c,v 1.27 2025/09/09 12:46:46 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -53,7 +53,7 @@ APTR systeminfowin;
 static LONG lastpage;
 struct Library *SensorsBase; // bitRocky: already defined in proto/sensors.h without "static" so I removed "static"
 
-#define	MAXCPU	2
+#define	MAXCPU	4
 
 struct Data {
 	struct MUI_InputHandlerNode updatenode;
@@ -232,7 +232,7 @@ DEFNEW
 	}
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_Title, GSI(MSG_SYSINFOWIN_TITLE),
 		MUIA_Window_ID, MAKE_ID('S','Y','S','M'),

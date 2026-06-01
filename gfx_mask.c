@@ -18,10 +18,19 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: gfx_mask.c,v 1.6 2006/08/08 13:31:34 fab Exp $
+ * $Id: gfx_mask.c,v 1.8 2026/01/25 17:36:24 kronos Exp $
  */
 
+
+
+#ifndef PANEL_APP
 #include "ambient.h"
+#else
+#include <stddef.h>
+#include <exec/nodes.h>
+#include "debug.h"
+#endif
+
 
 /* public */
 #include <proto/graphics.h>

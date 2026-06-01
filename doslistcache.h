@@ -1,7 +1,7 @@
 #ifndef AMBIENT_DOSLISTCACHE_H
 #define AMBIENT_DOSLISTCACHE_H
 /*
- * $Id: doslistcache.h,v 1.8 2022/12/27 19:39:59 jacadcaps Exp $
+ * $Id: doslistcache.h,v 1.9 2025/07/23 22:53:31 geit Exp $
  */
 
 #include <dos/dos.h>
@@ -65,12 +65,14 @@ struct dlc_ptr {
  * The following can be used in threads or the main thread. It won't lock.
  */
 #define ITERATEDLC(node) doslistcache_update(); for(node=FIRSTNODE(&dlclist);NEXTNODE(node);node=NEXTNODE(node))
+#define ITERATEDMLC(node) doslistcache_update(); for(node=FIRSTMLNODE(&dlclist);NEXTNODE(node);node=NEXTNODE(node))
 
 /*
  * This routine is like the one above, except that it's safe even when node
  * is potentially removed while walking the list.
  */
 #define ITERATEDLCSAFE(node,node2) doslistcache_update(); for(node=FIRSTNODE(&dlclist);(node2=NEXTNODE(node));node=node2)
+#define ITERATEDMLCSAFE(node,node2) doslistcache_update(); for(node=FIRSTMLNODE(&dlclist);(node2=NEXTNODE(node));node=node2)
 
 ULONG doslistcache_init(void);
 void doslistcache_cleanup(void);

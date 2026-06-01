@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: viewselectwinclass.c,v 1.3 2013/10/28 10:36:08 geit Exp $
+ * $Id: viewselectwinclass.c,v 1.5 2025/09/09 12:46:46 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -53,7 +53,7 @@ DEFNEW
 	struct Data *data;
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_Title, GSI(MSG_PREFSWIN_TOOLBAR_GETFROMWINDOW_TITLE),
 		MUIA_Window_LeftEdge, MUIV_Window_LeftEdge_Moused,
@@ -73,7 +73,7 @@ DEFNEW
 
 	if (!obj)
 	{
-		return (NULL);
+		return ((ULONG)NULL);
 	}
 
 	data = INST_DATA(cl, obj);

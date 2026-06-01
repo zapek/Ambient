@@ -20,7 +20,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: descsaver.c,v 1.7 2007/05/08 19:27:07 fab Exp $
+ * $Id: descsaver.c,v 1.8 2026/05/14 22:40:54 geit Exp $
  */
 
 #include "ambient.h"
@@ -35,6 +35,7 @@
 #include "file_io.h"
 #include "mimetype.h"
 #include "recog.h"
+#include "locale.h"
 
 #define IOBUFFERSIZE 2048
 #define DESCSAVER_WRITE(a, b) file_write(a, b, strlen(b))
@@ -263,7 +264,7 @@ static inline BOOL change_file(STRPTR filename, struct internal_mimetype_node *i
 		{
 			int actiontype = (int) actionnode_getattr(an, ACTIONNODETAG_EVENT);
 			int qualifier = (int) actionnode_getattr(an, ACTIONNODETAG_QUALIFIER);
-			int	flags = (int) actionnode_getattr(an, ACTIONNODETAG_FLAGS);
+			int flags = (int) actionnode_getattr(an, ACTIONNODETAG_FLAGS);
 			STRPTR acname = (STRPTR) actionnode_getattr(an, ACTIONNODETAG_NAME);
 			STRPTR acmenuname = (STRPTR) actionnode_getattr(an, ACTIONNODETAG_MENU_NAME);
 			APTR command_list = (APTR) actionnode_getattr(an, ACTIONNODETAG_COMMAND_LIST);
@@ -271,9 +272,13 @@ static inline BOOL change_file(STRPTR filename, struct internal_mimetype_node *i
 			if (!DESCSAVER_WRITE(fh, "Action\n\tName "))
 				succ = FALSE;
 
+#if USE_RECOGTRANSLATION
+			if (!DESCSAVER_WRITE(fh, locale_translationgetenglish( acname ) ))
+				succ = FALSE;
+#else
 			if (!DESCSAVER_WRITE(fh, acname))
 				succ = FALSE;
-
+#endif
 			if (!DESCSAVER_WRITE(fh, "\n"))
 				succ = FALSE;
 
@@ -281,10 +286,13 @@ static inline BOOL change_file(STRPTR filename, struct internal_mimetype_node *i
 			{
 				if (!DESCSAVER_WRITE(fh, "\tMenu "))
 					succ = FALSE;
-
+#if USE_RECOGTRANSLATION
+				if (!DESCSAVER_WRITE(fh, locale_translationgetenglish( acmenuname ) ))
+					succ = FALSE;
+#else
 				if (!DESCSAVER_WRITE(fh, acmenuname))
 					succ = FALSE;
-
+#endif
 				if (!DESCSAVER_WRITE(fh, "\n"))
 					succ = FALSE;
 			}

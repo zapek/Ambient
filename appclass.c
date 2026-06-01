@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: appclass.c,v 1.118.2.1 2024/01/20 02:56:53 piru Exp $
+ * $Id: appclass.c,v 1.139 2026/04/25 23:05:00 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -31,6 +31,7 @@
 #include <workbench/workbench.h>
 #include <intuition/extensions.h>
 #include <intuition/monitorclass.h>
+#include <intuition/intuitionbase.h>
 #include <dos/dostags.h>
 #include <proto/exec.h>
 #include <proto/intuition.h>
@@ -38,6 +39,8 @@
 #include <proto/graphics.h>
 #include <proto/layers.h>
 #include <proto/dos.h>
+#include <proto/btree.h>
+#include <libraries/btree.h>
 
 #if !USE_LEGACY
 #include <proto/log.h>
@@ -133,12 +136,13 @@ struct dialog_delay
 
 struct Data {
 	ULONG  id;
+	APTR   idTree;
 
 	/*  backgrounds
 	 */
-	APTR   dtp_root_old;
-	APTR   dtp_root_new;
-	APTR   dtp_root;
+	APTR   dtp_root_old[AMBIENT_MAX_EXTRA_SCREENS + 1];
+	APTR   dtp_root_new[AMBIENT_MAX_EXTRA_SCREENS + 1];
+	APTR   dtp_root[AMBIENT_MAX_EXTRA_SCREENS + 1];
 	APTR   dtp_window;
 
 	APTR   rootwin;  /* root window object (mostly for speed reasons but also to check if rootwin is around) */
@@ -155,8 +159,9 @@ struct Data {
 	/*  images cache
 	 */
 	APTR   image_cache;
-
+#if USE_INTERNAL_PANELS
 	APTR   panelclasslist;
+#endif
 	
 	/*  views counter
 	 */
@@ -208,10 +213,37 @@ static const CONST_STRPTR classlist[] = {
 	NULL
 };
 
+static APTR idTreeAlloc(APTR userdata, ULONG size)
+{
+	(void)userdata;
+	return AllocTaskPooled(size);
+}
+
+static void idTreeFree(APTR userdata, APTR ptr, ULONG size)
+{
+	(void)userdata;
+	FreeTaskPooled(ptr, size);
+}
+
+static LONG idTreeCompare(APTR userdata, const APTR keya, const APTR keyb)
+{
+	(void)userdata;
+	if ((ULONG) keya > (ULONG) keyb) return 1;
+	else if ((ULONG) keya < (ULONG) keyb) return -1;
+	return 0;
+}
+
+static void idNothing(APTR _, APTR __)
+{
+	(void)_; (void)__;
+}
 
 DEFNEW
 {
 	struct Data *data;
+	static struct BTArgArray idTreeArray = {
+		idTreeAlloc, idTreeFree, idTreeCompare, idNothing, idNothing, NULL
+	};
 
 	obj = DoSuperNew(cl, obj,
 		MUIA_Application_Title,       APPNAME,
@@ -221,11 +253,7 @@ DEFNEW
 		MUIA_Application_UsedClasses, classlist,
 		MUIA_Application_Description, "The MorphOS desktop",
 		MUIA_Application_Base,        "AMBIENT",
-		#if USE_MULTIPLE_DESKTOP
-		MUIA_Application_SingleTask,  FALSE,
-		#else
 		MUIA_Application_SingleTask,  TRUE,
-		#endif
 		MUIA_Application_UseRexx,     FALSE,
 		MUIA_Application_NoIconify,   TRUE,
 		TAG_MORE, INITTAGS
@@ -238,7 +266,15 @@ DEFNEW
 
 	data = INST_DATA(cl, obj);
 
-	data->id = 1;
+	data->id = MV_Window_ID_Base;
+	data->idTree = CreateTree(BT_AVL_TREE, &idTreeArray);
+
+	if (!data->idTree)
+	{
+		CoerceMethod(cl, obj, OM_DISPOSE);
+		return (0);
+	}
+
 	data->cleanup_pending = FALSE;
 
 	if (!(data->scrbuf[0] = malloc(SCREENTITLESIZE)) || !(data->scrbuf[1] = malloc(SCREENTITLESIZE))) /* should be enough for everyone (tm) */
@@ -295,7 +331,9 @@ DEFNEW
 	data->transtimer.ihn_Method = MM_Application_UpdateTransitionEffect;
 
 	set(obj, MUIA_Application_Iconified, FALSE);
+#if USE_INTERNAL_PANELS
 	data->panelclasslist =  NewObject(getpanelclasslistclass(),NULL,TAG_DONE);
+#endif
 	return ((ULONG)obj);
 }
 
@@ -355,9 +393,13 @@ DEFDISP
 		_conf(fl_lister_font) = NULL;
 	}
 
-	picture_delete(data->dtp_root_old);
-	picture_delete(data->dtp_root_new);
-	picture_delete(data->dtp_root);
+	for (int i = 0; i <= AMBIENT_MAX_EXTRA_SCREENS; i++)
+	{
+		picture_delete(data->dtp_root[i]);
+		picture_delete(data->dtp_root_old[i]);
+		picture_delete(data->dtp_root_new[i]);
+	}
+
 	picture_delete(data->dtp_window);
 
 	if (data->scrbuf[0])
@@ -373,11 +415,45 @@ DEFDISP
 	{
 		free(data->screentitle_backup);
 	}
+#if USE_INTERNAL_PANELS
 	if(data->panelclasslist)
 	{
 		MUI_DisposeObject(data->panelclasslist);
 	}
+#endif
+	DeleteTree(data->idTree);
+	data->idTree = NULL; // important: dosuper will call REMMEMBER
+
 	return (DOSUPER);
+}
+
+// Those are here so that we can build a lookup tree by MA_Window_ID
+DEFADDMEMBER
+{
+	GETDATA;
+	if (msg->opam_Object)
+	{
+		ULONG id = xget(msg->opam_Object, MA_Window_ID);
+		if (id != MV_Window_ID_Unknown)
+			InsertTreeNode(data->idTree, id, msg->opam_Object);
+	}
+	return DOSUPER;
+}
+
+DEFREMMEMBER
+{
+	GETDATA;
+	if (msg->opam_Object)
+	{
+		ULONG id = xget(msg->opam_Object, MA_Window_ID);
+		if (id != MV_Window_ID_Unknown)
+		{
+			APTR node = FindTreeNodeByKey(data->idTree, (void *)id);
+			if (node)
+				DeleteTreeNode(data->idTree, node);
+		}
+	}
+	return DOSUPER;
 }
 
 /*
@@ -440,6 +516,7 @@ static void CheckDelayedDialogs(struct IClass *cl, APTR obj, ULONG time_now)
 		if (dd->launchtime <= time_now)
 		{
 			REMOVE(dd);
+			set(dd->win, MUIA_Window_PublicScreen, active_screen_name());
 			set(dd->win, MUIA_Window_Open, TRUE);
 			FreeTaskPooled(dd, sizeof(*dd));
 		}
@@ -469,11 +546,21 @@ DEFGET
 	switch (msg->opg_AttrID)
 	{
 		case MA_Application_NextID:
-			*msg->opg_Storage = data->id++;
+			{
+				// 32bit overflow fix - skip over reserved values
+				if (data->id < MV_Window_ID_Base)
+					data->id = MV_Window_ID_Base;
+				// 32 bit overflow fix - skip over used values
+				while (FindTreeNodeByKey(data->idTree, (void *)data->id))
+					data->id ++;
+				*msg->opg_Storage = data->id++;
+			}
 			return (TRUE);
+#if USE_INTERNAL_PANELS
 		case MA_Application_PanelClassList:
 			*msg->opg_Storage = (ULONG)data->panelclasslist;
 			return (TRUE);
+#endif
 	}
 
 	return (DOSUPER);
@@ -500,6 +587,25 @@ DEFSET
 				if (data->wasiconified)
 				{
 					ULONG rc;
+
+					// See if the # of aux screens hasn't changed while we were gone...
+					for (ULONG id = MV_Window_ID_RootExtra; id <= MV_Window_ID_RootExtra_Max; id++)
+					{
+						ULONG screenId = (id - MV_Window_ID_RootExtra) + 1;
+						struct Screen *woScr = screen_lock_by_id(screenId);
+						Object *wo = (APTR)DoMethod(obj, MM_Application_FindWindowByID, id);
+
+						if (wo && !woScr)
+						{
+							// Close if missing
+							DoMethod(obj, MM_Application_DisposeWindow, wo);
+						}
+
+						screen_unlock(woScr);
+					}
+
+					// Do another pass shortly after to open bg windows for screens that might have appeared
+					DoMethod(app, MUIM_Application_PushMethod, app, 1 | MUIV_PushMethod_Delay(100) | MUIF_PUSHMETHOD_SINGLE, MM_Application_ReopenExtraRootWindows);
 
 					rc = DOSUPER;
 
@@ -544,6 +650,38 @@ DEFSET
 	return (DOSUPER);
 }
 
+DEFSMETHOD(Application_ReopenExtraRootWindows)
+{
+	GETDATA;
+
+	// Skip if we got iconified again
+	if (data->wasiconified)
+		return 0;
+
+	Object *rootWindow = (APTR)DoMethod(obj, MM_Application_FindWindowByID, MV_Window_ID_Root);
+	if (!rootWindow)
+		return 0;
+	
+	// See if the # of aux screens hasn't changed while we were gone...
+	for (ULONG id = MV_Window_ID_RootExtra; id <= MV_Window_ID_RootExtra_Max; id++)
+	{
+		ULONG screenId = (id - MV_Window_ID_RootExtra) + 1;
+		struct Screen *woScr = screen_lock_by_id(screenId);
+		Object *wo = (APTR)DoMethod(obj, MM_Application_FindWindowByID, id);
+
+		if (!wo && woScr)
+		{
+			// Open if a new screen popped up
+			char pubscreenName[MAXPUBSCREENNAME];
+			snprintf(pubscreenName, sizeof(pubscreenName), "Workbench.%ld", screenId);
+			Object *ewo = (APTR)DoMethod(obj, MM_Application_CreateWindow, MV_Application_CreateWindow_Rootview_Extra, mimeuri_duplicate(xget(rootWindow, MA_Window_MIMEctx)), NULL, (IPTR)pubscreenName);
+			set(ewo, MUIA_Window_Open, TRUE);
+		}
+
+		screen_unlock(woScr);
+	}
+	return 0;
+}
 
 
 //#define CHECKID(x) (msg->id == MV_Application_LoadPrefs_All || msg->id == (x))
@@ -1003,12 +1141,12 @@ DEFSMETHOD(Application_LoadPrefs)
 	{
 		_conf(fl_default_mode_devices) = getprefsstr(DSI_FASTLIST_DEFAULT_MODE_DEVICES);
 	}
-
+#if USE_INTERNAL_PANELS
 	if (CHECKID(DSI_PANEL_ZIPSPEED))
 	{
 		_conf(panel_zipspeed) = getprefslong(DSI_PANEL_ZIPSPEED);
 	}
-
+#endif
 
 	if (CHECKID(DSI_TOOLBAR_BROWSERMODE))
 	{
@@ -1088,6 +1226,11 @@ DEFSMETHOD(Application_LoadPrefs)
 	if (CHECKID(DSI_BOOKMARKS_NAMESONLY))
 	{
 		_conf(bookmarks_showonly) = getprefslong(DSI_BOOKMARKS_SHOWONLY);
+	}
+	
+	if (CHECKID(DSI_MISC_HIDEDOTFILENAMES))
+	{
+		_conf(hide_dot_filenames) = getprefslong(DSI_MISC_HIDEDOTFILENAMES);
 	}
 	
 	if (CHECKID(DSI_WINDOW_STATUSBARCOLOR)) // bitRocky
@@ -1247,7 +1390,8 @@ DEFSMETHOD(Application_WindowDoMethodByAttr)
 		{
 			if (v == msg->val)
 			{
-				if (getv(child, MA_Window_Type) != MV_Window_Type_Rootview)
+				ULONG type = getv(child, MA_Window_Type);
+				if (type != MV_Window_Type_Rootview && type != MV_Window_Type_Rootview_Extra)
 				{
 					DoMethodA(child, (Msg)&msg->args);
 				}
@@ -1264,7 +1408,7 @@ DEFSMETHOD(Application_WindowDoMethodByAttr)
  * Ditto for rootwin. If attr is NULL it means it'll do the
  * method in any case.
  */
-DEFSMETHOD(Application_RootDoMethodByAttr)
+DEFSMETHOD(Application_DoMethodByAttr)
 {
 	GETDATA;
 	ULONG v;
@@ -1274,7 +1418,7 @@ DEFSMETHOD(Application_RootDoMethodByAttr)
 	 * If it's there we can use it as a faster way
 	 * to access rootwin.
 	 */
-	if (data->rootwin)
+	if (msg->windowID == MV_Window_ID_Root && data->rootwin)
 	{
 		if (!msg->attr || (get(data->rootwin, msg->attr, &v) && (v == msg->val)))
 		{
@@ -1283,18 +1427,14 @@ DEFSMETHOD(Application_RootDoMethodByAttr)
 	}
 	else
 	{
-		FORCHILD(obj, MUIA_Application_WindowList)
+		Object *window = DoMethod(obj, MM_Application_FindWindowByID, msg->windowID);
+		if (window)
 		{
-			if (!msg->attr || (get(child, msg->attr, &v) && (v == msg->val)))
+			if (!msg->attr || (get(window, msg->attr, &v) && (v == msg->val)))
 			{
-				if (getv(child, MA_Window_Type) == MV_Window_Type_Rootview)
-				{
-					DoMethodA(child, (Msg)&msg->args);
-					break;
-				}
+				DoMethodA(window, (Msg)&msg->args);
 			}
 		}
-		NEXTCHILD
 	}
 
 	return (0);
@@ -1342,26 +1482,13 @@ DEFSMETHOD(Application_DeleteActionDispatcher)
 DEFSMETHOD(Application_FindWindowByID)
 {
 	ULONG id;
+	GETDATA;
 
 	ASSERT(msg->id);
 
-	FORCHILD(obj, MUIA_Application_WindowList)
-	{
-		if (get(child, MA_Window_ID, &id))
-		{
-			if (id == msg->id)
-			{
-				return ((ULONG)child);
-			}
-		}
-		#ifdef DEBUG
-		else
-		{
-			PDB(("argh, window %p (win: %p) has no proper attributes\n", child, _window(child)));
-		}
-		#endif
-	}
-	NEXTCHILD
+	APTR node = FindTreeNodeByKey(data->idTree, msg->id);
+	if (node)
+		return GetTreeNodeData(data->idTree, node);
 
 	return (ULONG)NULL;
 }
@@ -1388,31 +1515,6 @@ DEFSMETHOD(Application_FindWindowByName)
 				{
 					return ((ULONG)child);
 				}
-			}
-		}
-		#ifdef DEBUG
-		else
-		{
-			PDB(("argh, window %p (win: %p) has no proper attributes\n", child, _window(child)));
-		}
-		#endif
-	}
-	NEXTCHILD
-
-	return (ULONG)NULL;
-}
-
-DEFSMETHOD(Application_FindWindowByType)
-{
-	ULONG type;
-
-	FORCHILD(obj, MUIA_Application_WindowList)
-	{
-		if (get(child, MA_Window_Type, &type))
-		{
-			if (type == msg->type)
-			{
-				return ((ULONG)child);
 			}
 		}
 		#ifdef DEBUG
@@ -1500,41 +1602,6 @@ DEFSMETHOD(Application_EnableDOSNotify)
 	return (ULONG)NULL;
 }
 #endif
-
-/*
- * Given a type and a userdata, returns
- * the window object (note: this is not mandatory
- * for every window but just the given 'type').
- */
-DEFSMETHOD(Application_FindWindowByUserData)
-{
-	ULONG type;
-	ULONG ud;
-
-	FORCHILD(obj, MUIA_Application_WindowList)
-	{
-		if (get(child, MA_Window_Type, &type))
-		{
-			if (type == msg->type)
-			{
-				ud = getv(child, MA_Window_UserData);
-
-				if (ud == msg->userdata)
-				{
-					return ((ULONG)child);
-				}
-			}
-		}
-		#ifdef DEBUG
-		else
-		{
-			PDB(("argh, window %p (win: %p) has no proper attributes\n", child, _window(child)));
-		}
-		#endif
-	}
-	NEXTCHILD
-	return (ULONG)NULL;
-}
 
 
 DEFTMETHOD(Application_Open_AboutWindow)
@@ -1680,6 +1747,7 @@ DEFTMETHOD(Application_Open_ExecuteWindow)
 
 	if (executewin)
 	{
+		set(executewin, MUIA_Window_PublicScreen, active_screen_name());
 		set(executewin, MUIA_Window_Open, TRUE);
 	}
 
@@ -1863,6 +1931,7 @@ struct RX_LoadURI {
 	LONG nonewwin;
 	LONG iconified;
 	LONG tofront;
+	STRPTR pubscreen;
 };
 
 struct RX_Move {
@@ -2016,7 +2085,7 @@ const struct ambient_command rexxcmds[] = {
 	{"Eject",             4, "DRIVE,EJECT/S,INJECT/S,TOGGLE/S",                                                           RXCMD_Eject},
 	{"Flash",             0, "",                                                                                          RXCMD_Flash},
 	{"IconInfo",          2, "PATH,WAIT/S",                                                                               RXCMD_IconInfo},
-	{"LoadURI",           9, "URI/U,NEW=NEWWIN/S,RELOAD/S,FORCE/S,BROWSER/N,VIEWID/N,NONEWWIN/S,ICONIFIED/S,TOFRONT/S",   RXCMD_LoadURI},
+	{"LoadURI",           10,"URI/U,NEW=NEWWIN/S,RELOAD/S,FORCE/S,BROWSER/N,VIEWID/N,NONEWWIN/S,ICONIFIED/S,TOFRONT/S,PUBSCREEN",   RXCMD_LoadURI},
 	{"Makedir",           2, "PATH,NOICON/S",                                                                             RXCMD_Makedir},
 	{"MakeLink",          1, "FROM,TO",                                                                                   RXCMD_MakeLink},
 	{"ParseURI",          2, "URI/U,STEM",                                                                                RXCMD_ParseURI},
@@ -2832,6 +2901,7 @@ LONG application_dorexx( Class *cl, Object *obj, struct MP_Application_DoRexx *m
 									APTR ctx;
 									APTR object = obj;
 									ULONG browser;
+									CONST_STRPTR pubscreen = arg->pubscreen;
 
 									/* XXX: we should honour the flags */
 
@@ -2954,6 +3024,7 @@ LONG application_dorexx( Class *cl, Object *obj, struct MP_Application_DoRexx *m
 												TT_URI_Load_Newwin, isroot ? 1 : ( newwin ? TRUE : (ULONG)mimetype_getattr( ctx, MIMETYPETAG_NEWWIN ) ),
 												TT_URI_Load_Browser, browser,
 												TT_URI_Load_Iconified, arg->iconified,
+												pubscreen ? TT_URI_Load_Screen : TAG_IGNORE, get_screen_id(pubscreen),
 												(msg->internal && !arg->tofront) ? TAG_IGNORE : TT_URI_Load_ToFront, TRUE,
 											TAG_DONE);
 										}
@@ -2966,6 +3037,7 @@ LONG application_dorexx( Class *cl, Object *obj, struct MP_Application_DoRexx *m
 												TT_URI_Load_Newwin, isroot ? 1 : ( newwin ? TRUE : (ULONG)mimetype_getattr( ctx, MIMETYPETAG_NEWWIN ) ),
 												TT_URI_Load_Browser, browser,
 												TT_URI_Load_Iconified, arg->iconified,
+												pubscreen ? TT_URI_Load_Screen : TAG_IGNORE, get_screen_id(pubscreen),
 												(msg->internal && !arg->tofront) ? TAG_IGNORE : TT_URI_Load_ToFront, TRUE,
 											TAG_DONE);
 										}
@@ -3251,6 +3323,7 @@ LONG application_dorexx( Class *cl, Object *obj, struct MP_Application_DoRexx *m
 							 *  - 0: Ok
 							 *  - 5: Error
 							 */
+#if USE_INTERNAL_PANELS
 							case RXCMD_Panel:
 								{
 									struct RX_Panel *arg = (struct RX_Panel *)array;
@@ -3488,7 +3561,7 @@ LONG application_dorexx( Class *cl, Object *obj, struct MP_Application_DoRexx *m
 									}
 								}
 								break;
-
+#endif
 							/*
 							 * Command:
 							 *  - Snapshot
@@ -5055,9 +5128,10 @@ LONG application_dorexx( Class *cl, Object *obj, struct MP_Application_DoRexx *m
 									{
 										FORCHILD(app, MUIA_Application_WindowList)
 										{
-											if (getv(child, MUIA_Window_Activate) && getv(child, MA_Window_Type) == MV_Window_Type_View)
+											if (getv(child, MUIA_Window_Activate))
 											{
-												get(child, MA_Window_Viewobj, &wo);
+												if (getv(child, MA_Window_Type) == MV_Window_Type_View)
+													get(child, MA_Window_Viewobj, &wo);
 												break;
 											}
 										}
@@ -5352,6 +5426,7 @@ LONG application_dorexx( Class *cl, Object *obj, struct MP_Application_DoRexx *m
 										SetAttrs(findwin,
 											MA_Find_Pattern, arg->name,
 											MA_Find_Text, arg->text,
+											MUIA_Window_PublicScreen, active_screen_name(),
 											MUIA_Window_Open, TRUE,
 											TAG_DONE
 										);
@@ -5455,9 +5530,10 @@ LONG application_dorexx( Class *cl, Object *obj, struct MP_Application_DoRexx *m
 									{
 										FORCHILD(app, MUIA_Application_WindowList)
 										{
-											if (getv(child, MUIA_Window_Activate) && getv(child, MA_Window_Type) == MV_Window_Type_View)
+											if (getv(child, MUIA_Window_Activate))
 											{
-												get(child, MA_Window_Viewobj, &wo);
+												if (getv(child, MA_Window_Type) == MV_Window_Type_View)
+													get(child, MA_Window_Viewobj, &wo);
 												break;
 											}
 										}
@@ -6213,7 +6289,7 @@ STATIC APTR CenterBackgroundImage(struct Screen *scr, LONG pen, APTR dtp_root)
 
 				ULONG memory = 0;
 				Object *monitor = NULL;
-				GetAttr(SA_MonitorObject, (Object *)scr, (IPTR)&monitor);
+				GetAttr(SA_MonitorObject, (Object *)scr, (ULONG*)&monitor);
 				GetAttr(MA_MemorySize, monitor, &memory);
 				GetAttr(SA_CompositingLayers,(Object *)scr,&compositing);
 
@@ -6293,10 +6369,14 @@ STATIC APTR CenterBackgroundImage(struct Screen *scr, LONG pen, APTR dtp_root)
 			}
 		}
 	}
+	else if (scr == NULL)
+	{
+		picture_delete(dtp_root);
+		dtp_root = NULL;
+	}
 
 	return (dtp_root);
 }
-
 
 static void remove_transition_effect(struct Data *data)
 {
@@ -6317,7 +6397,15 @@ DEFTMETHOD(Application_UpdateTransitionEffect)
 		remove_transition_effect(data);
 	}
 
-	return DoMethod(app, MM_Application_RootDoMethodByAttr, MA_View_HasBackground, TRUE, MM_Window_UpdateBackground, data->dtp_root, getprefslong(DSI_BACKGROUND_ROOT_BGRENDER));
+	for (int i = 0; i <= AMBIENT_MAX_EXTRA_SCREENS; i++)
+	{
+		if (data->dtp_root[i])
+		{
+			DoMethod(app, MM_Application_DoMethodByAttr, MV_Window_ID_Root + i, MA_View_HasBackground, TRUE, MM_Window_UpdateBackground, data->dtp_root[i], getprefslong(DSI_BACKGROUND_ROOT_BGRENDER));
+		}
+	}
+
+	return TRUE;
 }
 
 
@@ -6333,43 +6421,50 @@ DEFSMETHOD(Application_CenterBackground)
 	GETDATA;
 	BOOL dispose = TRUE;
 
-	data->dtp_root = CenterBackgroundImage(msg->screen, msg->pen, data->dtp_root);
-
-	if (data->dtp_root && data->dtp_root_new)
+	for (int i = 0; i <= AMBIENT_MAX_EXTRA_SCREENS; i++)
 	{
-		APTR bm = picture_getattr(data->dtp_root, PICTURE_BITMAP);
-		int w = gfx_bitmap_width(bm);
-		int h = gfx_bitmap_height(bm);
-		struct Rectangle r = { 0, 0, w - 1, h - 1 };
-		UBYTE v = data->mixlevel;
+		struct Screen *screen = screen_lock_by_id(i);
 
-		if (v == 0xff || !data->bg_transition_active)
-		{
-			gfx_blit_tiled(picture_getattr(data->dtp_root_new, PICTURE_BITMAP), 0, 0, gfx_bitmap_bm(bm), &r);
-		}
-		else
-		{
-			data->dtp_root_old = CenterBackgroundImage(msg->screen, msg->pen, data->dtp_root_old);
-			data->dtp_root_new = CenterBackgroundImage(msg->screen, msg->pen, data->dtp_root_new);
+		data->dtp_root[i] = CenterBackgroundImage(screen, msg->pen, data->dtp_root[i]);
 
-			if (data->dtp_root_old && data->dtp_root_new)
+		if (data->dtp_root[i] && data->dtp_root_new[i])
+		{
+			APTR bm = picture_getattr(data->dtp_root[i], PICTURE_BITMAP);
+			int w = gfx_bitmap_width(bm);
+			int h = gfx_bitmap_height(bm);
+			struct Rectangle r = { 0, 0, w - 1, h - 1 };
+			UBYTE v = data->mixlevel;
+
+			if (v == 0xff || !data->bg_transition_active)
 			{
-				ULONG mixlevel = v << 24 | v << 16 | v << 8 | v;
+				gfx_blit_tiled(picture_getattr(data->dtp_root_new[i], PICTURE_BITMAP), 0, 0, gfx_bitmap_bm(bm), &r);
+			}
+			else
+			{
+				data->dtp_root_old[i] = CenterBackgroundImage(screen, msg->pen, data->dtp_root_old[i]);
+				data->dtp_root_new[i] = CenterBackgroundImage(screen, msg->pen, data->dtp_root_new[i]);
 
-				gfx_blit_tiled(picture_getattr(data->dtp_root_old, PICTURE_BITMAP), 0, 0, gfx_bitmap_bm(bm), &r);
-				gfx_blit_tiled_alpha(picture_getattr(data->dtp_root_new, PICTURE_BITMAP), 0, 0, gfx_bitmap_bm(bm), &r, mixlevel);
+				if (data->dtp_root_old[i] && data->dtp_root_new[i])
+				{
+					ULONG mixlevel = v << 24 | v << 16 | v << 8 | v;
 
-				dispose = FALSE;
+					gfx_blit_tiled(picture_getattr(data->dtp_root_old[i], PICTURE_BITMAP), 0, 0, gfx_bitmap_bm(bm), &r);
+					gfx_blit_tiled_alpha(picture_getattr(data->dtp_root_new[i], PICTURE_BITMAP), 0, 0, gfx_bitmap_bm(bm), &r, mixlevel);
+
+					dispose = FALSE;
+				}
 			}
 		}
-	}
+		
+		screen_unlock(screen);
 
-	if (dispose)
-	{
-		picture_delete(data->dtp_root_old);
-		picture_delete(data->dtp_root_new);
-		data->dtp_root_old = NULL;
-		data->dtp_root_new = NULL;
+		if (dispose)
+		{
+			picture_delete(data->dtp_root_old[i]);
+			picture_delete(data->dtp_root_new[i]);
+			data->dtp_root_old[i] = NULL;
+			data->dtp_root_new[i] = NULL;
+		}
 	}
 
 	return 0;
@@ -6382,77 +6477,69 @@ DEFSMETHOD(Application_CenterBackground)
 DEFSMETHOD(Application_AddBackground)
 {
 	GETDATA;
+	ULONG i;
 
-	switch (msg->type)
+	if (msg->type >= MV_Application_AddBackground_Root && msg->type <= MV_Application_AddBackground_RootExtra_Max)
 	{
-		case TV_Background_Load_Type_Root:
+		ULONG sid = msg->type - MV_Application_AddBackground_Root;
+		APTR dtp = msg->dtp, tmp = data->dtp_root[sid];
+
+		picture_delete(data->dtp_root_old[sid]);
+		picture_delete(data->dtp_root_new[sid]);
+		data->dtp_root_old[sid] = NULL;
+		data->dtp_root_new[sid] = NULL;
+
+		data->dtp_root[sid] = dtp;
+		remove_transition_effect(data);
+
+		if (tmp && dtp && getprefslong(DSI_BACKGROUND_TRANSITION))
 		{
-			APTR dtp = msg->dtp, tmp = data->dtp_root;
+			struct Screen *scr = screen_lock_by_id(sid);
 
-			picture_delete(data->dtp_root_old);
-			picture_delete(data->dtp_root_new);
-			data->dtp_root_old = NULL;
-			data->dtp_root_new = NULL;
-
-			data->dtp_root = dtp;
-			remove_transition_effect(data);
-
-			if (tmp && dtp && getprefslong(DSI_BACKGROUND_TRANSITION))
+			if (scr)
 			{
-				struct Screen *scr = get_screen();
-
-				if (scr)
+				ULONG compositing = FALSE;
+				ULONG memory = 0;
+				Object *monitor = NULL;
+				GetAttr(SA_CompositingLayers, (Object *)scr, &compositing);
+				GetAttr(SA_MonitorObject, (Object *)scr, (ULONG*)&monitor);
+				GetAttr(MA_MemorySize, monitor, &memory);
+				
+				if (compositing && memory > MINIMUM_TRANSITIONS_VMEM)
 				{
-					ULONG compositing = FALSE;
-					ULONG memory = 0;
-					Object *monitor = NULL;
-					GetAttr(SA_CompositingLayers, (Object *)scr, &compositing);
-					GetAttr(SA_MonitorObject, (Object *)scr, (IPTR)&monitor);
-					GetAttr(MA_MemorySize, monitor, &memory);
-					
-					if (compositing && memory > MINIMUM_TRANSITIONS_VMEM)
+					dtp = picture_create(BITMAPWIDTH_Clone, BITMAPHEIGHT_Clone, BITMAPDEPTH_Clone, scr, TRUE);
+
+					if (dtp)
 					{
-						dtp = picture_create(BITMAPWIDTH_Clone, BITMAPHEIGHT_Clone, BITMAPDEPTH_Clone, scr, TRUE);
+						data->bg_transition_active = 1;
+						DoMethod(app, MUIM_Application_AddInputHandler, &data->transtimer);
 
-						if (dtp)
-						{
-							data->bg_transition_active = 1;
-							DoMethod(app, MUIM_Application_AddInputHandler, &data->transtimer);
-
-							data->mixlevel = 0;
-							data->dtp_root_old = tmp;
-							data->dtp_root_new = msg->dtp;
-							data->dtp_root = dtp;
-							tmp = NULL;
-						}
+						data->mixlevel = 0;
+						data->dtp_root_old[sid] = tmp;
+						data->dtp_root_new[sid] = msg->dtp;
+						data->dtp_root[sid] = dtp;
+						tmp = NULL;
 					}
 				}
+				
+				screen_unlock(scr);
 			}
-
-			DoMethod(app, MM_Application_RootDoMethodByAttr, MA_View_HasBackground, TRUE,
-				MM_Window_UpdateBackground, dtp, getprefslong(DSI_BACKGROUND_ROOT_BGRENDER)
-			);
-
-			picture_delete(tmp);
 		}
-		break;
 
-		case TV_Background_Load_Type_Window:
-		{
-			picture_delete(data->dtp_window);
-			data->dtp_window = msg->dtp;
+		DoMethod(app, MM_Application_DoMethodByAttr, MV_Window_ID_Root + sid, MA_View_HasBackground, TRUE,
+			MM_Window_UpdateBackground, dtp, getprefslong(DSI_BACKGROUND_ROOT_BGRENDER)
+		);
 
-			DoMethod(app, MM_Application_WindowDoMethodByAttr, MA_View_HasBackground, TRUE,
-				MM_Window_UpdateBackground, data->dtp_window, getprefslong(DSI_BACKGROUND_WINDOW_BGRENDER)
-			);
-		}
-		break;
+		picture_delete(tmp);
+	}
+	else if (msg->type == MV_Application_AddBackground_Window)
+	{
+		picture_delete(data->dtp_window);
+		data->dtp_window = msg->dtp;
 
-		#ifdef DEBUG
-		default:
-			PDB(("unknown bgtype %ld\n", msg->type));
-			break;
-		#endif
+		DoMethod(app, MM_Application_WindowDoMethodByAttr, MA_View_HasBackground, TRUE,
+			MM_Window_UpdateBackground, data->dtp_window, getprefslong(DSI_BACKGROUND_WINDOW_BGRENDER)
+		);
 	}
 
 	return (0);
@@ -6471,7 +6558,7 @@ DEFSMETHOD(Application_LoadBackground)
 #if 0
 	if (msg->flags & MF_Application_LoadBackground_ClearRoot)
 	{
-		DoMethod(app, MM_Application_RootDoMethodByAttr, MA_View_HasBackground, TRUE,
+		DoMethod(app, MM_Application_DoMethodByAttr, MV_Window_ID_Root, MA_View_HasBackground, TRUE,
 			MM_Window_UpdateBackground, NULL, NULL
 		);
 
@@ -6536,9 +6623,12 @@ DEFSMETHOD(Application_DisplayUpdate)
 
 	if (msg->flags & MF_Application_DisplayUpdate_Root)
 	{
-		DoMethod(app, MM_Application_RootDoMethodByAttr, NULL, NULL,
-			MM_Window_DoView, NULL, MM_View_Refresh, flags, data->dtp_root ? picture_getattr(data->dtp_root, PICTURE_BITMAP) : NULL
-		);
+		for (int i = 0; i <= AMBIENT_MAX_EXTRA_SCREENS; i++)
+		{
+			DoMethod(app, MM_Application_DoMethodByAttr, MV_Window_ID_Root + i, NULL, NULL,
+				MM_Window_DoView, NULL, MM_View_Refresh, flags, data->dtp_root[i] ? picture_getattr(data->dtp_root[i], PICTURE_BITMAP) : NULL
+			);
+		}
 	}
 
 	if (msg->flags & MF_Application_DisplayUpdate_Windows)
@@ -6578,14 +6668,32 @@ DEFSMETHOD(Application_CreateWindow)
 					MUIA_Window_SizeGadget,  FALSE,
 					MA_Window_Type,          MV_Window_Type_Rootview,
 					MA_Window_MIMEctx,       msg->mimectx,
-					MA_Window_DTP,           data->dtp_root,
+					MA_Window_DTP,           data->dtp_root[0],
 					MA_Window_BGMode,        getprefslong(DSI_BACKGROUND_ROOT_BGRENDER),
+					MA_Window_PublicScreen,  msg->pubscreenName,
 				TAG_DONE);
 			}
 			else
 			{
 				PDB(("there's already a rootview..\n"));
 			}
+			break;
+			
+		case MV_Application_CreateWindow_Rootview_Extra:
+			o = NewObject(getwindowclass(), NULL, /* we register data->rootwin because it's handy */
+				MUIA_Window_Backdrop,    TRUE,
+				MUIA_Window_Borderless,  TRUE,
+				MUIA_Window_CloseGadget, FALSE,
+				MUIA_Window_DepthGadget, FALSE,
+				MUIA_Window_DragBar,     FALSE,
+				MUIA_Window_SizeGadget,  FALSE,
+//				MA_Window_Browser,       msg->browser,
+				MA_Window_PublicScreen,  msg->pubscreenName,
+				MA_Window_Type,          MV_Window_Type_Rootview_Extra,
+				MA_Window_MIMEctx,       msg->mimectx,
+				MA_Window_DTP,           data->dtp_root[get_screen_id(msg->pubscreenName)], // fixme: needs separate dtp
+				MA_Window_BGMode,        getprefslong(DSI_BACKGROUND_ROOT_BGRENDER), // fixme:
+			TAG_DONE);
 			break;
 
 		case MV_Application_CreateWindow_View:
@@ -6595,6 +6703,7 @@ DEFSMETHOD(Application_CreateWindow)
 				MA_Window_DTP,     data->dtp_window,
 				MA_Window_Browser, msg->browser,
 				MA_Window_BGMode,  getprefslong(DSI_BACKGROUND_WINDOW_BGRENDER),
+				MA_Window_PublicScreen,  msg->pubscreenName,
 			TAG_DONE);
 			break;
 
@@ -6826,7 +6935,7 @@ DEFSMETHOD(Application_CreatePatternRenamewin)
 
 	return ((ULONG) o);
 }
-
+#if USE_INTERNAL_PANELS
 /*
  * Creates a panelwin.
  */
@@ -7013,7 +7122,7 @@ DEFSMETHOD(Application_CreatePanelitem)
 	}
 	return ( (ULONG) o );
 }         
-
+#endif
 /*
  * Creates a smartreq window (needed for threads).
  */
@@ -7301,11 +7410,11 @@ DEFSMETHOD(Thread_Finished)
 				}
 			}
 			break;
-
+#if USE_INTERNAL_PANELS
 		case TA_Panels_LoadAll:
 			panelprefs_loaded();
 			break;
-
+#endif
 		case TA_Appicon_Read:
 			{
 				APTR o;
@@ -7439,6 +7548,7 @@ DEFSMETHOD(Thread_Finished)
 				ULONG browser;
 				ULONG iconified;
 				ULONG tofront;
+				ULONG screen = 0;
 
 				if (msg->taglist)
 				{
@@ -7448,6 +7558,7 @@ DEFSMETHOD(Thread_Finished)
 					browser	= GetTagData(TT_URI_Load_Browser, FALSE, msg->taglist);
 					iconified = GetTagData(TT_URI_Load_Iconified, FALSE, msg->taglist);
 					tofront = GetTagData(TT_URI_Load_ToFront, FALSE, msg->taglist);
+					screen = GetTagData(TT_URI_Load_Screen, 0, msg->taglist);
 
 					DB(("Fetched LoadURI tags, ctx;%08lx, id;%ld, "
 					"newwin;%lx, browser;%lx, iconified;%lx, tofront;%lx\n", ctx, id, newwin, browser, iconified, tofront));
@@ -7512,9 +7623,8 @@ DEFSMETHOD(Thread_Finished)
 										/*
 										 * In case of root windows don't allow creating more than one.
 										 */
-
-										if (DoMethod(obj, MM_Application_FindWindowByType, MV_Window_Type_Rootview) == (ULONG)NULL)
-											wo = (APTR)DoMethod(obj, MM_Application_CreateWindow, MV_Application_CreateWindow_Rootview, ctx, browser);
+										if (DoMethod(obj, MM_Application_FindWindowByID, MV_Window_ID_Root) == (ULONG)NULL)
+											wo = (APTR)DoMethod(obj, MM_Application_CreateWindow, MV_Application_CreateWindow_Rootview, ctx, browser, NULL);
 									}
 									else
 									{
@@ -7530,7 +7640,10 @@ DEFSMETHOD(Thread_Finished)
 
 										if (!wo)
 										{
-											wo = (APTR)DoMethod(obj, MM_Application_CreateWindow, MV_Application_CreateWindow_View, ctx, browser);
+											char buffer[128];
+											if (screen >= 1 && screen <= 4)
+												snprintf(buffer, sizeof(buffer), "Workbench.%ld", screen);
+											wo = (APTR)DoMethod(obj, MM_Application_CreateWindow, MV_Application_CreateWindow_View, ctx, browser, screen >= 1 && screen <= 4 ? buffer : NULL);
 										}
 									}
 								}
@@ -7557,6 +7670,32 @@ DEFSMETHOD(Thread_Finished)
 										DB(("Put window to front and activate it!\n")); // bitRocky Test
 										DoMethod(wo, MUIM_Window_ToFront);
 										set(wo, MUIA_Window_Activate, TRUE);
+									}
+
+									// Did we just open the rootview?
+									if (DoMethod(obj, MM_Application_FindWindowByID, MV_Window_ID_Root) == (ULONG)wo)
+									{
+										char pubscreenName[MAXPUBSCREENNAME];
+										BOOL hasExtras = FALSE;
+										for (int pubIndex = 1; pubIndex <= AMBIENT_MAX_EXTRA_SCREENS; pubIndex ++)
+										{
+											struct Screen *pubScr;
+											snprintf(pubscreenName, sizeof(pubscreenName), "Workbench.%ld", pubIndex);
+											if ((pubScr = LockPubScreen(pubscreenName)))
+											{
+												Object *ewo = (APTR)DoMethod(obj, MM_Application_CreateWindow, MV_Application_CreateWindow_Rootview_Extra, mimeuri_duplicate(ctx), NULL, (IPTR)pubscreenName);
+												set(ewo, MUIA_Window_Open, TRUE);
+												hasExtras = TRUE;
+												UnlockPubScreen(pubscreenName, pubScr);
+											}
+										}
+
+										/* hack: some flows stubbornly deactivate the main window, so ensure it gets reactivated */
+										if (hasExtras)
+										{
+											DoMethod(obj, MUIM_Application_PushMethod, wo, 3 | MUIV_PushMethod_Delay(30), MUIM_Window_ScreenToFront);
+											DoMethod(obj, MUIM_Application_PushMethod, wo, 3 | MUIV_PushMethod_Delay(30), MUIM_Window_ToFront);
+										}
 									}
 
 									/* XXX: window should probably not be opened if view is iconified, but it's more safe for now */
@@ -7735,7 +7874,7 @@ DEFSMETHOD(Thread_Finished)
 												TAG_DONE);
 												goto rescan;
 											case MULTIMEDIATYPE_VIDEO:
-												bug("MULTIMEDIATYPE_VIDEO\n");
+												//bug("MULTIMEDIATYPE_VIDEO\n");
 												mimeuri_setattrs(ctx,
 												// MIMEURIATTR_MIMETYPE, MIMETYPE_INTERNAL_MULTIMEDIA,  // XXX: hack! 
 													MIMEURIATTR_MIMETYPE, "image/*",
@@ -7806,70 +7945,43 @@ DEFSMETHOD(Thread_Finished)
 	return (0);
 }
 
-
-struct DragData
-{
-	APTR src;
-	struct Screen *screen;
-	struct Window *win;
-	LONG x;
-	LONG y;
-};
-
-static struct Window * dd_FindWindow(struct DragData *dd)
-{
-	struct Window *appwin = NULL;
-	struct Layer  *layer  = WhichLayer(&dd->screen->LayerInfo, dd->screen->MouseX, dd->screen->MouseY);
-
-	if (layer)
-	{
-		if (AppWindowObtain(layer->Window))
-		{
-			appwin = dd->win = layer->Window;
-		}
-		else
-		{
-			appwin = NULL;
-		}
-		AppWindowRelease();
-	}
-
-	return(appwin);
-}
-
 /* No ambient object found for drop, so it's an external appwindow */
 DEFMMETHOD(DragDrop)
 {
-	struct DragData dd;
 	struct Window *win = NULL;
+	struct ipc_appwindow *appwin = NULL;
 
-	dd.src    = msg->obj;
-	dd.screen = _screen(msg->obj);
-	dd.x      = _screen(msg->obj)->MouseX;
-	dd.y      = _screen(msg->obj)->MouseY;
+	// Note: this is needed so that we can drop on other displays. FirstScreen is where the mouse pointer is
+	ULONG ib = LockIBase(0);
+	struct Layer *layer = IntuitionBase->FirstScreen ? WhichLayer(&IntuitionBase->FirstScreen->LayerInfo, IntuitionBase->FirstScreen->MouseX, IntuitionBase->FirstScreen->MouseY) : NULL;
+	if (layer)
+		win = layer->Window;
+	UnlockIBase(ib);
 
-	win = dd_FindWindow(&dd);
-
+	// Note: do NOT read from window until AppWindowObtain. This works securely only because we treat the win ptr as an opaque ptr
+	// and AppWindowObtain uses it as a key to read from a hashmap
 	if (win)
 	{
 		struct ipc_appwindow *appwin;
 
-		if ( (appwin = (APTR)AppWindowObtain(dd.win)) )
+		if ( (appwin = (APTR)AppWindowObtain(win)) )
 		{
 			struct wbargs *wba;
 
-			if ( (wba = wba_create(dd.src)) )
+			// note: win is now safe to use for until we call AppWindowRelease
+
+			if ( (wba = wba_create(msg->obj)) )
 			{
 				do_action(app, TA_AppMsg_Send,/* XXX: I *think* 'app' is ok here.. check */
 					TT_AppMsg_Send_Type,      AMTYPE_APPWINDOW,
-					TT_AppMsg_Send_Window,    dd.win,
+					TT_AppMsg_Send_Window,    win,
 					TT_AppMsg_Send_Path,      wba->basepath,
 					TT_AppMsg_Send_ID,        appwin->id,
 					TT_AppMsg_Send_Userdata,  appwin->userdata,
 					TT_AppMsg_Send_NumArgs,   wba->count,
 					TT_AppMsg_Send_WBArgList, wba->wba,
-					TT_AppMsg_Send_MouseX,    dd.x,
-					TT_AppMsg_Send_MouseY,    dd.y,
+					TT_AppMsg_Send_MouseX,    win->WScreen->MouseX,
+					TT_AppMsg_Send_MouseY,    win->WScreen->MouseY,
 				TAG_DONE);
 
 				wba_delete(wba);
@@ -7915,16 +8027,24 @@ DEFTMETHOD(Application_CommitStorage)
 
 DEFSMETHOD(Application_OpenDevicesWindow)
 {
-	TEXT buf[128];
+	TEXT buf[256];
 	ULONG flags;
 	LONG x, y, w, h;
 
 	dprefs_mymorphos_window_get(&x, &y, &w, &h, &flags);
 
 	if (msg->Moused)
+	{
 		x = y = -1;
+	}
 
 	snprintf(buf, sizeof(buf), "LoadURI devices://?left=%ld&top=%ld&width=%ld&height=%ld&view=%s NEWWIN", x, y, w, h, flags == MV_Icon_ViewMode_Lister ? "DLIST" : "ICONS");
+
+	if (msg->Screen != 0)
+	{
+		ULONG elen = strlen(buf);
+		snprintf(buf + elen, sizeof(buf) - elen, " PUBSCREEN=\"%s\"", msg->Screen);
+	}
 
 	return (DoMethod(obj, MM_Application_DoRexx, TRUE, NULL, buf, NULL, NULL, 0, NULL));
 }
@@ -8018,7 +8138,7 @@ DEFSMETHOD(Application_GetMimeType)
 		 */
 
 		LONG cnt = 0;
-		Object *mimeTypeObject = DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
+		Object *mimeTypeObject = (Object*) DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
 
 		if (do_action(obj, TA_MimeType_Scan,
 						TT_MimeType_Scan_Path, msg->path,
@@ -8182,7 +8302,7 @@ ULONG tr_dispose_objects( APTR obj, APTR *array, ULONG freearray )
 {
 	ULONG rc = TRUE;
 	ULONG i  = 0;
-	ULONG t  = timedm();
+	ULONG t UNUSED = timedm();  /* may be used by debug below */
 
 	THREAD;
 
@@ -8285,6 +8405,8 @@ DECNEW
 DECDISP
 DECGET
 DECSET
+DECADDMEMBER
+DECREMMEMBER
 DECSMETHOD(Application_CheckDelayedDialog)
 DECSMETHOD(Application_CreateWindow)
 DECSMETHOD(Application_DisplayDelayedDialog)
@@ -8295,8 +8417,10 @@ DECSMETHOD(Application_DisposeObjectArray)
 DECTMETHOD(Application_CreateIconinfo)
 DECSMETHOD(Application_CreateInfowin)
 DECSMETHOD(Application_CreateProgresswin)
+#if USE_INTERNAL_PANELS
 DECSMETHOD(Application_CreatePanelwin)
 DECSMETHOD(Application_CreatePanelitem)
+#endif
 DECSMETHOD(Application_CreateSmartReq)
 DECSMETHOD(Application_CreateDestSelectorwin)
 DECSMETHOD(Application_CreatePatternRenamewin)
@@ -8306,11 +8430,9 @@ DECSMETHOD(Application_SetFont)
 DECTMETHOD(Application_Cleanup)
 DECTMETHOD(Application_ReclaimThreads)
 DECSMETHOD(Application_WindowDoMethodByAttr)
-DECSMETHOD(Application_RootDoMethodByAttr)
+DECSMETHOD(Application_DoMethodByAttr)
 DECSMETHOD(Application_FindWindowByID)
 DECSMETHOD(Application_FindWindowByName)
-DECSMETHOD(Application_FindWindowByType)
-DECSMETHOD(Application_FindWindowByUserData)
 DECSMETHOD(Application_DisplayUpdate)
 DECTMETHOD(Application_Open_AboutWindow)
 DECSMETHOD(Application_Open_AboutMorphOSWindow)
@@ -8361,6 +8483,7 @@ DECSMETHOD(Application_GetMimeType)
 DECSMETHOD(Application_GetDeficonPath)
 DECSMETHOD(Mimegroup_Mime_Ack)
 DECTMETHOD(Application_UpdateTransitionEffect)
+DECTMETHOD(Application_ReopenExtraRootWindows)
 ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_Application, appclass)

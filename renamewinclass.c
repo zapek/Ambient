@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: renamewinclass.c,v 1.12 2017/08/11 23:32:05 cyfm Exp $
+ * $Id: renamewinclass.c,v 1.13 2025/09/09 12:46:46 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -49,7 +49,7 @@ DEFNEW
 	APTR str_name, bt_rename, bt_cancel;
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_Title, GSI(MSG_RENAME_WINDOW_TITLE),
 		MUIA_Window_LeftEdge, MUIV_Window_LeftEdge_Moused,

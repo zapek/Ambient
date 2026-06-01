@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: prefspool.c,v 1.9 2017/08/11 23:32:06 cyfm Exp $
+ * $Id: prefspool.c,v 1.10 2025/08/12 17:32:17 kronos Exp $
  */
 
 #include "ambient.h"
@@ -352,6 +352,35 @@ void prefspool_item_remove(APTR ctx, APTR pitem, ULONG id)
 	}
 }
 
+void prefspool_item_id_change(APTR ctx, APTR pitem, ULONG old_id,ULONG new_id)
+{
+	struct prefspool_ctx *ct = ctx;
+	struct prefsnode *n;
+
+	ASSERT(ct);
+
+	if (pitem)
+	{
+		if (((struct prefsnode *)pitem)->id & DSF_LISTPOOL)
+		{
+			if ( (n = ppool_item_find(ct, pitem, old_id)) )
+			{
+				n->id = new_id;
+			}
+		}
+		else
+		{
+			PDB(("wrong pitem\n"));
+		}
+	}
+	else
+	{
+		if ( (n = ppool_item_find(ct, NULL, old_id)) )
+		{
+			n->id = new_id;
+		}
+	}
+}
 
 /*
  * Gets a prefs item. 'pitem' can be:

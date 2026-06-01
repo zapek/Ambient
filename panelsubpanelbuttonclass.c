@@ -1,4 +1,3 @@
-
 /* ANSI C */
 #include <stdlib.h>
 #include <string.h>
@@ -27,6 +26,7 @@
 #include "ambient.h"
 #include "classes.h"
 
+#if USE_INTERNAL_PANELS
 
 #include "ambient_cat.h"
 #include "rexx.h"
@@ -259,14 +259,14 @@ DEFSMETHOD(Panel_SaveConfig)
 	get(tbar ,MA_Panelgroup_BackMode,&backgroundmode);
 	if (!(pl = prefspool_item_get(msg->pctx, NULL, DSI_LISTPOOL_PANEL, NULL, NULL)))
 	{
-		pl = prefspool_item_add(msg->pctx, NULL, DSI_LISTPOOL_PANEL, NULL, NULL);
+		pl = prefspool_item_add(msg->pctx, NULL, DSI_LISTPOOL_PANEL, NULL, 0);
 	}
 	PDB(("%x\n",data->ID));
 	if (pl)
 	{
 		if (!(pi = prefspool_item_get(msg->pctx, pl, msg->index | DSF_LISTPOOL, NULL, NULL)))
 		{
-			pi = prefspool_item_add(msg->pctx, pl, msg->index | DSF_LISTPOOL, NULL, NULL);
+			pi = prefspool_item_add(msg->pctx, pl, msg->index | DSF_LISTPOOL, NULL, 0);
 		}
 		if (pi)
 		{
@@ -290,7 +290,7 @@ DEFSMETHOD(Panel_SaveConfig)
 					PDB(("child %d\n",data->ID));
 					if( !( pi = prefspool_item_get( msg->pctx, pl, ( msg->index + index ) | DSF_LISTPOOL, NULL, NULL ) ) )
 					{
-						pi = prefspool_item_add( msg->pctx, pl, ( msg->index + index ) | DSF_LISTPOOL, NULL, NULL );
+						pi = prefspool_item_add( msg->pctx, pl, ( msg->index + index ) | DSF_LISTPOOL, NULL, 0 );
 					}
 					if(pi)
 					{
@@ -367,3 +367,4 @@ ENDMTABLE
 
 
 DECSUBCLASSPTR_NC(panelbasebuttonclass,  panelsubpanelbuttonclass)
+#endif

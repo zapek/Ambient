@@ -1,7 +1,7 @@
 #ifndef AMBIENT_CONFIG_H
 #define AMBIENT_CONFIG_H
 /*
- * $Id: config.h,v 1.38 2022/07/23 02:20:35 jacadcaps Exp $
+ * $Id: config.h,v 1.44 2026/05/14 22:40:54 geit Exp $
  */
 
 /*  comment out to compile on 1.5 systems. Do *NOT* do
@@ -117,8 +117,10 @@
 #else
 #define USE_AVCODEC              1
 #endif
-#define USE_PANEL_LIB            1
+#define USE_AMBIENT_LIB          1
 #define ENABLE_METHODSTACK_PUSHSYNCSAFE	1
+#define USE_INTERNAL_PANELS      1
+#define USE_EXTERNAL_PANELS      1
 /*
  * Debugging stuff
  */
@@ -130,6 +132,8 @@
 #endif
 
 #endif /* !BUILD_ICONLIB */
+
+#define USE_RECOGTRANSLATION     1
 
 /*
  * Constants

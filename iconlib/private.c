@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: private.c,v 1.14.10.2 2025/01/06 00:28:00 cyfm Exp $
+ * $Id: private.c,v 1.17 2025/09/03 15:02:24 piru Exp $
  */
 
 #include "globals.h"
@@ -48,6 +48,7 @@
 #include "icon_internal.h"
 #include "iconio.h"
 #include "file_io.h"
+#include "freelist.h"
 #if USE_ICONLIB_PNG
 #include "pngio.h"
 #include "pngicon.h"
@@ -567,18 +568,23 @@ BOOL PutIcon(CONST_STRPTR name, struct DiskObject *icon)
 									metadata = NULL;
 								}
 							}
-			
-							D(ICONIO, bug("creating a new morphos icon node\n"));
-							morphosicon = XMLNode_alloc();
-			
-							if (SetSVGIconContents(odo, morphosicon, NULL) &&
-							    XMLNode_add_child(metadata, morphosicon))
+
+							struct FreeList *freelist = create_freelist(NULL);
+							if (freelist)
 							{
-								retval = save_xmldoc(svgdoc, iconname);
-							}
-							else
-							{
-								XMLNode_free(morphosicon);
+								D(ICONIO, bug("creating a new morphos icon node\n"));
+								morphosicon = XMLNode_alloc();
+
+								if (SetSVGIconContents(odo, morphosicon, freelist) &&
+								    XMLNode_add_child(metadata, morphosicon))
+								{
+									retval = save_xmldoc(svgdoc, iconname);
+								}
+								else
+								{
+									XMLNode_free(morphosicon);
+								}
+								FreeFreeList(freelist);
 							}
 						}
 						else

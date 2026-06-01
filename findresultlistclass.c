@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: findresultlistclass.c,v 1.14 2021/12/31 17:52:18 piru Exp $
+ * $Id: findresultlistclass.c,v 1.15 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -314,7 +314,7 @@ DEFMMETHOD(ContextMenuBuild)
 					 */
 
 					LONG cnt = 0;
-					Object *mimeTypeObject = DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
+					Object *mimeTypeObject = (Object*) DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
 					
 					if (do_action(obj, TA_MimeType_Scan,
 									TT_MimeType_Scan_Path, path,
@@ -333,7 +333,7 @@ DEFMMETHOD(ContextMenuBuild)
 						}
 					}
 
-					mimetype = xget(mimeTypeObject, MA_Mimetype_Type);
+					mimetype = (APTR) xget(mimeTypeObject, MA_Mimetype_Type);
 					DoMethod(mimeTypeObject, OM_RELEASE);
 				}
 

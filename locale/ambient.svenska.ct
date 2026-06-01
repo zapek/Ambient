@@ -1,10 +1,10 @@
-## version $VER: ambient.catalog 7.13 (15.01.2023)
+## version $VER: ambient.catalog 7.19 (18.05.2026)
 ## language svenska
 ## codeset 0
 ;
-## chunk AUTH Stefan Blixth
+## chunk AUTH "Stefan Blixth" "Guido Mersmann"
 ;
-;$Id: ambient.svenska.ct,v 1.78 2023/01/16 03:30:18 moats Exp $
+;$Id: ambient.svenska.ct,v 1.83 2026/05/19 03:30:29 moats Exp $
 ;
 ; *** Please do not use these strings anymore.
 ;
@@ -655,7 +655,7 @@ Filsystem:
 ;
 MSG_FORMAT_FILESYSTEM_HELP
 Detta filsystem kommer att användas.
-; This filesystem will used.
+; This filesystem will be used.
 ;
 MSG_FORMAT_STATUS
 Status:
@@ -731,7 +731,7 @@ Formatera...
 ;
 MSG_FORMAT_HELP
 Hela mediat kommer att skrivas över! Tar mycket tid, men förstör all data på enheten!
-; The entire media will overwritten! Takes a lot of time, but destroys all data on drive!
+; The entire media will be overwritten! This will take a lot of time, but destroys all data on drive!
 ;
 MSG_FORMAT_AND_VERIFY
 Formatera & verifiera...
@@ -739,7 +739,7 @@ Formatera & verifiera...
 ;
 MSG_FORMAT_AND_VERIFY_HELP
 Hela mediat kommer att skrivas över och gamla data raderas! Dessutom kommer den skrivna datan att läsas tillbaka för att kontrollera mediets integritet.
-; The entire media will overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
+; The entire media will be overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
 ;
 MSG_FORMAT_CLOSE
 Stäng
@@ -967,7 +967,7 @@ Funktioner:
 ;
 MSG_INFOWIN_DISK_FEATURES_HELP
 Visar nuvarande fukntioner:\n\n\033bstora filer:\033n\nEnheten stöjer filer större än 2GB.\n\n\033bshiftlägeskänslig\033n\nEnheten gör skillnad på små och stora tecken i filnamn.
-; This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
+; This lists the current features:\n\n\033blarge files\033n\nthe volume supports files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
 ; volumes.
 ;
 MSG_INFOWIN_FILES
@@ -1285,7 +1285,7 @@ MSG_MAKEDIR_ENTERDIRECTORYNAME
 ;
 MSG_MAKEDIR_ENTER_DIRECTORYNAME_HELP
 Här anges namnet på den nya lådan. Observera att tecken som "/" och ":" inte är tillåtna.
-; Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+; Here the name of the new drawer gets specified. Please note, that characters like "/" and ":" are not allowed.
 ;
 MSG_MAKEDIR_UNNAMED
 Namnlös
@@ -1495,7 +1495,7 @@ Byt bakgrund efter:
 ;
 MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP
 Om bakgrundsfilen bara är en låda används alla bilder inuti slumpmässigt. Genom att ställa in en uppdateringsfördröjning kommer bilden att ändras efter en viss tid.
-; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specific amount of time.
 ;
 MSG_PREFSWIN_BACKGROUND_WINDOWS
 Fönster
@@ -1748,7 +1748,7 @@ _b
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_HELP
 Här kan du välja ikonen bakre markeringsfärg för skrivbordsikoner.
-; Here you can select the icon back ground color for desktop icons.
+; Here you can select the icon background color for desktop icons.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_TITLE
 Bakgrundsfärg på skrivbordet
@@ -1825,6 +1825,10 @@ MSG_PREFSWIN_WBSTART_REMEMBER
 Kom ihåg:
 ; Remember:
 ;
+MSG_PREFSWIN_WBSTART_REMEMBER_HELP
+Efter omstart av systemet kommer följande att kommas ihåg.
+; After restarting the system the following will be remembered.
+;
 MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES
 Kom ihåg Ambient-kataloger
 ; Dra_wers
@@ -1863,7 +1867,7 @@ Diverse
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS
 Visa Mitt Morphos-icon
-; Display M_yMorphos icon
+; Display M_yMorphOS icon
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS_HELP
 Aktiverar och inaktiverar "Mitt MorphOS"-ikonen på skrivbordet.
@@ -1871,11 +1875,11 @@ Aktiverar och inaktiverar "Mitt MorphOS"-ikonen på skrivbordet.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS
 Dubbelklick på skrivbordet öppnar "Mitt MorphOS"-fönster
-; _Double click on desktop opens MyMorphos window
+; _Double click on desktop opens MyMorphOS window
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS_HELP
 Varje dubbelklick på skrivbordet öppnar "Mitt MorphOS"-fönstret.
-; _Any double click on desktop opens MyMorphos window.
+; Any double click on desktop opens MyMorphOS window.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE
 Dra & släpp flyttar filer istället för att kopiera dem
@@ -1916,6 +1920,14 @@ Skapa ikon för ny låda som standard
 MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER_HELP
 Ny låda får automatiskt en standardlådesikon om det här alternativet är aktiverat.
 ; New drawer will automatically get a default drawer icon if this option is enabled.
+;
+MSG_PREFSWIN_MISCELLANEOUS_HIDEDOTFILENAMES
+Dölj filnamn som börjar med en punkt (_.)
+; Hide filenames beginning with a dot ( _. )
+;
+MSG_PREFSWIN_MISCELLANEOUS_HIDEDOTFILENAMES_HELP
+Det här alternativet gör att Ambient döljer alla filer vars namn börjar med en punkt.
+; This option makes Ambient hide any files whose names begin with a dot.
 ;
 ; *** Prefswin CLI launching
 ;
@@ -2076,120 +2088,120 @@ Enhetslista
 ; Device List
 ;
 MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP
-Visa enhetslista
-; Display Device List
+Visa enhetslista.
+; Display Device List.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY
 Kopiera
 ; Copy
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_HELP
-Kopiera fil eller katalog
-; Copy file or directory
+Kopiera fil eller katalog.
+; Copy file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS
 Kopiera som
 ; Copy As
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS_HELP
-Kopiera och byt namn på fil eller katalog
-; Copy As File or Directory
+Kopiera och byt namn på fil eller katalog.
+; Copy As File or Directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE
 Flytta
 ; Move
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_HELP
-Flytta en fil eller en katalog
-; Move a file or a directory
+Flytta en fil eller en katalog.
+; Move a file or a directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS
 Flytta som
 ; Move As
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP
-Flytta och byta namn på fil eller katalog
-; Move and rename file or directory
+Flytta och byta namn på fil eller katalog.
+; Move and rename file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE
 Radera
 ; Delete
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE_HELP
-Radera fil eller katalog
-; Delete file or directory
+Radera fil eller katalog.
+; Delete file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH
 Papperskorg
 ; Trash
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH_HELP
-Flytta fil eller katalog till papperskorgen
-; Move file or directory to Trashcan
+Flytta fil eller katalog till papperskorgen.
+; Move file or directory to Trashcan.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD
 Kopiera till urklipp
 ; Copy To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP
-Kopiera filen eller katalogen till urklipp
-; Copy file or directory to clipboard
+Kopiera filen eller katalogen till urklipp.
+; Copy file or directory to clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD
 Flytta till urklipp
 ; Move To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP
-Flytta filen eller katalogen till urklipp
-; Move file or directory to clipboard
+Flytta filen eller katalogen till urklipp.
+; Move file or directory to clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD
 Klistra in från urklipp
 ; Paste From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP
-Klistra in innehållet på urklipp
-; Paste content of clipboard
+Klistra in innehållet på urklipp.
+; Paste content of clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS
 Klistra in och byt namn från urklipp
 ; Paste As From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS_HELP
-Klistra in och byta namn på Urklipp
-; Paste and rename content of clipboard
+Klistra in och byta namn på Urklipp.
+; Paste and rename content of clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT
 Välj
 ; Select
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT_HELP
-Välj fil eller katalog
-; Select file or directory
+Välj fil eller katalog.
+; Select file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO
 Ikoninformation
 ; Icon Info
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP
-Visa informationsfönster för ikonen
-; Display Icon Information window
+Visa informationsfönster för ikonen.
+; Display the Icon Information window
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT
 Formatera
 ; Format
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT_HELP
-Formatera ett filsystem
-; Format a filesystem
+Formatera ett filsystem.
+; Format a filesystem.
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR
 Skapa låda
 ; Add directory
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP
-Skapar en låda
-; Create a directory
+Skapar en låda.
+; Create a directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MAKELINK
 Skapa länk
@@ -2204,24 +2216,24 @@ Döp om
 ; Rename
 ;
 MSG_PREFSWIN_TOOLBAR_RENAME_HELP
-Byt namn på fil eller katalog
-; Rename file or directory
+Byt namn på fil eller katalog.
+; Rename file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_FIND
 Sök
 ; Find
 ;
 MSG_PREFSWIN_TOOLBAR_FIND_HELP
-Sök efter filer och kataloger
-; Finds files and directories
+Sök efter filer och kataloger.
+; Finds files and directories.
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT
 Förälder
 ; Parent
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT_HELP
-Föräldrakatalog
-; Parent directory
+Föräldrakatalog.
+; Parent directory.
 ;
 MSG_PREFSWIN_TOOLBAR_BACK
 Bakåt
@@ -2237,47 +2249,47 @@ Nästa
 ;
 MSG_PREFSWIN_TOOLBAR_FORWARD_HELP
 Nästa
-; Next
+; Next in history.
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW
 Ändra visningsläge
 ; Switch view
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP
-Ändra visningsläge
-; Change view display mode
+Ändra visningsläge.
+; Change view display mode.
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS
 Bokmärken
 ; Bookmarks
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP
-Bokmärka fil eller katalog
-; Bookmark file or directory
+Bokmärka fil eller katalog.
+; Bookmark file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE
 Mellanrum
 ; Space
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE_HELP
-Lägg till ett mellanrum i verktygsfältet
-; Add a space to toolbar
+Lägg till ett mellanrum i verktygsfältet.
+; Add a space to toolbar.
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE
 Flexibelt utrymme
 ; Flexible space
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP
-Lägg till ett flexibelt utrymme i verktygsfältet
-; Add a flexible space to toolbar
+Lägg till ett flexibelt utrymme i verktygsfältet.
+; Add a flexible space to toolbar.
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR
 Avgränsare
 ; Separator
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP
-Avgränsare mellan grupp av knappar
-; Separator between group of buttons
+Avgränsare mellan grupp av knappar.
+; Separator between group of buttons.
 ;
 MSG_PREFSWIN_TOOLBAR_DEFAULTDIMENSIONS_GROUP
 Standardmått
@@ -2812,7 +2824,7 @@ _Läge:
 ;
 MSG_PREFSWIN_LISTER_MODES_HELP
 Detta läge blir aktivt när listläget är valt.
-; This mode gets active when list mode is selected.
+; Defines the display type of list mode: all files, icons, or thumbnails.
 ;
 MSG_PREFSWIN_LISTER_COMPACT_SIZE
 Visning i kompakt form
@@ -3052,11 +3064,19 @@ ny genväg
 ;
 MSG_KEYSHORTCUTCLASS_ACTION
 Redigera kommandot
-; Edit Command
+; Edit Command...
+;
+MSG_KEYSHORTCUTCLASS_ACTION_HELP
+Öppnar fönstret för åtgärdsredigeraren, som låter dig konfigurera åtgärderna för den här snabbtangenten.
+; Opens the action editor window, which allows you to configure the actions for this hotkey.
 ;
 MSG_KEYSHORTCUTCLASS_REMOVE
 Ta bort
 ; Remove
+;
+MSG_KEYSHORTCUTCLASS_REMOVE_HELP
+Ta bort den här snabbtangenten tillsammans med den definierade åtgärden från konfigurationen.
+; Remove this hotkey along with the defined action from the configuration.
 ;
 MSG_KEYSHORTCUTCLASS_LABEL_FORMAT
 %s:
@@ -5420,9 +5440,15 @@ MSG_IMAGEVIEW_CLASS_HOTKEYS_HELP
 \033u\033b\033cTillgängliga snabbtangenter:\033n\033l\n\n\033bPRTSCREEN\033n: Skriv ut bilden\n\033bPiltangent Vänster/Höger/Upp/Ner\033n: Flyttar bilden, prova med Ctrl/Shift/Alt-tangenter (endast "Normal"-läge!)\n\
 \033bHome/End\033n: Hoppar till toppen/botten av bilden (endast "Normal"-läge!)\n\033bMushjul upp/ner\033n: Flyttar bilden några pixlar upp/ner (endast "Normal"-läge!)\n\033bPage Up/Down\033n: Visa föregående/nästa \
 bild\n\033bl/r\033n: Rotera bilden åt vänster/höger\n\nDu kan dra bilden med vänster eller mellersta musknapp (endast "Normal"-läge!)
-; \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPRTSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
-; \033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
-; image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+; \033c\033u\033bAvailable Controls:\033n\n\
+; \033c(Movements only available in "normal" mode!)\033n\n\n\
+; \033l\033bPRTSCREEN:\033n Print the image\n\
+; \033l\033bCTRL/SHIFT/ALT + Cursor keys:\033n Scroll the image\n\
+; \033l\033bHome/End:\033n Scroll to the top/bottom of the image\n\
+; \033l\033bWheel Up/Down:\033n Scroll some pixels up/down\n\
+; \033l\033bPage Up/Down:\033n Show the prev/next image\n\
+; \033l\033bL/R:\033n Rotate the image to the left/right\n\n\
+; \033lYou can drag the image around using the left or middle mousebutton.
 ;
 MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR
 Färge_r:
@@ -5501,4 +5527,137 @@ Aktivera effekter
 MSG_PREFSWIN_BACKGROUND_TRANSITION_HELP
 Aktivera övergångseffekter
 ; Enable transition effects
+;
+MSG_RECOGNITION_DB_START
+Konfigurera filtypsåtgärder...
+; Configure Filetype Actions...
+;
+MSG_RECOGNITION_DB_0001
+Öppna
+; Open
+;
+MSG_RECOGNITION_DB_0002
+Extrahera
+; Extract
+;
+MSG_RECOGNITION_DB_0003
+Extrahera till...
+; Extract To...
+;
+MSG_RECOGNITION_DB_0004
+Montera...
+; Mount...
+;
+MSG_RECOGNITION_DB_0005
+Montera
+; Mount
+;
+MSG_RECOGNITION_DB_0006
+Infoga (ingen montering)
+; Insert (no mount)
+;
+MSG_RECOGNITION_DB_0007
+Bränn till skiva...
+; Burn to Disc...
+;
+MSG_RECOGNITION_DB_0008
+Öppna med...
+; Open With...
+;
+MSG_RECOGNITION_DB_0009
+Öppna med VPDF...
+; Open with VPDF...
+;
+MSG_RECOGNITION_DB_0010
+Öppna med Apdf...
+; Open with Apdf...
+;
+MSG_RECOGNITION_DB_0011
+Öppna med Multiview...
+; Open with Multiview...
+;
+MSG_RECOGNITION_DB_0012
+Öppna med OpenURL...
+; Open with OpenURL...
+;
+MSG_RECOGNITION_DB_0013
+Kör med RX...
+; Execute with RX...
+;
+MSG_RECOGNITION_DB_0014
+Kör med LuaX...
+; Execute with LuaX...
+;
+MSG_RECOGNITION_DB_0015
+Skapa LhA-arkiv...
+; Create LhA Archive...
+;
+MSG_RECOGNITION_DB_0016
+Packa upp med Bz2...
+; UnCompress with Bz2...
+;
+MSG_RECOGNITION_DB_0017
+Extrahera med UnRAR...
+; Extract with UnRAR...
+;
+MSG_RECOGNITION_DB_0018
+Töm...
+; Flush...
+;
+MSG_RECOGNITION_DB_0019
+Version...
+; Version...
+;
+MSG_RECOGNITION_DB_0020
+Spela...
+; Play...
+;
+MSG_RECOGNITION_DB_0021
+Spela med Multiview...
+; Play with Multiview...
+;
+MSG_RECOGNITION_DB_0022
+Visa med Multiview...
+; View with Multiview...
+;
+MSG_RECOGNITION_DB_0023
+Multiview...
+; Multiview...
+;
+MSG_RECOGNITION_DB_0024
+ShowCase...
+; ShowCase...
+;
+MSG_RECOGNITION_DB_0025
+Mysticview...
+; Mysticview...
+;
+MSG_RECOGNITION_DB_0026
+Redigera med Sketch...
+; Edit with Sketch...
+;
+MSG_RECOGNITION_DB_0027
+More...
+; More...
+;
+MSG_RECOGNITION_DB_0028
+Redigera...
+; Edit...
+;
+; CONTEXT SUB MENU NAMES
+;
+MSG_RECOGNITION_DB_0029
+Öppna med
+; Open With
+;
+MSG_RECOGNITION_DB_0030
+Visa med
+; View With
+;
+;
+; COMMAND TEXTS
+;
+MSG_RECOGNITION_DB_0031
+Välj destination...
+; Select Destination...
 ;

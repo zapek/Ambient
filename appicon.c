@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: appicon.c,v 1.12 2017/08/11 23:32:05 cyfm Exp $
+ * $Id: appicon.c,v 1.13 2025/07/23 23:54:26 geit Exp $
  */
 
 #include "ambient.h"
@@ -109,7 +109,7 @@ static void setattrs(APTR obj, struct ipc_appicon *msg)
 }
 
 
-ULONG tr_appicon_read(APTR obj, APTR o, struct ipc_appicon *msg)
+ULONG tr_appicon_read(APTR obj UNUSED, APTR o, struct ipc_appicon *msg)
 {
 	CHECKOBJECT(obj);
 	ASSERT(msg);
@@ -218,7 +218,7 @@ void appicon_synchronize(void)
 	{
 		if (n->removedentry)
 		{
-			struct ipc_appicon *imsg = n->entry->msgtype;
+			struct ipc_appicon *imsg  UNUSED = n->entry->msgtype;
 			D(APPICON,bug("Synchronize:Remove entry on list:0x%x. loadedentry:%d:%s\n", n->entry, n->loadedentry, imsg->text));
 
 			if (n->loadedentry == TRUE)
@@ -238,7 +238,7 @@ void appicon_synchronize(void)
 	{
 		if (n->newentry)
 		{
-			struct ipc_appicon *imsg = n->entry->msgtype;
+			struct ipc_appicon *imsg UNUSED = n->entry->msgtype;
 			D(APPICON,bug("Synchronize:New entry on list:0x%x (0x%x):%s.removedentry:%d\n", n->entry, imsg, imsg->text, n->removedentry));
 			n->newentry = FALSE;
 			if (appicon_create(n->entry) != ASYNC)

@@ -1,10 +1,10 @@
-## version $VER: ambient.catalog 7.30 (13.01.2023)
+## version $VER: ambient.catalog 7.40 (16.05.2026)
 ## language français
 ## codeset 0
 ;
-## chunk AUTH Jean-Marc MOSSU  Joel EHRET  Mickael PERNOT  Antoine DUBOURG Philippe Rimauro
+## chunk AUTH "Jean-Marc MOSSU" "Joel EHRET" "Mickael PERNOT" "Antoine DUBOURG" "Philippe Rimauro" "Guido Mersmann"
 ;
-;$Id: ambient.francais.ct,v 1.107 2023/01/14 03:30:13 moats Exp $
+;$Id: ambient.francais.ct,v 1.113 2026/05/17 03:30:13 moats Exp $
 ;
 ; *** Please do not use these strings anymore.
 ;
@@ -655,7 +655,7 @@ Système de fichiers :
 ;
 MSG_FORMAT_FILESYSTEM_HELP
 Ce système de fichiers sera utilisé.
-; This filesystem will used.
+; This filesystem will be used.
 ;
 MSG_FORMAT_STATUS
 Statut :
@@ -731,7 +731,7 @@ Formater...
 ;
 MSG_FORMAT_HELP
 Le support sera entièrement écrasé. Nécessite un certain temps, mais détruit irrémédiablement toutes les données !
-; The entire media will overwritten! Takes a lot of time, but destroys all data on drive!
+; The entire media will be overwritten! This will take a lot of time, but destroys all data on drive!
 ;
 MSG_FORMAT_AND_VERIFY
 Formater et vérifier...
@@ -739,7 +739,7 @@ Formater et vérifier...
 ;
 MSG_FORMAT_AND_VERIFY_HELP
 Le support sera entièrement écrasé et les anciennes données seront supprimées ! Le support sera ensuite relu pour tester son intégrité.
-; The entire media will overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
+; The entire media will be overwritten and old data will be wiped out! In addition to that the written data will be read back to check media integrity.
 ;
 MSG_FORMAT_CLOSE
 Fermer
@@ -968,7 +968,7 @@ Caractéristiques :
 MSG_INFOWIN_DISK_FEATURES_HELP
 Liste des caractéristiques actuelles:\n\n\033bfichiers volumineux\033n\n\nle volume gère les fichiers de taille supérieure à 2 Go.\n\n\033bsensible à la casse\033n\n\nle volume\ndifférencie les \
 majuscules et les miniscules. Il n'est pas recommandé d'utiliser cette option.
-; This lists the current features:\n\n\033blarge files\033n\nthe volume support files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
+; This lists the current features:\n\n\033blarge files\033n\nthe volume supports files larger than 2GB.\n\n\033bcase sensitive\033n\nthe volume is case sensitive. It is\nnot recommended to use such \
 ; volumes.
 ;
 MSG_INFOWIN_FILES
@@ -1262,7 +1262,7 @@ _Créer une icône
 ; Create ic_on
 ;
 MSG_INFOWIN_CREATE_ICON_HELP
-Créer un fichier icône sur le disque.
+Crée un fichier icône sur le disque.
 ; Create an icon file on disk.
 ;
 MSG_INFOWIN_USE_DEFAULT_ICON_GAD
@@ -1270,7 +1270,7 @@ Icône par _défaut
 ; _Get default
 ;
 MSG_INFOWIN_USE_DEFAULT_ICON_HELP
-Utiliser l'icône par défaut.
+Utilise l'icône par défaut.
 ; Reset to default icon.
 ;
 ; *** Make Directory Window
@@ -1285,7 +1285,7 @@ MSG_MAKEDIR_ENTERDIRECTORYNAME
 ;
 MSG_MAKEDIR_ENTER_DIRECTORYNAME_HELP
 Entrez ici le nom du nouveau répertoire. Notez que les caractères « / » et « : » ne sont pas autorisés.
-; Here the name of the new drawer get's specified. Please note, that characters like "/" and ":" are not allowed.
+; Here the name of the new drawer gets specified. Please note, that characters like "/" and ":" are not allowed.
 ;
 MSG_MAKEDIR_UNNAMED
 Sans_nom
@@ -1495,7 +1495,7 @@ C_hanger de fond d'écran après :
 ;
 MSG_PREFSWIN_BACKGROUND_ROOT_REFRESH_DELAY_HELP
 Si le chemin spécifié pour le fond d'écran est un répertoire, alors des images seront aléatoirement choisies. Cette option permet de changer de fond d'écran après un certain laps de temps.
-; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specifc amount of time.
+; If the background file is just a drawer all images inside will randomly used. By setting a refresh delay image will change after a specific amount of time.
 ;
 MSG_PREFSWIN_BACKGROUND_WINDOWS
 Fenêtres
@@ -1748,7 +1748,7 @@ _w
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_HELP
 Ici vous pouvez sélectionner la couleur de fond des icônes du bureau.
-; Here you can select the icon back ground color for desktop icons.
+; Here you can select the icon background color for desktop icons.
 ;
 MSG_PREFSWIN_ICONDISPLAY_DESKTEXTBACK_TITLE
 Couleur de fond du texte des icônes du bureau
@@ -1825,6 +1825,10 @@ MSG_PREFSWIN_WBSTART_REMEMBER
 Mémoriser :
 ; Remember:
 ;
+MSG_PREFSWIN_WBSTART_REMEMBER_HELP
+Les éléments suivants seront conservés après un rédémarrage du système.
+; After restarting the system the following will be remembered.
+;
 MSG_PREFSWIN_WBSTART_REMEMBERDIRECTORIES
 les répertoires ouverts
 ; Dra_wers
@@ -1863,7 +1867,7 @@ Divers
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS
 Afficher l'icône « Volumes »
-; Display M_yMorphos icon
+; Display M_yMorphOS icon
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DISPLAYMYMORPHOS_HELP
 Permet d'afficher ou non l'icône « Volumes » sur le bureau.
@@ -1871,11 +1875,11 @@ Permet d'afficher ou non l'icône « Volumes » sur le bureau.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS
 Ouvrir la fenêtre « Volumes » d'un double-clic sur le bureau
-; _Double click on desktop opens MyMorphos window
+; _Double click on desktop opens MyMorphOS window
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DOUBLECLICKMYMORPHOS_HELP
 La fenêtre « Volumes » sera ouverte lors d'un double-clic sur le fond d'écran.
-; _Any double click on desktop opens MyMorphos window.
+; Any double click on desktop opens MyMorphOS window.
 ;
 MSG_PREFSWIN_MISCELLANEOUS_DRAGDROPMOVE
 Déplacer les fichiers lors d'un glisser-déposer
@@ -1916,6 +1920,14 @@ Créer automatiquement une icône pour les nouveaux répertoires
 MSG_PREFSWIN_MISCELLANEOUS_CREATEICONFORNEWDRAWER_HELP
 À la création d'un nouveau répertoire, une icône sera automatiquement générée si cette option est activée.
 ; New drawer will automatically get a default drawer icon if this option is enabled.
+;
+MSG_PREFSWIN_MISCELLANEOUS_HIDEDOTFILENAMES
+Cacher les fichiers dont le nom commence par un point ( _. ).
+; Hide filenames beginning with a dot ( _. )
+;
+MSG_PREFSWIN_MISCELLANEOUS_HIDEDOTFILENAMES_HELP
+Cette option permet de ne pas afficher dans Ambient les fichiers dont le nom commence par un point.
+; This option makes Ambient hide any files whose names begin with a dot.
 ;
 ; *** Prefswin CLI launching
 ;
@@ -2076,127 +2088,127 @@ Liste des périphériques
 ; Device List
 ;
 MSG_PREFSWIN_TOOLBAR_DEVICE_LIST_HELP
-Affiche la liste des périphériques
-; Display Device List
+Affiche la liste des périphériques.
+; Display Device List.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY
 Copier
 ; Copy
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_HELP
-Copier un fichier ou un répertoire
-; Copy file or directory
+Copie un fichier ou un répertoire.
+; Copy file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS
 Copier et renommer
 ; Copy As
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_AS_HELP
-Copier et renommer un fichier ou un répertoire
-; Copy As File or Directory
+Copie et renomme un fichier ou un répertoire.
+; Copy As File or Directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE
 Déplacer
 ; Move
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_HELP
-Déplacer un fichier ou un répertoire
-; Move a file or a directory
+Déplace un fichier ou un répertoire.
+; Move a file or a directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS
 Déplacer et renommer
 ; Move As
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_AS_HELP
-Déplacer et renommer un fichier ou un répertoire
-; Move and rename file or directory
+Déplace et renomme un fichier ou un répertoire.
+; Move and rename file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE
 Supprimer
 ; Delete
 ;
 MSG_PREFSWIN_TOOLBAR_DELETE_HELP
-Supprimer un fichier ou un répertoire
-; Delete file or directory
+Supprime un fichier ou un répertoire.
+; Delete file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH
 Corbeille
 ; Trash
 ;
 MSG_PREFSWIN_TOOLBAR_TRASH_HELP
-Déplacer le fichier ou le dossier dans la corbeille
-; Move file or directory to Trashcan
+Déplace le fichier ou le dossier dans la corbeille.
+; Move file or directory to Trashcan.
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD
 Copier vers le presse-papier
 ; Copy To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_COPY_TO_CLIPBOARD_HELP
-Copier un fichier ou un répertoire vers le presse-papier
-; Copy file or directory to clipboard
+Copie un fichier ou un répertoire vers le presse-papier.
+; Copy file or directory to clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD
 Déplacer vers le presse-papier
 ; Move To Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_MOVE_TO_CLIPBOARD_HELP
-Déplacer un fichier ou un répertoire vers le presse-papier
-; Move file or directory to clipboard
+Déplace un fichier ou un répertoire vers le presse-papier.
+; Move file or directory to clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD
 Coller depuis le presse-papier
 ; Paste From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_HELP
-Coller le contenu du presse-papier
-; Paste content of clipboard
+Colle le contenu du presse-papier.
+; Paste content of clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS
 Coller et renommer depuis le presse-papier
 ; Paste As From Clipboard
 ;
 MSG_PREFSWIN_TOOLBAR_PASTE_FROM_CLIPBOARD_AS_HELP
-Coller et renommer le contenu du presse-papier
-; Paste and rename content of clipboard
+Colle et renomme le contenu du presse-papier.
+; Paste and rename content of clipboard.
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT
 Sélectionner
 ; Select
 ;
 MSG_PREFSWIN_TOOLBAR_SELECT_HELP
-Sélectionner un fichier ou un répertoire
-; Select file or directory
+Sélectionner un fichier ou un répertoire.
+; Select file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO
 Information sur l'icône
 ; Icon Info
 ;
 MSG_PREFSWIN_TOOLBAR_ICONINFO_HELP
-Afficher les informations au sujet de l'icône
-; Display Icon Information window
+Affiche les informations au sujet de l'icône.
+; Display the Icon Information window
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT
 Formater
 ; Format
 ;
 MSG_PREFSWIN_TOOLBAR_FORMAT_HELP
-Formater un système de fichiers
-; Format a filesystem
+Formate un système de fichiers
+; Format a filesystem.
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR
 Créer un répertoire
 ; Add directory
 ;
 MSG_PREFSWIN_TOOLBAR_MAKEDIR_HELP
-Créer un répertoire
-; Create a directory
+Crée un répertoire.
+; Create a directory.
 ;
 MSG_PREFSWIN_TOOLBAR_MAKELINK
 Faire un lien
 ; Add link
 ;
 MSG_PREFSWIN_TOOLBAR_MAKELINK_HELP
-Faire un lien.
+Fait un lien.
 ; Add a link.
 ;
 MSG_PREFSWIN_TOOLBAR_RENAME
@@ -2204,24 +2216,24 @@ Renommer
 ; Rename
 ;
 MSG_PREFSWIN_TOOLBAR_RENAME_HELP
-Renommer un fichier ou un répertoire
-; Rename file or directory
+Renomme un fichier ou un répertoire.
+; Rename file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_FIND
 Rechercher
 ; Find
 ;
 MSG_PREFSWIN_TOOLBAR_FIND_HELP
-Recherche des fichiers et des répertoires
-; Finds files and directories
+Recherche des fichiers et des répertoires.
+; Finds files and directories.
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT
 Parent
 ; Parent
 ;
 MSG_PREFSWIN_TOOLBAR_PARENT_HELP
-Aller dans le répertoire parent
-; Parent directory
+Permet d'aller dans le répertoire parent.
+; Parent directory.
 ;
 MSG_PREFSWIN_TOOLBAR_BACK
 Retour
@@ -2236,48 +2248,48 @@ Suivant
 ; Next
 ;
 MSG_PREFSWIN_TOOLBAR_FORWARD_HELP
-Suivant dans l'historique des emplacements
-; Next
+Suivant dans l'historique des emplacements.
+; Next in history.
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW
 Changer la vue
 ; Switch view
 ;
 MSG_PREFSWIN_TOOLBAR_SWITCH_VIEW_HELP
-Changer le mode d'affichage de la vue
-; Change view display mode
+Change le mode d'affichage de la vue.
+; Change view display mode.
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS
 Favoris
 ; Bookmarks
 ;
 MSG_PREFSWIN_TOOLBAR_BOOKMARKS_HELP
-Conserver un fichier ou un répertoire en favoris
-; Bookmark file or directory
+Conserve un fichier ou un répertoire en favoris.
+; Bookmark file or directory.
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE
 Espace
 ; Space
 ;
 MSG_PREFSWIN_TOOLBAR_SPACE_HELP
-Ajouter un espace dans la barre d'outils
-; Add a space to toolbar
+Ajoute un espace dans la barre d'outils.
+; Add a space to toolbar.
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE
 Espace flottant
 ; Flexible space
 ;
 MSG_PREFSWIN_TOOLBAR_FLEXIBLE_SPACE_HELP
-Ajouter un espace flottant à la barre d'outils
-; Add a flexible space to toolbar
+Ajoute un espace flottant à la barre d'outils.
+; Add a flexible space to toolbar.
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR
 Séparateur
 ; Separator
 ;
 MSG_PREFSWIN_TOOLBAR_SEPARTOR_HELP
-Ajouter un séparateur à la barre d'outils
-; Separator between group of buttons
+Ajoute un séparateur à la barre d'outils.
+; Separator between group of buttons.
 ;
 MSG_PREFSWIN_TOOLBAR_DEFAULTDIMENSIONS_GROUP
 Dimensions par défaut
@@ -2812,7 +2824,7 @@ _Mode :
 ;
 MSG_PREFSWIN_LISTER_MODES_HELP
 Mode par défaut utilisé.
-; This mode gets active when list mode is selected.
+; Defines the display type of list mode: all files, icons, or thumbnails.
 ;
 MSG_PREFSWIN_LISTER_COMPACT_SIZE
 Affichage _compact des tailles
@@ -3052,11 +3064,19 @@ Nouveau raccourci clavier
 ;
 MSG_KEYSHORTCUTCLASS_ACTION
 Éditer la commande
-; Edit Command
+; Edit Command...
+;
+MSG_KEYSHORTCUTCLASS_ACTION_HELP
+Ouvre la fenêtre d'édition des actions qui vous permet de configurer les actions pour ce raccourci.
+; Opens the action editor window, which allows you to configure the actions for this hotkey.
 ;
 MSG_KEYSHORTCUTCLASS_REMOVE
 Supprimer
 ; Remove
+;
+MSG_KEYSHORTCUTCLASS_REMOVE_HELP
+Retirer ce raccourci avec son action associée de la configuration.
+; Remove this hotkey along with the defined action from the configuration.
 ;
 MSG_KEYSHORTCUTCLASS_LABEL_FORMAT
 %s :
@@ -5417,13 +5437,24 @@ Passer en vue par liste d'icônes. Utilisez la molette de la souris pour zoomer !
 ; Switch to List viewmode. Use the mouse wheel to zoom!
 ;
 MSG_IMAGEVIEW_CLASS_HOTKEYS_HELP
-\033u\033b\033cRaccourcis disponibles:\033n\033l\n\n\033bPTRSCREEN\033n: Imprimer\n\033bCurseur Gauche/Droit/Haut/Bas\033n: Se déplacer dans l'image. Combinable avec les touches ctrl/shift/alt pour\n\
-des déplacements à différentes échelles\n\033bHome/End\033n: Aller en haut de l'image / en bas de l'image\n\033bMolette haut / bas\033n: Se déplacer vers le haut, vers le bas\n\033bPage haut / \
-bas\033n: Afficher l'image précédente / suivante\n\033bl/r\033n: Pivoter l'image sur la gauche/droite\n\nVous pouvez glisser une image avec le bouton gauche ou le bouton du milieu de la souris \
-(uniquement en mode "normal")
-; \033u\033b\033cAvailable Hotkeys:\033n\033l\n\n\033bPRTSCREEN\033n: Print the image\n\033bCursor Left/Right/Up/Down\033n: Scroll the image, try the ctrl/shift/alt keys (only "Normal" mode!)\n\
-; \033bHome/End\033n: Scroll to the top/bottom of the image (only "Normal" mode!)\n\033bWheel Up/Down\033n: Scroll some pixels up/down (only "Normal" mode!)\n\033bPage Up/Down\033n: Show the prev/next \
-; image\n\033bl/r\033n: Rotate the image to the left/right\n\nYou can drag the image around with the left or middle mousebutton (only "Normal" mode!)
+\033c\033u\033bRaccourcis disponibles:\033n\n\033c(mouvement uniquement disponible en mode "normal" !)\033n\n\n\033l\033bPTRSCREEN\033n: Imprimer l'image\n\033l\033bCurseur Gauche/Droit/Haut/Bas\033n: Se déplacer dans l'image. Combinable avec les touches ctrl/shift/alt pour\n\des déplacements à différentes échelles\n\033l\Home/End\033n: Aller en haut de l'image / en bas de l'image\n\033l\Molette haut / bas\033n: Se déplacer vers le haut, vers le bas\n\033l\Page haut / Page bas\033n: Afficher l'image précédente / suivante\n\033l\O33bBouton gauche/droite de la souris:\033nPivoter l'image sur la gauche/droite\n\n\033lVous pouvez glisser une image avec le bouton gauche ou le bouton du milieu de la souris; \033c\033u\033bAvailable Controls:\033n\n\
+; \033c(Movements only available in "normal" mode!)\033n\n\n\
+; \033l\033bPRTSCREEN:\033n Print the image\n\
+; \033l\033bCTRL/SHIFT/ALT + Cursor keys:\033n Scroll the image\n\
+; \033l\033bHome/End:\033n Scroll to the top/bottom of the image\n\
+; \033l\033bWheel Up/Down:\033n Scroll some pixels up/down\n\
+; \033l\033bPage Up/Down:\033n Show the prev/next image\n\
+; \033l\033bL/R:\033n Rotate the image to the left/right\n\n\
+; \033lYou can drag the image around using the left or middle mousebutton.
+; \033c\033u\033bAvailable Controls:\033n\n\
+; \033c(Movements only available in "normal" mode!)\033n\n\n\
+; \033l\033bPRTSCREEN:\033n Print the image\n\
+; \033l\033bCTRL/SHIFT/ALT + Cursor keys:\033n Scroll the image\n\
+; \033l\033bHome/End:\033n Scroll to the top/bottom of the image\n\
+; \033l\033bWheel Up/Down:\033n Scroll some pixels up/down\n\
+; \033l\033bPage Up/Down:\033n Show the prev/next image\n\
+; \033l\033bL/R:\033n Rotate the image to the left/right\n\n\
+; \033lYou can drag the image around using the left or middle mousebutton.
 ;
 MSG_PREFSWIN_TOOLBAR_STATUSBAR_COLOR
 Couleu_r
@@ -5502,4 +5533,137 @@ Activer les effets
 MSG_PREFSWIN_BACKGROUND_TRANSITION_HELP
 Activer les effets de transition
 ; Enable transition effects
+;
+MSG_RECOGNITION_DB_START
+Configurer les actions associées...
+; Configure Filetype Actions...
+;
+MSG_RECOGNITION_DB_0001
+Ouvrir
+; Open
+;
+MSG_RECOGNITION_DB_0002
+Extraire
+; Extract
+;
+MSG_RECOGNITION_DB_0003
+Extraire depuis...
+; Extract To...
+;
+MSG_RECOGNITION_DB_0004
+Monter...
+; Mount...
+;
+MSG_RECOGNITION_DB_0005
+Monter
+; Mount
+;
+MSG_RECOGNITION_DB_0006
+Insérer (pas de montage)
+; Insert (no mount)
+;
+MSG_RECOGNITION_DB_0007
+Graver sur un disque...
+; Burn to Disc...
+;
+MSG_RECOGNITION_DB_0008
+Ouvrir avec...
+; Open With...
+;
+MSG_RECOGNITION_DB_0009
+Ouvrir avec VPDF...
+; Open with VPDF...
+;
+MSG_RECOGNITION_DB_0010
+Ouvrir avec Apdf...
+; Open with Apdf...
+;
+MSG_RECOGNITION_DB_0011
+Ouvrir avec Multiview...
+; Open with Multiview...
+;
+MSG_RECOGNITION_DB_0012
+Ouvrir avec OpenURL...
+; Open with OpenURL...
+;
+MSG_RECOGNITION_DB_0013
+Exécuter avec RX...
+; Execute with RX...
+;
+MSG_RECOGNITION_DB_0014
+Exécuter avec LuaX...
+; Execute with LuaX...
+;
+MSG_RECOGNITION_DB_0015
+Créer une archive LhA...
+; Create LhA Archive...
+;
+MSG_RECOGNITION_DB_0016
+Décompresser avec Bz2...
+; UnCompress with Bz2...
+;
+MSG_RECOGNITION_DB_0017
+Extraire avec UnRAR...
+; Extract with UnRAR...
+;
+MSG_RECOGNITION_DB_0018
+Vidanger...
+; Flush...
+;
+MSG_RECOGNITION_DB_0019
+Version...
+; Version...
+;
+MSG_RECOGNITION_DB_0020
+Jouer...
+; Play...
+;
+MSG_RECOGNITION_DB_0021
+Jouer avec Multiview...
+; Play with Multiview...
+;
+MSG_RECOGNITION_DB_0022
+Afficher avec Multiview...
+; View with Multiview...
+;
+MSG_RECOGNITION_DB_0023
+Multiview...
+; Multiview...
+;
+MSG_RECOGNITION_DB_0024
+ShowCase...
+; ShowCase...
+;
+MSG_RECOGNITION_DB_0025
+Mysticview...
+; Mysticview...
+;
+MSG_RECOGNITION_DB_0026
+Éditer avec Sketch...
+; Edit with Sketch...
+;
+MSG_RECOGNITION_DB_0027
+More...
+; More...
+;
+MSG_RECOGNITION_DB_0028
+Éditer
+; Edit...
+;
+; CONTEXT SUB MENU NAMES
+;
+MSG_RECOGNITION_DB_0029
+Ouvrir avec
+; Open With
+;
+MSG_RECOGNITION_DB_0030
+Afficher avec
+; View With
+;
+;
+; COMMAND TEXTS
+;
+MSG_RECOGNITION_DB_0031
+Choisir la destination...
+; Select Destination...
 ;

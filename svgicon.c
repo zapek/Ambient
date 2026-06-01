@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: svgicon.c,v 1.21.6.1 2024/01/23 21:46:15 piru Exp $
+ * $Id: svgicon.c,v 1.24 2025/09/13 10:34:01 piru Exp $
  */
 
 #include "ambient.h"

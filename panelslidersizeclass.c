@@ -18,10 +18,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: panelslidersizeclass.c,v 1.5 2017/08/21 06:17:44 cyfm Exp $
+ * $Id: panelslidersizeclass.c,v 1.6 2025/09/16 15:52:30 kronos Exp $
  */
 
 #include "ambient.h"
+
+#if USE_INTERNAL_PANELS
 
 /* public */
 
@@ -68,3 +70,4 @@ DECMMETHOD(Numeric_Stringify)
 ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_Slider, panelslidersizeclass)
+#endif

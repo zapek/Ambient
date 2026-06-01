@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: bookmarklistclass.c,v 1.2 2013/10/28 19:48:26 geit Exp $
+ * $Id: bookmarklistclass.c,v 1.3 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -71,7 +71,7 @@ DEFMMETHOD(List_Construct)
 				name_delete(item->location);
 
 			free(item);
-			return NULL;
+			return ((ULONG)NULL);
 		}
 	}
 

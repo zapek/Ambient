@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: file_func.c,v 1.16 2017/07/25 19:45:00 piru Exp $
+ * $Id: file_func.c,v 1.17 2025/07/23 23:54:26 geit Exp $
  */
 
 #include "ambient.h"
@@ -230,7 +230,7 @@ static ULONG resolve_path(BPTR l, CONST_STRPTR cmd, STRPTR *to)
 	oldcd = CurrentDir(l);
 	tl = Lock(cmd, SHARED_LOCK);
 	CurrentDir(oldcd);
-	if (tl != NULL && to != NULL)
+	if (tl != 0 && to != NULL)
 	{
 		*to = name_buildfromlock(tl);
 	}
@@ -543,7 +543,7 @@ ULONG same_volume_nolock(CONST_STRPTR path1, CONST_STRPTR path2)
 ULONG get_blocksize(CONST_STRPTR path)
 {
 	struct DevProc *dvp;
-	ULONG retval = NULL;
+	ULONG retval = 0;
 
 	THREAD;
 	ASSERT(path);

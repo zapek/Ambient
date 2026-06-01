@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: errorreq.c,v 1.6 2007/02/11 22:35:28 fab Exp $
+ * $Id: errorreq.c,v 1.7 2025/07/23 22:53:31 geit Exp $
  */
 
 #include "ambient.h"
@@ -54,8 +54,8 @@ LONG v_errorreq(CONST_STRPTR title, CONST_STRPTR body, CONST_STRPTR gadgets, APT
 	}
 
 	es.es_StructSize    = sizeof(struct EasyStruct);
-	es.es_Flags         = NULL;
-	es.es_Title         = (STRPTR)(title ? titlebuf : (CONST_STRPTR)"Ambient");
+	es.es_Flags         = 0;
+	es.es_Title         = (STRPTR)(title ? titlebuf : (TEXT*)"Ambient");
 	es.es_TextFormat    = (STRPTR)body;
 	es.es_GadgetFormat  = (STRPTR)(gadgets ? gadgets : (CONST_STRPTR)"Ok");
 

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: prefswin_windowclass.c,v 1.19 2017/11/08 14:00:05 bitrocky Exp $
+ * $Id: prefswin_windowclass.c,v 1.20 2025/11/17 22:18:14 tcheko Exp $
  */
 
 #include "ambient.h"
@@ -132,7 +132,7 @@ DEFNEW
 						Child, fr_button = MUI_NewObject(MUIC_Popfrimage, 0x80426a55, TRUE,
 							MUIA_Window_Title, GSI( MSG_PREFSWIN_TOOLBAR_BUTTONFRAME_WINTITLE ),
 							MUIA_Framedisplay_Spec, NULL,
-							MUIA_ShortHelp, MSG_PREFSWIN_TOOLBAR_BUTTONFRAME+1,
+							MUIA_ShortHelp, GSI(MSG_PREFSWIN_TOOLBAR_BUTTONFRAME+1),
 							MUIA_CycleChain, 1,
 							MUIA_ControlChar, MUIGetUnderScore( MSG_PREFSWIN_TOOLBAR_BUTTONFRAME ),
 							//MUIA_Imagedisplay_Spec, NULL,

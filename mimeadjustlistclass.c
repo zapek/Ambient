@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: mimeadjustlistclass.c,v 1.7 2013/10/29 23:40:55 geit Exp $
+ * $Id: mimeadjustlistclass.c,v 1.8 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -138,7 +138,7 @@ DEFNEW
 
 			CoerceMethod(cl, obj, OM_DISPOSE);
 
-			return NULL;
+			return ((ULONG)NULL);
 		}
 
 	}

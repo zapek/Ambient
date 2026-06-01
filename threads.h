@@ -1,7 +1,7 @@
 #ifndef AMBIENT_THREADS_H
 #define AMBIENT_THREADS_H
 /*
- * $Id: threads.h,v 1.22 2020/08/16 03:15:18 jacadcaps Exp $
+ * $Id: threads.h,v 1.23 2025/08/13 16:17:01 jacadcaps Exp $
  */
 
 #include <utility/tagitem.h>
@@ -448,6 +448,7 @@ enum {
 #define TT_URI_Load_Browser                         (TAG_USER + 5)
 #define TT_URI_Load_Iconified                       (TAG_USER + 6)
 #define TT_URI_Load_ToFront                         (TAG_USER + 7) // put the window to front&activate it
+#define TT_URI_Load_Screen                          (TAG_USER + 8) // returned by get_screen_id
 
 /*
  * TA_Sound_Play

@@ -18,10 +18,19 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: gfx_dbuf.c,v 1.6 2006/08/08 13:31:34 fab Exp $
+ * $Id: gfx_dbuf.c,v 1.9 2026/01/25 17:36:24 kronos Exp $
  */
 
+
+#ifndef PANEL_APP
 #include "ambient.h"
+#else
+#include <stddef.h>
+#include <stdlib.h>
+#include <exec/nodes.h>
+#include "debug.h"
+#endif
+
 
 /* public */
 #include <graphics/gfx.h>
@@ -111,7 +120,7 @@ void gfx_dbuf_free(struct doublebuf *dbuf)
 	{
 		struct Layer_Info *li = dbuf->rp->Layer->LayerInfo;
 
-		DeleteLayer(NULL, dbuf->rp->Layer);
+		DeleteLayer( 0, dbuf->rp->Layer);
 		DisposeLayerInfo(li);
 	}
 	else

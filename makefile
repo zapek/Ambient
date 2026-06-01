@@ -5,7 +5,7 @@
 #
 # All Rights Reserved
 #
-# $Id: makefile,v 1.61 2022/01/06 18:48:39 piru Exp $
+# $Id: makefile,v 1.74 2026/05/16 17:39:58 geit Exp $
 #
 # Useful targets:
 # --------------
@@ -247,14 +247,14 @@ endif
 ifeq ($(RELEASE), FINAL_RELEASE)
 $(EXE): $(OBJS) $(LINKLIBS)
 	$(ECHO)	-n "LD -> $(subst $(SOURCE),,$@) (final)"
-	$(OUT)$(CC) $(LDFLAGS) $(EXE) $(OBJS) $(LIBS)
+	$(OUT)$(CC) $(LDFLAGS) $(EXE).db $(OBJS) $(LIBS) -lsyscall
 	$(ECHO) ""
-	$(OUT)$(STRIP) --remove-section=.comment $(EXE)
+	$(OUT)$(STRIP) --remove-section=.comment $(EXE).db -o $(EXE)
 	$(OUT)chmod +x $(EXE) $(QUIET)
 else
 $(EXE).db: $(OBJS) $(LINKLIBS)
 	$(ECHO)	-n "LD -> $(subst $(SOURCE),,$@)"
-	$(OUT)$(CC) -Wl,--cref,-Map,$(EXE).map $(LDFLAGS) $(EXE).db $(OBJS) $(LIBS)
+	$(OUT)$(CC) -Wl,--cref,-Map,$(EXE).map $(LDFLAGS) $(EXE).db $(OBJS) $(LIBS) -lsyscall_public
 	$(ECHO) ""
 	$(ECHO) -n "STRIP -> $(EXE)"
 	$(OUT)$(STRIP) --remove-section=.comment -o $(SOURCE)$(EXE) $(EXE).db
@@ -400,7 +400,7 @@ updaterev: rev
 
 
 .PHONY: fullbuild
-fullbuild: .depend.check updaterev build iconlib wblib libs c catalogs docs modules
+fullbuild: .depend.check updaterev build iconlib wblib libs c catalogs docs modules panel
 
 
 .PHONY: releasedir
@@ -534,6 +534,7 @@ endif
 	$(ECHO) "COPY scripts -> $(RELEASEDIR)scripts"
 	$(OUT)$(MKDIR) $(RELEASEDIR)scripts
 	$(OUT)$(COPY) distribution/scripts/openshellindir $(RELEASEDIR)scripts
+	$(OUT)$(COPY) distribution/scripts/LhAExtractTo $(RELEASEDIR)scripts
 # Rexx scripts ###
 	$(ECHO) "COPY arexx scripts -> $(RELEASEDIR)arexx"
 	$(OUT)$(MKDIR) $(RELEASEDIR)arexx
@@ -584,7 +585,7 @@ archive-nightly:
 
 
 .PHONY: install
-install: all c_install wblib_install iconlib_install libs_install docs_install catalogs_install
+install: all c_install wblib_install iconlib_install libs_install docs_install catalogs_install panel
 	$(ECHO) "COPY $(APPNAME) -> $(INSTALLDIR)MorphOS/Ambient"
 	$(OUT)$(MKDIR) $(INSTALLDIR)MorphOS/Ambient
 	$(OUT)$(MKDIR) $(INSTALLDIR)Classes
@@ -617,6 +618,7 @@ endif
 	$(ECHO) "COPY scripts -> $(INSTALLDIR)MorphOS/Ambient/scripts"
 	$(OUT)$(MKDIR) $(INSTALLDIR)MorphOS/Ambient/scripts
 	$(OUT)$(COPY) distribution/scripts/openshellindir $(INSTALLDIR)MorphOS/Ambient/scripts
+	$(OUT)$(COPY) distribution/scripts/LhAExtractTo $(INSTALLDIR)MorphOS/Ambient/scripts
 	$(OUT)$(MKDIR) $(INSTALLDIR)MorphOS/Ambient/arexx
 	$(OUT)$(COPY) distribution/arexx/*.rexx $(INSTALLDIR)MorphOS/Ambient/arexx
 
@@ -760,6 +762,8 @@ install-iso:
 	$(MKDIR) $(ISOPATH)Classes
 	$(MKDIR) $(ISOPATH)Classes/Panels
 	$(COPY) -R ambient_release/* $(ISOPATH)MorphOS/Ambient
+	$(COPY) -R panel/release/* $(ISOPATH)MorphOS/Ambient
+	$(COPY) -R panelprefs/release/* $(ISOPATH)MorphOS/Ambient
 # czech workaround
 	$(COPY) -R $(ISOPATH)MorphOS/Ambient/catalogs/czech $(ISOPATH)MorphOS/Ambient/catalogs/èe¹tina
 	$(DELETEALL) $(ISOPATH)MorphOS/Ambient/catalogs/czech

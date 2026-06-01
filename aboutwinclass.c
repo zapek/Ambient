@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: aboutwinclass.c,v 1.22 2023/05/04 19:13:14 cyfm Exp $
+ * $Id: aboutwinclass.c,v 1.24 2025/09/09 12:46:45 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -47,7 +47,8 @@
 #define TXT_APP_LEN   1024
 
 #if USE_CRAWLER
-#define TXT_CRAWL_LEN 1536
+//#define TXT_CRAWL_LEN 1536
+#define TXT_CRAWL_LEN 1600  /* this is a wild guess. This should be dynamically allocated (geit) */
 #endif
 
 APTR aboutwin;
@@ -210,7 +211,7 @@ DEFNEW
 		#endif
 
 		obj = DoSuperNew(cl, obj,
-			MUIA_Window_Screen, get_screen(),
+			MUIA_Window_PublicScreen, active_screen_name(),
 			MUIA_Window_ScreenTitle, screentitle,
 			MUIA_Window_Title, GSI( MSG_ABOUTWIN_AMBIENTTITLE ),
 			MUIA_Window_ID, MAKE_ID('A','M','A','B'),

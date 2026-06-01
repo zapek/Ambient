@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: rexx.c,v 1.14 2018/02/19 20:01:47 bitrocky Exp $
+ * $Id: rexx.c,v 1.19 2026/05/16 06:53:06 geit Exp $
  */
 
 #include "ambient.h"
@@ -47,12 +47,9 @@
 #include "appclass.h"
 #include "prefs.h"
 #include "name.h"
+#include "locale.h"
 
 static struct MsgPort rexxport;
-#if USE_MULTIPLE_DESKTOP
-static UBYTE portnamebuf[sizeof(REXXPORT) + 11 + 1];
-static UBYTE rexxportlasterrorvar[sizeof(REXXPORT) + 11 + 10 + 1];
-#endif
 static ULONG outmsgs; /* number of outstanding messages */
 
 static ULONG rxid;
@@ -133,11 +130,7 @@ static ULONG rx_set_last_error(struct RexxMsg *rxmsg, STRPTR errorstr)
 {
 	if (rxmsg && CheckRexxMsg(rxmsg))
 	{
-#if USE_MULTIPLE_DESKTOP
-		if (!SetRexxVar(rxmsg, rexxportlasterrorvar, errorstr, (LONG)strlen(errorstr)))
-#else
 		if (!SetRexxVar(rxmsg, REXXPORT ".LASTERROR", errorstr, (LONG)strlen(errorstr)))
-#endif
 		{
 			return (TRUE);
 		}
@@ -365,41 +358,6 @@ ULONG rexx_init(void)
 		{
 			if ( (BYTE) (rexxport.mp_SigBit = AllocSignal(-1)) != -1 )
 			{
-#if USE_MULTIPLE_DESKTOP
-				CONST_STRPTR rexxportname;
-				ULONG portcnt;
-
-				rexxport.mp_Node.ln_Type = NT_MSGPORT;
-				rexxport.mp_Flags        = PA_SIGNAL;
-				rexxport.mp_SigTask      = FindTask(NULL);
-				NEWLIST(&rexxport.mp_MsgList);
-
-				rexxportname = REXXPORT;
-				portcnt  = 0;
-
-				Forbid();
-				while (FindPort(rexxportname))
-				{
-					portcnt++;
-					NewRawDoFmt(REXXPORT ".%lu", NULL, portnamebuf, portcnt);
-					rexxportname = portnamebuf;
-				}
-
-				rexxport.mp_Node.ln_Name = (STRPTR) rexxportname;
-				AddPort(&rexxport);
-				Permit();
-
-				strcpy(rexxportlasterrorvar, rexxportname);
-				strcat(rexxportlasterrorvar, ".LASTERROR");
-
-				rexxsig = 1L << rexxport.mp_SigBit;
-
-				NEWLIST(&rxlist);
-
-				return (TRUE);
-
-#else
-
 				rexxport.mp_Node.ln_Type = NT_MSGPORT;
 				rexxport.mp_Node.ln_Name = REXXPORT;
 				rexxport.mp_Flags        = PA_SIGNAL;
@@ -422,7 +380,6 @@ ULONG rexx_init(void)
 
 				FreeSignal(rexxport.mp_SigBit);
 				rexxport.mp_Node.ln_Type = 0;
-#endif
 			}
 			DeletePool(rxpool);
 		}
@@ -617,6 +574,11 @@ struct RX_WBArgs {
 	STRPTR * items;
 };
 
+#if USE_RECOGTRANSLATION
+#define PARSEDBUF_SIZEOF 0x2000   /* This is a temp buffer, so give operation some space. */
+#else
+#define PARSEDBUF_SIZEOF 0
+#endif
 /*
  * That one is called internally by Ambient (context menu, etc..)
  */
@@ -633,13 +595,14 @@ void execute_command(APTR obj, ULONG type, CONST_STRPTR str, APTR *array)
 
 	if (str && str[0])
 	{
-		ULONG len = strlen(str);
+		ULONG len = 2 * strlen(str) + PARSEDBUF_SIZEOF + 1;   /* old was 2* strlen(str) + 1 */
 
-		str_parsed = (STRPTR) malloc(2*len+1);
+		str_parsed = (STRPTR) malloc(len);
 
 		if(str_parsed)
 		{
-			template_expand(str, str_parsed, 2*len+1,
+
+			template_expand(str, str_parsed, len,
 				'p', "prout",
 				//'u', obj_url,
 				//'l', obj_link,
@@ -647,6 +610,10 @@ void execute_command(APTR obj, ULONG type, CONST_STRPTR str, APTR *array)
 				NULL
 			);
 
+#if USE_RECOGTRANSLATION
+/* if this causes trouble due to the "${}" pattern, we can change the pattern used in locale.c */
+			locale_translationfillpattern( str_parsed, len );
+#endif
 			/*
 			 * Remove ticks, if any.
 			 */

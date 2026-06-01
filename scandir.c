@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: scandir.c,v 1.19 2020/08/16 03:15:18 jacadcaps Exp $
+ * $Id: scandir.c,v 1.20 2026/04/25 23:05:00 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -42,6 +42,7 @@
 #include "name.h"
 #include "file_func.h"
 #include "examine64.h"
+#include "prefs.h"
 
 /************************************************************************/
 
@@ -346,6 +347,9 @@ static ULONG addffilefunc( APTR obj, CONST_STRPTR path, struct ExAllData *ead, A
 	STRPTR target = NULL;
 	struct DevProc* devproc;
 
+	if (gprefs->hide_dot_filenames && ead->ed_Name[0] == '.')
+		return TRUE;
+	
 	if( ead->ed_Type == ST_SOFTLINK || ead->ed_Type == ST_LINKFILE || ead->ed_Type == ST_LINKDIR )
 	{
 		TEXT t[ PATH_SIZE ];

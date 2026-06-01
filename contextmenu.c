@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: contextmenu.c,v 1.39 2023/01/12 20:33:12 jacadcaps Exp $
+ * $Id: contextmenu.c,v 1.43 2025/09/16 15:52:29 kronos Exp $
  */
 
 #include "ambient.h"
@@ -50,16 +50,20 @@
 #define MENU_END           { NULL, 0,        0,      0,                   0, NULL, NULL, NULL, NULL, 0 }
 
 static TEXT cm_command_about[CM_BUFFERSIZE];
+#if USE_INTERNAL_PANELS
 static TEXT cm_command_addpanel[CM_BUFFERSIZE];
+#endif
 static TEXT cm_command_cut[CM_BUFFERSIZE];
 static TEXT cm_command_copy[CM_BUFFERSIZE];
 static TEXT cm_command_delete[CM_BUFFERSIZE];
 static TEXT cm_command_deletebutton[CM_BUFFERSIZE];
+#if USE_INTERNAL_PANELS
 static TEXT cm_command_deletefrompanel[CM_BUFFERSIZE];
 static TEXT cm_command_deletepanel[CM_BUFFERSIZE];
 static TEXT cm_command_panelcreate[CM_BUFFERSIZE];
 static TEXT cm_command_savepanel[CM_BUFFERSIZE];
 static TEXT cm_command_panelprefs[CM_BUFFERSIZE];
+#endif
 static TEXT cm_command_format[CM_BUFFERSIZE];
 static TEXT cm_command_eject[CM_BUFFERSIZE];
 static TEXT cm_command_unmount[CM_BUFFERSIZE];
@@ -89,7 +93,9 @@ static TEXT cm_command_sort_bytype[CM_BUFFERSIZE];
 static TEXT cm_command_snapshot[CM_BUFFERSIZE];
 static TEXT cm_command_unsnapshot[CM_BUFFERSIZE];
 static TEXT cm_command_view[CM_BUFFERSIZE];
+#if USE_INTERNAL_PANELS
 static TEXT cm_command_panel[CM_BUFFERSIZE];
+#endif
 static TEXT cm_command_listview_defaultformat[CM_BUFFERSIZE];
 static TEXT cm_command_listview_getsizes[CM_BUFFERSIZE];
 static TEXT cm_command_window[CM_BUFFERSIZE];
@@ -298,7 +304,7 @@ static const struct command_menu appicon_default_menu[] = {
 	{ cm_command_open, AC_INTERNAL, AS_APPICON, AF_ENABLED, 0, "IconSelect", NULL, NULL, NULL, 0 },
 	MENU_END
 };
-
+#if USE_INTERNAL_PANELS
 static const struct command_menu panelgroup_default_menu[] = {
 	{ cm_command_deletefrompanel, AC_INTERNAL, AS_ANY,   					AF_ENABLED,                    0, "Panel RemoveItem", NULL, NULL, NULL, 0 }, /* XXX */
 	{ cm_command_move,            AC_INTERNAL, AS_ANY,					   	AF_ENABLED,                    0, "Panel MoveItem",   NULL, NULL, NULL, 0 }, /* XXX */
@@ -385,7 +391,7 @@ static struct command_menu panelpopup_default_menu[] = {
 	{ cm_command_move,            AC_INTERNAL, AS_PANEL_UNLOCKED | AS_DISABLED,   AF_ENABLED,                                   0, "Panel MoveItem",   NULL, NULL, NULL, 0 }, /* XXX */
 	MENU_END
 };
-
+#endif
 static const struct command_menu listview_properties_menu[] = {
 	{ cm_command_listview_getsizes,      AC_INTERNAL, AS_ANY, AF_ENABLED | AF_TOGGLE | AF_CHECKIT, 0, "Listview GetSizes",      NULL, NULL, NULL, 0 },
 	MENU_SEPARATOR,
@@ -421,16 +427,20 @@ struct cmenustrings_init {
 
 static const struct cmenustrings_init cmenustrings_initarr[] = {
 	{ cm_command_about,                  DUMMY,           MSG_CMENU_ABOUT         },
+#if USE_INTERNAL_PANELS
 	{ cm_command_addpanel,               DUMMY,           MSG_CMENU_ADDTOPANEL    },
+#endif
 	{ cm_command_cut,                    "cut",           MSG_CMENU_CUT           },
 	{ cm_command_copy,                   "copy",          MSG_CMENU_COPY          },
 	{ cm_command_delete,                 "delete",        MSG_CMENU_DELETE        },
 	{ cm_command_deletebutton,           DUMMY,           MSG_CMENU_DELBUTTON     },
+#if USE_INTERNAL_PANELS
 	{ cm_command_deletefrompanel,        DUMMY,           MSG_CMENU_PANELDELFROM  },
 	{ cm_command_deletepanel,            DUMMY,           MSG_CMENU_PANELDEL      },
 	{ cm_command_panelcreate,            DUMMY,           MSG_CMENU_PANELCREATE   },
 	{ cm_command_savepanel, 	         DUMMY,           MSG_CMENU_PANELSAVE     },
 	{ cm_command_panelprefs, 	         DUMMY,           MSG_CMENU_PANELPREFS    },
+#endif
 	{ cm_command_format,                 "format",        MSG_CMENU_FORMAT        },
 	{ cm_command_eject,                  "eject",         MSG_CMENU_EJECT         },
 	{ cm_command_unmount,                "unmount",       MSG_CMENU_EJECT         },
@@ -441,7 +451,9 @@ static const struct cmenustrings_init cmenustrings_initarr[] = {
 	{ cm_command_stayopen,               NULL,            MSG_CMENU_STAYOPEN      },
 	{ cm_command_move,                   DUMMY,           MSG_CMENU_MOVE          },
 	{ cm_command_newdrawer,              "makedir",       MSG_CMENU_NEWDRAWER     },
+#if USE_INTERNAL_PANELS
 	{ cm_command_panel,                  DUMMY,           MSG_CMENU_PANEL         },
+#endif
 	{ cm_command_paste,                  "paste",         MSG_CMENU_PASTE         },
 	{ cm_command_pasteinto,              "paste",         MSG_CMENU_PASTEINTO     },
 	{ cm_command_pasteas,                "pasteas",       MSG_CMENU_PASTEAS       },
@@ -474,8 +486,9 @@ static const struct cmenustrings_init cmenustrings_initarr[] = {
 	{ cm_command_trash,                  DUMMY,           MSG_CMENU_TRASH         },
 	{ cm_command_restore,                DUMMY,           MSG_CMENU_RESTORE       },
 	{ cm_command_empty,                  DUMMY,           MSG_CMENU_EMPTY         },
+#if USE_INTERNAL_PANELS
 	{ cm_command_openParent,             DUMMY,           MSG_CMENU_PANELOPENPARENT}, // bitRocky
-
+#endif
 	{ cm_command_netsettings,            DUMMY,           MSG_CMENU_NETWORKSSETTINGS },
 	{ cm_command_netconnect,             DUMMY,           MSG_CMENU_NETWORKSCONNECT },
 
@@ -963,7 +976,7 @@ static ULONG context_menu_default(APTR pm, ULONG menumode, ULONG allow)
 		case CM_APPICON:
 			cm = appicon_default_menu;
 			break;
-
+#if USE_INTERNAL_PANELS
 		case CM_PANELGROUP:
 			cm = panelgroup_default_menu;
 			break;
@@ -999,7 +1012,7 @@ static ULONG context_menu_default(APTR pm, ULONG menumode, ULONG allow)
 		case CM_PANELGROUP_SUB:
 			cm = panelgroup_sub_default_menu;
 			break;
-
+#endif
 		case CM_VIEW:
 			cm = view_default_menu;
 			break;
@@ -1150,7 +1163,7 @@ APTR contextmenu_build(ULONG menumode, ULONG allow)
 		case CM_APPICON:
 			titleid = MSG_CMENUTITLE_APPICON;
 			break;
-
+#if USE_INTERNAL_PANELS
 		case CM_PANELGROUP:
 			titleid = MSG_CMENUTITLE_PANELGROUP;
 			break;
@@ -1186,7 +1199,7 @@ APTR contextmenu_build(ULONG menumode, ULONG allow)
 		case CM_PANELGROUP_SUB:
 			titleid = MSG_CMENUTITLE_PANELGROUPSUB;
 			break;
-
+#endif
 		default:
 		#ifdef DEBUG
 			PDB(("out of bounds\n"));
@@ -1243,7 +1256,7 @@ APTR contextmenu_build_simple(ULONG menumode, ULONG allow)
 		case CM_LISTVIEW:
 			titleid = MSG_CMENUTITLE_FILES;
 			break;
-
+#if USE_INTERNAL_PANELS
 		case CM_PANELGROUP:
 			titleid = MSG_CMENUTITLE_PANELGROUP;
 			break;
@@ -1279,7 +1292,7 @@ APTR contextmenu_build_simple(ULONG menumode, ULONG allow)
 		case CM_PANELGROUP_SUB:
 			titleid = MSG_CMENUTITLE_PANELGROUPSUB;
 			break;
-
+#endif
 		default:
 		#ifdef DEBUG
 			PDB(("out of bounds\n"));

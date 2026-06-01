@@ -1,7 +1,7 @@
 #ifndef AMBIENT_PREFSPOOL_H
 #define AMBIENT_PREFSPOOL_H
 /*
- * $Id: prefspool.h,v 1.4 2006/08/08 13:31:35 fab Exp $
+ * $Id: prefspool.h,v 1.5 2025/07/05 12:31:05 kronos Exp $
  */
 
 APTR prefspool_create(ULONG uid);
@@ -12,6 +12,7 @@ ULONG prefspool_uid(APTR ctx);
 
 APTR prefspool_item_add(APTR ctx, APTR pitem, ULONG id, CONST_APTR data, ULONG size);
 void prefspool_item_remove(APTR ctx, APTR pitem, ULONG id);
+void prefspool_item_id_change(APTR ctx, APTR pitem, ULONG old_id,ULONG new_id);
 
 APTR prefspool_item_get(APTR ctx, APTR pitem, ULONG id, APTR *p, ULONG *size);
 

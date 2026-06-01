@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: cxwinclass.c,v 1.14 2017/08/11 23:32:05 cyfm Exp $
+ * $Id: cxwinclass.c,v 1.15 2025/09/09 12:46:46 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -77,7 +77,7 @@ DEFNEW
 	}
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_Title, "Ambient · Exchange",
 		MUIA_Window_ID, MAKE_ID('A','M','C','X'),

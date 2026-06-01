@@ -2,7 +2,7 @@
 #define AMBIENT_CLASSES_H
 
 /*
- * $Id: classes.h,v 1.61.2.1 2024/01/20 02:56:53 piru Exp $
+ * $Id: classes.h,v 1.73 2026/03/21 20:36:34 jacadcaps Exp $
  */
 
 #include <utility/tagitem.h>
@@ -168,8 +168,6 @@ DEFCLASS(paneldrag);
 DEFCLASS(panelitem_list);
 DEFCLASS(panellisttree);
 DEFCLASS(panelclasslist);
-DEFCLASS(panelmessenger);
-DEFCLASS(panelmessengerfamily);
 DEFCLASS(iconzoomslider); // bitRocky
 DEFCLASS(mimetype);
 
@@ -280,9 +278,7 @@ enum {
 	MM_Application_Cleanup,
 	MM_Application_DisplayDelayedDialog,
 	MM_Application_FindWindowByID,
-	MM_Application_FindWindowByName,
-	MM_Application_FindWindowByType,
-	MM_Application_FindWindowByUserData,
+	MM_Application_FindWindowByName, // only use if absolutely necessary, slow
 	MM_Application_Open_AboutWindow,
 	MM_Application_Open_AboutMorphOSWindow,
 	MM_Application_Open_CxWindow,
@@ -321,7 +317,7 @@ enum {
 	MM_Application_CreateIconinfo,
 	MM_Application_CreateWindow,
 	MM_Application_WindowDoMethodByAttr,
-	MM_Application_RootDoMethodByAttr,
+	MM_Application_DoMethodByAttr,
 	MM_Application_AddBackground,
 	MM_Application_LoadBackground,
 	MM_Application_CenterBackground,
@@ -344,6 +340,7 @@ enum {
 	MA_Application_PanelClassList,    /* Kronos */
 	MM_Application_Trash_Ok,
 	MM_Application_UpdateTransitionEffect,
+    MM_Application_ReopenExtraRootWindows,
 	/* Window */
 	MM_Window_Close,
 	MM_Window_UpdateBackground,
@@ -377,6 +374,7 @@ enum {
 	MA_Window_EnableDOSNotify,
 	MA_Window_Browser,
 	MA_Window_IsIconified,
+	MA_Window_PublicScreen,
 
 	/* Iconview */
 	MM_Iconview_RefreshLasso,
@@ -697,6 +695,8 @@ enum {
 
 	/* View */
 	MA_View_IsRoot,
+	MA_View_IsRootExtra,
+	MA_View_ScreenID,
 	MA_View_NeedsBackfill,
 	MA_View_Path,
 	MA_View_URI,
@@ -782,6 +782,7 @@ enum {
 
 	/* Addtext */
 	MA_AddText_Contents,
+	MA_AddText_ContentsNL, // add text vertically
 
 	/* Soundwin */
 	MM_Soundwin_Close,
@@ -1007,6 +1008,7 @@ enum {
 	MM_Find_AddResult,     /* internal */
 	MM_Find_Update,        /* internal */
 	MM_Find_TypeSelected,  /* internal */
+    MM_Find_UpdateTarget,  /* internal */
 	
 	/* View selector */
 	MA_ViewSelector_Left,
@@ -1111,21 +1113,10 @@ struct MP_Application_FindWindowByID {
 	ULONG id;
 };
 
-struct MP_Application_FindWindowByUserData {
-	ULONG MethodID;
-	ULONG type;
-	ULONG userdata;
-};
-
 struct MP_Application_FindWindowByName {
 	ULONG MethodID;
 	ULONG type;
 	STRPTR name;
-};
-
-struct MP_Application_FindWindowByType {
-	ULONG MethodID;
-	ULONG type;
 };
 
 struct MP_Application_EnableDOSNotify {
@@ -1156,6 +1147,7 @@ struct MP_Application_DisposeWindow {
 struct MP_Application_OpenDevicesWindow {
 	ULONG MethodID;
 	ULONG Moused;
+	CONST_STRPTR Screen;
 };
 
 struct MP_Application_SoundControl {
@@ -1876,6 +1868,7 @@ struct MP_Application_CreateWindow {
 	ULONG type;
 	APTR mimectx;
 	ULONG browser;
+	CONST_STRPTR pubscreenName;
 };
 
 struct MP_View_ReadArgs {
@@ -1952,8 +1945,9 @@ struct MP_Application_WindowDoMethodByAttr {
 	ULONG args;
 };
 
-struct MP_Application_RootDoMethodByAttr {
+struct MP_Application_DoMethodByAttr {
 	ULONG MethodID;
+	ULONG windowID;
 	ULONG attr;
 	ULONG val;
 	ULONG args;
@@ -1979,7 +1973,6 @@ struct MP_Application_LoadBackground {
 struct MP_Application_CenterBackground {
 	ULONG MethodID;
 	ULONG pen;
-	APTR  screen;
 };
 
 struct MP_View_SetStatus {
@@ -2686,6 +2679,15 @@ struct MP_Prefswin_Panels_UpdatePanels {
 #define MV_Window_Type_ViewSelector    25
 #define MV_Window_Type_PatternRename   26
 #define MV_Window_Type_AddBookmark     27
+#define MV_Window_Type_Rootview_Extra  28
+
+#define AMBIENT_MAX_EXTRA_SCREENS 3
+
+#define MV_Window_ID_Unknown 0
+#define MV_Window_ID_Root      1 // do NOT change values for 1 and 2!
+#define MV_Window_ID_RootExtra 2
+#define MV_Window_ID_RootExtra_Max (AMBIENT_MAX_EXTRA_SCREENS + MV_Window_ID_RootExtra - 1)
+#define MV_Window_ID_Base    10
 
 /* Formatwin Format */
 #define MV_Format_Format_Quick  0
@@ -2729,14 +2731,21 @@ struct MP_Prefswin_Panels_UpdatePanels {
 #define MV_Prefswin_Icondisplay_AdjustSize_Max 1
 
 /* Application CreateWindow */
-#define MV_Application_CreateWindow_Rootview 0
-#define MV_Application_CreateWindow_View     1
+#define MV_Application_CreateWindow_Rootview       0
+#define MV_Application_CreateWindow_View           1
+#define MV_Application_CreateWindow_Rootview_Extra 2
 
 /* Application LoadBackground */
 #define MF_Application_LoadBackground_Root        (1 << 0UL)
 #define MF_Application_LoadBackground_Window      (1 << 1UL)
 #define MF_Application_LoadBackground_ClearRoot   (1 << 2UL)
 #define MF_Application_LoadBackground_ClearWindow (1 << 3UL)
+
+#define MV_Application_AddBackground_Window  0
+#define MV_Application_AddBackground_Root      1 // do NOT change values for 1 and 2!
+#define MV_Application_AddBackground_RootExtra 2
+#define MV_Application_AddBackground_RootExtra_Max (AMBIENT_MAX_EXTRA_SCREENS + MV_Application_AddBackground_RootExtra - 1)
+
 
 /* View SetStatus */
 #define MF_View_SetStatus_Window (1 << 0UL) /* message go to the window */

@@ -25,6 +25,8 @@
 
 #include "ambient.h"
 
+#if USE_INTERNAL_PANELS
+
 /* public */
 
 /* private */
@@ -735,14 +737,19 @@ DEFSMETHOD(PanelListTree_RefreshNode)
 {
 	APTR panel = NULL;
 	struct MUIS_Listtree_TreeNode *node = (struct MUIS_Listtree_TreeNode*) msg->treenode;
-	SetAttrs( obj, MUIA_Listtree_Quiet, TRUE, TAG_DONE );
-	if( !( get( node->tn_User, MA_Panelbutton_AttachedObject, (ULONG*) &panel ) ) )
+
+	if (node)
 	{
-		panel = node->tn_User;
+		SetAttrs( obj, MUIA_Listtree_Quiet, TRUE, TAG_DONE );
+		if( !( get( node->tn_User, MA_Panelbutton_AttachedObject, (ULONG*) &panel ) ) )
+		{
+			panel = node->tn_User;
+		}
+		DoMethod( obj, MUIM_Listtree_Remove, node, MUIV_Listtree_Remove_TreeNode_All, 0 );
+		ListPanel( obj, node, panel );
+		SetAttrs( obj, MUIA_Listtree_Quiet, FALSE, TAG_DONE );
 	}
-	DoMethod( obj, MUIM_Listtree_Remove, node, MUIV_Listtree_Remove_TreeNode_All, 0 );
-	ListPanel( obj, node, panel );
-	SetAttrs( obj, MUIA_Listtree_Quiet, FALSE, TAG_DONE );
+
 	return( 0 );
 }
 
@@ -762,6 +769,7 @@ DEFSMETHOD(PanelListTree_FindUData)
 		}
 		n++;
 	}
+
 	return( 0 );
 }
 
@@ -782,3 +790,4 @@ DECMMETHOD(Cleanup)
 ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_Listtree, panellisttreeclass)
+#endif

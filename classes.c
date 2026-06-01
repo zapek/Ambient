@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: classes.c,v 1.20 2022/07/23 02:20:35 jacadcaps Exp $
+ * $Id: classes.c,v 1.22 2025/12/28 14:07:54 kronos Exp $
  */
 
 #include "ambient.h"
@@ -106,6 +106,7 @@ static const struct classdesc cd[] = {
 	CLASSENT(listviewlist),
 	CLASSENT(boopsiview),
 	/* panel classes */
+#if USE_INTERNAL_PANELS    
 	CLASSENT(panelbasebutton),
 	CLASSENT(panelwin),
 	CLASSENT(panelgroup),
@@ -123,8 +124,7 @@ static const struct classdesc cd[] = {
 	CLASSENT(paneldirpanelbutton),
 	CLASSENT(panelexternalsupport),
 	CLASSENT(panelsubwin),
-	CLASSENT(panelmessenger),
-	CLASSENT(panelmessengerfamily),
+#endif
 	/* prefs classes */
 	CLASSENT(prefswin_list),
 	CLASSENT(prefswin_main),
@@ -137,8 +137,10 @@ static const struct classdesc cd[] = {
 	CLASSENT(prefswin_dragdrop),
 	#endif
 	CLASSENT(prefswin_lister),
+#if USE_INTERNAL_PANELS    
 	CLASSENT(prefswin_panel),
 	CLASSENT(panelsliderspeed),
+#endif
 	CLASSENT(prefswin_mime),
 	CLASSENT(prefswin_window),
 	CLASSENT(prefswin_keyboard),

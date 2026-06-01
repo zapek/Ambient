@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: libs.c,v 1.15 2018/01/27 07:13:10 bigfoot Exp $
+ * $Id: libs.c,v 1.16 2025/08/17 17:18:57 piru Exp $
  */
 
 #include "ambient.h"
@@ -91,7 +91,7 @@ static const struct libdesc ld[] = {
 	#if USE_LEGACY
 	{(struct Library **)&DOSBase,       "dos.library",           50,   59, 0},
 	#else
-	{(struct Library **)&DOSBase,       "dos.library",           50,   65, 0},
+	{(struct Library **)&DOSBase,       "dos.library",           51,   30, 0},
 	#endif
 	{&LayersBase,                       "layers.library",        50,    1, 0},
 	{&DataTypesBase,                    "datatypes.library",     38,    0, 0},

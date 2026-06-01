@@ -1,4 +1,23 @@
-$Id: ambient.notes,v 1.203 2022/03/11 12:43:39 piru Exp $
+$Id: ambient.notes,v 1.206 2026/01/11 01:20:18 cyfm Exp $
+
+16.04.2025
+ - Fixed a race condition in the listview preview playback thread. It failed to
+   retain the object it was animating, leading to use-after-free. (MT#7648)
+   Similar issue was fixed in 30.12.2021 for icon preview. (piru)
+ - Added workaround to allow deleting files from context menu when in listview
+   thumbnail mode. This still doesn't solve the issue that the selected files
+   are locked from deletion by other tools. See MT#2841 for discussion. (piru)
+
+12.01.2023
+ - added ARexx command NetworksConnect, removed NetworksHidden/NetworksReauthenticate
+   (jacadcaps)
+
+29.12.2022
+ - added ARexx commands NetworksSettings/NetworksHidden/NetworksReauthenticate
+   (jacadcaps)
+
+27.12.2022
+ - added ARexx command Unmount (jacadcaps)
 
 11.03.2022
  - Fixed classic icon normalization (it was broken by 08.01.2022 change) (piru)
@@ -54,6 +73,9 @@ $Id: ambient.notes,v 1.203 2022/03/11 12:43:39 piru Exp $
  - No longer crashes when using F-keys in requesters. (itix)
  - No longer hits when attempting to rename nothing. (itix)
  - Fixed to rescan filetype when certain file protection bits have changed. (itix)
+
+29.12.2016
+ - Added ARexx commands Trash/RestoreFromTrash/EmptyTashcan (jacadcaps)
 
 03.09.2016
  - Fixed issue with iconless icon reading after reboot. (itix)

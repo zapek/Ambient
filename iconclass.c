@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: iconclass.c,v 1.60 2023/01/12 20:33:12 jacadcaps Exp $
+ * $Id: iconclass.c,v 1.62 2025/08/13 16:17:01 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -157,7 +157,7 @@ ULONG icon_flags_for_path(CONST_STRPTR path, ULONG type)
 		{
 		case MV_Icon_Type_Disk:
 		case MV_Icon_Type_Device:
-			return;
+			return 0; // bitRocky: returnvalue wasn't set
 		default:
 			if (is_trashcan(path))
 				return AS_INTRASHCAN;
@@ -2829,7 +2829,7 @@ DEFSMETHOD(Icon_Select)
 
 	if (data->type == MV_Icon_Type_MyComputer)
 	{
-		DoMethod(_app(obj), MM_Application_OpenDevicesWindow, 0);
+		DoMethod(_app(obj), MM_Application_OpenDevicesWindow, 0, get_screen_pubname(obj));
 	}
 	else if(data->type == MV_Icon_Type_View)
 	{
@@ -3179,7 +3179,7 @@ DEFMMETHOD(ContextMenuBuild)
 					{
 						if( data->path && (tn = malloc(sizeof(*tn) + strlen(data->path) + 1)) )
 						{
-							Object *mimeTypeObject = DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
+							Object *mimeTypeObject = (APTR)DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
 
 							NEWLIST(l);
 
@@ -3249,10 +3249,10 @@ DEFMMETHOD(ContextMenuBuild)
 							contextmenu_add_global( data->cmenu, NULL, globaltype );
 
 							/* Add mimetype menu */
-							if ( xget(mimeTypeObject, MA_Mimetype_Type) != NULL )
+							if ( xget(mimeTypeObject, MA_Mimetype_Type) != 0 ) // bitRocky: warning removed
 							{
 								D(MIMETYPE,bug("Common mimetype:%s\n", ((struct internal_mimetype_node *)xget(mimeTypeObject, MA_Mimetype_Type))->mimetype ));
-								contextmenu_add_mime( data->cmenu, NULL, xget(mimeTypeObject, MA_Mimetype_Type) );
+								contextmenu_add_mime( data->cmenu, NULL, (APTR)xget(mimeTypeObject, MA_Mimetype_Type) );
 							}
 
 							DoMethod(mimeTypeObject, OM_RELEASE);
@@ -3272,7 +3272,13 @@ DEFMMETHOD(ContextMenuBuild)
 					flags |= AS_SHORTCUT;
 
 					if ( data->type == MV_Icon_Type_Disk || data->type == MV_Icon_Type_Device )
+					{
 						flags |= get_device_properties(data);
+					}
+					else if (data->type == MV_Icon_Type_Drawer)
+					{
+						flags |= AS_DRAWER;
+					}
 				}
 				else
 				{
@@ -3411,7 +3417,7 @@ DEFMMETHOD(ContextMenuBuild)
 							 */
 
 							LONG cnt = 0;
-							Object *mimeTypeObject = DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
+							Object *mimeTypeObject = (APTR)DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN); // bitRocky: warning removed
 
 							if (do_action(obj, TA_MimeType_Scan,
 										TT_MimeType_Scan_Path, data->path,
@@ -3430,7 +3436,7 @@ DEFMMETHOD(ContextMenuBuild)
 								}
 							}
 
-							mimetype = xget(mimeTypeObject, MA_Mimetype_Type);
+							mimetype = (APTR)xget(mimeTypeObject, MA_Mimetype_Type); // bitRocky: warning removed
 							DoMethod(mimeTypeObject, OM_RELEASE);
 						}
 

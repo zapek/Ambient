@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: reggae_picture.c,v 1.16 2017/08/11 23:32:05 cyfm Exp $
+ * $Id: reggae_picture.c,v 1.17 2025/03/04 23:43:40 bitrocky Exp $
  */
 
 #include "ambient.h"
@@ -105,20 +105,20 @@ APTR v_reggae_picture_create(CONST_STRPTR filename, struct TagItem *tags)
 	{
 		if ( (rtp = malloc(sizeof(*rtp))) )
 		{
-			struct TagItem tags[10];
+			struct TagItem tags[5];
 			ULONG reggae_error = 0;
 			APTR obj;
 			
 			tags[0].ti_Tag = MMA_StreamType;
 			tags[0].ti_Data = (ULONG)"file.stream";
-			tags[1].ti_Data = (ULONG)filename;
 			tags[1].ti_Tag = MMA_StreamName;
+			tags[1].ti_Data = (ULONG)filename;
 			tags[2].ti_Tag = MMA_MediaType;
 			tags[2].ti_Data = MMT_PICTURE,
 			tags[3].ti_Tag = MMA_ErrorCode;
 			tags[3].ti_Data = (ULONG)&reggae_error;
-			tags[3].ti_Tag = TAG_END;
-			tags[3].ti_Data = 0;
+			tags[4].ti_Tag = TAG_END;
+			tags[4].ti_Data = 0;
 
 			if((obj = MediaNewObjectTagList(tags)))
 			{

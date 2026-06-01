@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: gfx_scale_vec.c,v 1.5 2017/07/25 20:36:32 piru Exp $
+ * $Id: gfx_scale_vec.c,v 1.6 2025/07/23 22:53:31 geit Exp $
  */
 
 #include "ambient.h"
@@ -39,7 +39,7 @@
 #include "align_vec.h"
 
 
-ULONG gfx_scale_vec_average(struct gsi_info *gsii, CONST ULONG *s, ULONG x, ULONG y)
+ULONG gfx_scale_vec_average(struct gsi_info *gsii, CONST ULONG *s, ULONG x UNUSED, ULONG y UNUSED)
 {
 	VECTOR_UBYTE v1, v2, v3, v4;
 	ULONG r;

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: screen.c,v 1.16 2018/07/26 15:19:46 itix Exp $
+ * $Id: screen.c,v 1.22 2025/09/12 16:06:01 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -33,9 +33,13 @@
 #include <proto/exec.h>
 #include <proto/dos.h>
 #include <proto/layers.h>
+#include <libraries/mui.h>
 
 /* private */
 #include "screen.h"
+#include "classes.h"
+
+void dprintf(char *, ...) __attribute__ ((format (printf, 1, 2)));
 
 
 /*
@@ -109,19 +113,6 @@ static LONG holdcount = 0; /* this one is only used by get_screen_hold()/_releas
 
 struct Screen *get_screen(void) /* XXX: is that called from threads? check.. yeah it is.. add some semaphore or so.. */
 {
-#if USE_MULTIPLE_DESKTOP
-	char *activescreenname;
-	if (!cached_screen)
-	{
-		activescreenname=active_screen_name();
-		DB(("LockPubScreen(%s)...\n", activescreenname));
-		if ( (cached_screen = LockPubScreen(activescreenname)) || (cached_screen = LockPubScreen("Workbench")) )
-		{
-			DB(("LockPubScreen(%s) was successful.\n", activescreenname));
-			UnlockPubScreen(NULL, cached_screen);
-		}
-	}
-#else
 	if (!cached_screen)
 	{
 		DB(("LockPubScreen(Workbench)...\n"));
@@ -131,7 +122,7 @@ struct Screen *get_screen(void) /* XXX: is that called from threads? check.. yea
 			UnlockPubScreen(NULL, cached_screen);
 		}
 	}
-#endif
+
 	return (cached_screen);
 }
 
@@ -161,45 +152,50 @@ struct Screen *screen_lock(void)
 	return LockPubScreen("Workbench");
 }
 
+struct Screen *screen_lock_by_id(ULONG sid)
+{
+	THREAD;
+	char name[128];
+
+	if (sid == 0)
+		return screen_lock();
+
+	snprintf(name, sizeof(name), "Workbench.%ld", sid);
+	return LockPubScreen(name);
+}
+
 /* Call only if unlock succeeded.
  *
  */
 void screen_unlock(struct Screen *locked_screen)
 {
 	THREAD;
-	UnlockPubScreen(NULL, locked_screen);
+	if (locked_screen)
+		UnlockPubScreen(NULL, locked_screen);
 }
 
+// Window.mui does not copy strings so it's important we use the hardcoded values here
+static const char *screenNames[] = {
+	"Workbench",
+	"Workbench.1",
+	"Workbench.2",
+	"Workbench.3",
+};
 
-char *active_screen_name(void)
+const char *active_screen_name(void)
 {
-#if USE_MULTIPLE_DESKTOP
-	struct Screen *ScreenName;
-
-	ScreenName=IntuitionBase->ActiveScreen;
-	return (ScreenName->DefaultTitle);
-#else
-	return "Workbench";
-#endif
-}
-
-
-#if USE_MULTIPLE_DESKTOP
-void create_screen(char *name)
-{
-	struct Screen *new_screen = NULL;
-
-	if (IntuitionBase != NULL)
+	ULONG sid = 0;
+	ULONG il = LockIBase(0);
+	if (IntuitionBase->FirstScreen)
 	{
-		new_screen = OpenScreenTags(NULL,
-				SA_LikeWorkbench, TRUE,
-				SA_Title, name,
-                                SA_PubName, name,
-				TAG_DONE);
-		PubScreenStatus(new_screen,0);
+		sid = get_screen_id((CONST_STRPTR)xget((Object *)IntuitionBase->FirstScreen, SA_PubName));
 	}
+	UnlockIBase(il);
+	
+	if (sid <= AMBIENT_MAX_EXTRA_SCREENS)
+		return screenNames[sid];
+	return screenNames[0];
 }
-#endif
 
 void flush_screen(void)
 {
@@ -211,4 +207,24 @@ BOOL is_screen_visible(void)
 	ULONG displayed = FALSE;
 	GetAttr(SA_Displayed, get_screen(), &displayed);
 	return displayed;
+}
+
+ULONG get_screen_id(CONST_STRPTR name)
+{
+	if (name && !strncmp(name, "Workbench.", 10))
+	{
+		ULONG id = atoi(name + 10);
+		if (id > AMBIENT_MAX_EXTRA_SCREENS)
+			return 0;
+		return id;
+	}
+	
+	return 0; // Ambient default screen
+}
+
+CONST_STRPTR get_screen_pubname(Object *muiArea)
+{
+	if (muiRenderInfo(muiArea) && _window(muiArea))
+		return (CONST_STRPTR)xget((Object *)_window(muiArea)->WScreen, SA_PubName);
+	return NULL; // default = Ambient main
 }

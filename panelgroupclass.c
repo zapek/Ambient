@@ -1,5 +1,7 @@
 #include "ambient.h"
 
+#if USE_INTERNAL_PANELS
+
 /* ANSI C */
 #include <stdlib.h>
 //#include <string.h>
@@ -1853,5 +1855,5 @@ ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_Group, panelgroupclass)
 
-
+#endif
 

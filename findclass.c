@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: findclass.c,v 1.19 2019/02/20 18:30:26 bitrocky Exp $
+ * $Id: findclass.c,v 1.24 2025/09/15 12:40:36 bitrocky Exp $
  */
 
 
@@ -86,6 +86,7 @@ struct targetnode
 	struct MinNode n;
 	TEXT target[0];
 };
+
 
 DEFNEW
 {
@@ -246,6 +247,10 @@ DEFNEW
 	data->bt_start    = bt_start;
 	data->bt_stop     = bt_stop;
 	data->lst_types   = lst_types;
+
+	DoMethod(lst_targets, MUIM_Notify, MUIA_List_DoubleClick, TRUE,
+		obj, 1, MM_Find_UpdateTarget
+	);
 
 	DoMethod(bt_start, MUIM_Notify, MUIA_Pressed, FALSE,
 		obj, 1, MM_Find_Start
@@ -546,6 +551,21 @@ DEFTMETHOD(Find_TypeSelected)
 	return 0;
 }
 
+DEFTMETHOD(Find_UpdateTarget)
+{
+	GETDATA;
+	STRPTR target;
+
+	DoMethod(data->lst_targets, MUIM_List_GetEntry, MUIV_List_GetEntry_Active, &target);
+	if (target)
+	{
+		set(data->str_target, MUIA_String_Contents, target);
+	}
+
+	return 0;
+}
+
+
 DEFSMETHOD(Window_Close)
 {
 	GETDATA;
@@ -731,21 +751,23 @@ static ULONG checkfile(APTR obj UNUSED, CONST_STRPTR path, LONG type UNUSED, ULO
 	if ( data->find_name && *data->find_name && match == TRUE )
 		match = name_match(FilePart(path), data->find_name);
 
-	if ( data->find_text && *data->find_text && match == TRUE )
-		match = file_findtext(path, data->find_text);
-
-	if ( data->find_type && match == TRUE )
-		match = mimetype_checkpath( data->find_type, path );
-
 	if ( data->find_comment && *data->find_comment && match == TRUE )
 		match = name_match(comment, data->find_comment);
 
-	if ( !data->find_type && data->find_mime && *data->find_mime && match == TRUE )
+	if ( match == TRUE )
 	{
-		/* lookup type and do namematching */
+		if ( data->find_type )
+			match = mimetype_checkpath( data->find_type, path );
+		else if ( data->find_mime && *data->find_mime )
+		{
+			/* lookup type and do namematching */
 
-		match = (LONG)mimetype_find_pattern( "file://", path, MTF_FILEIO, data->find_mime ) ? TRUE : FALSE;
+			match = (LONG)mimetype_find_pattern( "file://", path, MTF_FILEIO, data->find_mime ) ? TRUE : FALSE;
+		}
 	}
+
+	if ( data->find_text && *data->find_text && match == TRUE )
+		match = file_findtext(path, data->find_text);
 
 	if ( match == TRUE )
 		methodstack_push_sync( wo, 3, MM_Find_AddResult, path, comment);
@@ -800,6 +822,7 @@ DECTMETHOD(Find_Start)
 DECTMETHOD(Find_Stop)
 DECTMETHOD(Find_Update)
 DECTMETHOD(Find_TypeSelected)
+DECTMETHOD(Find_UpdateTarget)
 DECTMETHOD(Window_Close)
 DECSMETHOD(Thread_Finished)
 

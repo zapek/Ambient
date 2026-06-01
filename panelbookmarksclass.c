@@ -19,11 +19,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: panelbookmarksclass.c,v 1.6 2012/08/29 13:55:46 geit Exp $
+ * $Id: panelbookmarksclass.c,v 1.7 2025/09/16 15:52:29 kronos Exp $
  */
 
 #include "ambient.h"
 
+#if USE_INTERNAL_PANELS
 /* public */
 #include <cybergraphx/cybergraphics.h>
 #include <graphics/rpattr.h>
@@ -134,3 +135,4 @@ ENDMTABLE
 
 DECSUBCLASSPTR_NC(panelbasebuttonclass, panelbookmarksclass)
 
+#endif

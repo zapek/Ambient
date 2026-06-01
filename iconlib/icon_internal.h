@@ -1,7 +1,7 @@
 #ifndef AMBIENT_ICON_INTERNAL_LIB_H
 #define AMBIENT_ICON_INTERNAL_LIB_H
 /*
- * $Id: icon_internal.h,v 1.5 2017/09/12 21:16:02 nadir Exp $
+ * $Id: icon_internal.h,v 1.8 2025/09/06 01:31:01 piru Exp $
  */
 
 #include <workbench/workbench.h>
@@ -18,6 +18,10 @@ struct KnownDiskObject {
 	struct FreeList *fl;       /* this is safe for WB 3.1 */
 };
 
+struct ToolTypeNode {
+	struct MinNode n;
+	TEXT tt[0];
+};
 
 /*
  * Extended DiskObject structure
@@ -42,6 +46,12 @@ struct OwnDiskObject {
 	ULONG pngimage_height;
 	struct BitMap *pngimage2;
 	APTR svgdoc;
+	struct MinList tooltypelist;
+	//ULONG haspos;
+	//ULONG hasdrawerdata;
+	ULONG viewmode;
+	ULONG origflags;
+	UWORD origviewmodes;
 };
 
 #define ISOWN(x) (((struct OwnDiskObject *)x)->ownmagic == OWN_MAGIC && ((struct OwnDiskObject *)x)->ownptr == x)
@@ -50,7 +60,7 @@ struct OwnDiskObject {
 #define MAX_DEFICON_FILEPATH	256
 
 /* Number of entries in the mementrys in the freelists */
-#define FREELIST_MEMLISTENTRIES 10
+#define FREELIST_MEMLISTENTRIES 20
 
 #pragma pack(2)
 

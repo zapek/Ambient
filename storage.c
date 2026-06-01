@@ -239,7 +239,7 @@ void storage_commit(void)
 			{
 				if (!OpenIFF(iff, IFFF_WRITE))
 				{
-					LONG rc = DoMethod(dataspace, MUIM_Dataspace_WriteIFF, iff, MAKE_ID('D','A','T','A'), ID_FORM);
+					LONG rc UNUSED = DoMethod(dataspace, MUIM_Dataspace_WriteIFF, iff, MAKE_ID('D','A','T','A'), ID_FORM);
 					CloseIFF(iff);
 					DB(("...commited. rc = %d\n", rc));
 				}

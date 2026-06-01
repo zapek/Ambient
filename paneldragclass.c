@@ -1,5 +1,3 @@
- //#include "demo.h"
-
 /* MUI */
 #ifdef MYDEBUG
 #include "mui.h"
@@ -39,6 +37,8 @@
 
 
 #include "ambient.h"
+
+#if USE_INTERNAL_PANELS
 
 /* public */
 #include <cybergraphx/cybergraphics.h>
@@ -612,6 +612,6 @@ DECMMETHOD(Draw)
 ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_Area, paneldragclass)
-
+#endif
 
 

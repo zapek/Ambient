@@ -20,7 +20,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: actioneditclass.c,v 1.6 2022/01/09 05:55:21 piru Exp $
+ * $Id: actioneditclass.c,v 1.8 2025/09/09 12:46:45 jacadcaps Exp $
  */
 
 /*
@@ -454,7 +454,7 @@ static void set_mainmethods(struct Data *data, APTR obj)
 
 DEFNEW
 {
-	ULONG commandset;
+//	ULONG commandset;
 	APTR listobj, ac_listobj, c_cdd, c_cds, c_quote, commandwin, commandgrp, commandwidgetsgrp;
 	APTR argstr, opencmd_bt, ac_up, ac_down, ac_addcmd, ac_remcmd, ac_addaction, ac_remaction;
 	APTR popstr, popasl, actionstring;
@@ -469,8 +469,8 @@ DEFNEW
 			mime_node = (APTR) tag->ti_Data;
 			break;
 
-		case MA_Actionedit_Commandset:
-			commandset = tag->ti_Data;
+//		case MA_Actionedit_Commandset:
+//			commandset = tag->ti_Data;    /* why? */
 	}
 	NEXTTAG
 
@@ -560,7 +560,7 @@ DEFNEW
 	End;
 
 	commandwin = WindowObject,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_Title, "Select a command",
 		MUIA_Window_LeftEdge, MUIV_Window_LeftEdge_Moused,
@@ -642,7 +642,7 @@ DEFNEW
 			MUI_DisposeObject(commandwin);
 			MUI_DisposeObject(obj);
 
-			return NULL;
+			return ((ULONG) NULL);
 		}
 		
 		set_commands(data, obj);

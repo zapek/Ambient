@@ -18,10 +18,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: panelwinclass.c,v 1.24 2022/01/09 05:55:22 piru Exp $
+ * $Id: panelwinclass.c,v 1.27 2025/09/16 15:52:30 kronos Exp $
  */
 
 #include "ambient.h"
+
+#if USE_INTERNAL_PANELS
 
 #include <proto/gadtools.h>
 #include <proto/dos.h>
@@ -876,4 +878,4 @@ DECSMETHOD(Panelwin_FindObject)
 ENDMTABLE
 
 DECSUBCLASS_NC( MUIC_Window, panelwinclass )
- 
+#endif

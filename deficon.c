@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: deficon.c,v 1.6 2014/07/21 07:26:52 leif Exp $
+ * $Id: deficon.c,v 1.7 2025/07/23 22:53:31 geit Exp $
  */
 
 #include "ambient.h"
@@ -56,7 +56,7 @@ static void kill_digits(STRPTR s)
 STRPTR deficon_build_devicename(STRPTR filename)
 {
 	TEXT path[PATH_SIZE + 64];
-	BPTR l = NULL;
+	BPTR l = 0;
 	UBYTE devname[64];
 	UBYTE *buf;
 	struct dlcnode *dn;

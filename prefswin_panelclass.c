@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: prefswin_panelclass.c,v 1.19 2021/04/18 12:08:07 kronos Exp $
+ * $Id: prefswin_panelclass.c,v 1.23 2025/09/16 15:52:30 kronos Exp $
  */
 
 #include "ambient.h"
@@ -37,7 +37,7 @@
 #include "legacy.h"
 #include "paneltags.h"
 #include "panelitem.h"
-
+#if USE_INTERNAL_PANELS
 /************************************************************************/
 
 struct Data {
@@ -169,41 +169,37 @@ DEFNEW
 	prefswin = obj = DoSuperNew( cl, obj,
 		Child, RegisterGroup( pages ),
 			Child, ColGroup(2),
-			Child, VGroup,  MUIA_Weight,  80,
-				Child, t.listtreegroup = VGroup, MUIA_Weight,  80,
-				
-					Child,HGroup,
-						Child, t.new_panel = MUICreateButton( MSG_PREFSWIN_PANEL_NEW , NULL ),
-					//	  Child, HSpace(0),
-						Child, t.del_object = MUICreateButton( MSG_PREFSWIN_PANEL_DELETE , NULL ),
+				Child, VGroup,  MUIA_Weight,  80,
+					Child, t.listtreegroup = VGroup, MUIA_Weight,  80,
+					
+						Child,HGroup,
+							Child, t.new_panel = MUICreateButton( MSG_PREFSWIN_PANEL_NEW , NULL ),
+						//	  Child, HSpace(0),
+							Child, t.del_object = MUICreateButton( MSG_PREFSWIN_PANEL_DELETE , NULL ),
 						End,
 					End,
-				//	  End,
-			
-				End,
-					
+					//	  End,
 				
-					
+				End,
 					//Child,HGroup,
-						Child, VGroup,MUIA_HorizWeight,  30,
-						Child, t.lv_item = NewObject( getpanelitem_listclass(), NULL,
-																MUIA_CycleChain,           TRUE,
-																MUIA_Listview_DragType,    MUIV_Listview_DragType_Immediate,
-																MUIA_Listview_MultiSelect, MUIV_Listview_MultiSelect_None,
-																MUIA_ShortHelp, GSI(MSG_PREFSWIN_PANEL_LIST_HELP) ,
-																End,
-						Child, t.rescan = MUICreateButton(MSG_PREFSWIN_PANEL_RESCAN , NULL),
+				Child, VGroup,MUIA_HorizWeight,  30,
+					Child, t.lv_item = NewObject( getpanelitem_listclass(), NULL,
+						MUIA_CycleChain,           TRUE,
+						MUIA_Listview_DragType,    MUIV_Listview_DragType_Immediate,
+						MUIA_Listview_MultiSelect, MUIV_Listview_MultiSelect_None,
+						MUIA_ShortHelp, GSI(MSG_PREFSWIN_PANEL_LIST_HELP) ,
+					End,
+					Child, t.rescan = MUICreateButton(MSG_PREFSWIN_PANEL_RESCAN , NULL),
 					//End,
-					End,
+				End,
 
-
-					Child,VGroup,
+				Child,VGroup,
 					Child, t.object_group = VGroup, MUIA_VertWeight,  30,MUIA_HorizWeight,  80,     End,
-					End,
+				End,
 
 			//	  Child, MUI_MakeObject( MUIO_VBar, 1 ),
 			
-					Child,VGroup, MUIA_VertWeight,  30,MUIA_HorizWeight,  30,
+				Child,VGroup, MUIA_VertWeight,  30,MUIA_HorizWeight,  30,
 					Child, ColGroup(2), MUIA_Group_HorizCenter,2,
 					//	  Child, MUICreateLabel( MSG_PREFSWIN_PANEL_CLASS_NAME, /*MUIO_Label_LeftAligned|*/MUIO_Label_SingleFrame),
 					//	  Child, t.txt_name = MUICreateTextNoFrame( MSG_PREFSWIN_PANEL_CLASS_NAME, NULL ),
@@ -220,9 +216,9 @@ DEFNEW
 				//	  Child, HGroup,
 					//	  GroupFrameT(GSI(MSG_PANELITEMWINCLASS_DESCGROUPTITLE)),
 
-						Child, t.ft_descr = FloattextObject, MUIA_List_HScrollerVisibility, MUIV_List_HScrollerVisibility_Never,
-												TextFrame, MUIA_ShortHelp, GSI(MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE_HELP ),
-												End,
+					Child, t.ft_descr = FloattextObject, MUIA_List_HScrollerVisibility, MUIV_List_HScrollerVisibility_Never,
+						TextFrame, MUIA_ShortHelp, GSI(MSG_PREFSWIN_PANEL_CLASS_DESCGROUPTITLE_HELP ),
+					End,
 						//End,
 				//	  End,
 				End,
@@ -555,6 +551,7 @@ DEFGET
 		default:
 			result = DOSUPER;
 	}
+
 	return( result );
 }
 
@@ -565,9 +562,10 @@ DEFSMETHOD(Prefswin_Main_Close)
 	APTR win;
 	ULONG type;
 	APTR win_state;
-	GETDATA;
+	//GETDATA;
 	struct List *win_list;
-	SetAttrs( data->panelobject, MA_AmbientPanel_SettingsPanel ,0,TAG_DONE);
+
+	//SetAttrs( data->panelobject, MA_AmbientPanel_SettingsPanel ,0,TAG_DONE);
 	
 	switch( msg->mode )
 	{
@@ -615,6 +613,7 @@ DEFSMETHOD(Prefswin_Main_Close)
 			panelprefs_loadall();    /* reload them from prefs-files */
 			break;
 	}
+
 	return( 0 );
 }
 
@@ -686,6 +685,7 @@ DEFSMETHOD(Prefswin_Panels_Selected)
 		DoMethod( data->object_group, MUIM_Group_ExitChange );
 		set( data->del_object, MUIA_Disabled, FALSE );
 	}
+
 	return( 0 );
 }
 
@@ -695,10 +695,12 @@ DEFSMETHOD(Prefswin_Panels_HasClosed)
 {
 	GETDATA;
 	struct MUIS_Listtree_TreeNode *panelnode;
+
 	if( ( panelnode = (struct MUIS_Listtree_TreeNode *)  DoMethod( data->panel_list, MM_PanelListTree_FindUData, msg->panel ) ) )
 	{
 		DoMethod( data->panel_list, MUIM_Listtree_Remove, 0, panelnode, 0 );
 	}
+
 	return( 0 );
 }
 
@@ -707,12 +709,14 @@ DEFSMETHOD(Prefswin_Panels_HasClosed)
 DEFTMETHOD(Prefswin_Panels_Delete)
 {
 	GETDATA;
-	struct MUIS_Listtree_TreeNode *node,*parent_node;
+	struct MUIS_Listtree_TreeNode *node,*parent_node, *next_node, *prev_node=NULL;
 	APTR o, parent;
-	ULONG active_pos;
+	//ULONG active_pos;
 
-	node = (struct MUIS_Listtree_TreeNode*) DoMethod( data->panel_list, MUIM_Listtree_GetEntry, 0, MUIV_Listtree_GetEntry_Position_Active );
-	active_pos  = getv( data->panel_list, MUIA_List_Active );
+	//node = (struct MUIS_Listtree_TreeNode*) DoMethod( data->panel_list, MUIM_Listtree_GetEntry, 0, MUIV_Listtree_GetEntry_Position_Active );
+	//node = (struct MUIS_Listtree_TreeNode*) DoMethod( data->panel_list, MUIM_Listtree_GetEntry, MUIV_Listtree_GetEntry_ListNode_Active, MUIV_Listtree_GetEntry_Position_Active );
+	node = (struct MUIS_Listtree_TreeNode*) getv( data->panel_list, MUIA_Listtree_Active );
+	//active_pos  = getv( data->panel_list, MUIA_List_Active );
 	if( node )
 	{
 		if( (o = node->tn_User ) )
@@ -721,6 +725,7 @@ DEFTMETHOD(Prefswin_Panels_Delete)
 			{
 				APTR win;
 				parent_node = (struct MUIS_Listtree_TreeNode*) DoMethod( data->panel_list, MUIM_Listtree_GetEntry, node, MUIV_Listtree_GetEntry_Position_Parent );
+				next_node = (struct MUIS_Listtree_TreeNode*) DoMethod( data->panel_list, MUIM_Listtree_GetEntry, node, MUIV_Listtree_GetEntry_Position_Next );
 				DoMethod( parent, MUIM_Group_InitChange );
 				DoMethod( parent, OM_REMMEMBER, o );
 				DoMethod( parent, MUIM_Group_ExitChange );
@@ -731,22 +736,43 @@ DEFTMETHOD(Prefswin_Panels_Delete)
 					 SetAttrs( _win(parent), MUIA_Window_Height, MUIV_Window_Height_Default, TAG_DONE );
 				}
 				MUI_DisposeObject( o );
-				set( parent, MA_Panelgroup_HasChanged, TRUE );
+				//set( parent, MA_Panelgroup_HasChanged, TRUE );
+				if (!next_node) {
+					// if the user removes the last treenode in a listnode, the next listnode becomes the active node!
+					// but we want to use the prev tree_node as active node
+					prev_node = (struct MUIS_Listtree_TreeNode*) DoMethod( data->panel_list, MUIM_Listtree_GetEntry, node, MUIV_Listtree_GetEntry_Position_Previous);
+					// if also the prev_node is NULL, set the parent_node to the active node
+					if (!prev_node) prev_node = parent_node;
+				}		
+				//DoMethod( data->panel_list, MUIM_Listtree_Remove, parent_node, MUIV_Listtree_Remove_TreeNode_Active);
+				SetAttrs( data->panel_list, MUIA_Listtree_Quiet, TRUE, TAG_DONE ); // w/o this the visual structure can be corrupted
+				// the docs say that MUIV_Listtree_Remove_ListNode_Active isn't implemented, but it seems to work!
+				DoMethod( data->panel_list, MUIM_Listtree_Remove, MUIV_Listtree_Remove_ListNode_Active, MUIV_Listtree_Remove_TreeNode_Active, 0);
+				SetAttrs( data->panel_list, MUIA_Listtree_Quiet, FALSE, TAG_DONE );
+
+				if (prev_node) set( data->panel_list, MUIA_Listtree_Active, prev_node);
+
+/* 
 				node = (struct MUIS_Listtree_TreeNode*) DoMethod( data->panel_list, MUIM_Listtree_GetEntry, parent_node, active_pos - 2 );
 				if( ( node ) && ( active_pos > 1 ) )
 				{
 					set( data->panel_list,MUIA_Listtree_Active,node);
 				}
+*/
 			} else { /* no parent == panelwindow*/
+/*
 				if( active_pos > 0 )
-				{                /*move active item BEFORE deleting, treelist might get corrupted otherwise*/
+				{                //move active item BEFORE deleting, treelist might get corrupted otherwise
 					set( data->panel_list, MUIA_List_Active, MUIV_List_Active_Up );
-				} else {                /* treelist also doesn't like active to set below 0 .... */
+				} else {                // treelist also doesn't like active to set below 0 ....
 					set( data->panel_list, MUIA_List_Active, MUIV_List_Active_Off );
 				}
-				set(data->panel_list, MUIA_List_Quiet, TRUE );
+*/
+				next_node = (struct MUIS_Listtree_TreeNode*) getv( data->panel_list, MUIA_Listtree_Active );
+
+				set(data->panel_list, MUIA_Listtree_Quiet, TRUE );
 				DoMethod(data->panel_list,MUIM_Listtree_Remove, 0 ,node,0); /* now it's safe to remove item*/
-				set( data->panel_list, MUIA_List_Quiet, FALSE );
+				set( data->panel_list, MUIA_Listtree_Quiet, FALSE );
 				set( o, MUIA_Window_Open, FALSE ); /* only hide the panel in case user hits "cancel" */
 			}
 	
@@ -769,6 +795,7 @@ DEFTMETHOD(Prefswin_Panels_New)
 		data->panelwin = 0;
 		DoMethod( data->panel_list, MM_PanelListTree_CreateItem, 0, o );
 	}
+
 	return( 0 );
 }
 
@@ -777,6 +804,7 @@ DEFTMETHOD(Prefswin_Panels_New)
 DEFTMETHOD(Prefswin_Store)
 {
 	GETDATA;
+
 	setprefslong( DSI_PANEL_ZIPSPEED          , slider_to_speed( getv( data->sl_speed, MUIA_Slider_Level ) ) );
 	setprefslong( DSI_PANEL_AUTOSAVE_DROP     , getv( data->as_drop           , MUIA_Selected ) );
 	setprefslong( DSI_PANEL_AUTOSAVE_DELETE   , getv( data->as_delete         , MUIA_Selected ) );
@@ -809,10 +837,11 @@ DEFTMETHOD(Prefswin_Store)
 
 DEFSMETHOD(Prefswin_Panels_UpdatePanels)
 {
+#if 0
 	APTR win_state,win;
 	struct List *win_list;
 	ULONG type;
-
+#endif
 	DoMethod( _win(obj), MM_Prefswin_Main_Close, MV_Prefswin_Main_Close_Test );
 #if 0
  /*  seems the reason for it to exist doesn't get triggered on a current MUI */ 	
@@ -865,6 +894,7 @@ DEFTMETHOD(Prefswin_Panels_RescanClasses)
 	panelprefs_loadall();    /* reload them from prefs-files */
 #endif
 	DoMethod( data->lv_item, MM_PanelItemList_RefreshList );
+
 	return( 0 );
 }
 
@@ -906,6 +936,7 @@ DEFSMETHOD(Prefswin_Panels_ItemListChange)
 	} else {
 		set( data->txt_version, MUIA_Text_Contents, "" );
 	}
+
 	return( 0 );
 }
 
@@ -934,4 +965,4 @@ DECDISPOSE
 ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_Group, prefswin_panelclass)
- 
+#endif

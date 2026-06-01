@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: appwindow.c,v 1.8 2016/06/19 16:33:06 itix Exp $
+ * $Id: appwindow.c,v 1.9 2025/07/05 12:31:05 kronos Exp $
  */
 
 #include "globals.h"
@@ -29,12 +29,14 @@
 #include <dos/dosextens.h>
 #include <proto/exec.h>
 #include <proto/hashtable.h>
+#include <proto/utility.h>
 
 /* private */
 #include "clib/wb_protos.h"
 #include "../ipc.h"
 #include "lib.h"
 
+#include "AppWindow.h"
 
 #define DB_ADDAPPWINDOW 0
 #define DB_REMOVEAPPWINDOW 0
@@ -95,7 +97,7 @@ struct AppWindow *LIB_AddAppWindowA(void)
 	ULONG userdata = REG_D1;
 	struct Window *window = (APTR)REG_A0;
 	struct MsgPort *msgport = (APTR)REG_A1;
-	//APTR tags = (APTR)REG_A2;
+	struct TagItem *tags = (struct TagItem*)REG_A2;
 	struct LibBase *base = (APTR)REG_A6;
 
 	if (window && msgport)
@@ -103,7 +105,9 @@ struct AppWindow *LIB_AddAppWindowA(void)
 		if ((appwin = AllocMem(sizeof(*appwin), MEMF_ANY)))
 		{
 			APTR dummy;
-
+			struct TagItem *mouseTag;
+			if((tags)&&((mouseTag = FindTagItem(WB_AW_MouseReport,tags)))) appwin->message_types = mouseTag->ti_Data;
+			else appwin->message_types = 0;
 			appwin->id = id;
 			appwin->userdata = userdata;
 			appwin->userport = msgport;

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: hexviewclass.c,v 1.1 2022/07/23 02:20:35 jacadcaps Exp $
+ * $Id: hexviewclass.c,v 1.4 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -63,7 +63,7 @@ static void doset(APTR obj UNUSED, struct Data *data, struct TagItem *tags)
 DEFNEW
 {
 	struct Data *data;
-	APTR hex, sGroup;
+	APTR hex; //, sGroup;
 
 	obj = DoSuperNew(cl, obj,
 		Child, hex = HexObject,
@@ -157,7 +157,7 @@ DEFMMETHOD(Setup)
 
 	if ((rc = DOSUPER))
 	{
-		GETDATA;
+//		GETDATA;
 
         /* initial window position */
 

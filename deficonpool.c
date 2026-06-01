@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: deficonpool.c,v 1.20 2022/01/08 01:29:26 piru Exp $
+ * $Id: deficonpool.c,v 1.21 2025/07/23 23:54:26 geit Exp $
  */
 
 #include "ambient.h"
@@ -773,7 +773,7 @@ ULONG deficonpool_apply_default_icon(APTR obj, ULONG type, STRPTR path, APTR mim
 			D(DEFICONPOOL,bug("[View:%d]:Failed\n", viewid));
 		}
 
-		mimetype = xget(mtObject, MA_Mimetype_Type);
+		mimetype = (APTR) xget(mtObject, MA_Mimetype_Type);
 		DoMethod(mtObject, OM_RELEASE);
 	}
 

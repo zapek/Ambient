@@ -1,4 +1,3 @@
-
 /* ANSI C */
 #include <stdlib.h>
 #include <string.h>
@@ -45,6 +44,8 @@
 #include "dragdrop.h"
 #include "legacy.h"
 #include "paneltags.h"
+
+#if USE_INTERNAL_PANELS
 
 /************************************************************************/
 
@@ -244,14 +245,14 @@ DEFSMETHOD(Panel_SaveConfig)
 
 	if( !( pl = prefspool_item_get( msg->pctx, NULL, DSI_LISTPOOL_PANEL, NULL, NULL ) ) )
 	{
-		pl = prefspool_item_add( msg->pctx, NULL, DSI_LISTPOOL_PANEL, NULL, NULL );
+		pl = prefspool_item_add( msg->pctx, NULL, DSI_LISTPOOL_PANEL, NULL, 0 );
 	}
 
 	if( pl )
 	{
 		if( !( pi = prefspool_item_get( msg->pctx, pl, msg->index | DSF_LISTPOOL, NULL, NULL ) ) )
 		{
-			pi = prefspool_item_add( msg->pctx, pl, msg->index | DSF_LISTPOOL, NULL, NULL );
+			pi = prefspool_item_add( msg->pctx, pl, msg->index | DSF_LISTPOOL, NULL, 0 );
 		}
 		if( pi )
 		{
@@ -330,3 +331,4 @@ DECTMETHOD(Panel_Settings_Group)
 ENDMTABLE
 
 DECSUBCLASSPTR_NC(panelbasebuttonclass,  paneldirpanelbuttonclass)
+#endif

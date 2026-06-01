@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: preferences_update.c,v 1.12 2018/08/20 21:55:17 itix Exp $
+ * $Id: preferences_update.c,v 1.13 2025/08/13 16:17:01 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -560,7 +560,7 @@ ULONG preferences_apply_update(Object *app, ULONG id)
 
 	if (update_mymorphos)
 	{
-		APTR wo = (APTR)DoMethod(app, MM_Application_FindWindowByType, MV_Window_Type_Rootview);
+		APTR wo = (APTR)DoMethod(app, MM_Application_FindWindowByID, MV_Window_ID_Root);
 		APTR vo = wo ? (APTR)getv(wo, MA_Window_Viewobj) : NULL;
 
 		if (vo != NULL)

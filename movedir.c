@@ -19,12 +19,13 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: movedir.c,v 1.17 2019/02/19 17:53:29 bitrocky Exp $
+ * $Id: movedir.c,v 1.19 2025/08/17 18:00:19 piru Exp $
  */
 
 #include "ambient.h"
 
 /* public */
+#include <dos/dostags.h>
 #include <proto/dos.h>
 #include <proto/exec.h>
 
@@ -196,6 +197,13 @@ restart_createdir:
 	return (rc);
 }
 
+static const struct TagItem extags[] =
+{
+#ifdef EX64TAG_PosixDate
+	{EX64TAG_PosixDate, TRUE},
+#endif
+	{TAG_DONE,}
+};
 
 static ULONG leavedir(APTR obj UNUSED, CONST_STRPTR path, APTR userdata)
 {
@@ -207,7 +215,10 @@ static ULONG leavedir(APTR obj UNUSED, CONST_STRPTR path, APTR userdata)
 		LONG ex;
 		D_S(struct FileInfoBlock, fib);
 
-		ex = Examine(l, fib);
+#ifdef fib_ActExtFlags
+		fib->fib_ActExtFlags = 0;
+#endif
+		ex = Examine64(l, fib, LIB_MINVER(DOSBase, 51, 66) ? (struct TagItem *) extags : NULL);
 		UnLock(l);
 
 		if (ex)
@@ -240,7 +251,12 @@ static ULONG leavedir(APTR obj UNUSED, CONST_STRPTR path, APTR userdata)
 			SetProtection(cs->fulldir, fib->fib_Protection & ~FIBF_ARCHIVE);
 			notify_action(cs->fulldir, NOTIFYTAG_Monitor_File, NOTIFYTAG_Monitor_File_Flags, fib->fib_Protection & ~FIBF_ARCHIVE );
 
-			SetFileDate(cs->fulldir, &fib->fib_Date);
+#if defined(fib_ActExtFlags) && defined(FIBEXTF_POSIXDATE) && defined(SetFilePosixDate)
+			if (fib->fib_ActExtFlags & FIBEXTF_POSIXDATE)
+				SetFilePosixDate(cs->fulldir, &fib->fib_PosixDate, NULL);
+			else
+#endif
+				SetFileDate(cs->fulldir, &fib->fib_Date);
 			//notify_action(cs->fulldir, NOTIFYTAG_Monitor_File, NOTIFYTAG_Monitor_File_Date, ...);
 		}
 	}

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: smartreq.c,v 1.19 2017/04/09 08:50:17 bigfoot Exp $
+ * $Id: smartreq.c,v 1.22 2025/09/12 16:06:01 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -116,7 +116,6 @@ DEFNEW
 	APTR txt_req, grp_buttons, grp_root;
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_LeftEdge, MUIV_Window_LeftEdge_Centered,
 		MUIA_Window_TopEdge, MUIV_Window_TopEdge_Centered,
@@ -811,7 +810,7 @@ static ULONG set_fileinfo(APTR obj, CONST_STRPTR file)
 		TEXT tmpdate[ 50 ];
 		TEXT tmptime[ 50 ];
 		TEXT t[32];
-		TEXT info[128];
+		TEXT info[256];
 		CONST_STRPTR str;
 
 		dt.dat_Stamp.ds_Days    = fi.fi_Date.ds_Days;

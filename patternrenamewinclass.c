@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: patternrenamewinclass.c,v 1.3 2015/08/11 14:54:38 itix Exp $
+ * $Id: patternrenamewinclass.c,v 1.5 2025/09/09 12:46:46 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -57,7 +57,7 @@ DEFNEW
 	APTR str_src, str_dst, bt_rename, bt_cancel, bt_skip, lab_src;
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_Title, GSI( MSG_PATTERNRENAMEWINCLASS_WINDOWTITLE ),
 		MUIA_Window_LeftEdge, MUIV_Window_LeftEdge_Moused,
@@ -105,7 +105,7 @@ DEFNEW
 
 	if (!obj)
 	{
-		return (NULL);
+		return ((ULONG) NULL);
 	}
 
 	data = INST_DATA(cl, obj);

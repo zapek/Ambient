@@ -19,7 +19,7 @@
  * long with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: vfs.c,v 1.27 2021/01/30 22:15:47 piru Exp $
+ * $Id: vfs.c,v 1.30 2025/08/28 13:06:42 piru Exp $
  */
 
 #include "ambient.h"
@@ -177,11 +177,13 @@ APTR vfs_open(CONST_STRPTR path, ULONG type)
 	APTR   MyFSContext;
 	STRPTR quotedpath;
 
+#if 0
 	/* Requires at least dos 51.21 */
 	if (!LIB_MINVER(&DOSBase->dl_lib, 51, 21))
 	{
 		return ret;
 	}
+#endif
 
 	MyFSContext = NULL;
 	quotedpath = name_build_readargs_quoted(path, NULL, 0);
@@ -199,7 +201,7 @@ APTR vfs_open(CONST_STRPTR path, ULONG type)
 				{
 					MyFSContext=AllocDosObjectTags(DOS_FSCONTEXT,
 					                               ADO_DN_Seglist, (ULONG) MySegList,
-												   ADO_DN_Priority, 5,
+					                               ADO_DN_Priority, 5,
 					                               ADO_DN_Startup, (ULONG) buffer,
 					                               TAG_END);
 					/* If AllocDosObjectTags failed, then the seglist needs to be unloaded by us.
@@ -213,7 +215,7 @@ APTR vfs_open(CONST_STRPTR path, ULONG type)
 			{
 				MyFSContext=AllocDosObjectTags(DOS_FSCONTEXT,
 				                               ADO_FS_DosType,/*ID_CDFS_DISK*/ 0x43444653,
-											   ADO_DN_Priority, 5,
+				                               ADO_DN_Priority, 5,
 				                               ADO_DN_Startup,(ULONG) buffer,
 				                               TAG_END);
 			}
@@ -296,6 +298,8 @@ STRPTR vfs_resolve_path(STRPTR path, STRPTR result, ULONG size, ULONG volume)
 
 	if(!path_tmp)
 	{
+		if (size)
+			result[0] = 0;
 		return NULL;
 	}
 

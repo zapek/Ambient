@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: snddrv_ahi.c,v 1.8 2017/08/11 23:32:05 cyfm Exp $
+ * $Id: snddrv_ahi.c,v 1.9 2026/01/27 21:28:49 bitrocky Exp $
  */
 
 #include "ambient.h"
@@ -87,7 +87,7 @@ APTR snddrv_ahi_open(const struct TagItem *tags)
 							break;
 
 						case SOUNDTAG_Frequency:
-							ct->frequency = minmax(512, tag->ti_Data, 120000); /* XXX: no clue what to put as max */
+							ct->frequency = minmax(512, tag->ti_Data, 192000); /* XXX: no clue what to put as max */
 							break;
 
 						case SOUNDTAG_Volume:

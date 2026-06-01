@@ -19,10 +19,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: panelitem.c,v 1.24 2019/04/14 13:17:03 kronos Exp $
+ * $Id: panelitem.c,v 1.25 2025/09/16 15:52:29 kronos Exp $
  */
 
 #include "ambient.h"
+
+#if USE_INTERNAL_PANELS
 
 #include <proto/dos.h>
 /* public */
@@ -228,4 +230,4 @@ LONG PanelItem_NameToType( CONST_STRPTR name )
 		}
 	}
 }
-
+#endif

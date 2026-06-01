@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: examine64.c,v 1.7 2008/04/20 17:49:37 kiero Exp $
+ * $Id: examine64.c,v 1.8 2025/08/17 17:18:57 piru Exp $
  */
 
 #include "ambient.h"
@@ -42,7 +42,7 @@ ULONG examine64(CONST_STRPTR name, struct fileinfo64 *fi)
 
 	#if !USE_LEGACY
 
-	if (LIB_MINVER(&DOSBase->dl_lib, 51, 28))
+	if (1) //if (LIB_MINVER(&DOSBase->dl_lib, 51, 28))
 	{
 		BPTR l;
 
@@ -118,7 +118,7 @@ ULONG examinefh64(BPTR fh, struct fileinfo64 *fi)
 
 	#if !USE_LEGACY
 
-	if (LIB_MINVER(&DOSBase->dl_lib, 51, 28))
+	if (1) //LIB_MINVER(&DOSBase->dl_lib, 51, 28))
 	{
 		D_S(struct FileInfoBlock, fib);
 

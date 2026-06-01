@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: prefswin_mimeclass.c,v 1.3 2006/02/22 14:48:22 fab Exp $
+ * $Id: prefswin_mimeclass.c,v 1.4 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -42,7 +42,7 @@ DEFNEW
 
 	if (!obj)
 	{
-		return (NULL);
+		return ((ULONG)NULL);
 	}
 
 	return ((ULONG)obj);

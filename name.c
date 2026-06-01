@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: name.c,v 1.19 2017/07/25 19:55:00 piru Exp $
+ * $Id: name.c,v 1.22 2025/08/12 17:32:17 kronos Exp $
  */
 
 #include "ambient.h"
@@ -242,6 +242,45 @@ APTR name_truncateinfo(STRPTR name)
 }
 
 void name_restoreinfo( STRPTR name, APTR truncation )
+{
+	if ( name && truncation )
+	{
+		name[ (STRPTR)truncation - name ] = '.';
+	}
+}
+
+
+
+
+APTR name_truncateprefs(STRPTR name)
+{
+	ULONG len;
+
+	ASSERT(name);
+
+	len = strlen(name);
+
+	if (len > 6)
+	{
+		if (name[len - 6] == '.'
+			&& (name[len - 5] == 'p' || name[len - 5] == 'P')
+			&& (name[len - 4] == 'r' || name[len - 4] == 'R')
+			&& (name[len - 3] == 'e' || name[len - 3] == 'E')
+			&& (name[len - 2] == 'f' || name[len - 2] == 'F')
+			&& (name[len - 1] == 's' || name[len - 1] == 'S')
+		)
+		{
+			name[ len - 6 ] = '\0';
+			return name + len - 6;
+		}
+
+	}
+
+	return NULL;
+}
+
+
+void name_restoreprefs( STRPTR name, APTR truncation )
 {
 	if ( name && truncation )
 	{
@@ -625,7 +664,8 @@ int name_build_wintitle(STRPTR wintitle, int title_length, STRPTR p)
 	return 0;
 }
 #else
-int name_build_wintitle(STRPTR wintitle, int titlen, STRPTR p)
+// TODO: this is badly broken
+int name_build_wintitle(STRPTR wintitle, int titlen UNUSED, STRPTR p)
 {
 	CONST_STRPTR q, s;
 	STRPTR r;
@@ -638,7 +678,7 @@ int name_build_wintitle(STRPTR wintitle, int titlen, STRPTR p)
 	if (p == NULL)
 		*wintitle = '\0';
 
-	while (*q != ':')
+	while (*q && *q != ':')
 	{
 		*r++ = *q++;
 	}
@@ -658,7 +698,7 @@ int name_build_wintitle(STRPTR wintitle, int titlen, STRPTR p)
 	s = q + 1;
 	q = FilePart(p);
 
-	if (*q)
+	if (q && *q)
 	{
 		if (q != s) /* add '..' only if the path has more than one subdir */
 		{

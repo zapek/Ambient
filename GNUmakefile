@@ -71,3 +71,5 @@ source:
 
 .PHONY: ambient-build-bug-fixup source
 
+installbin:
+	cp objects/750-final/Ambient /mossys/Ambient/

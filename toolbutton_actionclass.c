@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: toolbutton_actionclass.c,v 1.5 2007/05/08 19:27:09 fab Exp $
+ * $Id: toolbutton_actionclass.c,v 1.6 2025/07/23 23:54:26 geit Exp $
  */
 
 #define TOOLBUTTON(x) GSI(MSG_PREFSWIN_TOOLBAR_##x)
@@ -64,7 +64,7 @@ DEFNEW
 	/* check if we have 4 args available (and only 4) */
 
 	ULONG nargs = 0;
-	ULONG *args = (ULONG*)GetTagData( MA_Toolbutton_Args, NULL, INITTAGS);
+	ULONG *args = (ULONG*)GetTagData( MA_Toolbutton_Args, 0L, INITTAGS);
 
 	while ( args && args[ nargs ] )
 	{
@@ -74,7 +74,7 @@ DEFNEW
 	if ( nargs !=5 )
 	{
 		DB(("Wrong number of arguments (%d)\n", nargs));
-		return NULL;
+		return( (ULONG) NULL );
 	}
 
 	obj = DoSuperNew(cl, obj,
@@ -168,7 +168,7 @@ DEFGET
 			data->args[ 2 ] = (ULONG)data->image;
 			data->args[ 3 ] = (ULONG)data->flags;
 			data->args[ 4 ] = (ULONG)data->views;
-			data->args[ 5 ] = NULL;
+			data->args[ 5 ] = (ULONG)NULL;;
 			*msg->opg_Storage = (ULONG)data->args;
 			return (TRUE);
 		}
@@ -218,12 +218,12 @@ DEFMMETHOD(Draw)
 		GETDATA;
 
 		struct RastPort *rp;
-		ULONG   mleft, mtop, mwidth, mheight;
+		ULONG   mleft, mtop, mwidth; //, mheight;
 
 		mleft   = _mleft(obj);
 		mtop    = _mtop(obj);
 		mwidth  = _mwidth(obj);
-		mheight = _mheight(obj);
+//		mheight = _mheight(obj);
 
 		rp    = _rp(obj);
 

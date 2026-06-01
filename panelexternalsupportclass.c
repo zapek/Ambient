@@ -1,5 +1,7 @@
 #include "ambient.h"
 
+#if USE_INTERNAL_PANELS
+
 /* public */
 #include <cybergraphx/cybergraphics.h>
 #include <datatypes/pictureclass.h>
@@ -182,3 +184,4 @@ DECSMETHOD(Panelsupport_Saveconfig)
 ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_Notify, panelexternalsupportclass)
+#endif

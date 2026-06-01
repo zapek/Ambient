@@ -1,7 +1,7 @@
 #ifndef AMBIENT_NAME_H
 #define AMBIENT_NAME_H
 /*
- * $Id: name.h,v 1.11 2017/07/25 19:55:00 piru Exp $
+ * $Id: name.h,v 1.12 2025/08/12 17:32:17 kronos Exp $
  */
 
 ULONG name_isinfo(CONST_STRPTR name);
@@ -22,6 +22,9 @@ int name_build_wintitle(STRPTR wintitle, int length, STRPTR p);
 
 APTR name_truncateinfo(STRPTR name);
 void name_restoreinfo(STRPTR name, APTR truncation);
+
+APTR name_truncateprefs(STRPTR name);
+void name_restoreprefs(STRPTR name, APTR truncation);
 
 #define NAME_ELLIPSIS_START  -1
 #define NAME_ELLIPSIS_MIDDLE 0

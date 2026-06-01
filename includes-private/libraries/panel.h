@@ -1,14 +1,22 @@
-#ifndef AMBIENT_PANELLIB_H
-#define AMBIENT_PANELLIB_H
-/*
- * $Id: panellib.h,v 1.6 2018/12/08 14:19:09 kronos Exp $
- */
- 
+#ifndef PANEL_PANEL_H
+#define PANEL_PANEL_H
+
+#define PPOOL_TYPE_MAIN		1
+#define PPOOL_TYPE_PANEL	2
+
+
+
+#define PanelHasChanged_Insert	1
+#define PanelHasChanged_Remove	2 
+#define	PanelHasChanged_Move	3 
+#define	PanelHasChanged_Rename	4 
+#define PanelPrefsClose			1000
+#define PANEL_NAME_SIZE		256
 
 struct PanelMessage {
-	struct Message msg;
-	ULONG tag;
-	ULONG data;
+	char pm_Name[PANEL_NAME_SIZE+1];
+	ULONG pm_Mode;
+	ULONG pm_Data1,pm_Data2;
 };
  
 enum {
@@ -28,10 +36,20 @@ enum {
 enum {
 	PanelObjectType = TAG_USER + 100,
 	PanelObjectURI,
+	PanelObjectID,
 	PanelObjectPanel,
-	PanelObjectPred,
-	PanelObjectWin,
+	PanelObjectStartObject,
+	PanelObjectWindow,
+	PanelObjectWindowName,
+	PanelObjectTarget,
 };
+
+#define Target_Object		0
+#define Target_Window		1
+#define Target_Group		2
+#define Target_SubWindow	3
+#define Target_SubGroup		4
+
 
 #define PanelObject_DrawMode_None		0
 #define PanelObject_DrawMode_Replace	1
@@ -65,10 +83,7 @@ enum {
 #define PanelObject_CallbackMode_MUIObj		2
 #define PanelObject_CallbackMode_MsgPort	3
 
-ULONG panellib_init(void);
-void panellib_cleanup(void);
+#define PANEL_MODE_NORMAL		0x00000000
+#define PANEL_MODE_PREFS		0x00000001
 
-ULONG preclose_panellib(void);
-
-
-#endif /* AMBIENT_PANELLIB_H */
+#endif /* PANEL_H */

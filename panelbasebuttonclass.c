@@ -1,5 +1,6 @@
-#include "ambient.h"
 
+#include "ambient.h"
+#if USE_INTERNAL_PANELS
 /* public */
 #include <cybergraphx/cybergraphics.h>
 #include <datatypes/pictureclass.h>
@@ -29,7 +30,7 @@
 #include "dragdrop.h"
 #include "legacy.h"
 #include "paneltags.h"
-#include "panellib.h"
+//#include "panellib.h"
 
 #include "deficonpool.h"
 #include "methodstack.h"
@@ -80,7 +81,7 @@ struct Data {
 	
 	
 	APTR messenger;
-	struct timeval lastclick;
+	struct TimeVal lastclick;
 };
 
 /************************************************************************/
@@ -240,6 +241,8 @@ static void doset( APTR obj, struct Data *data, struct TagItem *tags )
 		case MA_Icon_Type:
 			data->icontype = tag->ti_Data;
 			break;
+/* old panellib functionality disabled*/
+#if 0
 		case MA_Panelbutton_ExtraBitmap:
 			data->alt_bm = (APTR)tag->ti_Data;
 			data->drawmode =  PanelObject_DrawMode_Replace;
@@ -265,19 +268,20 @@ static void doset( APTR obj, struct Data *data, struct TagItem *tags )
 		case MA_Panel_Messenger:
 			data->messenger = (APTR) tag->ti_Data;	
 			break;
+#endif
 		case MA_Icon_WindowTop:
 			data->win_y = tag->ti_Data;
 			break;
-
+/* old panellib functionality disabled*/
+#if 0
 		case PanelObject_CallbackMode:
 			data->callbackmode = tag->ti_Data;
 			if ((! data->callback_enabled ) && ( data->callbackmode))
 			{
-			//	PDB(("%x %x\n",obj,data->callbackmode));
+		
 				data->callback_enabled = TRUE;
-			//	DoMethod(_parent(obj),MUIM_Notify,MA_Panelgroup_Size,MUIV_EveryTime,obj,4,MM_Panelbutton_Callback,MA_Panelgroup_Size,MUIV_TriggerValue,TAG_DONE);
 			}
-
+#endif
 		case MA_Icon_WindowLeft:
 			data->win_x = tag->ti_Data;
 
@@ -317,10 +321,10 @@ DEFNEW
 	data->init = TRUE;
 	data->uri = 0;
 	data->icontype = 0;
-	data->drawmode =  PanelObject_DrawMode_None;
+/*	data->drawmode =  PanelObject_DrawMode_None;
 	data->scalemode =  PanelObject_ScaleMode_Fit;
 	data->altbm_pos = PanelObject_Position_Mid;
-
+*/
 	data->altbm_rwidth = 100;
 	data->altbm_rheight = 100; 
 	data->app_object = NULL;
@@ -895,7 +899,7 @@ DEFMMETHOD(Draw)
 		
 		DoMethod( _parent(obj), MM_Panelgroup_RefreshRect, mleft, mtop, mwidth, mheight, _rp( obj ) );
 		
-		if( data->drawmode !=  PanelObject_DrawMode_Replace )
+		//if( data->drawmode !=  PanelObject_DrawMode_Replace )
 		{
 			/* default graphics aka icon needs to be drawn */
 			
@@ -935,7 +939,8 @@ DEFMMETHOD(Draw)
 					TAG_DONE );
 	
 		}
-
+/* old panellib functionality disabled*/
+#if 0 
 		if( ( data->alt_bm )&& ( data->drawmode !=  PanelObject_DrawMode_None) )
 		{
 			ULONG x_pos,y_pos;
@@ -988,6 +993,7 @@ DEFMMETHOD(Draw)
 					TAG_DONE );
 				
 		}
+#endif
 		data->oldwidth = mwidth;
 		data->oldheight = mheight;
 		if( data->desired_effect == PANEL_EFFECT_LASSO )
@@ -1029,7 +1035,7 @@ DEFTMETHOD(Panelbutton_Launch)
 {
 	GETDATA;
 	ULONG doubleclick;
-	struct timeval currenttime;
+	struct TimeVal currenttime;
 
 	if (TimerBase->lib_Version >= 52)
 		GetUTCSysTime( &currenttime );
@@ -1143,7 +1149,7 @@ DEFSMETHOD(Panel_SaveConfig)
 
 DEFSMETHOD(Panelbutton_GetAttr)
 {
-	APTR group,win;
+	APTR group; //,win;
 	//PDB(("getattr %d\n",msg->target));
 	switch ( msg->attrID)
 	{
@@ -1176,7 +1182,7 @@ DEFSMETHOD(Panelbutton_GetAttr)
 }
 
 
-
+#if 0
 DEFSMETHOD(Panelbutton_Callback)
 {
 	GETDATA;
@@ -1201,7 +1207,7 @@ DEFSMETHOD(Panelbutton_Callback)
 	return 0;
 }
 
-
+#endif
 
 
 DEFSMETHOD(Panelgroup_MoveMode_Start)
@@ -1240,3 +1246,4 @@ ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_Area, panelbasebuttonclass)
 
+#endif

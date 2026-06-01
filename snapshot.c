@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: snapshot.c,v 1.17.6.2 2024/01/23 22:02:41 piru Exp $
+ * $Id: snapshot.c,v 1.19 2024/01/23 22:03:07 piru Exp $
  */
 
 #include "ambient.h"

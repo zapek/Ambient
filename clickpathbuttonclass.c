@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: clickpathbuttonclass.c,v 1.7 2009/09/27 19:18:05 kiero Exp $
+ * $Id: clickpathbuttonclass.c,v 1.8 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -56,7 +56,7 @@ DEFNEW
 	{
 		GETDATA;
 
-		data->path = (STRPTR)GetTagData( MA_ClickpathButton_Path, NULL, INITTAGS );
+		data->path = (STRPTR)GetTagData( MA_ClickpathButton_Path, 0, INITTAGS );
 		data->position = GetTagData( MA_ClickpathButton_Position, 0, INITTAGS );
 		data->storage = NULL;
 

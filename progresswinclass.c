@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: progresswinclass.c,v 1.24 2020/08/16 03:15:18 jacadcaps Exp $
+ * $Id: progresswinclass.c,v 1.25 2025/09/09 12:46:46 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -81,7 +81,7 @@ DEFNEW
 	refwin = (APTR)GetTagData(MA_Progresswin_Refwin, 0, INITTAGS);
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen,      get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_CloseGadget, FALSE,
 		MUIA_Window_ScreenTitle, screentitle,
 		refwin ? MUIA_Window_RefWindow : TAG_IGNORE, refwin,

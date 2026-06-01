@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: toolbutton_viewswitchclass.c,v 1.8 2013/10/29 22:14:59 geit Exp $
+ * $Id: toolbutton_viewswitchclass.c,v 1.9 2025/07/23 23:54:26 geit Exp $
  */
 
 #include "ambient.h"
@@ -186,7 +186,7 @@ DEFGET
 	{
 		case MA_Toolbutton_Args:
 		{
-			data->args[ 0 ] = NULL;
+			data->args[ 0 ] = 0;
 			*msg->opg_Storage = (ULONG)data->args;
 			return (TRUE);
 		}
@@ -242,7 +242,7 @@ DEFMMETHOD(Draw)
 		if ( data->bm[ vind ][ mind ] )
 		{
 			struct RastPort *rp;
-			ULONG mleft, mtop, mwidth, mheight;
+			ULONG mleft, mtop, mwidth; //, mheight;
 
 			ULONG imgwidth = gfx_bitmap_width ( data->bm[ vind ][ mind ] );
 			//ULONG imgheight = gfx_bitmap_height( data->bm[ vind ][ mind ] );
@@ -250,7 +250,7 @@ DEFMMETHOD(Draw)
 			mleft   = _mleft(obj);
 			mtop    = _mtop(obj);
 			mwidth  = _mwidth(obj);
-			mheight = _mheight(obj);
+//			mheight = _mheight(obj);
 
 			rp    = _rp(obj);
 

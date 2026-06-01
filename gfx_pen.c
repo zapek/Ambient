@@ -18,10 +18,22 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: gfx_pen.c,v 1.5 2006/04/12 14:01:53 fab Exp $
+ * $Id: gfx_pen.c,v 1.6 2026/01/26 18:33:04 kronos Exp $
  */
 
+#ifndef PANEL_APP
 #include "ambient.h"
+#else
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+#include <exec/nodes.h>
+#include "debug.h"
+#define min(a,b) \
+	({typeof(a) _a = (a); \
+	typeof(b) _b = (b); \
+	_a > _b ? _b : _a;})
+#endif
 
 /* public */
 #include <proto/graphics.h>

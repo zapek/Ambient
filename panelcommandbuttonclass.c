@@ -46,6 +46,8 @@
 #include "legacy.h"
 #include "paneltags.h"
 
+#if USE_INTERNAL_PANELS
+
 /************************************************************************/
 
 struct Data
@@ -307,4 +309,5 @@ DECTMETHOD(Panelbutton_Launch)
 ENDMTABLE
  
 DECSUBCLASSPTR_NC( panelbasebuttonclass, panelcommandbuttonclass )
+#endif
 

@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: freelist.c,v 1.5 2006/04/12 14:01:58 fab Exp $
+ * $Id: freelist.c,v 1.7 2025/09/04 22:51:37 piru Exp $
  */
 
 #include "globals.h"
@@ -28,6 +28,7 @@
 #include <exec/memory.h>
 #include <workbench/workbench.h>
 #include <proto/exec.h>
+#include <string.h>
 
 /* private */
 #include "icon_internal.h"
@@ -145,6 +146,40 @@ APTR FreeAlloc(struct FreeList *freelist, ULONG size, ULONG flags)
 	return (NULL);
 }
 
+/* Free memory entry if it can be found from the freelist */
+VOID _FreeFree(struct FreeList *freelist, APTR mem)
+{
+	struct MemList *ml;
+	D(FREELIST,bug("called: freelist 0x%lx mem 0x%lx\n", (ULONG)freelist, mem));
+
+	if (!mem)
+		return;
+
+	/* Walk the list backwards */
+	for (ml = (struct MemList *) freelist->fl_MemList.lh_TailPred;
+	     ml->ml_Node.ln_Pred;
+	     ml = (struct MemList *) ml->ml_Node.ln_Pred)
+	{
+		UWORD allocated = ml->ml_NumEntries - (UWORD) freelist->fl_NumFree;
+		int i;
+		/* Scan the array backwards */
+		for (i = allocated - 1; i >= 0; i--)
+		{
+			if (ml->ml_ME[i].me_Un.meu_Addr == mem)
+			{
+				FreeMem(ml->ml_ME[i].me_Un.meu_Addr, ml->ml_ME[i].me_Length);
+				/* Move the remaining entries up in the array */
+				memmove(&ml->ml_ME[i], &ml->ml_ME[i + 1], (ml->ml_NumEntries - i - 1) * sizeof(ml->ml_ME[0]));
+				/* Make sure that the final entry doesn't have duplicate pointer */
+				ml->ml_ME[ml->ml_NumEntries - 1].me_Un.meu_Addr = NULL;
+				freelist->fl_NumFree++;
+				return;
+			}
+		}
+	}
+}
+
+
 
 /*icon.library/AddFreeList                             icon.library/AddFreeList
 
@@ -202,14 +237,13 @@ BOOL AddFreeList(struct FreeList *freelist, APTR mem, unsigned long size)
 	}
 	D(FREELIST,bug("inserting MEMLISTENTRIES %ld fl_NumFree %ld\n", (ULONG)FREELIST_MEMLISTENTRIES, (ULONG)freelist->fl_NumFree));
 	/* insert the arguments */
-	ml->ml_ME[FREELIST_MEMLISTENTRIES - freelist->fl_NumFree].me_Un.meu_Addr = mem;
-	ml->ml_ME[FREELIST_MEMLISTENTRIES - freelist->fl_NumFree].me_Length = size;
+	ml->ml_ME[ml->ml_NumEntries - (UWORD) freelist->fl_NumFree].me_Un.meu_Addr = mem;
+	ml->ml_ME[ml->ml_NumEntries - (UWORD) freelist->fl_NumFree].me_Length = size;
 	freelist->fl_NumFree--;
 	D(FREELIST,bug("done inserting..\n"));
 
 	return (TRUE);
 }
-
 
 void FreeFreeList(struct FreeList *freelist)
 {

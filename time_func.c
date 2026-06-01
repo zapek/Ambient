@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: time_func.c,v 1.11 2018/03/15 10:38:19 piru Exp $
+ * $Id: time_func.c,v 1.12 2023/08/09 01:20:14 piru Exp $
  */
 
 #include "ambient.h"
@@ -116,7 +116,7 @@ struct timerequest * timer_create(ULONG unit, struct MsgPort *mp)
 }
 
 
-ULONG timer_addreq_sync(struct timerequest *tr, struct timeval *tv)
+ULONG timer_addreq_sync(struct timerequest *tr, struct TimeVal *tv)
 {
 	tr->tr_node.io_Command = TR_ADDREQUEST;
 	tr->tr_time.tv_secs    = tv->tv_secs;
@@ -126,7 +126,7 @@ ULONG timer_addreq_sync(struct timerequest *tr, struct timeval *tv)
 }
 
 
-VOID timer_addreq_async(struct timerequest *tr, struct timeval *tv)
+VOID timer_addreq_async(struct timerequest *tr, struct TimeVal *tv)
 {
 	tr->tr_node.io_Command = TR_ADDREQUEST;
 	tr->tr_time.tv_secs    = tv->tv_secs;
@@ -183,7 +183,7 @@ void timer_delete(struct timerequest *tr)
  */
 time_t time(time_t *tp)
 {
-	struct timeval tv;
+	struct TimeVal tv;
 
 	if (TimerBase->lib_Version >= 52)
 		GetUTCSysTime((APTR)&tv);
@@ -204,7 +204,7 @@ time_t time(time_t *tp)
  */
 time_t timev(void)
 {
-	struct timeval tv;
+	struct TimeVal tv;
 
 	if (TimerBase->lib_Version >= 52)
 		GetUTCSysTime((APTR)&tv);
@@ -246,7 +246,7 @@ ULONG timedm(void)
  * clock and the timeval starts from when the program was
  * started.
  */
-void getlocaltime(struct timeval *dest)
+void getlocaltime(struct TimeVal *dest)
 {
 	UQUAD clk, ret;
 

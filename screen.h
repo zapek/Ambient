@@ -1,7 +1,7 @@
 #ifndef AMBIENT_SCREEN_H
 #define AMBIENT_SCREEN_H
 /*
- * $Id: screen.h,v 1.9 2018/07/26 15:19:46 itix Exp $
+ * $Id: screen.h,v 1.13 2025/09/12 16:06:01 jacadcaps Exp $
  */
 
 struct Screen *get_screen(void);
@@ -12,13 +12,14 @@ void unlock_screen(APTR handle);
 struct Screen *get_screen_hold(void);
 void get_screen_release(void);
 
-char *active_screen_name(void);
-#if USE_MULTIPLE_DESKTOP
-void create_screen(char *name);
-#endif
+const char *active_screen_name(void);
 void flush_screen(void);
 
 struct Screen *screen_lock(void);
+struct Screen *screen_lock_by_id(ULONG sid);
 void screen_unlock(struct Screen *locked_screen);
+
+ULONG get_screen_id(CONST_STRPTR pubname);
+CONST_STRPTR get_screen_pubname(Object *muiArea);
 
 #endif /* AMBIENT_SCREEN_H */

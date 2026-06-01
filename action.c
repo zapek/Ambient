@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: action.c,v 1.7 2007/05/08 19:27:07 fab Exp $
+ * $Id: action.c,v 1.8 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -238,7 +238,7 @@ void v_actionnode_setattrs(APTR actionnode, struct TagItem *tags)
 			break;
 
 		case ACTIONNODETAG_MENU_NAME:
-			if(tag->ti_Data == NULL)
+			if(tag->ti_Data == 0)
 			{
 				if(an->menuname)
 				{

@@ -1,5 +1,5 @@
 /*
- * $Id: searchbarclass.c,v 1.6 2017/07/30 21:06:21 cyfm Exp $
+ * $Id: searchbarclass.c,v 1.7 2025/02/24 13:05:15 bitrocky Exp $
  */
 
 #include "ambient.h"
@@ -116,7 +116,8 @@ DEFMMETHOD(Setup)
 		if ( !data->notifysetup )
 		{
 			DoMethod(obj, MUIM_Notify, MUIA_ShowMe, TRUE, _win(obj), 3, MUIM_Set, MUIA_Window_ActiveObject, data->str_search);
-			DoMethod(obj, MUIM_Notify, MUIA_ShowMe, TRUE, data->str_search, 3, MUIM_Set, MUIA_String_Contents, "");
+			DoMethod(obj, MUIM_Notify, MUIA_ShowMe, TRUE, _app(obj), 6,
+				MUIM_Application_PushMethod, data->str_search, 3, MUIM_Set, MUIA_String_Contents, "");// using push, prevents the hotkey being inserted
 
 			DoMethod(data->str_search, MUIM_Notify, MUIA_String_Contents, MUIV_EveryTime, obj, 2, MM_Searchbar_Search, MV_Search_SearchCurrent);
 

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: makedirwinclass.c,v 1.15 2018/07/26 15:19:46 itix Exp $
+ * $Id: makedirwinclass.c,v 1.16 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -47,7 +47,6 @@ DEFNEW
 	struct Data *data;
 	APTR str_name, bt_without, bt_with, bt_cancel;
 	BOOL with_icon = _conf(misc_createiconfornewdrawer);
-	int i;
 
 	obj = DoSuperNew(cl, obj,
 		MUIA_Window_PublicScreen, active_screen_name(),

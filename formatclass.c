@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: formatclass.c,v 1.14 2023/01/11 15:14:30 jacadcaps Exp $
+ * $Id: formatclass.c,v 1.15 2026/05/05 02:40:37 cyfm Exp $
  */
 
 #include "ambient.h"
@@ -375,6 +375,7 @@ DEFSMETHOD(Format_ChangeOptions)
 	switch (msg->di->dostype)
 	{
 		case FS_AMIGA_SFS:
+		case FS_AMIGA_SFS2:
 			if ( (data->grp_specific = ColGroup(2), GroupFrameT( GSI( MSG_FORMAT_SPECIFIC_GROUP )),
 					Child, data->chk_case = MUICreateCheckbox( MSG_FORMAT_CASE_SENSITIVE, getprefslong(DSI_FORMAT_SFS_CASE), "FORMCASE"),
 					Child, MUICreateLabel( MSG_FORMAT_CASE_SENSITIVE, MUIO_Label_SingleFrame | MUIO_Label_LeftAligned),

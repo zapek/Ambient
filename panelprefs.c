@@ -19,10 +19,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: panelprefs.c,v 1.13 2012/08/21 04:01:01 geit Exp $
+ * $Id: panelprefs.c,v 1.16 2026/03/16 17:53:49 kronos Exp $
  */
 
 #include "ambient.h"
+
+#if USE_INTERNAL_PANELS
 
 /* public */
 #include <exec/semaphores.h>
@@ -44,6 +46,8 @@
 
 static struct SignalSemaphore ppsem;
 static struct MinList pplist;
+
+extern ULONG panel_modus;
 
 struct ppnode {
 	struct Node n;
@@ -266,6 +270,11 @@ ULONG tr_panels_loadall(void)
 	ULONG i;
 	struct ppnode *ppn,*pn;
 	ULONG *sub;
+	if((panel_modus == 2)) 
+	{
+		Execute("mossys:Ambient/PanelApp",0,0);
+		return 0;
+	}
 	THREAD;
 	if(!(ISLISTEMPTY(&pplist)))
 	{
@@ -581,3 +590,4 @@ void panelprefs_fix(APTR pctx)
 		}
 	}
 }
+#endif

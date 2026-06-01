@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: toolbargroup.c,v 1.22 2017/07/08 12:20:27 kiero Exp $
+ * $Id: toolbargroup.c,v 1.23 2025/07/23 23:54:26 geit Exp $
  */
 
 #include "ambient.h"
@@ -397,7 +397,7 @@ static void button_set_visible( Object *obj, struct Data *data, APTR button )
 			if ( get( button, MA_Toolbutton_Viewflags, &bflags ) )
 			{
 				ULONG isvisible = getv( button, MUIA_ShowMe );
-				APTR button_class = OCLASS( button );
+				/*APTR button_class =*/ OCLASS( button );
 				if (!(vflags & VF_TOOLBAR))
 					set(button, MUIA_ShowMe, FALSE);
 				else

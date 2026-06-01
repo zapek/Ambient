@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: formatwinclass.c,v 1.13 2020/08/16 03:15:18 jacadcaps Exp $
+ * $Id: formatwinclass.c,v 1.15 2025/09/09 12:46:46 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -71,7 +71,7 @@ DEFNEW
 	ti = FindTagItem(MA_Window_Path, INITTAGS);
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		(ti && ti->ti_Data) ? MUIA_Window_LeftEdge : TAG_IGNORE, MUIV_Window_LeftEdge_Moused,
 		(ti && ti->ti_Data) ? MUIA_Window_TopEdge : TAG_IGNORE, MUIV_Window_TopEdge_Moused,
@@ -93,7 +93,7 @@ DEFNEW
 
 		WindowContents, VGroup,
 			Child, grp = HGroup,
-				Child, grp_format = NewObject(getformatclass(), NULL, (ti && ti->ti_Data) ? MA_Window_Path : TAG_IGNORE, ti ? ti->ti_Data : NULL, TAG_DONE),
+				Child, grp_format = NewObject(getformatclass(), NULL, (ti && ti->ti_Data) ? MA_Window_Path : TAG_IGNORE, ti ? ti->ti_Data : 0, TAG_DONE),
 			End,
 		
 			Child, MUI_MakeObject(MUIO_HBar, 2),
@@ -110,7 +110,7 @@ DEFNEW
 
 	if (!obj)
 	{
-		return (NULL);
+		return( (ULONG) NULL);
 	}
 
 	data = INST_DATA(cl, obj);
@@ -146,7 +146,7 @@ DEFNEW
 		if (!data->lv_devices)
 		{
 			CoerceMethod(cl, obj, OM_RELEASE);
-			return (NULL);
+			return( (ULONG) NULL);
 		}
 		DoMethod(grp, OM_ADDMEMBER, data->lv_devices);
 		DoMethod(grp, MUIM_Group_Sort, data->lv_devices, grp_format, NULL);

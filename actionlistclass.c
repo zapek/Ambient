@@ -20,7 +20,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: actionlistclass.c,v 1.6 2021/12/31 17:52:18 piru Exp $
+ * $Id: actionlistclass.c,v 1.7 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -55,11 +55,10 @@ struct Data {
 static inline void getmime(struct Data *data)
 {
 	LONG cnt = 0;
-	IPTR mimetype = NULL;
 
 	// Thread dispatcher does an OM_RELEASE once it's done, that way the object remains valid
 	// for as long as it is needed!
-	Object *mimeTypeObject = DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
+	Object *mimeTypeObject = (Object*) DoMethod(NewObject(getmimetypeclass(), NULL, TAG_DONE), OM_RETAIN);
 
 	if (do_action(data->iconobj, TA_MimeType_Scan,
 		TT_MimeType_Scan_Path, data->path,

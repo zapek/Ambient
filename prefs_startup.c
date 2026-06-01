@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: prefs_startup.c,v 1.4 2017/11/06 20:18:11 bitrocky Exp $
+ * $Id: prefs_startup.c,v 1.5 2025/07/23 23:54:26 geit Exp $
  */
 
 #include "ambient.h"
@@ -83,7 +83,7 @@ VOID sprefs_cleanup(void)
 }
 
 
-ULONG tr_sprefs_load(APTR obj)
+ULONG tr_sprefs_load(APTR obj UNUSED )
 {
 	APTR prefspool;
 	THREAD;

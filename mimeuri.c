@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: mimeuri.c,v 1.15 2017/08/21 06:17:44 cyfm Exp $
+ * $Id: mimeuri.c,v 1.17 2025/08/12 13:52:11 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -70,6 +70,42 @@ APTR mimeuri_create(void)
 	return (ct);
 }
 
+APTR mimeuri_duplicate(APTR ctx)
+{
+	struct mimeuri_context *ct = ctx;
+	struct mimeuri_context *out;
+	
+	if (!ctx)
+		return NULL;
+	
+	out = mimeuri_create();
+	ULONG length;
+
+#define MIME_STRCOPY(__field__) \
+	if (ct->__field__) { \
+	length = strlen(ct->__field__); \
+	out->__field__ = malloc(length + 1); \
+	if (!out->__field__) { mimeuri_delete(out); return NULL; } \
+	memcpy(out->__field__, ct->__field__, length + 1); } else { \
+	out->__field__ = NULL; }
+
+	if (out)
+	{
+		MIME_STRCOPY(uri);
+		MIME_STRCOPY(scheme);
+		MIME_STRCOPY(host);
+		MIME_STRCOPY(username);
+		MIME_STRCOPY(password);
+		MIME_STRCOPY(path);
+		MIME_STRCOPY(args);
+		MIME_STRCOPY(fragment);
+		out->port = ct->port;
+		out->islocal = ct->islocal;
+		out->mctx = mimetype_duplicate(ct->mctx);
+	}
+
+	return out;
+}
 
 static void mimeuri_clear(struct mimeuri_context *ct)
 {

@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: keyshortcutclass.c,v 1.8 2012/09/13 10:58:00 geit Exp $
+ * $Id: keyshortcutclass.c,v 1.9 2025/02/28 10:29:05 bitrocky Exp $
  */
 
 #include "ambient.h"
@@ -101,6 +101,7 @@ DEFNEW
 		if( data->shortcut.flags & SHORTCUT_FLAG_BUILTIN )
 		{
 			str_name = MUI_NewObject( MUIC_Text,
+									  MUIA_HorizWeight, 30, // bitRocky: looks better this way
 									  MUIA_Text_PreParse, "\033r", 
 									  TAG_DONE );
 		} else {
@@ -119,6 +120,7 @@ DEFNEW
 		}
 
 		if( ( ka_definition =  MUI_NewObject( "Keyadjust.mui",
+									    MUIA_HorizWeight, 70, // bitRocky: looks better this way
 										MUIA_Keyadjust_AllowMouseEvents, TRUE,
 									    MUIA_Keyadjust_AllowMultipleKeys, FALSE,
 	                                    MUIA_CycleChain, 1,

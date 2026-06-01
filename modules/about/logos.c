@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: logos.c,v 1.4 2006/04/12 14:02:00 fab Exp $
+ * $Id: logos.c,v 1.6 2025/10/03 02:58:18 cyfm Exp $
  */
 
 #include "globals.h"

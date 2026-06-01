@@ -18,12 +18,13 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: panelsliderspeedclass.c,v 1.7 2012/09/03 03:28:58 geit Exp $
+ * $Id: panelsliderspeedclass.c,v 1.8 2025/09/16 15:52:30 kronos Exp $
  */
 
 #include "ambient.h"
 #include "ambient_cat.h"
 
+#if USE_INTERNAL_PANELS
 
 /* public */
 
@@ -85,3 +86,4 @@ ENDMTABLE
 
 DECSUBCLASS_NC(MUIC_Slider, panelsliderspeedclass)
 
+#endif

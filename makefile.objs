@@ -1,5 +1,5 @@
 #
-# $Id: makefile.objs,v 1.41 2022/12/28 17:49:19 jacadcaps Exp $
+# $Id: makefile.objs,v 1.43 2025/12/28 14:07:54 kronos Exp $
 #
 
 
@@ -34,7 +34,7 @@ CLASSEOBJS = virtgroupclass.o toolbargroup.o imagecache.o statusbarclass.o click
 		panelsubpanelbuttonclass.o paneldirpanelbuttonclass.o panelsubwinclass.o \
 		panelcommandbuttonclass.o panelbasebuttonclass.o panellisttreeclass.o panelclasslistclass.o \
 		panelitem_listclass.o panelexternalsupportclass.o preferences_update.o iconzoomsliderclass.o \
-		panelmessengerclass.o panelmessengerfamilyclass.o mimetypeclass.o
+		 mimetypeclass.o
 
 PREFSCLASSEOBJS = prefswin_mainclass.o prefswin_listclass.o prefswin_backgroundclass.o \
 		prefswin_icondisplayclass.o prefswin_bookmarksclass.o prefswin_clilaunchclass.o \
@@ -64,7 +64,7 @@ MISCOBJS = errorreq.o iconmem.o methodstack.o mui_func.o \
 		prefs.o fonts.o screen.o tags.o threadtags.o \
 		path.o backdrop.o updatelist.o contextmenu.o template.o rexx.o \
 		deficon.o deficon_getpath.o smartreq.o dosnotify.o ipc.o appicon.o memhandler_threads.o \
-		capacity.o hash.o dostype.o wbstartlib.o panellib.o errormsg.o deficonpool.o \
+		capacity.o hash.o dostype.o wbstartlib.o errormsg.o deficonpool.o \
 		malloc.o segtracker.o layout.o memtrack.o textbox.o cx.o md5.o \
 		appmessage.o wbarg.o panelitem.o datatypeicon.o input.o altivec.o \
 		prefspool.o prefsio.o panelprefs.o paneleffects.o lasso.o \
@@ -72,7 +72,7 @@ MISCOBJS = errorreq.o iconmem.o methodstack.o mui_func.o \
 		mimeprefs.o name.o crypto.o loadimage.o notify.o timeout.o fmt.o align_vec.o cpu_vec.o \
 		keymap.o thumbs.o metadata.o spacegauge.o descsaver.o cache.o storage.o prefs_desktop.o \
 		eject.o prefs_advanced.o iostdreq.o qport.o examine64.o info64.o avcodec.o keyshortcuts.o \
-		broker.o prefs_startup.o print.o bookmarks.o sxmlc.o sxmlsearch.o sxmlhelp.o
+		broker.o prefs_startup.o print.o bookmarks.o sxmlc.o sxmlsearch.o sxmlhelp.o ambient_lib.o
 
 STARTUPOBJS = zstartup.o callmain.o
 

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: image.c,v 1.6 2006/09/18 23:17:28 fab Exp $
+ * $Id: image.c,v 1.7 2025/01/18 21:53:31 cyfm Exp $
  */
 
 #include "ambient.h"
@@ -169,6 +169,9 @@ ULONG read_image(APTR fh, APTR obj, ULONG state, ULONG ancillary)
 
 		if ( (imgwidth && imgwidth <= IMAGE_MAX_X && img.Height && img.Height <= IMAGE_MAX_Y && img.Depth && img.Depth <= IMAGE_MAX_DEPTH) )
 		{
+			img.PlanePick  = (1UL << img.Depth)-1;	/* reset PlanePick/OnOff fields to fix some broken icons like legacy icon.library does */
+			img.PlaneOnOff = 0;
+
 			if ( (imgdata = icon_malloc(imgsize)) )
 			{
 				if (file_read(fh, imgdata, imgsize))

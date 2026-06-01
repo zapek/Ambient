@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: aboutmoswinclass.c,v 1.10 2017/08/02 04:55:00 cyfm Exp $
+ * $Id: aboutmoswinclass.c,v 1.11 2025/09/09 12:46:45 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -134,7 +134,7 @@ DEFNEW
 		#endif
 
 		obj = DoSuperNew(cl, obj,
-			MUIA_Window_Screen, get_screen(),
+			MUIA_Window_PublicScreen, active_screen_name(),
 			MUIA_Window_ScreenTitle, screentitle,
 			MUIA_Window_Title, "Ambient · About MorphOS",
 			MUIA_Window_ID, MAKE_ID('A','M','A','M'),

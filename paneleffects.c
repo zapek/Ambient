@@ -18,10 +18,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: paneleffects.c,v 1.9 2016/11/17 21:10:39 kiero Exp $
+ * $Id: paneleffects.c,v 1.10 2025/09/16 15:52:29 kronos Exp $
  */
 
 #include "ambient.h"
+
+#if USE_INTERNAL_PANELS
 
 /* public */
 #include <proto/dos.h>
@@ -177,3 +179,4 @@ ULONG tr_panels_zip(APTR obj UNUSED, struct Window *win, ULONG xs, ULONG ys, ULO
 	}
 	return (FALSE);
 }
+#endif

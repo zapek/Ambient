@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: iconviewclass.c,v 1.69.2.1 2024/01/20 02:56:53 piru Exp $
+ * $Id: iconviewclass.c,v 1.89 2026/01/25 17:36:24 kronos Exp $
  */
 
 #include "ambient.h"
@@ -93,9 +93,14 @@
 #include "screen.h"
 #include "info64.h"
 #include "avcodec.h"
+#include "ipc.h"
+#include "wbarg.h"
+
+#include "wblib/AppWindow.h"
 
 #include <clib/debug_protos.h>
 #define BUBBLEDELAY 10 /* intuiticks */
+void dprintf(char *, ...) __attribute__ ((format (printf, 1, 2)));
 
 extern void SetWindowTitle(struct IClass *cl, Object *obj, ULONG flags); // from listviewclass.c
 
@@ -136,8 +141,12 @@ struct icon_node {
 	APTR obj;
 };
 
+#define IsRootOrExtra (data->isroot || data->isrootextra)
+
 struct Data {
 	ULONG isroot;
+	ULONG isrootextra;
+	ULONG screenID;
 	ULONG show_devices;
 	ULONG startup;
 	ULONG dimensions;
@@ -226,10 +235,10 @@ struct Data {
 	LONG click_yt;
 	ULONG lasso;
 	APTR lasso_ctx;
-
+#if USE_INTERNAL_PANELS
 	/* panels (XXX: only for root.. that's ugly) */
 	ULONG panels_loaded;
-
+#endif
 	/* init window sizes */
 	LONG win_xs;
 	LONG win_ys;
@@ -288,6 +297,9 @@ struct Data {
 
 	/* MUI config items */
 	LONG display_bubbles;
+	
+	/* store appwindow during dragevents */
+	struct ipc_appwindow appwin;
 };
 
 enum {
@@ -336,7 +348,7 @@ MUI_HOOK(layoutfunc, APTR grp, struct MUI_LayoutMsg *lm)
 				ULONG max_y = 0;
 				ULONG child_count = 0;
 
-				if ( data->isroot )
+				if ( IsRootOrExtra )
 				{
 					layout_setattrs(data->lctx,
 						LAYOUTTAG_Width, _mwidth(grp), /* XXX: I think.. */
@@ -373,7 +385,7 @@ MUI_HOOK(layoutfunc, APTR grp, struct MUI_LayoutMsg *lm)
 						 * We don't want any object outside, even
 						 * if bigfoot finds it funny.
 						 */
-						if (data->isroot)
+						if (IsRootOrExtra)
 						{
 							if (ICON_GETOBJ_LEFT(child) < 0)
 							{
@@ -560,7 +572,7 @@ static APTR buildregionfromicons(APTR obj )
 
 static void initializenoflicker(APTR obj, struct Data *data)
 {
-	if ( muiRenderInfo(obj) != NULL && data->isroot )
+	if ( muiRenderInfo(obj) != NULL && IsRootOrExtra )
 	{
 		data->noflicker = TRUE;
 	}
@@ -626,7 +638,9 @@ DEFNEW
 	data = INST_DATA(cl, obj);
 
 	data->isroot = isroot;
-	data->show_devices = isroot;
+	data->isrootextra = GetTagData(MA_View_IsRootExtra, FALSE, INITTAGS);
+	data->screenID = GetTagData(MA_View_ScreenID, 0, INITTAGS);
+	data->show_devices = isroot || data->isrootextra;
 
 	NEWLIST(&data->addlist);
 	NEWLIST(&data->removelist);
@@ -637,7 +651,8 @@ DEFNEW
 	data->numunscanned = 0;
 	data->typescanner_running = FALSE;
 	data->typescanner_methodid = 0;
-
+	data->appwin.window = NULL;
+	
 	/*
 	 * Initial viewmode. Bit sucky as it needs knowledge about modes indexes.
 	 * Maybe can be checked with URI, but then it nullifies point of passing
@@ -657,7 +672,7 @@ DEFNEW
 			break;
 	}
 
-	if (!(data->nctx = notify_create()) || !(data->lctx = layout_create(obj, LAYOUTTAG_Auto, data->isroot ? FALSE : TRUE, TAG_DONE)))
+	if (!(data->nctx = notify_create()) || !(data->lctx = layout_create(obj, LAYOUTTAG_Auto, IsRootOrExtra ? FALSE : TRUE, TAG_DONE)))
 	{
 		CoerceMethod(cl, obj, OM_RELEASE);
 		return ((ULONG)NULL);
@@ -985,7 +1000,7 @@ STATIC VOID UpdateHandlers(struct IClass *cl, APTR obj, struct Data *data, ULONG
 		data->ehnode.ehn_Flags = MUI_EHF_GUIMODE;
 		DoMethod(_win(obj), MUIM_Window_AddEventHandler, (ULONG)&data->ehnode);
 
-		if (show && !data->isroot)
+		if (show && !(data->isroot || data->isrootextra))
 		{
 			DoMethod(_win(obj), MM_Window_SetTitle, dprefs_mymorphos_name_get());
 			SetAttrs(obj, MUIA_Group_Forward, FALSE,
@@ -1005,13 +1020,13 @@ DEFMMETHOD(Setup)
 	if ( (rc = DOSUPER) )
 	{
 		UpdateHandlers(cl, obj, data, data->show_devices);
-
+#if USE_INTERNAL_PANELS
 		if (data->isroot && !data->panels_loaded)
 		{
 			panelprefs_loadall();
 			data->panels_loaded = TRUE;
 		}
-
+#endif
 		updatebufferedlayersinfo(obj);
 	}
 
@@ -1041,6 +1056,8 @@ DEFTMETHOD(Iconview_AbortLasso)
 		APTR handle;
 
 		pointer_clear(_window(obj));
+
+		DoMethod(_window(obj), WM_ReleaseEvents);
 
 		/* itix: should we invoke MUIM_Draw instead? */
 		handle = MUI_AddClipping(muiRenderInfo(obj), _mleft(obj), _mtop(obj), _mwidth(obj), _mheight(obj));
@@ -1319,7 +1336,7 @@ DEFMMETHOD(HandleEvent)
 									}
 								}
 
-								if (data->isroot && (data->qualifier & (IEQUALIFIER_LALT|IEQUALIFIER_RALT) || _conf(misc_desktopdoubleclick)))
+								if ((IsRootOrExtra) && (data->qualifier & (IEQUALIFIER_LALT|IEQUALIFIER_RALT) || _conf(misc_desktopdoubleclick)))
 								{
 									if (DoubleClick(data->seconds, data->micros, imsg->Seconds, imsg->Micros))
 									{
@@ -1333,7 +1350,7 @@ DEFMMETHOD(HandleEvent)
 											{
 												data->click_prevx = -1;
 												data->click_prevy = -1; 
-												DoMethod(_app(obj), MM_Application_OpenDevicesWindow, 1);
+												DoMethod(_app(obj), MM_Application_OpenDevicesWindow, 1, get_screen_pubname(obj));
 												return (MUI_EventHandlerRC_Eat);
 											}
 										}
@@ -1441,7 +1458,7 @@ DEFMMETHOD(HandleEvent)
 						/*
 						 * Trap RMB on the window's titlebar..
 						 */
-						if (!data->isroot && _isinwinborder(MouseX, MouseY))
+						if (!IsRootOrExtra && _isinwinborder(MouseX, MouseY))
 						{
 							set(_win(obj), MUIA_Window_MouseObject, obj);
 							DoMethod(_win(obj), MUIM_Window_HandleRMB, imsg);
@@ -1451,7 +1468,7 @@ DEFMMETHOD(HandleEvent)
 					break;
 
 					case MIDDLEDOWN:
-						if (!data->isroot && data->qualifier & IEQUALIFIER_CONTROL)
+						if (!IsRootOrExtra && data->qualifier & IEQUALIFIER_CONTROL)
 						{
 							SetAttrs(obj, MUIA_Group_Forward, FALSE,
 											MA_Icon_SizeAdjustment, 0,
@@ -1498,6 +1515,8 @@ DEFMMETHOD(HandleEvent)
 							if ( (data->lasso_ctx = lasso_create(_rp(obj), data->click_x, data->click_y, _left(obj), _top(obj), _right(obj), _bottom(obj), data->vx, data->vy, _screen(obj)->RastPort.BitMap, gfx_get_penspec_value(muiRenderInfo(obj), &_conf(lasso_pen)))) )
 							{
 								pointer_set(_window(obj), POINTER_CROSSAIR);
+								DoMethod(_window(obj), WM_ObtainEvents); // obtain + WA_LockMouseToScreen ensures mouse remains on this display on multi-monitor setups
+								set(_window(obj), WA_LockMouseToScreen, TRUE);
 								data->lasso = LASSO_DRAWING;
 							}
 							/* keep trying if it fails */
@@ -1755,7 +1774,7 @@ DEFMMETHOD(HandleEvent)
 
 			case IDCMP_DISKINSERTED:
 				/* XXX: TA_Devices_RemoveAll doesnt work really -itix */
-				if (!data->isroot)
+				if (!IsRootOrExtra)
 				{
 					/* kiero: _removeall triggers _all when successfull so abort both of them. solves
 					 *        problem when lots of messages start flowing. 
@@ -1769,7 +1788,7 @@ DEFMMETHOD(HandleEvent)
 
 			case IDCMP_DISKREMOVED:
 				/* XXX: TA_Devices_RemoveAll doesnt work really -itix */
-				if (!data->isroot)
+				if (!IsRootOrExtra)
 				{
 					/* This is some black magic: Doing this here appears to solve the "duplicate"
 					 * icons appearing on "My MorphOS" views. No idea how and why. This really
@@ -1792,7 +1811,7 @@ DEFMMETHOD(HandleEvent)
 				switch (code)
 				{
 					case RAWKEY_NM_WHEEL_UP:
-						if (!data->isroot && data->qualifier & IEQUALIFIER_CONTROL)
+						if (!IsRootOrExtra && data->qualifier & IEQUALIFIER_CONTROL)
 						{
 							if (data->iconsizeadjustment < 128)
 							{
@@ -1806,7 +1825,7 @@ DEFMMETHOD(HandleEvent)
 						break;
 
 					case RAWKEY_NM_WHEEL_DOWN:
-						if (!data->isroot && data->qualifier & IEQUALIFIER_CONTROL)
+						if (!IsRootOrExtra && data->qualifier & IEQUALIFIER_CONTROL)
 						{
 							if (data->iconsizeadjustment - 10 > -(LONG)_conf(icon_minsize))
 							{
@@ -1885,7 +1904,7 @@ DEFMMETHOD(HandleEvent)
 							selected_y = _top( selected_obj ) + _height( selected_obj ) / 2;
 						}
 
-						nearest_obj = find_nearest_obj(obj, selected_obj, code, selected_x, selected_y, data->isroot);
+						nearest_obj = find_nearest_obj(obj, selected_obj, code, selected_x, selected_y, IsRootOrExtra);
 
 						if ( !nearest_obj  )
 						{
@@ -1913,7 +1932,7 @@ DEFMMETHOD(HandleEvent)
 									break;
 							}
 
-							nearest_obj = find_nearest_obj(obj, selected_obj, code, selected_x, selected_y, data->isroot);
+							nearest_obj = find_nearest_obj(obj, selected_obj, code, selected_x, selected_y, IsRootOrExtra);
 						}
 
 						if ( nearest_obj )
@@ -2036,7 +2055,7 @@ DEFSET
 			break;
 
 		case MUIA_Virtgroup_Left:
-			if (data->isroot)
+			if (IsRootOrExtra)
 			{
 				tag->ti_Tag = TAG_IGNORE; /* we don't want movements in the root */
 			}
@@ -2058,7 +2077,7 @@ DEFSET
 			break;
 
 		case MUIA_Virtgroup_Top:
-			if (data->isroot)
+			if (IsRootOrExtra)
 			{
 				tag->ti_Tag = TAG_IGNORE; /* ditto */
 			}
@@ -2093,6 +2112,8 @@ DEFSET
 								if ( (data->lasso_ctx = lasso_create(_rp(obj), data->click_x, data->click_y, _left(obj), _top(obj), _right(obj), _bottom(obj), data->vx, data->vy, _screen(obj)->RastPort.BitMap, gfx_get_penspec_value(muiRenderInfo(obj), &_conf(lasso_pen)))) )
 								{
 									pointer_set(_window(obj), POINTER_CROSSAIR);
+									DoMethod(_window(obj), WM_ObtainEvents); // obtain + WA_LockMouseToScreen ensures mouse remains on this display on multi-monitor setups
+									set(_window(obj), WA_LockMouseToScreen, TRUE);
 									data->lasso = LASSO_DRAWING;
 								}
 								break;
@@ -2207,7 +2228,7 @@ DEFGET
 			return (TRUE);
 
 		case MA_Iconview_IconTextEffect:
-			*msg->opg_Storage = data->isroot ? _conf(root_font_effect) : _conf(window_font_effect);
+			*msg->opg_Storage = IsRootOrExtra ? _conf(root_font_effect) : _conf(window_font_effect);
 			return (TRUE);
 
 		case MA_DragDrop_Path:
@@ -2215,11 +2236,11 @@ DEFGET
 			return (TRUE);
 
 		case MA_DragDrop_Type:
-			*msg->opg_Storage = data->isroot ? MV_DragDrop_Type_Root : MV_DragDrop_Type_Iconview;
+			*msg->opg_Storage = IsRootOrExtra ? MV_DragDrop_Type_Root : MV_DragDrop_Type_Iconview;
 			return (TRUE);
 
 		case MA_Icon_FileType: /* for drag & drop, XXX: dodgy */
-			*msg->opg_Storage = data ->isroot ? MV_Icon_FileType_Device : MV_Icon_FileType_File;
+			*msg->opg_Storage = IsRootOrExtra ? MV_Icon_FileType_Device : MV_Icon_FileType_File;
 			return (TRUE);
 
 		case MA_Iconview_Path:
@@ -2239,7 +2260,7 @@ DEFGET
 			return (TRUE);
 
 		case MA_View_NewWin:
-			*msg->opg_Storage = data->isroot ? TRUE : ( _conf(toolbar_browsermode) ? FALSE : TRUE );
+			*msg->opg_Storage = IsRootOrExtra ? TRUE : ( _conf(toolbar_browsermode) ? FALSE : TRUE );
 			return (TRUE);
 
 		case MA_View_HasBackground:
@@ -2292,7 +2313,7 @@ DEFGET
 			return (TRUE);
 
 		case MA_View_ShowDevices:
-			*msg->opg_Storage = data->show_devices && !data->isroot ? TRUE : FALSE;
+			*msg->opg_Storage = data->show_devices && !IsRootOrExtra ? TRUE : FALSE;
 			return (TRUE);
 
 		case MA_View_SubObject:
@@ -2325,7 +2346,7 @@ DEFMMETHOD(Backfill)
 		APTR cliphandle = NULL;
 		struct Region *clipregion = NULL;
 
-		if ( data->noflicker && muiRenderInfo(obj) != NULL && data->isroot )
+		if ( data->noflicker && muiRenderInfo(obj) != NULL && IsRootOrExtra )
 		{
 			/*
 			 * Iterate through icons and mask them from backfill.
@@ -2395,7 +2416,7 @@ DEFMMETHOD(Draw)
 		 * Virtgroup sets those without notify so we
 		 * have to do it ourself.
 		 */
-		if (muiRenderInfo(obj) && _win(obj) && !data->isroot)
+		if (muiRenderInfo(obj) && _win(obj) && !IsRootOrExtra)
 		{
 			SetAttrs(_win(obj), MA_Window_LeftOffset, vl,
 								MA_Window_TopOffset, vt,
@@ -3088,25 +3109,131 @@ DEFMMETHOD(DragFinish)
 	return (0);
 }
 
+
 DEFMMETHOD(DragEvent)
 {
+	GETDATA;
 	// objwindow is a temporary ptr, unless msg->obj is non-NULL
 	// in our case, we just want to find out if the window is an appwindow
 	// in case the msg->obj is NULL (meaning the win doesn't belong to us)
 	// do not that we might get one of our app's windows here too
+
 	if (msg->objwindow && !msg->obj)
 	{
 		struct ipc_appwindow *appwin;
-
-		if ( (appwin = (APTR)AppWindowObtain(msg->objwindow)) )
+		if ( (data->appwin.window  != msg->objwindow) )
 		{
-			// use a normal mouse ptr, means we can drop stuff
+	 		if ( (appwin = (APTR)AppWindowObtain(msg->objwindow)) )
+			{
+				data->appwin = *appwin;
+				// use a normal mouse ptr, means we can drop stuff
+				msg->mouseptrtype = POINTERTYPE_NORMAL;
+				// tell MUI we can drop stuff and that we've changed the mouse ptr
+				msg->flags |= MUIF_DRAGEVENT_FOREIGNDROP | MUIF_DRAGEVENT_MOUSECHANGED;
+			}
+			else
+			{
+				if((data->appwin.message_types  & AM_CLASS_MOUSEEXIT) && (data->appwin.window ))
+				{
+					struct wbargs *wba;
+					if ( (wba = wba_create(obj)) )
+					{
+						do_action(app, TA_AppMsg_Send,/* XXX: I *think* 'app' is ok here.. check */
+							TT_AppMsg_Send_Type,      AMTYPE_APPWINDOW,
+							TT_AppMsg_Send_Window,    data->appwin.window,
+							TT_AppMsg_Send_Path,      wba->basepath,
+							TT_AppMsg_Send_ID,        data->appwin.id,
+							TT_AppMsg_Send_Userdata,  data->appwin.userdata,
+							TT_AppMsg_Send_NumArgs,   wba->count,
+							TT_AppMsg_Send_WBArgList, wba->wba,
+							TT_AppMsg_Send_Class,     AM_CLASS_MOUSEEXIT,
+							TT_AppMsg_Send_MouseX,    data->appwin.window->WScreen->MouseX,
+							TT_AppMsg_Send_MouseY,    data->appwin.window->WScreen->MouseY,
+							TAG_DONE);
+
+						wba_delete(wba);
+					}
+					
+				}
+
+				data->appwin.window = NULL;
+				data->appwin.message_types = 0;
+			}
+
+			if((data->appwin.message_types & AM_CLASS_MOUSEENTER) && (data->appwin.window ))
+			{
+				struct wbargs *wba;
+				if ( (wba = wba_create(obj)) )
+				{
+					do_action(app, TA_AppMsg_Send,/* XXX: I *think* 'app' is ok here.. check */
+						TT_AppMsg_Send_Type,      AMTYPE_APPWINDOW,
+						TT_AppMsg_Send_Window,    data->appwin.window,
+						TT_AppMsg_Send_Path,      wba->basepath,
+						TT_AppMsg_Send_ID,        data->appwin.id,
+						TT_AppMsg_Send_Userdata,  data->appwin.userdata,
+						TT_AppMsg_Send_NumArgs,   wba->count,
+						TT_AppMsg_Send_WBArgList, wba->wba,
+						TT_AppMsg_Send_Class,     AM_CLASS_MOUSEENTER,
+						TT_AppMsg_Send_MouseX,    data->appwin.window->WScreen->MouseX,
+						TT_AppMsg_Send_MouseY,    data->appwin.window->WScreen->MouseY,
+					TAG_DONE);
+					wba_delete(wba);
+				}
+			}
+
+			AppWindowRelease();
+		}
+		else if ( (data->appwin.window ))
+		{
+			if ((data->appwin.message_types & AM_CLASS_MOUSEMOVE) && (data->appwin.window ))
+			{
+				struct wbargs *wba;
+				if ( (wba = wba_create(obj)) )
+				{
+					do_action(app, TA_AppMsg_Send,/* XXX: I *think* 'app' is ok here.. check */
+						TT_AppMsg_Send_Type,      AMTYPE_APPWINDOW,
+						TT_AppMsg_Send_Window,    data->appwin.window,
+						TT_AppMsg_Send_Path,      wba->basepath,
+						TT_AppMsg_Send_ID,        data->appwin.id,
+						TT_AppMsg_Send_Userdata,  data->appwin.userdata,
+						TT_AppMsg_Send_NumArgs,   wba->count,
+						TT_AppMsg_Send_WBArgList, wba->wba,
+						TT_AppMsg_Send_Class,     AM_CLASS_MOUSEMOVE,
+						TT_AppMsg_Send_MouseX,    data->appwin.window->WScreen->MouseX,
+						TT_AppMsg_Send_MouseY,    data->appwin.window->WScreen->MouseY,
+					TAG_DONE);
+					wba_delete(wba);
+				}
+			}
+			// keep telling MUI to show the 'drop ok' pointer
 			msg->mouseptrtype = POINTERTYPE_NORMAL;
-			// tell MUI we can drop stuff and that we've changed the mouse ptr
 			msg->flags |= MUIF_DRAGEVENT_FOREIGNDROP | MUIF_DRAGEVENT_MOUSECHANGED;
 		}
+	}
+	else if (data->appwin.window )
+	{
+		if(data->appwin.message_types  & AM_CLASS_MOUSEEXIT)
+		{
+			struct wbargs *wba;
+			if ( (wba = wba_create(obj)) )
+			{
+				do_action(app, TA_AppMsg_Send,/* XXX: I *think* 'app' is ok here.. check */
+					TT_AppMsg_Send_Type,      AMTYPE_APPWINDOW,
+					TT_AppMsg_Send_Window,    data->appwin.window,
+					TT_AppMsg_Send_Path,      wba->basepath,
+					TT_AppMsg_Send_ID,        data->appwin.id,
+					TT_AppMsg_Send_Userdata,  data->appwin.userdata,
+					TT_AppMsg_Send_NumArgs,   wba->count,
+					TT_AppMsg_Send_WBArgList, wba->wba,
+					TT_AppMsg_Send_Class,     AM_CLASS_MOUSEEXIT,
+					TT_AppMsg_Send_MouseX,    data->appwin.window->WScreen->MouseX,
+					TT_AppMsg_Send_MouseY,    data->appwin.window->WScreen->MouseY,
+					TAG_DONE);
 
-		AppWindowRelease();
+				wba_delete(wba);
+			}
+		}
+		data->appwin.window = NULL;
 	}
 
 	return (0);
@@ -3366,7 +3493,7 @@ DEFTMETHOD(Iconview_AllocPens)
 {
 	GETDATA;
 
-	if (data->isroot)
+	if (IsRootOrExtra)
 	{
 		data->icon_text_color = gfx_get_penspec_value(muiRenderInfo(obj), &_conf(root_pen1));
 		data->icon_text_bgcolor = gfx_get_penspec_value(muiRenderInfo(obj), &_conf(root_pen2));
@@ -3525,14 +3652,14 @@ DEFSMETHOD(Iconview_RemoveByName)
 
 	if (name_isinfo(msg->name))
 	{
-		if (data->isroot)
+		if (IsRootOrExtra)
 			attr = MA_Icon_PathInfo;
 		else
 			attr = MA_Icon_NameInfo;
 	}
 	else
 	{
-		if (data->isroot)
+		if (IsRootOrExtra)
 		{
 			//attr = MA_Icon_Path;
 			attr = MA_Icon_Name; /* XXX: hm.. well, it needs that because of MM_Iconview_RemoveByName.. rethink it ? */
@@ -3971,7 +4098,7 @@ DEFSMETHOD(Thread_Finished)
 				{
 					if (data->isroot)
 						threads_abort(obj, TA_Devices_UpdateInfo, NULL);
-					else
+					else if (!data->isrootextra)
 						threads_abort(obj, TA_File_ScanDir, NULL);
 
 					callsuper = FALSE;
@@ -4143,7 +4270,8 @@ DEFSMETHOD(Thread_Finished)
 
 			case TA_File_ScanDir:
 				{
-					GETDATA;
+					struct Data *data UNUSED = INST_DATA(cl, obj);
+					//GETDATA;
 					/*
 					 * Compute the title.
 					 */
@@ -4413,9 +4541,9 @@ DEFSMETHOD(View_Refresh)
 
 			DoMethod(obj, MM_Iconview_AllocPens);
 			SetAttrs(obj,
-				MA_Icon_AFont, data->isroot ? _conf(root_font) : _conf(window_font), /* broadcast */
-				MA_Icon_SmallFont, data->isroot ? _conf(root_font_small) : _conf(window_font), /* broadcast */
-				MA_Icon_FontSpace, data->isroot ? _conf(root_spaceline) : _conf(window_spaceline), /* broadcast */
+				MA_Icon_AFont, IsRootOrExtra ? _conf(root_font) : _conf(window_font), /* broadcast */
+				MA_Icon_SmallFont, IsRootOrExtra ? _conf(root_font_small) : _conf(window_font), /* broadcast */
+				MA_Icon_FontSpace, IsRootOrExtra ? _conf(root_spaceline) : _conf(window_spaceline), /* broadcast */
 				MA_Icon_TextColor, data->icon_text_color,
 				MA_Icon_TextBgColor, data->icon_text_bgcolor,
 				TAG_DONE
@@ -4428,8 +4556,7 @@ DEFSMETHOD(View_Refresh)
 		{
 			if (data->isroot && msg->dtp)
 			{		
-				// NOTE: do not use _screen(obj). it might not be valid at this point! -- kiero
-				DoMethod(app, MM_Application_CenterBackground, getv(obj, MA_View_BgPen), get_screen()); /* XXX: there should be a getsuper() or so.. faster */
+				DoMethod(app, MM_Application_CenterBackground, getv(obj, MA_View_BgPen));
 			}
 		}
 
@@ -4484,7 +4611,7 @@ DEFTMETHOD(Iconview_DoLayout)
 			DoMethod(obj, OM_REMMEMBER, in->obj);
 		}
 
-		if (data->isroot)
+		if (IsRootOrExtra)
 		{
 			/* Check if it's mymorphos icon. If it is then don't delete it just yet. */
 			ULONG type = getv(in->obj, MA_Icon_Type);
@@ -4567,8 +4694,8 @@ DEFTMETHOD(Iconview_DoLayout)
 			 */
 
 			SetAttrs(in->obj, MA_Icon_SizeAdjustment, data->iconsizeadjustment,
-				MA_Icon_AFont, data->isroot ? _conf(root_font) : _conf(window_font),
-				MA_Icon_SmallFont, data->isroot ? _conf(root_font_small) : _conf(window_font),
+				MA_Icon_AFont, IsRootOrExtra ? _conf(root_font) : _conf(window_font),
+				MA_Icon_SmallFont, IsRootOrExtra ? _conf(root_font_small) : _conf(window_font),
 				TAG_DONE);
 
 			DoMethod(obj, OM_ADDMEMBER, in->obj);
@@ -4583,7 +4710,7 @@ DEFTMETHOD(Iconview_DoLayout)
 	/*
 	 * Never autolayout root window
 	 */
-	if (!data->isroot)
+	if (!IsRootOrExtra)
 	{
 		ULONG autolayout = TRUE;
 
@@ -4805,6 +4932,10 @@ DEFSMETHOD(Notify_Change)
 								}
 							}
 							NEXTCHILD
+						}
+						else if (data->isrootextra)
+						{
+							// nothing for now
 						}
 						else if (data->viewmode == IVM_SHOWALL || data->viewmode == IVM_THUMBS || name_isinfo(naf->uri))
 						{
@@ -5466,9 +5597,9 @@ ULONG tr_iconview_showpreview(APTR obj, APTR entry)
 	STRPTR name = NULL;
 
 	struct timerequest * timer;
-	struct timeval tv;
-	struct timeval tv_start;
-	struct timeval tv_end;
+	struct TimeVal tv;
+	struct TimeVal tv_start;
+	struct TimeVal tv_end;
 	ULONG  elapsed = 0;
 	double framerate = 24.0;
 	APTR winsave = _win(obj);
@@ -5588,7 +5719,10 @@ ULONG tr_iconview_showpreview(APTR obj, APTR entry)
 											}
 										}
 									}
-									ThbNextFrame(thumb);
+									if (!ThbNextFrame(thumb))
+									{
+										abort = TRUE;
+									}
 								}
 								else
 								{

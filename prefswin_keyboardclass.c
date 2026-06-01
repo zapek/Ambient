@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: prefswin_keyboardclass.c,v 1.7 2016/01/29 19:05:20 itix Exp $
+ * $Id: prefswin_keyboardclass.c,v 1.8 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -146,7 +146,7 @@ DEFTMETHOD(Prefswin_Store)
 	prefspool_item_remove( cloneprefspool, NULL, DSI_LISTPOOL_KEYSHORTCUT );
 
 	if( !( pl = prefspool_item_get( cloneprefspool, NULL, DSI_LISTPOOL_KEYSHORTCUT, NULL, NULL ) ) ) {
-		pl = prefspool_item_add( cloneprefspool, NULL, DSI_LISTPOOL_KEYSHORTCUT, NULL, NULL );
+		pl = prefspool_item_add( cloneprefspool, NULL, DSI_LISTPOOL_KEYSHORTCUT, NULL, 0 );
 	}
 
 	if( pl )
@@ -167,7 +167,7 @@ DEFTMETHOD(Prefswin_Store)
 					keyshortcut_sequence_to_string( &shortcut->sequence, buffer, sizeof( buffer ) );
 
 					if ( !( pi = prefspool_item_get( cloneprefspool, pl, i | DSF_LISTPOOL, NULL, NULL ) ) ) {
-						pi = prefspool_item_add( cloneprefspool, pl, i | DSF_LISTPOOL, NULL, NULL );
+						pi = prefspool_item_add( cloneprefspool, pl, i | DSF_LISTPOOL, NULL, 0 );
 					}
 
 					if( pi )
@@ -202,7 +202,7 @@ DEFTMETHOD(Prefswin_Store)
 					keyshortcut_sequence_to_string( &shortcut->sequence, buffer, sizeof( buffer ) );
 
 					if( !( pi = prefspool_item_get( cloneprefspool, pl, i | DSF_LISTPOOL, NULL, NULL ) ) ) {
-						pi = prefspool_item_add( cloneprefspool, pl, i | DSF_LISTPOOL, NULL, NULL );
+						pi = prefspool_item_add( cloneprefspool, pl, i | DSF_LISTPOOL, NULL, 0 );
 					}
 
 					if( pi )

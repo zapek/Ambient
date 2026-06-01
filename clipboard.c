@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: clipboard.c,v 1.9 2013/10/29 22:30:36 geit Exp $
+ * $Id: clipboard.c,v 1.10 2023/08/09 01:20:14 piru Exp $
  */
 
 
@@ -53,7 +53,7 @@ static struct SignalSemaphore clipboardsem;
 
 struct clipboard_context {
 	clipboard_mode_t mode;
-	struct timeval add_timestamp;
+	struct TimeVal add_timestamp;
 	struct MinList entries;
 	ULONG count;
 	ULONG handleicons;
@@ -62,7 +62,7 @@ struct clipboard_context {
 static struct clipboard_context clipctx;
 
 static BOOL clipboard_list_build(struct MinList ** copy, STRPTR destpath);
-static int tv_substract(struct timeval *tv1, struct timeval *tv2);
+static int tv_substract(struct TimeVal *tv1, struct TimeVal *tv2);
 
 
 void clipboard_reset_timer()
@@ -115,7 +115,7 @@ ULONG clipboard_init(void)
 	clipctx.count = 0;
 	clipctx.handleicons = FALSE;
 
-	memset(&clipctx.add_timestamp, 0, sizeof(struct timeval));
+	memset(&clipctx.add_timestamp, 0, sizeof(struct TimeVal));
 
 	NEWLIST( &(clipctx.entries) );
 
@@ -133,7 +133,7 @@ void clipboard_clear(void)
 
 	clipctx.mode = CLIPBOARD_VOID;
 	clipctx.count = 0;
-	memset(&clipctx.add_timestamp, 0, sizeof(struct timeval));
+	memset(&clipctx.add_timestamp, 0, sizeof(struct TimeVal));
 
 	ObtainSemaphore(&clipboardsem);
 
@@ -203,7 +203,7 @@ static BOOL clipboard_paste(STRPTR destpath, ULONG sync, LONG viewid, ULONG rena
 	struct clipboard_node * cbnode;
 	APTR wo = NULL;
 	BOOL copy = (clipctx.mode == CLIPBOARD_CUT)?FALSE:TRUE;
-	struct timeval timestamp;
+	struct TimeVal timestamp;
 	ULONG res = TRUE;
 	struct MinList * entries_copy = NULL;
 
@@ -333,7 +333,7 @@ static struct MinList * clipboard_names(void)
 }
 #endif
 
-static int tv_substract(struct timeval *tv1, struct timeval *tv2)
+static int tv_substract(struct TimeVal *tv1, struct TimeVal *tv2)
 {
 	int result;
 	result = (tv1->tv_secs - tv2->tv_secs);

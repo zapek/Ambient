@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: pngicon.c,v 1.14 2021/12/14 09:38:04 piru Exp $
+ * $Id: pngicon.c,v 1.15 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -95,12 +95,12 @@ void user_flush_data(png_structp png_ptr UNUSED)
 
 #else
 
-png_voidp png_icon_malloc(png_structp png_ptr, png_size_t size)
+png_voidp png_icon_malloc(png_structp png_ptr UNUSED, png_size_t size)
 {
 	return (AllocVecTaskPooled(size));
 }
 
-void png_icon_free(png_structp png_ptr, png_voidp ptr)
+void png_icon_free(png_structp png_ptr UNUSED, png_voidp ptr)
 {
 	if (ptr)
 		FreeVecTaskPooled(ptr);

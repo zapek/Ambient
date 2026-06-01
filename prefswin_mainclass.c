@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: prefswin_mainclass.c,v 1.18 2014/03/26 17:05:54 geit Exp $
+ * $Id: prefswin_mainclass.c,v 1.25 2026/03/01 15:06:20 kronos Exp $
  */
 
 #include "ambient.h"
@@ -45,30 +45,37 @@
 #include "prefslist_miscellaneous_logo.h"
 #include "prefswin_miscellaneousclass.h"
 #include "prefslist_window_logo.h"
+#if USE_INTERNAL_PANELS
 #include "prefslist_panels_logo.h"
+#endif
 #include "prefslist_mimetype_logo.h"
 #include "prefslist_keyboard_logo.h"
 #include "prefs_advanced.h"
 
 APTR prefswin;
 
+extern ULONG panel_modus;
+
 const struct prefsgroup prefsgrp[PREFSWIN_NUMPAGES] = { /* !!! DON'T FORGET TO CHANGE NUMPAGES IN prefswin.h !!! */
-	{"Backgrounds",    MSG_PREFSWIN_TAB_BACKGROUNDS,   getprefswin_backgroundclass,    prefslist_general      }, /* XXX: hm, the name is wrong.. oh well :) */
-	{"Icon display",   MSG_PREFSWIN_TAB_ICONDISPLAY,   getprefswin_icondisplayclass,   prefslist_icondisplay  },
-	{"Miscellaneous",  MSG_PREFSWIN_TAB_MISCELLANEOUS, getprefswin_miscellaneousclass, prefslist_miscellaneous},
-	{"CLI launching",  MSG_PREFSWIN_TAB_CLILAUNCHING,  getprefswin_clilaunchclass,     prefslist_cli          },
+	{NULL,"Backgrounds",    MSG_PREFSWIN_TAB_BACKGROUNDS,   getprefswin_backgroundclass,    prefslist_general      }, /* XXX: hm, the name is wrong.. oh well :) */
+	{NULL,"Icon display",   MSG_PREFSWIN_TAB_ICONDISPLAY,   getprefswin_icondisplayclass,   prefslist_icondisplay  },
+	{NULL,"Miscellaneous",  MSG_PREFSWIN_TAB_MISCELLANEOUS, getprefswin_miscellaneousclass, prefslist_miscellaneous},
+	{NULL,"CLI launching",  MSG_PREFSWIN_TAB_CLILAUNCHING,  getprefswin_clilaunchclass,     prefslist_cli          },
 #if USE_DROP_EFFECT_PREFS
-	{"Drag & Drop",    MSG_PREFSWIN_TAB_DRAGANDDROP,   getprefswin_dragdropclass,      prefslist_dnd          },
+	{NULL,"Drag & Drop",    MSG_PREFSWIN_TAB_DRAGANDDROP,   getprefswin_dragdropclass,      prefslist_dnd          },
 #endif
-	{"Panels",         MSG_PREFSWIN_TAB_PANELS,        getprefswin_panelclass,         prefslist_panels       },
-	{"Lister",         MSG_PREFSWIN_TAB_LISTER,        getprefswin_listerclass,        prefslist_lister       },
-	{"Mime",           MSG_PREFSWIN_TAB_MIME,          getprefswin_mimeclass,          prefslist_mimetype     }, /* XXX */
-	{"Window",         MSG_PREFSWIN_TAB_WINDOW,        getprefswin_windowclass,        prefslist_window       },
-	{"Keyboard",       MSG_PREFSWIN_TAB_KEYBOARD,      getprefswin_keyboardclass,      prefslist_keyboard     }, /* XXX */
+#if USE_INTERNAL_PANELS
+	{NULL,"Panels",         MSG_PREFSWIN_TAB_PANELS,        getprefswin_panelclass,         prefslist_panels       },
+#endif
+	{NULL,"Lister",         MSG_PREFSWIN_TAB_LISTER,        getprefswin_listerclass,        prefslist_lister       },
+	{NULL,"Mime",           MSG_PREFSWIN_TAB_MIME,          getprefswin_mimeclass,          prefslist_mimetype     }, /* XXX */
+	{NULL,"Window",         MSG_PREFSWIN_TAB_WINDOW,        getprefswin_windowclass,        prefslist_window       },
+	{NULL,"Keyboard",       MSG_PREFSWIN_TAB_KEYBOARD,      getprefswin_keyboardclass,      prefslist_keyboard     }, /* XXX */
 #if 0 /* disabled, so bigfoot can stop whining */
-	{"Advanced",       MSG_PREFSWIN_TAB_ADVANCED,      getprefswin_advancedclass,      prefslist_dnd          }, /* XXX ? (image is fine IMHO -- tokai ) */
+	{NULL,"Advanced",       MSG_PREFSWIN_TAB_ADVANCED,      getprefswin_advancedclass,      prefslist_dnd          }, /* XXX ? (image is fine IMHO -- tokai ) */
 #endif
-	{"Bookmarks",      MSG_PREFSWIN_TAB_BOOKMARKS,     getprefswin_bookmarksclass,     actioneditor_menu      }  /* XXX image missing... */
+	{NULL,"Bookmarks",      MSG_PREFSWIN_TAB_BOOKMARKS,     getprefswin_bookmarksclass,     actioneditor_menu      },  /* XXX image missing... */
+	{"mossys:Ambient/PanelPrefs.pobj","Panels2",	0,		0,								prefslist_panels       }
 };
 
 struct Data {
@@ -77,7 +84,6 @@ struct Data {
 	APTR prefscontainer;
 	APTR prefscontents;
 	APTR miscclass;
-
 	ULONG has_backup;
 };
 
@@ -134,12 +140,15 @@ DEFNEW
 	#endif
 	APTR bt_save, bt_use, bt_cancel;
 	APTR pfrimg;
-
+	/* we only know 1 possible external prefs object atm */
+#if USE_EXTERNAL_PANELS
+	APTR ext_panel_obj;
+#endif
 	ULONG c;
 	const struct prefsgroup *pg = prefsgrp;
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ID, MAKE_ID('P','R','E','F'),
 		MUIA_Window_Title, GSI(MSG_PREFSWIN_MAIN_TITLE),
 		MUIA_Window_ScreenTitle, screentitle,
@@ -231,10 +240,37 @@ DEFNEW
 	/*
 	 * Build the label list.
 	 */
+	
 	for (c = 0; c < PREFSWIN_NUMPAGES; c++, pg++)
 	{
-		DoMethod(lv_sel, MUIM_List_InsertSingle, GSI(pg->labelid), MUIV_List_Insert_Bottom);
+		if(pg->class_name)
+		{
+			/* only add new panels here if both are new and old are used */
+			if(panel_modus == 3) DoMethod(lv_sel, MUIM_List_InsertSingle, pg->english_name, MUIV_List_Insert_Bottom);
+		}
+		else
+		{
+			#if 0
+			if((pg->labelid == MSG_PREFSWIN_TAB_PANELS) && (panel_modus == 2))
+			{
+				/* if old panels are not used put new ones here */
+				DoMethod(lv_sel, MUIM_List_InsertSingle, "Panels", MUIV_List_Insert_Bottom);
+			}
+			else
+			#endif
+			{
+				DoMethod(lv_sel, MUIM_List_InsertSingle, GSI(pg->labelid), MUIV_List_Insert_Bottom);
+			}
+		}
 	}
+	/* the path isn't optimal but will do till a better structure is decided */
+#if USE_EXTERNAL_PANELS
+/*	if((ext_panel_obj = MUI_NewObject("mossys:Ambient/PanelPrefs.pobj",TAG_DONE)))
+	{
+		DoMethod(lv_sel, MUIM_List_InsertSingle, "BonusPanel", MUIV_List_Insert_Bottom);
+		MUI_DisposeObject(ext_panel_obj);
+	}*/
+#endif
 
 	DoMethod(lv_sel, MUIM_Notify, MUIA_List_Active, MUIV_EveryTime,
 		app, 5, MUIM_Application_PushMethod, obj, 2, MM_Prefswin_Main_SelectChange, MUIV_TriggerValue
@@ -291,7 +327,7 @@ DEFGET
 DEFSMETHOD(Prefswin_Main_SelectChange)
 {
 	GETDATA;
-
+		
 	DoMethod(data->prefscontainer, MUIM_Group_InitChange);
 
 	DoMethod(data->prefscontainer, OM_REMMEMBER, data->prefscontents);
@@ -307,8 +343,23 @@ DEFSMETHOD(Prefswin_Main_SelectChange)
 
 	if (msg->listentry >= 0)
 	{
-		data->prefscontents = NewObject(prefsgrp[data->oldactive].class(), NULL, TAG_DONE);
-
+		{
+			if(prefsgrp[data->oldactive].class_name)
+			{
+				data->prefscontents = MUI_NewObject(prefsgrp[data->oldactive].class_name,TAG_DONE);
+			}
+			else
+			{
+				if((data->oldactive == 4)&&(panel_modus == 2))
+				{
+					data->prefscontents = MUI_NewObject(prefsgrp[PREFSWIN_NUMPAGES - 1].class_name,TAG_DONE);
+				}
+				else
+				{
+					data->prefscontents = NewObject(prefsgrp[data->oldactive].class(), NULL, TAG_DONE);
+				}
+			}
+		}
 		if (data->oldactive == 2) /* Means we are over the Misc class */
 			data->miscclass = data->prefscontents;
 	}
@@ -331,13 +382,11 @@ DEFSMETHOD(Prefswin_Main_SelectChange)
 DEFSMETHOD(Prefswin_Main_SetPage)
 {
 	ULONG i;
-
+	GETDATA;
 	for (i = 0; i < PREFSWIN_NUMPAGES; i++)
 	{
 		if (!stricmp(prefsgrp[i].english_name, msg->name))
 		{
-			GETDATA;
-
 			set(data->lv_sel, MUIA_List_Active, i);
 
 			break;

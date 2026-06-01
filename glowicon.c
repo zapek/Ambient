@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: glowicon.c,v 1.9 2017/08/21 06:17:44 cyfm Exp $
+ * $Id: glowicon.c,v 1.10 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -154,9 +154,9 @@ struct glowicon {
 
 
 #if BUILD_ICONLIB
-static ULONG glowicon_read_image(APTR fh, APTR obj, struct glowicon *gi, ULONG mode, struct FreeList *fl)
+static ULONG glowicon_read_image(APTR fh, APTR obj UNUSED, struct glowicon *gi, ULONG mode UNUSED, struct FreeList *fl UNUSED)
 #else
-static ULONG glowicon_read_image(APTR fh, APTR obj, struct glowicon *gi, ULONG mode)
+static ULONG glowicon_read_image(APTR fh, APTR obj UNUSED, struct glowicon *gi UNUSED, ULONG mode UNUSED)
 #endif
 {
 	struct chunk_header ch;

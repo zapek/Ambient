@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: mimeactiongroupclass.c,v 1.4 2006/09/18 23:17:29 fab Exp $
+ * $Id: mimeactiongroupclass.c,v 1.5 2025/07/23 22:53:31 geit Exp $
  */
 
 #include "ambient.h"
@@ -47,7 +47,7 @@ DEFNEW
 
 	if (!obj)
 	{
-		return (NULL);
+		return ((ULONG)NULL);
 	}
 
 	return ((ULONG)obj);

@@ -18,7 +18,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: mimeadjustwinclass.c,v 1.4 2006/09/18 23:17:29 fab Exp $
+ * $Id: mimeadjustwinclass.c,v 1.5 2025/09/09 12:46:46 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -42,7 +42,7 @@ DEFNEW
 	APTR mimeadjustgrp;
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_Title, GSI(MSG_MIMEADJUSTWINCLASS_TITLE),
 		MUIA_Window_ID, MAKE_ID('M','I','E','D'),

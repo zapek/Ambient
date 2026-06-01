@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: infowinclass.c,v 1.30.2.1 2023/05/20 20:42:27 piru Exp $
+ * $Id: infowinclass.c,v 1.34 2025/09/09 12:46:46 jacadcaps Exp $
  */
 
 #include "ambient.h"
@@ -301,7 +301,7 @@ DEFNEW
 {
 	struct Data *data;
 	APTR iconobj = NULL, o = 0, o1 = 0, o2 = 0, o3 = 0; /* = 0 to make gcc shut up (sigh) */
-	APTR grp_content, grp_icon, bt_icon;
+	APTR grp_content, grp_left=NULL, grp_icon, bt_icon;
 #if USE_OLD_ACTIONEDITOR
 	APTR pagegrp, edit_bt, actionlist;
 	static const char * const titles[] = { "Info", "Filetype", NULL };
@@ -343,7 +343,7 @@ DEFNEW
 	pname = (STRPTR)getv(iconobj, MA_Icon_Path);
 
 	obj = DoSuperNew(cl, obj,
-		MUIA_Window_Screen, get_screen(),
+		MUIA_Window_PublicScreen, active_screen_name(),
 		MUIA_Window_ScreenTitle, screentitle,
 		MUIA_Window_LeftEdge, MUIV_Window_LeftEdge_Moused,
 		MUIA_Window_TopEdge, MUIV_Window_TopEdge_Moused,
@@ -430,17 +430,17 @@ DEFNEW
 
 		case MV_Icon_Type_Drawer:
 		{
-			STRPTR s = FilePart(data->fname);
-			snprintf(data->wintitle, sizeof(data->wintitle), GSI(MSG_INFOWIN_WINDOW_TITLE_DRAWER), *s ? s : data->fname);
+			//STRPTR s = FilePart(data->fname);
+			snprintf(data->wintitle, sizeof(data->wintitle), GSI(MSG_INFOWIN_WINDOW_TITLE_DRAWER), /**s ? s : */data->fname);
 			break;
 		}
 
 		case MV_Icon_Type_Tool:
-			snprintf(data->wintitle, sizeof(data->wintitle), GSI(MSG_INFOWIN_WINDOW_TITLE_TOOL), FilePart(data->fname));
+			snprintf(data->wintitle, sizeof(data->wintitle), GSI(MSG_INFOWIN_WINDOW_TITLE_TOOL), data->fname);
 			break;
 
 		case MV_Icon_Type_Project:
-			snprintf(data->wintitle, sizeof(data->wintitle), GSI(MSG_INFOWIN_WINDOW_TITLE_PROJECT), FilePart(data->fname));
+			snprintf(data->wintitle, sizeof(data->wintitle), GSI(MSG_INFOWIN_WINDOW_TITLE_PROJECT), data->fname);
 			break;
 	}
 
@@ -494,7 +494,7 @@ DEFNEW
 		case MV_Icon_Type_Device:
 		case MV_Icon_Type_Kick:
 			o = HGroup,
-					Child, ColGroup(2),
+					Child, grp_left = ColGroup(2),
 						Child, NSLabel(MSG_INFOWIN_DISK_DISK),
 						Child, data->txt_disk = NewObject(getsmarttextclass(), NULL, MUIA_ShortHelp, GSI(MSG_INFOWIN_DISK_DISK_HELP), End,
 						Child, NSLabel(MSG_INFOWIN_DISK_SIZE),
@@ -503,15 +503,12 @@ DEFNEW
 						Child, data->txt_used = NewObject(getsmarttextclass(), NULL, MUIA_ShortHelp, GSI(MSG_INFOWIN_DISK_USED_HELP), End,
 						Child, NSLabel(MSG_INFOWIN_DISK_FREE),
 						Child, data->txt_free = NewObject(getsmarttextclass(), NULL, MUIA_ShortHelp, GSI(MSG_INFOWIN_DISK_FREE_HELP), End,
+						Child, NSLabel(MSG_INFOWIN_CREATED),
+						Child, data->txt_date = MUICreateTextNoFrame(MSG_INFOWIN_CREATED, NULL),
+
+						Child, Label(""), Child, Label(""),
 						Child, NSLabel(MSG_INFOWIN_DISK_FILESYSTEM),
 						Child, data->txt_fs = MUICreateTextNoFrame(MSG_INFOWIN_DISK_FILESYSTEM,NULL),
-					End,
-
-					Child, HSpace(0),
-					Child, grp_icon,
-					Child, HSpace(0),
-
-					Child, ColGroup(2),
 						Child, NSLabel(MSG_INFOWIN_DISK_TYPE),
 						Child, data->txt_type = MUICreateTextNoFrame( MSG_INFOWIN_DISK_TYPE, NULL),
 						Child, NSLabel(MSG_INFOWIN_DISK_BLOCKSIZE),
@@ -521,6 +518,11 @@ DEFNEW
 						Child, NSLabel(MSG_INFOWIN_DISK_FEATURES),
 						Child, data->txt_features = NewObject(getaddtextclass(), NULL, MUIA_ShortHelp, GSI(MSG_INFOWIN_DISK_FEATURES_HELP), End,
 					End,
+
+					Child, HSpace(0),
+					Child, grp_icon,
+					Child, HSpace(0),
+
 				End;
 			break;
 
@@ -642,10 +644,7 @@ DEFNEW
 	}
 	else if (data->type == MV_Icon_Type_Disk || data->type == MV_Icon_Type_Device || data->type == MV_Icon_Type_Kick)
 	{
-		data->ogrp = ColGroup(2),
-			Child, NSLabel(MSG_INFOWIN_CREATED),
-			Child, data->txt_date = MUICreateTextNoFrame(MSG_INFOWIN_CREATED, NULL),
-			End;
+		data->ogrp = ColGroup(2), End;
 	}
 	else
 	{
@@ -658,7 +657,10 @@ DEFNEW
 		return (IPTR)(NULL);
 	}
 
-	DoMethod(data->grp_content, OM_ADDMEMBER, data->ogrp);
+	if (!(data->type == MV_Icon_Type_Disk || data->type == MV_Icon_Type_Device || data->type == MV_Icon_Type_Kick))
+	{
+		DoMethod(data->grp_content, OM_ADDMEMBER, data->ogrp);
+	}
 
 	switch (data->type)
 	{
@@ -881,16 +883,16 @@ DEFNEW
 				{
 					if (infdata->inf.di_Flags & DIF_64BIT)
 					{
-						set(data->txt_features, MA_AddText_Contents, GSI(MSG_INFOWIN_FLAGS_LARGE_FILES));
+						set(data->txt_features, MA_AddText_ContentsNL, GSI(MSG_INFOWIN_FLAGS_LARGE_FILES));
 					}
 					if (infdata->inf.di_Flags & DIF_CASE)
 					{
-						set(data->txt_features, MA_AddText_Contents, GSI(MSG_INFOWIN_FLAGS_CASE_SENSITIVE));
+						set(data->txt_features, MA_AddText_ContentsNL, GSI(MSG_INFOWIN_FLAGS_CASE_SENSITIVE));
 					}
 				}
 				else
 				{
-					set(data->txt_features, MA_AddText_Contents, GSI(MSG_INFOWIN_FLAGS_NONE));
+					set(data->txt_features, MA_AddText_ContentsNL, GSI(MSG_INFOWIN_FLAGS_NONE));
 				}
 				if (infdata->type)
 				{
@@ -1688,12 +1690,12 @@ DEFSMETHOD(Infowin_ChangeMode)
 DEFSMETHOD(Infowin_Changed)
 {
 	GETDATA;
-
+/* bitRocky: this is already done in switch()
 	if (msg->mode == MV_Infowin_Changed_Icon)
 	{
 		set_icontype(data);
 	}
-
+*/
 	switch (msg->mode)
 	{
 		case MV_Infowin_Changed_Icon:
@@ -1720,13 +1722,15 @@ DEFSMETHOD(Infowin_Changed)
  *
  * But how to handle such list?
  */
-
 ULONG tr_openinfowin(APTR obj, CONST CONST_STRPTR *pathlist, ULONG wait, ULONG rxid)
 {
 //	  CONST CONST_STRPTR *pl = pathlist;
 	STRPTR p;
 	ULONG rc = FALSE;
 
+	#ifndef DEBUG // to remove a "unused obj" warning
+		if (obj) {};
+	#endif
 	THREAD;
 	CHECKOBJECT(obj);
 	ASSERT(pathlist);
@@ -1845,6 +1849,7 @@ loop:
 									case 10:
 									#endif
 										infdata->type = GSI(MSG_INFOWIN_DEVICETYPE_GRAPHICS);
+										break;
 
 									default:
 										infdata->type = GSI(MSG_INFOWIN_DEVICETYPE_UNKNOWN);

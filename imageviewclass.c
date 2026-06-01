@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: imageviewclass.c,v 1.28 2019/02/19 21:57:20 piru Exp $
+ * $Id: imageviewclass.c,v 1.30 2025/07/24 01:26:38 geit Exp $
  */
 
 #include "ambient.h"
@@ -1572,7 +1572,19 @@ DEFSMETHOD(Thread_Finished)
 							*FilePart(t) = '\0';
 							AddPart(t, data->pn->name, sizeof(t));
 
-							DoMethod(obj, MM_Imageview_LoadImage, t);
+							//DoMethod(obj, MM_Imageview_LoadImage, t);
+							//bitRocky: using LoadURI instead MM_Imageview_LoadImage, also updates the path for the first image after PageDown/Up
+							/* XXX: prevent from moving until the image is loaded or something.. */
+							{
+								STRPTR cmd = malloc( sizeof("LoadURI") -1 + strlen( t ) + 32 );
+								if ( cmd )
+								{
+									sprintf( cmd, "LoadURI \"%s\" VIEWID %ld", t, (LONG)getv( _win(obj), MA_Window_ID ) );
+									data->state = PICSTATE_LOADING;
+									execute_command(NULL, AC_INTERNAL, cmd, NULL);
+									free( cmd );
+								}
+							}
 						}
 					}
 					else
@@ -1773,7 +1785,7 @@ static ULONG enterdir(APTR obj UNUSED, CONST_STRPTR path UNUSED, APTR userdata)
 }
 
 
-static ULONG addfile(APTR obj, CONST_STRPTR path, LONG type UNUSED, ULONG prot UNUSED, UQUAD size UNUSED, APTR userdata UNUSED, CONST_STRPTR comment)
+static ULONG addfile(APTR obj, CONST_STRPTR path, LONG type UNUSED, ULONG prot UNUSED, UQUAD size UNUSED, APTR userdata UNUSED, CONST_STRPTR comment UNUSED)
 {
 	return (methodstack_push_sync(obj, 2, MM_Imageview_AddImageNode, path));
 }

@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: avcodec.c,v 1.4 2013/10/28 12:34:54 geit Exp $
+ * $Id: avcodec.c,v 1.5 2025/07/23 23:54:26 geit Exp $
  */
 
 #include "ambient.h"
@@ -87,7 +87,7 @@ APTR libavcodec_openlibraries(void)
 	if(ctx)
 	{
 		struct Library * AVFormatBase;
-		struct Library * AVCodecBase;
+		struct Library * AVCodecBase UNUSED;
 
 		memset(ctx, 0, sizeof(*ctx));
 
@@ -96,7 +96,7 @@ APTR libavcodec_openlibraries(void)
 
 		if(ctx->AVCodecBase && ctx->AVFormatBase)
 		{
-			struct Task * t = FindTask(NULL);
+			struct Task * t UNUSED = FindTask(NULL);
 
 			SDB(("Task : 0x%p (%s) opened AVCodecBase  = 0x%p\n", t, t->tc_Node.ln_Name, AVCodecBase));
 			SDB(("Task : 0x%p (%s) opened AVFormatBase = 0x%p\n", t, t->tc_Node.ln_Name, AVFormatBase));

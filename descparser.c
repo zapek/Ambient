@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: descparser.c,v 1.9 2019/05/18 15:15:28 bitrocky Exp $
+ * $Id: descparser.c,v 1.10 2026/05/14 22:40:54 geit Exp $
  */
 
 #include "ambient.h"
@@ -34,6 +34,7 @@
 #include "action.h"
 #include "strings.h"
 #include "descparser.h"
+#include "locale.h"
 
 /*
  * EXPERIMENTAL: This is a function which is creating mimetype descriptors according to
@@ -237,9 +238,11 @@ static ULONG parse_action(  BPTR file, struct internal_mimetype_node *imn )
 					else
 						string_append( name, linewords[ i ] );
 				}
-
+#if USE_RECOGTRANSLATION
+				actionnode_setattrs( an, ACTIONNODETAG_NAME, locale_translationget( name->str ), TAG_DONE );
+#else
 				actionnode_setattrs( an, ACTIONNODETAG_NAME, name->str, TAG_DONE );
-
+#endif
 				D(MIMETYPE,bug("    Name:<%s>\n", name->str ));
 				string_free( name, FALSE );
 			}
@@ -257,9 +260,11 @@ static ULONG parse_action(  BPTR file, struct internal_mimetype_node *imn )
 					else
 						string_append( name, linewords[ i ] );
 				}
-
+#if USE_RECOGTRANSLATION
+				actionnode_setattrs( an, ACTIONNODETAG_MENU_NAME, locale_translationget( name->str ), TAG_DONE );
+#else
 				actionnode_setattrs( an, ACTIONNODETAG_MENU_NAME, name->str, TAG_DONE );
-
+#endif
 				D(MIMETYPE,bug("    Menu Name:<%s>\n", name->str ));
 				string_free( name, FALSE );
 			}

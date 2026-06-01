@@ -19,7 +19,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
  *
- * $Id: addtextclass.c,v 1.7 2017/08/21 06:17:44 cyfm Exp $
+ * $Id: addtextclass.c,v 1.8 2025/06/24 19:35:47 bitrocky Exp $
  */
 
 #include "ambient.h"
@@ -31,7 +31,6 @@
 
 
 struct Data {
-	ULONG added;
 };
 
 
@@ -62,17 +61,28 @@ DEFSET
 
 				if (s && *s)
 				{
-					GETDATA;
+					//GETDATA;
 
-					if (data->added)
-					{
-						DoMethod(obj, MUIM_SetAsString, MUIA_Text_Contents, "%s, %s", s, (STRPTR)tag->ti_Data);
-					}
-					else
-					{
-						DoMethod(obj, MUIM_SetAsString, MUIA_Text_Contents, "%s %s", s, (STRPTR)tag->ti_Data);
-						data->added = TRUE;
-					}
+					DoMethod(obj, MUIM_SetAsString, MUIA_Text_Contents, "%s, %s", s, (STRPTR)tag->ti_Data);
+				}
+				else
+				{
+					set(obj, MUIA_Text_Contents, (STRPTR)tag->ti_Data);
+				}
+			}
+			break;
+			
+		case MA_AddText_ContentsNL:
+			{
+				STRPTR s;
+
+				s = (STRPTR)getv(obj, MUIA_Text_Contents);
+
+				if (s && *s)
+				{
+					//GETDATA;
+
+					DoMethod(obj, MUIM_SetAsString, MUIA_Text_Contents, "%s\n%s", s, (STRPTR)tag->ti_Data);
 				}
 				else
 				{
